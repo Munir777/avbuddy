@@ -1,7 +1,8 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
 import { QUESTIONS, SYSTEMS, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
 import { shuffle } from "./utils/shuffle";
+import { initAnalytics, trackStudied } from "./lib/analytics";
 import ScoreBadge from "./components/ScoreBadge";
 import SystemFilter from "./components/SystemFilter";
 import QuestionCard from "./components/QuestionCard";
@@ -19,6 +20,10 @@ function poolFor(system: string, ids: number[]): Question[] {
 export default function App() {
   const [mode, setMode] = useState<"study" | "quiz">("study");
 
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   // ---- Study mode state (infinite loop, running score) ----
   const [studySystem, setStudySystem] = useState<string>("All");
   const [studyOrder, setStudyOrder] = useState<number[]>(() => shuffle(QUESTIONS.map((q) => q.id)));
@@ -35,6 +40,7 @@ export default function App() {
 
   function studyPick(i: number) {
     if (studyRevealed || !studyCurrent) return;
+    trackStudied();
     setStudySelected(i);
     setStudyRevealed(true);
     setStudyScore((s) => ({
@@ -99,6 +105,7 @@ export default function App() {
 
   function quizPick(i: number) {
     if (quizRevealed || !quizCurrent) return;
+    trackStudied();
     setQuizSelected(i);
     setQuizRevealed(true);
     setQuizResults((r) => [...r, { questionId: quizCurrent.id, correct: i === quizCurrent.answer }]);
