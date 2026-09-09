@@ -1,0 +1,259 @@
+:root {
+  --bg: #0a0f0c;
+  --panel: #0d1410;
+  --border: #1e2b22;
+  --text: #d6e4d9;
+  --text-bright: #e9f2eb;
+  --text-dim: #5e7a66;
+  --text-faint: #3d4f42;
+  --accent: #3fa65a;
+  --accent-text: #8fe0a0;
+  --danger: #c4483b;
+  --danger-text: #f0a99e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Mono", "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.header__eyebrow {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.header__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.header__score {
+  text-align: right;
+  font-size: 13px;
+  color: #8fa68e;
+}
+
+/* System filter chips */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-chip {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.filter-chip--active {
+  background: var(--border);
+  color: var(--text-bright);
+  border-color: var(--accent);
+}
+
+/* Question card */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  background: var(--panel);
+}
+
+.card__badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.card__question {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  color: var(--text-bright);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.option--correct {
+  border-color: var(--accent);
+  background: #0f2e18;
+  color: var(--accent-text);
+}
+
+.option--incorrect {
+  border-color: var(--danger);
+  background: #3a1410;
+  color: var(--danger-text);
+}
+
+.explain {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #8fa68e;
+}
+
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 3px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background: var(--border);
+  color: var(--text-dim);
+  cursor: default;
+}
+
+.footer-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* Mode toggle */
+.mode-toggle {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.mode-toggle__btn {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mode-toggle__btn--active {
+  color: var(--text-bright);
+  border-color: var(--accent);
+  background: #0f2e18;
+}
+
+/* Quiz setup */
+.setup__label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+/* Results screen */
+.results {
+  text-align: center;
+  padding: 36px 20px;
+}
+
+.results__pct {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1;
+}
+
+.results__verdict {
+  font-size: 14px;
+  color: var(--accent-text);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.results__score {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
