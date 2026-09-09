@@ -81,6 +81,12 @@ body {
   font-family: inherit;
   cursor: pointer;
   letter-spacing: 0.5px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--text-dim);
+  color: var(--text-bright);
 }
 
 .filter-chip--active {
@@ -89,12 +95,48 @@ body {
   border-color: var(--accent);
 }
 
+.filter-chip--active:hover {
+  border-color: var(--accent);
+}
+
+.filter-chip--missed {
+  border-color: #4a2a24;
+  color: var(--danger-text);
+}
+
+.filter-chip--missed:hover {
+  border-color: var(--danger);
+}
+
+.filter-chip--missed.filter-chip--active {
+  background: #3a1410;
+  border-color: var(--danger);
+  color: var(--danger-text);
+}
+
+.filter-chip--disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 /* Question card */
 .card {
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 20px;
   background: var(--panel);
+  animation: card-in 180ms ease-out;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card__badge {
@@ -129,6 +171,16 @@ body {
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.option:active:not(:disabled) {
+  transform: scale(0.99);
 }
 
 .option:disabled {
@@ -160,6 +212,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  gap: 8px;
 }
 
 .btn-secondary {
@@ -171,6 +224,12 @@ body {
   font-size: 12px;
   font-family: inherit;
   cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-dim);
+  color: var(--text-bright);
 }
 
 .btn-primary {
@@ -183,6 +242,15 @@ body {
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.99);
 }
 
 .btn-primary:disabled {
@@ -216,6 +284,11 @@ body {
   font-family: inherit;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.mode-toggle__btn:hover {
+  color: var(--text-bright);
 }
 
 .mode-toggle__btn--active {
@@ -256,4 +329,115 @@ body {
   font-size: 13px;
   color: var(--text-dim);
   margin-top: 12px;
+}
+
+/* Progress view */
+.progress__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.progress__tile {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.progress__tile-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-bright);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.progress__tile-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+
+.progress__systems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.progress__row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.progress__row-count {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress__bar {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress__bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress__empty {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  text-align: center;
+  padding: 12px 4px;
+}
+
+.progress__reset {
+  display: block;
+  margin: 4px auto 0;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.progress__reset:hover {
+  color: var(--danger-text);
+  text-decoration-color: var(--danger-text);
+}
+
+/* Small screens */
+@media (max-width: 420px) {
+  .app {
+    padding: 20px 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .header__score {
+    text-align: left;
+  }
+
+  .card {
+    padding: 16px;
+  }
 }

@@ -3,37 +3,53 @@ import type { Question } from "./types";
 import { QUESTIONS, SYSTEMS, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
 import { shuffle } from "./utils/shuffle";
 import { initAnalytics, trackStudied } from "./lib/analytics";
+import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
 import ScoreBadge from "./components/ScoreBadge";
 import SystemFilter from "./components/SystemFilter";
 import QuestionCard from "./components/QuestionCard";
-import ModeToggle from "./components/ModeToggle";
+import ModeToggle, { type Mode } from "./components/ModeToggle";
 import QuizSetup from "./components/QuizSetup";
 import ResultsScreen from "./components/ResultsScreen";
+import ProgressView from "./components/ProgressView";
 import "./styles/app.css";
 
-function poolFor(system: string, ids: number[]): Question[] {
-  const filtered =
+function poolFor(system: string, ids: number[], missedOnly: boolean, missedIds: Set<number>): Question[] {
+  let filtered =
     system === "All" ? ids : ids.filter((id) => QUESTIONS.find((q) => q.id === id)!.system === system);
+  if (missedOnly) filtered = filtered.filter((id) => missedIds.has(id));
   return filtered.map((id) => QUESTIONS.find((q) => q.id === id)!);
 }
 
 export default function App() {
-  const [mode, setMode] = useState<"study" | "quiz">("study");
+  const [mode, setMode] = useState<Mode>("study");
 
   useEffect(() => {
     initAnalytics();
   }, []);
 
+  // Bumped on every recorded answer / progress reset so the missed-question
+  // set and weak-areas stats (both derived from localStorage) recompute.
+  const [progressTick, setProgressTick] = useState(0);
+
+  const missedQuestions = useMemo(() => getMissedQuestions(QUESTIONS), [progressTick]);
+  const missedIds = useMemo(() => new Set(missedQuestions.map((q) => q.id)), [missedQuestions]);
+  const systemStats = useMemo(() => getSystemStats(QUESTIONS), [progressTick]);
+  const overallStats = useMemo(() => getOverallStats(QUESTIONS), [progressTick]);
+
   // ---- Study mode state (infinite loop, running score) ----
   const [studySystem, setStudySystem] = useState<string>("All");
+  const [studyMissedOnly, setStudyMissedOnly] = useState(false);
   const [studyOrder, setStudyOrder] = useState<number[]>(() => shuffle(QUESTIONS.map((q) => q.id)));
   const [studyIndex, setStudyIndex] = useState(0);
   const [studySelected, setStudySelected] = useState<number | null>(null);
   const [studyRevealed, setStudyRevealed] = useState(false);
   const [studyScore, setStudyScore] = useState({ correct: 0, seen: 0 });
 
-  const studyPool = useMemo(() => poolFor(studySystem, studyOrder), [studySystem, studyOrder]);
-  const studyCurrent = studyPool[studyIndex % studyPool.length];
+  const studyPool = useMemo(
+    () => poolFor(studySystem, studyOrder, studyMissedOnly, missedIds),
+    [studySystem, studyOrder, studyMissedOnly, missedIds]
+  );
+  const studyCurrent = studyPool.length > 0 ? studyPool[studyIndex % studyPool.length] : undefined;
   const studyColor = studyCurrent
     ? SYSTEM_COLORS[studyCurrent.system] ?? DEFAULT_SYSTEM_COLOR
     : DEFAULT_SYSTEM_COLOR;
@@ -41,10 +57,13 @@ export default function App() {
   function studyPick(i: number) {
     if (studyRevealed || !studyCurrent) return;
     trackStudied();
+    const correct = i === studyCurrent.answer;
+    recordAnswer(studyCurrent, correct);
+    setProgressTick((t) => t + 1);
     setStudySelected(i);
     setStudyRevealed(true);
     setStudyScore((s) => ({
-      correct: s.correct + (i === studyCurrent.answer ? 1 : 0),
+      correct: s.correct + (correct ? 1 : 0),
       seen: s.seen + 1,
     }));
   }
@@ -52,11 +71,18 @@ export default function App() {
   function studyNext() {
     setStudySelected(null);
     setStudyRevealed(false);
-    setStudyIndex((i) => (i + 1) % studyPool.length);
+    setStudyIndex((i) => (i + 1) % Math.max(studyPool.length, 1));
   }
 
   function studyChangeSystem(s: string) {
     setStudySystem(s);
+    setStudyIndex(0);
+    setStudySelected(null);
+    setStudyRevealed(false);
+  }
+
+  function studyChangeMissedOnly(v: boolean) {
+    setStudyMissedOnly(v);
     setStudyIndex(0);
     setStudySelected(null);
     setStudyRevealed(false);
@@ -74,6 +100,7 @@ export default function App() {
   type QuizPhase = "setup" | "active" | "results";
   const [quizPhase, setQuizPhase] = useState<QuizPhase>("setup");
   const [quizSystem, setQuizSystem] = useState<string>("All");
+  const [quizMissedOnly, setQuizMissedOnly] = useState(false);
   const [quizCount, setQuizCount] = useState(10);
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [quizIndex, setQuizIndex] = useState(0);
@@ -81,10 +108,12 @@ export default function App() {
   const [quizRevealed, setQuizRevealed] = useState(false);
   const [quizResults, setQuizResults] = useState<{ questionId: number; correct: boolean }[]>([]);
 
-  const quizAvailableCount = useMemo(
-    () => (quizSystem === "All" ? QUESTIONS.length : QUESTIONS.filter((q) => q.system === quizSystem).length),
-    [quizSystem]
-  );
+  const quizCandidatePool = useMemo(() => {
+    const bySystem = quizSystem === "All" ? QUESTIONS : QUESTIONS.filter((q) => q.system === quizSystem);
+    return quizMissedOnly ? bySystem.filter((q) => missedIds.has(q.id)) : bySystem;
+  }, [quizSystem, quizMissedOnly, missedIds]);
+
+  const quizAvailableCount = quizCandidatePool.length;
 
   const quizCurrent = quizQuestions[quizIndex];
   const quizColor = quizCurrent
@@ -92,9 +121,7 @@ export default function App() {
     : DEFAULT_SYSTEM_COLOR;
 
   function startQuiz() {
-    const candidatePool =
-      quizSystem === "All" ? QUESTIONS : QUESTIONS.filter((q) => q.system === quizSystem);
-    const drawn = shuffle(candidatePool).slice(0, Math.min(quizCount, candidatePool.length));
+    const drawn = shuffle(quizCandidatePool).slice(0, Math.min(quizCount, quizCandidatePool.length));
     setQuizQuestions(drawn);
     setQuizIndex(0);
     setQuizSelected(null);
@@ -106,9 +133,12 @@ export default function App() {
   function quizPick(i: number) {
     if (quizRevealed || !quizCurrent) return;
     trackStudied();
+    const correct = i === quizCurrent.answer;
+    recordAnswer(quizCurrent, correct);
+    setProgressTick((t) => t + 1);
     setQuizSelected(i);
     setQuizRevealed(true);
-    setQuizResults((r) => [...r, { questionId: quizCurrent.id, correct: i === quizCurrent.answer }]);
+    setQuizResults((r) => [...r, { questionId: quizCurrent.id, correct }]);
   }
 
   function quizNext() {
@@ -134,35 +164,82 @@ export default function App() {
     setQuizPhase("setup");
   }
 
+  function quizChangeMissedOnly(v: boolean) {
+    setQuizMissedOnly(v);
+    setQuizCount(10);
+  }
+
+  // ---- Progress mode actions ----
+  function goStudyMissed() {
+    setMode("study");
+    setStudySystem("All");
+    setStudyMissedOnly(true);
+    setStudyIndex(0);
+    setStudySelected(null);
+    setStudyRevealed(false);
+  }
+
+  function goQuizMissed() {
+    setMode("quiz");
+    setQuizSystem("All");
+    setQuizMissedOnly(true);
+    setQuizCount((c) => Math.min(c, Math.max(missedQuestions.length, 1)));
+    setQuizPhase("setup");
+  }
+
+  function handleResetProgress() {
+    resetProgress();
+    setProgressTick((t) => t + 1);
+  }
+
   return (
     <div className="app">
       <div className="container">
         <div className="header">
           <div>
             <div className="header__eyebrow">A320 SYSTEMS TRAINER</div>
-            <div className="header__title">{mode === "study" ? "Study mode" : "Quiz mode"}</div>
+            <div className="header__title">
+              {mode === "study" ? "Study mode" : mode === "quiz" ? "Quiz mode" : "Progress"}
+            </div>
           </div>
           {mode === "study" && <ScoreBadge correct={studyScore.correct} seen={studyScore.seen} />}
         </div>
 
         <ModeToggle mode={mode} onChange={setMode} />
 
-        {mode === "study" && studyCurrent && (
+        {mode === "study" && (
           <>
-            <SystemFilter systems={SYSTEMS} active={studySystem} onChange={studyChangeSystem} />
-            <QuestionCard
-              question={studyCurrent}
-              color={studyColor}
-              selected={studySelected}
-              revealed={studyRevealed}
-              onPick={studyPick}
-              onNext={studyNext}
-              onReset={studyReshuffle}
-              resetLabel="RESHUFFLE / RESET"
-              progressLabel={`${studyPool.length} question${studyPool.length === 1 ? "" : "s"} in this set · question ${
-                (studyIndex % studyPool.length) + 1
-              } of ${studyPool.length}`}
+            <SystemFilter
+              systems={SYSTEMS}
+              active={studySystem}
+              onChange={studyChangeSystem}
+              missedOnly={studyMissedOnly}
+              onMissedOnlyChange={studyChangeMissedOnly}
+              missedCount={missedQuestions.length}
             />
+            {studyCurrent ? (
+              <QuestionCard
+                key={studyCurrent.id}
+                question={studyCurrent}
+                color={studyColor}
+                selected={studySelected}
+                revealed={studyRevealed}
+                onPick={studyPick}
+                onNext={studyNext}
+                onReset={studyReshuffle}
+                resetLabel="RESHUFFLE / RESET"
+                progressLabel={`${studyPool.length} question${studyPool.length === 1 ? "" : "s"} in this set · question ${
+                  (studyIndex % studyPool.length) + 1
+                } of ${studyPool.length}`}
+              />
+            ) : (
+              <div className="card">
+                <div className="progress__empty">
+                  No missed questions in this category yet — nice work. Try a different category or turn
+                  off "missed only".
+                </div>
+              </div>
+            )}
           </>
         )}
 
@@ -175,14 +252,18 @@ export default function App() {
               setQuizCount(10);
             }}
             availableCount={quizAvailableCount}
-            count={Math.min(quizCount, quizAvailableCount)}
+            count={Math.min(quizCount, Math.max(quizAvailableCount, 1))}
             onCountChange={setQuizCount}
             onStart={startQuiz}
+            missedOnly={quizMissedOnly}
+            onMissedOnlyChange={quizChangeMissedOnly}
+            missedCount={missedQuestions.length}
           />
         )}
 
         {mode === "quiz" && quizPhase === "active" && quizCurrent && (
           <QuestionCard
+            key={quizCurrent.id}
             question={quizCurrent}
             color={quizColor}
             selected={quizSelected}
@@ -197,6 +278,18 @@ export default function App() {
 
         {mode === "quiz" && quizPhase === "results" && (
           <ResultsScreen results={quizResults} onRetry={quizRetrySameSet} onNewQuiz={quizNewQuiz} />
+        )}
+
+        {mode === "progress" && (
+          <ProgressView
+            overall={overallStats}
+            systemStats={systemStats}
+            systemColors={SYSTEM_COLORS}
+            defaultColor={DEFAULT_SYSTEM_COLOR}
+            onStudyMissed={goStudyMissed}
+            onQuizMissed={goQuizMissed}
+            onReset={handleResetProgress}
+          />
         )}
       </div>
     </div>
