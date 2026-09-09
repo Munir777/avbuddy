@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { sql, ensureSchema } from "./_db";
+import { sql, ensureSchema } from "./_db.js";
 
 type TrackEvent = "start" | "heartbeat" | "studied";
 
