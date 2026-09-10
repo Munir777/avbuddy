@@ -37,6 +37,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["Ground services.", "Normal aircraft supply.", "The aircraft's batteries or in combination with the external power.", "All of the above."],
     answer: 3,
     explain: "The APU can be started from the aircraft's batteries, from the normal electrical system (engine generators/APU already running), or from a ground power unit — any of these can supply the initial start power.",
+    reference: "APU - General / Description",
   },
   {
     id: 5,
@@ -101,6 +102,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["True.", "False."],
     answer: 1,
     explain: "This is false. APU fire only drives an automatic shutdown (and the associated MASTER SW FAULT light) on the ground. In flight, an APU fire is not part of that automatic-shutdown logic, so the statement as written (\"ground or in flight\") is incorrect.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 13,
@@ -149,6 +151,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["Fire (on ground only), EGT overtemperature, No acceleration, low oil pressure.", "Fire (on ground only), EGT overtemperature, Underspeed, Overspeed, low oil pressure, high oil pressure", "Fire (on ground only), EGT overtemperature, Reverse flow, Overspeed, low oil pressure, high oil pressure", "Fire (on ground only), underspeed, overspeed, EGT overtemperature, Reverse flow, Low oil pressure, DC power loss."],
     answer: 3,
     explain: "All of the listed items — ground-only fire, underspeed, overspeed, EGT overtemperature, reverse flow, low oil pressure, and DC power loss — are genuine automatic APU shutdown triggers.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 19,
@@ -157,6 +160,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["2nd stage compressor", "3rd stage turbine", "2nd stage turbine.", "Mechanical shaft"],
     answer: 3,
     explain: "The APU is a single-shaft gas turbine: the shaft delivers mechanical power to drive the accessory gearbox (generator, starter, etc.), while bleed air for engine start and pneumatics is produced separately.",
+    reference: "APU - General / Description",
   },
   {
     id: 20,
@@ -181,6 +185,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["Amber", "White", "Red", "Green"],
     answer: 3,
     explain: "This is a low-priority advisory, not a caution, so it doesn't use amber. On this aircraft's SD pages, values approaching a minimum advisory threshold (this applies to oil-quantity advisories generally, not just the APU) are shown by having the reading pulse in green rather than switching to amber.",
+    reference: "APU - Controls & Indicators (system display page)",
   },
   {
     id: 23,
@@ -223,6 +228,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["True", "False"],
     answer: 1,
     explain: "This is false. FLAP OPEN is displayed in green when the APU air intake flap is fully open — that's the normal state, not a caution. It only becomes an advisory if the flap is still not fully closed a few minutes after the MASTER SW is turned off.",
+    reference: "APU - Controls & Indicators (system display page)",
   },
   {
     id: 28,
@@ -247,6 +253,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["No.", "Yes, but only for electrical power. The APU bleed valve should not be opened while using wing anti-ice.", "Yes, except during approach and go-around.", "Yes, but the altitude of utilization is limited to 15,000 ft."],
     answer: 1,
     explain: "The APU generator can still supply electrical power with wing anti-ice on, but the APU bleed valve must stay closed in that configuration — APU bleed air is not approved for use with wing anti-ice.",
+    reference: "APU Limitations - Operational Envelope",
   },
   {
     id: 31,
@@ -263,6 +270,7 @@ export const APU_QUESTIONS: Question[] = [
     options: ["Without delay in all cases.", "With a delay, in all cases.", "With a delay if the bleed air was in use."],
     answer: 2,
     explain: "Releasing the MASTER SW starts a manual shutdown. If the APU was supplying bleed air, it keeps running for a roughly 60-120 second cooldown before actually stopping; if no bleed was in use, there's no such delay.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 33,

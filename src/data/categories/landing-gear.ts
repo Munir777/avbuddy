@@ -525,6 +525,7 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     options: ["The Yellow hydraulic system", "The hydraulic accumulator", "The Yellow hydraulic system and the hydraulic accumulator", "The Blue electric pump."],
     answer: 2,
     explain: "Alternate braking (with anti-skid) runs on the Yellow hydraulic system. If Yellow pressure is also lost, braking falls back to the accumulator alone (anti-skid then unavailable). Together, the Yellow system and the accumulator make up the full alternate brake system.",
+    reference: "Landing Gear - Brakes & Antiskid",
   },
   {
     id: 66,
