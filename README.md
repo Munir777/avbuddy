@@ -20,12 +20,12 @@ React + TypeScript + Vite quiz/flashcard app for A320 systems knowledge, categor
 | Hydraulic System | 46 | 18 |
 | Ice & Rain Protection | 38 | 0 |
 | Indicating / Recording | 51 | 0 |
-| Landing Gear | 67 | 1 |
+| Landing Gear | 77 | 1 |
 | Limitation | 46 | 0 |
 | Navigation | 66 | 0 |
 | Oxygen | 12 | 0 |
 | Pneumatics | 45 | 0 |
-| **Total** | **924** | **52** |
+| **Total** | **934** | **52** |
 
 "Needs review" = the source doc's exported review page bolded two options instead of one for that question (both the user's own pick and the actual correct answer got bolded on export, with nothing distinguishing which is which). Those questions were resolved using A320 systems knowledge and flagged `needsReview: true` in the data file, with a `// REVIEW (confidence level): reasoning` comment directly above each one — check those against your FCOM/AMM, especially the ones marked "low" confidence:
 
