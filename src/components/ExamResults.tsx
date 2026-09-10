@@ -49,7 +49,12 @@ export default function ExamResults({ items, passThresholdPct, onNewExam }: Exam
               <div className="exam-review__a exam-review__a--correct">
                 Correct: {question.options[question.answer]}
               </div>
-              {question.explain && <div className="exam-review__explain">{question.explain}</div>}
+              {question.explain && (
+                <div className="exam-review__explain">
+                  {question.explain}
+                  {question.reference && <div className="reference">Ref: {question.reference}</div>}
+                </div>
+              )}
             </div>
           ))}
         </div>

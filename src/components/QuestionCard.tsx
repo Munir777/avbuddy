@@ -77,7 +77,12 @@ export default function QuestionCard({
           ))}
         </div>
 
-        {revealed && question.explain && <div className="explain">{question.explain}</div>}
+        {revealed && question.explain && (
+          <div className="explain">
+            {question.explain}
+            {question.reference && <div className="reference">Ref: {question.reference}</div>}
+          </div>
+        )}
 
         <div className="card__actions">
           <button className="btn-secondary" onClick={onReset}>

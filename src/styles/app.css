@@ -462,6 +462,14 @@ body {
   color: #8fa68e;
 }
 
+.reference {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
 .card__actions {
   display: flex;
   justify-content: space-between;
