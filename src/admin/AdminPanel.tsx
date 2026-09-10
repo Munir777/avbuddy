@@ -10,6 +10,7 @@ interface Stats {
   studiedPct: number;
   dailyTrend: { day: string; sessions: number; studied: number }[];
   topSources: { source: string; sessions: number }[];
+  topCountries: { country: string; sessions: number }[];
 }
 
 const SECRET_KEY = "avbuddy_admin_secret";
@@ -174,11 +175,37 @@ export default function AdminPanel() {
               </tbody>
             </table>
 
+            <div className="admin__trend-label">Traffic by country</div>
+            <table className="admin__trend-table">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>Sessions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.topCountries.length === 0 && (
+                  <tr>
+                    <td colSpan={2} className="admin__trend-empty">
+                      No sessions yet.
+                    </td>
+                  </tr>
+                )}
+                {stats.topCountries.map((row) => (
+                  <tr key={row.country}>
+                    <td>{row.country}</td>
+                    <td>{row.sessions}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
             <div className="admin__note">
               "Studied" = answered at least one question during the session, in either Study or
               Quiz mode. Session length is capped at 2h to avoid a backgrounded tab skewing the
               average. Sessions recorded before traffic-source tracking was added show as
-              "Direct / None".
+              "Direct / None"; country is detected server-side from IP location at the edge (not
+              stored as a raw IP) and only resolves on the live deployment, not local dev.
             </div>
           </>
         )}

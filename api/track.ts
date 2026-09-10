@@ -22,6 +22,17 @@ function normalizeReferrer(value: unknown): string {
   return typeof value === "string" ? value.slice(0, 500) : "";
 }
 
+// Vercel sets this header at the edge from the requester's IP on every
+// request that hits a deployment — no client-side code, no IP stored, and
+// nothing to spoof via document.referrer stripping. Only present on a real
+// deployment (blank in local dev / behind a proxy in front of Vercel).
+function countryFromHeader(value: string | string[] | undefined): string | null {
+  const raw = Array.isArray(value) ? value[0] : value;
+  if (!raw) return null;
+  const code = raw.trim().toUpperCase();
+  return /^[A-Z]{2}$/.test(code) ? code : null;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
@@ -31,6 +42,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const body: TrackBody = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
   const { visitorId, sessionId, event } = body;
   const referrer = normalizeReferrer(body.referrer);
+  const country = countryFromHeader(req.headers["x-vercel-ip-country"]);
 
   if (!isValidId(visitorId) || !isValidId(sessionId) || !VALID_EVENTS.includes(event as TrackEvent)) {
     res.status(400).json({ ok: false });
@@ -42,8 +54,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (event === "start") {
       await sql`
-        INSERT INTO sessions (session_id, visitor_id, started_at, last_ping_at, studied, referrer)
-        VALUES (${sessionId}, ${visitorId}, now(), now(), false, ${referrer})
+        INSERT INTO sessions (session_id, visitor_id, started_at, last_ping_at, studied, referrer, country)
+        VALUES (${sessionId}, ${visitorId}, now(), now(), false, ${referrer}, ${country})
         ON CONFLICT (session_id) DO NOTHING
       `;
     } else if (event === "heartbeat") {

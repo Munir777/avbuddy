@@ -16,6 +16,19 @@ function bucketSource(raw: string): string {
   }
 }
 
+// Node's Intl has the ISO 3166-1 country names built in, so a 2-letter code
+// from the x-vercel-ip-country header (see api/track.ts) doesn't need a
+// hand-maintained lookup table.
+const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
+function countryLabel(code: string | null): string {
+  if (!code) return "Unknown";
+  try {
+    return countryNames.of(code) ?? code;
+  } catch {
+    return code;
+  }
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
@@ -77,6 +90,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .sort((a, b) => b.sessions - a.sessions)
       .slice(0, 10);
 
+    const countryRows = await sql`
+      SELECT country, COUNT(*)::int AS sessions
+      FROM sessions
+      GROUP BY country
+      ORDER BY sessions DESC
+      LIMIT 200
+    `;
+
+    const countryCounts = new Map<string, number>();
+    for (const r of countryRows as { country: string | null; sessions: number }[]) {
+      const label = countryLabel(r.country);
+      countryCounts.set(label, (countryCounts.get(label) ?? 0) + r.sessions);
+    }
+    const topCountries = Array.from(countryCounts.entries())
+      .map(([country, sessions]) => ({ country, sessions }))
+      .sort((a, b) => b.sessions - a.sessions)
+      .slice(0, 10);
+
     const row = totals[0] ?? {
       total_sessions: 0,
       unique_visitors: 0,
@@ -95,6 +126,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       studiedPct: row.total_sessions > 0 ? Math.round((row.studied_sessions / row.total_sessions) * 100) : 0,
       dailyTrend: dailyTrend,
       topSources,
+      topCountries,
     });
   } catch (err) {
     console.error("stats error", err);

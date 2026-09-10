@@ -25,12 +25,14 @@ export function ensureSchema() {
         started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
         last_ping_at TIMESTAMPTZ NOT NULL DEFAULT now(),
         studied BOOLEAN NOT NULL DEFAULT false,
-        referrer TEXT
+        referrer TEXT,
+        country TEXT
       )
     `
       // ADD COLUMN IF NOT EXISTS so this stays a no-op on a table that
-      // already existed before the referrer column was introduced.
+      // already existed before these columns were introduced.
       .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS referrer TEXT`)
+      .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS country TEXT`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_visitor ON sessions (visitor_id)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_started ON sessions (started_at)`);
   }
