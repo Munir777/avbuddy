@@ -408,6 +408,12 @@ body {
   padding: 12px 4px;
 }
 
+.progress__srs-note {
+  font-size: 12px;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
 .progress__reset {
   display: block;
   margin: 4px auto 0;
@@ -446,5 +452,13 @@ body {
 
   .card {
     padding: 16px;
+  }
+
+  /* Category chips measure ~28px tall at the desktop padding, under the
+     ~36-44px touch-target guidance for mobile -- widen the tap area without
+     visually bulking up the chip (font-size unchanged). */
+  .filter-chip {
+    padding: 10px 12px;
+    min-height: 36px;
   }
 }

@@ -8,15 +8,33 @@
 // src/data/index.ts, so numeric `id` isn't a safe long-term key — a
 // question's system + text is stable regardless of where it sits in the
 // combined array, so that's what's used as the storage key.
+//
+// Spaced repetition: a missed question doesn't just sit in a static "wrong"
+// bucket forever, and it doesn't get permanently cleared by one lucky guess
+// either. Each question has a Leitner-style box (0-5) and a due date. Get it
+// wrong -> back to box 0, due again immediately. Get it right -> advance a
+// box, due again after that box's interval. So a question you just missed
+// resurfaces right away; one you've now gotten right a few times in a row
+// backs off to being asked again in a week, then a month, rather than
+// nagging you or vanishing outright.
 
 import type { Question } from "../types";
 
 const STORAGE_KEY = "avbuddy_progress_v1";
 
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+// Index = box number. Box 0 = due immediately (freshly missed / never
+// scheduled). Each correct answer advances one box; any wrong answer drops
+// straight back to box 0.
+const BOX_INTERVAL_DAYS = [0, 1, 3, 7, 14, 30];
+const MAX_BOX = BOX_INTERVAL_DAYS.length - 1;
+
 interface QuestionStat {
   correct: number;
   wrong: number;
   lastSeenAt: number;
+  box: number;
+  dueAt: number; // ms epoch; due for review once now >= dueAt
 }
 
 type ProgressMap = Record<string, QuestionStat>;
@@ -28,7 +46,26 @@ function keyFor(question: Question): string {
 function readMap(): ProgressMap {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as ProgressMap) : {};
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as Record<string, Partial<QuestionStat>>;
+    const map: ProgressMap = {};
+    for (const key of Object.keys(parsed)) {
+      const s = parsed[key];
+      // Backward-compat: entries saved before spaced repetition existed
+      // won't have box/dueAt. Treat them as due right away with a rough
+      // starting box guessed from their historical accuracy — after the
+      // next attempt they're on a real schedule either way, and nothing
+      // about their correct/wrong history is lost.
+      const hasSchedule = typeof s.box === "number" && typeof s.dueAt === "number";
+      map[key] = {
+        correct: s.correct ?? 0,
+        wrong: s.wrong ?? 0,
+        lastSeenAt: s.lastSeenAt ?? 0,
+        box: hasSchedule ? s.box! : (s.correct ?? 0) > (s.wrong ?? 0) ? 1 : 0,
+        dueAt: hasSchedule ? s.dueAt! : 0,
+      };
+    }
+    return map;
   } catch {
     return {};
   }
@@ -46,23 +83,30 @@ function writeMap(map: ProgressMap): void {
 export function recordAnswer(question: Question, correct: boolean): void {
   const map = readMap();
   const key = keyFor(question);
-  const existing = map[key] ?? { correct: 0, wrong: 0, lastSeenAt: 0 };
+  const existing = map[key] ?? { correct: 0, wrong: 0, lastSeenAt: 0, box: 0, dueAt: 0 };
+  const now = Date.now();
+  const box = correct ? Math.min(existing.box + 1, MAX_BOX) : 0;
   map[key] = {
     correct: existing.correct + (correct ? 1 : 0),
     wrong: existing.wrong + (correct ? 0 : 1),
-    lastSeenAt: Date.now(),
+    lastSeenAt: now,
+    box,
+    dueAt: now + BOX_INTERVAL_DAYS[box] * ONE_DAY_MS,
   };
   writeMap(map);
 }
 
-// "Missed" = you've gotten this one wrong more often than right, across all
-// attempts. A single lucky guess doesn't clear it, and a single slip on a
-// question you otherwise know doesn't add it.
+// "Missed" = ever gotten wrong at least once, and currently due for review
+// on its spaced-repetition schedule. Unlike a simple wrong-more-than-right
+// tally, a question you've now answered right several times in a row still
+// resurfaces eventually (just on a longer interval) rather than being
+// permanently cleared by a streak.
 export function getMissedQuestions(all: Question[]): Question[] {
   const map = readMap();
+  const now = Date.now();
   return all.filter((q) => {
     const stat = map[keyFor(q)];
-    return !!stat && stat.wrong > stat.correct;
+    return !!stat && stat.wrong > 0 && stat.dueAt <= now;
   });
 }
 
@@ -109,6 +153,7 @@ export interface OverallStats {
 
 export function getOverallStats(all: Question[]): OverallStats {
   const map = readMap();
+  const now = Date.now();
   let questionsAttempted = 0;
   let correctAttempts = 0;
   let wrongAttempts = 0;
@@ -120,7 +165,7 @@ export function getOverallStats(all: Question[]): OverallStats {
     questionsAttempted += 1;
     correctAttempts += stat.correct;
     wrongAttempts += stat.wrong;
-    if (stat.wrong > stat.correct) missedCount += 1;
+    if (stat.wrong > 0 && stat.dueAt <= now) missedCount += 1;
   }
 
   return { questionsAttempted, correctAttempts, wrongAttempts, missedCount };

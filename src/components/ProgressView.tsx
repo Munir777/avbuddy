@@ -65,7 +65,7 @@ export default function ProgressView({
       </div>
 
       {overall.missedCount > 0 && (
-        <div className="card__actions" style={{ marginBottom: 24 }}>
+        <div className="card__actions" style={{ marginBottom: 8 }}>
           <button className="btn-secondary" onClick={onStudyMissed}>
             STUDY MISSED ({overall.missedCount}) →
           </button>
@@ -74,6 +74,11 @@ export default function ProgressView({
           </button>
         </div>
       )}
+      <div className="progress__srs-note" style={{ marginBottom: 24 }}>
+        Missed questions come back on a spaced schedule — right away after you miss one, then
+        after 1, 3, 7, 14, 30 days as you keep getting it right. A streak doesn't clear it
+        permanently, and one wrong answer resets it to "due now".
+      </div>
 
       <div className="setup__label">WEAK AREAS (weakest first)</div>
       <div className="progress__systems">
