@@ -1,6 +1,21 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql, ensureSchema } from "./_db.js";
 
+// Turns a raw stored referrer into a friendly bucket name. The raw value is
+// either a full referrer URL (from document.referrer), a bare UTM source
+// string like "reddit" (no scheme, so `new URL` throws — that's the signal
+// to use it as-is), or "" for direct/no-referrer traffic.
+function bucketSource(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed) return "Direct / None";
+  try {
+    const host = new URL(trimmed).hostname.replace(/^www\./, "");
+    return host || "Direct / None";
+  } catch {
+    return trimmed.slice(0, 100);
+  }
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
@@ -41,6 +56,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ORDER BY 1 DESC
     `;
 
+    // Grouped by raw referrer here (cheap, indexed-free GROUP BY on a small
+    // table); bucketed into friendly source names in JS below since that
+    // needs URL parsing Postgres doesn't do for us.
+    const referrerRows = await sql`
+      SELECT referrer, COUNT(*)::int AS sessions
+      FROM sessions
+      GROUP BY referrer
+      ORDER BY sessions DESC
+      LIMIT 200
+    `;
+
+    const sourceCounts = new Map<string, number>();
+    for (const r of referrerRows as { referrer: string | null; sessions: number }[]) {
+      const bucket = bucketSource(r.referrer ?? "");
+      sourceCounts.set(bucket, (sourceCounts.get(bucket) ?? 0) + r.sessions);
+    }
+    const topSources = Array.from(sourceCounts.entries())
+      .map(([source, sessions]) => ({ source, sessions }))
+      .sort((a, b) => b.sessions - a.sessions)
+      .slice(0, 10);
+
     const row = totals[0] ?? {
       total_sessions: 0,
       unique_visitors: 0,
@@ -58,6 +94,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       avgDurationSeconds: row.avg_duration_seconds ?? 0,
       studiedPct: row.total_sessions > 0 ? Math.round((row.studied_sessions / row.total_sessions) * 100) : 0,
       dailyTrend: dailyTrend,
+      topSources,
     });
   } catch (err) {
     console.error("stats error", err);

@@ -42,13 +42,13 @@ function getSessionId(): string {
   }
 }
 
-function send(event: TrackEvent) {
+function send(event: TrackEvent, extra?: Record<string, string>) {
   const visitorId = getVisitorId();
   const sessionId = getSessionId();
   fetch("/api/track", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ visitorId, sessionId, event }),
+    body: JSON.stringify({ visitorId, sessionId, event, ...extra }),
     keepalive: true,
   }).catch(() => {
     // Analytics is best-effort; never let a network hiccup affect the app.
@@ -58,11 +58,25 @@ function send(event: TrackEvent) {
 let initialized = false;
 let studiedSent = false;
 
+// Where the visit came from: an explicit ?utm_source=... wins (survives
+// social/in-app browsers that strip the referrer header), falling back to
+// document.referrer, then blank ("direct" is inferred server-side from that).
+function getTrafficSource(): string {
+  try {
+    const utmSource = new URLSearchParams(window.location.search).get("utm_source");
+    if (utmSource) return utmSource.slice(0, 200);
+    if (document.referrer) return document.referrer.slice(0, 500);
+  } catch {
+    // Fall through to blank (treated as direct traffic).
+  }
+  return "";
+}
+
 export function initAnalytics(): void {
   if (initialized || typeof window === "undefined") return;
   initialized = true;
 
-  send("start");
+  send("start", { referrer: getTrafficSource() });
 
   const timer = window.setInterval(() => {
     if (document.visibilityState === "visible") {
