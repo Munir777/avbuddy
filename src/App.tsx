@@ -11,6 +11,7 @@ import ModeToggle, { type Mode } from "./components/ModeToggle";
 import QuizSetup from "./components/QuizSetup";
 import ResultsScreen from "./components/ResultsScreen";
 import ProgressView from "./components/ProgressView";
+import avbuddyLogo from "./assets/avbuddy-logo.png";
 import "./styles/app.css";
 
 function poolFor(system: string, ids: number[], missedOnly: boolean, missedIds: Set<number>): Question[] {
@@ -197,6 +198,7 @@ export default function App() {
       <div className="container">
         <div className="header">
           <div>
+            <img src={avbuddyLogo} alt="AvBuddy" className="header__logo" />
             <div className="header__eyebrow">A320 SYSTEMS TRAINER</div>
             <div className="header__title">
               {mode === "study" ? "Study mode" : mode === "quiz" ? "Quiz mode" : "Progress"}

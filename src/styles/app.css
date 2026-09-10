@@ -45,6 +45,13 @@ body {
   padding-bottom: 12px;
 }
 
+.header__logo {
+  display: block;
+  height: 26px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
 .header__eyebrow {
   font-size: 12px;
   letter-spacing: 1px;
