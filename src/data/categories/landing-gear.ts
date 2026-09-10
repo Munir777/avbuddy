@@ -522,11 +522,9 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     id: 65,
     system: "Landing Gear",
     q: "The alternate brake system uses:",
-    options: ["The Yellow hydraulic system", "The hydraulic accumulator", "The Yellow hydraulic system and the hydraulic accumulator correct", "The Blue electric pump."],
-    // REVIEW (high confidence): Source option text itself includes the word 'correct' appended, and it matches A320 knowledge: alternate braking uses the Yellow system backed by the hydraulic accumulator.
+    options: ["The Yellow hydraulic system", "The hydraulic accumulator", "The Yellow hydraulic system and the hydraulic accumulator", "The Blue electric pump."],
     answer: 2,
-    explain: "",
-    needsReview: true,
+    explain: "Alternate braking (with anti-skid) runs on the Yellow hydraulic system. If Yellow pressure is also lost, braking falls back to the accumulator alone (anti-skid then unavailable). Together, the Yellow system and the accumulator make up the full alternate brake system.",
   },
   {
     id: 66,

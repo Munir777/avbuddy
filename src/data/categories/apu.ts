@@ -35,10 +35,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "The APU may obtain power for starting from:",
     options: ["Ground services.", "Normal aircraft supply.", "The aircraft's batteries or in combination with the external power.", "All of the above."],
-    // REVIEW (high confidence): All of the above — ground power, normal supply, and battery/ext combo are all valid start sources.
     answer: 3,
-    explain: "",
-    needsReview: true,
+    explain: "The APU can be started from the aircraft's batteries, from the normal electrical system (engine generators/APU already running), or from a ground power unit — any of these can supply the initial start power.",
   },
   {
     id: 5,
@@ -101,10 +99,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "Fire on ground or in flight will cause the APU MASTER SW pushbutton FAULT light to come on.",
     options: ["True.", "False."],
-    // REVIEW (high confidence): True — fire (ground or flight) triggers the FAULT light either way.
-    answer: 0,
-    explain: "",
-    needsReview: true,
+    answer: 1,
+    explain: "This is false. APU fire only drives an automatic shutdown (and the associated MASTER SW FAULT light) on the ground. In flight, an APU fire is not part of that automatic-shutdown logic, so the statement as written (\"ground or in flight\") is incorrect.",
   },
   {
     id: 13,
@@ -151,20 +147,16 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "What are some of the causes for an APU automatic shutdown?",
     options: ["Fire (on ground only), EGT overtemperature, No acceleration, low oil pressure.", "Fire (on ground only), EGT overtemperature, Underspeed, Overspeed, low oil pressure, high oil pressure", "Fire (on ground only), EGT overtemperature, Reverse flow, Overspeed, low oil pressure, high oil pressure", "Fire (on ground only), underspeed, overspeed, EGT overtemperature, Reverse flow, Low oil pressure, DC power loss."],
-    // REVIEW (medium confidence): Went with the fuller shutdown-cause list (adds overspeed, reverse flow, DC power loss) — verify against FCOM.
     answer: 3,
-    explain: "",
-    needsReview: true,
+    explain: "All of the listed items — ground-only fire, underspeed, overspeed, EGT overtemperature, reverse flow, low oil pressure, and DC power loss — are genuine automatic APU shutdown triggers.",
   },
   {
     id: 19,
     system: "APU",
     q: "The basic element of the APU is a single shaft gas turbine which delivers \\_\\_\\_\\_\\_\\_ power for driving the accessory gearbox (electrical generator) and produces bleed air (engine starting and pneumatic supply)",
     options: ["2nd stage compressor", "3rd stage turbine", "2nd stage turbine.", "Mechanical shaft"],
-    // REVIEW (high confidence): Mechanical shaft — shaft mechanically drives the gearbox; bleed air is separate.
     answer: 3,
-    explain: "",
-    needsReview: true,
+    explain: "The APU is a single-shaft gas turbine: the shaft delivers mechanical power to drive the accessory gearbox (generator, starter, etc.), while bleed air for engine start and pneumatics is produced separately.",
   },
   {
     id: 20,
@@ -187,10 +179,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "The LOW OIL LEVEL advisory pulses in \\_\\_\\_\\_ if the APU oil quantity approaches its minimum value.",
     options: ["Amber", "White", "Red", "Green"],
-    // REVIEW (low confidence): Guessed Amber for LOW OIL LEVEL advisory color — not confident, verify against your SD page reference.
-    answer: 0,
-    explain: "",
-    needsReview: true,
+    answer: 3,
+    explain: "This is a low-priority advisory, not a caution, so it doesn't use amber. On this aircraft's SD pages, values approaching a minimum advisory threshold (this applies to oil-quantity advisories generally, not just the APU) are shown by having the reading pulse in green rather than switching to amber.",
   },
   {
     id: 23,
@@ -205,7 +195,7 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "What is the maximum altitude at which the APU may be started using the batteries only?",
     options: ["15, 000 ft", "20, 000 ft", "25, 000 ft", "39, 000 ft"],
-    // REVIEW (low confidence): Guessed 25,000 ft for battery-only APU start altitude limit — genuinely unsure, verify against FCOM limitations.
+    // REVIEW (unresolved): Checked the FCOM limitations chapter in full — it lists APU bleed altitude limits (20,000/22,500/15,000 ft) but no separate "battery-only start" altitude figure. That number may only appear in a start-envelope diagram that didn't survive text extraction, or the question may be misremembered. Left as-is; needs a source check (real FCOM chart, AMM, or POH) rather than a guess.
     answer: 2,
     explain: "",
     needsReview: true,
@@ -231,10 +221,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "A FLAP OPEN indication is displayed in amber when the APU air inlet flaps is fully open",
     options: ["True", "False"],
-    // REVIEW (medium confidence): Guessed False — flap fully open is the normal state, amber should flag an abnormal transit, not normal-open.
     answer: 1,
-    explain: "",
-    needsReview: true,
+    explain: "This is false. FLAP OPEN is displayed in green when the APU air intake flap is fully open — that's the normal state, not a caution. It only becomes an advisory if the flap is still not fully closed a few minutes after the MASTER SW is turned off.",
   },
   {
     id: 28,
@@ -257,10 +245,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "Can the APU be used with wing anti-ice on?",
     options: ["No.", "Yes, but only for electrical power. The APU bleed valve should not be opened while using wing anti-ice.", "Yes, except during approach and go-around.", "Yes, but the altitude of utilization is limited to 15,000 ft."],
-    // REVIEW (high confidence): Matches the known restriction: APU bleed + wing A/I airflow conflict, elec power still OK.
     answer: 1,
-    explain: "",
-    needsReview: true,
+    explain: "The APU generator can still supply electrical power with wing anti-ice on, but the APU bleed valve must stay closed in that configuration — APU bleed air is not approved for use with wing anti-ice.",
   },
   {
     id: 31,
@@ -275,10 +261,8 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "When the APU Master Switch is released, a normal APU shutdown occurs:",
     options: ["Without delay in all cases.", "With a delay, in all cases.", "With a delay if the bleed air was in use."],
-    // REVIEW (high confidence): With a delay if bleed was in use — consistent with cooldown logic in Q2.
     answer: 2,
-    explain: "",
-    needsReview: true,
+    explain: "Releasing the MASTER SW starts a manual shutdown. If the APU was supplying bleed air, it keeps running for a roughly 60-120 second cooldown before actually stopping; if no bleed was in use, there's no such delay.",
   },
   {
     id: 33,
@@ -301,7 +285,7 @@ export const APU_QUESTIONS: Question[] = [
     system: "APU",
     q: "BAT 1 and 2 push buttons do not need to be selected ON if external power is available.",
     options: ["It is normally left in the lights out position.", "When selected OFF, the APU generator is de-energized.", "Both are correct."],
-    // REVIEW (low confidence): Awkwardly worded source question — weak guess of "Both are correct", verify.
+    // REVIEW (likely corrupted source question): This question's stem is identical to one of Q33's answer options, not a real standalone question — looks like a transcription error in the source document (a line got duplicated as a question stem instead of the real Q35 text). None of its three options actually answer this stem. Needs the original source material to recover the real question rather than a guess.
     answer: 2,
     explain: "",
     needsReview: true,
