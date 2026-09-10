@@ -11,10 +11,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "The brakes pressure indication on TRIPLE PRESSURE INDICATOR reads which system pressure?",
     options: ["Yellow", "Blue", "Green"],
-    // REVIEW (medium-high confidence): Green is the normal brake system source (Yellow is the alternate/backup) — Green is the standard default answer absent a specific failure scenario.
-    answer: 2,
-    explain: "",
-    needsReview: true,
+    answer: 0,
+    explain: "This one's backwards from the intuitive guess. In normal braking (Green), there's no brake pressure indication in the cockpit at all — the triple pressure indicator only comes alive in alternate/parking brake mode, and it always reads Yellow system (and accumulator) pressure, never Green.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 2,
@@ -29,10 +28,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "If you lost the YELLOW system, what equipment is lost?",
     options: ["Reverser 2", "Parking brake accumulator recharging", "Cargo door.", "All of the above."],
-    // REVIEW (medium-high confidence): Reverser 2, cargo doors, and parking-brake-accumulator charging are all Yellow-system-dependent, so the comprehensive 'all of the above' answer fits.
     answer: 3,
-    explain: "",
-    needsReview: true,
+    explain: "All three are genuinely Yellow-dependent: Reverser 2 runs on Yellow, the cargo doors are normally Yellow-powered, and the parking brake accumulator is recharged by the Yellow electric pump — lose Yellow and all three go with it.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 4,
@@ -71,17 +69,16 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "What is the signification of an amber RAT indicator (ECAM HYD page)?",
     options: ["The RAT is incorrectly stowed.", "The RAT is not stowed.", "Pressure for stowing the RAT has been applied, or the RAT pump is not available."],
-    // REVIEW (medium confidence): Simple ECAM position-indicator logic — amber typically flags 'not in normal (stowed) position' rather than a compound pressure/pump condition.
-    answer: 1,
-    explain: "",
-    needsReview: true,
+    answer: 2,
+    explain: "The RAT indicator has three states, not two: white means stowed, green means not stowed (that's the normal deployed indication — not amber), and amber specifically means stowing pressure has been applied but the RAT hasn't restowed, or the RAT pump itself isn't available.",
+    reference: "Hydraulic - Controls & Indicators (ECAM HYD page)",
   },
   {
     id: 9,
     system: "Hydraulic System",
     q: "The Load Alleviation Function (LAF) accumulators are pressurized by which hydraulic systems?",
     options: ["Green and blue.", "Green and yellow.", "Blue and yellow."],
-    // REVIEW (low confidence): Least confident answer in this batch — genuinely unsure on LAF accumulator hydraulic sourcing, please verify this one specifically.
+    // REVIEW (unresolved): Checked the FCOM's flight controls and hydraulic chapters — neither mentions "LAF accumulators" by that name or says which systems pressurize them. This may be an AMM-level detail rather than something covered in the FCOM. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
     needsReview: true,
@@ -91,39 +88,37 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "The maximum degrees of nosewheel steering available when using the handwheel is ______.",
     options: ["+/- 60", "+/- 75", "+/- 95", "+/- 105"],
-    // REVIEW (high confidence): 75 degrees is the standard cited max nosewheel steering angle via the handwheel/tiller.
     answer: 1,
-    explain: "",
-    needsReview: true,
+    explain: "The steering handwheels (interconnected) can turn the nose wheel up to 75 degrees in either direction.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 11,
     system: "Hydraulic System",
     q: "During engine start up, when is the BLUE hydraulic system pressurized?",
     options: ["As soon as the PTU is turned on.", "As soon as the BLUE electric pump is manually turned on.", "Automatically after first engine start.", "As soon as the engine master switch is set to IGN/START"],
-    // REVIEW (medium confidence): Blue elec pump switch is normally left in AUTO (not manually toggled), so the 'automatic' framing fits better than the 'manually turned on' option.
     answer: 2,
-    explain: "",
-    needsReview: true,
+    explain: "With the Blue electric pump switch in AUTO (its normal position), the pump energizes automatically once AC power is available and, on the ground, once one engine is running — no manual action needed.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 12,
     system: "Hydraulic System",
     q: "As long as the landing gear lever is up a hydraulic safety valve closes to cut off the hydraulic supply to the gear when the airspeed is:",
     options: ["Greater than 260 KIAS.", "Greater than 230 KIAS.", "Less than 260 KIAS.", "Less than 230 KIAS"],
-    // REVIEW (medium confidence): A high-speed cutoff (protects structure/gear doors at speed) fits the safety-valve logic better than a low-speed cutoff.
     answer: 0,
-    explain: "",
-    needsReview: true,
+    explain: "Above 260 KIAS, a safety valve automatically cuts off hydraulic supply to the landing gear system, and it stays cut off below that speed as long as the gear lever remains up.",
+    reference: "Landing Gear - General / Description",
   },
   {
     id: 13,
     system: "Hydraulic System",
     q: "The PTU Fault light illuminates when the:",
     options: ["PTU is inoperative.", "Green or yellow reservoir has low air pressure.", "PTU pump has overheated."],
-    // REVIEW (medium-high confidence): PTU FAULT is more commonly tied to an overheat/abnormal-operation condition than specifically to reservoir air pressure.
-    answer: 2,
-    explain: "",
+    // REVIEW (corrected, moderate confidence on the exact wording): The real trigger is a two-part condition — on the ground, differential pressure over 650 PSI between Green and Yellow; in flight, PTU-in-AUTO failing to run while a reservoir is low on level AND system pressure is low. "Overheat" (the old answer) isn't part of that at all, so it's confidently wrong. Neither remaining option matches the real condition exactly, but "low air pressure" is the closer of the two — flagging the imprecision rather than hiding it.
+    answer: 1,
+    explain: "This one's approximate rather than exact. The real trigger is two-part: on the ground, a differential pressure over 650 PSI between the Green and Yellow systems; in flight, the PTU (in AUTO) failing to run while a reservoir's level and system pressure are both low. \"Overheat\" isn't part of that condition at all, so it's ruled out — reservoir/pressure-related is the closer of the remaining two options, even though it's not a word-for-word match.",
+    reference: "Hydraulic Abnormal Procedures - HYD PTU FAULT",
     needsReview: true,
   },
   {
@@ -171,40 +166,36 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "You get a G RSVR OVHT message. Why does the ECAM procedure ask you to switch the PTU off first?",
     options: ["To prevent the hot hydraulic fluid from being transferred to the YELLOW system.", "To depressurize the YELLOW and GREEN systems.", "To prevent the BLUE system from pressurizing the GREEN system.", "To prevent the PTU from pressurizing the GREEN system"],
-    // REVIEW (medium-high confidence): The overheat is in the GREEN reservoir specifically — switching PTU off stops it from continuing to pressurize the GREEN system, which is the direct concern.
     answer: 3,
-    explain: "",
-    needsReview: true,
+    explain: "The other three options don't hold up: the PTU never transfers fluid between systems (only pressure), turning it off doesn't depressurize anything, and the PTU has no connection to the Blue system at all — it only links Green and Yellow. That leaves stopping the PTU from continuing to pressurize the overheated Green reservoir as the real reason.",
+    reference: "Hydraulic - General / Description (Power Transfer Unit)",
   },
   {
     id: 20,
     system: "Hydraulic System",
     q: "All hydraulic systems have a fire shutoff valve.",
     options: ["True.", "False."],
-    // REVIEW (medium-high confidence): Only Green and Yellow (engine-driven pump circuits) have fire shutoff valves; Blue's pump is electric, not engine-mounted.
     answer: 1,
-    explain: "",
-    needsReview: true,
+    explain: "False. Only Green and Yellow have fire shutoff valves, since those are the two systems with engine-driven pumps that need to be isolated in an engine fire. Blue's pump is electric, not engine-mounted, so it doesn't have one.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 21,
     system: "Hydraulic System",
     q: "Fluid can be transferred between hydraulic systems.",
     options: ["True", "False"],
-    // REVIEW (high confidence): Classic A320 hydraulics point: the PTU transfers power/pressure between Green and Yellow WITHOUT transferring fluid — that's the whole point of a power transfer unit.
     answer: 1,
-    explain: "",
-    needsReview: true,
+    explain: "False. Hydraulic fluid cannot be transferred from one system to another. The PTU moves pressure/power between Green and Yellow mechanically, without the fluids themselves ever mixing — that separation is the whole point of a power transfer unit.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 22,
     system: "Hydraulic System",
     q: "What does the RAT MAN ON switch do?",
     options: ["Extends RAT, pressurizes BLUE system, starts Emergency Generator.", "Extends RAT, must push RAT MAN ON again to pressurize BLUE system.", "Extends RAT, pressurizes GREEN system, starts Emergency Generator.", "Extends RAT, pressurizes BLUE system, does not start Emergency Generator."],
-    // REVIEW (medium confidence): RAT MAN ON is normally used for hydraulic-only backup scenarios and pressurizes Blue without also starting the emergency generator, which activates under the automatic total-electrical-loss logic instead.
-    answer: 3,
-    explain: "",
-    needsReview: true,
+    answer: 0,
+    explain: "This one was backwards. Pressing RAT MAN ON manually extends the RAT, which pressurizes the Blue system — and once Blue is supplying it, the emergency generator couples in about 3 seconds later, same as it would in an automatic RAT deployment. It does start the emergency generator, it's not exempt from that.",
+    reference: "Electrical - Controls & Indicators (RAT MAN ON / Emergency Generator)",
   },
   {
     id: 23,
@@ -243,10 +234,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "On the hydraulic quantity indicator what does the amber level indicate?",
     options: ["The warning level.", "The reservoir contents", "The normal filling level", "The temperature of the hydraulic fluid."],
-    // REVIEW (high confidence): Standard color convention on the ECAM quantity gauge: amber flags the warning/low level, not a normal-fill indication.
     answer: 0,
-    explain: "",
-    needsReview: true,
+    explain: "The reservoir quantity indication is normally green, and only turns amber once the fluid level drops below the warning threshold — so amber always means the warning level, not a normal reading.",
+    reference: "Hydraulic - Controls & Indicators (ECAM HYD page)",
   },
   {
     id: 28,
@@ -269,10 +259,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "With the airplane on the ground and the blue electric pump switch in AUTO; the blue pump will be energized when:",
     options: ["One engine is running.", "The BLUE PUMP OVRD switch has been pressed.", "First two statements are correct."],
-    // REVIEW (medium confidence): Uncertain whether 'one engine running' alone is an accurate independent trigger, so going with the single, more clearly-supported condition (OVRD switch) rather than the compound 'both statements' answer.
-    answer: 1,
-    explain: "",
-    needsReview: true,
+    answer: 2,
+    explain: "Both conditions genuinely work on their own: with the switch in AUTO and AC power available, the Blue electric pump energizes on the ground either as soon as one engine is running, or if the crew presses the BLUE PUMP OVRD switch — either one alone is enough, they're not both required.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 31,
@@ -287,20 +276,18 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "The PUMP identification number on the ECAM HYD page becomes amber when:",
     options: ["System pressure is below 1450 psi.", "N2 is below idle.", "The reservoir level is low."],
-    // REVIEW (medium confidence): A pump-specific low-output-pressure threshold (around 1450 psi) is the more standard ECAM amber-ID trigger than engine N2.
     answer: 0,
-    explain: "",
-    needsReview: true,
+    explain: "The system pressure legend on the ECAM HYD page is normally green and switches to amber specifically when system pressure drops below 1,450 PSI.",
+    reference: "Hydraulic - Controls & Indicators (ECAM HYD page)",
   },
   {
     id: 33,
     system: "Hydraulic System",
     q: "If the Landing Gear was gravity extended using the hand crank on the center pedestal, what other systems will be inoperative?",
     options: ["Nose wheel steering and auto braking", "Nose wheel steering only.", "Anti-skid and auto braking.", "Nose wheel steering and anti-skid."],
-    // REVIEW (medium-high confidence): Gravity (free-fall) gear extension is generally cited as losing nosewheel steering AND anti-skid/autobrake together, not steering alone.
-    answer: 3,
-    explain: "",
-    needsReview: true,
+    answer: 1,
+    explain: "The gravity-extension procedure isolates the landing gear actuation circuit from Green and calls out only one resulting loss: nosewheel steering. Anti-skid and autobraking run through a separate part of the Green (or alternate Yellow) circuit that gravity extension doesn't touch, so they aren't affected.",
+    reference: "Landing Gear Abnormal Procedures - Gravity Extension",
   },
   {
     id: 34,
@@ -323,10 +310,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "How many pumps has the yellow system to provide pressure (not counting the PTU)?",
     options: ["1", "2", "3", "4"],
-    // REVIEW (low confidence): Genuinely unsure on this pump count — neither bolded option (1 or 3) matches my expectation of 2 (engine-driven + electric); please double-check this one specifically.
     answer: 2,
-    explain: "",
-    needsReview: true,
+    explain: "Three, not two: an engine-driven pump, an electric pump, and — often overlooked — a hand pump the crew can use to pressurize Yellow for the cargo doors when no electrical power is available.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 37,
@@ -373,10 +359,9 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     system: "Hydraulic System",
     q: "When will normal operation of the BLUE system hydraulic pump begin?",
     options: ["During the first engine start.", "When the first engine MASTER switch is moved to the ON position.", "Only when the RAT is deployed.", "After both engines are started."],
-    // REVIEW (medium confidence): Closer to the aircraft's normal operating timeline than the RAT-deployment option, which is clearly an emergency-only condition, not 'normal operation'.
     answer: 0,
-    explain: "",
-    needsReview: true,
+    explain: "With the Blue pump switch in AUTO, the pump energizes on the ground as soon as one engine is running — which in practice means during/just after the first engine start, not tied to the master switch moving to ON (too early) or needing both engines (unnecessary). RAT deployment is an emergency backup, not normal operation.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 43,
