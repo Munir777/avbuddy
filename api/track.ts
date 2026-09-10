@@ -53,10 +53,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await ensureSchema();
 
     if (event === "start") {
+      // sessionId lives in sessionStorage, which survives a page refresh in
+      // the same tab — so "start" can legitimately fire again for a row that
+      // already exists (e.g. from before referrer/country tracking existed).
+      // Backfill those fields on conflict instead of leaving them stuck null.
       await sql`
         INSERT INTO sessions (session_id, visitor_id, started_at, last_ping_at, studied, referrer, country)
         VALUES (${sessionId}, ${visitorId}, now(), now(), false, ${referrer}, ${country})
-        ON CONFLICT (session_id) DO NOTHING
+        ON CONFLICT (session_id) DO UPDATE
+        SET referrer = COALESCE(sessions.referrer, EXCLUDED.referrer),
+            country = COALESCE(sessions.country, EXCLUDED.country)
       `;
     } else if (event === "heartbeat") {
       await sql`
