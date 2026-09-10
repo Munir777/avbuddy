@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|@vite|@react-refresh|.*\\..*).*)", "destination": "/index.html" }
   ]
 }

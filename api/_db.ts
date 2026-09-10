@@ -34,7 +34,43 @@ export function ensureSchema() {
       .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS referrer TEXT`)
       .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS country TEXT`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_visitor ON sessions (visitor_id)`)
-      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_started ON sessions (started_at)`);
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_started ON sessions (started_at)`)
+      // --- Accounts (magic-link auth) ---
+      // Named auth_tokens / user_sessions rather than "tokens"/"sessions" to
+      // avoid colliding with the anonymous-usage `sessions` table above,
+      // which is a completely different thing (analytics, not login state).
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS users (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            email TEXT UNIQUE NOT NULL,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        `
+      )
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS auth_tokens (
+            token_hash TEXT PRIMARY KEY,
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            expires_at TIMESTAMPTZ NOT NULL,
+            used_at TIMESTAMPTZ
+          )
+        `
+      )
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS user_sessions (
+            token_hash TEXT PRIMARY KEY,
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            expires_at TIMESTAMPTZ NOT NULL
+          )
+        `
+      )
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_auth_tokens_user ON auth_tokens (user_id)`)
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_user_sessions_user ON user_sessions (user_id)`);
   }
   return schemaReady;
 }

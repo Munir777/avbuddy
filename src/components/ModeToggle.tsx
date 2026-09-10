@@ -1,4 +1,4 @@
-export type Mode = "study" | "quiz" | "progress";
+export type Mode = "study" | "quiz" | "exam" | "progress";
 
 interface ModeToggleProps {
   mode: Mode;
@@ -19,6 +19,12 @@ export default function ModeToggle({ mode, onChange }: ModeToggleProps) {
         onClick={() => onChange("quiz")}
       >
         QUIZ
+      </button>
+      <button
+        className={"mode-toggle__btn" + (mode === "exam" ? " mode-toggle__btn--active" : "")}
+        onClick={() => onChange("exam")}
+      >
+        EXAM
       </button>
       <button
         className={"mode-toggle__btn" + (mode === "progress" ? " mode-toggle__btn--active" : "")}

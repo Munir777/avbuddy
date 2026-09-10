@@ -7,9 +7,11 @@ interface ResultsScreenProps {
   results: QuizResult[];
   onRetry: () => void;
   onNewQuiz: () => void;
+  signedIn?: boolean;
+  onSignIn?: () => void;
 }
 
-export default function ResultsScreen({ results, onRetry, onNewQuiz }: ResultsScreenProps) {
+export default function ResultsScreen({ results, onRetry, onNewQuiz, signedIn = true, onSignIn }: ResultsScreenProps) {
   const correct = results.filter((r) => r.correct).length;
   const total = results.length;
   const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
@@ -36,6 +38,17 @@ export default function ResultsScreen({ results, onRetry, onNewQuiz }: ResultsSc
           RETRY SAME SET
         </button>
       </div>
+
+      {!signedIn && (
+        <div className="results__cta">
+          <p className="results__cta-text">
+            That was your free quiz. Sign in to unlock unlimited quizzes, Study mode, and progress tracking.
+          </p>
+          <button className="btn-primary" onClick={onSignIn}>
+            Sign in — it's free
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -11,6 +11,8 @@ interface QuestionCardProps {
   onReset: () => void;
   resetLabel?: string;
   progressLabel: string;
+  bookmarked?: boolean;
+  onToggleBookmark?: () => void;
 }
 
 export default function QuestionCard({
@@ -23,24 +25,41 @@ export default function QuestionCard({
   onReset,
   resetLabel = "RESHUFFLE / RESET",
   progressLabel,
+  bookmarked = false,
+  onToggleBookmark,
 }: QuestionCardProps) {
   return (
     <>
       <div className="card">
-        <div
-          className="card__badge"
-          style={{ color: color.fg, background: color.bg }}
-        >
-          {question.system.toUpperCase()}
-        </div>
-        {question.needsReview && (
-          <div
-            className="card__badge"
-            style={{ color: "#F0A99E", background: "#3A1410", marginLeft: 8 }}
-          >
-            ⚠ NEEDS REVIEW
+        <div className="card__top">
+          <div className="card__badges">
+            <div
+              className="card__badge"
+              style={{ color: color.fg, background: color.bg }}
+            >
+              {question.system.toUpperCase()}
+            </div>
+            {question.needsReview && (
+              <div
+                className="card__badge"
+                style={{ color: "#F0A99E", background: "#3A1410" }}
+              >
+                ⚠ NEEDS REVIEW
+              </div>
+            )}
           </div>
-        )}
+          {onToggleBookmark && (
+            <button
+              type="button"
+              className={"card__bookmark" + (bookmarked ? " card__bookmark--active" : "")}
+              onClick={onToggleBookmark}
+              aria-label={bookmarked ? "Remove bookmark" : "Bookmark this question"}
+              title={bookmarked ? "Remove bookmark" : "Bookmark this question"}
+            >
+              {bookmarked ? "★" : "☆"}
+            </button>
+          )}
+        </div>
 
         <div className="card__question">{question.q}</div>
 

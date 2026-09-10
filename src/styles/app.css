@@ -10,6 +10,8 @@
   --accent-text: #8fe0a0;
   --danger: #c4483b;
   --danger-text: #f0a99e;
+  --star: #d9a441;
+  --star-bg: #2e2410;
 }
 
 * {
@@ -33,6 +35,147 @@ body {
 .container {
   width: 100%;
   max-width: 640px;
+}
+
+/* Account bar */
+.account-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  min-height: 20px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.account-bar__email {
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.account-bar__link {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  padding: 0;
+}
+
+.account-bar__link:hover {
+  color: var(--text-bright);
+  text-decoration-color: var(--text-bright);
+}
+
+.account-bar__link--accent {
+  color: var(--accent-text);
+}
+
+.account-bar__link--accent:hover {
+  color: var(--accent-text);
+  text-decoration-color: var(--accent-text);
+}
+
+/* Sign-in modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 24px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modal__close:hover {
+  color: var(--text-bright);
+}
+
+.modal__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+
+.modal__text {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal__link {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.modal__link:hover {
+  color: var(--text-bright);
+}
+
+/* Account gate (sign-in-required states) */
+.gate {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.gate__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+
+.gate__text {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto 20px;
 }
 
 /* Header */
@@ -121,9 +264,68 @@ body {
   color: var(--danger-text);
 }
 
+.filter-chip--bookmarked {
+  border-color: #4a3a1a;
+  color: var(--star);
+}
+
+.filter-chip--bookmarked:hover {
+  border-color: var(--star);
+}
+
+.filter-chip--bookmarked.filter-chip--active {
+  background: var(--star-bg);
+  border-color: var(--star);
+  color: var(--star);
+}
+
 .filter-chip--disabled {
   opacity: 0.5;
   cursor: default;
+}
+
+/* Search box */
+.search-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-box__input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 10px 34px 10px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.search-box__input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.search-box__input::placeholder {
+  color: var(--text-faint);
+}
+
+.search-box__clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.search-box__clear:hover {
+  color: var(--text-bright);
 }
 
 /* Question card */
@@ -146,13 +348,50 @@ body {
   }
 }
 
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .card__badge {
   display: inline-block;
   font-size: 11px;
   letter-spacing: 1px;
   padding: 3px 8px;
   border-radius: 2px;
-  margin-bottom: 14px;
+}
+
+.card__bookmark {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.card__bookmark:hover {
+  border-color: var(--text-dim);
+  color: var(--text-bright);
+}
+
+.card__bookmark--active {
+  border-color: var(--star);
+  color: var(--star);
 }
 
 .card__question {
@@ -204,6 +443,14 @@ body {
   border-color: var(--danger);
   background: #3a1410;
   color: var(--danger-text);
+}
+
+/* Exam mode's single-shot picks are shown as "selected", not "correct" --
+   no color-coded feedback until results, to keep the test-pressure feel. */
+.option--selected {
+  border-color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-bright);
 }
 
 .explain {
@@ -338,6 +585,106 @@ body {
   margin-top: 12px;
 }
 
+.results__cta {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.results__cta-text {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto 14px;
+}
+
+/* Exam mode */
+.exam-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 2px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+}
+
+.exam-bar__timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-bright);
+}
+
+.exam-bar__timer--low {
+  color: var(--danger-text);
+}
+
+.exam-verdict {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.exam-verdict--pass {
+  background: #0f2e18;
+  color: var(--accent-text);
+}
+
+.exam-verdict--fail {
+  background: #3a1410;
+  color: var(--danger-text);
+}
+
+.exam-review {
+  text-align: left;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  padding-top: 4px;
+}
+
+.exam-review__item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.exam-review__item:last-child {
+  border-bottom: none;
+}
+
+.exam-review__q {
+  font-size: 13px;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.exam-review__a {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.exam-review__a--wrong {
+  color: var(--danger-text);
+}
+
+.exam-review__a--correct {
+  color: var(--accent-text);
+}
+
+.exam-review__explain {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
 /* Progress view */
 .progress__grid {
   display: grid;
@@ -460,5 +807,13 @@ body {
   .filter-chip {
     padding: 10px 12px;
     min-height: 36px;
+  }
+
+  /* Four mode tabs (STUDY/QUIZ/EXAM/PROGRESS) get tight on narrow screens --
+     trim padding and letter-spacing rather than letting "PROGRESS" wrap. */
+  .mode-toggle__btn {
+    padding: 8px 2px;
+    font-size: 11px;
+    letter-spacing: 0.3px;
   }
 }
