@@ -4,7 +4,7 @@ import AnswerOption from "./AnswerOption";
 interface QuestionCardProps {
   question: Question;
   color: SystemColor;
-  selected: number | null;
+  wrongIndices: Set<number>;
   revealed: boolean;
   onPick: (index: number) => void;
   onNext: () => void;
@@ -16,7 +16,7 @@ interface QuestionCardProps {
 export default function QuestionCard({
   question,
   color,
-  selected,
+  wrongIndices,
   revealed,
   onPick,
   onNext,
@@ -51,7 +51,7 @@ export default function QuestionCard({
               text={opt}
               index={i}
               isAnswer={i === question.answer}
-              isSelected={i === selected}
+              isWrong={wrongIndices.has(i)}
               revealed={revealed}
               onPick={onPick}
             />

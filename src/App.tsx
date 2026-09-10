@@ -42,7 +42,10 @@ export default function App() {
   const [studyMissedOnly, setStudyMissedOnly] = useState(false);
   const [studyOrder, setStudyOrder] = useState<number[]>(() => shuffle(QUESTIONS.map((q) => q.id)));
   const [studyIndex, setStudyIndex] = useState(0);
-  const [studySelected, setStudySelected] = useState<number | null>(null);
+  // Options tried on the current question and found wrong — study mode lets
+  // you keep trying until you pick the right one (revealed only flips true
+  // then), unlike quiz mode's single shot.
+  const [studyWrongIndices, setStudyWrongIndices] = useState<Set<number>>(new Set());
   const [studyRevealed, setStudyRevealed] = useState(false);
   const [studyScore, setStudyScore] = useState({ correct: 0, seen: 0 });
 
@@ -56,21 +59,31 @@ export default function App() {
     : DEFAULT_SYSTEM_COLOR;
 
   function studyPick(i: number) {
-    if (studyRevealed || !studyCurrent) return;
+    if (studyRevealed || !studyCurrent || studyWrongIndices.has(i)) return;
     trackStudied();
     const correct = i === studyCurrent.answer;
+    // Every attempt is recorded, including retries — if it took two tries to
+    // land on the right answer, that question genuinely is a weak spot, and
+    // this is what lets "missed questions" pick that up.
     recordAnswer(studyCurrent, correct);
     setProgressTick((t) => t + 1);
-    setStudySelected(i);
-    setStudyRevealed(true);
-    setStudyScore((s) => ({
-      correct: s.correct + (correct ? 1 : 0),
-      seen: s.seen + 1,
-    }));
+
+    if (correct) {
+      // Session score only credits a first-try correct — getting there after
+      // a wrong guess still locks the card in, but shouldn't count as a win.
+      const firstTry = studyWrongIndices.size === 0;
+      setStudyRevealed(true);
+      setStudyScore((s) => ({
+        correct: s.correct + (firstTry ? 1 : 0),
+        seen: s.seen + 1,
+      }));
+    } else {
+      setStudyWrongIndices((prev) => new Set(prev).add(i));
+    }
   }
 
   function studyNext() {
-    setStudySelected(null);
+    setStudyWrongIndices(new Set());
     setStudyRevealed(false);
     setStudyIndex((i) => (i + 1) % Math.max(studyPool.length, 1));
   }
@@ -78,21 +91,21 @@ export default function App() {
   function studyChangeSystem(s: string) {
     setStudySystem(s);
     setStudyIndex(0);
-    setStudySelected(null);
+    setStudyWrongIndices(new Set());
     setStudyRevealed(false);
   }
 
   function studyChangeMissedOnly(v: boolean) {
     setStudyMissedOnly(v);
     setStudyIndex(0);
-    setStudySelected(null);
+    setStudyWrongIndices(new Set());
     setStudyRevealed(false);
   }
 
   function studyReshuffle() {
     setStudyOrder(shuffle(QUESTIONS.map((q) => q.id)));
     setStudyIndex(0);
-    setStudySelected(null);
+    setStudyWrongIndices(new Set());
     setStudyRevealed(false);
     setStudyScore({ correct: 0, seen: 0 });
   }
@@ -120,6 +133,14 @@ export default function App() {
   const quizColor = quizCurrent
     ? SYSTEM_COLORS[quizCurrent.system] ?? DEFAULT_SYSTEM_COLOR
     : DEFAULT_SYSTEM_COLOR;
+  // Quiz mode is still single-shot: the only "wrong" option is whatever was
+  // picked, if it wasn't the answer.
+  const quizWrongIndices = useMemo(() => {
+    if (quizSelected !== null && quizCurrent && quizSelected !== quizCurrent.answer) {
+      return new Set([quizSelected]);
+    }
+    return new Set<number>();
+  }, [quizSelected, quizCurrent]);
 
   function startQuiz() {
     const drawn = shuffle(quizCandidatePool).slice(0, Math.min(quizCount, quizCandidatePool.length));
@@ -176,7 +197,7 @@ export default function App() {
     setStudySystem("All");
     setStudyMissedOnly(true);
     setStudyIndex(0);
-    setStudySelected(null);
+    setStudyWrongIndices(new Set());
     setStudyRevealed(false);
   }
 
@@ -224,7 +245,7 @@ export default function App() {
                 key={studyCurrent.id}
                 question={studyCurrent}
                 color={studyColor}
-                selected={studySelected}
+                wrongIndices={studyWrongIndices}
                 revealed={studyRevealed}
                 onPick={studyPick}
                 onNext={studyNext}
@@ -268,7 +289,7 @@ export default function App() {
             key={quizCurrent.id}
             question={quizCurrent}
             color={quizColor}
-            selected={quizSelected}
+            wrongIndices={quizWrongIndices}
             revealed={quizRevealed}
             onPick={quizPick}
             onNext={quizNext}
