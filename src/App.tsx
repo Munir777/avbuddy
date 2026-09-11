@@ -4,6 +4,7 @@ import { QUESTIONS, SYSTEMS, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data"
 import { shuffle } from "./utils/shuffle";
 import { initAnalytics, trackStudied } from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
+import { syncProgressOnSignIn, pushProgressEntries, clearServerProgress } from "./lib/progressSync";
 import { fetchMe, signOut as authSignOut, type AuthState } from "./lib/auth";
 import { hasUsedFreeQuiz, markFreeQuizUsed, FREE_QUIZ_COUNT } from "./lib/freeTier";
 import { getBookmarkedIds, toggleBookmark } from "./lib/bookmarks";
@@ -72,6 +73,19 @@ export default function App() {
       setAuthReady(true);
     });
   }, []);
+
+  // One-time reconcile the moment we learn this visitor is signed in (fresh
+  // sign-in, or a returning session found on page load): pull the account's
+  // server-side progress, merge it with whatever this device already has
+  // locally, and push the merged result back up. See progressSync.ts for
+  // why this needs to be a merge rather than a one-directional copy -- a
+  // device can have local (pre-sign-in / guest) progress of its own.
+  useEffect(() => {
+    if (authReady && auth.signedIn) {
+      syncProgressOnSignIn().then(() => setProgressTick((t) => t + 1));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authReady, auth.signedIn]);
 
   async function handleSignOut() {
     await authSignOut();
@@ -142,8 +156,11 @@ export default function App() {
     // Every attempt is recorded, including retries — if it took two tries to
     // land on the right answer, that question genuinely is a weak spot, and
     // this is what lets "missed questions" pick that up.
-    recordAnswer(studyCurrent, correct);
+    const { key, stat } = recordAnswer(studyCurrent, correct);
     setProgressTick((t) => t + 1);
+    // Study mode is only reachable signed-in, so this is always a real sync
+    // push, not a wasted call for an anonymous visitor.
+    if (auth.signedIn) void pushProgressEntries([{ key, stat }]);
 
     if (correct) {
       // Session score only credits a first-try correct — getting there after
@@ -272,8 +289,11 @@ export default function App() {
     if (quizRevealed || !quizCurrent) return;
     trackStudied();
     const correct = i === quizCurrent.answer;
-    recordAnswer(quizCurrent, correct);
+    const { key, stat } = recordAnswer(quizCurrent, correct);
     setProgressTick((t) => t + 1);
+    // Quiz mode is reachable signed-out (the free quiz), so this only syncs
+    // when there's actually an account behind it.
+    if (auth.signedIn) void pushProgressEntries([{ key, stat }]);
     setQuizSelected(i);
     setQuizRevealed(true);
     setQuizResults((r) => [...r, { questionId: quizCurrent.id, correct }]);
@@ -414,6 +434,10 @@ export default function App() {
   function handleResetProgress() {
     resetProgress();
     setProgressTick((t) => t + 1);
+    // Otherwise the next sign-in (or the next answer's push) would just
+    // pull the old server copy straight back into the freshly-cleared
+    // local one.
+    if (auth.signedIn) void clearServerProgress();
   }
 
   // ---- Keyboard shortcuts: 1-4 to pick an answer, Enter to advance ----

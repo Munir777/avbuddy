@@ -29,7 +29,7 @@ const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 const BOX_INTERVAL_DAYS = [0, 1, 3, 7, 14, 30];
 const MAX_BOX = BOX_INTERVAL_DAYS.length - 1;
 
-interface QuestionStat {
+export interface QuestionStat {
   correct: number;
   wrong: number;
   lastSeenAt: number;
@@ -37,9 +37,12 @@ interface QuestionStat {
   dueAt: number; // ms epoch; due for review once now >= dueAt
 }
 
-type ProgressMap = Record<string, QuestionStat>;
+export type ProgressMap = Record<string, QuestionStat>;
 
-function keyFor(question: Question): string {
+// Exported so the cross-device sync layer (progressSync.ts) can key its
+// server payloads the same way local storage does -- a signed-in device
+// and the server need to agree on what identifies a question.
+export function keyFor(question: Question): string {
   return `${question.system}::${question.q}`;
 }
 
@@ -80,20 +83,24 @@ function writeMap(map: ProgressMap): void {
   }
 }
 
-export function recordAnswer(question: Question, correct: boolean): void {
+// Returns the key + the freshly-written stat so callers that are signed in
+// can push just this one change to the server without re-deriving it.
+export function recordAnswer(question: Question, correct: boolean): { key: string; stat: QuestionStat } {
   const map = readMap();
   const key = keyFor(question);
   const existing = map[key] ?? { correct: 0, wrong: 0, lastSeenAt: 0, box: 0, dueAt: 0 };
   const now = Date.now();
   const box = correct ? Math.min(existing.box + 1, MAX_BOX) : 0;
-  map[key] = {
+  const stat: QuestionStat = {
     correct: existing.correct + (correct ? 1 : 0),
     wrong: existing.wrong + (correct ? 0 : 1),
     lastSeenAt: now,
     box,
     dueAt: now + BOX_INTERVAL_DAYS[box] * ONE_DAY_MS,
   };
+  map[key] = stat;
   writeMap(map);
+  return { key, stat };
 }
 
 // "Missed" = ever gotten wrong at least once, and currently due for review
@@ -177,4 +184,34 @@ export function resetProgress(): void {
   } catch {
     // Nothing to do if storage isn't available.
   }
+}
+
+// --- Cross-device sync (progressSync.ts talks to the server; this module
+// stays fetch-free and only knows how to read/merge/write localStorage) ---
+
+// Every locally-tracked question as {key, stat} pairs -- what a full sync
+// push to the server sends.
+export function getAllEntries(): { key: string; stat: QuestionStat }[] {
+  const map = readMap();
+  return Object.keys(map).map((key) => ({ key, stat: map[key] }));
+}
+
+// Folds a server-fetched progress map into local storage. Per question,
+// whichever side has the more recent `lastSeenAt` wins outright (simple
+// last-write-wins, not a field-by-field blend) -- good enough for a
+// personal study tool where "what did I last get on this one" is what
+// matters, and it means a device that studied more recently never loses
+// that state to an older snapshot from another device.
+export function mergeServerProgress(serverMap: ProgressMap): ProgressMap {
+  const local = readMap();
+  const merged: ProgressMap = { ...local };
+  for (const key of Object.keys(serverMap)) {
+    const server = serverMap[key];
+    const existing = merged[key];
+    if (!existing || server.lastSeenAt > existing.lastSeenAt) {
+      merged[key] = server;
+    }
+  }
+  writeMap(merged);
+  return merged;
 }

@@ -70,7 +70,25 @@ export function ensureSchema() {
         `
       )
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_auth_tokens_user ON auth_tokens (user_id)`)
-      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_user_sessions_user ON user_sessions (user_id)`);
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_user_sessions_user ON user_sessions (user_id)`)
+      // --- Cross-device progress sync ---
+      // question_key mirrors the client's localStorage key (`system::question
+      // text`) rather than the numeric id, which isn't stable across data
+      // reordering -- see src/lib/progress.ts.
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS user_progress (
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            question_key TEXT NOT NULL,
+            correct INTEGER NOT NULL DEFAULT 0,
+            wrong INTEGER NOT NULL DEFAULT 0,
+            box INTEGER NOT NULL DEFAULT 0,
+            due_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            last_seen_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            PRIMARY KEY (user_id, question_key)
+          )
+        `
+      );
   }
   return schemaReady;
 }
