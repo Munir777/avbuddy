@@ -21,7 +21,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "How is the yellow hydraulic system pressurized?",
     options: ["An engine driven pump, an electric pump, the PTU using the green system and, for the cargo doors only, a hand pump.", "An engine driven pump, electric pump, the PTU using the blue system and, for the cargo doors only, a hand pump.", "An engine driven pump, an electric pump, and the PTU using the green system."],
     answer: 0,
-    explain: "",
+    explain: "Four sources feed Yellow: the engine-2-driven pump, an electric pump (usable on the ground with engines stopped), the bidirectional PTU (which can pressurize Yellow from Green, and vice versa), and, for the cargo doors specifically when no electrical power is available, a hand pump. The PTU only ever links Green and Yellow — Blue is never part of it.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 3,
@@ -38,7 +39,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "When using the alternate brake system on accumulator pressure only; the accumulator supplies",
     options: ["Partial brakes.", "At least seven full brake applications.", "Alternate brakes with antiskid."],
     answer: 1,
-    explain: "",
+    explain: "The brake accumulator, used alone, can supply at least 7 full brake-pedal applications — with anti-skid unavailable, so the pilot must manually keep pressure at or below 1,000 PSI to avoid locking a wheel.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 5,
@@ -46,7 +48,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "For hydraulic system malfunctions, when will the RAT deploy?",
     options: ["Automatically with the failure of both the green and blue hydraulic systems.", "Automatically with the failure of both the green and yellow hydraulic systems.", "Only when the guarded RAT MAN ON push button is selected by the crew.", "When airspeed drops below 100 knots with the gear up."],
     answer: 2,
-    explain: "",
+    explain: "The RAT's one automatic-deployment trigger is electrical, not hydraulic: it drops out on its own only if AC BUS 1 and AC BUS 2 are both lost. No combination of hydraulic system failures by itself triggers automatic RAT extension — so for a purely hydraulic malfunction, the RAT only comes out if the crew manually presses RAT MAN ON.",
+    reference: "Hydraulic - General / Description (Ram Air Turbine)",
   },
   {
     id: 6,
@@ -54,7 +57,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The Eng Pump Fault light extinguishes when the engine pump switch is selected to off except for:",
     options: ["Reservoir low level.", "Pump low pressure.", "An overheat."],
     answer: 2,
-    explain: "",
+    explain: "The ENG PUMP FAULT light goes out when the crew selects the pump OFF, with one exception: during an overheat, it stays lit for as long as the overheat condition lasts.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 7,
@@ -62,7 +66,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "After extending the RAT, is it possible to check its position and status?",
     options: ["Check to see if the blue system ELEC PUMP FAULT light is not illuminated.", "Yes, select the ECAM ELEC page.", "Yes, select the ECAM HYD page.", "No. It is not possible."],
     answer: 2,
-    explain: "",
+    explain: "Yes — the RAT's stowed/deployed/in-transit status is shown by the RAT indicator on the ECAM HYD page (white when stowed, green when deployed, amber if stowing pressure is applied but it hasn't restowed, or the pump is unavailable), not on the ELEC page.",
+    reference: "Hydraulic - Controls & Indicators (ECAM HYD page)",
   },
   {
     id: 8,
@@ -127,7 +132,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "When will the yellow system electric pump operate? (AC power is available).",
     options: ["During the second engine start.", "When the first engine MASTER switch is moved to the ON position.", "If any N2 RPM is less than 45%.", "When the yellow electric system ELEC PUMP push button is selected to ON or the ground crew activates a cargo door switch."],
     answer: 3,
-    explain: "",
+    explain: "The yellow electric pump runs when the crew selects the ELEC PUMP pushbutton ON, or automatically whenever ground personnel move the cargo door manual selector valve lever to OPEN or CLOSE.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 15,
@@ -135,7 +141,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "When will the yellow system electric pump operate? (AC power is available)",
     options: ["During the second engine start.", "When the yellow electric system ELEC PUMP push button is selected to ON or the ground crew activates a cargo door switch.", "If any N2 RPM is less than 45%.", "When the first engine MASTER switch is moved to the ON position."],
     answer: 1,
-    explain: "",
+    explain: "Same fact as the other phrasing of this question: the pump runs when ELEC PUMP is selected ON, or automatically when ground crew operate the cargo door manual selector valve.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 16,
@@ -143,7 +150,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "Which hydraulic systems have engine driven pumps?",
     options: ["Green and blue.", "Green and yellow.", "Blue and yellow."],
     answer: 1,
-    explain: "",
+    explain: "Green is pressurized by an engine-1-driven pump and Yellow by an engine-2-driven pump; Blue's primary pump is electric (with the RAT as its emergency backup), so Blue has no engine-driven pump.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 17,
@@ -151,7 +159,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The aircraft’s three hydraulic systems are normally pressurized by:",
     options: ["Two engine driven pumps and one electric pump.", "Two electric pumps and one PTU.", "Two electric pumps and one engine driven pump.", "Two electric pumps and two engine driven pumps."],
     answer: 0,
-    explain: "",
+    explain: "Green and Yellow each have an engine-driven pump (engine 1 and engine 2 respectively); Blue's normal pump is electric — two engine-driven pumps plus one electric pump.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 18,
@@ -159,7 +168,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "If you lost the GREEN system, what equipment is lost?",
     options: ["Reverser 1 and gear retraction.", "Reverser 1, gear retraction and nose wheel steering", "Reverser 2, gear retraction, cargo doors and nose wheel steering.", "Reverser 2 and gear retraction."],
     answer: 1,
-    explain: "",
+    explain: "Green actuates all landing gear/doors and supplies nose wheel steering, and (mirroring the confirmed fact that Yellow loss costs Reverser 2) Green powers Reverser 1 on engine 1's side — so losing Green costs Reverser 1, gear retraction, and nose wheel steering. Cargo doors are Yellow-powered, not Green, so they aren't part of this loss.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 19,
@@ -203,7 +213,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "What is the normal pressure in the hydraulic system?",
     options: ["500 psi.", "1,000 psi.", "3,000 psi.", "2,000 psi"],
     answer: 2,
-    explain: "",
+    explain: "Normal system operating pressure is 3,000 PSI (dropping to about 2,500 PSI when a system is being powered by the RAT).",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 24,
@@ -211,7 +222,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "If you lost the BLUE system, what equipment is lost?",
     options: ["The Emergency generator.", "Cargo door", "Nose wheel steering.", "All of the above."],
     answer: 0,
-    explain: "",
+    explain: "The emergency generator is driven off the blue hydraulic circuit, so losing Blue costs it. Cargo doors run on Yellow and nose wheel steering runs on Green — neither is Blue-dependent, so \"all of the above\" overreaches.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 25,
@@ -219,7 +231,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The hydraulic PTU will activate if:",
     options: ["A significant pressure loss occurs in any of the three hydraulic systems.", "A significant pressure loss occurs in the green or yellow hydraulic system.", "Both are correct."],
     answer: 1,
-    explain: "",
+    explain: "The PTU is a bidirectional link between Green and Yellow only — it triggers on a differential pressure between those two systems, so a Blue-only pressure loss (which doesn't create a green/yellow differential) doesn't activate it.",
+    reference: "Hydraulic - General / Description (Power Transfer Unit)",
   },
   {
     id: 26,
@@ -227,7 +240,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The PTU comes into action automatically when the differential pressure between the GREEN and the YELLOW systems is greater than ______ psi.",
     options: ["300.", "500.", "650.", "700."],
     answer: 1,
-    explain: "",
+    explain: "500 PSI is the differential-pressure threshold that automatically activates the PTU.",
+    reference: "Hydraulic - General / Description (Power Transfer Unit)",
   },
   {
     id: 27,
@@ -244,7 +258,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "Crew members can use a hand pump to pressurize the YELLOW system in order to operate the cargo doors when no electrical power is available.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — this is stated directly: crew members can use a hand pump to pressurize Yellow for the cargo doors when there's no electrical power.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 29,
@@ -252,7 +267,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "To extend the landing gear with the Gravity Extension Handcrank requires _______ turns of the handle.",
     options: ["3 counter-clockwise.", "2 counter-clockwise.", "3 clockwise.", "5 clockwise."],
     answer: 2,
-    explain: "",
+    explain: "Pull the crank out and turn it clockwise for 3 turns, until it reaches the mechanical stop.",
+    reference: "Landing Gear - Controls & Indicators (gravity extension)",
   },
   {
     id: 30,
@@ -269,7 +285,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "You are at the gate. You have started engine #2. Before starting engine #1, you notice that the PTU test has not been activated. Is it normal?",
     options: ["No. You have to call the mechanics.", "The PTU has been shutoff", "The PTU will not work until the second engine has been started."],
     answer: 2,
-    explain: "",
+    explain: "Yes, this is normal. The PTU is inhibited during the first engine you start (here, engine #2) and only runs its automatic test during the second engine you start — since engine #1 hasn't been started yet, there's nothing wrong.",
+    reference: "Hydraulic - Controls & Indicators (overhead panel)",
   },
   {
     id: 32,
@@ -295,7 +312,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The RAT pressurizes the Blue hydraulic system to approximately ______ psi.",
     options: ["1500", "2500", "3000", "3500"],
     answer: 1,
-    explain: "",
+    explain: "Normal system pressure is 3,000 PSI, but that drops to about 2,500 PSI when a system is being powered by the RAT instead.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 35,
@@ -303,7 +321,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The RAT is capable of powering a pump which will pressurize:",
     options: ["Only the blue system.", "All systems.", "The blue and yellow system.", "The blue and green system."],
     answer: 0,
-    explain: "",
+    explain: "The RAT's pump only ever pressurizes the Blue system — it has no connection to Green or Yellow.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 36,
@@ -320,7 +339,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "Describe the PTU status with a green system reservoir overheat, low pressure or low fluid level.",
     options: ["The PTU will be inhibited", "The crew must select the PTU ON.", "The PTU fault light will remain illuminated as long as the problem exists. The PTU should be selected OFF.", "The crew must select the PTU OFF then ON"],
     answer: 2,
-    explain: "",
+    explain: "Any of these three (Green or Yellow reservoir overheat, low air pressure, or low fluid level) lights the PTU FAULT light with an ECAM caution, and — matching how the ECAM procedure handles a reservoir overheat — the crew response is to select the PTU OFF, stopping it from continuing to pressurize the affected system.",
+    reference: "Hydraulic Abnormal Procedures - HYD PTU FAULT",
   },
   {
     id: 38,
@@ -328,7 +348,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The hand pump supplies yellow system pressure to the:",
     options: ["Normal brakes.", "Alternate brakes", "Passenger doors.", "Cargo doors."],
     answer: 3,
-    explain: "",
+    explain: "The hand pump exists specifically to pressurize Yellow for operating the cargo doors when no electrical power is available.",
+    reference: "Hydraulic - General / Description",
   },
   {
     id: 39,
@@ -336,7 +357,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "It is possible to pressurize the green hydraulic system on the ground via the PTU when the parking brake is set.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True — the FCOM states plainly that the PTU allows the green system to be pressurized on the ground when the engines are stopped, without tying that to parking brake position.",
+    reference: "Hydraulic - General / Description (Power Transfer Unit)",
   },
   {
     id: 40,
@@ -344,7 +366,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "Autobraking is initiated by:",
     options: ["Strut compression.", "Reverser action.", "Ground spoiler extension command."],
     answer: 2,
-    explain: "",
+    explain: "Automatic braking activates when the ground spoiler extension command is detected — not from strut compression or reverser deployment directly.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 41,
@@ -352,7 +375,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "How can the pilot switch off the Fire Shut Off Valves?",
     options: ["By de-pressing the Hydraulic Shut Off Switches.", "By selecting the Hydraulic Valve Switch to the “Closed” position", "By de-pressing the Engine Fire Switches"],
     answer: 2,
-    explain: "",
+    explain: "The Green and Yellow fire shutoff valves close when the crew pushes the corresponding ENG 1(2) FIRE pushbutton — there's no separate dedicated hydraulic shutoff switch for this.",
+    reference: "Hydraulic - General / Description (Fire Shutoff Valves)",
   },
   {
     id: 42,
@@ -369,7 +393,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "What does a PTU FAULT light indicate?",
     options: ["GREEN or YELLOW reservoir overheat.", "GREEN or YELLOW reservoir low air pressure.", "GREEN or YELLOW reservoir low level.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "All three trigger it: the PTU FAULT light comes on for a Green or Yellow reservoir overheat, low air pressure, or low fluid level.",
+    reference: "Hydraulic Abnormal Procedures - HYD PTU FAULT",
   },
   {
     id: 44,
@@ -377,7 +402,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The green DECEL light on the Autobrake switch illuminates when the actual airplane deceleration corresponds to ______ % of the selected rate.",
     options: ["80", "95", "100", "110"],
     answer: 0,
-    explain: "",
+    explain: "The DECEL light comes on green once actual deceleration reaches 80% of the selected rate.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 45,
@@ -385,7 +411,8 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "The _____ hydraulic system provides power for gear extension/retraction.",
     options: ["Yellow.", "Blue", "Green"],
     answer: 2,
-    explain: "",
+    explain: "The green hydraulic system actuates all the landing gear and doors.",
+    reference: "Landing Gear - General / Description",
   },
   {
     id: 46,
@@ -393,6 +420,7 @@ export const HYDRAULIC_SYSTEM_QUESTIONS: Question[] = [
     q: "What are the major equipment losses with loss of Green system?",
     options: ["Speed Brakes.", "Nosewheel steering, Autobrakes *", "Alternate Brakes.", "The upper and lower rudders."],
     answer: 1,
-    explain: "",
+    explain: "Losing Green costs nose wheel steering directly, and autobrake can't arm without green pressure available — so both are lost. Alternate brakes actually run on Yellow (which is unaffected), and speed brakes/rudders aren't green-hydraulic-dependent in the way this question is testing.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
 ];

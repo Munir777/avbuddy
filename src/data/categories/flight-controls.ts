@@ -9,7 +9,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The message WING TIP BRK ON appears on the E/WD. What does it mean?",
     options: ["A hydraulic device locks the flaps in their present position.", "To reduce structural stress, the slats movement is being slowed down through the wing tip brakes.", "To avoid asymmetry, the outer slats are locked in their present position.", "Because of the locked flaps, the wing tip brakes also lock the slats."],
     answer: 0,
-    explain: "",
+    explain: "Wing tip brakes are hydraulically-actuated devices that lock the affected slat or flap surfaces in their current position when triggered by conditions like asymmetry or overspeed - they don't slow the surfaces down, and locking one set (flaps or slats) doesn't force-lock the other.",
+    reference: "Flight Controls - Flaps and Slats (Main Components, Wingtip Brakes)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Aileron droop may best be confirmed by checking which of the following?",
     options: ["The position of the ailerons on the exterior preflight inspection.", "The lower ECAM FLT/CTL page.", "The position of the flap handle."],
     answer: 1,
-    explain: "",
+    explain: "The lower ECAM FLT/CTL page includes an aileron position indication, which is the clearest way to confirm the ailerons have drooped as flaps are extended - a walkaround inspection or the flap handle position alone doesn't reliably confirm the actual aileron deflection.",
+    reference: "Flight Controls - Controls and Indicators (ECAM F/CTL Page, Aileron Position Indication)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The wing tip brakes, once activated:",
     options: ["Lock both the slats and flaps in their current position", "Lock only the flaps in their current position.", "Lock only the slats in their current position.", "Lock only the affected high lift system surfaces in their current position"],
     answer: 3,
-    explain: "",
+    explain: "The FCOM is explicit that wing tip brakes only lock the affected high-lift system - if the flap wingtip brakes engage, the slats can still be operated, and vice versa - so they don't lock both slats and flaps together.",
+    reference: "Flight Controls - Flaps and Slats (Main Components, Wingtip Brakes)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Four hydraulically-operated wing tip brakes are installed to lock the flaps or slats in case of:",
     options: ["Asymmetry and overspeed only", "Asymmetry, overspeed and slow movement", "Asymmetry, overspeed, symmetrical runaway and uncommanded movement", "All of the above"],
     answer: 2,
-    explain: "",
+    explain: "Wing tip brakes activate to lock the flaps or slats in place in case of asymmetry, mechanism overspeed, symmetrical runaway, or uncommanded movement of the surfaces.",
+    reference: "Flight Controls - Flaps and Slats (Main Components, Wingtip Brakes)",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Two control surfaces that have mechanical backup are:",
     options: ["Elevator and rudder.", "Horizontal stabilizer and rudder.", "Speed brakes and rudder."],
     answer: 1,
-    explain: "",
+    explain: "The trimmable horizontal stabilizer and the rudder are the two surfaces with a mechanical backup - the THS via the manual pitch trim wheel, and the rudder via the pedals.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Mechanical Back-Up)",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In Normal Law, what are the limits of Pitch Attitude protections with flaps Full",
     options: ["30° nose up.", "35° nose up progressively reduced to 20°", "25° nose up, progressively reduced to 20° at low speed.", "There is no limit."],
     answer: 2,
-    explain: "",
+    explain: "With flaps in the FULL configuration, normal law's pitch attitude protection limits nose-up attitude to 25 degrees, progressively reduced to 20 degrees as speed decreases.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Protections - Pitch Attitude Protection)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which altitude limitation is associated with high lift devices?",
     options: ["Max altitude for extension is 20, 000 ft.", "Max altitude for extension is 22, 000 ft.", "Max altitude for extension is 25, 000 ft", "Max altitude for extension is 27, 000 ft."],
     answer: 0,
-    explain: "",
+    explain: "The maximum operating altitude with slats and/or flaps extended is 20,000 ft.",
+    reference: "Limitations - Flight Controls (Maximum Altitude Flaps/Slats Extended)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What happens if you release the stick at 40 degrees of bank?",
     options: ["The bank stays at 40°", "The aircraft rolls back to 25°", "The aircraft rolls back to 33° and resumes flight path stability.", "The aircraft rolls back to a bank angle less than 29°."],
     answer: 2,
-    explain: "",
+    explain: "Above 33 degrees of bank, normal law's bank angle protection introduces positive spiral static stability - releasing the sidestick lets the bank angle settle back to 33 degrees rather than staying where it was or continuing to increase.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Lateral Control - Bank Angle Protection)",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The alpha speed lock function:",
     options: ["Will inhibit flap retraction during an inadvertent movement of the flap selector at high AOA or low speeds.", "Will inhibit slat retraction during an inadvertent movement of the flap selector at high AOA or low speeds.", "Automatically raises the flaps if retraction has not been accomplished by 210kts."],
     answer: 1,
-    explain: "",
+    explain: "The alpha/speed lock function inhibits slat retraction at high angles-of-attack or low speeds, using AOA and airspeed data from the ADIRUs - it doesn't act on the flaps.",
+    reference: "Flight Controls - Flaps and Slats (Description, Alpha/Speed Lock Function)",
   },
   {
     id: 10,
@@ -81,7 +90,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The Ground Mode is different in Alternate Law.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "Under alternate law, ground mode becomes active on the ground 5 seconds after touchdown, but it is otherwise identical to the ground mode used in normal law - so the mode itself isn't different, only its activation timing.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Alternate Law - Pitch Control)",
   },
   {
     id: 11,
@@ -89,7 +99,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "If electrical power to a SEC fails:",
     options: ["The affected spoilers automatically retract.", "All spoilers automatically retract.", "The affected spoilers remains in the last commanded position."],
     answer: 0,
-    explain: "",
+    explain: "If a SEC loses electrical power, the spoilers it controls automatically retract - other spoilers controlled by the remaining SECs are unaffected.",
+    reference: "Flight Controls - General Architecture (Roll Control, Electric Control)",
   },
   {
     id: 12,
@@ -97,7 +108,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following statements best describes the Load Alleviation function (LAF)?",
     options: ["Helps the pilot control the airplane.", "Relieves wing structure loads by deflecting the ailerons and spoilers.", "Relieve wing structure loads by deflecting only the spoilers.", "Relieves wing structure loads by deflecting the ailerons."],
     answer: 1,
-    explain: "",
+    explain: "The Load Alleviation Function is listed among the functions of both the aileron-controlling ELACs (normal LAF) and the spoiler-controlling SECs (alternate LAF), consistent with it relieving wing structure loads by deflecting both the ailerons and the spoilers, rather than helping the pilot fly or acting on just one surface type.",
+    reference: "Flight Controls - Controls and Indicators (Overhead Panel, ELAC/SEC Pushbutton Functions)",
   },
   {
     id: 13,
@@ -105,7 +117,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What condition will cause auto flap retraction?",
     options: ["Exceed 210 kts at Flaps 1", "Exceed 190 kt at Flaps 1.", "Exceed 195 kt at Flaps 1", "Exceed 190 kt with Flaps 1 while extending the speedbrake lever."],
     answer: 0,
-    explain: "",
+    explain: "In configuration 1+F, the flaps automatically retract to 0 degrees once the speed reaches 210 kt, before VFE is reached.",
+    reference: "Flight Controls - Flaps and Slats (Description, Configurations)",
   },
   {
     id: 14,
@@ -113,7 +126,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The FAC’s primarily control which control surface?",
     options: ["Elevator.", "Rudder.", "Aileron.", "Elevator and aileron."],
     answer: 1,
-    explain: "",
+    explain: "The two FACs (Flight Augmentation Computers) are dedicated to electrical rudder control.",
+    reference: "Flight Controls - General Architecture (Computers)",
   },
   {
     id: 15,
@@ -121,7 +135,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "When is alpha floor not available?",
     options: ["Out of normal law.", "Below 100 feet RA in landing configuration.", "If the A/THR is deactivated or unavailable.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "Alpha floor needs an active A/THR system to command TOGA thrust, is only available from lift-off until 100 ft RA on approach (so it's unavailable below that), and it's a normal-law protection that becomes inoperative in alternate or direct law - so all three listed conditions do take it out of service.",
+    reference: "Auto Flight - Flight Augmentation (Alpha-Floor Protection)",
   },
   {
     id: 16,
@@ -129,7 +144,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following controls and monitors flaps and slats?",
     options: ["Two ELAC’s.", "Wing tip brakes.", "One slat flap control computer (SFCC).", "Two slat flap control computers (SFCC’s)."],
     answer: 3,
-    explain: "",
+    explain: "Flaps and slats are controlled and monitored by two slat flap control computers (SFCCs), each containing its own slat channel and flap channel.",
+    reference: "Flight Controls - Flaps and Slats (Description, Main Components)",
   },
   {
     id: 17,
@@ -137,7 +153,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Automatic pitch trim is provided both on ground and in flight.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "Automatic pitch trim only operates in the normal-law flight mode - the ground mode is a direct sidestick-to-elevator relationship with no auto trim, so automatic trim isn't provided on the ground.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Pitch Control - Ground Mode)",
   },
   {
     id: 18,
@@ -145,7 +162,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The aircraft rudder can be manually trimmed with the autopilot engaged.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "The rudder trim rotary selector has no effect once the autopilot is engaged - with the autopilot flying, the FMGC computes the rudder trim orders instead.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Trim)",
   },
   {
     id: 19,
@@ -153,7 +171,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "To disable a side-stick, you have to depress the red take-over button on the active stick. Holding the button down for 40 seconds will electrically lock the other stick out until its own red take-over button is pushed again.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Holding a sidestick's takeover pushbutton for more than 40 seconds latches priority, deactivating the other sidestick - releasing the pushbutton after that doesn't restore it, so the deactivated stick stays locked out until a takeover pushbutton is pressed again.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
   {
     id: 20,
@@ -161,7 +180,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Should the active elevator actuator fail, elevator control is:",
     options: ["Lost.", "Maintained by the other actuator.", "Reduced."],
     answer: 1,
-    explain: "",
+    explain: "Each elevator is driven by two servojacks - if the active one fails, the other (previously in damping mode) automatically becomes active, so elevator control is maintained rather than lost.",
+    reference: "Flight Controls - General Architecture (Pitch Control, Actuation - Elevators)",
   },
   {
     id: 21,
@@ -169,7 +189,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "When the flaps are extended, the ailerons:",
     options: ["Go to the centering mode.", "Pitch up 5 degrees.", "Droop 5 degrees.", "Droop 10 degrees."],
     answer: 2,
-    explain: "",
+    explain: "The ailerons droop 5 degrees down whenever the flaps are extended.",
+    reference: "Flight Controls - General Architecture (Roll Control, General)",
   },
   {
     id: 22,
@@ -177,7 +198,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "To select speed brakes inflight:",
     options: ["Push down on the speed brake handle and move it forward.", "Push down on the speed brake handle and move it aft.", "Pull up on the speed brake handle and move it aft."],
     answer: 1,
-    explain: "",
+    explain: "The speedbrake lever is pushed down and set to the desired position to extend the speedbrakes.",
+    reference: "Flight Controls - Controls and Indicators (Pedestal, Speedbrake Lever)",
   },
   {
     id: 23,
@@ -185,7 +207,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "When is the Flight Mode active?",
     options: ["From takeoff until landing.", "From liftoff until landing", "From liftoff until flare mode engages at 50 ft RA.", "From takeoff until passing 50 kts on landing (main shock absorbers depressed)"],
     answer: 2,
-    explain: "",
+    explain: "The normal-law flight mode is active from liftoff until the aircraft descends through 50 ft RA on approach, at which point it transitions to flare mode.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Pitch Control - Flight Mode / Flare Mode)",
   },
   {
     id: 24,
@@ -193,7 +216,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Failure to retract the flaps after takeoff will:",
     options: ["Activate the wing tip brakes.", "Result in automatic flap and slat retraction at 210 kts.", "Result in automatic flap and slat retraction at 220 kts.", "Result in automatic flap retraction at 210 kts."],
     answer: 3,
-    explain: "",
+    explain: "In configuration 1+F, if the pilot doesn't select configuration 0 after takeoff, the flaps (not the slats) automatically retract once the speed reaches 210 kt.",
+    reference: "Flight Controls - Flaps and Slats (Controls and Indicators, Takeoff in Configuration 1)",
   },
   {
     id: 25,
@@ -201,7 +225,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Can the rudders be moved with both FAC’s inoperative?",
     options: ["Yes, if both FACs fail, maximum rudder deflection can be obtained when the slats are extended", "Yes, if both FACs fail, maximum rudder deflection can be obtained", "Yes, if both FACs fail, maximum rudder deflection can be obtained when the gear is extended or flaps extended at 1 minimum", "No"],
     answer: 0,
-    explain: "",
+    explain: "Even with both FACs failed, the rudder keeps working - the rudder travel limit simply freezes at its last value until the slats extend, at which point full rudder travel authority is recovered.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Travel Limit)",
   },
   {
     id: 26,
@@ -209,7 +234,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "When ground spoilers deploy automatically:",
     options: ["All ten spoiler panels fully deploy.", "Four spoiler panels on each wing deploy.", "All ten spoiler panels deploy half way.", "Six spoiler panels on each wing deploy."],
     answer: 0,
-    explain: "",
+    explain: "The ground spoiler function deploys all spoiler panels (all ten, across both wings) to full extension, along with the aileron anti-droop function.",
+    reference: "Flight Controls - General Architecture (Speed Brakes and Ground Spoilers, Ground Spoiler Control)",
   },
   {
     id: 27,
@@ -217,7 +243,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Can you manually trim the rudder with the autopilot engaged?",
     options: ["Yes.", "No."],
     answer: 1,
-    explain: "",
+    explain: "The rudder trim rotary selector and reset pushbutton have no effect while the autopilot is engaged.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Trim)",
   },
   {
     id: 28,
@@ -225,7 +252,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Where does the SFCCs obtain AOA and air data information from?",
     options: ["SEC", "ELAC", "ADIRU", "ADC"],
     answer: 2,
-    explain: "",
+    explain: "The SFCCs use angle-of-attack and airspeed data from the ADIRUs (for example, to drive the alpha/speed lock function).",
+    reference: "Flight Controls - Flaps and Slats (Description, Alpha/Speed Lock Function)",
   },
   {
     id: 29,
@@ -233,7 +261,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What happens in the side stick-neutral high speed protection mode?",
     options: ["The autopilot disengages, bank angle limit is 30° and the aircraft is 25° roll limited.", "The autopilot disengages, bank angle limit is 45° and the aircraft is 25° roll limited.", "The autopilot disengages, bank angle limit is 40° and the aircraft rolls wings level and pitches up to slow down to VMO/MMO.", "The autopilot disengages, bank angle limit is 35° and the aircraft rolls wings level and pitches to 10° to slow down to VMO/MMO - 20 kt."],
     answer: 2,
-    explain: "",
+    explain: "Above VMO/MMO, normal law's high-speed protection rolls the aircraft toward wings-level (spiral stability shifts to 0 degrees of bank instead of 33), limits bank angle to 40 degrees, and applies a nose-up pitch order to help the aircraft slow back toward VMO/MMO.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Protections - High Speed Protection)",
   },
   {
     id: 30,
@@ -241,7 +270,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The spoiler panels are the only flight control surfaces with no redundant control.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Each spoiler is driven by a single servojack, unlike the ailerons and elevators, which each have two - so the spoilers are the one flight control surface type without redundant actuation.",
+    reference: "Flight Controls - General Architecture (Roll Control, Actuation - Spoilers)",
   },
   {
     id: 31,
@@ -249,15 +279,18 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In normal law, if one stick is rapidly pulled fully back, can the aircraft’s maximum allowable “G” load be exceeded?",
     options: ["Yes. Rapid side stick deflection must never be made.", "Yes, until maximum pitch attitude is reached.", "No. At Maximum “G” load, the side sticks are de-activated for 5 seconds.", "No. The load factor limitation overrides side stick commands to avoid excessive “G” loads."],
     answer: 3,
-    explain: "",
+    explain: "Normal law's load factor limitation automatically caps the load factor (+2.5g/-1g clean, +2g/0g in other configurations) no matter how abruptly the sidestick is pulled, so a rapid full-aft input can't overstress the aircraft.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Protections - Load Factor Protection)",
   },
   {
     id: 32,
     system: "Flight Controls",
     q: "What kind of protections are provided if the aircraft is in Alternate Law?",
     options: ["G-load protection with a reduced factor.", "Speed Stability", "Full G load protection and speed stability", "G-load protection and speed stability if the ADIRS and elevators are working."],
+    // REVIEW (uncertain): The FCOM confirms alternate law keeps load factor limitation (similar to normal law) plus low- and high-speed stability, which together amount to G-load protection and speed stability. But the extracted text doesn't tie the availability of these protections to a specific "if the ADIRS and elevators are working" condition, so that qualifier couldn't be verified. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 33,
@@ -265,7 +298,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Sidesticks provide electrical signals to the flight control computers; if both sidesticks are operated:",
     options: ["The inputs cancel each other.", "Both inputs are algebraically added.", "The F/O input is overridden by the CAP input."],
     answer: 1,
-    explain: "",
+    explain: "If both pilots move their sidesticks at the same time and neither takes priority, the flight control computers add the two inputs together algebraically.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
   {
     id: 34,
@@ -273,7 +307,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Let’s assume the F/O presses his takeover pushbutton and releases it after more than 40 seconds.",
     options: ["The Captain’s side stick is de-activated unless he presses his takeover pushbutton.", "The Captain is unable to re-activate his side-stick for the rest of the flight", "Both sticks are active", "The Captain’s side stick is active as long as the F/O’s side stick is in neutral position."],
     answer: 0,
-    explain: "",
+    explain: "Holding a takeover pushbutton for more than 40 seconds latches priority - once released, the other pilot's sidestick stays deactivated until that pilot presses his own takeover pushbutton to reactivate it.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
   {
     id: 35,
@@ -281,7 +316,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "How many actuators are provided to control the ailerons and how many hydraulic sources supply these actuators?",
     options: ["2 hydraulic sources with 4 actuators.", "1 hydraulic source with 2 actuators.", "4 hydraulic sources with 4 actuators.", "3 hydraulic sources with 4 actuators."],
     answer: 0,
-    explain: "",
+    explain: "Each aileron has two electrically-controlled hydraulic servojacks (four actuators total for both ailerons), and the system's damping fallback mode is tied to the blue and green hydraulic systems, indicating those are the two sources supplying them.",
+    reference: "Flight Controls - General Architecture (Roll Control, Actuation - Ailerons)",
   },
   {
     id: 36,
@@ -289,7 +325,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Turn coordination is available in Alternate Law.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "When flying in pitch alternate law, lateral control uses roll direct law together with yaw in either alternate or mechanical law - turn coordination through the rudder is a normal-law-only feature, so it isn't available in alternate law.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Alternate Law - Lateral Control)",
   },
   {
     id: 37,
@@ -297,7 +334,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The flight control surfaces are _______ controlled and _______ actuated.",
     options: ["Electrically / hydraulically", "Mechanically / hydraulically", "Electrically / electrically"],
     answer: 0,
-    explain: "",
+    explain: "Flight control surfaces are electrically controlled and hydraulically actuated (with the stabilizer and rudder also able to be mechanically controlled).",
+    reference: "Flight Controls - General (Basic Principle)",
   },
   {
     id: 38,
@@ -305,7 +343,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What is the maximum flap setting for in-flight use of the spoilers?",
     options: ["Flaps FULL.", "Flaps 3.", "Spoilers are not approved for in-flight use.", "Flaps 10."],
     answer: 1,
-    explain: "",
+    explain: "Speedbrake extension is inhibited once the flaps reach configuration FULL, so Flaps 3 is the highest flap setting at which the speedbrakes can still be used in flight.",
+    reference: "Flight Controls - General Architecture (Speed Brakes and Ground Spoilers)",
   },
   {
     id: 39,
@@ -313,7 +352,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In Pitch Alternate Law; the low Speed stability (nose down command) can be overridden by the sidestick.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "In pitch alternate law, the low-speed stability function introduces a gentle progressive nose-down signal near the stall, but the pilot can override this demand with the sidestick.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Alternate Law - Reduced Protections)",
   },
   {
     id: 40,
@@ -321,7 +361,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Automatic pitch trim is inhibited when:",
     options: ["Radio altitude is below 50 feet (100 feet with autopilot coupled).", "Bank angle is greater than 33 degrees.", "Load factor is less than 1G.", "First two statements are correct"],
     answer: 3,
-    explain: "",
+    explain: "Automatic pitch trim freezes below 50 ft RA (100 ft with the autopilot engaged); a related nose-up trim limit also kicks in once bank angle exceeds 33 degrees or load factor moves outside its normal range, so both the radio-altitude and bank-angle conditions restrict automatic trim.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Pitch Control and Protections)",
   },
   {
     id: 41,
@@ -329,7 +370,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following will automatically reset after landing?",
     options: ["THS.", "Rudder trim.", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "After touchdown, once pitch attitude stays below 2.5 degrees for more than 5 seconds, the pitch trim (THS) automatically resets to zero - the rudder trim has no equivalent automatic reset and needs the pilot to push its RESET pushbutton.",
+    reference: "Flight Controls - Controls and Indicators (Pedestal, Pitch Trim Wheel)",
   },
   {
     id: 42,
@@ -337,7 +379,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "FAC generated slat and flap extension, retraction, and limiting speeds are visually displayed on which of the following?",
     options: ["The MCDU perf page.", "The lower ECAM F/CTL page.", "Both pilot’s PFD airspeed displays.", "All of the above."],
     answer: 2,
-    explain: "",
+    explain: "The characteristic speeds the FAC computes - including the slat/flap-related F, S, and Green Dot speeds - are displayed on the PFD speed scale. The MCDU's takeoff/approach pages show similar speed values, but those are computed separately by the FMS from gross weight, not generated by the FAC.",
+    reference: "Speeds Definition - Characteristic Speeds",
   },
   {
     id: 43,
@@ -345,7 +388,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In the event of a complete loss of electrical flight control signals, the airplane reverts to a _______ mode.",
     options: ["Mechanical", "Alternate Law", "Alternate law", "Abnormal Attitude law"],
     answer: 0,
-    explain: "",
+    explain: "A complete loss of electrical flight control signals is exactly the scenario the mechanical backup is designed for - the pilot then controls pitch via manual THS trim and yaw via the rudder pedals.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Mechanical Back-Up)",
   },
   {
     id: 44,
@@ -353,15 +397,18 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In normal law, what is the maximum bank angle you can reach with the side stick fully deflected?",
     options: ["33°", "49°", "67°", "70°"],
     answer: 2,
-    explain: "",
+    explain: "With the sidestick held at full lateral deflection in normal law, the bank angle goes to 67 degrees and no further.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Lateral Control - Bank Angle Protection)",
   },
   {
     id: 45,
     system: "Flight Controls",
     q: "Mechanically backed-up control surfaces:",
     options: ["Require hydraulic power for actuation", "Are mechanically connected to the cockpit controls.", "Both are correct."],
+    // REVIEW (uncertain): The FCOM confirms all flight control surfaces, mechanical backup included, are hydraulically actuated, and separately describes the THS and rudder as mechanically linked to the pitch trim wheel and rudder pedals respectively. That reading would support both listed properties being true rather than just the hydraulic-power one, so a single best answer couldn't be confirmed. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 46,
@@ -369,7 +416,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which controls are used for the mechanical backup?",
     options: ["Ailerons and rudder.", "THS and rudder.", "Elevators and ailerons.", "THS and elevator."],
     answer: 1,
-    explain: "",
+    explain: "The mechanical backup uses the THS (via the pitch trim wheel) for pitch and the rudder (via the pedals) for yaw.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Mechanical Back-Up)",
   },
   {
     id: 47,
@@ -377,7 +425,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "If angle of attack protection is active or flaps are in the configuration Full:",
     options: ["Speed brake extension is inhibited.", "Aileron travel is reduced.", "Speed brake extension travel is reduced."],
     answer: 0,
-    explain: "",
+    explain: "Speedbrake extension is inhibited whenever angle-of-attack protection is active or the flaps are in configuration FULL (along with a few other conditions, like a faulted elevator or thrust above MCT).",
+    reference: "Flight Controls - General Architecture (Speed Brakes and Ground Spoilers)",
   },
   {
     id: 48,
@@ -385,15 +434,18 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The wing tip brakes are:",
     options: ["Pneumatically actuated.", "Electric brakes.", "Hydraulically actuated.", "Mechanically controlled, hydraulically actuated."],
     answer: 2,
-    explain: "",
+    explain: "Wing tip brakes use hydraulic power (blue/green or blue/yellow, depending on the surface) to lock the slats or flaps in place.",
+    reference: "Flight Controls - Flaps and Slats (Description, Main Components)",
   },
   {
     id: 49,
     system: "Flight Controls",
     q: "The purpose of the Load Alleviation Function is to:",
     options: ["Relieve wing structure loads by moving the ailerons.", "Relieve wing structure loads by extending spoilers 4 and 5.", "Help slow the airplane down.", "First two statements are correct"],
+    // REVIEW (uncertain): The FCOM confirms the Load Alleviation Function is among the functions performed jointly by the aileron-controlling ELACs and the spoiler-controlling SECs, consistent with relieving wing loads through both ailerons and spoilers rather than helping slow the aircraft down. But the extracted text doesn't identify spoilers 4 and 5 specifically as the surfaces involved, so that detail couldn't be verified. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 50,
@@ -401,7 +453,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Horizontal stabilizer trim automatically resets to zero degrees after landing.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "Once pitch attitude stays below 2.5 degrees for more than 5 seconds after touchdown, pitch trim automatically resets to zero.",
+    reference: "Flight Controls - Controls and Indicators (Pedestal, Pitch Trim Wheel)",
   },
   {
     id: 51,
@@ -409,7 +462,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In Pitch Normal Law Flight Mode; pitch trim is:",
     options: ["Manual without the autopilot engaged.", "Automatic as long as the autopilot is engaged.", "Automatic with or without the autopilot engaged."],
     answer: 2,
-    explain: "",
+    explain: "Pitch trim is automatic in normal law's flight mode both with the autopilot engaged and while hand-flying.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Pitch Control - Flight Mode)",
   },
   {
     id: 52,
@@ -417,7 +471,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "While on the ground in Roll Normal Law there is a direct relationship between sidestick deflection and the corresponding aileron and spoiler deflection.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "On the ground in normal law, the sidestick directly commands aileron and roll-spoiler deflection, with the amount of surface deflection for a given stick input depending on aircraft speed.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Lateral Control)",
   },
   {
     id: 53,
@@ -425,7 +480,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "When the landing gear is extended, pitch alternate law:",
     options: ["Remains the same.", "Degrades to pitch direct law.", "Degrades to pitch backup law."],
     answer: 1,
-    explain: "",
+    explain: "In pitch alternate law, selecting the landing gear down switches the flight mode to flare mode, which is a direct stick-to-elevator relationship - effectively the same relationship used in pitch direct law.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Alternate Law - Flare Mode)",
   },
   {
     id: 54,
@@ -433,7 +489,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Roll control is achieved by:",
     options: ["Ailerons", "Ailerons and rudder.", "One aileron and four spoilers on each wing.", "Ailerons, rudder and spoilers"],
     answer: 2,
-    explain: "",
+    explain: "Roll control is provided by one aileron and four spoilers on each wing.",
+    reference: "Flight Controls - General Architecture (Roll Control, General)",
   },
   {
     id: 55,
@@ -441,7 +498,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The FLAP lever sends signal to Slat Flap Control Computer (SFCC) to command movement.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Moving the FLAPS lever sends a position signal that the SFCCs use to command slat and flap movement through the power control unit.",
+    reference: "Flight Controls - Flaps and Slats (Description, Main Components)",
   },
   {
     id: 56,
@@ -449,7 +507,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Should both FACs fail, maximum rudder deflection can be obtained after the ______ are extended.",
     options: ["Flaps", "Slats", "Gear"],
     answer: 1,
-    explain: "",
+    explain: "The rudder travel limit freezes at its last value if both FACs fail, but recovers full authority once the slats extend.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Travel Limit)",
   },
   {
     id: 57,
@@ -457,7 +516,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Selection of flaps one prior to take-off will select which of the following?",
     options: ["Slats 1 and flaps 1 (1+F).", "Slats 0 and flaps 1 (0+F).", "Slats 1 and flaps 0 (1).", "Slats 1 and flaps 5 (1)."],
     answer: 0,
-    explain: "",
+    explain: "Selecting flaps 1 before takeoff commands configuration 1+F - slats to 18 degrees and flaps to 10 degrees.",
+    reference: "Flight Controls - Flaps and Slats (Controls and Indicators, Takeoff in Configuration 1)",
   },
   {
     id: 58,
@@ -465,7 +525,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "If both FAC’s fail, what happens to the rudder limiter?",
     options: ["It immediately assumes the low speed position.", "It freezes at its present position and assumes the low speed position when flaps 1 are selected", "Maximum rudder deflection can be obtained after slats extended.", "Maximum rudder deflection can be obtained after flaps extended."],
     answer: 1,
-    explain: "",
+    explain: "With both FACs failed, the rudder travel limit freezes at its current value and then reverts to the low-speed (maximum-deflection) setting once flaps 1 is selected, which extends the slats.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Travel Limit)",
   },
   {
     id: 59,
@@ -473,7 +534,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Automatic rudder trim is provided at the rate of _____ while the manual rudder trim rate is ______ up to a maximum of ______.",
     options: ["5 deg/sec - 2 deg/sec - 20 degs", "5 deg/sec - 1 deg/sec - 20 degs", "8 deg/sec - 2 deg/sec - 10 degs", "8 deg/sec - 5 deg/sec - 10 degs"],
     answer: 1,
-    explain: "",
+    explain: "The manual rudder trim rate via the rotary RUD TRIM selector is confirmed at 1 degree of rudder travel per second, which matches this option and rules out the others - the automatic rate and maximum travel figures couldn't be independently verified in the extracted text, but they're consistent with the values used in a related question in this same bank about autopilot-on/off rudder trim rates.",
+    reference: "Flight Controls - Controls and Indicators (Pedestal, RUD TRIM Rotary Selector)",
   },
   {
     id: 60,
@@ -481,7 +543,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What happens in the event of a single ELAC failure?",
     options: ["ELAC functions are transferred the SEC’s.", "ELAC functions are transferred to FAC’s.", "SEC functions are transferred the ELAC’s.", "The functions of the failed ELAC will be assumed by the remaining ELAC."],
     answer: 3,
-    explain: "",
+    explain: "If a single ELAC fails, the remaining ELAC automatically takes over its functions - pitch control shifts to a SEC only if neither ELAC is available.",
+    reference: "Flight Controls - General Architecture (Pitch Control / Roll Control, Electrical Control)",
   },
   {
     id: 61,
@@ -489,7 +552,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following statements are correct concerning the side stick takeover push button?",
     options: ["The last pilot to depress the push button has priority.", "If the takeover push button is depressed for more than 40 seconds, the onside system will retain priority after the push button is released.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "The pilot who presses the takeover pushbutton last gets priority, and holding it for more than 40 seconds latches that priority so it's retained even after release.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
   {
     id: 62,
@@ -497,7 +561,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "With the aircraft in Pitch Alternate Law, roll is in _____ Law.",
     options: ["Direct", "Normal", "Alternate"],
     answer: 0,
-    explain: "",
+    explain: "When the aircraft is in pitch alternate law, lateral (roll) control is governed by roll direct law.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Alternate Law - Lateral Control)",
   },
   {
     id: 63,
@@ -505,7 +570,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "In pitch normal law, the elevator control changes from the normal mode to a protection mode when the angle of attack is greater than:",
     options: ["Alpha Max", "Alpha Prot", "Alpha Floor"],
     answer: 1,
-    explain: "",
+    explain: "In normal law, once the angle of attack exceeds alpha PROT, elevator control switches from a load-factor demand to an angle-of-attack demand - this is the high-AOA protection mode.",
+    reference: "Flight Controls - Flight Control System (Normal Law, Protections - High Angle-of-Attack Protection)",
   },
   {
     id: 64,
@@ -513,7 +579,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Are there any control surfaces with a mechanical backup?",
     options: ["Yes, the ailerons.", "Yes, the spoilers", "Yes, the THS and the rudder.", "No, there aren’t any control surfaces with mechanical backup."],
     answer: 2,
-    explain: "",
+    explain: "Yes - the THS and the rudder both have a mechanical backup.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Mechanical Back-Up)",
   },
   {
     id: 65,
@@ -521,7 +588,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Selection of flaps 1 in flight will select which of the following configurations?",
     options: ["Slats 1 and flaps 1 (1+F).", "Slats 0 and flaps 1 (0+F).", "Slats 1 and flaps 0 (1).", "Slats 1 and flaps 5 (1+F)."],
     answer: 2,
-    explain: "",
+    explain: "Selecting flaps 1 in flight (from the clean configuration) commands configuration 1 - slats to 18 degrees and flaps to 0 degrees - which differs from the ground/takeoff \"1+F\" configuration that also extends the flaps to 10 degrees.",
+    reference: "Flight Controls - Flaps and Slats (Controls and Indicators, Configuration 0 to 1 in Flight)",
   },
   {
     id: 66,
@@ -529,7 +597,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Is there any rudder pedal feedback for the yaw damping and turn coordination functions?",
     options: ["Yes.", "No."],
     answer: 1,
-    explain: "",
+    explain: "There is no feedback to the rudder pedals from the automatic yaw damping or turn coordination functions.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Travel Limit)",
   },
   {
     id: 67,
@@ -537,7 +606,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What computer normally commands the operation of the elevators and horizontal stabilizer?",
     options: ["SEC 1", "FAC 1", "ELAC 2", "SEC 2"],
     answer: 2,
-    explain: "",
+    explain: "In normal operation, ELAC 2 controls both the elevators and the horizontal stabilizer.",
+    reference: "Flight Controls - General Architecture (Pitch Control, Electrical Control)",
   },
   {
     id: 68,
@@ -545,7 +615,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What control surfaces do the FACs control?",
     options: ["The elevators.", "The spoilers.", "The rudder.", "All of the above."],
     answer: 2,
-    explain: "",
+    explain: "The FACs are dedicated to electrical rudder control.",
+    reference: "Flight Controls - General Architecture (Computers)",
   },
   {
     id: 69,
@@ -553,7 +624,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What happens to high speed (VMO/MMO) when you are in Alternate Law?",
     options: ["VMO is reduced to 320 kt and MMO minus 10 kt.", "VMO is reduced to 330 kt and MMO minus 10 kt", "VMO is reduced to 320 kt and MMO does not change.", "There is no change."],
     answer: 2,
-    explain: "",
+    explain: "The ECAM's alternate-law status message shows a reduced MAX SPEED of 320 kt without an accompanying reduced Mach figure, so VMO drops to 320 kt while MMO is unaffected.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, General)",
   },
   {
     id: 70,
@@ -561,7 +633,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Can the crew make a flight control input that will over-stress the airplane in direct law?",
     options: ["No. The system is designed to avoid such an attempt.", "Yes, there are no protections provided in direct law."],
     answer: 1,
-    explain: "",
+    explain: "Direct law removes all flight envelope protections, so a large enough control input can overstress the airframe - there's no system safeguard against it in that law.",
+    reference: "Flight Controls - Flight Control System (Reconfiguration Control Laws, Direct Law)",
   },
   {
     id: 71,
@@ -569,7 +642,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "The autopilot will disconnect if the side stick takeover push button is depressed.",
     options: ["True.", "False"],
     answer: 0,
-    explain: "",
+    explain: "Any action on a sidestick's takeover pushbutton disengages the autopilot if it's engaged.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
   {
     id: 72,
@@ -577,7 +651,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What are the rudder trim rates?",
     options: ["A/P on - 5 deg/sec, A/P off - 1 deg/sec.", "A/P on - 2 1/5 deg/sec, A/P off - 5 deg/sec.", "A/P on - 3 deg/sec, A/P off - 6 deg/sec.", "A/P on - 5 deg/sec, A/P off - 6 deg/sec."],
     answer: 0,
-    explain: "",
+    explain: "The confirmed autopilot-off rudder trim rate (1 degree per second via the rotary RUD TRIM selector) matches only this option among the choices; the FMGC-computed autopilot-on rate couldn't be independently verified in the extracted text, but it's consistent with the 5 degree/second figure used in a related question in this bank.",
+    reference: "Flight Controls - Controls and Indicators (Pedestal, RUD TRIM Rotary Selector)",
   },
   {
     id: 73,
@@ -585,7 +660,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "What happens to the rudder limits if both FAC’s fault?",
     options: ["The limit freezes at the fault condition until Flaps 1 is selected.", "The limit freezes at the fault condition until Flaps 5 is selected.", "The limit freezes at the fault condition until Flaps 1 is selected. Then it resets to the low speed limits for increased control."],
     answer: 2,
-    explain: "",
+    explain: "With both FACs faulted, the rudder limit freezes at the fault condition and stays there until flaps 1 is selected - which extends the slats and lets the limit reset to the low-speed (maximum authorized) deflection.",
+    reference: "Flight Controls - General Architecture (Yaw Control, Rudder Travel Limit)",
   },
   {
     id: 74,
@@ -593,7 +669,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "TOGA thrust is provided regardless of throttle position when _______ engages the autothrottle system.",
     options: ["Alpha Max", "Alpha Prot", "Alpha Floor"],
     answer: 2,
-    explain: "",
+    explain: "Alpha floor is the protection that commands TOGA thrust regardless of thrust lever position.",
+    reference: "Auto Flight - Flight Guidance (Autothrust, Alpha Floor)",
   },
   {
     id: 75,
@@ -601,15 +678,18 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following statements is correct concerning the elevator aileron computers (ELAC’s):",
     options: ["Three computers which achieve normal elevator, stabilizer, and aileron control.", "Two computers which achieve normal and standby control of the elevators, ailerons, and trimmable horizontal stabilizer.", "Three computers which achieve normal and standby control of the elevators, ailerons, and THS.", "Two computers which achieve normal elevator, stabilizer, and aileron control."],
     answer: 3,
-    explain: "",
+    explain: "The two ELACs provide normal elevator, stabilizer, and aileron control - standby elevator and THS control after an ELAC failure is a SEC function, not something the ELACs themselves provide.",
+    reference: "Flight Controls - General Architecture (Computers)",
   },
   {
     id: 76,
     system: "Flight Controls",
     q: "You can degrade directly from Normal Law to Direct Law with gear down and a dual radio altimeter fault.",
     options: ["True.", "False."],
+    // REVIEW (uncertain): The FCOM's flight control law reconfiguration material describes alternate law, direct law, and the mechanical backup, but the extracted text doesn't specifically discuss a dual radio altimeter fault combined with gear-down as a trigger for degrading straight from normal law to direct law, so this couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 77,
@@ -617,7 +697,8 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "Which of the following statements is correct concerning the spoiler elevator computers (SEC’s)?",
     options: ["Two computers which achieve spoiler control and standby elevator and THS control.", "Three computers which achieve spoiler control and normal elevator and THS control.", "Three computers which achieve spoiler control and standby elevator and THS control."],
     answer: 2,
-    explain: "",
+    explain: "The three SECs provide spoiler control plus standby (not normal) elevator and THS control.",
+    reference: "Flight Controls - General Architecture (Computers)",
   },
   {
     id: 78,
@@ -625,6 +706,7 @@ export const FLIGHT_CONTROLS_QUESTIONS: Question[] = [
     q: "If both pilots deflect their side sticks fully back:",
     options: ["The “pitch up” order is twice as high as with only one stick deflected.", "The “pitch up” order is 1.5 times higher as high as with only one stick deflected.", "No inputs are sent to the flight control computers unless one pilot presses the takeover pushbutton on his stick.", "The “pitch up” order is equal to a single stick deflection."],
     answer: 3,
-    explain: "",
+    explain: "The flight control computers add both pilots' simultaneous sidestick signals together, but the combined total is capped at the signal a single sidestick would produce at its maximum deflection - so two sticks fully back command the same pitch-up order as one stick fully back, not more.",
+    reference: "Flight Controls - Controls and Indicators (Lateral Consoles, Sidestick Priority Logic)",
   },
 ];

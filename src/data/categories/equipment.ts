@@ -9,7 +9,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "On the cockpit overhead panel there is a three position EMERGENCY EXIT LT switch. What lights are associated with this switch?",
     options: ["Exit signs, emergency lights, and floor path lights.", "Exit signs, emergency lights, main panel flood lights, and floor path lights.", "Exit signs, emergency lights, dome lights, main panel flood lights, and the standby compass light.", "Exit signs, and the standby compass light."],
     answer: 0,
-    explain: "",
+    explain: "Setting the cockpit EMER EXIT LT switch to ON brings on the overhead emergency lights, the EXIT signs, and the floor proximity escape-path marking system together — it isn't tied to the main panel flood lights, dome lights, or the standby compass light, which are separate cockpit-lighting circuits.",
+    reference: "Lights - Emergency Lighting (Controls and Indicators)",
   },
   {
     id: 2,
@@ -17,15 +18,18 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "The PBE provides a breathable atmosphere for approximately ______ minutes.",
     options: ["10", "15", "16", "18"],
     answer: 1,
-    explain: "",
+    explain: "The PBE hood is rated to operate for at least 15 minutes, giving a breathable atmosphere for that duration.",
+    reference: "Oxygen - Portable Oxygen System (Flight Crew's Portable Oxygen System)",
   },
   {
     id: 3,
     system: "Equipment",
     q: "What are the indications that the PBE oxygen supply has depleted?",
     options: ["The hood collapses to the point that it touches your face or by a flashing red light in addition to the flashing green light.", "The sound of the oxygen flow stops and flashing red and green lights appear.", "No 02 supply indications, & lights only indicate time.", "All of the above."],
+    // REVIEW (uncertain): The FCOM confirms the PBE hood's serviceability indicator (cracked/red vs green) and its roughly 15-minute duration, but the extracted "Using the Hood" procedure text is an untranscribed image/diagram, so the specific depletion indications (hood collapsing, flashing lights) described in this option couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 4,
@@ -33,7 +37,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "There is no other way of deploying the overwing escape slide if it fails to deploy automatically on opening the emergency exit.",
     options: ["True.", "False"],
     answer: 1,
-    explain: "",
+    explain: "The escape slide's automatic inflation is backed up by a manual option — if the inflation bottle fails to discharge on its own, a crew member can open its valve directly to trigger deployment, so an automatic-deployment failure isn't the end of the line.",
+    reference: "Doors - Passenger Doors / Emergency Exits (General)",
   },
   {
     id: 5,
@@ -41,7 +46,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "How is crew oxygen provided?",
     options: ["From a single bottle.", "There is one bottle per crew member except for jumpseaters", "Oxygen generator.", "One oxygen bottle with an oxygen generator."],
     answer: 0,
-    explain: "",
+    explain: "The cockpit's fixed oxygen system is built around a single high-pressure cylinder feeding a shared distribution system, supplying all of the crew's quick-donning masks from that one bottle — not one bottle per crew member.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Description, General)",
   },
   {
     id: 6,
@@ -49,7 +55,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "Although no busses are unpowered, illumination of emergency exit lights in the cabin is desired. Which of the following answers are correct?",
     options: ["The emergency lights, exit signs and the floor paths markings will illuminate if the guarded EMER EXIT LT pb on the flight attendant CIDS panel is selected ON.", "The emergency lights, exit signs and the escape path markings will illuminate if the cockpit EMER EXIT LT switch is ON.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both routes work: the guarded EMER EXIT LT pushbutton on the flight attendant's CIDS/Purser panel turns on the emergency lights, exit signs, and escape path markings regardless of the cockpit switch's position, and setting the cockpit EMER EXIT LT switch to ON does the same thing from the flight deck.",
+    reference: "Lights - Emergency Lighting (Controls and Indicators)",
   },
   {
     id: 7,
@@ -57,7 +64,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "The HALON fire extinguisher should be used on what type fires?",
     options: ["Electrical fires only.", "Electrical and burning metals.", "Electrical and flammable liquid fires", "Electrical and ordinary combustibles."],
     answer: 2,
-    explain: "",
+    explain: "Halon extinguishers are rated for electrical fires and flammable-liquid fires — they aren't the right choice for ordinary combustibles or burning-metal fires, which need different extinguishing agents.",
+    reference: "Equipment - Emergency Equipment (Portable Fire Extinguishers, General)",
   },
   {
     id: 8,
@@ -65,7 +73,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "When the door arming lever is in the ARMED position, opening the door from the outside will:",
     options: ["Automatically deploy and inflate the evacuation slide.", "Disarm the door.", "The power assist will rapidly open the door."],
     answer: 1,
-    explain: "",
+    explain: "With the door arming lever in ARMED, opening that door from the outside disarms the door and its escape slide — the slide doesn't inflate in that case, since automatic deployment is only tied to opening the door from inside.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 9,
@@ -73,7 +82,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "You want to open the cabin door, whilst lifting the control handle the white light illuminates. What does it mean?",
     options: ["There is residual pressure in the cabin.", "The ramp is not correctly positioned.", "The slide is still armed.", "Somebody is trying to open the door from outside."],
     answer: 2,
-    explain: "",
+    explain: "A white indicator light coming on as the control handle is lifted shows the escape slide is still armed — continuing to lift the handle from there will open the door and trigger the slide's automatic deployment.",
+    reference: "Doors - Passenger Doors (General) / Controls and Indicators",
   },
   {
     id: 10,
@@ -81,7 +91,8 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "Opening an emergency overwing exit will:",
     options: ["Inflate the slide at the leading edge of the wing.", "Automatically inflate the double lane slide off the trailing edge of the wing.", "Only arm the overwing slide."],
     answer: 1,
-    explain: "",
+    explain: "Opening an overwing emergency exit automatically deploys its dual-lane escape slide off the wing's trailing edge — the overwing slide is kept in a permanently armed configuration, so no separate arming step is needed.",
+    reference: "Doors - Emergency Exits (Cabin)",
   },
   {
     id: 11,
@@ -89,14 +100,17 @@ export const EQUIPMENT_QUESTIONS: Question[] = [
     q: "What cockpit lighting is available during an Emergency Electrical Configuration (EEC)?",
     options: ["All lights are fully functional.", "Dome lights, main panel flood lights, and the standby compass light.", "Dome light (right side only), main panel flood lights, and the standby compass light.", "Dome light (right side only), main panel flood lights (left two columns only), and the standby compass light."],
     answer: 3,
-    explain: "",
+    explain: "On battery-only power in the Emergency Electrical Configuration, cockpit lighting is reduced to just the right-side dome light, the main panel flood lights covering the left two columns only, and the standby compass light — not full lighting.",
+    reference: "Electrical - Emergency Electrical Configuration (Cockpit Lighting)",
   },
   {
     id: 12,
     system: "Equipment",
     q: "Which situation will automatically illuminate the escape path lighting?",
     options: ["The loss of power to the DC ESS SHED bus and The loss of power to the AC bus #1", "The loss of power to the AC ESS SHED bus and The loss of power to the AC bus #1", "The loss of power to the AC ESS SHED and the loss of power to the DC ESS SHED", "The loss of power to the AC ESS SHED"],
+    // REVIEW (uncertain): The FCOM's emergency-lighting ARM logic describes the floor proximity escape-path marking system coming on when normal aircraft electrical power or the DC SHED ESS BUS is lost, without mentioning AC BUS 1 for that specific system — AC BUS 1 loss is listed as a trigger for the separate overhead emergency lights instead. This option's exact DC-ESS-SHED-and-AC-BUS-1 combination couldn't be matched cleanly to either condition set. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
 ];

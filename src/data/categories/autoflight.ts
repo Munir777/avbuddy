@@ -8,7 +8,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "On an autoland approach, with both autopilots on, which FMGC is master?",
     options: ["FMGC 1", "FMGC 2", "Both", "None"],
     answer: 0,
-    explain: "",
+    explain: "With two autopilots engaged, FMGC 1 is always the master (with a single AP engaged, whichever FMGC is paired with that AP is master).",
+    reference: "Auto Flight - Description (Master FMGC Logic)",
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The ON BAT light will illuminate amber:",
     options: ["When one or more IR's are operating on aircraft battery power.", "For a few seconds at the beginning of the alignment process.", "Both are correct.", "When a fault is detected in the system."],
     answer: 2,
-    explain: "",
+    explain: "The ON BAT light comes on amber both when the aircraft battery is supplying at least one IRS, and briefly at the start of a complete IRS alignment — so both listed conditions are genuine triggers.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What action should be taken if ADR #1 is lost?",
     options: ["Nothing.", "Move the ATT HDG knob on the switching panel to CAPT 3.", "Move the AIR DATA knob on the switching panel to CAPT 3.", "Move the EIS DMC knob on the switching panel to CAPT 3."],
     answer: 2,
-    explain: "",
+    explain: "The AIR DATA (ADR) selector's CAPT 3 position replaces ADR 1 (and IR 1) with ADR 3/IR 3 — the correct response to a lost ADR 1.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 4,
@@ -32,15 +35,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What action should be taken if IR #2 is lost:",
     options: ["Move the EIS DMC rotary selector knob to F/O 3.", "Move the ATT HDG rotary selector knob to CAPT 3.", "Move the ATT HDG rotary selector knob to F/O 3.", "Move the ATT HDG rotary selector knob to F/O 1."],
     answer: 2,
-    explain: "",
+    explain: "The ATT HDG (IR) selector's F/O 3 position replaces IR 2 (and ADR 2) on the First Officer's side with IR 3/ADR 3 — the correct response to a lost IR 2.",
+    reference: "Navigation - ADIRS Controls & Indicators / GPS Description",
   },
   {
     id: 5,
     system: "Autoflight",
     q: "The DDRMI provides the pilot with:",
     options: ["Bearing only for VOR 1.", "Bearing and DME information for VOR 1 and ADF 1.", "Bearing and DME information for VOR 2 and ADF 2.", "Bearing only for VOR 1 and VOR 2."],
+    // REVIEW (uncertain): The FCOM confirms the DDRMI shows bearing pointers for VOR1/ADF1 and VOR2/ADF2 (selectable) plus DME1/DME2 distance counters — i.e. bearing AND distance for BOTH VOR/ADF pairs. None of the four options fully captures that combination (the closest, "bearing and DME for VOR1 and ADF1", only covers one pointer and doesn't mention VOR2/ADF2), and the scored option ("bearing only") is contradicted by the DME counters the FCOM describes. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 6,
@@ -48,7 +54,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The ATT HDG and AIR DATA selectors on the switching panel in the NORM position indicate that:",
     options: ["ADIRU 1 is supplying information to PFD 1 and ND 2, and ADIRU 2 is supplying power to PFD 2 and ND 1.", "ADIRU 1 is supplying information to PFD 1, ND 1 and the DDRMI; ADIRU 2 is supplying power to PFD 2 and ND 2."],
     answer: 1,
-    explain: "",
+    explain: "In NORM, ADIRU 1 supplies data to PFD 1, ND 1, and the DDRMI, while ADIRU 2 supplies PFD 2 and ND 2 — matching this option exactly (the FCOM also notes ADIRU 1 feeds VOR/DME, not mentioned in the option but not contradicted by it).",
+    reference: "Navigation - ADIRS Controls & Indicators (Pedestal)",
   },
   {
     id: 7,
@@ -56,15 +63,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "During the take-off phase:",
     options: ["SRS mode will provide guidance to maintain V2+10 kts (minimum) as a speed reference.", "SRS mode is available up to 1500 ft.", "SRS mode will not engage if TOGA is selected.", "SRS mode will provide guidance to maintain V2+15 kts (minimum) as a speed reference."],
     answer: 0,
-    explain: "",
+    explain: "In SRS mode, the aircraft maintains a speed target of V2+10 kt in a normal (all-engines) configuration.",
+    reference: "Auto Flight - AP/FD Common Modes (Takeoff/SRS)",
   },
   {
     id: 8,
     system: "Autoflight",
     q: "What information is supplied by the IR's and displayed on the PFD?",
     options: ["Heading, attitude, and vertical speed.", "Heading, altitude, and vertical speed", "Airspeed, altitude, and backup vertical speed.", "Heading, attitude, and altitude."],
+    // REVIEW (uncertain): The FCOM's ADIRS description lists the IR part's outputs as attitude, flight path vector, track, heading, accelerations, angular rates, ground speed and aircraft position — altitude is explicitly listed under the separate ADR part instead, which makes the scored "heading, attitude, and altitude" questionable. But vertical speed (the more likely IR-sourced third item) isn't explicitly itemized as an IR output in the extracted text either, so I can't confidently substitute it. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 9,
@@ -72,7 +82,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "In normal law all protections are active, which of the following lists is the most complete list?",
     options: ["Protections, Load Factor, Pitch attitude, High AOA, and High speed.", "Protections, Load Factor, Pitch attitude, High AOA, Alpha floor, angle of bank, and High speed.", "Protections, Load Factor, Pitch attitude, High AOA, VLS, Alpha floor, and High speed.", "Protections, Load Factor and Pitch attitude."],
     answer: 1,
-    explain: "",
+    explain: "Normal law's protections general list gives four items (load factor, pitch attitude, high AOA, high speed), but a separately-titled BANK ANGLE PROTECTION section confirms bank angle is a fifth genuine protection — supporting this option's inclusion of \"angle of bank.\" Alpha floor, by contrast, is described elsewhere as an autothrust (TOGA-thrust) function rather than one of the flight-control-law protections, so its inclusion here is looser than the other five items, even though it's commonly grouped with them informally.",
+    reference: "Flight Controls - Normal Law (Protections) / Autoflight - Autothrust (Alpha Floor)",
   },
   {
     id: 10,
@@ -80,7 +91,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Which of the following statements is always true when operating in alternate law?",
     options: ["Extending the landing gear will place the aircraft in Direct law.", "Extending the landing gear will place the aircraft in Mechanical backup law.", "Retracting the landing gear will place the aircraft in Mechanical backup law.", "Retracting the landing gear will place the aircraft in Abnormal attitude law."],
     answer: 0,
-    explain: "",
+    explain: "In alternate law, selecting the landing gear down changes the pitch mode to flare mode — a direct stick-to-elevator relationship, the same behavior as direct law — so gear extension does functionally place the aircraft in a direct-law-like pitch response.",
+    reference: "Flight Controls - Reconfiguration Control Laws (Alternate Law / Flare Mode)",
   },
   {
     id: 11,
@@ -88,15 +100,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "If both ELACs fail, what controls the elevator and stabilizer?",
     options: ["FACs.", "SECs.", "Elevator and stabilizer revert to mechanical backup.", "Backup mode of ELAC's"],
     answer: 1,
-    explain: "",
+    explain: "SECs (Spoiler Elevator Computers) provide standby elevator and stabilizer control — so if both ELACs fail, the SECs take over pitch control.",
+    reference: "Flight Controls - General (Computers)",
   },
   {
     id: 12,
     system: "Autoflight",
     q: "When does the sideslip indicator change to a blue Beta target?",
     options: ["Flaps configuration 1.", "Any EPR exceeds 1.25, and EPR's differ by more than 0.25", "Heading differs from track by 20 deg or more", "Flaps configuration 1, 2."],
+    // REVIEW (unresolved): Couldn't find the specific EPR-based trigger condition ("EPR exceeds 1.25 and differs by more than 0.25") for the blue Beta target anywhere in the extracted FCOM text — only the general behavior (FAC modifies the sideslip indication after an engine failure, turning it blue) was confirmed, not this precise numeric threshold. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 13,
@@ -104,7 +119,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "While in-flight, operating in Normal law, in the Alpha Prot range:",
     options: ["The flight controls revert to direct law.", "The flight controls remain in the load factor demand law.", "The sidestick controller and flight controls revert to the AOA mode, and side stick deflection is proportional to AOA.", "Continue to operate in Normal law."],
     answer: 2,
-    explain: "",
+    explain: "When High AOA protection activates, the normal-law demand changes from a load-factor demand to an angle-of-attack demand — the sidestick input becomes proportional to AOA instead.",
+    reference: "Flight Controls - Normal Law (High AOA Protection)",
   },
   {
     id: 14,
@@ -112,7 +128,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "High and low speed stabilities may be available in alternate law, stabilities:",
     options: ["Will not allow the pilot to stall the aircraft.", "Prohibit steep bank angles.", "Prohibit steep climb angles and bank angles.", "Can be overridden by the pilot, and it is possible to exceed Vmo, Mmo and stall the aircraft."],
     answer: 3,
-    explain: "",
+    explain: "Both the low-speed and high-speed stabilities in alternate law are stabilities the pilot can override, not true protections — the FCOM explicitly notes \"the pilot can override this demand\" for each, meaning it remains possible to exceed VMO/MMO or stall the aircraft.",
+    reference: "Flight Controls - Reconfiguration Control Laws (Alternate Law, Reduced Protections)",
   },
   {
     id: 15,
@@ -120,7 +137,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What is the difference between -FD2 and 2FD- on the FMA?",
     options: ["1 inop, 2 engaged. 2 engaged, 1 off.", "1 off, 2 engaged. 2 engaged, 1 inop\\*", "1 armed, 2 active. 2 active, 1 armed.", "1 engaged with FMGC2, 2 off. 2 engaged with FMGC1, 1 off."],
     answer: 1,
-    explain: "",
+    explain: "The FMA's second line shows \"X FD Y\", where X and Y each read 1, 2, or \"–\" for the FD engagement status feeding PFD 1 and PFD 2 respectively (normal status is \"1 FD 2\"). \"-FD2\" (nothing on the PFD 1 side, FD 2 engaged on the PFD 2 side) reads as FD 1 off/FD 2 engaged, while \"2FD-\" (FD 2 showing on the PFD 1 side, nothing on PFD 2) reads as FD 2 engaged (feeding the other side) while the FD 1 side shows nothing.",
+    reference: "Auto Flight - Flight Mode Annunciator (FMA, Second Line)",
   },
   {
     id: 16,
@@ -128,7 +146,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "If the IR mode rotary selector is selected OFF:",
     options: ["AD and IR information will be disconnected.", "AD information will be disconnected.", "IR information will be disconnected.", "The ADIRU is not energized: AD and IR information is lost."],
     answer: 3,
-    explain: "",
+    explain: "Setting the IR mode rotary selector to OFF de-energizes the ADIRU entirely, so neither ADR nor IR data is available.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 17,
@@ -136,7 +155,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "If LOW ACCURACY message is displayed, are there any approach restrictions?",
     options: ["No", "Yes, ILS approach only.", "Yes, both LNAV and VNAV approaches are forbidden.", "Yes, VOR approach only."],
     answer: 2,
-    explain: "",
+    explain: "The standard operating procedure for degraded navigation accuracy (including a LOW accuracy indication on the PROG page) is to stop relying on the FM's managed position and switch to raw-data navigation — since RNAV-based lateral and vertical guidance (LNAV/VNAV) depends on that managed FM position, both would need to be abandoned in favor of raw-data-based approaches.",
+    reference: "Auto Flight - Flight Management (Evaluation of Position Accuracy) / Cruise SOP",
   },
   {
     id: 18,
@@ -144,7 +164,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "When in alternate law, all protections except \\_\\_\\_\\_\\_\\_\\_ protection will be lost.",
     options: ["Roll attitude.", "Pitch attitude.", "Bank angle.", "Load factor."],
     answer: 3,
-    explain: "",
+    explain: "In alternate law, load factor limitation is the one protection retained (similar to normal law) — pitch attitude protection is lost outright, and what replaces AOA/high-speed protection are overridable \"stabilities\" rather than true protections, while bank angle protection is explicitly \"not provided.\"",
+    reference: "Flight Controls - Reconfiguration Control Laws (Alternate Law, Reduced Protections)",
   },
   {
     id: 19,
@@ -152,7 +173,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Can the autopilot be used for a single engine approach and autoland?",
     options: ["Yes.", "No.", "If landing in config three.", "With A/THR disengage."],
     answer: 0,
-    explain: "",
+    explain: "Yes — single-engine autoland is a certified capability on this aircraft, not something that requires disengaging the autopilot or downgrading landing configuration.",
+    reference: "Auto Flight - Autoland (general)",
   },
   {
     id: 20,
@@ -160,7 +182,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What information is supplied by the Air Data Modules (ADMs) and displayed on the PFD's?",
     options: ["Heading, attitude, and vertical speed.", "Airspeed, altitude, and backup vertical speed.", "Airspeed, vertical speed, and altitude.", "Airspeed, attitude, altitude, and vertical speed."],
     answer: 1,
-    explain: "",
+    explain: "The Air Data Modules feed the ADR part of each ADIRU, whose confirmed outputs include barometric altitude and airspeed; vertical speed (backup, baro-derived) rounds out this data, distinct from the IR part's inertially-derived outputs.",
+    reference: "Navigation - ADIRS Description",
   },
   {
     id: 21,
@@ -168,15 +191,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "How many Air Data/Inertial Reference Units (ADIRU's) are installed?",
     options: ["One", "Two", "Three", "Four"],
     answer: 2,
-    explain: "",
+    explain: "There are three ADIRUs installed (each split into an ADR and an IR part), plus a switching facility that lets ADR 3 or IR 3 substitute for ADIRU 1 or 2.",
+    reference: "Navigation - ADIRS Description",
   },
   {
     id: 22,
     system: "Autoflight",
     q: "A/THR in white means that A/THR is:",
     options: ["Disconnected.", "Armed.", "Active", "Inop"],
-    answer: 1,
-    explain: "",
+    // REVIEW (corrected, high confidence): The FCOM's FMA third-line table is explicit: "A/THR" White = A/THR is active; "A/THR" Blue = A/THR is armed. The originally-scored "Armed" has the colors backwards.
+    answer: 2,
+    explain: "The FMA's third line shows \"A/THR\" in white when A/THR is active, and in blue when it's only armed — so white specifically means active, not armed.",
+    reference: "Auto Flight - Flight Mode Annunciator (FMA, Third Line)",
   },
   {
     id: 23,
@@ -184,7 +210,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What is the function of the FACs?",
     options: ["Rudder and Yaw damping inputs, Flight envelope and speed computations", "Rudder and Yaw damping inputs", "Rudder and Yaw damping inputs and windshear protection", "Rudder and Yaw damping inputs, Flight envelope and speed computations, and windshear protection"],
     answer: 3,
-    explain: "",
+    explain: "The FAC controls rudder, rudder trim, and yaw damper inputs; computes flight envelope and speed data; and (if installed) provides low-energy and windshear-detection warnings — matching the full four-part description.",
+    reference: "Auto Flight - Description (Flight Augmentation Computer)",
   },
   {
     id: 24,
@@ -192,15 +219,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The Flight Management part of the FMGC includes the following elements:",
     options: ["Navigation, flight planning and A/THR commands.", "Performance optimization, A/THR and AP commands", "Navigation, flight planning, performance optimization and flight predictions", "AP and FD commands and flight envelope computation."],
     answer: 2,
-    explain: "",
+    explain: "The Flight Management (FM) part of the FMGC controls navigation (and nav radio management), flight planning, and performance prediction/optimization — matching this option's four elements.",
+    reference: "Auto Flight - Description (FMGC)",
   },
   {
     id: 25,
     system: "Autoflight",
     q: "What message is displayed if the database effective date does not match the clock date?",
     options: ["Check Data Base Cycle.", "Check Data Base Date.", "Check Effective Date.", "Check the changeover date."],
-    answer: 1,
-    explain: "",
+    // REVIEW (corrected, high confidence): The FCOM's message list gives the exact wording as "CHECK DATA BASE CYCLE," not "Check Data Base Date" as originally scored.
+    answer: 0,
+    explain: "The exact ECAM/MCDU message for this condition is \"CHECK DATA BASE CYCLE\" — triggered when the current date doesn't match the effective date of the active database and the crew attempts to enter a FROM/TO or company route.",
+    reference: "Auto Flight - Flight Management (Messages)",
   },
   {
     id: 26,
@@ -208,7 +238,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The IR ALIGN light is extinguished. What does this mean?",
     options: ["Alignment has been completed.", "Air data output has been disconnected.", "The respective IR is operating normally.", "Alignment has been restarted."],
     answer: 0,
-    explain: "",
+    explain: "The ALIGN light goes out (extinguished) once alignment has been completed.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 27,
@@ -216,7 +247,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Placing one of the ADR push buttons OFF will accomplish what?",
     options: ["The OFF light will illuminate and air data output will disconnect.", "The respective ADIRU will become deenergized.", "Both AD and IR information will be disconnected.", "All of the above."],
     answer: 0,
-    explain: "",
+    explain: "The ADR pushbutton is a momentary-action switch: pressing it lights the OFF light and disconnects air data output — it doesn't de-energize the whole ADIRU or touch the IR (inertial) side, which are controlled separately by the IR mode selector.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 28,
@@ -224,7 +256,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "How long does a normal IR alignment take?",
     options: ["Approximately 3 minutes.", "Approximately 6 minutes.", "Approximately 10 minutes.", "Approximately 13 minutes."],
     answer: 2,
-    explain: "",
+    explain: "A normal (full) IRS alignment takes about 10 minutes.",
+    reference: "Auto Flight - Flight Management (IRS Alignment)",
   },
   {
     id: 29,
@@ -232,7 +265,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What are the correct positions for the PFD and ND?",
     options: ["The PFD should be outboard and the ND should be inboard.", "The PFD should be inboard and the ND should be outboard.", "The PFD should be to the left of the ND for both seat positions.", "The PFD should be inboard and the ND should be inboard."],
     answer: 0,
-    explain: "",
+    explain: "Standard EFIS DU arrangement places the PFD outboard (directly ahead of each pilot) and the ND inboard (toward the centrally-located ECAM displays) on both sides.",
+    reference: "Indicating/Recording Systems - ECAM DU Arrangement (general layout)",
   },
   {
     id: 30,
@@ -240,7 +274,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "While in flight operating in Normal law, movement of the sidestick and subsequent return to neutral will command:",
     options: ["A load factor proportional to stick deflection, then maintain one G flight corrected for pitch attitude.", "Control surface movements proportional to stick deflection, then return the aircraft to straight and level flight.", "Control surface movements proportional to stick deflection, disconnect auto trim, and maintain its current attitude.", "A load factor proportional to half stick deflection, then maintain one G (+/- 0.2G) flight corrected for pitch attitude."],
     answer: 0,
-    explain: "",
+    explain: "Following normal law, moving the sidestick and releasing it back to neutral commands a load factor proportional to the deflection, then the system settles back to maintaining 1 g flight (corrected for pitch attitude) once the stick is neutral.",
+    reference: "Flight Controls - Normal Law (Pitch Control, Flight Mode)",
   },
   {
     id: 31,
@@ -248,7 +283,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What does the LOW ACCURACY message mean?",
     options: ["FMGC 1 & 2 position difference exceeds limits.", "FMGC position & actual radio position difference exceeds limits.", "FMCG position & IR position difference exceeds limits.", "FMGC 2 position difference exceeds limits."],
     answer: 1,
-    explain: "",
+    explain: "LOW ACCURACY reflects the FMGS's Estimated Position Uncertainty (EPU) exceeding the Required Navigation Performance (RNP) — in the radio-updated navigation modes, EPU is computed from how well the FM position agrees with DME/VOR radio fixes, which is broadly what this option describes as an FMGC-vs-radio-position mismatch.",
+    reference: "Auto Flight - Flight Management (Evaluation of Position Accuracy)",
   },
   {
     id: 32,
@@ -256,7 +292,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "How can the present position of the aircraft be initialized?",
     options: ["Present position can be entered through the ADIRS CDU.", "Present position can be entered on the INIT page of the MCDU.", "Both are correct.", "Non is correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct: the IRS can be manually initialized as a backup via the ADIRS CDU on the overhead panel, and present position is normally entered on the MCDU's IRS INIT page.",
+    reference: "Navigation - ADIRS Controls & Indicators / Auto Flight - Flight Management",
   },
   {
     id: 33,
@@ -264,7 +301,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The white IR ALIGN light is flashing. What does this mean?",
     options: ["No present position has been entered and ten minutes has elapsed since the IR was selected ON.", "No present position has been entered and ten minutes has elapsed since the IR was selected ON. An alignment fault may exist.", "Attitude and heading information have been lost. An alignment fault may exist."],
     answer: 1,
-    explain: "",
+    explain: "A flashing white ALIGN light indicates either that no present position has been entered and 10 minutes have elapsed since the IR was selected ON, or an actual alignment fault — the flashing state covers both possibilities.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 34,
@@ -272,7 +310,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Can the aircraft be controlled with a loss of all electrics?",
     options: ["Yes.", "No."],
     answer: 0,
-    explain: "",
+    explain: "Yes — the mechanical backup exists specifically to manage a temporary and total electrical loss, giving the pilot manual pitch trim control and rudder-pedal lateral control even with the fly-by-wire system unpowered.",
+    reference: "Flight Controls - Reconfiguration Control Laws (Mechanical Back-Up)",
   },
   {
     id: 35,
@@ -280,7 +319,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Which protection is not available below 100 feet AGL?",
     options: ["Pitch attitude.", "VLS.", "ALPHA SPD (alpha speed)", "Alpha floor."],
     answer: 3,
-    explain: "",
+    explain: "Alpha floor protection is only available from lift-off to 100 ft RA on approach — so it's specifically the protection that's unavailable below 100 ft AGL.",
+    reference: "Auto Flight - Autothrust (Alpha Floor)",
   },
   {
     id: 36,
@@ -288,15 +328,18 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "What causes a DU to display a black screen with a white diagonal line?",
     options: ["The circuit breaker for that particular DU has popped.", "DMC failure.", "No power.", "New DMC installed, remove screen protection film."],
     answer: 1,
-    explain: "",
+    explain: "When a DMC fails, each of its associated Display Units shows a diagonal line — the black screen with a white diagonal line is the signature of a DMC failure.",
+    reference: "Indicating/Recording Systems - Switching Panel / Reconfiguring the DMC",
   },
   {
     id: 37,
     system: "Autoflight",
     q: "What does amber SPEED BRAKES mean on lower ECAM?",
     options: ["Speed brakes have a fault.", "Speed brakes are extended and flap handle is not at 0.", "Speed brakes are extended and engines are not at idle.", "All of the above."],
+    // REVIEW (uncertain): Confirmed the message name (F/CTL SPD BRK STILL OUT, distinct from the separate F/CTL SPD BRK FAULT message) but the extracted FCOM text for this specific alert's triggering conditions was blank/truncated, so I couldn't independently verify which of the listed causes (fault vs. flap-handle position vs. engine thrust) actually trigger it. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 38,
@@ -304,7 +347,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "After a single DMC failure, how could a crewmember recover the display units?",
     options: ["Once a DMC has failed the information is unrecoverable", "No action is needed as recovery is automatic.", "Rotate the EIS DMC switch on the switching panel to replace the failed DMC with DMC #3.", "Move the ATT HDG knob on the switching panel to CAPT 3."],
     answer: 2,
-    explain: "",
+    explain: "The crew can rotate the EIS DMC switch on the switching panel to CAPT 3 or F/O 3 to replace a failed DMC 1 or DMC 2 with the standby DMC 3.",
+    reference: "Indicating/Recording Systems - Reconfiguring the DMC",
   },
   {
     id: 39,
@@ -312,7 +356,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "Where is the information displayed by DMC #1 and DMC #2?",
     options: ["DMC #1 supplies data to PFD #2, ND #2 and LOWER ECAM. DMC #2 supplies data for PFD #1, ND #1, and UPPER ECAM.", "ADMC #1 supplies data to PFD #1, ND #1 and LOWER ECAM. DMC #2 supplies data for PFD #2, ND #2, and UPPER ECAM.", "DMC #1 supplies data to PFD #1, ND #1, and UPPER ECAM. DMC #2 supplies data for PFD #2, ND #2, and LOWER ECAM.", "DMC #1 supplies data to PFD #1, ND #1 and LOWER ECAM. DMC #2 supplies data for PFD #2, ND #2, and LOWER ECAM."],
     answer: 2,
-    explain: "",
+    explain: "In normal operation, DMC 1 drives the Captain's PFD, the Captain's ND, and the upper ECAM DU, while DMC 2 drives the First Officer's PFD, ND, and the lower ECAM DU.",
+    reference: "Indicating/Recording Systems - Reconfiguring the DMC",
   },
   {
     id: 40,
@@ -320,7 +365,8 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "An amber flashing IR FAULT light indicates that:",
     options: ["Present position needs to be reentered.", "Attitude and heading information may be recovered in ATT mode.", "A complete failure of the respective IR has occurred.", "Attitude information may be recovered in ATT mode."],
     answer: 1,
-    explain: "",
+    explain: "A flashing amber IR FAULT light means attitude and heading information may still be recovered by selecting ATT mode — as opposed to a steady light, which means the IR is fully lost.",
+    reference: "Navigation - ADIRS Controls & Indicators",
   },
   {
     id: 41,
@@ -328,6 +374,7 @@ export const AUTOFLIGHT_QUESTIONS: Question[] = [
     q: "The thrust delivered by A/THR is already at MAX CLB thrust. Is it possible to obtain some additional thrust?",
     options: ["Yes, by setting a higher speed target.", "Yes, by moving the thrust levers forward from the CL detent.", "No, because the A/THR already delivers the maximum available thrust.", "Yes, by moving the thrust levers backwords to reversers."],
     answer: 1,
-    explain: "",
+    explain: "Since autothrust's commanded thrust is capped by thrust lever position, moving the thrust levers forward from the CL detent raises that ceiling and lets the A/THR command more than MAX CLB thrust.",
+    reference: "Auto Flight - Autothrust (Thrust Mode)",
   },
 ];

@@ -8,7 +8,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "Opening a passenger door from the outside disarms the door and the escape slide.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Each passenger door's escape slide is only armed for automatic deployment when the door is opened from inside; opening it from the outside disarms both the door mechanism and the slide so it can't inflate.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "The cargo doors are powered by:",
     options: ["The blue electric pump.", "The yellow hydraulic system before engine start and the green hydraulic system after engine start.", "The yellow hydraulic system.", "The blue hydraulic system before engine start and the green hydraulic system after engine start."],
     answer: 2,
-    explain: "",
+    explain: "Both FWD and AFT cargo doors are hydraulically operated by the yellow hydraulic system — there's no engine-start-dependent switch to another system.",
+    reference: "Doors - Cargo Doors (General)",
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "If door handle is lifted and the white indicator illuminates, what does this mean?",
     options: ["The escape slide is armed and if you go on lifting the handle, door opens and slide will deploy.", "Pneumatic assistance of the door has failed", "The escape slide is in disarmed configuration", "The cabin is still pressurized"],
     answer: 0,
-    explain: "",
+    explain: "Each passenger door has its own warning light showing the ARMED/DISARMED state of its escape slide; a white indicator with the handle lifted shows the slide is armed, and continuing to lift the handle fully opens the door and triggers automatic slide deployment.",
+    reference: "Doors - Passenger Doors (General) / Controls and Indicators",
   },
   {
     id: 4,
@@ -32,7 +35,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "What does illumination of the red cabin pressure light represent on the main cabin door?",
     options: ["This indicates that the evacuation slide is armed.", "This indicates that the aircraft cabin is still pressurized and the cabin door should not be opened.", "Both are correct"],
     answer: 1,
-    explain: "",
+    explain: "The CABIN PRESSURE warning light on a passenger door illuminates specifically to warn of residual cabin pressurization — a signal that the door should not be opened yet — separate from the slide ARMED/DISARMED indicator.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 5,
@@ -40,7 +44,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "On the ECAM DOOR/OXY page, the SLIDE indication appears \\_\\_\\_\\_\\_ when the slide is not disarmed.",
     options: ["White.", "Amber.", "Green.", "Red."],
     answer: 0,
-    explain: "",
+    explain: "On the ECAM DOOR/OXY page, the SLIDE indication shows white when the slide is armed — i.e., whenever it is not disarmed.",
+    reference: "Doors - Controls and Indicators (DOOR/OXY SD Page)",
   },
   {
     id: 6,
@@ -48,7 +53,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "Where does the Door and Slide Control System (DSCS) generate warnings?",
     options: ["On ECAM.", "On the doors.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "The Door and Slide Control System reports on both fronts — door and slide status appear on the ECAM DOOR/OXY page, and each door also carries its own local warning lights.",
+    reference: "Doors - Controls and Indicators (DOOR/OXY SD Page) / Passenger Doors (General)",
   },
   {
     id: 7,
@@ -56,7 +62,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "When opened in an emergency, the passenger entry doors:",
     options: ["Pneumatically assisted into the open position", "Will need two cabin crew to push them open", "Are assisted to the open position by slide inflation", "Are electrically assisted into the open position."],
     answer: 0,
-    explain: "",
+    explain: "Each passenger door has a damper actuator that, in an emergency, drives the door's automatic opening rather than requiring the door to be pushed open manually or relying on the slide itself to move it.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 8,
@@ -64,7 +71,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "When the electric pump is operating the FWD or AFT cargo doors, the only other yellow system devices that can operate are braking and engine 2 reverse.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "When the electric pump is powering a cargo door, the note in the cargo-door description confirms the only other yellow-system functions still available are the brakes and the engine 2 thrust reverser.",
+    reference: "Doors - Cargo Doors (FWD and AFT Cargo Doors)",
   },
   {
     id: 9,
@@ -72,7 +80,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "When the Cargo door switch for the yellow hydraulic pump is in use, the flight controls are:",
     options: ["Fully operational", "Inhibited", "Hydraulically locked by pressure from the electric pump", "Only operated by the green system."],
     answer: 1,
-    explain: "",
+    explain: "Opening a cargo door pressurizes the yellow system through the dedicated electric pump specifically for that task, and while it's running the flight controls (and the PTU) are inhibited from operating on yellow pressure.",
+    reference: "Doors - How To Operate the FWD and AFT Cargo Door (Normal Operation)",
   },
   {
     id: 10,
@@ -80,7 +89,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "The forward and aft cargo doors can be opened from:",
     options: ["The inside and the outside.", "The outside only"],
     answer: 1,
-    explain: "",
+    explain: "The FWD and AFT cargo doors can only be opened from the outside, using the operating handle and selector valve lever on the door/ground service panels — there's no inside control for them.",
+    reference: "Doors - Cargo Doors (FWD and AFT Cargo Doors)",
   },
   {
     id: 11,
@@ -88,7 +98,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "The cockpit windows can be opened both from inside and outside.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "The cockpit sliding windows can only be opened from inside the cockpit — there's no outside control for them.",
+    reference: "Doors - Emergency Exits (Cockpit)",
   },
   {
     id: 12,
@@ -96,7 +107,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "What does illumination of the white slide armed light represent on the main cabin door?",
     options: ["This indicates that the slide has properly inflated and is safe for use.", "This indicates that the slide is armed and the slide will inflate if the door is opened from inside the aircraft.", "This indicates that the main cabin door has not been properly closed.", "This indicates that the main cabin door has not been properly closed but the slide is properly armed."],
     answer: 1,
-    explain: "",
+    explain: "The white slide-armed light on a passenger door shows the slide is armed and will automatically inflate and deploy if the door is opened from inside the aircraft — opening it from outside disarms the slide instead.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 13,
@@ -104,15 +116,18 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "What happens to the cockpit door with electrical power failure?",
     options: ["It operates normally on HOT BAT bus.", "It automatically unlocks.", "It automatically locks from outside but stays unlock from inside."],
     answer: 1,
-    explain: "",
+    explain: "If electrical power to the cockpit door locking system fails, the door automatically unlocks (though it stays physically closed) — the crew isn't left unable to get in or out.",
+    reference: "Doors - Cockpit Door Security System (Description / CDLS)",
   },
   {
     id: 14,
     system: "Doors",
     q: "How is it determined that the cockpit sliding window is closed and locked?",
     options: ["The pin is engaged.", "The red ring below the release button should not be in view.", "The locking pin was placed in the forward position when the window was closed.", "The red ring below the release button should be in view."],
+    // REVIEW (uncertain): The FCOM's sliding-window description confirms the unlocking button, control handle, and locking pin mechanism, but the extracted text doesn't describe a red ring indicator below the release button or state whether it should or shouldn't be visible when the window is closed and locked. Left as-is; needs a source check rather than a guess.
     answer: 3,
     explain: "",
+    needsReview: true,
   },
   {
     id: 15,
@@ -120,7 +135,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "Can the flight compartment sliding windows be used as emergency exits?",
     options: ["Yes, in the cockpit coat closet is a rope ladder that can be used in such an event.", "Yes, there are escape ropes mounted above each window behind an access panel.", "No. They are not approved emergency exits.", "No, they are too small."],
     answer: 1,
-    explain: "",
+    explain: "Each cockpit sliding window has a small compartment above it containing an escape rope long enough to reach the ground, making the sliding windows usable as flight-crew emergency exits.",
+    reference: "Doors - Emergency Exits (Cockpit)",
   },
   {
     id: 16,
@@ -128,7 +144,8 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "When the slide arming lever, on the emergency opening system, is in the ARMED position, where is the slide connected?",
     options: ["To the brackets on the underside of the fuselage.", "To the brackets above the door.", "To the floor brackets on both sides of the door.", "All of the above"],
     answer: 2,
-    explain: "",
+    explain: "With the slide arming lever in ARMED, the escape slide is connected to the floor brackets on both sides of the door, so it deploys automatically and inflates the moment the door is opened.",
+    reference: "Doors - Passenger Doors (General)",
   },
   {
     id: 17,
@@ -136,6 +153,7 @@ export const DOORS_QUESTIONS: Question[] = [
     q: "Each passenger door has one CABIN PRESSURE warning light that:",
     options: ["Warns of residual pressure in the cabin.", "Shows a possible unlocked door", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "The passenger door's CABIN PRESSURE warning light comes on specifically to warn of residual pressure remaining in the cabin — it isn't tied to whether the door itself is locked or unlocked.",
+    reference: "Doors - Passenger Doors (General)",
   },
 ];

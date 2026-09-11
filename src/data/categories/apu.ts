@@ -12,7 +12,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "When starting the APU, the FUEL LO PR indication appears amber when an APU fuel low pressure is detected.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "Correct. On the APU system display, the FUEL LO PR indication is shown in amber when APU fuel pressure gets low.",
+    reference: "APU - Controls & Indicators (system display page)",
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "If APU bleed was used, after a manual shut down sequence, the APU:",
     options: ["Stops immediately", "Keeps running for 4 minutes", "Keeps running for 2 minutes", "Keeps running for 60 seconds"],
     answer: 2,
-    explain: "",
+    explain: "After MASTER SW is switched off, if the APU had been supplying bleed air it keeps running for a cooling period of 60-120 seconds before actually shutting down; if no bleed was in use, it stops right away.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The starter engages if the air intake is closed and the MASTER SW and the START pushbuttons are ON.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False — it's the opposite. The starter is energized once the air intake flap is fully OPEN, not while it's closed.",
+    reference: "APU - General / Description",
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "When the APU MASTER SW is selected ON:",
     options: ["The APU computer automatically completes a self-test, opens the air intake flap and supplies fuel pressure.", "The APU computer automatically starts the APU.", "Connects the APU generator to the aircraft electrical system.", "The APU door opens."],
     answer: 0,
-    explain: "",
+    explain: "Selecting MASTER SW ON energizes the ECB, which runs a power-up self-test, opens the air intake flap, opens the fuel isolation valve, and runs the fuel pump if needed. It does not start the APU by itself — that's the separate START pushbutton.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 6,
@@ -53,7 +57,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "If an APU start is initiated on battery power only, is fire protection available?",
     options: ["Yes", "No"],
     answer: 0,
-    explain: "",
+    explain: "Yes. The APU fire detection/extinguishing circuit is fully functional on battery power alone — this is also why the APU FIRE TEST (which lights the FIRE pb and the SQUIB/DISCH lights) works correctly with battery power only.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 7,
@@ -61,7 +66,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The APU system page will appear on the ECAM:",
     options: ["When selected by the crew.", "Automatically whenever the APU is started and AC power is available.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are true: the APU ECAM page appears automatically when MASTER SW is ON and the aircraft has ground power or main generator power, and the crew can also call it up manually at any time.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 8,
@@ -69,7 +75,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The APU has an integral independent lubrication system for lubrication and cooling.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — the APU has its own self-contained oil system, separate from the engines, used for both lubrication and cooling.",
+    reference: "APU - General / Description",
   },
   {
     id: 9,
@@ -77,7 +84,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "Will the APU bleed valve close automatically during climb? Will it reopen during descent?",
     options: ["Yes", "No"],
     answer: 1,
-    explain: "",
+    explain: "No. There's no automatic climb/descent cycling of the APU bleed valve — it closes automatically only for specific faults (leak detection, overpressure, etc.) or when the aircraft is above the applicable APU bleed altitude limit, and it doesn't reopen on its own just because the aircraft descends.",
+    reference: "APU Limitations - Operational Envelope",
   },
   {
     id: 10,
@@ -85,7 +93,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "Can the APU FIRE test be performed with the APU running?",
     options: ["Yes", "No"],
     answer: 0,
-    explain: "",
+    explain: "Yes. The FCOM specifically notes that performing the APU FIRE TEST does not trigger the normal ground automatic-shutdown-on-fire logic, which is what makes it safe to run the test while the APU is running (or starting) without actually losing the APU.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 11,
@@ -93,7 +102,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The APU is supplied from the:",
     options: ["Left fuel feed line.", "Right fuel feed line.", "Left or right fuel line"],
     answer: 0,
-    explain: "",
+    explain: "The left fuel feed line is the one that supplies the APU.",
+    reference: "APU - General / Description",
   },
   {
     id: 12,
@@ -110,7 +120,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "With nobody in the cockpit, if you have an APU FIRE, which statement is correct?",
     options: ["On the ground, an APU EMER shut down will occur and the APU fire bottle will be discharged automatically.", "On the ground, you have to perform the ECAM actions to shut down the APU and extinguish the fire from the cockpit.", "On the ground an APU AUTO shut down will occur but you have to discharge the APU fire bottle manually.", "In the air, an APU EMER shut down will occur and the APU fire bottle will be discharged automatically."],
     answer: 0,
-    explain: "",
+    explain: "On the ground, an APU fire triggers an APU EMER SHUT DOWN, and the fire extinguisher discharges automatically about 3 seconds after the fire warning appears — no crew action in the cockpit is needed to get that initial response, even with nobody there.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 14,
@@ -118,7 +129,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The APU MASTER SW FAULT light will illuminate:",
     options: ["When APU low oil pressure is detected.", "When an automatic shutdown of the APU occurs.", "For an APU overheat or APU fire.", "If the batteries are selected OFF while the APU is operating."],
     answer: 1,
-    explain: "",
+    explain: "The FAULT light comes on (with an ECAM caution) whenever an automatic APU shutdown occurs — low oil pressure, fire, DC power loss, overspeed, etc. are all individual items on that automatic-shutdown trigger list, but the light itself is tied to the shutdown event in general, not any single cause.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 15,
@@ -126,7 +138,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "How many APU fire extinguisher bottles are installed?",
     options: ["One", "Two", "One AC operated and one DC operated"],
     answer: 0,
-    explain: "",
+    explain: "One. Unlike each engine (which has its own bottle referred to individually), the FCOM consistently refers to a single APU fire extinguisher bottle.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 16,
@@ -134,7 +147,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "When selected on, the APU START push button, will:",
     options: ["Connect the APU generator to the aircraft electrical system.", "Start the APU if the APU MASTER SW was previously selected ON.", "Open the air intake flap and supply fuel pressure."],
     answer: 1,
-    explain: "",
+    explain: "The START pushbutton only energizes the starter (and later the ignition) to actually spin up and light the APU — but that only works after MASTER SW has already been selected ON, since MASTER SW is what opens the air intake flap and arms the fuel supply first.",
+    reference: "APU - Controls & Indicators (MASTER SW panel)",
   },
   {
     id: 17,
@@ -142,7 +156,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "On ground, can you start the APU using the aircraft batteries only?",
     options: ["Yes", "No"],
     answer: 0,
-    explain: "",
+    explain: "Yes. The APU can be started using only the aircraft's batteries, with no ground power or running engine generator needed.",
+    reference: "APU - General / Description",
   },
   {
     id: 18,
@@ -168,7 +183,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "Maximum altitude for APU bleed operation is:",
     options: ["15, 000 ft", "18, 000 ft", "20, 000 ft", "22, 000 ft"],
     answer: 2,
-    explain: "",
+    explain: "The exact limit depends on what the bleed air is used for: 20,000 ft to assist an engine start, 22,500 ft for single-pack air conditioning/pressurization, or 15,000 ft for dual-pack. Of the given choices, 20,000 ft is the one that matches an actual FCOM figure (the engine-start-assist limit).",
+    reference: "APU Limitations - Operational Envelope",
   },
   {
     id: 21,
@@ -176,7 +192,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The Electronic Control Box (ECB) is primarily a full authority digital electronic controller that performs the APU system logic for all modes of APU operation such as:",
     options: ["Sequence and monitoring of start.", "Speed and temperature monitoring.", "Monitoring of bleed air and shut down.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "The ECB's job covers all of these: it sequences and monitors the start, monitors speed and temperature, monitors bleed air, and sequences (and controls) the shutdown.",
+    reference: "APU - General / Description",
   },
   {
     id: 22,
@@ -193,7 +210,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "What is the maximum operating altitude of the APU?",
     options: ["25,000 feet", "30,000 feet", "35,000 feet", "39,000 feet"],
     answer: 3,
-    explain: "",
+    explain: "The FCOM confirms APU starting is permitted throughout the normal flight envelope, tying its ceiling to the aircraft's own service ceiling rather than a lower APU-specific number (the extracted FCOM text doesn't spell out a separate APU-only altitude figure beyond the bleed-air limits, which apply only when the bleed is in use).",
+    reference: "APU Limitations - Operational Envelope",
   },
   {
     id: 24,
@@ -211,7 +229,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The APU cannot be shut down from outside the aircraft.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False. There's a dedicated APU SHUT OFF pushbutton on the external power panel (under the nose) that ground crew can use for a manual emergency shutdown from outside the aircraft.",
+    reference: "APU - External Controls (ground/external power panel)",
   },
   {
     id: 26,
@@ -219,7 +238,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "When the APU is running, the APU fuel pump:",
     options: ["Runs when tank pumps pressure is not sufficient.", "Runs all time", "Runs only in flight.", "Runs when the APU fuel pump is selected on."],
     answer: 0,
-    explain: "",
+    explain: "The tank pumps normally supply the needed fuel pressure. The APU's own fuel pump only kicks in automatically when that pressure isn't available (for example, batteries-only power or tank pumps off).",
+    reference: "APU - General / Description",
   },
   {
     id: 27,
@@ -236,7 +256,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "The ECB (Electronic Control Box) controls the fuel flow.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — the ECB controls APU fuel flow, along with the rest of the start, speed, and shutdown logic.",
+    reference: "APU - General / Description",
   },
   {
     id: 29,
@@ -244,7 +265,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "With the engines off, if the AVAIL light is illuminated on both the APU START push button and the EXT PWR push button, what is the source of electrical power for the aircraft busses?",
     options: ["It is not possible to determine without checking the ECAM.", "The aircraft batteries", "The APU.", "External power"],
     answer: 2,
-    explain: "",
+    explain: "AVAIL on the EXT PWR pushbutton only means ground power of good quality is present at the connector — it doesn't feed the aircraft until the EXT PWR pb-sw is pushed ON, at which point it would take priority over the APU generator. With no mention of the EXT PWR pb-sw being pushed ON, the APU generator (which connects automatically once available) is the one actually supplying the busses.",
+    reference: "Electrical - General / Description",
   },
   {
     id: 30,
@@ -261,7 +283,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "With battery power only, what would an APU fire test look like?",
     options: ["APU FIRE pb illuminated and SQUIB + DISCH lights illuminated", "APU FIRE pb illuminated", "SQUIB + DISCH lights illuminated"],
     answer: 0,
-    explain: "",
+    explain: "On battery power alone, the fire test still works fully: the APU FIRE pushbutton lights up red, and both the SQUIB and DISCH lights come on.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 32,
@@ -278,7 +301,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "To start the APU the:",
     options: ["BAT 1 and 2 push buttons must be selected to ON \\*", "BAT 1 and 2 push buttons do not need to be selected ON if external power is available.", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "The standard cockpit-preparation flow sets BAT 1 and BAT 2 to AUTO (the normal energized position) as a routine step, before external power or APU status even comes into it — that's done regardless of whether ground power is available, so the batteries being selected on is a standing prerequisite, not something you can skip just because external power is present.",
+    reference: "Normal Procedures - Preliminary Cockpit Preparation (Battery Check/Setup)",
   },
   {
     id: 34,
@@ -286,7 +310,8 @@ export const APU_QUESTIONS: Question[] = [
     q: "With battery power, what would an APU fire test look like?",
     options: ["APU FIRE pushbutton illuminated.", "SQUIB and DISCH lights illuminated", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both happen together during the fire test on battery power: the APU FIRE pushbutton lights up red, and the SQUIB and DISCH lights also come on.",
+    reference: "Fire Protection - Engines and APU - Controls & Indicators",
   },
   {
     id: 35,

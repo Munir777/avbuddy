@@ -8,7 +8,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When would a green AM light illuminate on RMP 1?",
     options: ["Would not illuminate", "If AM mode is required and crew has selected HF1 and AM", "If crew has selected HF1 and single side band mode", "If AM mode is required and crew has selected HF 2 and AM"],
     answer: 1,
-    explain: "",
+    explain: "HF1 is one of the transceivers normally dedicated to RMP 1, so if the crew has selected HF1 and AM mode on that RMP, the AM pushbutton's green monitor light comes on to show AM (rather than the default single-sideband) mode is active.",
+    reference: "Communications - Radio Tuning (RMP AM Pushbutton)",
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If the VHF 3 transmission key illuminated amber showing the word \"CALL\"",
     options: ["An ACARS message is waiting.", "Indicates a SELCAL", "The N°1 flight attendant is calling", "ATC is calling"],
     answer: 1,
-    explain: "",
+    explain: "The CALL legend on a VHF transmission key flashes amber (with a buzzer) specifically to show the SELCAL system has detected an incoming call on that radio — it isn't an ACARS, flight-attendant, or ATC indication.",
+    reference: "Communications - Controls (Audio Control Panel, Transmission Keys)",
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "On RMP, the ON/OFF switch controls:",
     options: ["The power supply to the RMP.", "Only the STBY NAV function of the RMP.", "Only the COM function of the RMP."],
     answer: 0,
-    explain: "",
+    explain: "The RMP's ON/OFF switch simply controls electrical power to that panel — it isn't limited to just the STBY NAV or just the COM side of the unit.",
+    reference: "Communications - Radio Tuning (Radio Management Panel, ON/OFF Switch)",
   },
   {
     id: 4,
@@ -32,7 +35,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "How could you receive ATIS information from a VOR?",
     options: ["Pressing the ON voice key on the ACP", "Pressing and releasing out the VOR reception knob and selecting the ON voice key on the ACP", "Voice facility is not available through the ACP", "None of the above."],
     answer: 1,
-    explain: "",
+    explain: "Pressing and releasing (popping out) the VOR reception knob selects that VOR for audio reception, and selecting the ON VOICE key filters out the Morse-code ident tone so the voice content — such as an ATIS broadcast riding on a VOR frequency — comes through clearly.",
+    reference: "Communications - Controls (ON VOICE Key) / Navigation - Radio Nav",
   },
   {
     id: 5,
@@ -40,7 +44,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The Cockpit Voice Recorder will record:",
     options: ["Direct conversations between crewmembers.", "All aural cockpit warnings.", "Communications over radio and intercom.", "Passenger address system announcements (as long as one PA reception knob is selected on).", "All of the above"],
     answer: 4,
-    explain: "",
+    explain: "The CVR is designed to capture the full cockpit audio picture: direct crew conversations, all aural cockpit warnings, radio and interphone communications, and PA announcements (provided at least one PA reception knob is selected on) — all four are genuine, confirmed inputs.",
+    reference: "Communications - Cockpit Voice Recorder (Description)",
   },
   {
     id: 6,
@@ -48,7 +53,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When looking at either RMP, how is it possible to determine if an RMP is selected to a VHF system it is not dedicated to?",
     options: ["The white SEL light will be illuminated on both RMP's. This is a normal occurrence in-flight.", "The white SEL light is illuminated on the offside RMP.", "The white SEL light is illuminated on the onside RMP."],
     answer: 0,
-    explain: "",
+    explain: "The RMPs are cross-connected, and each one shows a SEL indicator whenever a transceiver normally dedicated to one RMP is instead being tuned through the other — so both panels' SEL lights come on together as the normal way of flagging that cross-tuning, not a failure.",
+    reference: "Communications - Radio Tuning (RMP SEL Indicator)",
   },
   {
     id: 7,
@@ -56,7 +62,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When selecting the guarded RMP NAV key:",
     options: ["Manual tuning via the MCDU RAD NAV page is still possible.", "Manual tuning via the MCDU RAD NAV page is always possible.", "FMGC auto tuning is inhibited.", "Manual tuning via the MCDU RAD NAV page is only possible on the offside radio."],
     answer: 2,
-    explain: "",
+    explain: "The guarded NAV key hands control of the VOR, ILS, GLS, MLS and ADF receivers from the FMGC to the RMP — engaging it is exactly what takes automatic FMGC tuning out of the loop, in favor of manual backup tuning through the RMP.",
+    reference: "Communications - Radio Tuning (RMP NAV Key, Backup Mode)",
   },
   {
     id: 8,
@@ -64,7 +71,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Is it possible to tune a navaid with the STBY NAV function on RMP 3?",
     options: ["Yes", "No. STBY NAV function is not available on RMP 3", "No. RMP 3 is not available for crew use.", "Yes but only on the ground."],
     answer: 1,
-    explain: "",
+    explain: "RMP 3 is not used for navaid tuning at all — the STBY NAV backup function only exists on RMP 1 and RMP 2, with RMP 3 limited to VHF/HF radio duties.",
+    reference: "Communications - Radio Nav Tuning (Back-Up Tuning)",
   },
   {
     id: 9,
@@ -72,7 +80,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "How can you get the mechanics attention when he is outside the aircraft?",
     options: ["Use the MECH pushbutton on the CALLS panel which sounds an external horn.", "Hold the PA button", "Select the MECH transmission key on the ACP", "Select the MECH transmission key on the ACP and hold the pushbutton for 2 seconds."],
     answer: 0,
-    explain: "",
+    explain: "The MECH pushbutton on the overhead CALLS panel is the dedicated way to get a mechanic's attention outside the aircraft — pressing and holding it lights up a call light at the external power panel near the nose gear bay and sounds an external horn there.",
+    reference: "Communications - Internal Communication (Ground Mechanic Call System)",
   },
   {
     id: 10,
@@ -80,7 +89,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "On ATC Control Panel, the FAULT light comes on if:",
     options: ["Selected Transponder fails.", "System 1 or 2 has failed."],
     answer: 0,
-    explain: "",
+    explain: "The ATC control panel's fault light comes on specifically when the crew's selected transponder (XPDR 1 or 2, whichever is chosen on the XPDR selector) fails — it isn't a general indication that both systems have failed.",
+    reference: "Navigation/Surveillance - ATC (Controls and Indicators)",
   },
   {
     id: 11,
@@ -88,7 +98,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "You receive a SELCAL on VHF 2, what happens on your ACP?",
     options: ["Amber sign call flashes on VHF 2 key.", "Three green bars come on.", "White SELCAL appears on VHF 2 pushbutton and VHF 2 reception selector illuminates white.", "All of the above."],
     answer: 0,
-    explain: "",
+    explain: "An incoming SELCAL call makes the amber CALL legend flash on the transmission key of the radio it arrived on — in this case, the VHF 2 key — rather than triggering a separate green-bar or white-light indication.",
+    reference: "Communications - Controls (Audio Control Panel, Transmission Keys)",
   },
   {
     id: 12,
@@ -96,7 +107,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "With the INT/RAD switch of an Audio Control Panel (ACP) in the INT position and the sidestick Transmit Switch in the Transmit position, you are transmitting on the:",
     options: ["Intercom at all times.", "Radio selected by the transmission switch on the Audio Control Panel.", "Radio selected by the reception knob on the Audio Control Panel."],
     answer: 1,
-    explain: "",
+    explain: "The sidestick's radio-transmit switch works like the ACP's INT/RAD switch set to RAD: when squeezed, the boom or mask mike transmits through whichever radio is currently selected for transmission on the Audio Control Panel — the reception knob only controls what the crew hears, not what they transmit on.",
+    reference: "Communications - Controls (Side Stick Radio Selector)",
   },
   {
     id: 13,
@@ -104,7 +116,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If you depress the guarded NAV button, the MCDU RAD NAV pages are inhibited and the RMP controls navaid tuning.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Depressing the guarded RMP NAV key hands radio-navaid tuning control from the FMGC (and its MCDU RAD NAV pages) over to the RMP, so manual MCDU tuning is effectively inhibited while RMP backup tuning is engaged.",
+    reference: "Communications - Radio Tuning (RMP NAV Key)",
   },
   {
     id: 14,
@@ -112,7 +125,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Is STBY/NAV tuning possible on RMP 3.",
     options: ["Yes.", "No."],
     answer: 1,
-    explain: "",
+    explain: "RMP 3 has no STBY NAV tuning capability — that backup navaid-tuning function is only built into RMP 1 and RMP 2.",
+    reference: "Communications - Radio Nav Tuning (Back-Up Tuning)",
   },
   {
     id: 15,
@@ -120,7 +134,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Which statement is correct regarding the cockpit voice recorder?",
     options: ["Is automatically energized when the battery pb's are selected on.", "Is always active after DC electrical power is applied to the aircraft.", "Is automatically energized when the parking brake is set.", "Is automatically energized after the first engine start or five minutes after AC electrical power is applied to the aircraft."],
     answer: 3,
-    explain: "",
+    explain: "The CVR is energized automatically during the first 5 minutes after electrical power is applied, whenever at least one engine is running, and continuously in flight — so it becomes active either shortly after power-up or once the first engine has started, well before dispatch.",
+    reference: "Communications - Cockpit Voice Recorder (Description)",
   },
   {
     id: 16,
@@ -128,7 +143,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If RMP navigation tuning is currently in use for VOR tuning and ATC assigns a new communication frequency, what must be done?",
     options: ["The NAV key must be deselected and then press the transfer key.", "Tune the new frequency on the offside RMP.", "Select the appropriate VHF communication radio transmission key, tune using the rotary selector, press the transfer key"],
     answer: 2,
-    explain: "",
+    explain: "RMP navaid backup tuning and radio communication tuning are independent of each other — while STBY NAV backup mode is engaged, the crew still selects the VHF transmission key, dials in the new ATC frequency with the rotary selector, and presses transfer, exactly as in normal operation.",
+    reference: "Communications - Radio Tuning (RMP NAV Backup Mode)",
   },
   {
     id: 17,
@@ -136,7 +152,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If VHF 1 is selected on RMP 2, SEL light illuminates white:",
     options: ["On RMP 2.", "On RMP 1.", "On RMP 1 and 2."],
     answer: 2,
-    explain: "",
+    explain: "Selecting VHF 1 through RMP 2 (a transceiver normally dedicated to RMP 1) is exactly the cross-tuning condition that lights the SEL indicator — and because the RMPs are cross-connected, that indication comes on for both RMP 1 and RMP 2 together, not just one of them.",
+    reference: "Communications - Radio Tuning (RMP SEL Indicator)",
   },
   {
     id: 18,
@@ -144,7 +161,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "To transmit and receive on the service interphone, the pilot must select the:",
     options: ["CAB reception knob and the ATT transmission key on the ACP", "CAB reception knob and the MECH transmission key on the ACP.", "Service Int on the nose gear panel."],
     answer: 0,
-    explain: "",
+    explain: "For the service interphone, the pilot selects the CAB reception knob to listen and the ATT transmission key to talk — the same combination used elsewhere on the ACP for interphone communication with people outside the cockpit.",
+    reference: "Communications - Internal Communication (Service Interphone System)",
   },
   {
     id: 19,
@@ -152,7 +170,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "To communicate with a mechanic for manual start valve operation at the engine:",
     options: ["Select the INT/RAD selector to INT, and INT audio selector on", "Select the transmission key push button labeled INT and the INT audio selector.", "Select the transmission key push button labeled ATT and the audio selector labeled CAB.", "Select the transmission key push button labeled CAB and the audio selector labeled ATT."],
     answer: 2,
-    explain: "",
+    explain: "Communicating with a mechanic at the engine for a manual start-valve operation uses the same ACP combination as the rest of the service interphone system: the ATT transmission key push button to talk and the CAB audio selector to listen.",
+    reference: "Communications - Internal Communication (Service Interphone System)",
   },
   {
     id: 20,
@@ -160,7 +179,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Which ACP transmission key will illuminate if the flight attendants are calling the cockpit?",
     options: ["PA.", "CAB.", "ALERT.", "VHF3."],
     answer: 1,
-    explain: "",
+    explain: "The CAB transmission key doubles as the flight-attendant call indicator: its legend flashes amber (labeled ATT) when a cabin attendant calls the cockpit, and pressing that same key also selects the cabin interphone channel for the pilot to answer.",
+    reference: "Communications - Internal Communication (Cabin Interphone System / Controls)",
   },
   {
     id: 21,
@@ -168,7 +188,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "How can a navaid tuned through the STBY NAV on RMP 1 or 2 be identified?",
     options: ["The ident appears on the ND", "By pressing out the corresponding reception knob on the ACP", "All of the above."],
     answer: 2,
-    explain: "",
+    explain: "A navaid tuned through STBY NAV on RMP 1 or 2 can be identified two ways at once — its Morse ident appears as text on the ND, and pressing out the matching reception knob on the ACP lets the crew listen to the audio ident — so both are genuinely correct.",
+    reference: "Communications - Radio Nav Tuning / Navigation - Radio Nav Controls",
   },
   {
     id: 22,
@@ -176,7 +197,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "On the ground, the crew can energize the CVR manually by pressing the GND CTL pushbutton.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The GND CTL pushbutton on the overhead panel lets the crew manually energize the CVR (along with the DFDR and QAR) on the ground, in addition to the automatic energization logic.",
+    reference: "Communications - Cockpit Voice Recorder (Controls and Indicators)",
   },
   {
     id: 23,
@@ -184,7 +206,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Normally how should you call a Flight Attendant?",
     options: ["By his or her first name.", "Using the ACP CAB pb.", "Using an overhead FWD or AFT call pushbutton.", "Selecting the ATTND ADV pushbutton on."],
     answer: 2,
-    explain: "",
+    explain: "The standard way to summon a flight attendant is the overhead CALLS panel's FWD/MID/AFT (or PURS) pushbuttons, which trigger a chime and a call light at the corresponding cabin station — calling them by name or through other cockpit controls isn't the normal method.",
+    reference: "Communications - Internal Communication (Cabin Call System)",
   },
   {
     id: 24,
@@ -192,7 +215,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Only \\_\\_\\_\\_\\_ is functional in the emergency electrical configuration.",
     options: ["RMP 3", "RMP 1", "RMP1 and 3"],
     answer: 1,
-    explain: "",
+    explain: "Only RMP 1 stays functional in the Emergency Electrical Configuration — RMP 2 and RMP 3 lose power in that configuration.",
+    reference: "Communications - Radio Tuning (RMP General Description)",
   },
   {
     id: 25,
@@ -200,7 +224,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "On the ground, CVR is stopped automatically \\_\\_\\_\\_\\_\\_ after the last engine shutdown.",
     options: ["Immediately", "1 minute", "3 minutes", "5 minutes."],
     answer: 3,
-    explain: "",
+    explain: "On the ground, the CVR stops automatically 5 minutes after the last engine shuts down, provided its jack isn't in use — the same 5-minute figure used for its automatic energization after electrical power-up.",
+    reference: "Communications - Cockpit Voice Recorder (Description)",
   },
   {
     id: 26,
@@ -208,7 +233,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "With the MECH transmission key on the Audio Control Panel pressed:",
     options: ["The flight interphone channel is selected for transmission via the ACP RAD switch or the side stick radio selector.", "The cabin interphone channel is selected for transmission via the ACP RAD switch", "You can speak to the ground mechanic via the handset", "The mechanic will hear the external horn sound."],
     answer: 0,
-    explain: "",
+    explain: "The GND CTL pushbutton exists precisely so the crew can manually energize the CVR (and the DFDR/QAR) on the ground, outside of the automatic power/engine-running logic.",
+    reference: "Communications - Cockpit Voice Recorder (Controls and Indicators)",
   },
   {
     id: 27,
@@ -216,7 +242,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When using the boom mike, oxygen mask mike, or hand mike: the PA key must be pressed and held to use the aircraft PA system.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "Pressing the MECH transmission key selects the flight-interphone channel that also reaches the ground-mechanic jack near the nose gear bay; the crew still transmits on it through their normal push-to-talk controls — the ACP's INT/RAD switch or the sidestick radio selector — just as with any other interphone or radio channel.",
+    reference: "Communications - Internal Communication (Flight Crew Interphone / Ground Mechanic Call System)",
   },
   {
     id: 28,
@@ -224,7 +251,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Only the last 60 minutes of recording are retained by the CVR.",
     options: ["True.", "False"],
     answer: 1,
-    explain: "",
+    explain: "The CVR retains the last 2 hours of recording, not just 60 minutes.",
+    reference: "Communications - Cockpit Voice Recorder (Description)",
   },
   {
     id: 29,
@@ -232,7 +260,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "What is the function of the Guarded EMER push button on the overhead panel?",
     options: ["To alert ATC of an in-flight emergency.", "To alert the aft flight attendants of a routine need to speak to them.", "To alert all flight attendants of a pending urgent need to speak to them."],
     answer: 2,
-    explain: "",
+    explain: "The guarded EMER pushbutton on the overhead CALLS panel triggers the aircraft's emergency call system — flashing lights and a distinctive chime at every cabin station — to alert all flight attendants that the cockpit urgently needs to speak with them, not a routine call to one station or an ATC alert.",
+    reference: "Communications - Internal Communication (Cabin Call System, EMER Pushbutton)",
   },
   {
     id: 30,
@@ -240,7 +269,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "How do you cancel the ON VOICE green light?",
     options: ["By depressing the on voice p/b", "By pressing in the VOR reception knob", "By pressing in twice the VOR reception knob", "By depressing the VOR reception knob."],
     answer: 0,
-    explain: "",
+    explain: "The ON VOICE key is a simple toggle — the crew cancels its green ON light by pressing the same ON VOICE pushbutton again.",
+    reference: "Communications - Controls (ON VOICE Key)",
   },
   {
     id: 31,
@@ -248,7 +278,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The audio management system allows the flight crew to use:",
     options: ["All the radio communication and radio navigation facilities installed on the aircraft in transmission and reception mode.", "The interphone system.", "The call systems and Passenger Address (PA) system.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "The audio management system is the umbrella for everything the flight crew uses to communicate: every radio communication and radio-nav facility on the aircraft (transmit and receive), the interphone systems, the call systems, and the passenger address system.",
+    reference: "Communications - Intercommunication Systems (Audio Management System)",
   },
   {
     id: 32,
@@ -256,7 +287,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If ATC mode selector is at AUTO:",
     options: ["Selected ATC operates only in flight.", "Selected ATC operates when FLEX or TOGA power is selected for takeoff.", "Selected ATC operates as soon as one engine is running."],
     answer: 0,
-    explain: "",
+    explain: "The ATC transponder's AUTO position operates the selected transponder automatically in flight; on the ground in AUTO it only replies in Mode S (selective interrogation), so full normal ATC transponder operation is effectively an in-flight behavior.",
+    reference: "Navigation/Surveillance - ATC (Controls and Indicators)",
   },
   {
     id: 33,
@@ -264,7 +296,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Once activated, how can you cancel the EVAC alert from the cockpit?",
     options: ["OFF switch.", "Only able to deactivate from cabin (#1 Flight attendant).", "COMMAND switch.", "HORN SHUT OFF"],
     answer: 2,
-    explain: "",
+    explain: "The guarded COMMAND pushbutton switch that starts the EVAC alert is also what cancels it — selecting it back to OFF stops the alert, both in the cockpit and the cabin.",
+    reference: "Communications - Emergency Communication (Emergency Evacuation)",
   },
   {
     id: 34,
@@ -272,7 +305,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "With the AUDIO SWITCHING knob in the CAPT3 position, the Captain uses his acoustic equipment on ACP3.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "With the AUDIO SWITCHING selector at CAPT 3, the Captain's own headset and mikes route through ACP 3 (the third occupant's audio control panel) instead of ACP 1 — used to work around a failed ACP 1 or ACP 2.",
+    reference: "Communications - Controls (Audio Switching)",
   },
   {
     id: 35,
@@ -280,7 +314,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If an RMP fails:",
     options: ["The selected receiver is no longer controlled by this RMP", "The frequency displays disappear", "The green VHF or HF lights go out", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "A failed RMP loses control of whichever receiver it was tuning, its frequency displays and bars disappear, and its VHF/HF monitor lights go out — all of these happen together when an RMP fails.",
+    reference: "Communications - Radio Tuning (Radio Management Panel, General)",
   },
   {
     id: 36,
@@ -288,7 +323,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The cockpit voice recorder will automatically operate on the ground for \\_\\_\\_\\_\\_\\_\\_ minutes after electrical power is supplied to the airplane; or when at least \\_\\_\\_\\_\\_\\_\\_ engine is operating.",
     options: ["6 -- 2", "5 -- 1", "5 -- 2", "4 -- 1"],
     answer: 1,
-    explain: "",
+    explain: "The CVR automatically energizes on the ground during the first 5 minutes after the aircraft's electrical network is powered up, or as soon as at least 1 engine is running.",
+    reference: "Communications - Cockpit Voice Recorder (Description)",
   },
   {
     id: 37,
@@ -296,7 +332,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When the aircraft is in the Emergency Electrical Configuration:",
     options: ["RMP's 1 and 2, and ACP's 1 and 2 are both operative.", "RMP 1 and ACP's 1 and 2 are operative.", "RMP 1 and ACP 1 are operative.", "RMP 2 and ACP's 1 and 2 are operative."],
     answer: 1,
-    explain: "",
+    explain: "In the Emergency Electrical Configuration only RMP 1 stays powered among the radio panels, but both ACP 1 and ACP 2 remain operative — so it's RMP 1 plus both ACPs, not RMP 1 and only one ACP.",
+    reference: "Communications - Radio Tuning / Electrical - Emergency Electrical Configuration",
   },
   {
     id: 38,
@@ -304,7 +341,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "You can tune the ILS receivers to different channels.",
     options: ["Yes.", "No"],
     answer: 1,
-    explain: "",
+    explain: "The two ILS receivers are automatically tuned together to the frequency of the approach currently selected in the flight plan — they aren't independently tunable to two different channels the way the VHF or VOR receivers can be.",
+    reference: "Navigation - Radio Nav (ILS/GLS/MLS Description)",
   },
   {
     id: 39,
@@ -312,7 +350,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "If an RMP fails, the selected receiver is no longer controlled by this RMP and frequencies and bars disappear from this RMP.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "When an RMP fails, the receiver it had been controlling is no longer managed by that panel, and the failed RMP's frequency displays and monitor bars go blank — matching exactly what's described.",
+    reference: "Communications - Radio Tuning (Radio Management Panel, General)",
   },
   {
     id: 40,
@@ -320,7 +359,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The BFO key enables the beat frequency oscillator for listening to the ID signal.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The BFO (Beat Frequency Oscillator) key, used with an ADF selected, is what lets the crew hear the station's Morse-code identification audio — for most ADF installations, BFO must be active to hear that ident tone.",
+    reference: "Navigation - Radio Nav Controls (RMP, BFO Key)",
   },
   {
     id: 41,
@@ -328,7 +368,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "A VOR is tuned on RMP 1 using the STBY NAV function. Can this selection be seen on the MCDU RAD NAV page?",
     options: ["No. Information on RAD NAV page is not available when the NAV pb on RMP is pressed.", "Yes. Information on RAD NAV page is always available.", "No. It is not possible to tune a VOR using STBY NAV function.", "Yes. MCDU RAD NAV page shows VORs tuned using STBY NAV function."],
     answer: 0,
-    explain: "",
+    explain: "Radio nav data manually tuned through an RMP's STBY NAV backup function bypasses the FMGC entirely, so it does not show up on the MCDU RAD NAV page — that page only reflects FMGC-managed tuning.",
+    reference: "Communications - Radio Tuning (RMP NAV Backup Mode) / Navigation - Radio Nav Tuning",
   },
   {
     id: 42,
@@ -336,7 +377,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Which ACP switch configuration is correct for communication with other cockpit crew members while wearing your Oxygen Mask?",
     options: ["ACP INT/RAD switch selected to INT, INT reception knob on, loud speaker volume up.", "INT transmission key to on, INT reception knob on, use the sidestick push-to-talk when speaking, loud speaker volume up.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both switch configurations work for interphone communication while on oxygen masks: setting the ACP's INT/RAD switch to INT (with the INT reception knob on and speaker volume up) lets the mask mike transmit directly on interphone, and equally, leaving transmission selected on the ACP while using the sidestick's press-to-talk switch achieves the same result.",
+    reference: "Communications - Controls (Audio Control Panel / Side Stick Radio Selector)",
   },
   {
     id: 43,
@@ -344,7 +386,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Pressing the \\_\\_\\_\\_\\_ key, on the audio control panel, allows the crew to inhibit the audio navigation signals.",
     options: ["VOICE", "RESET", "ATT", "BFO"],
     answer: 0,
-    explain: "",
+    explain: "The ON VOICE key is specifically what lets the crew inhibit (filter out) the audio navigation ident signals from VOR and ADF stations.",
+    reference: "Communications - Controls (ON VOICE Key)",
   },
   {
     id: 44,
@@ -352,7 +395,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "RMP #1 is dedicated to which VHF radios?",
     options: ["VHF 1 and 2.", "VHF 2 and 3.", "VHF 1 and 3.", "All radios."],
     answer: 2,
-    explain: "",
+    explain: "RMP 1 is the panel normally dedicated to VHF 1 and VHF 3 (along with HF 1) — cross-tuning either of those through RMP 2 is what triggers the SEL indicator.",
+    reference: "Communications - Radio Tuning (RMP SEL Indicator, Dedicated Transceivers)",
   },
   {
     id: 45,
@@ -360,7 +404,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The service interphone has \\_\\_\\_\\_\\_\\_ interphone jacks and an OVRD switch located on the overhead panel.",
     options: ["Five", "Seven", "Eight", "Ten"],
     answer: 1,
-    explain: "",
+    explain: "The service interphone system has seven interphone jacks distributed around the aircraft, plus an OVRD switch on the overhead panel that lets ground personnel reach the flight crew even before the normal automatic-enable conditions are met.",
+    reference: "Communications - Internal Communication (Service Interphone System, Introduction)",
   },
   {
     id: 46,
@@ -368,7 +413,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "In case of dual FMGC failure selection of radio navigation frequencies is possible with:",
     options: ["RMP 1 only.", "RMP 1 and 2 only.", "RMP 1, 2 and 3.", "RMP 2 onley."],
     answer: 1,
-    explain: "",
+    explain: "If both FMGCs fail, radio-nav frequency selection is still possible through backup tuning on RMP 1 and RMP 2 — RMP 3 is never used for navaid tuning, even as a backup.",
+    reference: "Communications - Radio Nav Tuning (Back-Up Tuning)",
   },
   {
     id: 47,
@@ -376,7 +422,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "To make a PA announcement:",
     options: ["Depress and hold the PA transmission key push button.", "Use the pedestal mounted handset", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "A PA announcement can be made either by pressing and holding the PA transmission key on the ACP while speaking into a boom, mask, or hand mike, or simply by using the pedestal-mounted cockpit handset, which needs no ACP selection at all — both are valid methods.",
+    reference: "Communications - Internal Communication (Passenger Address, Controls and Indicators)",
   },
   {
     id: 48,
@@ -384,7 +431,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The AUDIO SWITCHING rotary selector allows replacement of a failed #1 or #2 ACP with ACP #3.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The AUDIO SWITCHING rotary selector exists specifically so the crew can substitute the third occupant's ACP 3 for a failed ACP 1 or ACP 2.",
+    reference: "Communications - Controls (Audio Switching)",
   },
   {
     id: 49,
@@ -392,7 +440,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "In case of RMP 2 failure, VHF 2 is lost.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "If an RMP fails, the remaining RMP simply takes over control of all the VHF (and HF) transceivers — so a single RMP failure does not cause the loss of any particular VHF radio.",
+    reference: "Communications - Radio Tuning (Radio Management Panel, General)",
   },
   {
     id: 50,
@@ -400,7 +449,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "All communications radios are controlled:",
     options: ["From the audio control panels (ACPs)", "By the F/O", "From any one of the three radio management panels (RMPs)."],
     answer: 2,
-    explain: "",
+    explain: "All the communication radios can be tuned from any of the three Radio Management Panels — the RMPs are the shared tuning control for every VHF/HF transceiver, not something split off to the ACPs or a single crew member.",
+    reference: "Communications - Radio Tuning (Radio Management Panel, General)",
   },
   {
     id: 51,
@@ -408,7 +458,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "The flashing amber MECH light indicates that the interphone system is faulty.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "A flashing amber MECH light means a ground mechanic is calling the cockpit through the nose-gear-bay call system — it isn't a fault indication for the interphone system.",
+    reference: "Communications - Internal Communication (Ground Mechanic Call System)",
   },
   {
     id: 52,
@@ -416,7 +467,8 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "Illumination of the SEL indicator on a Radio Management Panel indicates:",
     options: ["The RMP has failed.", "The VHF has failed.", "The RMP is being tuned to a transceiver from another RMP."],
     answer: 2,
-    explain: "",
+    explain: "The SEL indicator lighting up on an RMP shows that a transceiver normally dedicated to that RMP is currently being tuned through a different RMP — it's a cross-tuning indication, not a failure light for the RMP or the VHF itself.",
+    reference: "Communications - Radio Tuning (RMP SEL Indicator)",
   },
   {
     id: 53,
@@ -424,6 +476,7 @@ export const COMMUNICATION_QUESTIONS: Question[] = [
     q: "When the ON voice key on an Audio Control Panel is pushed in; ADF and VOR ident signals are inhibited.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "Pushing in the ON VOICE key filters out the ADF and VOR ident tones so the crew hears the underlying audio (such as ATIS) more clearly, without the Morse identification signal mixed in.",
+    reference: "Communications - Controls (ON VOICE Key)",
   },
 ];

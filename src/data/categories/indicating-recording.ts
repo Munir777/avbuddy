@@ -9,7 +9,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The actual speed is indicated by the ______ reference line.",
     options: ["yellow", "amber", "red", "white"],
     answer: 0,
-    explain: "",
+    explain: "A white scale moves in front of a fixed yellow reference line on the speed tape, which marks the aircraft's actual speed.",
+    reference: "Indicating - PFD (Speed Scale, Speed Reference Line)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Do the Check ATT. Messages appear on both PFDs at the same time?",
     options: ["Yes", "No", "Message only appears on the EWD", "Message only appears on ECAM"],
     answer: 0,
-    explain: "",
+    explain: "A CHECK ATT flag appears on both PFDs whenever the attitude information from the two PFDs disagrees by at least 5 degrees, and an ECAM caution also appears.",
+    reference: "Indicating - PFD (Attitude Indications, CHECK ATT Flag)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "What is the meaning of “9000” in blue at the top of the altitude scale?",
     options: ["It marks the FCU selected altitude.", "It marks the airfield elevation.", "It marks the transition altitude.", "It marks the decision height."],
     answer: 0,
-    explain: "",
+    explain: "The blue number at the top of the altitude scale is the FCU-selected altitude, shown as a numerical value when it's off the visible portion of the scale.",
+    reference: "Indicating - PFD (Altitude Scale, Target Altitude Symbol)",
   },
   {
     id: 4,
@@ -33,15 +36,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "When is the ‘Green Dot’ displayed?",
     options: ["Only when flap handle is the zero position.", "Only when flap handle is the zero position, above FL80", "Only when flap handle is the zero position, below FL80", "Only when flap handle is the zero position, below FL85"],
     answer: 0,
-    explain: "",
+    explain: "The green dot symbol, showing the engine-out operating speed in the clean configuration, appears whenever the aircraft is flying in the clean configuration - it's not tied to any altitude threshold.",
+    reference: "Indicating - PFD (Speed Scale, Green Dot Symbol)",
   },
   {
     id: 5,
     system: "Indicating / Recording",
     q: "FACs calculate speed trend and VLS. The extremities of the trend vector and V1s segment indicate respectively; speed value at the next 10 seconds and 1.23 Vs 1 g with present configuration. Is this correct?",
     options: ["Yes (for both cases)", "No (for both cases)", "No because VLS is not 1.23 Vs 1g", "No because the tip of the speed arrow is not the speed in 10 seconds time"],
+    // REVIEW (uncertain): The FCOM shows VLS does not stay at a flat 1.23 VS for the "present configuration" - it corresponds to 1.13 VS during takeoff, becomes 1.23 VS after retracting one step of flaps, and 1.28 VS in the clean configuration. So the blanket claim of "1.23 Vs 1g with present configuration" doesn't match every phase, even though the speed-trend-vector-tip description (speed value 10 s ahead) checks out. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 6,
@@ -49,7 +55,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "VLS is the lowest speed that the autoflight system (autopilot or A/THR) will fly the aircraft. This is a dynamic speed corresponding to an Angle Of Attack (AOA).",
     options: ["VLS will change with wing configuration change.", "With speedbrake extension, VLS will increase", "Above FL200, VLS will provide a 0.2g buffet margin", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "VLS varies with configuration (it changes as flaps/slats are retracted), increases when the speedbrakes are extended, and above FL200 (20,000 ft) it's corrected for Mach effect to keep a 0.2g buffet margin - so all three of these are correct.",
+    reference: "Indicating - PFD (Speed Scale, VLS) / Limitations - Speeds",
   },
   {
     id: 7,
@@ -57,7 +64,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The Glide slope index will flash continuously when the deviation exceeds ______ above ______,",
     options: ["1/2 dot below 120 feet RA", "1 dot above 100 feet RA", "1 dot above 60 ft RA", "1/2 dot below 100 feet RA."],
     answer: 1,
-    explain: "",
+    explain: "The glideslope scale and diamond flash if the deviation exceeds one dot, above 100 ft radio altitude.",
+    reference: "Indicating - PFD (ILS Indications, Glide Deviation)",
   },
   {
     id: 8,
@@ -65,7 +73,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "In case of PFDU failure, the PFD image is transferred to the NDU:",
     options: ["Manually", "Automatically", "Either manually or automatically", "The PFD image cannot be displayed on the ND."],
     answer: 1,
-    explain: "",
+    explain: "If the PFD display unit (PFDU) fails, the system automatically transfers the PFD image to the ND display unit (NDU) - no crew action is needed.",
+    reference: "Indicating - PFD (PFD Failure, Automatic Image Transfer)",
   },
   {
     id: 9,
@@ -73,15 +82,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "When will the Flight Director bars flash?",
     options: ["When a reversion occurs.", "When loss of LOC or G/S signal in LAND mode.", "All of the above."],
     answer: 2,
-    explain: "",
+    explain: "The Flight Director bars flash for a reversion to the basic HDG/V/S (or similar) mode, and also when LOC or Glide Slope data is lost above the relevant radio-altitude threshold after capture - both trigger the flash.",
+    reference: "Indicating - PFD (Flight Director Warnings)",
   },
   {
     id: 10,
     system: "Indicating / Recording",
     q: "When does the Side Stick Order indicator display?",
     options: ["After first engine start and disappears when passing 400 feet RA", "After first engine start and disappears after rotation", "After second engine start and disappears when passing 400 feet RA", "After second engine start and disappears when passing 400 feet RA"],
+    // REVIEW (uncertain): The FCOM confirms the sidestick order indication "appears as soon as one engine is started" (the first opportunity to start an engine), matching "after first engine start" rather than "second engine start." But the extracted text doesn't state whether the symbol disappears after rotation or at a specific 400 ft RA threshold, so that part couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 11,
@@ -89,7 +101,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "When will the PFD Heading tape revert to TRUE heading?",
     options: ["North of 73° North or South of 60° South", "South of 73° North or North of 60° South.", "North of 80° North or South of 73°South", "North of 78° North or South of 78°South"],
     answer: 0,
-    explain: "",
+    explain: "The heading tape switches to displaying TRUE heading (a 'TRU' flag appears) at latitudes above 73 degrees North or below 60 degrees South.",
+    reference: "Indicating - PFD / ND (Heading Indications, TRUE Heading Reversion)",
   },
   {
     id: 12,
@@ -97,7 +110,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Weather radar can be displayed in what modes on the ND?",
     options: ["ARC and ROSE NAV modes only.", "ROSE VOR and ROSE ILS modes.", "ROSE VOR and ROSE ILS modes.", "All modes except plan."],
     answer: 3,
-    explain: "",
+    explain: "The Navigation Display can show the weather radar image in every mode except PLAN.",
+    reference: "Indicating - ND (Weather Radar Indications)",
   },
   {
     id: 13,
@@ -105,7 +119,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The upper ECAM Display Unit (DU) has failed. You want to see the DOOR/OXY page. How can you see it?",
     options: ["You have to press and hold the DOOR key on the ECP", "You have to switch the EIS DMC to CAPT3", "You have to press and hold the RCL key on the ECP.", "You have to press and hold the RCL + DOOR key on the ECP"],
     answer: 0,
-    explain: "",
+    explain: "If the upper ECAM DU fails, the DOOR/OXY system page can still be called up by pressing and holding the DOOR system-page pushbutton on the ECAM control panel.",
+    reference: "Indicating - ECAM (Failure of Upper ECAM DU)",
   },
   {
     id: 14,
@@ -113,7 +128,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "What causes a display unit (DU) to go blank?",
     options: ["Loss of power.", "Display unit internal failure.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "A DU goes blank either because it has lost power or because of an internal DU failure - both are valid causes (a DMC failure instead produces the diagonal-line pattern, not a blank screen).",
+    reference: "Indicating - ECAM / EIS (DU Failures)",
   },
   {
     id: 15,
@@ -121,7 +137,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "How did the PNF cancel the caution for the NAV ILS 1 FAULT before calling the STATUS page on the ECP?",
     options: ["By pressing the EMER CANC pushbutton.", "By pressing the CLR key", "By pressing the STS key", "By pressing the ALL key."],
     answer: 0,
-    explain: "",
+    explain: "The EMER CANC pushbutton cancels a present caution (single chime, MASTER CAUTION lights, and the ECAM message) for the rest of the flight - this is the button used to suppress a spurious caution before checking the STATUS page.",
+    reference: "Indicating - ECAM Controls (EMER CANC Pushbutton)",
   },
   {
     id: 16,
@@ -129,7 +146,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "What causes a DU to display a black screen with a white diagonal line?",
     options: ["DMC failure.", "No power.", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "A DU showing a black screen with a white diagonal line is the signature of a DMC failure - not simply a loss of power.",
+    reference: "Indicating - EIS (DMC Failure Indication)",
   },
   {
     id: 17,
@@ -137,15 +155,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Information from the #1 VOR receiver will be displayed:",
     options: ["On the capt’s PFD when the captain’s VOR bearing selector is selected to VOR.", "On the capt ‘s ND when the capt ‘s VOR bearing selector is selected to VOR.", "VOR #1 course information is available on the captain’s PFD and ND when the captain’s ILS pb is selected ON."],
     answer: 1,
-    explain: "",
+    explain: "Information from the number 1 VOR receiver is displayed on the captain's Navigation Display when the captain's ADF-VOR selector switch is set to VOR - it's the onside ND, not the onside PFD, that shows this bearing/DME data.",
+    reference: "Indicating - ND (NAVAID Bearing Pointer Selection)",
   },
   {
     id: 18,
     system: "Indicating / Recording",
     q: "Course information from the #1 ILS receiver will be displayed:",
     options: ["On the captain’s PFD when the captain’s ILS push button is selected ON.", "On the FO’s PFD when his ILS push button is selected on and on the captain’s ND, when the captain’s ND is selected to ILS ROSE.", "On the captain’s PFD and ND when the captain’s ILS push button is selected ON.", "The first two statements are correct"],
+    // REVIEW (uncertain): One passage describes the LS pushbutton as displaying the localizer and glide slope scales "on the PFD," while a separate passage under the ND indications describes an ILS course symbol appearing "when the pilot pushes the LS pb-sw" - suggesting the same switch affects both displays. The extracted text doesn't clearly resolve whether ILS course information from the #1 receiver appears on the PFD only or on both the PFD and the onside ND. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 19,
@@ -153,7 +174,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "How can the ILS 1 FAULT be restored from being a CANCELLED CAUTION?",
     options: ["By resetting the appropriate circuit breaker.", "By pressing and holding any CLR key for more than 3 seconds.", "By pressing the EMER CAN pushbuttton for more than 3 seconds.", "By pressing and holding the RCL key for more than 3 seconds."],
     answer: 3,
-    explain: "",
+    explain: "The flight crew can restore all previously cancelled alerts (including a cancelled ILS 1 FAULT caution) by pressing and holding the RCL pushbutton for more than 3 seconds.",
+    reference: "Indicating - ECAM Controls (RCL Pushbutton)",
   },
   {
     id: 20,
@@ -161,7 +183,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The Flight Director bars are out of view when Bank angle exceeds 67°.",
     options: ["True", "False."],
     answer: 1,
-    explain: "",
+    explain: "The Flight Director bars are actually removed from view when the aircraft's pitch exceeds 25 degrees nose up or 13 degrees nose down, or when bank angle exceeds 45 degrees - not 67 degrees.",
+    reference: "Indicating - PFD (Flight Director Removal Conditions)",
   },
   {
     id: 21,
@@ -169,15 +192,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "When should the EMER CANC push button be used?",
     options: ["At the completion of an ECAM procedure for an abnormal procedure.", "Whenever a LEVEL 3 warning or LEVEL 2 caution occurs.", "Whenever a repetitive visual or aural warning, or caution is received that the crew has determined to be false."],
     answer: 2,
-    explain: "",
+    explain: "The EMER CANC pushbutton is meant only to suppress a spurious MASTER CAUTION that the crew has determined is false or repeating without cause.",
+    reference: "Indicating - ECAM Controls (EMER CANC Pushbutton)",
   },
   {
     id: 22,
     system: "Indicating / Recording",
     q: "Of the three types of EIS displays, which one has the lowest priority?",
     options: ["The ND.", "The PFD.", "The SD.", "E/WD."],
+    // REVIEW (uncertain): No FCOM text was found ranking the SD, PFD, and ND by display priority against one another, so the claim that the SD has the lowest priority of the three couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 2,
     explain: "",
+    needsReview: true,
   },
   {
     id: 23,
@@ -185,7 +211,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "If the FPV is above the horizon line, what is the aircraft actually doing?",
     options: ["Descending.", "Maintaining FL.", "Climbing.", "Cannot say."],
     answer: 2,
-    explain: "",
+    explain: "The Flight Path Vector's vertical position shows the aircraft's actual flight path angle with respect to the horizon - above the horizon line means a positive flight path angle, i.e. the aircraft is climbing.",
+    reference: "Indicating - PFD (Flight Path Vector)",
   },
   {
     id: 24,
@@ -193,7 +220,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Both ECAM screens have failed. Is it possible to get E/WD indications?",
     options: ["Yes, the E/WD is automatically transferred to one of the NDs.", "No. The E/WD is lost until the aircraft can be repaired.", "Yes, to get E/WD information. It must be manually transferred to one of the NDs.", "Yes. E/WD information is automatically transferred to the the F/O’s PFD in the event of an ECAM warning."],
     answer: 2,
-    explain: "",
+    explain: "Recovering E/WD indications after both ECAM DUs fail is not automatic - the crew must manually select the ECAM/ND XFR switch to display the engine/warning page on a Navigation Display.",
+    reference: "Indicating - ECAM (Failure of Both ECAM DUs)",
   },
   {
     id: 25,
@@ -201,7 +229,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "With radar selected on, what can you read on ND about antenna setting?",
     options: ["Tilt angle", "Tilt angle and gain mode", "Roll angle and tilt angle", "Nothing"],
     answer: 1,
-    explain: "",
+    explain: "With the weather radar selected on, the ND shows both the tilt angle (in degrees, blue) and the gain mode ('MAN' in white when manual gain is selected).",
+    reference: "Indicating - ND (Weather Radar Indications, Tilt Angle and Gain Mode)",
   },
   {
     id: 26,
@@ -209,7 +238,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "If a PFD fails, does anything happen automatically?",
     options: ["The ATT HDG switch must be used on the switching panel in order to recover PFD information.", "The image automatically transfers to the display formerly occupied by the ND.", "The image automatically transfers to the UPPER ECAM.", "It has to be manually activated."],
     answer: 1,
-    explain: "",
+    explain: "If a PFD fails, its image is transferred automatically to the display that was formerly occupied by the ND - no manual switch action is required.",
+    reference: "Indicating - PFD (PFD Failure, Automatic Image Transfer)",
   },
   {
     id: 27,
@@ -217,7 +247,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "What is the basic role of the DMCs:",
     options: ["They compute and elaborate displays", "Generation of audio warnings", "Generation of amber warnings", "Generation of synthetic voice messages"],
     answer: 0,
-    explain: "",
+    explain: "The Display Management Computers' basic role is to acquire and process signals from sensors and other computers to generate the images shown on the displays - generating aural or synthetic-voice warnings is the FWC's job, not the DMCs'.",
+    reference: "Indicating - EIS (Display Management Computers, General)",
   },
   {
     id: 28,
@@ -225,7 +256,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "If the UPPER ECAM DU fails, what will be displayed on the lower unit?",
     options: ["System display page.", "Engines and Warning page (E/WD)", "Status page."],
     answer: 1,
-    explain: "",
+    explain: "If the upper ECAM DU fails, the engine/warning (E/WD) page automatically replaces the system/status page on the lower ECAM DU.",
+    reference: "Indicating - ECAM (Failure of Upper ECAM DU)",
   },
   {
     id: 29,
@@ -233,7 +265,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The Speed Trend Arrow is a dynamic information displaying the speed to which the aircraft will be in _____.",
     options: ["5 seconds.", "8 seconds", "10 seconds", "13 seconds."],
     answer: 2,
-    explain: "",
+    explain: "The tip of the speed trend arrow shows the speed the aircraft will reach in the next 10 seconds if the current acceleration or deceleration continues.",
+    reference: "Indicating - PFD (Speed Scale, Speed Trend Arrow)",
   },
   {
     id: 30,
@@ -241,15 +274,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "On a bottom of the STATUS page, what does the green arrow mean?",
     options: ["It is a reminder to land as soon as possible.", "It indicates that there is a system page behind.", "It means that there is more information to be seen."],
     answer: 2,
-    explain: "",
+    explain: "The green arrow at the bottom of the STATUS page appears when the page's data overflows the visible left or right area of the display, indicating there's more information to see.",
+    reference: "Indicating - ECAM (Status Page)",
   },
   {
     id: 31,
     system: "Indicating / Recording",
     q: "As you approach a selected altitude, when will the yellow altitude window start flashing?",
     options: ["As you approach within 750 ft of FCU selected altitude and stop when it is within 250 ft.", "As you approach within 1000 ft of FCU selected altitude and stop when it is within 150 ft.", "As you approach within 500 ft of FCU selected altitude and stop when it is within 150 ft.", "As you approach within 900 ft of FCU selected altitude and stop when it is within 200 ft."],
+    // REVIEW (uncertain): The FCOM confirms that selecting a new altitude stops the flashing of the yellow altitude window, but the extracted text doesn't state the specific onset/offset distances (such as 750 ft / 250 ft) that trigger and stop the flashing in the first place, so the exact thresholds in this option couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 32,
@@ -257,7 +293,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Is the Side Slip indicator always yellow?",
     options: ["Yes.", "No, it turns blue when it becomes a beta target (displaying optimum side slip for a given configuration)", "No, it turns orange when it becomes a beta target."],
     answer: 1,
-    explain: "",
+    explain: "The sideslip index is normally yellow, but it changes to blue (and is then called the beta target) under specific conditions, such as an engine failure at takeoff or go-around - so it isn't always yellow.",
+    reference: "Indicating - PFD (Sideslip Index)",
   },
   {
     id: 33,
@@ -265,7 +302,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "VOR, ILS, and NDB raw data information is displayed on the ND in which of the following modes?",
     options: ["VOR, RMI and NDB information may be displayed in the ARC or ROSE NAV modes.", "VOR and ILS information can be displayed in the ROSE VOR and ROSE ILS modes respectively", "Both are correct"],
     answer: 2,
-    explain: "",
+    explain: "Both are correct: raw VOR/ADF (RMI-style) bearing and DME data is shown on the ND in ARC or ROSE NAV mode, while VOR and ILS each have their own dedicated course-and-deviation presentation in ROSE VOR and ROSE LS mode respectively.",
+    reference: "Indicating - ND (NAVAID Indications - General, ROSE VOR Mode, ROSE LS Mode)",
   },
   {
     id: 34,
@@ -273,7 +311,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The green ‘S’ of the speedtape is the Minimum Slat Retraction Speed. It is only displayed when the flap handle position is in position 1",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The green 'S' symbol (Minimum Slat Retraction Speed) appears specifically when the flap lever is in position 1.",
+    reference: "Indicating - PFD (Speed Scale, Minimum Slat Retraction Speed)",
   },
   {
     id: 35,
@@ -281,7 +320,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Where is information displayed by DMC #1 and DMC#2?",
     options: ["DMC#1 supplies data to PFD#1, ND#1, and lower ECAM. DMC #2 supplies data to PFD#2, ND#2, and upper ECAM.", "DMC#1 supplies data to PFD#1, PFD#2, and upper ECAM. DMC #2 supplies data to ND#1, ND#2, and lower ECAM.", "DMC#1 supplies data to PFD#1, ND#1, and upper ECAM. DMC #2 supplies data to PFD#2, ND#2, and lower ECAM.", "DMC#1 supplies data to PFD#1, ND#2, and lower ECAM. DMC #2 supplies data to PFD#2, ND#1, and upper ECAM."],
     answer: 2,
-    explain: "",
+    explain: "DMC 1 supplies the captain's PFD, the captain's ND, and the upper ECAM DU. DMC 2 supplies the first officer's PFD, the first officer's ND, and the lower ECAM DU.",
+    reference: "Indicating - EIS (Display Management Computers, General)",
   },
   {
     id: 36,
@@ -289,7 +329,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "How many DMC’s are there?",
     options: ["1", "2", "3", "4"],
     answer: 2,
-    explain: "",
+    explain: "There are three identical Display Management Computers - DMC 1 and DMC 2 are in normal use, with DMC 3 on standby.",
+    reference: "Indicating - EIS (Display Management Computers, General)",
   },
   {
     id: 37,
@@ -297,7 +338,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "After the engine shutdown, you observe a pulsing STS message. What does it mean?",
     options: ["It is an indication that at least one system requires crew attention.", "It is an indication that the aircraft has not been shut down correctly.", "It is a reminder that the status page holds a maintenance message.", "It is an indication that the aircraft has not been shut down incorrectly."],
     answer: 2,
-    explain: "",
+    explain: "A pulsing STATUS reminder after engine shutdown means the STATUS page holds a maintenance message - it appears when the STATUS page isn't empty and a MAINTENANCE status exists at engine shutdown.",
+    reference: "Indicating - ECAM (STS Reminder)",
   },
   {
     id: 38,
@@ -305,7 +347,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Both LOC and glideslope will flash if, after capture, the signal is lost.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Both the localizer and glideslope flags/scales flash if, after being captured, the corresponding signal is subsequently lost.",
+    reference: "Indicating - PFD (ILS Indications, LOC and G/S Flags)",
   },
   {
     id: 39,
@@ -313,15 +356,18 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The presence of VOR1 in red on the ND indicates:",
     options: ["The VOR station currently tuned is out of range.", "The VOR station currently tuned is out of service.", "The # 1 VOR receiver is inoperative.", "The VOR station currently tuned is out of range."],
     answer: 2,
-    explain: "",
+    explain: "A VOR 1 flag in red on the ND means the number 1 VOR receiver itself has failed (as opposed to the station being merely out of range or out of service).",
+    reference: "Indicating - PFD (Flags and Messages, Navigation Receiver Flags)",
   },
   {
     id: 40,
     system: "Indicating / Recording",
     q: "RNAV position information is displayed on the ND in which of the following modes?",
     options: ["ARC and ROSE NAV modes only.", "ROSE VOR and ROSE ILS modes.", "ARC, ROSE and PLAN modes.", "ROSE VOR mode."],
+    // REVIEW (uncertain): The extracted text confirms the aircraft symbol representing FM-computed position appears in ARC/ROSE NAV mode (fixed and centered) and is also explicitly described in PLAN mode ("its position represents the aircraft position given by the FMGS"), which doesn't clearly support restricting RNAV position display to ARC and ROSE NAV only. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 41,
@@ -329,7 +375,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The maximum speed to select next higher flap setting is indicated by two amber dashes.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The maximum speed for selecting the next (further extended) flap lever position is VFE NEXT, shown as an amber equal sign on the speed scale - which is effectively two short amber dashes stacked together.",
+    reference: "Indicating - PFD (Speed Scale, VFE Next)",
   },
   {
     id: 42,
@@ -337,7 +384,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "If the lower ECAM DU fails, is there a way to retrieve that information?",
     options: ["By pressing and holding the related systems page push button on the ECAM control panel, the page will be displayed on the UPPER ECAM.", "By rotating ECAM/ND XFR switch on switching panel, lower ECAM page will be transferred to either Capt or FO’s ND.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct: the crew can either press and hold the related system pushbutton to send that page to the upper ECAM, or use the ECAM/ND XFR switch to transfer it to a Navigation Display.",
+    reference: "Indicating - ECAM (Failure of Lower ECAM DU)",
   },
   {
     id: 43,
@@ -345,7 +393,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "What does a pulsing green engine parameter indicate on the ECAM?",
     options: ["An ADVISORY, the parameter is about to reach the limit.", "An ADVISORY, the parameter is out of the limits", "A MEMO, the parameter has a faulty indication.", "A level 3 failure requiring immediate crew action."],
     answer: 0,
-    explain: "",
+    explain: "A pulsing green engine parameter indicates the parameter has crossed an advisory limit (for example, oil quantity dropping below its advisory mark) - it's a caution-level advisory, not an out-of-limits or failure indication.",
+    reference: "Indicating - ECAM (Engine Parameters, Advisory Pulsing Indications)",
   },
   {
     id: 44,
@@ -353,7 +402,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "In case of a double FWC failure master caution light, master warning light, aural warnings and ECAM cautions and warnings are lost.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "With a double FWC failure (or loss of FWC-to-EIS communication), ECAM cautions and warnings, aural warnings, and the master caution and warning lights are all lost - the ECAM system pages themselves remain available.",
+    reference: "Procedures - Abnormal and Emergency (FWS FWC 1+2 Fault)",
   },
   {
     id: 45,
@@ -361,7 +411,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "Once the crewmember has completed viewing a specific system, what is the correct procedure for clearing the screen and returning it to a normal presentation?",
     options: ["Press the respective system push button again.", "It goes away by itself", "Press CLR on the ECAM control panel.", "Press twice CLR on the ECAM control panel."],
     answer: 0,
-    explain: "",
+    explain: "Pressing the same system pushbutton a second time cancels that manually-selected page and returns the display to its normal presentation.",
+    reference: "Indicating - ECAM Controls (System Page Pushbuttons)",
   },
   {
     id: 46,
@@ -369,7 +420,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The lower end of a red and black strip along the speed scale defines the VMAX speed.",
     options: ["It is the lowest of the following VMO (or MMO), VLE, VFE", "It is the speed corresponding to the stall warning (VSW)", "It represents the speed corresponding to the angle of attack at which alpha protection becomes active."],
     answer: 0,
-    explain: "",
+    explain: "The lower end of the red-and-black strip on the speed scale marks VMAX, which is the lowest of VMO (or the speed corresponding to MMO), VLE, and VFE.",
+    reference: "Indicating - PFD (Speed Scale, VMAX)",
   },
   {
     id: 47,
@@ -377,7 +429,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "After a single DMC failure, how could a crew member recover the display units?",
     options: ["It is done automatically.", "Once a DMC has failed, the information is unrecoverable.", "Rotate the EIS DMC switch on the switching panel to replace the failed DMC with DMC #3."],
     answer: 2,
-    explain: "",
+    explain: "After a single DMC failure, the crew can recover the display by turning the EIS DMC switch to substitute the standby DMC 3 for the failed DMC 1 or DMC 2.",
+    reference: "Indicating - EIS (Display Management Computers, Reconfiguration)",
   },
   {
     id: 48,
@@ -385,7 +438,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "How are the FMAs displayed on the PFD?",
     options: ["There are 5 columns and 3 rows.", "There are 3 columns and 5 rows.", "There are 3 columns and 2 rows.", "There are 4 columns and 2 rows."],
     answer: 0,
-    explain: "",
+    explain: "The FMA is laid out in 5 columns and 3 rows (first, second, and third line).",
+    reference: "Indicating - PFD / Flight Guidance (Flight Mode Annunciator, General)",
   },
   {
     id: 49,
@@ -393,7 +447,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "If the FPV (Flight Path Vector) symbol is right of center, where is the wind coming from?",
     options: ["Right.", "Left.", "It depends of the Track followed"],
     answer: 1,
-    explain: "",
+    explain: "The Flight Path Vector reflects the aircraft's actual track, including wind effect. If the bird sits to the right of the fixed aircraft symbol, the aircraft is being blown right of its heading, meaning it's crabbing into wind coming from the left to hold that track.",
+    reference: "Indicating - PFD (Flight Path Vector, Use of FPV)",
   },
   {
     id: 50,
@@ -401,7 +456,8 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The SD displays the Gross Weight (GW) in green as soon as the second engine is started. * As soon as the first engine is started.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "The SD displays Gross Weight (GW) in green as soon as the flight crew starts the first engine, not the second.",
+    reference: "Indicating - SD (Cruise Page, Gross Weight Indication)",
   },
   {
     id: 51,
@@ -409,6 +465,7 @@ export const INDICATING_RECORDING_QUESTIONS: Question[] = [
     q: "The Flight Path vector (FPV) represents the lateral and vertical trajectory of the aircraft with respect to the ground. On the lateral scale, it indicates the aircraft’s track. On the vertical scale, it indicates the aircraft’s flight path angle",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The Flight Path Vector represents the aircraft's lateral and vertical trajectory with respect to the ground: on the lateral scale it shows track, and on the vertical scale it shows flight path angle.",
+    reference: "Indicating - PFD (Flight Path Vector)",
   },
 ];

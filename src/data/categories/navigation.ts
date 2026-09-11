@@ -9,7 +9,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "While taxiing on the ground, the FMGS displays the position of the aircraft using:",
     options: ["IRS and DME/DME.", "IRS only.", "IRS and VOR/DME.", "DME/DME and VOR/DME."],
     answer: 1,
-    explain: "",
+    explain: "The FM position update priority runs IRS-GPS, then IRS-DME/DME, then IRS-VOR/DME, then IRS only - while taxiing on the ground, before any of those radio/GPS updates are established, the FMGS is working from IRS data alone.",
+    reference: "Auto Flight - Flight Management (Navigation - Position Computation)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "All navaids are normally autotuned by:",
     options: ["The FMGC", "MCDU", "ADIRU"],
     answer: 0,
-    explain: "",
+    explain: "All navaids are normally autotuned by the FMGC, based on the active flight plan.",
+    reference: "Auto Flight - Flight Management (Navigation - Radio Navigation Tuning)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The IR alignment count down stops one minute prior to accomplishment and the ALIGN lights are flashing. Why does it happen?",
     options: ["It is an indication that there is a disagreement between the IRs and the alignment must be restarted.", "It is an indication that the alignment is complete but must be acknowledged", "It is an indication that alignment has stopped as the present position data has not been entered from the FMGS."],
     answer: 2,
-    explain: "",
+    explain: "One of the documented reasons the ALIGN light flashes during alignment is that the IRS hasn't received a position from the MCDU or the ADIRS overhead CDU - matching a countdown that stops just before completion because present position data was never entered.",
+    reference: "Auto Flight - Flight Management (Alignment of Inertial Reference System)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Radio Height is displayed on the PFD:",
     options: ["Below 2500 feet.", "When the LOC or APPR p/b is pressed.", "When a Decision Height is selected."],
     answer: 0,
-    explain: "",
+    explain: "Radio Height is displayed on the PFD whenever it is below 2,500 ft.",
+    reference: "Indicating - PFD (Radio Height Indication)",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The Engaged Vertical Modes are displayed on the Flight Mode Annunciator on the first line in:",
     options: ["Green or Blue", "Green or Magenta", "Blue"],
     answer: 0,
-    explain: "",
+    explain: "Engaged vertical modes on the FMA's first line are shown in green (with some, like V/S and FPA, pairing the green mode name with a blue numeric target).",
+    reference: "Auto Flight - Flight Guidance (Flight Mode Annunciator)",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Selection of the correct takeoff runway on the FMGC prior to each flight is necessary because:",
     options: ["The FADEC needs it to know how much to reduce the thrust for takeoff.", "Selection of the correct runway insures proper pressurization.", "Selection of the correct runway permits the FMGC to update its position at takeoff."],
     answer: 2,
-    explain: "",
+    explain: "Selecting the correct takeoff runway in the FMGC lets the system update (refine) the aircraft's computed position at the start of the takeoff roll.",
+    reference: "Auto Flight - Flight Management (Takeoff Position Update)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "In flight, either the AP/FD pitch control, or autothrust may acquire and hold a target speed or Mach number, depending on the engaged modes. Speed control is “Managed” when the target comes from the SPD/MACH FCU window.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False - managed speed control comes from the FMGS-computed target (with the SPD/MACH window dashed); it's selected speed control that takes its target from the value set in the SPD/MACH FCU window.",
+    reference: "Auto Flight - General (FCU Knobs, Managed vs Selected Guidance)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The takeoff bias is:",
     options: ["Replaced when a bias is computed based on radio position.", "Retained for the remainder of the flight.", "Blended out over the next 30 minutes."],
     answer: 0,
-    explain: "",
+    explain: "The takeoff bias (the position offset computed at the start of the takeoff roll) is replaced once a new bias is computed from radio position - it isn't simply retained for the rest of the flight or blended out on a timer.",
+    reference: "Auto Flight - Flight Management (Navigation - Position Computation)",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "With the autopilot engaged, either sidestick can be moved freely.",
     options: ["True.", "False, moving either sidestick will cause the autopilot(s) to disengage", "False, only the PNF’s sidestick will freely move."],
     answer: 1,
-    explain: "",
+    explain: "False - with the autopilot engaged, moving either sidestick causes the autopilot to disengage (it isn't free to move without consequence).",
+    reference: "Flight Controls - General (Sidestick / Autopilot Interaction)",
   },
   {
     id: 10,
@@ -81,15 +90,18 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Managed guidance is engaged by:",
     options: ["Pulling on the desired FCU selector knob.", "Pushing on the desired FCU selector knob.", "Rotating 90° the desired FCU selector knob."],
     answer: 1,
-    explain: "",
+    explain: "Managed guidance for a given FCU mode is engaged by pushing in the associated knob (pulling the knob out engages a selected-guidance target instead).",
+    reference: "Auto Flight - General (FCU Description)",
   },
   {
     id: 11,
     system: "Navigation",
     q: "If you have depressed the EXPED push button and want to cancel this function, how could this be accomplished?",
     options: ["Push the EXPED push button again.", "Pull the altitude, vertical speed, or speed knob.", "Retard the thrust levers to IDLE.", "A red “WIND SHR” light; an aural “WINDSHEAR, WINDSHEAR, WINDSHEAR”"],
+    // REVIEW (uncertain): The FCOM's actual EXPEDITE-cancellation procedures are mode-specific and mixed: to return to climb/descent mode you push the FCU ALT knob, while to return to SPEED/V/S mode you pull the FCU V/S knob - not a single "pull the altitude, vertical speed, or speed knob" rule as this option states (the altitude knob is pushed, not pulled, for the most common case). Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 12,
@@ -97,7 +109,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What is the preferred method of radio position updating for the FMGS?",
     options: ["VOR/DME", "ILS/DME", "DME/DME"],
     answer: 2,
-    explain: "",
+    explain: "DME/DME is the preferred (highest normal-priority, after GPS) method of radio position updating for the FMGS.",
+    reference: "Auto Flight - Flight Management (Navigation - Position Computation)",
   },
   {
     id: 13,
@@ -105,7 +118,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Zero Fuel Weight is entered on:",
     options: ["Init B page.", "Prog page.", "Perf page."],
     answer: 0,
-    explain: "",
+    explain: "Zero Fuel Weight is entered on the INIT B page.",
+    reference: "Auto Flight - Flight Management (MCDU - INIT B Page)",
   },
   {
     id: 14,
@@ -113,7 +127,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The two basic modes of flight guidance are:",
     options: ["Slaved and coupled.", "Managed and selected.", "Manual and coupled."],
     answer: 1,
-    explain: "",
+    explain: "The two basic modes of flight guidance are managed and selected.",
+    reference: "Auto Flight - General (Managed and Selected Guidance)",
   },
   {
     id: 15,
@@ -121,7 +136,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "An amber box on the MCDU screen indicates:",
     options: ["An optional data entry.", "A mandatory data entry.", "A compulsory reporting point.", "The waypoint indicated will be overflown"],
     answer: 1,
-    explain: "",
+    explain: "An amber box on the MCDU indicates a mandatory data entry.",
+    reference: "Auto Flight - Flight Management (MCDU Display Conventions)",
   },
   {
     id: 16,
@@ -129,7 +145,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When flying at cruise altitude, the aircraft navigates using radio navaids only.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False - at cruise altitude the aircraft doesn't rely on radio navaids alone; the FMGS continues to use its IRS-GPS/DME/DME/VOR-DME position-update hierarchy as available.",
+    reference: "Auto Flight - Flight Management (Navigation - Position Computation)",
   },
   {
     id: 17,
@@ -137,7 +154,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "How does the FMGS derive Vapp?",
     options: ["Vapp=Vls+5+(1/3 surface headwind component).", "Vapp=Vls+10+1/3 surface headwind component.", "Vapp=Vls+5+1/2 surface headwind component.", "Vapp=Vls+10+1/2 surface headwind component."],
     answer: 0,
-    explain: "",
+    explain: "The FMGS derives VAPP as VLS + 5 + one third of the surface headwind component.",
+    reference: "Auto Flight - Flight Management (Approach Speed Computation)",
   },
   {
     id: 18,
@@ -145,7 +163,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "You have been cleared to intercept the localizer. You have pushed the LOC push button on the FCU. If all necessary data has been entered in the MCDU, can you now engage both autopilots?",
     options: ["No, the LOC must capture before both autopilots will engage.", "Yes.", "No, the APPR pushbutton must be pushed."],
     answer: 2,
-    explain: "",
+    explain: "No - even with the LOC pushbutton pushed and all data entered, both autopilots won't engage for an automatic approach until the APPR pushbutton is also pushed (dual autopilot engagement for autoland requires APPR mode, with CAT 2/CAT 3 displayed on the FMA).",
+    reference: "Auto Flight - General / Limitations - Auto Flight System (Automatic Approach, Landing and Rollout)",
   },
   {
     id: 19,
@@ -153,7 +172,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "All PFD displays except attitude; speed; heading; altitude; and vertical speed are removed when pitch attitude exceeds 25 degrees nose up or 13 degrees nose down.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - the PFD display is reduced to attitude, speed, heading, altitude and vertical speed when pitch attitude exceeds 25 degrees nose up or 13 degrees nose down.",
+    reference: "Indicating - PFD (Flight Director / Attitude Display Removal Conditions)",
   },
   {
     id: 20,
@@ -161,7 +181,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Both autopilots can be engaged and active in any phase of flight.",
     options: ["True", "False"],
     answer: 1,
-    explain: "",
+    explain: "False - both autopilots can't be engaged and active in just any phase of flight; dual engagement is specifically tied to APPR mode with CAT 2 or CAT 3 displayed on the FMA for an automatic approach/landing.",
+    reference: "Limitations - Auto Flight System (Automatic Approach, Landing and Rollout)",
   },
   {
     id: 21,
@@ -169,7 +190,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The FMGS data base contains:",
     options: ["Performance information, such as engine fuel flow, engine thrust, green dot data (L/D data), etc.", "Navigation information, such as navaids, waypoints, airways, airports, runways, etc.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct - the FMGS database holds performance information (engine fuel flow, thrust, green dot/L-D data, etc.) and navigation information (navaids, waypoints, airways, airports, runways, etc.).",
+    reference: "Auto Flight - Flight Management (FMGS Database)",
   },
   {
     id: 22,
@@ -177,7 +199,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "During a turnaround, you notice that there is a residual ground speed on both NDs. How do you correct this?",
     options: ["As the engines have been shut down, it is necessary to carry out a full re-alignment.", "There is no corrective action possible until the aircraft is completely electrically shut down.", "It is possible to carry out a rapid alignment by turning off all 3 ADIRS momentarily."],
     answer: 2,
-    explain: "",
+    explain: "A residual ground speed shown on both NDs after shutdown can be corrected with a rapid realignment, done by momentarily turning off all three ADIRS rather than carrying out a full realignment.",
+    reference: "Auto Flight - Flight Management (Alignment of Inertial Reference System)",
   },
   {
     id: 23,
@@ -185,7 +208,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Which of the following navaids can be autotuned?",
     options: ["ILS and ADF (for NDB data base approaches).", "VOR and DME.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct - ILS and ADF (for NDB-database approaches) can be autotuned, and so can VOR and DME.",
+    reference: "Auto Flight - Flight Management (Navigation - Radio Navigation Tuning)",
   },
   {
     id: 24,
@@ -193,7 +217,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The Armed Vertical Modes are displayed on the Flight Mode Annunciator on the second line in:",
     options: ["Blue or magenta.", "Blue or green.", "White"],
     answer: 0,
-    explain: "",
+    explain: "Armed vertical modes on the FMA's second line are shown in blue or magenta (magenta specifically marking an altitude-constraint target).",
+    reference: "Auto Flight - Flight Guidance (Flight Mode Annunciator)",
   },
   {
     id: 25,
@@ -201,7 +226,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What is managed climb speed below 10,000 feet?",
     options: ["Green dot.", "210 knots.", "250 knots.", "Best rate of climb speed."],
     answer: 2,
-    explain: "",
+    explain: "Managed climb speed below 10,000 ft is normally limited to 250 knots (the FMGS speed limit default for that altitude band).",
+    reference: "Auto Flight - Flight Management (Managed Speed Profile)",
   },
   {
     id: 26,
@@ -209,7 +235,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "ILS 1 information is displayed on ______ when operating in the rose ILS mode:",
     options: ["PFD 2 & ND 1", "PFD 1 & ND 1", "PFD 1 & ND 2"],
     answer: 2,
-    explain: "",
+    explain: "When operating in ROSE ILS mode, ILS 1 information is displayed on PFD 1 and ND 2.",
+    reference: "Indicating - PFD (ILS Indications)",
   },
   {
     id: 27,
@@ -217,7 +244,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "During descent, if you push the Expedite (EXPED) push button, what speed will the aircraft try to maintain?",
     options: ["Green dot.", "340 knots", "3,000 fpm vertical speed.", "standard 3.0 degrees angle of descent."],
     answer: 1,
-    explain: "",
+    explain: "Pushing EXPED during descent targets M 0.80 or 340 kt, whichever is lower - so the aircraft tries to maintain 340 kt.",
+    reference: "Auto Flight - General (Expedite Descent)",
   },
   {
     id: 28,
@@ -225,7 +253,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The weather radar image can be displayed on which modes of the ND?",
     options: ["Rose NAV or VOR.", "Rose VOR or Rose ILS.", "Rose NAV or ARC.", "All modes except Plan."],
     answer: 3,
-    explain: "",
+    explain: "The weather radar image can be shown on the ND in every mode except PLAN.",
+    reference: "Indicating - ND (Weather Radar Indications)",
   },
   {
     id: 29,
@@ -233,7 +262,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The aircraft has _______ Air Data Inertial Reference Units (ADIRU’s).",
     options: ["2", "3", "4"],
     answer: 1,
-    explain: "",
+    explain: "The aircraft has 3 Air Data Inertial Reference Units (ADIRUs).",
+    reference: "Indicating - EIS / Navigation (ADIRS General)",
   },
   {
     id: 30,
@@ -241,7 +271,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Cost Index = 0 (zero) corresponds to:",
     options: ["Minimum fuel consumption (max range)", "Minimum time.", "Best ratio between the flight time cost and the fuel cost.", "LRC (Long Range Cruise)."],
     answer: 0,
-    explain: "",
+    explain: "Cost Index = 0 corresponds to minimum fuel consumption (maximum range) - CI = 999 corresponds to minimum time instead.",
+    reference: "Auto Flight - Flight Management (Performance - Cost Index)",
   },
   {
     id: 31,
@@ -249,7 +280,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "If one GPS receiver fails, the three ADIRUs automatically select the only operative GPS receiver.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True - a switching facility (Air Data Switching) lets the crew select ADR 3 (or IR 3) to replace a failed ADIRU 1 or 2's data for instrument displays.",
+    reference: "Indicating - PFD/ND (ADIRU Reversion)",
   },
   {
     id: 32,
@@ -257,7 +289,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What do the white round lights on the FCU display mean?",
     options: ["Selected guidance has been engaged.", "Automatic guidance has been engaged.", "Managed guidance has been armed or engaged."],
     answer: 2,
-    explain: "",
+    explain: "The white round FCU lights indicate that managed guidance has been armed or engaged for that mode (pushed in), as opposed to a selected-guidance target.",
+    reference: "Auto Flight - General (FCU Description)",
   },
   {
     id: 33,
@@ -265,7 +298,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The pilot interfaces with the FMGS using the:",
     options: ["FCU.", "Thrust Levers.", "MCDU.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "The pilot interfaces with the FMGS using the FCU, the thrust levers, and the MCDU - all of the above.",
+    reference: "Auto Flight - General (Pilot Interface)",
   },
   {
     id: 34,
@@ -273,7 +307,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The airspeed indication on the PFD starts at:",
     options: ["100 kts.", "80 kts", "50 kts.", "30 kts"],
     answer: 3,
-    explain: "",
+    explain: "The airspeed indication on the PFD's speed scale starts at 30 kt.",
+    reference: "Indicating - PFD (Speed Scale)",
   },
   {
     id: 35,
@@ -281,7 +316,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What is managed climb speed above 10,000 feet?",
     options: ["Green dot.", "250 knots.", "280 knots.", "Econ climb speed."],
     answer: 3,
-    explain: "",
+    explain: "Managed climb speed above 10,000 ft follows the ECON climb speed computed by the FMGS.",
+    reference: "Auto Flight - Flight Management (Performance - Optimum Target Speed)",
   },
   {
     id: 36,
@@ -289,7 +325,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "If the SPD/MACH knob on the FCU is not pulled within a predetermined time to engage selected speed:",
     options: ["The selection can be made at any time.", "The selection is lost and dashes are re-displayed.", "The selection is lost and the display goes blank."],
     answer: 1,
-    explain: "",
+    explain: "If the SPD/MACH knob isn't pulled within the allotted time (10 s on the SPD/MACH window) to engage the selected value, the selection is lost and dashes reappear.",
+    reference: "Auto Flight - General (FCU Description)",
   },
   {
     id: 37,
@@ -297,7 +334,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "An FMGS message which requires immediate attention is displayed in:",
     options: ["Red", "Amber", "Magenta"],
     answer: 1,
-    explain: "",
+    explain: "FMGS scratchpad messages that need immediate attention are shown in amber - MCDU messages are prioritized as either amber or white, with red reserved for ECAM-level warnings.",
+    reference: "Auto Flight - Flight Management (MCDU Messages)",
   },
   {
     id: 38,
@@ -305,7 +343,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What are the different types of flight guidance?",
     options: ["Slaved and managed.", "Automatic and manual.", "Managed and selected.", "Managed and manual"],
     answer: 2,
-    explain: "",
+    explain: "The two types of flight guidance are managed and selected.",
+    reference: "Auto Flight - General (Managed and Selected Guidance)",
   },
   {
     id: 39,
@@ -313,7 +352,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "In the event of failure of the AIR DATA function of ADIRU 1 or 2; the affected displays can be manually selected over to ADR 3 by the:",
     options: ["ECAM/ND transfer selector.", "AIR DATA selector.", "ATT HDG selector."],
     answer: 1,
-    explain: "",
+    explain: "If the AIR DATA function of ADIRU 1 or 2 fails, the affected displays can be manually switched over to ADR 3 using the AIR DATA switching selector.",
+    reference: "Indicating - PFD/ND (ADIRU Reversion)",
   },
   {
     id: 40,
@@ -321,7 +361,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "GPWS aural and visual warnings cannot be inhibited.",
     options: ["True", "False"],
     answer: 1,
-    explain: "",
+    explain: "False - GPWS aural and visual warnings can be inhibited (for example, turning the relevant GPWS mode selector OFF inhibits all the basic GPWS alerts).",
+    reference: "Indicating - Warning Systems (GPWS)",
   },
   {
     id: 41,
@@ -329,7 +370,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "If the FLEX TEMP is not entered on the Takeoff Page of the MCDU:",
     options: ["A FLX takeoff is still available; set power with the thrust levers.", "The FMGS will enter it for you based on TAT.", "A FLX takeoff is not available."],
     answer: 2,
-    explain: "",
+    explain: "If the flex temperature isn't entered on the MCDU Takeoff page, a FLEX takeoff isn't available.",
+    reference: "Auto Flight - Flight Management (Entering a Flex Temperature)",
   },
   {
     id: 42,
@@ -337,7 +379,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When the aircraft is in the Managed Guidance mode, it is:",
     options: ["Guided by the pilot selecting the specific flight modes and parameter target values on the FCU.", "Responding to pilot inputs of speed, altitude, and heading selected on the FCU.", "Following lateral, vertical and speed profiles as determined by the IRS’S.", "Following lateral, vertical and speed profiles as determined by the FMGS."],
     answer: 3,
-    explain: "",
+    explain: "In Managed Guidance, the aircraft follows the lateral, vertical, and speed profiles computed by the FMGS - as opposed to Selected Guidance, which follows pilot-set FCU targets.",
+    reference: "Auto Flight - General (Managed and Selected Guidance)",
   },
   {
     id: 43,
@@ -345,7 +388,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "VOR data can be displayed on:",
     options: ["Both NDs", "The DDRMI", "First two statements are correct"],
     answer: 2,
-    explain: "",
+    explain: "Both are correct - VOR data can be shown on both NDs, and also on the DDRMI, which displays VOR 1 and VOR 2 bearings.",
+    reference: "Indicating - ND (NAVAID Indications) / DDRMI",
   },
   {
     id: 44,
@@ -353,7 +397,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "What speed will the FMGS use in an Expedite climb?",
     options: ["Green dot speed.", "ECON climb speed.", "250 knots below 10,000 feet.", "Amber dot speed."],
     answer: 0,
-    explain: "",
+    explain: "In an Expedite climb, the FMGS targets green dot speed.",
+    reference: "Auto Flight - General (Expedite Climb)",
   },
   {
     id: 45,
@@ -361,7 +406,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "With the DATA selector set to HDG, the time remaining until the completed IRS alignment is displayed on the control display. How long does it take normally?",
     options: ["Approximately 1 minute", "Approximately 3 minutes", "Approximately 7 minutes", "Approximately 10 minutes"],
     answer: 3,
-    explain: "",
+    explain: "A normal IRS alignment takes approximately 10 minutes (a fast alignment, used to refine a position when time is limited, takes about 30 seconds instead).",
+    reference: "Auto Flight - Flight Management (Alignment of Inertial Reference System)",
   },
   {
     id: 46,
@@ -369,7 +415,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When is the SRS active?",
     options: ["During a Go Around (after the thrust levers are placed in the TOGA position) up to the acceleration altitude.", "At T/O, when TOGA or FLX power is set, SRS is displayed on the FMA and provides guidance up to the acceleration altitude.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct - SRS is active during a go-around (once thrust levers are set to TOGA) up to acceleration altitude, and it's also active at takeoff when TOGA or FLX power is set, both up to acceleration altitude.",
+    reference: "Auto Flight - Flight Guidance (Speed Reference System)",
   },
   {
     id: 47,
@@ -377,7 +424,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The ON BAT light on the ADIRS CDU illuminates:",
     options: ["Only when all IRU’s are on battery power.", "When an IRU fault is detected.", "When one or more ADIRU’s; are supplied by airplane battery only."],
     answer: 2,
-    explain: "",
+    explain: "The ON BAT light illuminates when the aircraft battery supplies at least one IRS (it also comes on briefly at the start of a complete IRS alignment).",
+    reference: "Indicating - ADIRS (ON BAT Light)",
   },
   {
     id: 48,
@@ -385,15 +433,18 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "OPEN CLIMB (OP CLB) is a Managed mode.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False - OPEN CLIMB (OP CLB) is a selected mode, not a managed one; it climbs/descends directly to the FCU-selected altitude and disregards altitude constraints.",
+    reference: "Auto Flight - Flight Guidance (Vertical Modes - General)",
   },
   {
     id: 49,
     system: "Navigation",
     q: "The Standby Attitude indication will remain available for ______ minutes after total electrical failure.",
     options: ["5", "7", "10", "22"],
+    // REVIEW (uncertain): No stated duration for how long the Standby Attitude indication remains available after a total electrical failure was found in the extracted text, so this specific figure couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 50,
@@ -401,7 +452,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Can the crew depress the RMP ON NAV pushbutton and use the RMP for navigation simultaneously with FMGC autotuning?",
     options: ["Yes, because the opposite FMGC will continue to autotune navaids.", "No, RMP backup tuning supersedes the autotuning function of both FMGC’s."],
     answer: 1,
-    explain: "",
+    explain: "No - selecting an RMP for backup radio tuning is a manual override, and it supersedes the FMGC's automatic autotuning function on that radio rather than running alongside it.",
+    reference: "Auto Flight - Flight Management (Navigation - Radio Navigation Tuning, RMP Backup Mode)",
   },
   {
     id: 51,
@@ -409,7 +461,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "FMGC 1 is not working. To enter data into the FMGC, which MCDU would you use?",
     options: ["MCDU 1 on the Captain’s side.", "MCDU 2 on the First Officer’s side.", "Either MCDU 1 or MCDU 2."],
     answer: 2,
-    explain: "",
+    explain: "If FMGC 1 fails, entries can still be made on either MCDU 1 or MCDU 2 - any MCDU entry is sent to the operative FMGC, whichever side it's made from.",
+    reference: "Auto Flight - Flight Management (Abnormal Operations - FMGC Reset)",
   },
   {
     id: 52,
@@ -417,15 +470,18 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The energy circle is a green arc, centered on the aircraft’s position and oriented towards the current track line. It is displayed on the NDs during descent, when HDG or TRK mode is selected.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True - the energy circle is a green arc centered on the aircraft's position and oriented toward the current track line, displayed on the NDs during descent when HDG or TRK mode is selected.",
+    reference: "Auto Flight - Flight Management (Performance - Energy Circle)",
   },
   {
     id: 53,
     system: "Navigation",
     q: "Will the aircraft capture and navigate via the ILS signals if the ILS push button on the FCU is not pushed?",
     options: ["Yes", "No."],
+    // REVIEW (uncertain): No FCOM text was found directly addressing whether the aircraft will capture and navigate via ILS guidance without the LOC/APPR pushbutton being pushed - the FCOM describes the LOC pushbutton as what arms/engages/disengages LOC mode, which suggests capture normally requires it to be pushed, but this couldn't be confirmed either way against the extracted text. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 54,
@@ -433,7 +489,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The speed trend arrow on the PFD airspeed scale indicates the speed value that will be attained in _____ seconds if the acceleration remains constant.",
     options: ["5", "8", "10", "15"],
     answer: 2,
-    explain: "",
+    explain: "The speed trend arrow shows the speed the aircraft will reach in the next 10 seconds if the current acceleration or deceleration holds steady.",
+    reference: "Indicating - PFD (Speed Scale, Speed Trend Arrow)",
   },
   {
     id: 55,
@@ -441,7 +498,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Sidestick position and max. sidestick deflection are displayed on the ground on the PFD:",
     options: ["Continuously after aircraft power is applied.", "After the first engine start.", "On takeoff roll when power is applied.", "After second engine is starded."],
     answer: 1,
-    explain: "",
+    explain: "Sidestick position and maximum sidestick deflection are displayed on the ground on the PFD starting as soon as the first engine is started.",
+    reference: "Indicating - PFD (Sidestick Order Indication)",
   },
   {
     id: 56,
@@ -449,7 +507,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When the altitude knob on the FCU is pulled:",
     options: ["The altitude is armed.", "The current altitude is canceled.", "OPEN CLIMB or DESCENT engages."],
     answer: 2,
-    explain: "",
+    explain: "Pulling the altitude knob out engages OPEN CLIMB or OPEN DESCENT mode.",
+    reference: "Auto Flight - Flight Guidance (Vertical Modes, Altitude Knob)",
   },
   {
     id: 57,
@@ -457,7 +516,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The windshear function of the FAC’s is independent of the flight director on/off switch.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - the predictive windshear function of the FACs operates independently of the flight director on/off switch.",
+    reference: "Indicating / Auto Flight - General (Predictive Windshear System)",
   },
   {
     id: 58,
@@ -465,7 +525,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "SRS will command:",
     options: ["V2 + 10 with both engines operating.", "V2 or current aircraft speed (whichever is higher) in the case of an engine failure.", "Best rate of climb taking into account actual wind component."],
     answer: 0,
-    explain: "",
+    explain: "In SRS mode with both engines operating, the target speed is V2 + 10 kt (with an engine failure, the target instead becomes the higher of V2 or current speed, capped at V2 + 15 kt).",
+    reference: "Auto Flight - Flight Guidance (Speed Reference System, Guidance)",
   },
   {
     id: 59,
@@ -473,7 +534,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When the thrust levers are moved to the takeoff position, the FMGS updates its position at takeoff using:",
     options: ["IRS/DME/DME positioning.", "IRS/ILS/DME positioning.", "The navigation database and the takeoff runway entered into the MCDU by the pilot.", "The VOR/DME currently tuned."],
     answer: 2,
-    explain: "",
+    explain: "When the thrust levers are moved to the takeoff position, the FMGS updates its takeoff position using the navigation database and the takeoff runway entered into the MCDU by the pilot.",
+    reference: "Auto Flight - Flight Management (Takeoff Position Update)",
   },
   {
     id: 60,
@@ -481,7 +543,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "One A/P can be engaged on the ground if the engines are not running.",
     options: ["This A/P will disengage when both engines are started.", "This A/P will disengage when one engine is started.", "This A/P will disengage when speed is sensed at > 10 kts."],
     answer: 1,
-    explain: "",
+    explain: "An autopilot engaged on the ground with the engines not running will disengage as soon as one engine is started.",
+    reference: "Auto Flight - Flight Guidance (Autopilot Engagement on Ground)",
   },
   {
     id: 61,
@@ -489,7 +552,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The selected database date has expired. When must the active data base be changed?",
     options: ["Prior to entering the preflight data.", "Anytime prior to takeoff.", "The following calendar day."],
     answer: 0,
-    explain: "",
+    explain: "The active navigation database should be checked and, if expired, changed prior to entering the preflight data - not left until later in the preflight flow.",
+    reference: "Auto Flight - Flight Management (Navigation Database Validity)",
   },
   {
     id: 62,
@@ -497,7 +561,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The LOC mode disengages when:",
     options: ["Another lateral mode is engaged.", "The pilot presses the LOC pushbutton again (engaging the HDG/TRK mode on the current HDG/TRK).", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct - LOC mode disengages when another lateral mode is engaged, and also when the pilot presses the LOC pushbutton again (which re-engages HDG/TRK on the current heading/track).",
+    reference: "Auto Flight - General (LOC Pushbutton)",
   },
   {
     id: 63,
@@ -505,7 +570,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "Box prompts on the MCDU indicate data:",
     options: ["Entry is optional for FMGS operation.", "Entry is required for minimum FMGS operation.", "will be filled in by the FMGS."],
     answer: 1,
-    explain: "",
+    explain: "Box prompts on the MCDU indicate a data entry that's required for minimum FMGS operation.",
+    reference: "Auto Flight - Flight Management (MCDU Display Conventions)",
   },
   {
     id: 64,
@@ -513,7 +579,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The three Display Management Computers (DMCS) acquire and process all input from airplane sensors and computers to generate the display images.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - the three Display Management Computers acquire and process input from the aircraft's sensors and computers to generate the display images.",
+    reference: "Indicating - EIS (Display Management Computers, General)",
   },
   {
     id: 65,
@@ -521,7 +588,8 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "The Captain’s FMA indicates - FD2 in column five, line two. What does this mean?",
     options: ["FMGC #1 has “timed out” and flight guidance is lost.", "The First Officer has pushed the priority takeover pushbutton.", "FMGC #1 has “timed out” and FMGC #2 is now providing flight guidance for both pilots.", "The Captain’s FD pushbutton. on the FCU has not been selected “ON” and FD2 has automatically crossed over."],
     answer: 2,
-    explain: "",
+    explain: "An FMGC time-out on one side is one documented trigger for the operating FD to show as offside on the FMA, with functions continuing from the surviving FMGC - consistent with FMGC #1 timing out and FMGC #2 providing guidance to both pilots' displays.",
+    reference: "Auto Flight - Flight Management (Abnormal Operations - FMGC Reset)",
   },
   {
     id: 66,
@@ -529,6 +597,7 @@ export const NAVIGATION_QUESTIONS: Question[] = [
     q: "When a double entry is needed on the MCDU (e.g. wind direction/speed: 270/110) the separating slash must be used. The trailing entry of a pair must be preceded by a slash if it is entered alone.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - a double MCDU entry (like a wind direction/speed pair) needs the separating slash, and if only the trailing part of the pair is entered, it must be preceded by that slash.",
+    reference: "Auto Flight - General (MCDU Entry Format)",
   },
 ];

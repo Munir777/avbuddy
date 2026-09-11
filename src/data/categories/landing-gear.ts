@@ -12,7 +12,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Each main wheel has an antiskid brake.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — this is stated directly: each main wheel is equipped with an antiskid brake.",
+    reference: "Landing Gear - General / Description",
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The brake & Accumulator pressure gauge shows pressure from:",
     options: ["The Yellow hydraulic system", "The Accumulator only", "The Green hydraulic system", "Both Yellow brake system and the Brake Accumulator"],
     answer: 3,
-    explain: "",
+    explain: "The ACCU PRESS needle shows yellow brake accumulator pressure, and the BRAKES needle shows yellow pressure delivered to the left/right brakes — both halves of the indicator are yellow-system related, covering both the accumulator and the brake system pressure.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "After T/O the left main landing gear shock absorber is stuck in the compressed position.",
     options: ["The gear can be retracted under all circumstances", "The gear cab be retracted provided the nose gear is centered", "The gear cannot be retracted; gear lever is blocked (interlock mechanism)", "The gear can be retracted once the nose wheel steering is centered"],
     answer: 2,
-    explain: "",
+    explain: "The gear lever has a mechanical interlock that locks it in DOWN whenever a main gear shock absorber is compressed (i.e., the system reads that as \"aircraft on ground\") — so a stuck-compressed strut keeps the lever physically blocked and the gear cannot be retracted.",
+    reference: "Landing Gear - Controls & Indicators (gear lever)",
   },
   {
     id: 4,
@@ -36,7 +39,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What is the maximum tyre speed?",
     options: ["185 kts", "195 kts", "205 kts", "225 kts"],
     answer: 1,
-    explain: "",
+    explain: "195 kt is the maximum tire ground speed limit.",
+    reference: "Landing Gear Limitations - Maximum Tire Speed",
   },
   {
     id: 5,
@@ -44,7 +48,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Nose wheel steering is controlled by:",
     options: ["LGCIU 1.", "BSCU", "LGCIU 2", "LGCIU 1 or 2"],
     answer: 1,
-    explain: "",
+    explain: "The Brake and Steering Control Unit (BSCU) is the computer that takes the handwheel/pedal/autopilot orders and converts them into a nose wheel steering angle — the LGCIUs handle gear/door sequencing, not steering.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 6,
@@ -52,7 +57,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Autobraking is initiated by:",
     options: ["Reverse thrust selection", "Nose gear oleo compression", "Main gear oleo compression", "Ground spoilers extension"],
     answer: 3,
-    explain: "",
+    explain: "Automatic braking activates when the ground spoiler extension command is detected (for LO/MED), or that command plus speed above 40 kt for MAX — it's tied to spoiler deployment, not directly to reverse thrust or oleo compression.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 7,
@@ -60,7 +66,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "On wheel page of ECAM, Autobrake is flashing green. What does it mean?",
     options: ["Autobrake is disengaged", "Autobrake failure", "Anti-skid failure", "Autobrake in operation"],
     answer: 0,
-    explain: "",
+    explain: "The AUTO BRK legend is steady green while armed, and flashes green for 10 seconds specifically after autobrake disengages — amber (with an ECAM caution) is reserved for an actual system failure.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 8,
@@ -68,7 +75,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The antiskid system gets its reference speed from:",
     options: ["The ADIRS", "A wheel tachometer", "The LGCIU’s", "The BSCU’s"],
     answer: 0,
-    explain: "",
+    explain: "In normal operation, the BSCU derives its reference speed from the horizontal acceleration data of ADIRU 1, 2, or 3, and compares each wheel's tachometer-measured speed against it (only falling back to a wheel-speed-only reference if all three ADIRUs fail).",
+    reference: "Landing Gear - Brakes & Antiskid (Anti-Skid System)",
   },
   {
     id: 9,
@@ -76,7 +84,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Landing gear operation is inhibited at speeds:",
     options: ["Below 100 knots.", "Above 260 knots +/- 5 knots.", "below 100 knots and above 260 knots.", "Above 250 knots."],
     answer: 1,
-    explain: "",
+    explain: "The green hydraulic supply to the gear is automatically cut off above 260 kt (a small tolerance band around that figure is typical for this kind of threshold, though the extracted FCOM text states the round number). There's no low-speed inhibition — the gear can be operated at any speed below that.",
+    reference: "Landing Gear - Controls & Indicators (gear lever)",
   },
   {
     id: 10,
@@ -84,7 +93,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "When the landing gear is gravity extended, will nose wheel steering be available?",
     options: ["Only if the A/SKID & N/W STRG switch is selected ON.", "No", "Limited nose wheel steering is available only through the captain’s rudder pedals.", "Yes."],
     answer: 1,
-    explain: "",
+    explain: "No. Gravity extension works by isolating the landing gear (including its nose-gear hydraulics) from the green system and depressurizing it — and nose wheel steering needs green hydraulic pressure at its actuating cylinder to work, so it's unavailable once you've gravity-extended.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 11,
@@ -92,7 +102,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The red arrow, near the landing gear lever illuminates when:",
     options: ["Landing gear is not up locked after retraction", "Landing gear is in abnormal position", "Landing gear is in transit", "Landing gear is not down locked in approach configuration"],
     answer: 3,
-    explain: "",
+    explain: "The red arrow lights up (with a red ECAM warning) if the gear is not locked down while the aircraft is in landing configuration.",
+    reference: "Landing Gear - Controls & Indicators (gear lever)",
   },
   {
     id: 12,
@@ -100,7 +111,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The Hot light on the brake fan pushbutton illuminates when brake temperature reaches:",
     options: ["250 deg C", "300 deg C", "350 deg C", "400 deg C"],
     answer: 1,
-    explain: "",
+    explain: "300°C is the same threshold at which the WHEEL page's green temperature arc turns amber with an ECAM caution — the HOT light on the BRK FAN pushbutton comes on together with that overheat indication.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 13,
@@ -108,7 +120,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Is it possible (system wise) to lower the gear by gravity above 260 kts?",
     options: ["Yes", "No", "Yes, but only if green hydraulics available", "Yes, but only if yellow hydraulic available"],
     answer: 0,
-    explain: "",
+    explain: "Yes. Gravity extension is a purely mechanical process (isolate hydraulics, unlock, let gravity drop the gear) — it doesn't depend on the 260 kt green-hydraulic safety-valve cutoff that limits normal lever-commanded extension/retraction.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 14,
@@ -116,7 +129,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "You are ready to taxi. You apply the toe brakes on the rudder pedals and release the PARK BRK. The BRAKES pressure falls to zero. What should you do?",
     options: ["This should not happen and you must assume that the BRAKES pressure indicator has failed.", "Nothing as this is normal. The BRAKES pressure indicator only indicates alternate (yellow) brake pressure.", "You must re-apply the PARK BRK and call for maintenance personnel as the main system pressure has failed.", "The indication is normal because once the AUTO BRK is set to MAX the BRAKES indicator is by-passed."],
     answer: 1,
-    explain: "",
+    explain: "This is normal. There's no cockpit indication of normal (green-system) brake pressure at all — the BRAKES gauge only ever shows yellow/alternate system pressure, so it reads zero while you're braking normally on green.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 15,
@@ -124,7 +138,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "During the approach you get master warning and ECAM “Gear Not Down”. The reason is:",
     options: ["Landing gear is not down locked and flaps 3 or full and both radio altimeters failed", "Landing gear is not down locked, flaps at 3 and radio height lower than 750 ft", "All of the above", "None of the above."],
     answer: 2,
-    explain: "",
+    explain: "Both scenarios are genuine triggers for this alert: gear not downlocked with flaps 3/FULL and both radio altimeters failed is one path; gear not downlocked with flaps out and radio height below 750 ft (alongside a thrust-related condition) is another. Since either kind of scenario can set off the warning, \"All of the above\" is correct.",
+    reference: "Landing Gear Abnormal Procedures - L/G Gear Not Down",
   },
   {
     id: 16,
@@ -132,7 +147,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "If the BSCU detects a brake system malfunction in flight with the A/SKID & N/W STRG switch in the ON position:",
     options: ["The crew will be notified with an ECAM message after touchdown if the brake system does malfunction.", "The crew will be notified with an ECAM message.", "The crew must manually select alternate brakes.", "All of the above."],
     answer: 1,
-    explain: "",
+    explain: "ECAM notification is immediate when the BSCU detects the malfunction, not deferred until touchdown — and with the switch ON, the system also transitions to alternate braking automatically, so no manual crew action is needed.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 17,
@@ -140,7 +156,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "When is pressure in the nose wheel steering system shut off?",
     options: ["With towing lever in towing position or both engines are shut down or the A/SKID & N/W STRG switch is OFF", "During ground towing with one engine shut down or when aircraft speed is >60 kts", "When the aircraft is on the ground with speed above 100 kts"],
     answer: 0,
-    explain: "",
+    explain: "The steering system only gets hydraulic pressure when the A/SKID & N/W STRG switch is ON, the towing lever is in the normal position, at least one engine is running, and the aircraft is on the ground — so losing any of those (towing lever in towing position, both engines shut down, or the switch OFF) cuts the pressure.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 18,
@@ -148,7 +165,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The autobrake will arm if at least one ADIRS is functioning",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — one of the autobrake arming conditions is that at least one ADIRU is available (along with green pressure, electrically-powered anti-skid, and no braking-system failure).",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 19,
@@ -156,7 +174,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "How can the brake accumulator be re-pressurized?",
     options: ["With the yellow electric hydraulic pump.", "With the blue electric hydraulic pump.", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "The yellow accumulator is pressurized by pressing the yellow electric pump switch — there's no blue-system involvement in brake accumulator charging.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 20,
@@ -164,7 +183,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The normal brake system uses _____ hydraulic pressure and the alternate brake system uses _____ hydraulic pressure backed up by the hydraulic brake accumulator",
     options: ["Green – Blue", "Yellow – Blue", "Yellow – Green", "Green - Yellow."],
     answer: 3,
-    explain: "",
+    explain: "The normal brake system runs on green hydraulic pressure; the alternate system runs on yellow, backed up by the hydraulic accumulator if yellow is also lost.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 21,
@@ -172,7 +192,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "With the A/SKID & N/W STRG switch in the ON position, if the BSCU detects a brake system malfunction and/or normal braking is not available",
     options: ["The crew will be notified with an ECAM message only if after touchdown the brake system does actually malfunction.", "Transition to the alternate brake system is automatic.", "Transition to the alternate brake system is done manually.", "Crew will be notified with an ECAM message only if immediately when the brake system actually malfunction."],
     answer: 1,
-    explain: "",
+    explain: "With the switch ON, losing green pressure (or another normal-braking fault) triggers an automatic switch-over: yellow hydraulic pressure automatically takes over supplying the brakes, with anti-skid remaining available — no manual selection is needed.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 22,
@@ -180,7 +201,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "During pushback, you start engine #2. You observe the NW STRG DISC memo has changed to amber. Why?",
     options: ["The NW STRG disconnect mechanism has failed.", "The yellow hydraulic system is now pressurized and the amber caption is a warning not to move the handwheel", "The nose wheel steering is being reconnected by ground personnel. It is amber because the pin is removed.", "The memo has become amber because one engine is running."],
     answer: 3,
-    explain: "",
+    explain: "The NW STRG DISC memo is green while the steering selector is in the towing position, and turns amber simply because an engine is now running — that color change alone is the reason, not a mechanism failure or reconnection event.",
+    reference: "Landing Gear - Controls & Indicators (memo display)",
   },
   {
     id: 23,
@@ -188,7 +210,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Landing Gear position is indicated by:",
     options: ["One panel on center instrument panel, one panel on overhead panel", "ECAM only", "One panel on center instrument panel and ECAM", "One panel on center instrument panel, ECAM, visual means on the wing."],
     answer: 2,
-    explain: "",
+    explain: "Two sources: the LDG GEAR indicator panel on the center instrument panel, and the WHEEL SD page on the ECAM.",
+    reference: "Landing Gear - Controls & Indicators (gear indicator panel / WHEEL SD page)",
   },
   {
     id: 24,
@@ -196,7 +219,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Max braking has been selected. Takeoff being aborted, engines in reverse, you have forgotten to arm the ground spoilers. Is autobrake activated?",
     options: ["No because spoilers will not deploy if not armed", "Yes, provided speed is less than 72 knots", "Yes, but only if Yellow hydraulic pressure is available", "Yes, because spoilers will still deploy"],
     answer: 3,
-    explain: "",
+    explain: "Ground spoilers have a fallback deployment path: even with the speedbrake lever left in the retracted (unarmed) position, they still fully extend once both main gears are on the ground and reverse thrust is selected on at least one engine. Since reverse was selected, the spoilers deploy anyway, so autobrake still activates.",
+    reference: "Flight Controls - Speed Brakes & Ground Spoilers",
   },
   {
     id: 25,
@@ -204,7 +228,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The landing gear indicator panel receives the information from micro switches and proximity detectors connected to:",
     options: ["BSCU", "LGCIU 2", "LGCIU 1", "BSCU and LGCIU 2"],
     answer: 2,
-    explain: "",
+    explain: "The LDG GEAR indicator panel is wired to LGCIU 1 only — its lights depend on LGCIU 1 being electrically supplied, which is also why the WHEEL SD page (fed by both LGCIUs) is the backup cross-check if an UNLK light stays on.",
+    reference: "Landing Gear - Controls & Indicators (gear indicator panel)",
   },
   {
     id: 26,
@@ -212,7 +237,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Can normal landing gear operation be restored after a gravity extension if green hydraulic pressure is available?",
     options: ["Restoration is always possible.", "It may be possible if the gravity extension was not caused by a failure of the landing gear mechanism.", "No, only maintenance can restore normal operation."],
     answer: 1,
-    explain: "",
+    explain: "The crew can reset the emergency extension system in flight (for example, after a training use) if green hydraulic pressure is available — but that reset presumes the gear itself is mechanically fine, so it isn't a guaranteed fix if the gravity extension was actually needed because of a real gear-mechanism failure.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 27,
@@ -220,7 +246,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The parking brake accumulator is designed to maintain the parking pressure for at least ______.",
     options: ["6 hours.", "12 hours.", "18 hours.", "24 hours."],
     answer: 1,
-    explain: "",
+    explain: "The accumulator maintains parking-brake pressure for at least 12 hours.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 28,
@@ -228,7 +255,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "When both hand wheels are operated simultaneously, the signals:",
     options: ["From the first pilot acting on his hand wheel have priority", "Coming from the captain have priority", "Are algebraically added", "From the F/O have priority"],
     answer: 2,
-    explain: "",
+    explain: "The captain's and first officer's steering handwheel orders are added algebraically — neither one simply overrides the other.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 29,
@@ -236,7 +264,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "If the landing gear was gravity extended using the hand crank on the center pedestal, landing gear position must be verified through:",
     options: ["The landing gear viewers.", "The landing gear indications depicted on the ECAM and, if available, the center panel LDG GEAR indicator panel lights.", "Both are correct."],
     answer: 1,
-    explain: "",
+    explain: "ECAM (the WHEEL SD page, fed by both LGCIUs) is the primary check, with the center-panel LDG GEAR indicator panel as an extra cross-check when it's available — that panel depends solely on LGCIU 1 being powered, which isn't guaranteed after the kind of failure that forced a gravity extension in the first place.",
+    reference: "Landing Gear Abnormal Procedures - Gravity Extension",
   },
   {
     id: 30,
@@ -244,7 +273,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Auto brake may be armed with the parking brake on.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — the FCOM explicitly notes that auto brake may be armed with the parking brake on.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 31,
@@ -252,7 +282,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The maximum speed with landing gear extended (VLE) is:",
     options: ["260 kts / M.65", "280 kts / M.67", "300 kts / M.70", "320 kts / M.72"],
     answer: 1,
-    explain: "",
+    explain: "VLE (maximum speed with the gear extended) is 280 kt / M0.67.",
+    reference: "Landing Gear Limitations - Maximum Speeds",
   },
   {
     id: 32,
@@ -260,7 +291,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Nose wheels and main wheels have fusible plugs that prevent the tires from bursting if they overheat.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False as worded — fusible plugs (which protect against tire burst from overheat) are fitted on the main gear wheels, which carry the brakes and generate the heat; the nose wheels, which have no brakes, aren't described as having them.",
+    reference: "Landing Gear - General / Description",
   },
   {
     id: 33,
@@ -268,7 +300,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "How many turns are required on the gravity extension hand crank to extend the landing gear?",
     options: ["2", "3", "5", "6"],
     answer: 1,
-    explain: "",
+    explain: "3 turns, clockwise, until reaching the mechanical stop.",
+    reference: "Landing Gear - Controls & Indicators (gravity extension)",
   },
   {
     id: 34,
@@ -276,7 +309,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Nose wheel steering is available when:",
     options: ["Gear doors open", "All gear doors closed", "The Push button on either steering hand wheel is depressed", "Nose gear doors closed"],
     answer: 3,
-    explain: "",
+    explain: "The nose landing gear doors specifically must be closed for the green hydraulic system to pressurize the steering actuating cylinder — it's the nose gear doors, not the full set of landing gear doors, that gate this.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 35,
@@ -284,7 +318,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What does each turn of the gravity gear extension handle do?",
     options: ["Open gear doors, unlock gear, drop gear.", "Open gear doors, drop gear, shut doors.", "Shutoff hydraulic pressure, open doors, unlock gear.", "Open gear doors, shutoffs hydraulics, unlock gear, drop gear."],
     answer: 2,
-    explain: "",
+    explain: "Turning the crank shuts off/isolates hydraulic pressure to the gear system and unlocks the gear doors and the gear itself, letting gravity drop the gear into the extended position — dropping the gear is the passive result of unlocking it rather than a separate active step of the crank.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 36,
@@ -292,7 +327,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Hand wheel and pedals are operated simultaneously:",
     options: ["Hand wheel has priority", "Pedals have priority (depending on speed)", "BSCU transforms these orders into nose wheel steering angle (signals are mathematically added)", "Hand wheel input will not be affected by pedals."],
     answer: 2,
-    explain: "",
+    explain: "The BSCU takes whichever steering inputs are being sent (handwheel, pedals, or autopilot) and converts them into a commanded nose wheel angle — this is also why there's a dedicated pushbutton on the handwheel just to disconnect rudder-pedal input, since without it pedal orders can otherwise combine with handwheel input.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 37,
@@ -300,7 +336,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What system pressure does the ACCU PRESS and BRAKES pressure indicator indicate?",
     options: ["Yellow brake accumulator and yellow brake system pressure to the left and right brakes", "Yellow brake accumulator and green brake system pressure to the left and right brakes.", "Yellow brake accumulator and green or yellow brake system pressure to the left and right brakes.", "Blue brake accumulator and green brake system pressure to the left and right brakes."],
     answer: 0,
-    explain: "",
+    explain: "ACCU PRESS shows yellow brake accumulator pressure; BRAKES shows yellow pressure delivered to the left/right brakes — both are yellow-system readings, since there's no cockpit indication of normal (green) brake pressure at all.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 38,
@@ -308,7 +345,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "If the accumulator on the alternate brake system is your only source pressure, which of the following will be available?",
     options: ["Auto brakes and antiskid.", "Antiskid.", "Seven applications of the brake pedals.", "Three applications of the brake pedals"],
     answer: 2,
-    explain: "",
+    explain: "The accumulator alone can supply at least 7 full brake-pedal applications, with anti-skid unavailable (pedal pressure must be manually kept at or below 1,000 PSI to avoid locking a wheel) and no autobrake.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 39,
@@ -316,7 +354,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The braking modes are:",
     options: ["Green with anti-skid, Yellow without anti-skid, Parking brake.", "Green or Yellow with anti-skid, Yellow without anti-skid, parking brake", "Green with or without anti-skid, Blue without anti-skid"],
     answer: 1,
-    explain: "",
+    explain: "Three modes exist: normal (green) braking with anti-skid, alternate (yellow) braking with anti-skid, alternate (yellow, or accumulator-only) braking without anti-skid, plus the separate parking brake — matching \"Green or Yellow with anti-skid, Yellow without anti-skid, parking brake.\"",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 40,
@@ -324,7 +363,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "You have just set the parking brake handle to ON. Is it still possible to check the main brake system using the toe brakes?",
     options: ["Yes. As soon as you press the brake pedals the BRAKES indicator will read main system pressure.", "No. It is not possible to press hard enough to obtain an accurate reading.", "No. When the PARK BRK is set, the other braking modes are deactivated.", "Yes. After pressing the brake pedals , when released, BRAKES indicator will read main system pressure."],
     answer: 2,
-    explain: "",
+    explain: "No — setting the parking brake deactivates the other braking modes, so pressing the toe brakes doesn't give you a normal-system pressure check while PARK BRK is ON.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 41,
@@ -332,7 +372,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "If the brake system automatically transitions to alternate brakes with the A/SKID & N/W STRG switch in the ON position, which of the following will be available?",
     options: ["Auto brakes and anti-skid.", "Only auto brakes.", "Brakes, auto brakes, anti-skid.", "Anti-skid."],
     answer: 3,
-    explain: "",
+    explain: "With green pressure lost and the switch ON, yellow automatically takes over the brakes and anti-skid stays available — but autobrake is inoperative in alternate braking, so anti-skid is the only one of these that carries over.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 42,
@@ -340,7 +381,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "System page “Wheel”. L/G position indicators (triangles), first line shows green triangles, second line behind shows amber crosses. Is the landing gear down?",
     options: ["Yes", "No", "Right hand gear only is down", "Left hand gear only is down."],
     answer: 0,
-    explain: "",
+    explain: "Yes. Only one green triangle per gear is needed to confirm it's downlocked — the amber crosses on the second line just mean that LGCIU's own indication has failed, not that the gear is up.",
+    reference: "Landing Gear - Controls & Indicators (WHEEL SD page)",
   },
   {
     id: 43,
@@ -348,7 +390,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "On the E/WD, you notice the NW STRG DISC memo. What does it mean?",
     options: ["The nose wheel steering has been disconnected by ground personnel.", "A failure in the nose wheel steering system has been detected.", "There is a discrepancy between the two nose wheel steering handwheel positions", "The nose wheel steering computer has finished its self test."],
     answer: 0,
-    explain: "",
+    explain: "This memo appears when the nose wheel steering selector is in the towing position, i.e., ground personnel have disconnected it for towing — not a system failure.",
+    reference: "Landing Gear - Controls & Indicators (memo display)",
   },
   {
     id: 44,
@@ -356,7 +399,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "On the ramp with APU running, park brake is set on, message on ECAM memo shows Park Brake.",
     options: ["In Green", "In Yellow", "In White", "In White or Yellow"],
     answer: 0,
-    explain: "",
+    explain: "The PARK BRK memo displays in green whenever the parking brake is ON during the relevant ground flight phases (including on the ramp/at the gate) — there's no yellow or white variant.",
+    reference: "Landing Gear - Controls & Indicators (memo display)",
   },
   {
     id: 45,
@@ -364,7 +408,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Which hydraulic system(s) supply pressure to the landing gear system?",
     options: ["Green", "Blue", "Yellow and Blue", "Green and Blue."],
     answer: 0,
-    explain: "",
+    explain: "The green hydraulic system actuates all the gear and doors.",
+    reference: "Landing Gear - General / Description",
   },
   {
     id: 46,
@@ -372,7 +417,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The green DECEL light on the autobrake pushbutton illuminates when the actual airplane deceleration corresponds to what percentage of the selected rate?",
     options: ["80%", "90%", "92%", "95%"],
     answer: 0,
-    explain: "",
+    explain: "The DECEL light comes on green once actual deceleration reaches 80% of the selected rate (it may not illuminate at all on a slippery runway, without that meaning autobrake has failed).",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 47,
@@ -380,7 +426,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Which hydraulic system supplies pressure to the nose wheel steering?",
     options: ["Green", "Blue", "Green and Blue.", "Yellow."],
     answer: 0,
-    explain: "",
+    explain: "The green hydraulic system supplies the steering actuating cylinder.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 48,
@@ -388,7 +435,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "There are two triangles for each gear on the ECAM WHEEL page. What do they represent?",
     options: ["Each triangle represents one wheel on the gear.", "Each triangle represents the position detected by one of the two computers systems.", "Each triangle represents one of the braking systems available for that gear.", "The front triangle indicates the position of that gear and the back triangle indicates the status of the brakes for that gear."],
     answer: 1,
-    explain: "",
+    explain: "Each of the two triangles per gear reflects what one of the two LGCIUs independently detects — a green triangle for downlocked, red for in transit, none for uplocked, or an amber cross if that LGCIU has failed.",
+    reference: "Landing Gear - Controls & Indicators (WHEEL SD page)",
   },
   {
     id: 49,
@@ -396,7 +444,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What happens to the other brake modes when parking brakes are applied?",
     options: ["There is no change.", "All other braking modes and antiskid are deactivated.", "Antiskid mode only is deactivated."],
     answer: 1,
-    explain: "",
+    explain: "Applying the parking brake deactivates the other braking modes — the parking brake supplies its own fixed pressure through the handle rather than being pedal-modulated, so normal, alternate, and anti-skid braking functions aren't in play while it's set.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 50,
@@ -404,7 +453,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What is required to arm the auto brakes?",
     options: ["Green hydraulic pressure available, anti-skid, no failures in the braking system.", "Landing gear lever selected down and selection of an autobraking rate.", "Both are correct.", "Yellow hydraulic pressure available, anti-skid, no failures in the braking system."],
     answer: 0,
-    explain: "",
+    explain: "Arming needs green pressure available, anti-skid electrically powered, no braking-system failure, and at least one ADIRU available — it's tied to the green (normal) system, not yellow.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 51,
@@ -412,7 +462,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Landing gear indicator panel UNLK light illuminates red if",
     options: ["Gear is extended by gravity and doors are not closed", "Gear is extended normally and doors are not closed", "Gear is not locked in selected position", "Gear is not selected down by 1,000 ft RA."],
     answer: 2,
-    explain: "",
+    explain: "UNLK comes on red whenever the gear isn't locked in the selected position, regardless of how the gear got there.",
+    reference: "Landing Gear - Controls & Indicators (gear indicator panel)",
   },
   {
     id: 52,
@@ -420,7 +471,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Alternate braking using the Yellow system. Autobrake is:",
     options: ["Lost", "Still available with anti-skid", "Still available without anti-skid", "Still available provided Yellow system hydraulic pressure is available."],
     answer: 0,
-    explain: "",
+    explain: "Autobrake is inoperative in alternate braking (whether with or without anti-skid) — only anti-skid can carry over, not autobrake.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 53,
@@ -428,7 +480,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Maximum speed for landing gear retraction is:",
     options: ["200 kts", "220 kts", "235 kts", "250 kts"],
     answer: 1,
-    explain: "",
+    explain: "VLO (retraction) is 220 kt / M0.54 — note this is lower than the 250 kt VLO for extension and the 280 kt VLE for staying extended.",
+    reference: "Landing Gear Limitations - Maximum Speeds",
   },
   {
     id: 54,
@@ -436,7 +489,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "What is indicated by the autobrake DECEL lights?",
     options: ["Airplane deceleration is 25% of selected rate.", "Airplane deceleration is 50% of selected rate.", "Airplane deceleration is 100% of selected rate.", "Airplane deceleration is 80% of selected rate."],
     answer: 3,
-    explain: "",
+    explain: "The DECEL light indicates actual deceleration has reached 80% of the selected rate.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 55,
@@ -444,7 +498,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "How do you manually extend the landing gear?",
     options: ["Lift the red handle and turn anticlockwise 4 turns.", "Lift the red handle and turn anticlockwise a minimum of 2 turns.", "Lift the red handle and turn clockwise a minimum of 4 turns.", "Lift the red handle and turn clockwise by 3 turns."],
     answer: 3,
-    explain: "",
+    explain: "Pull the crank out and turn it clockwise for 3 turns, until reaching the mechanical stop.",
+    reference: "Landing Gear - Controls & Indicators (gravity extension)",
   },
   {
     id: 56,
@@ -452,7 +507,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The antiskid deactivates when ground speed is less than ______.",
     options: ["10 kts.", "20 kts.", "25 kts.", "30 kts."],
     answer: 1,
-    explain: "",
+    explain: "The antiskid system is deactivated below 20 kt ground speed.",
+    reference: "Landing Gear - Brakes & Antiskid (Anti-Skid System)",
   },
   {
     id: 57,
@@ -460,7 +516,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Following failure of all 3 ADIRS, is antiskid available?",
     options: ["Yes", "No", "Only with Yellow hydraulics", "Only with Green hydraulics"],
     answer: 0,
-    explain: "",
+    explain: "Yes — if all ADIRUs fail, the reference speed the BSCU uses falls back to the higher of the two main gear wheel speeds, so anti-skid keeps working rather than dropping out entirely.",
+    reference: "Landing Gear - Brakes & Antiskid (Anti-Skid System)",
   },
   {
     id: 58,
@@ -468,7 +525,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Which ADIRS close the safety valve of the green hydraulic supply when speed is > 260 kts.",
     options: ["ADIRS 1 & 2", "ADIRS 1 & 3", "ADIRS 2 & 3", "ADDIRS 2 or 3"],
     answer: 1,
-    explain: "",
+    explain: "This is closest to an abnormal-procedure note stating that an ADR 1+3 fault (or, just as validly, an ADR 2+3 fault) drives the gear safety valve closed. Of the choices offered, \"ADIRS 1 & 3\" matches the first-named pair from the FCOM, though \"2 & 3\" is described as equally capable of causing the same closure.",
+    reference: "Flight Controls - Alternate Law (ADR Faults)",
   },
   {
     id: 59,
@@ -476,7 +534,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Nose wheel steering by rudder pedals is limited to:",
     options: ["+/- 6 degrees under all conditions", "+/- 75 degrees", "+/- 90 degrees", "Maximum +/- 6 degrees depending on aircraft speed"],
     answer: 3,
-    explain: "",
+    explain: "Rudder-pedal steering authority is much smaller than the handwheels' 75° and tapers with ground speed for taxi comfort and control — the extracted FCOM text doesn't spell out the exact 6° figure, but the general \"small, speed-dependent\" shape of this limit is consistent with how the system is described elsewhere.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 60,
@@ -484,7 +543,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Can the gear be extended above 260 kts if necessary?",
     options: ["Never.", "Yes, but only manually", "Yes, but the ultimate limit is 285 kt CAS"],
     answer: 1,
-    explain: "",
+    explain: "Normal lever-commanded extension is capped by VLO (250 kt) and the 260 kt hydraulic cutoff, but gravity (manual) extension is a purely mechanical process that isn't limited by that hydraulic safety valve — so above 260 kt, gravity extension is the way to get the gear down.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 61,
@@ -492,7 +552,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Auto brakes, if selected, will only be activated by:",
     options: ["The wheels spinning up.", "The struts being compressed.", "The brake pedals being depressed.", "The ground spoiler extension command."],
     answer: 3,
-    explain: "",
+    explain: "Automatic braking is activated specifically by the ground spoiler extension command, not by wheel spin-up, strut compression, or pedal pressure.",
+    reference: "Landing Gear - Brakes & Antiskid (Auto Brake)",
   },
   {
     id: 62,
@@ -500,7 +561,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Nose wheel steering is available:",
     options: ["Aircraft speed below 70 kts, both engines (required to be) running, Towing lever in normal position, aircraft on ground.", "Aircraft speed below 70 kts, both engines (required to be) running, Towing lever in normal position, aircraft on ground or in the air", "Aircraft speed below 70 kts, one engine (required to be) running, Towing lever in normal position, aircraft on ground.", "Aircraft speed below 70 kts, both engines (required to be) running), Towing lever in standby position, aircraft on ground."],
     answer: 2,
-    explain: "",
+    explain: "The steering system needs at least one engine running (not both), the towing lever in the normal position, and the aircraft on the ground — matching the \"one engine required\" option.",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 63,
@@ -508,7 +570,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The principle of the anti-skid is:",
     options: ["Comparing the speed difference between the four wheels", "Comparing wheel speeds with aircraft reference speed", "Comparing wheel speeds between left and right landing gear", "Comparing left and right wheel speeds on the same landing gear."],
     answer: 1,
-    explain: "",
+    explain: "Each main gear wheel's tachometer speed is compared against the aircraft's own reference speed (normally ADIRU-derived); when a wheel drops to about 0.87 times that reference, brake release orders are issued.",
+    reference: "Landing Gear - Brakes & Antiskid (Anti-Skid System)",
   },
   {
     id: 64,
@@ -516,7 +579,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The steering handwheels, which are interconnected, can steer the nose wheel up to _____ in either direction.",
     options: ["55°", "65°", "75°", "90°"],
     answer: 2,
-    explain: "",
+    explain: "The interconnected steering handwheels can turn the nose wheel up to 75° in either direction (a separate towing-electrical-box override extends this to 95° for ground towing).",
+    reference: "Landing Gear - Nose Wheel Steering",
   },
   {
     id: 65,
@@ -533,7 +597,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The gear doors remain open after a manual extension.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — the gravity-extension process doesn't close the doors afterward; they stay open.",
+    reference: "Landing Gear - General / Description (Gravity Extension)",
   },
   {
     id: 67,
@@ -541,7 +606,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Wheel page of ECAM: if you see a green arc shown over a wheel indication:",
     options: ["It marks the hottest brake with a temperature of more than 100°C.", "It indicates an abnormal high temperature.", "The A/SKID system is automatically releasing the pressure of that brake.", "The L/G control system has detected a low tire profile."],
     answer: 0,
-    explain: "",
+    explain: "A green arc appears on the hottest wheel once its brake temperature exceeds 100°C — it only turns amber (with an ECAM caution) at 300°C, so a green arc alone isn't an abnormal-temperature alert.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 68,
@@ -549,7 +615,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "The maximum brake temperature limitation for takeoff exists to ensure that:",
     options: ["Brakes do not fade during the takeoff roll", "Any hydraulic fluid that touches the brakes will not ignite in the wheel well after gear retraction", "The tires do not deflate from heat", "The anti-skid system remains active"],
     answer: 1,
-    explain: "",
+    explain: "The 300°C takeoff brake-temperature limit (150°C if brake fans were used) is a fire-prevention limit: it keeps the brakes cool enough that any hydraulic fluid or other flammable fluid that might contact them in the unventilated wheel well after retraction won't ignite. The FCOM confirms the temperature figures themselves; this specific fire-safety rationale is standard systems-course explanation for why that number exists.",
+    reference: "Landing Gear Limitations - Brake Temperature",
   },
   {
     id: 69,
@@ -557,7 +624,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "If ACCU PRESS drops below _____, the flight crew should be aware that the Parking Brake can suddenly become less efficient.",
     options: ["1000 PSI", "1500 PSI", "2000 PSI", "2500 PSI"],
     answer: 1,
-    explain: "",
+    explain: "1,500 PSI is roughly half of normal system operating pressure (3,000 PSI) — a reasonable point below which accumulator-backed parking-brake force starts dropping off. The FCOM confirms the accumulator's 12-hour minimum hold time and the general low-accumulator-pressure caution, but the extracted text doesn't spell out this exact PSI figure.",
+    reference: "Landing Gear - Brakes & Antiskid (Description)",
   },
   {
     id: 70,
@@ -565,7 +633,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "During a braking anomaly on the ground, the flight crew should apply pressure to the pedals while setting the A/SKID & N/W STRG switch to OFF.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False — the correct technique is sequential, not simultaneous: switch A/SKID & N/W STRG to OFF first, then modulate brake pressure carefully by reference to the triple indicator (since anti-skid protection is gone), rather than applying pedal pressure at the same moment as flipping the switch.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 71,
@@ -573,7 +642,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "After setting A/SKID & N/W STRG to OFF for a braking anomaly, the PF should modulate brake pressure by referring to:",
     options: ["The BRK PRESS memo on the ECAM", "The triple brake indicator", "The ACCU PRESS gauge only", "Brake pedal feel alone"],
     answer: 1,
-    explain: "",
+    explain: "With the switch OFF, anti-skid is deactivated and the pilot must refer to the triple (BRAKES/ACCU PRESS) indicator to limit brake pressure and avoid locking a wheel.",
+    reference: "Landing Gear - Brakes & Antiskid (Controls & Indicators)",
   },
   {
     id: 72,
@@ -581,7 +651,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Brake fans cool:",
     options: ["The brake units only", "The brake temperature sensor only", "Both the brake units and the brake temperature sensor", "The hydraulic accumulator"],
     answer: 2,
-    explain: "",
+    explain: "Brake fans blow cooling air across both the brake units themselves and the temperature sensor mounted near them — which is exactly why a running fan makes the SD page reading temporarily lower than the brakes' true temperature.",
+    reference: "Landing Gear - Brakes & Antiskid (Brake Fan)",
   },
   {
     id: 73,
@@ -589,7 +660,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "As soon as the brake fans are switched on, the indicated brake temperature decreases almost instantaneously.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True — because the fan cools the temperature sensor itself along with the brake, the SD-page reading drops quickly once the fan starts, well before the brake's actual temperature has changed by nearly as much.",
+    reference: "Landing Gear - Brakes & Antiskid (Brake Fan)",
   },
   {
     id: 74,
@@ -597,7 +669,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "When the brake fans are switched off after running, the indicated brake temperature:",
     options: ["Immediately jumps to the actual value", "Takes several minutes to rise and match the actual brake temperature", "Stays inaccurate permanently", "Drops further before rising"],
     answer: 1,
-    explain: "",
+    explain: "The sensor re-equilibrates gradually once fan cooling stops, so the indicated temperature climbs back up over several minutes until it matches the brake's real (higher) temperature — it doesn't jump immediately.",
+    reference: "Landing Gear - Brakes & Antiskid (Brake Fan)",
   },
   {
     id: 75,
@@ -605,7 +678,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "With the brake fans running and an actual brake temperature of 300°C, the indicated temperature can read as much as _____ below the actual value.",
     options: ["50°C", "100°C", "150°C", "200°C"],
     answer: 2,
-    explain: "",
+    explain: "This tracks with the FCOM's own before-takeoff rule, which treats a fan-cooled indicated reading of 150°C as equivalent in risk to an uncooled 300°C reading — consistent with the fan masking up to roughly 150°C of true brake temperature. The extracted FCOM text doesn't independently restate this as a standalone lag figure, so treat the precise number with some caution even though the underlying effect is confirmed.",
+    reference: "Landing Gear - Brakes & Antiskid (Brake Fan)",
   },
   {
     id: 76,
@@ -613,7 +687,8 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Before takeoff, if the brake fans are running and the indicated brake temperature is above _____, takeoff must be delayed.",
     options: ["100°C", "150°C", "200°C", "250°C"],
     answer: 1,
-    explain: "",
+    explain: "The FCOM directly states this: delay takeoff until brake temperature is below 300°C with the fans off, or below 150°C with the fans on — the lower fans-on threshold exists precisely because the fan-cooled reading under-reports the true temperature.",
+    reference: "Landing Gear Limitations - Brake Temperature",
   },
   {
     id: 77,
@@ -621,6 +696,7 @@ export const LANDING_GEAR_QUESTIONS: Question[] = [
     q: "Brake fans should be used during takeoff to keep the brakes as cool as possible.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False — brake fans are for cooling brakes before/after ground operations, not during the takeoff roll itself: since a running fan makes the temperature indication read artificially low, using it right through takeoff would mask the brakes' true (and potentially higher) temperature exactly when an accurate reading matters most (e.g., for a rejected takeoff).",
+    reference: "Landing Gear - Brakes & Antiskid (Brake Fan)",
   },
 ];

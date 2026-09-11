@@ -9,7 +9,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The avionics smoke detection system consists of the following:",
     options: ["A smoke detector, smoke detection control unit and one halon cylinder.", "A smoke detector, and smoke detection control unit.", "A smoke detector, heat detector, smoke detection control unit and one halon cylinder.", "A smoke detector, smoke detection control unit and two halon cylinders."],
     answer: 1,
-    explain: "",
+    explain: "The avionics bay has smoke detection only — one smoke detector in the ventilation extraction duct plus its control unit — with no halon extinguishing bottle at all, unlike the engines, APU, cargo, or lavatories.",
+    reference: "Fire Protection - Avionics Bay (System Description, Smoke Detection)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event an aft cargo compartment smoke detector detects smoke:",
     options: ["Only an ECAM message will be generated.", "Only a MASTER WARN and a CRC will be generated.", "A MASTER WARN, CRC and an ECAM message will be generated.", "A CRC and an ECAM message will be generated."],
     answer: 2,
-    explain: "",
+    explain: "A cargo compartment smoke detection triggers a full red-level warning: the continuous repetitive chime, the MASTER WARNING light, and the associated ECAM message all come on together.",
+    reference: "Fire Protection - Cargo Compartments (Controls and Indicators, SMOKE Light)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event a lavatory smoke detector detects smoke:",
     options: ["Warnings will be generated only in the cockpit.", "Warnings will be generated only on the flight deck.", "warnings will be generated in the cockpit and in the cabin."],
     answer: 2,
-    explain: "",
+    explain: "A lavatory smoke detector's signal goes through the SDCU or CIDS to the Flight Warning Computer, which raises the alert in both the cockpit and the cabin — not just one or the other.",
+    reference: "Fire Protection - Lavatory (System Description, Smoke Detection)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "When the aircraft is on the ground and the APU is started on battery power only, is fire protection available?",
     options: ["Yes, the APU will initiate an auto shutdown and discharge the extinguishing agent.", "No, but the APU will initiate an auto shutdown.", "No, automatic fire protection is only available if AC power is available."],
     answer: 0,
-    explain: "",
+    explain: "Fire protection for the APU is wired through the aircraft's essential/battery circuits specifically so it stays available during an APU start on battery power alone — a detected fire still triggers the automatic shutdown and automatic agent discharge on the ground.",
+    reference: "Fire Protection - Engines and APU (System Description, Extinguishing)",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "How long will the red APU FIRE pb on the overhead be illuminated?",
     options: ["Until the crew pushes and releases the guarded red APU FIRE push button.", "For as long as the fire warning is present.", "Until the crew pushes the red MASTER WARN push button."],
     answer: 1,
-    explain: "",
+    explain: "The red APU FIRE light comes on regardless of the pushbutton's position and stays lit for as long as the underlying fire warning condition is present — pushing the pushbutton arms the extinguisher and silences the aural warning, but doesn't itself extinguish the light.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE PB)",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "DISCH light on either the engine or APU fire agent switches indicates:",
     options: ["The APU or engine FIRE switch has been pushed.", "The extinguisher bottle has been discharged.", "A fault has occurred in the respective fire bottle."],
     answer: 1,
-    explain: "",
+    explain: "The amber DISCH light comes on specifically when the corresponding fire extinguisher bottle has lost its pressure — i.e. it has been discharged.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, AGENT PB-SW)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "With reference to cargo compartment fire extinguishing, which statement is true?",
     options: ["There are two fire bottles, one for the FWD compartment and one for the AFT.", "There is only one fire bottle, pressing either DISCH pushbutton discharges it into both compartments.", "There is only one fire bottle, when it is discharged both amber DISCH lights come on.", "There are two fire bottles, when the DISCH pushbutton is pressed, they are both discharged into the appropriate compartment."],
     answer: 2,
-    explain: "",
+    explain: "There's actually only one fire bottle serving both cargo compartments, fitted with two discharge heads (one per compartment) feeding three nozzles total; since it's a single shared bottle, discharging it shows up as both amber DISCH lights coming on once it's empty.",
+    reference: "Fire Protection - Cargo Compartments (System Description, Fire Extinguishing)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "You have detected avionics smoke. You have selected the GEN 1 LINE push button off and the RAT has been deployed. Generator 2 has been removed from the system. Which of the following is TRUE?",
     options: ["The cargo fire bottle automatically fires.", "The avionics fire bottle automatically discharges.", "The aircraft will be in the Emergency Electrical Configuration"],
     answer: 2,
-    explain: "",
+    explain: "With GEN 1 LINE off, the RAT deployed, and generator 2 removed from the system, the aircraft has lost both its normal AC generators — exactly the condition that puts it into the Emergency Electrical Configuration.",
+    reference: "Electrical - Emergency Electrical Configuration (General)",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The avionics compartment is the only area where there is no fire extinguishing system installed.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Every other protected area — engines, APU, cargo compartments, and lavatory wastebins — has its own extinguishing system, but the avionics bay only has smoke detection with no extinguisher installed, making it the one area without fire extinguishing.",
+    reference: "Fire Protection - Avionics Bay (System Description, Smoke Detection)",
   },
   {
     id: 10,
@@ -81,7 +90,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The aircraft has dual fire detector loops to ensure that a fault in one fire loop will not affect fire detection capabilities.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "Each engine and the APU has two identical detection loops (A and B) mounted in parallel specifically so that a break or power loss in one loop doesn't take down fire detection — the other loop keeps protecting the aircraft on its own.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 11,
@@ -89,7 +99,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The APU provides for automatic fire extinguishing:",
     options: ["On the ground only.", "On the ground and in flight.", "Only when selected to automatic by ground personnel."],
     answer: 0,
-    explain: "",
+    explain: "Automatic APU fire extinguishing only happens on the ground — the APU shuts down and its bottle discharges automatically there, but an in-flight APU fire has to be handled manually by the crew.",
+    reference: "Fire Protection - Engines and APU (System Description, Extinguishing)",
   },
   {
     id: 12,
@@ -97,7 +108,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "After depressing the CARGO SMOKE TEST push button once, a satisfactory test of the aft cargo compartment smoke detector consist of:",
     options: ["Two complete cycles with associated warnings.", "Not needed as this system self-tests during the first engine start.", "One complete cycle with associated warnings.", "Three complete cycles with associated warnings."],
     answer: 0,
-    explain: "",
+    explain: "Holding the CARGO SMOKE TEST pushbutton runs the red SMOKE lights through two complete cycles (along with the associated ECAM warning and amber DISCH lights) as part of a single valid test.",
+    reference: "Fire Protection - Cargo Compartments (Controls and Indicators, TEST PB)",
   },
   {
     id: 13,
@@ -105,7 +117,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Are there any warnings to alert ground personnel when there is a fire in the APU compartment?",
     options: ["Yes, but only if previously selected to automatic by the ground personnel.", "No, APU fire indications are only present in the cockpit.", "Yes, the external fire warning horn will sound and the APU red fire light will illuminate."],
     answer: 2,
-    explain: "",
+    explain: "Ground personnel do get their own warning: the red APU FIRE light on the external power panel comes on together with an external warning horn whenever the system detects an APU fire.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, External Power Panel)",
   },
   {
     id: 14,
@@ -113,7 +126,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If an APU fire is detected on the ground, the APU shuts down automatically and the agent is discharged ______ after the warning is activated.",
     options: ["Immediately", "1 second.", "3 seconds.", "6 seconds."],
     answer: 2,
-    explain: "",
+    explain: "On the ground, the APU fire extinguisher bottle discharges automatically 3 seconds after the fire warning first appears.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, External Power Panel)",
   },
   {
     id: 15,
@@ -121,7 +135,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The GEN 1 LINE smoke light indicates:",
     options: ["A fire caused by number 1 generator.", "Smoke in the avionics ventilation system.", "Smoke in the cargo ventilation system."],
     answer: 1,
-    explain: "",
+    explain: "The GEN 1 LINE SMOKE light comes on amber specifically when smoke is detected in the avionics compartment's ventilation duct — it isn't tied to a generator-caused fire.",
+    reference: "Fire Protection - Avionics Bay (Controls and Indicators, EMER ELEC PWR Panel)",
   },
   {
     id: 16,
@@ -129,7 +144,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If an engine fire is detected, when will the guarded red ENG FIRE push button light extinguish?",
     options: ["Only after the fire warning no longer exists.", "When the crew pushes and releases the guarded red ENGINE FIRE pushbutton.", "When the crew pushes the red MASTER WARN pushbutton.", "When the crew pushes the red MASTER WARN pushbutton and then releases the guarded ENGINE FIRE pushbutton"],
     answer: 0,
-    explain: "",
+    explain: "The guarded red ENG FIRE pushbutton's light is driven purely by whether the fire warning condition still exists — it comes on and stays lit regardless of the pushbutton's own position, and only goes out once the underlying warning clears.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, ENG 1(2) FIRE PB)",
   },
   {
     id: 17,
@@ -137,7 +153,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "STATUS page: INOP SYS indicates “ENG1 LOOP B”.",
     options: ["One fire detection loop has failed. Fire detection for both engines is not available.", "One detection loop for engine 1 has failed. Fire detection for both engines is still available.", "One fire detection loop of engine 1 has failed. Fire detection for engine 1 is inoperative.", "Both fire detection loops of engine 1 have failed. Fire detection for engine 1 is inoperative."],
     answer: 1,
-    explain: "",
+    explain: "\"ENG1 LOOP B\" on the STATUS page means only engine 1's B loop has failed — its A loop still covers engine 1, and engine 2's detection loops are entirely unaffected, so fire detection for both engines remains available.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 18,
@@ -145,7 +162,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Engine heat sensing are located in pylon nacelle, engine core and fan section.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "Each engine's fire-sensing elements are distributed across the pylon nacelle, the engine core, and the fan section.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 19,
@@ -153,7 +171,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If an engine fire is detected, when will the pedestal mounted red FIRE annunciator light extinguish?",
     options: ["When the crew pushes the red MASTER WARN push button.", "Only after the fire warning no longer exists.", "Only after the crew selects the adjacent ENG MASTER switch to off."],
     answer: 1,
-    explain: "",
+    explain: "Like the ENG FIRE pushbutton's light, the pedestal-mounted red FIRE annunciator on the ENG MASTER panel is tied to the fire warning condition itself — it only extinguishes once that warning is no longer present, independent of any crew button press.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, ENG MASTER Panel)",
   },
   {
     id: 20,
@@ -161,7 +180,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Engine fire loops are installed in the:",
     options: ["Pylon nacelle", "Core", "Fan", "All the above"],
     answer: 3,
-    explain: "",
+    explain: "Engine fire-sensing elements are installed in all three locations together — the pylon nacelle, the engine core, and the fan section.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 21,
@@ -169,7 +189,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "After an APU fire has been detected how long will the chime continue to sound?",
     options: ["Until the crew pushes the red MASTER WARN push button.", "Until the crew pushes and releases the guarded red APU FIRE push button.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "The chime that sounds for an APU fire warning is silenced either by pressing the MASTER WARN pushbutton or by pushing and releasing the guarded APU FIRE pushbutton (which explicitly silences the aural warning as one of its actions) — both genuinely stop it.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE PB)",
   },
   {
     id: 22,
@@ -177,7 +198,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Which of the following have automatic fire extinguishing systems?",
     options: ["APU, and lavatory waste bins.", "APU, lavatory waste bins and avionics bay.", "APU, aft cargo, forward cargo, lavatory waste bins and avionics bay.", "APU, forward and aft cargo, lavatory and waste bins"],
     answer: 0,
-    explain: "",
+    explain: "Only the APU and the lavatory wastebins have automatic fire extinguishing — the APU's bottle discharges on its own for a ground fire, and each wastebin has its own automatic extinguisher, while cargo compartment and avionics-bay protection both require crew action (or, for avionics, have no extinguisher at all).",
+    reference: "Fire Protection - Engines and APU (Extinguishing) / Lavatory (Wastebin Fire Extinguishing) / Avionics Bay",
   },
   {
     id: 23,
@@ -185,7 +207,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event an aft cargo compartment smoke detector detects smoke:",
     options: ["Extinguishing is automatic.", "Extinguishing is automatic only while on the ground.", "The crew must depress the appropriate DISCH switch."],
     answer: 2,
-    explain: "",
+    explain: "Cargo compartment extinguishing isn't automatic — once smoke is detected, the crew has to press the corresponding FWD or AFT DISCH pushbutton to actually discharge the agent.",
+    reference: "Fire Protection - Cargo Compartments (Controls and Indicators, DISCH PB)",
   },
   {
     id: 24,
@@ -193,7 +216,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "APU fire detection is accomplished by:",
     options: ["A two channel SDCU located in the APU compartment.", "Two parallel fire detection loops.", "One fire detection loop.", "A three channel SDCU located in the APU compartment."],
     answer: 1,
-    explain: "",
+    explain: "The APU, like each engine, is protected by two parallel fire detection loops feeding a Fire Detection Unit — not a multi-channel SDCU, which is the smoke-detection architecture used for cargo, lavatories, and the avionics bay instead.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 25,
@@ -201,7 +225,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Each engine nacelle and pylon area is equipped with:",
     options: ["Two fire detection loops.", "A single fire detection loop.", "Two smoke detectors and two fire detection loops.", "A single fire detection loop and a single smoke detector."],
     answer: 0,
-    explain: "",
+    explain: "Each engine's nacelle and pylon area is covered by two parallel fire detection loops, mirroring the APU's arrangement — this is heat-based fire detection, not the smoke-detector-based system used elsewhere on the aircraft.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection)",
   },
   {
     id: 26,
@@ -209,7 +234,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Can the APU FIRE test be performed using battery power only?",
     options: ["Yes.", "No."],
     answer: 0,
-    explain: "",
+    explain: "The APU FIRE TEST can be run on battery power alone — the test circuitry doesn't require the full electrical system to be up, though which indications appear differs from a fully-powered test.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE TEST PB)",
   },
   {
     id: 27,
@@ -217,23 +243,28 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The aft cargo compartment smoke detection system consists of:",
     options: ["A dual loop smoke detector.", "Four smoke detectors and a two channel smoke detection control unit.", "One smoke detector, one smoke detection control unit and two automatically discharging fire extinguishers.", "Three smoke detectors, one smoke detection control unit and two automatically discharging fire extinguishers."],
     answer: 1,
-    explain: "",
+    explain: "The aft cargo compartment's smoke detection uses four smoke detectors (two detection loops' worth, dual-loop principle) feeding a two-channel Smoke Detection Control Unit.",
+    reference: "Fire Protection - Cargo Compartments (System Description, Smoke Detection)",
   },
   {
     id: 28,
     system: "Fire Protection",
     q: "During the walk-around, you have to check that the APU Fire extinguisher overpressure indication (green disc) is in place. This is an indication that the fire bottle has not been discharged.",
     options: ["True", "False"],
+    // REVIEW (uncertain): The FCOM describes a red disk at the rear of the fuselage that signals the APU extinguisher agent was NOT discharged overboard due to bottle overpressure — the opposite color and a different meaning than this option's "green disc in place means not discharged" premise. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 29,
     system: "Fire Protection",
     q: "Fire protection for the cargo compartments includes:",
     options: ["Two fire bottles; one for each compartment.", "One single shot fire extinguisher for the aft compartment only.", "One single shot fire extinguisher agents which can be discharged to either compartment."],
-    answer: 0,
-    explain: "",
+    // REVIEW (corrected, high confidence): The FCOM's cargo fire extinguishing description is unambiguous — "One fire bottle with two discharge heads, one for each compartment, supplies three nozzles" — directly contradicting "two fire bottles, one for each compartment" and matching option C (one single-shot bottle whose agent can be routed to either compartment) instead. This is also internally consistent with this bank's own Q7, whose FCOM-confirmed answer describes one shared bottle.
+    answer: 2,
+    explain: "The FCOM is explicit that cargo fire protection uses a single fire bottle with two discharge heads (one per compartment) feeding three nozzles — not two separate bottles — so the agent for either compartment comes from that one shared bottle.",
+    reference: "Fire Protection - Cargo Compartments (System Description, Fire Extinguishing)",
   },
   {
     id: 30,
@@ -241,15 +272,18 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "How does the APU fire test on battery power differ from the APU fire test with all busses powered?",
     options: ["There is no difference.", "While on battery power, only the red APU FIRE and AGENT/DISCH push button will illuminate.", "It is not possible to test the APU fire protection while on battery power."],
     answer: 1,
-    explain: "",
+    explain: "On battery power alone, the ECAM itself likely isn't fully up, so the APU fire test is limited to the panel-level indications — just the red APU FIRE light and AGENT/DISCH pushbutton illuminating — rather than the full CRC-plus-ECAM sequence seen with all busses powered.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE TEST PB)",
   },
   {
     id: 31,
     system: "Fire Protection",
     q: "Will an APU fire test shut down the APU?",
     options: ["Yes.", "No."],
+    // REVIEW (uncertain): The FCOM's APU FIRE TEST PB description states explicitly, "the automatic shutdown of the APU on the ground does not occur when the flight crew performs this test" — which points to No rather than the Yes scored here. (A separate ground MAINTENANCE PANEL test does shut the APU down if running, so this may hinge on which "APU fire test" the question means.) Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 32,
@@ -257,7 +291,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "When the APU FIRE SWITCH is released out:",
     options: ["The Fire bottle is discharged.", "The Fuel HP valve is closed.", "The APU bleed and crossbleed valves are closed."],
     answer: 2,
-    explain: "",
+    explain: "Releasing the guarded APU FIRE switch out (the fire-activated state) closes the APU bleed valve and the crossbleed valve as part of isolating the APU — the fuel valve it closes is the low-pressure shutoff valve, not an HP valve, and the fire bottle itself only discharges when the separate AGENT pushbutton is pressed.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE PB)",
   },
   {
     id: 33,
@@ -265,7 +300,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If you perform the APU FIRE TEST with only DC power available, you get the MASTER WARN on the ECAM.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "With only DC power available, the ECAM display itself isn't operating normally, so an APU FIRE TEST in that state doesn't produce the usual ECAM MASTER WARN indication.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, APU FIRE TEST PB)",
   },
   {
     id: 34,
@@ -273,7 +309,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Each lavatory is equipped with:",
     options: ["Two smoke detectors and one smoke detection control unit.", "One smoke detector and one smoke detection control unit.", "One smoke detector, and for lavatory waste bins, an automatically discharging fire extinguisher.", "Two smoke detectors and two automatically discharging fire extinguishers."],
     answer: 2,
-    explain: "",
+    explain: "Each lavatory has one smoke detector in its air extraction duct feeding the shared smoke detection system, plus its own automatically-discharging fire extinguisher built into the wastebin.",
+    reference: "Fire Protection - Lavatory (System Description, Smoke Detection / Wastebin Fire Extinguishing)",
   },
   {
     id: 35,
@@ -281,7 +318,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "How many halon fire extinguishing cylinders are there per engine?",
     options: ["Each engine has two fire extinguishers.", "Each engine has it’s own dedicated fire extinguisher and has the capability to share the other engine’s cylinder.", "Each engine has it’s own dedicated fire extinguisher and has the capability to share one centrally located halon cylinder.", "Each engine has one fire extinguisher."],
     answer: 0,
-    explain: "",
+    explain: "Each engine carries two of its own dedicated halon fire extinguisher bottles, each with an electrically-operated squib (and each squib on dual electrical supply) — engines don't share bottles with each other.",
+    reference: "Fire Protection - Engines and APU (System Description, Extinguishing)",
   },
   {
     id: 36,
@@ -289,7 +327,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "What is indicated by a missing red APU thermal plug during an exterior preflight?",
     options: ["This is normal indication, the red APU thermal plug only appears if the APU halon cylinder is low.", "An APU fire agent thermal discharge has occurred.", "An external fire discharge has been activated."],
     answer: 1,
-    explain: "",
+    explain: "A missing red thermal discharge indicator during preflight signals that the APU fire bottle's agent has already been released through a thermal (heat-triggered) discharge — it's a sign the bottle needs attention, not a normal condition.",
+    reference: "Fire Protection - Engines and APU (Extinguishing, General)",
   },
   {
     id: 37,
@@ -297,7 +336,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If there is an APU fire in flight the APU:",
     options: ["Will automatically shut down and the fire bottle will discharge.", "Must be shut down manually and the agent manually discharged.", "Must be shut down manually but the fire bottle will discharge automatically."],
     answer: 1,
-    explain: "",
+    explain: "In flight, none of the APU's automatic fire response applies — the crew has to shut the APU down manually and manually discharge the extinguisher agent themselves, since the automatic shutdown-and-discharge sequence only runs on the ground.",
+    reference: "Fire Protection - Engines and APU (System Description, Extinguishing)",
   },
   {
     id: 38,
@@ -305,7 +345,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "If a break in both engine fire loops occurs within _____ seconds of each other a _____ will occur.",
     options: ["8 sec./ a FIRE warning", "7 sec./ a FIRE DET FAULT message on ECAM", "10 sec./ a FIRE DET FAULT message on ECAM", "5 sec./ a FIRE warning"],
     answer: 3,
-    explain: "",
+    explain: "The fire detection logic treats near-simultaneous breaks in both engine loops as a genuine fire signature (the \"flame effect\") — breaks occurring in both loops within 5 seconds of each other trigger a full fire warning, not just a fault caution.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection and Detection Fault Logic)",
   },
   {
     id: 39,
@@ -313,7 +354,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "In conjunction with illumination of the GEN 1 LINE SMOKE light and MASTER CAUT light:",
     options: ["The BLOWER and EXTRACT push button FAULT lights will be illuminated.", "Only the BLOWER FAULT light will be illuminated.", "Only the EXTRACT FAULT light will be illuminated."],
     answer: 0,
-    explain: "",
+    explain: "Avionics smoke detection lights up several indications together: the GEN 1 LINE SMOKE light on the EMER ELEC PWR panel, MASTER CAUTION, and the FAULT lights on both the BLOWER and EXTRACT pushbuttons on the VENTILATION panel all come on as part of the same alert.",
+    reference: "Fire Protection - Avionics Bay (System Description, Smoke Detection)",
   },
   {
     id: 40,
@@ -321,7 +363,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "In addition to the CRC and red MASTER WARN light, a good engine fire test will display which of the following (AC power available)?",
     options: ["The CRC and red MASTER WARN light indicate a positive engine fire test.", "Lower ECAM engine page, pedestal mounted red FIRE annunciator, red ENG FIRE push button and the AGENT SQUIB/DISC lights illuminate.", "E/WD red 1 (2) ENG FIRE warning, lower ECAM engine page, red FIRE annunciator, red ENG FIRE push button, and AGENT SQUIB/DISCH."],
     answer: 2,
-    explain: "",
+    explain: "A full engine fire test with AC power available lights up the complete chain: the E/WD's red ENG FIRE warning, the lower ECAM engine page, the pedestal-mounted red FIRE annunciator, the red ENG FIRE pushbutton, and the AGENT SQUIB/DISCH lights all appear together with the CRC and MASTER WARN.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, ENG 1(2) FIRE TEST PB)",
   },
   {
     id: 41,
@@ -329,7 +372,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "How many fire extinguishing bottles are available for fighting an APU fire?",
     options: ["One.", "Two.", "One cylinder shared with the aft cargo compartment.", "Two cylinders shared with the aft cargo compartment."],
     answer: 0,
-    explain: "",
+    explain: "The APU has just one fire extinguisher bottle (fitted with two electrically-operated squibs for redundant discharge control) — it isn't shared with the cargo compartments.",
+    reference: "Fire Protection - Engines and APU (System Description, Extinguishing)",
   },
   {
     id: 42,
@@ -337,7 +381,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Illumination of the GEN 1 LINE SMOKE light indicates:",
     options: ["A fire has been detected in the avionics compartment.", "A satisfactory test of the avionics compartment smoke detection control unit.", "Smoke has been detected in the avionics compartment ventilation duct.", "A fire has been detected in the electronics compartment."],
     answer: 2,
-    explain: "",
+    explain: "The GEN 1 LINE SMOKE light specifically flags smoke detected in the avionics compartment's ventilation duct — it isn't a fire indication in itself, and it isn't tied to the electronics compartment as a whole.",
+    reference: "Fire Protection - Avionics Bay (Controls and Indicators, EMER ELEC PWR Panel)",
   },
   {
     id: 43,
@@ -345,7 +390,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "Should you lose both loops or FDU, fire detection is no longer available for the respective engine or the APU",
     options: ["True", "False."],
     answer: 0,
-    explain: "",
+    explain: "Losing both detection loops, or losing the Fire Detection Unit that processes them, removes the path any heat signal would need to reach the warning system — so fire detection genuinely becomes unavailable for that engine or the APU.",
+    reference: "Fire Protection - Engines and APU (System Description, Fire Detection and Detection Fault Logic)",
   },
   {
     id: 44,
@@ -353,7 +399,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The engine extinguishing agent switch is armed when:",
     options: ["The DISCH light is on.", "The engine fire switch illuminates.", "The engine fire switch is released out."],
     answer: 2,
-    explain: "",
+    explain: "The AGENT pushbutton-switches for an engine only become active once the crew releases that engine's FIRE pushbutton — arming the squibs is a direct result of releasing the guarded FIRE pb, not of the DISCH light or the pb merely illuminating.",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, AGENT 1(2) PB-SW)",
   },
   {
     id: 45,
@@ -361,7 +408,8 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "The AFT SMOKE light closes the aft cargo inlet and outlet isolation valves and shuts off the aft cargo extraction fan.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "A cargo smoke warning automatically closes that compartment's isolation valves and stops its extraction fan — this happens as soon as the smoke warning activates, without waiting for crew action.",
+    reference: "Fire Protection - Cargo Compartments (System Description, Smoke Detection)",
   },
   {
     id: 46,
@@ -369,6 +417,7 @@ export const FIRE_PROTECTION_QUESTIONS: Question[] = [
     q: "What systems are affected when the guarded red ENGINE FIRE push button is pushed and released?",
     options: ["The Master Warning and the chime will be canceled and the AGENT pb’s will be armed.", "All fluids, pneumatics and electrics relating to that engine are shut off", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Pushing and releasing the guarded ENG FIRE pushbutton does both at once: it cancels the Master Warning and chime while arming the AGENT pushbuttons, and it also shuts off all the fuel, hydraulic, pneumatic, and electrical connections tied to that engine (fuel valve, hydraulic fire shutoff, bleed valve, pack valve, FADEC power, IDG).",
+    reference: "Fire Protection - Engines and APU (Controls and Indicators, ENG 1(2) FIRE PB)",
   },
 ];

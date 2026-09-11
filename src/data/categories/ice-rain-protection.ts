@@ -9,7 +9,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The electric windshield wipers are controlled:",
     options: ["Automatically when in heavy rain", "By two individual pushbuttons", "By one rotary selector for both windshields", "By two individual rotary selectors"],
     answer: 3,
-    explain: "",
+    explain: "Each front windshield has its own rotary selector controlling its wiper, so the two wipers are controlled by two individual rotary selectors.",
+    reference: "Ice & Rain Protection - Rain Removal (Description, Wipers)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "When an engine anti-ice valve is open:",
     options: ["N1 limit is automatically reduced and the idle N1 is automatically increased", "N2 of the associated engine is automatically decreased", "N2 limit is automatically reduced and N1 limit is automatically increased", "There is no change in the N1 and N2 limits."],
     answer: 0,
-    explain: "",
+    explain: "When an engine anti-ice valve is open, the N1 (or EPR) limit is automatically reduced and, if necessary, the idle N1 (or EPR) is automatically increased.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The ON light illuminates on the wing anti-ice P/B:",
     options: ["When the anti-ice valves open", "When the P/B is set to ON", "When the fault light goes out", "When the anti-ice valves open and the fault light goes out."],
     answer: 1,
-    explain: "",
+    explain: "Selecting the wing anti-ice pushbutton to ON immediately brings on its blue ON light - the valves themselves only open afterward if a pneumatic supply is actually available.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "What is the difference between the engine and wing anti-ice fault lights?",
     options: ["Both indicate valve in transit, or valve position disagrees with selected position. Wing light also could indicate low pressure.", "Both indicate low pressure, or valve position disagrees with selected position. Wing light might indicate valve in transit.", "Both indicate valve in transit, or low pressure. Wing light also could indicate valve position disagrees with selected position.", "Both indicate valve in transit, or overheat"],
     answer: 0,
-    explain: "",
+    explain: "Both the engine and wing anti-ice FAULT lights come on for a valve in transit or a valve position that disagrees with the selected position, but the wing anti-ice FAULT light can also come on for low pressure - a condition not listed for the engine anti-ice FAULT light.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice / Engine Anti-Ice (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The ______ on each wing are anti-iced with pneumatic bleed air.",
     options: ["Slats", "Flaps", "Slat 3, 4 & 5.", "Slat 1 & 2."],
     answer: 2,
-    explain: "",
+    explain: "The three outboard leading-edge slats (3, 4, and 5) of each wing are anti-iced with hot bleed air from the pneumatic system.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Description)",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "When the wiper is turned off:",
     options: ["The PARK position must be selected to stow the wiper", "It continues to run for approximately 6 seconds", "The wiper may stop in the pilots view", "The wiper stops out of view"],
     answer: 3,
-    explain: "",
+    explain: "When a wiper is turned off, it stops out of the pilot's view rather than continuing to run or requiring a separate PARK selection.",
+    reference: "Ice & Rain Protection - Rain Removal (Controls and Indicators, Wiper Rotary Selector)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The RAIN RPLNT (rain repellent) pushbutton is inhibited on the ground when the engines stopped.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The rain repellent function is inhibited when the aircraft is on the ground with the engines stopped.",
+    reference: "Ice & Rain Protection - Rain Removal (Controls and Indicators, RAIN RPLNT Pushbutton)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Probe heat comes on automatically when:",
     options: ["The AC ESS bus is powered.", "Electrical power is applied to the aircraft.", "When at least one engine is running *"],
     answer: 2,
-    explain: "",
+    explain: "Probes are heated automatically once at least one engine is running (or once the aircraft is in flight) - merely having electrical power applied to the aircraft isn't enough on its own to trigger automatic heating.",
+    reference: "Ice & Rain Protection - Probes Heat (Description)",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "On the ground the wing anti-ice valves will:",
     options: ["Open during a test sequence (30 seconds); provided pneumatic supply is available.", "Not open at anytime.", "Open any time the switch is pushed “ON”.", "Open during a test sequence (50 seconds); provided pneumatic supply is available."],
     answer: 0,
-    explain: "",
+    explain: "On the ground, turning the wing anti-ice system on starts a 30-second test sequence, and the valves only open for that test if a pneumatic supply is actually available.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Description) / (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 10,
@@ -81,7 +90,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event of a low air pressure:",
     options: ["The engine anti-ice valve opens automatically", "There is no effect on the anti-ice valve position", "The engine anti-ice valve must be manually closed", "The engine anti-ice valve closes automatically"],
     answer: 3,
-    explain: "",
+    explain: "The engine anti-ice valve automatically closes whenever bleed air isn't available to supply it - the equivalent of a low-pressure condition - rather than needing to be closed manually or staying open regardless.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 11,
@@ -89,7 +99,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "What is the speed limit to operate the windscreen wipers?",
     options: ["185 kts.", "200 kts.", "230 kts.", "250 kts."],
     answer: 2,
-    explain: "",
+    explain: "The windshield wipers' maximum operating speed is 230 kt (this limit applies only while the wipers are actually sweeping).",
+    reference: "Limitations - Ice and Rain Protection (Wipers Maximum Operating Speed)",
   },
   {
     id: 12,
@@ -97,7 +108,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Window heat operation begins:",
     options: ["Automatically after the first engine start.", "if the PROBE/WINDOW HEAT push button is selected ON by the crew prior to engine start.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Window heating comes on automatically once at least one engine is running or the aircraft is in flight, and it can also be switched on manually before engine start via the PROBE/WINDOW HEAT pushbutton - both are valid ways it begins.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 13,
@@ -105,7 +117,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Rain protection is provided by:",
     options: ["Warm bleed air blowing across the windshield.", "Rain repellent and Windshield wipers.", "Both are correct."],
     answer: 1,
-    explain: "",
+    explain: "Rain is removed from the windshield by the wipers and by rain repellent fluid - warm bleed air is used for window anti-icing/defogging, not for rain removal.",
+    reference: "Ice & Rain Protection - General (Description, Rain Removal) / Rain Removal (Description)",
   },
   {
     id: 14,
@@ -113,7 +126,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Can the wing anti-ice be tested on the ground?",
     options: ["Yes, with valves only open for 30 seconds.", "Yes. Valves stay open till selected off.", "No."],
     answer: 0,
-    explain: "",
+    explain: "On the ground, turning the wing anti-ice system on runs a test sequence with the valves open for only 30 seconds, not indefinitely.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Description)",
   },
   {
     id: 15,
@@ -121,7 +135,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The engine nacelle is anti-iced by:",
     options: ["Air bleed from the high pressure compressor", "Air bleed from low pressure compressor", "AC system and air bleed from low pressure compressor", "DC system and air bleed from low pressure compressor."],
     answer: 0,
-    explain: "",
+    explain: "Each engine nacelle is protected from ice by an independent air bleed from its high-pressure compressor.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 16,
@@ -129,7 +144,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The wipers can operate at different speeds:",
     options: ["Low speed and high speed", "Speed 1 and speed 2", "Low, medium and high speed.", "Speed is automatically adjusted depending on rain intensity."],
     answer: 0,
-    explain: "",
+    explain: "Each wiper is an electrical wiper with two speeds (low and high), plus a separate intermittent sweep function.",
+    reference: "Ice & Rain Protection - Rain Removal (Description, Wipers)",
   },
   {
     id: 17,
@@ -137,7 +153,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The Window Heat Computer provides two power levels for the windshield:",
     options: ["High power when above 20,000 ft, low power when below 20,000 ft", "High power when OAT < 10 deg.C, low power when OAT> 10 deg.C", "High power in flight, low power on the ground", "High power in icing conditions (flight only), low power in other conditions."],
     answer: 2,
-    explain: "",
+    explain: "Windshield heating operates at a lower power level on the ground and switches automatically to normal (higher) power once airborne.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 18,
@@ -145,7 +162,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "With reference to the PROBE/WINDOW HEAT pushbutton, which of the following is true?",
     options: ["The system should only be selected ON in icing conditions.", "When in AUTO mode, the windows are heated only when necessary.", "The system should only be selected ON after first engine start.", "Window heating comes on automatically after first engine start *"],
     answer: 3,
-    explain: "",
+    explain: "Window heating comes on automatically once at least one engine is running or the aircraft is in flight - it isn't restricted to icing conditions only, and it doesn't require the crew to select it on after engine start.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 19,
@@ -153,7 +171,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "TAT probes are heated on the ground.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "On the ground, the TAT probes are not heated - heating only comes on automatically once at least one engine is running or the aircraft is in flight.",
+    reference: "Ice & Rain Protection - Probes Heat (Description)",
   },
   {
     id: 20,
@@ -161,7 +180,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The Fault light on the engine anti-ice switches indicates the valve:",
     options: ["Is closed.", "Position disagrees with switch position.", "Is open."],
     answer: 1,
-    explain: "",
+    explain: "The engine anti-ice FAULT light comes on when the anti-ice valve's actual position disagrees with the selected pushbutton position.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 21,
@@ -169,7 +189,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "If one engine anti-ice system fails, the second one takes over and provides anti-icing for both engines.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "Each engine has its own independent anti-ice valve and pushbutton - there's no described mechanism for one engine's anti-ice system to take over and protect the other engine if it fails.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 22,
@@ -177,7 +198,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Anti-ice and de-icing protection is provided for:",
     options: ["The engine nacelle’s and three outboard wing slats.", "The engine nacelle’s, the horizontal stabilizer, and three outboard wing slats.", "The engine nacelle’s, the horizontal stabilizer, the vertical stabilizer and three outboard wing slats.", "The engine nacelle’s and three inboard wing slats."],
     answer: 0,
-    explain: "",
+    explain: "Anti-ice/de-icing protection covers the engine nacelles (bleed air) and the three outboard slats of each wing (bleed air) - the FCOM doesn't describe any anti-ice protection for the horizontal or vertical stabilizer.",
+    reference: "Ice & Rain Protection - General (Description, Anti-Ice)",
   },
   {
     id: 23,
@@ -185,7 +207,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "The probe heaters can be activated manually prior to engine start by placing the PROBE/WINDOW HEAT pushbutton.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The probe heaters can be switched on manually before engine start using the PROBE/WINDOW HEAT pushbutton.",
+    reference: "Ice & Rain Protection - Probes Heat (Description)",
   },
   {
     id: 24,
@@ -193,7 +216,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "At what power level does window heat operate while airborne?",
     options: ["High power while airborne.", "Shifts from low to high as window temperature requires.", "Low power above 18,000 ft.", "Low power above 25,000 ft."],
     answer: 0,
-    explain: "",
+    explain: "In flight, window heat operates at normal (higher) power - the low-power level is used only on the ground.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 25,
@@ -201,7 +225,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event of loss of electrical supply the engine anti-ice valve:",
     options: ["Opens when the engine is shut down.", "Closes when the engine is running.", "Opens when the engine is running.", "Open when the OAT is < 10 deg.C with the engine running"],
     answer: 2,
-    explain: "",
+    explain: "If electrical power fails, the engine anti-ice valves open (a fail-open design) - a behavior that only matters while the engine is actually running to supply bleed air.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 26,
@@ -209,7 +234,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "With the loss of electrical power the wing anti-ice valves:",
     options: ["Fail in their current position.", "Fail to the open position.", "Fail to the closed position."],
     answer: 2,
-    explain: "",
+    explain: "If electrical power fails, the wing anti-ice valves close - the opposite fail-safe behavior from the engine anti-ice valves, which fail open.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Description)",
   },
   {
     id: 27,
@@ -217,7 +243,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Where do the wing anti-ice indications appear on ECAM?",
     options: ["There is no indication on ECAM bleed page for wing anti-ice", "An amber triangle appears on the ECAM bleed page", "WING A.ICE appears on ECAM status page.", "ANTI-ICE appears in white on the ECAM bleed page and W A.ICE appears in green on the ECAM memo when the wing P/B is pressed"],
     answer: 3,
-    explain: "",
+    explain: "The ECAM bleed page shows an \"ANTI ICE\" indication in white whenever the WING pushbutton is ON, and separately, the green \"WING A.ICE\" memo appears whenever that pushbutton is selected ON.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Controls and Indicators, Memo Display) / Indicating - ECAM Bleed Page",
   },
   {
     id: 28,
@@ -225,15 +252,18 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "When either engine anti-ice valve is open:",
     options: ["Maximum N1 is increased.", "Minimum idle rpm is increased.", "Minimum idle rpm is reduced.", "N2 is increased."],
     answer: 1,
-    explain: "",
+    explain: "When either engine anti-ice valve is open, the idle N1 (or EPR) - the minimum idle setting - is automatically increased for both engines.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 29,
     system: "Ice & Rain Protection",
     q: "The drain masts are heated after first engine start.",
     options: ["True.", "False"],
+    // REVIEW (uncertain): The FCOM ties drain mast ice protection to the COMMERCIAL electrical pushbutton's loads rather than to engine start specifically, which is consistent with the scored "False," but the extracted text doesn't explicitly describe exactly when drain mast heating begins, so this couldn't be fully verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 30,
@@ -241,15 +271,18 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Electrical heating is provided for the protection of:",
     options: ["Pitots and Angle Of Attack (AOA) probes", "Pitots, static ports and TAT probes", "Pitots, static ports, AOA probes, and TAT probes.", "Pitots and static ports"],
     answer: 2,
-    explain: "",
+    explain: "Electrical heating protects the pitot probes, static ports, angle-of-attack (AOA) probes, and total air temperature (TAT) probes.",
+    reference: "Ice & Rain Protection - Probes Heat (Description)",
   },
   {
     id: 31,
     system: "Ice & Rain Protection",
     q: "What happens to the heat at the drain masts when the aircraft is on the ground?",
     options: ["Nothing.", "The heat is reduced to prevent injury to ground personnel.", "Some of them are automatically switched off (pitot, AOA)."],
+    // REVIEW (uncertain): The extracted FCOM text doesn't specifically describe drain mast heat being reduced on the ground to protect ground personnel, so this couldn't be verified against the source. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 32,
@@ -257,15 +290,18 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "How is window heating regulated?",
     options: ["Manually by flight crew", "Window heat is not regulated!", "One Window Heat Computer (WHC) as master, the other as slave", "By two independent Window Heat Computers (WHC), one for each side"],
     answer: 3,
-    explain: "",
+    explain: "Window heating is regulated by two independent Window Heat Computers (WHCs), one for each side, rather than a single master/slave arrangement or manual crew control.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 33,
     system: "Ice & Rain Protection",
     q: "What happens when either engine anti-ice is open?",
     options: ["Maximum N1 is limited, continuous ignition is provided, maximum idle RPM is increased.", "Maximum N1 is limited, continuous ignition is provided, minimum RPM is increased.", "Minimum N1 is limited, continuous ignition is provided, minimum idle RPM is increased"],
+    // REVIEW (uncertain): The FCOM confirms that opening either engine anti-ice valve automatically reduces the N1 (or EPR) limit and increases the idle N1 (or EPR), matching two of this option's three claims. But the extracted ice-and-rain-protection text doesn't state that continuous ignition is automatically provided when engine anti-ice is selected - the one related note found (about an ENG BLEED STATUS FAULT abnormal procedure) actually describes a case where continuous relight does NOT happen automatically with engine anti-ice on, which doesn't clearly confirm this option's ignition claim for normal operation. Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 34,
@@ -273,7 +309,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "In the event of an electrical power loss:",
     options: ["The engine anti-ice valves will open automatically, anti-icing is ensured.", "The engine anti-ice valves will close automatically, anti-icing is lost.", "The engine anti-ice valves will be controlled by the wing anti-ice controls.", "The engine anti-ice valves remain in the position they were before."],
     answer: 0,
-    explain: "",
+    explain: "If electrical power fails, the engine anti-ice valves open automatically (fail-open), so anti-icing capability is preserved rather than lost.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 35,
@@ -281,7 +318,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "What happens to engine RPM when either engine anti-ice valve is open?",
     options: ["There is a fixed RPM increase.", "The N1 limit for that engine is automatically increased.", "The N1 limit for that engine is automatically reduced", "There is a fixed RPM increase (3% of nominal N1)"],
     answer: 2,
-    explain: "",
+    explain: "Opening either engine anti-ice valve automatically reduces that engine's N1 (or EPR) limit.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 36,
@@ -289,7 +327,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "Window heat operates at what power level in flight?",
     options: ["Low", "High", "Medium", "Off"],
     answer: 1,
-    explain: "",
+    explain: "In flight, window heat operates at normal (higher) power rather than the reduced level used on the ground.",
+    reference: "Ice & Rain Protection - Window Heat (Description)",
   },
   {
     id: 37,
@@ -297,7 +336,8 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "When a pneumatic leak is detected, the wing anti-ice valves:",
     options: ["Close automatically.", "Open automatically.", "Remain in position.", "Closes by 75%."],
     answer: 0,
-    explain: "",
+    explain: "When the system detects a pneumatic leak, the affected side's wing anti-ice valve automatically closes.",
+    reference: "Ice & Rain Protection - Wing Anti-Ice (Description)",
   },
   {
     id: 38,
@@ -305,6 +345,7 @@ export const ICE_RAIN_PROTECTION_QUESTIONS: Question[] = [
     q: "How can you check that engine anti-ice has been selected on?",
     options: ["You can observe the ON light on the associated engine anti-ice P/B and the ENGINE ANTI-ICE message on the ECAM engine page", "You can observe the amber warning on the ECAM memo display and the amber anti-ice light on the overhead panel", "You can observe the ENGINE ANTI-ICE message on the ECAM STATUS page", "You can observe the blue ON light on the associated engine anti-ice P/B and the ENGINE ANTI-ICE memo on the E/WD"],
     answer: 3,
-    explain: "",
+    explain: "Selecting engine anti-ice on brings on the blue ON light on the associated engine anti-ice pushbutton, and the green \"ENG A.ICE\" memo appears on the E/WD.",
+    reference: "Ice & Rain Protection - Engine Anti-Ice (Controls and Indicators, Overhead Panel / Memo Display)",
   },
 ];

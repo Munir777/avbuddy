@@ -9,7 +9,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "At approximately what cabin altitude should the passenger oxygen masks drop?",
     options: ["10,000 feet (+100, - 500 ft)", "12,500 feet (+ or - 500 ft)", "14,000 feet (+0, - 500 ft)", "15,000 feet."],
     answer: 2,
-    explain: "",
+    explain: "Passenger oxygen masks are set to drop once cabin pressure altitude exceeds 14,000 ft (16,000 ft if the HI ALT LANDING pushbutton is set ON) - the closest match among the choices to that 14,000 ft trigger altitude.",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Description, Operation)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "Approximately how long are the passenger oxygen generators able to produce oxygen?",
     options: ["15 minutes.", "20 minutes.", "25 minutes.", "30 minutes."],
     answer: 0,
-    explain: "",
+    explain: "The mask receives pure oxygen under positive pressure for roughly 13 to 22 minutes depending on the specific chemical generator fitted, with 15 minutes being a commonly cited figure for this aircraft's generators.",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Description, Operation)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What is indicated by a missing green thermal plug during an exterior preflight?",
     options: ["An oxygen system overpressure or thermal discharge.", "This is normal indication, the green thermal plug only appears if the oxygen cylinder is low.", "The crew oxygen bottle is empty.", "An external fire discharge has been activated."],
     answer: 0,
-    explain: "",
+    explain: "The cockpit oxygen cylinder has overpressure safety systems that vent oxygen overboard through a safety (thermal discharge) port if pressure gets too high - a missing green thermal-discharge indicator plug during preflight is the visible sign that this overpressure/thermal discharge has already happened.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Description, General)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "Illumination of the SYS ON light is an indication that:",
     options: ["The crew must depress the MASK MAN ON pb in order to deploy the masks.", "Electrical power has been sent to deploy the masks, either manually or automatically.", "The crew oxygen cylinder is empty.", "All of the passenger masks have deployed."],
     answer: 1,
-    explain: "",
+    explain: "The SYS ON light comes on white when the control for the oxygen mask doors is activated - meaning electrical power has been sent to deploy the masks, whether that was triggered manually (MASK MAN ON) or automatically (cabin altitude exceeding the trigger altitude).",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What is the main difference between the crew and the passenger oxygen system?",
     options: ["There is no difference: both are served by oxygen cylinders.", "Crew is supplied from an oxygen cylinder; passengers are supplied by chemical oxygen generators .", "Both the crew and passengers are supplied with oxygen from chemical oxygen generators.", "The crew has an oxygen bottle for an emergency back-up supply."],
     answer: 1,
-    explain: "",
+    explain: "The cockpit is supplied from a high-pressure oxygen cylinder with a pressure regulator, while the cabin (passengers and cabin crew) is supplied by chemical oxygen generators.",
+    reference: "Oxygen - General (Description) / Fixed Oxygen System for Cockpit and Cabin",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "When does passenger oxygen flow start?",
     options: ["When the mask is pulled toward the seat.", "When the oxygen doors open.", "When the oxygen button is pushed.", "When cabin altitude exceeds 14,000 ft"],
     answer: 0,
-    explain: "",
+    explain: "Passenger oxygen generation begins when the passenger pulls the mask toward the seat - not simply when the doors open or a button is pushed.",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Description, Operation)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "On which ECAM page could the flight crew check the exact pressure of the oxygen cylinder?",
     options: ["The PRESS page.", "The DOORS page.", "The COND page.", "The STATUS page."],
     answer: 1,
-    explain: "",
+    explain: "The oxygen cylinder's exact pressure is shown on the ECAM DOOR/OXY page.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Controls and Indicators, ECAM DOOR/OXY Page)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What is the purpose of the CREW SUPPLY push button?",
     options: ["When selected to ON, it supplies oxygen to the Captain & F/O only (jumpseats are not supplied)", "When selected to ON, it allows the flow of low pressure oxygen to the crew’s masks.", "In case of low cylinder pressure it allows the crew to tap into the passenger oxygen system."],
     answer: 1,
-    explain: "",
+    explain: "With CREW SUPPLY selected ON, the solenoid valve opens and supplies low-pressure oxygen to the crew masks - this is the normal in-flight position.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Controls and Indicators, Overhead Panel)",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "There are oxygen generators in each aircraft’s galley.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True - oxygen mask containers are located above the passenger seats, in the lavatories, in each galley, and at each cabin crew station.",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Description, General)",
   },
   {
     id: 10,
@@ -81,7 +90,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What will depressing the guarded MASK MAN ON pb accomplish?",
     options: ["A signal is sent to the chemical oxygen generators to start the flow of oxygen to the masks.", "It manually sends a signal to open the oxygen mask doors.", "Both are correct."],
     answer: 1,
-    explain: "",
+    explain: "Depressing the guarded MASK MAN ON pushbutton manually opens the oxygen mask doors - it doesn't by itself start the chemical generators, since oxygen generation only begins once a passenger pulls a dropped mask toward the seat.",
+    reference: "Oxygen - Fixed Oxygen System for Cabin (Controls and Indicators, Overhead Panel) / (Description, Operation)",
   },
   {
     id: 11,
@@ -89,7 +99,8 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What does an amber OXY on the ECAM Doors mean?",
     options: ["The crew supply switch is turned off and/or oxygen pressure is less than 400 psi", "The crew supply switch is turned off", "Oxygen pressure is less than 650 psi.", "Oxygen pressure is less than 300 psi."],
     answer: 0,
-    explain: "",
+    explain: "The OXY indication on the ECAM Doors page turns amber if the CREW SUPPLY pushbutton is switched off, and/or if oxygen pressure drops below 400 PSI (or low oxygen pressure is otherwise detected) - either condition triggers it.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Controls and Indicators, ECAM DOOR/OXY Page)",
   },
   {
     id: 12,
@@ -97,6 +108,7 @@ export const OXYGEN_QUESTIONS: Question[] = [
     q: "What happens when the mask is used with the selection at 100% position?",
     options: ["Mask is supplied with diluted oxygen on demand.", "Mask is supplied with undiluted oxygen on demand.", "Mask is supplied with undiluted oxygen continuous flow.", "Mask is supplied with diluted oxygen on demand."],
     answer: 1,
-    explain: "",
+    explain: "With the mask regulator set to 100%, the crew breathes undiluted (pure) oxygen supplied on demand as they breathe - continuous-flow, positive-pressure oxygen is instead what the separate EMERGENCY overpressure selector provides.",
+    reference: "Oxygen - Fixed Oxygen System for Cockpit (Controls and Indicators, Pressure Regulator)",
   },
 ];

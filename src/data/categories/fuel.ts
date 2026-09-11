@@ -9,7 +9,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Refueling time at normal pump pressure is _____ minutes for the wing tanks and _____ minutes for all tanks.",
     options: ["15 & 25.", "17 & 20.", "15 & 20.", "25 & 35."],
     answer: 1,
-    explain: "",
+    explain: "Approximate refueling time at nominal pump pressure is 17 minutes for the wing tanks and 20 minutes for all tanks (without an additional center tank).",
+    reference: "Fuel - Description (Refueling and Defueling)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "What does an amber line across the last two digits of the fuel quantity mean?",
     options: ["The fuel quantity indication is inaccurate.", "The fuel quality is not good and should be checked.", "A disagreement between fuel measured and fuel entered on the MCDU has been detected.", "Not all the fuel aboard is useable."],
     answer: 0,
-    explain: "",
+    explain: "Dashes appear across the last two digits of a fuel quantity indication whenever the fuel quantity indication (FQI) system is in a degraded, inaccurate mode.",
+    reference: "Fuel - Controls and Indicators (ECAM Fuel Page, Fuel Quantity Indication)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "After engine start, center tank fuel pumps run for ______ minutes regardless of slat position.",
     options: ["1 minute.", "2 minutes.", "3 minutes.", "5 minutes."],
     answer: 1,
-    explain: "",
+    explain: "Under automatic center tank pump control, the pumps run for 2 minutes at engine start - a separate, ongoing condition (slats retracted) is what keeps them running afterward, so this initial 2-minute run happens regardless of slat position.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The Fuel Used indication on ECAM is reset:",
     options: ["Manually by the pilot.", "Automatically at engine start on the ground.", "Automatically at electric power up of the aircraft."],
     answer: 1,
-    explain: "",
+    explain: "The Fuel Used indication on ECAM is automatically reset when an engine is started on the ground.",
+    reference: "Fuel - Controls and Indicators (ECAM Fuel Page, Fuel Used Indication)",
   },
   {
     id: 5,
@@ -41,15 +45,18 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The wing fuel transfer valves are:",
     options: ["Manually controlled and open when the MODE SEL push button is selected to MAN.", "Are electrically held closed.", "Open automatically at the start of refueling.", "Automatically close if a low level is sensed in either main wing tank, they automatically close at the next fueling."],
     answer: 1,
-    explain: "",
+    explain: "The wing intertank transfer valves are electrically-controlled valves that stay closed by default - they only open automatically once the inner tank reaches low level, and then latch open until the next refueling closes them again.",
+    reference: "Fuel - Description (Engine Feed, Fuel Transfer from Outer to Inner Tanks)",
   },
   {
     id: 6,
     system: "Fuel",
     q: "What precaution should you observe when gravity feeding fuel?",
     options: ["Operate the aircraft below 15,000 feet.", "Use center tank first.", "Open the crossfeed when above FL250", "No precautions are necessary."],
+    // REVIEW (uncertain): The FCOM's gravity-feeding procedure sets a "gravity feed ceiling" that depends on flight history - the current FL if more than 30 min was spent above FL 300, FL 300 if less than 30 min was spent there, or the highest of FL 150 (15,000 ft) or 7,000 ft above the takeoff airport if FL 300 was never exceeded (FL 100 for Jet B fuel). A flat "stay below 15,000 ft" isn't quite what the source describes, even though FL 150 does appear as one of several reference points. Left as-is; needs a source check rather than a guess.
     answer: 0,
     explain: "",
+    needsReview: true,
   },
   {
     id: 7,
@@ -57,7 +64,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "What is the minimum fuel quantity for take-off?",
     options: ["1,000 kg", "1,200 kg.", "1,500 kg", "2,000 kg"],
     answer: 2,
-    explain: "",
+    explain: "The minimum fuel quantity for takeoff is 1,500 kg.",
+    reference: "Limitations - Fuel (Minimum Fuel Quantity for Takeoff)",
   },
   {
     id: 8,
@@ -65,7 +73,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The APU fuel system:",
     options: ["Uses its own dedicated DC powered fuel pump.", "Obtains fuel from either center tank pump.", "Obtains fuel from the left fuel manifold via the left side fuel pumps or if needed, the APU fuel pump.", "Obtains fuel from the left fuel manifold via the right side fuel pumps."],
     answer: 2,
-    explain: "",
+    explain: "The left fuel feed line supplies the APU, normally pressurized by the left-side tank pumps - if that pressure isn't available, the dedicated APU fuel pump starts automatically to take over.",
+    reference: "Fuel - Description (APU Feed) / APU - Description (Fuel System)",
   },
   {
     id: 9,
@@ -73,7 +82,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The AC powered auxiliary fuel boost pump for the APU operates whenever the APU is operating and no other pump is on. it has an alternate power source on the AC Static Inverter bus for battery-only starts.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "The special AC-powered pump that supplies the APU when tank-pump pressure is low normally runs off the AC ESS SHED bus, and automatically switches to the AC Static Inverter bus if that bus fails - which covers battery-only APU starts.",
+    reference: "Fuel - Description (APU Feed)",
   },
   {
     id: 10,
@@ -81,7 +91,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "With the center tank pump mode SEL switch in AUTO; the center tank pumps:",
     options: ["Run for two minutes after both engines are running.", "Will not restart untill slats are retracted in flight.", "Continue to run until five minutes after the center tank is empty.", "All the above."],
     answer: 3,
-    explain: "",
+    explain: "With the center tank pump mode selector in AUTO, the pumps run for 2 minutes at engine start, otherwise only run while the slats are retracted, and stop automatically 5 minutes after the center tank reaches low level - so all three behaviors described are part of the same automatic control logic.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
   {
     id: 11,
@@ -89,7 +100,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "From which tanks will fuel gravity feed?",
     options: ["Outer cell of the wing tanks, inner cell of the wing tanks, and/or center tank.", "Inner cell of the wing tanks, and center tank.", "Outer cell of the wing tanks, and inner cell of the wing tanks.", "The center tank only."],
     answer: 2,
-    explain: "",
+    explain: "The center tank has no suction valves, so it can never gravity feed. Gravity feeding instead flows from the outer wing cells (which drain into the inner cells) and from the inner wing cells (which feed the engines through suction valves if the inner tank pumps fail).",
+    reference: "Fuel - Description (Engine Feed, Main Components - Suction Valves)",
   },
   {
     id: 12,
@@ -97,7 +109,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Which of the following would cause the fault light to illuminate on the MODE SEL push button?",
     options: ["Fuel is being burned out of sequence.", "Crossfeed push button is ON.", "Center tank pumps do not stop after slat extension.", "Center tank pumps do not stop 5 min after center tank low level reached."],
     answer: 0,
-    explain: "",
+    explain: "The MODE SEL pushbutton's FAULT light comes on when the center tank still has more than 250 kg of fuel while a wing tank has already dropped below 5,000 kg - in other words, fuel is being burned out of the normal center-tank-first feed sequence.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
   {
     id: 13,
@@ -105,7 +118,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "How has the fuel been transferred from the outer to the inner tanks?",
     options: ["By setting the MODE SEL pushbutton to MAN.", "The transfer valve has been opened automatically by the low lever sensor in the center tanks", "By setting the MODE SEL PB to AUTO", "The transfer valve has been opened automatically by the low level sensor in the inner tank."],
     answer: 3,
-    explain: "",
+    explain: "The outer-to-inner transfer valves open automatically once the low-level sensor in the inner tank detects low fuel level - not through any manual MODE SEL selection or a center-tank sensor.",
+    reference: "Fuel - Description (Engine Feed, Fuel Transfer from Outer to Inner Tanks)",
   },
   {
     id: 14,
@@ -113,7 +127,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "What indication will you see on the overhead fuel panel if the center tank has more than 250 kilograms of fuel and the left or right wing tank have less than 5,000 kilograms.",
     options: ["Auto feed fault.", "Fuel imbalance.", "Mode select fault.", "Fuel - Auto feed fault."],
     answer: 2,
-    explain: "",
+    explain: "This condition (center tank above 250 kg while a wing tank is below 5,000 kg) is exactly what triggers the amber FAULT light and ECAM caution on the MODE SEL pushbutton - a mode select fault.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
   {
     id: 15,
@@ -121,7 +136,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The message CTR TK FEEDG appears in the MEMO. What does this mean?",
     options: ["The center tank fuel mode selector is OFF.", "The center tank pumps are OFF.", "At least one center tank pump is energized.", "A reminder to switch the center tank pumps OFF."],
     answer: 2,
-    explain: "",
+    explain: "The CTR TK FEEDG memo appears in green whenever at least one center tank pump is energized.",
+    reference: "Fuel - Controls and Indicators (Memo Display)",
   },
   {
     id: 16,
@@ -129,7 +145,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "After engine shutdown, what are your actions to close the fuel transfer valves?",
     options: ["You have to switch the inner tank pumps off.", "You have to call maintenance to close the valves.", "No action is required. The valves will close automatically during the next refueling."],
     answer: 2,
-    explain: "",
+    explain: "No crew action is needed - the transfer valves automatically close again at the next refueling.",
+    reference: "Fuel - Description (Engine Feed, Fuel Transfer from Outer to Inner Tanks)",
   },
   {
     id: 17,
@@ -137,7 +154,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Fuel can be transferred from tank to tank:",
     options: ["Only on the ground.", "In flight if the fuel X FEED push button is selected OPEN.", "In flight if the fuel X FEED push button is selected OPEN and center tank MODE SEL push button is selected to MAN.", "Fuel can never be transferred."],
     answer: 3,
-    explain: "",
+    explain: "The X FEED valve only lets one tank's pumps feed both engines, or both sides feed one engine - it redirects which pumps feed which engine rather than literally moving fuel from one tank to another. The only genuine tank-to-tank transfers (outer-to-inner, and center/ACT-to-center) happen automatically based on tank level, not through a pilot-selected MODE SEL or X FEED combination.",
+    reference: "Fuel - Description (Engine Feed, Main Components - Cross Feed Valve)",
   },
   {
     id: 18,
@@ -145,7 +163,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "During normal operations when should the fuel transfer valves open?",
     options: ["When a low level is sensed in the center tank.", "When a low level is sensed in either outer wing cell.", "When low level is sensed in either inner wing cell."],
     answer: 2,
-    explain: "",
+    explain: "The outer-to-inner transfer valves open automatically when a low level is sensed in the inner wing cell.",
+    reference: "Fuel - Description (Engine Feed, Fuel Transfer from Outer to Inner Tanks)",
   },
   {
     id: 19,
@@ -153,7 +172,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Why do the center tank pumps stop automatically when then slats are extended for takeoff?",
     options: ["To keep the center of gravity as low as possible.", "Dumping takeoff, the center tank fuel is pumped to the rear to trim aircraft", "To ensure that the engines are fed from the wing tanks for takeoff (feeding segregation)", "During takeoff, the center tank fuel is gravity fed only."],
     answer: 2,
-    explain: "",
+    explain: "In AUTO mode, the center tank pumps are only kept running (beyond their initial 2-minute post-engine-start run) while the slats are retracted, so extending the slats for takeoff removes that condition and stops them - which has the effect of feeding the engines from the wing tanks during takeoff rather than the center tank.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
   {
     id: 20,
@@ -161,7 +181,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "An amber line appears across the last two digits of the ECAM FOB indication when:",
     options: ["Fuel quantity is unreliable.", "The center tank pumps are switched off.", "The center tank pumps have failed."],
     answer: 0,
-    explain: "",
+    explain: "Dashes appear across the last two digits of the FOB indication whenever the FQI system is in a degraded, inaccurate mode.",
+    reference: "Fuel - Controls and Indicators (ECAM Upper Display, Total Fuel Indication)",
   },
   {
     id: 21,
@@ -169,7 +190,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Refueling is possible if the aircraft batteries are the only source of power.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "The aircraft can be refueled when only battery power is available.",
+    reference: "Fuel - Description (Refueling and Defueling)",
   },
   {
     id: 22,
@@ -177,7 +199,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Fuel transfer from the outer compartment to the inner compartment of the wing tanks occurs when the inner compartment quantity decreases to:",
     options: ["250 kilograms", "450 kilograms", "750 kilograms", "5000 kilograms"],
     answer: 2,
-    explain: "",
+    explain: "The outer-to-inner transfer valves open once the inner tank's fuel quantity drops to about 750 kg.",
+    reference: "Fuel - Description (Engine Feed, Fuel Transfer from Outer to Inner Tanks)",
   },
   {
     id: 23,
@@ -185,7 +208,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The message OUTER TK FUEL XFRD appears in the MEMO. What does this mean?",
     options: ["It is a reminder to show that a transfer valve is open.", "Fuel is transferring from the center tank to the inner tank.", "It is a reminder to open the outer tank transfer valve.", "Fuel is transferring from the inner tank to the outer tank."],
     answer: 0,
-    explain: "",
+    explain: "The OUTR TK FUEL XFRD memo appears in green whenever at least one transfer valve is open in a wing tank - it's simply a reminder that a transfer valve is open.",
+    reference: "Fuel - Controls and Indicators (Memo Display)",
   },
   {
     id: 24,
@@ -193,7 +217,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The fuel quantity indication on ECAM for the outer cell is boxed amber if:",
     options: ["One transfer valve fails to open.", "Outer cell fuel temperature is high.", "Both transfer valves fail to open when inner cell is at low level."],
     answer: 2,
-    explain: "",
+    explain: "The outer cell's fuel quantity indication is boxed amber specifically when both transfer valves fail to open while the inner cell is at low level.",
+    reference: "Fuel - Controls and Indicators (ECAM Fuel Page, Fuel Quantity - Boxed Indications)",
   },
   {
     id: 25,
@@ -201,7 +226,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "The fuel crossfeed valve is controlled by 2 motors.",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "The cross feed valve is controlled by a double motor.",
+    reference: "Fuel - Description (Engine Feed, Main Components - Cross Feed Valve)",
   },
   {
     id: 26,
@@ -209,7 +235,8 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "Center tank pumps do not stop 5 min after center tank low level reached.",
     options: ["Yes, only on the refueling panel.", "It is not possible to determine their position", "Only on the ECAM Fuel page."],
     answer: 2,
-    explain: "",
+    explain: "The ECAM Fuel page is where the center tank pumps' actual running status (pressure normal, pressure low, or contactor off) is directly displayed, making it the way to confirm whether the pumps have actually stopped as expected.",
+    reference: "Fuel - Controls and Indicators (ECAM Fuel Page, Center Tank Pumps Indications)",
   },
   {
     id: 27,
@@ -217,6 +244,7 @@ export const FUEL_QUESTIONS: Question[] = [
     q: "With fuel in the center tank, the CTR TK MODE SEL push button selected to AUTO and the CTR TK PUMP push buttons ON (lights out), the center tank pumps:",
     options: ["Will operate for a short period after the first engine MASTER switch is selected ON and while slats are retracted.", "They will continue to run until the center tank is empty or slats are extended.", "Both are correct."],
     answer: 2,
-    explain: "",
+    explain: "Both are correct: in AUTO mode with fuel in the center tank, the pumps run for a short period after the first engine is started, and they otherwise keep running - as long as the slats stay retracted - until the center tank empties (with its low-level-based automatic stop) or the slats are extended.",
+    reference: "Fuel - Controls and Indicators (Overhead Panel, MODE SEL Pushbutton)",
   },
 ];

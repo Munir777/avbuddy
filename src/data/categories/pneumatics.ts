@@ -9,7 +9,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Each bleed valve is electrically operated and controlled pneumatically by its associated BMC.",
     options: ["True.", "False."],
     answer: 1,
-    explain: "",
+    explain: "False - it's the reverse: each bleed valve is pneumatically operated and controlled electrically by its associated BMC.",
+    reference: "Pneumatic - Description, Engine Bleed System (General)",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "When either the BLOWER or EXTRACT switches are in OVRD; air from the air conditioning system is added to ventilation air.",
     options: ["True.", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - with either the BLOWER or EXTRACT pushbutton switch set to OVRD, the system goes into a closed-circuit configuration and adds air from the air conditioning system to the ventilation air.",
+    reference: "Air Conditioning/Pressurization/Ventilation - Ventilation (Avionics Ventilation, Abnormal Operation)",
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Pneumatic system operation is controlled and monitored by:",
     options: ["One bleed monitoring computer.", "Two bleed valve computers.", "Two bleed monitoring computers."],
     answer: 2,
-    explain: "",
+    explain: "Pneumatic system operation is controlled and monitored by two Bleed Monitoring Computers (BMC 1 and BMC 2), along with the overhead control panel and the ECAM.",
+    reference: "Pneumatic - Description, General",
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "When the cabin vertical speed exceeds _______ fpm; the vertical speed display on ECAM _______.",
     options: ["800 / flashes green", "2800 / flashes green", "1800 / flashes green", "550 / flashes green"],
     answer: 2,
-    explain: "",
+    explain: "The cabin vertical speed digital display on ECAM pulses (flashes) green when V/S exceeds 1,800 ft/min, resetting once it drops back to 1,600 ft/min.",
+    reference: "Indicating - ECAM Cabin Pressure Indications",
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "If a BMC detects a bleed leak:",
     options: ["The crew must isolate the affected leak.", "All valves that could supply pneumatic air to the area of the bleed leak will automatically close.", "All pneumatic valves close automatically.", "All valves that could supply pneumatic air to the area of the bleed leak will have to be closed manually."],
     answer: 1,
-    explain: "",
+    explain: "If a BMC detects a bleed leak, all the valves that could supply pneumatic air to the leak area close automatically - the related bleed valve, the crossbleed valve, and (if concerned) the APU bleed valve - without needing crew action.",
+    reference: "Pneumatic - Description, Leak Detection",
   },
   {
     id: 6,
@@ -49,7 +54,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The crossbleed valve has two electric motors; one for the automatic mode and one for the manual mode:",
     options: ["True", "False"],
     answer: 0,
-    explain: "",
+    explain: "True - the crossbleed valve is driven by two electric motors, one dedicated to automatic mode and one to manual mode.",
+    reference: "Pneumatic - Description, Crossbleed (General)",
   },
   {
     id: 7,
@@ -57,7 +63,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "What happens when pressure and temperature are not sufficient to supply the corresponding engine bleed valve?",
     options: ["HP valve closes.", "HP valve opens, if stage closed.", "HP valve opens, IP stage remains in the same configuration."],
     answer: 2,
-    explain: "",
+    explain: "At low engine speed, when IP air pressure and temperature are too low, the system automatically bleeds from the HP stage instead (the HP valve opens) while a check valve downstream of the IP port closes on its own to stop HP air from circulating back into the IP stage - no separate reconfiguration of the IP stage itself is needed.",
+    reference: "Pneumatic - Description, Engine Bleed System (Air Bleed Selection)",
   },
   {
     id: 8,
@@ -65,7 +72,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "High pressure air has ______ sources.",
     options: ["2", "3", "4", "5"],
     answer: 1,
-    explain: "",
+    explain: "High-pressure air has three sources: the engine bleed systems, the APU load compressor, and the HP ground connection.",
+    reference: "Pneumatic - Description, General",
   },
   {
     id: 9,
@@ -73,7 +81,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "If bleed air is being supplied by the APU or if one pack fails; pack flow will go to what rate?",
     options: ["Low.", "Medium.", "High.", "off."],
     answer: 2,
-    explain: "",
+    explain: "Manually selecting a lower pack flow rate is overridden in single-pack operation or when supplied by APU bleed - in those cases HIGH flow is automatically selected.",
+    reference: "Air Conditioning - Controls and Indicators (Pack Flow Selector)",
   },
   {
     id: 10,
@@ -81,7 +90,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The third motor (manual) in the pressurization system is activated:",
     options: ["Automatically if both automatic motors fail.", "In sequence after each landing.", "When the CABIN PRESS MODE SEL switch is positioned to MAN."],
     answer: 2,
-    explain: "",
+    explain: "The outflow valve actuator has three independent motors - two for automatic operation and one for manual - and that third (manual) motor is what the flight crew uses when the CABIN PRESS MODE SEL switch is set to MAN.",
+    reference: "Pressurization - Main Components (Outflow Valve) / System Operation (Manual Operation)",
   },
   {
     id: 11,
@@ -89,7 +99,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The lavatory/galley extract fan operates:",
     options: ["Only on the ground.", "Only in flight.", "Continuously when electrical power is available.", "Continuously when batery power is available"],
     answer: 2,
-    explain: "",
+    explain: "The lavatory/galley extraction fan runs continually whenever electric power is available.",
+    reference: "Ventilation - Lavatory and Galley Ventilation",
   },
   {
     id: 12,
@@ -97,7 +108,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "A check valve near the crossbleed duct protects the APU when bleed air comes from another source:",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True - a check valve near the crossbleed duct protects the APU when bleed air is being supplied from another source.",
+    reference: "Pneumatic - Description, APU Bleed Air Supply (General)",
   },
   {
     id: 13,
@@ -105,7 +117,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The APU BLEED FAULT light illuminates amber for an APU:",
     options: ["Overheat.", "Malfunction.", "Bleed leak."],
     answer: 2,
-    explain: "",
+    explain: "The APU BLEED FAULT light comes on amber when the system detects an APU bleed leak.",
+    reference: "Pneumatic - Controls and Indicators (Overhead Panel, APU BLEED pb-sw)",
   },
   {
     id: 14,
@@ -113,7 +126,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "When engine and wing anti-ice are in use, and a BMC detects a bleed leak:",
     options: ["Only the engine anti-ice on the associated side will be lost.", "The wing and engine anti-ice on the associated side will be lost.", "The wing anti-ice on the associated side will be lost, and the engine anti-ice on the associated side will continue to function."],
     answer: 2,
-    explain: "",
+    explain: "A wing/pylon bleed leak closes the associated-side bleed valve (cutting the wing anti-ice supply that's fed through it), but engine anti-ice is tapped independently, directly from that engine's own HP compressor - so it keeps functioning even though wing anti-ice on that side is lost.",
+    reference: "Pneumatic - Description, Leak Detection / Ice & Rain Protection - Engine Anti-Ice (Description)",
   },
   {
     id: 15,
@@ -121,7 +135,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Temperature regulation is achieved by the precooler which regulates and limits the temperature at:",
     options: ["150°C", "85°C", "60°C", "200°C"],
     answer: 3,
-    explain: "",
+    explain: "The precooler regulates and limits engine bleed air temperature to approximately 200 degrees C.",
+    reference: "Pneumatic - Description, Engine Bleed System (Temperature Regulation and Limitation)",
   },
   {
     id: 16,
@@ -129,7 +144,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "When selected, APU bleed air:",
     options: ["Will supply bleed air only if the ENG BLEED pb’s are selected OFF.", "Has priority over engine bleed air.", "Will supply bleed air only if the X BLEED selector is selected OPEN.", "Does not have priority over engine bleed air."],
     answer: 1,
-    explain: "",
+    explain: "When selected, APU bleed air has priority over engine bleed air - turning it on automatically closes the engine bleed valves.",
+    reference: "Pneumatic - Description, APU Bleed Air Supply (General)",
   },
   {
     id: 17,
@@ -137,7 +153,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The pressure regulating and shutoff valve will close if _______ pressure is _______ or _______ airflow occurs",
     options: ["Downstream / low / reverse", "Downstream / High / reverse", "Upstream / low / reverse"],
     answer: 2,
-    explain: "",
+    explain: "The pressure regulating and shutoff (bleed) valve closes pneumatically if upstream pressure drops too low, or if there's reverse (return) airflow.",
+    reference: "Pneumatic - Description, Engine Bleed System (Pressure Regulation and Limitation)",
   },
   {
     id: 18,
@@ -145,7 +162,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The crew may directly control the following bleed valves:",
     options: ["Engine, engine high pressure, APU.", "Engine, intermediate pressure, APU.", "Engine, APU, crossbleed.", "Crossbleed."],
     answer: 2,
-    explain: "",
+    explain: "The crew can directly control the engine bleed valves, the APU bleed valve, and the crossbleed valve from the overhead AIR COND panel.",
+    reference: "Pneumatic - Controls and Indicators (Overhead Panel)",
   },
   {
     id: 19,
@@ -153,7 +171,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The overheat detection system uses a single loop for:",
     options: ["The pylons and APU.", "The wings and pylons.", "The wings and fuselage."],
     answer: 0,
-    explain: "",
+    explain: "The overheat/leak detection loops use a single loop each for the pylons and for the APU (the wing uses a double loop instead).",
+    reference: "Pneumatic - Description, Leak Detection",
   },
   {
     id: 20,
@@ -161,7 +180,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Recirculation fans in the air conditioning system direct filtered cabin air to which area?",
     options: ["The pneumatic duct; upstream of the packs.", "The avionics compartment.", "The Mixing unit."],
     answer: 2,
-    explain: "",
+    explain: "Recirculation fans direct filtered cabin air to the mixing unit, where it's blended with fresh bleed air before distribution.",
+    reference: "Air Conditioning - Main Components (Mixer Unit)",
   },
   {
     id: 21,
@@ -169,7 +189,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "A leak detection system detects any overheating in the vicinity of hot air ducts.",
     options: ["True.", "False."],
     answer: 0,
-    explain: "",
+    explain: "True - the leak detection system detects any overheating in the vicinity of the hot air ducts.",
+    reference: "Pneumatic - Description, Leak Detection",
   },
   {
     id: 22,
@@ -177,7 +198,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "What happens to the outflow valve when the RAM AIR switch is selected ON?",
     options: ["The outflow valve opens immediately.", "The outflow valve opens if cabin differential pressure is less than 1 psi.", "Normal outflow valve control is maintained.", "The outflow valve opens if cabin differential pressure is greater than 1 psi."],
     answer: 1,
-    explain: "",
+    explain: "With the RAM AIR pushbutton ON, the outflow valve automatically opens to about 50% if it's under automatic control and cabin differential pressure is less than 1 PSI (it won't auto-open at all if the system is in manual control).",
+    reference: "Pressurization - Main Components (Outflow Valve) / Air Conditioning (Emergency Ram Air)",
   },
   {
     id: 23,
@@ -185,7 +207,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The maximum cabin descent rate is limited in automatic to:",
     options: ["300 ft/min.", "750 ft/min.", "1000 ft/min.", "550 ft/min"],
     answer: 1,
-    explain: "",
+    explain: "The maximum cabin descent rate is limited to 750 ft/min in automatic mode.",
+    reference: "Limitations - Air Bleed/Cond/Press/Vent",
   },
   {
     id: 24,
@@ -193,7 +216,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "When additional pneumatic air is required for anti-ice, engine starting, or air conditioning:",
     options: ["Additional pneumatic air will be requested by the BMC to the FADECs or the APU.", "The crew must observe minimum N1 limits.", "Both are correct."],
     answer: 0,
-    explain: "",
+    explain: "When extra pneumatic air is needed for anti-ice, engine start, or air conditioning, the BMC requests it from the FADECs or the APU directly, rather than relying on the pilot to manage engine power for it.",
+    reference: "Pneumatic - Description, Engine Bleed System / APU Bleed Air Supply",
   },
   {
     id: 25,
@@ -201,7 +225,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "In automatic mode, the crossbleed valve opens when the system is using APU bleed air.",
     options: ["It closes if the system detects an air leak (except during engine start).", "It closes if the system detects an air leak (except in flight).", "It closes automatically if the system detects an air leak."],
     answer: 0,
-    explain: "",
+    explain: "In automatic mode, the crossbleed valve opens whenever the system is using APU bleed air, and it closes if the system detects an air leak - except during an engine start, when that automatic closure is inhibited.",
+    reference: "Pneumatic - Description, Crossbleed (General)",
   },
   {
     id: 26,
@@ -209,7 +234,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "With both engines operating, an ENG BLEED pb FAULT light will illuminate when:",
     options: ["The valve position differs from that of the push button.", "The X BLEED selector is selected to SHUT.", "The X BLEED selector is selected to OPEN.", "The X BLEED selector is selected to OPEN or to SHUT."],
     answer: 0,
-    explain: "",
+    explain: "With both engines operating normally (no leak, overheat, engine start, or APU bleed complication in play), an ENG BLEED FAULT light comes on when the bleed valve's actual position doesn't match its commanded (pushbutton-selected) position - matching the ECAM's general 'valve not in commanded position' amber rule.",
+    reference: "Pneumatic - Controls and Indicators (Overhead Panel / ECAM Bleed Page)",
   },
   {
     id: 27,
@@ -217,7 +243,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "In flight if the air pressure is insufficient even with the HP valve open:",
     options: ["The engine spools up automatically.", "Engine power has to be increased by the pilot.", "Push the High Pressure P/B on the ovhd panel."],
     answer: 0,
-    explain: "",
+    explain: "When bleed pressure is insufficient even with the HP valve open, the BMC requests more air by signaling the FADEC directly, which spools the engine up automatically rather than requiring the pilot to manually advance power.",
+    reference: "Pneumatic - Description, Engine Bleed System / APU Bleed Air Supply",
   },
   {
     id: 28,
@@ -225,7 +252,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "APU bleed air supplies the pneumatic system if the APU speed is above _____:",
     options: ["80%", "85%", "92%", "95%"],
     answer: 3,
-    explain: "",
+    explain: "APU bleed air supplies the pneumatic system once APU speed is above 95%.",
+    reference: "Pneumatic - Description, APU Bleed Air Supply (General)",
   },
   {
     id: 29,
@@ -233,15 +261,18 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Air bleed from the engines is:",
     options: ["Not cooled prior to being used by the systems.", "Cooled in a heat exchanger by cooling air bleed from Fan section.", "Cooled using ambient air.", "Only cooled in air conditioning part."],
     answer: 1,
-    explain: "",
+    explain: "Engine bleed air is cooled in a precooler - an air-to-air heat exchanger that uses cooling air bled from the engine's fan section.",
+    reference: "Pneumatic - Description, Engine Bleed System (Temperature Regulation and Limitation)",
   },
   {
     id: 30,
     system: "Pneumatics",
     q: "Transfer between the two cabin pressure controllers is:",
     options: ["Accomplished with a switch overhead.", "Automatic after landing or in case the operating controller fails.", "Automatically at each takeoff.", "Automatic after take-off or in case the operating controller fails."],
+    // REVIEW (uncertain): The FCOM confirms that in automatic/semi-automatic mode one Cabin Pressure Controller is active and the other on standby, and that they communicate over a cross-channel link, but the extracted text doesn't state exactly when the system swaps which controller is active (e.g. "after landing" versus "after takeoff," versus purely on failure). Left as-is; needs a source check rather than a guess.
     answer: 1,
     explain: "",
+    needsReview: true,
   },
   {
     id: 31,
@@ -249,7 +280,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "With the loss of pneumatic system pressure, the engine bleed valve will:",
     options: ["Remain in its current position.", "Assume the mid position.", "Assume the open position.", "Assume the closed position."],
     answer: 3,
-    explain: "",
+    explain: "With a loss of pneumatic system pressure (upstream pressure below the pneumatic closing threshold), the engine bleed valve closes.",
+    reference: "Pneumatic - Description, Engine Bleed System (Pressure Regulation and Limitation)",
   },
   {
     id: 32,
@@ -257,7 +289,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Bleed air normally comes from the _______ of the engine.",
     options: ["High pressure stage.", "Intermediate stage.", "Low pressure stage."],
     answer: 1,
-    explain: "",
+    explain: "Bleed air is normally taken from the intermediate pressure (IP) stage of the engine's HP compressor, to minimize the fuel penalty.",
+    reference: "Pneumatic - Description, Engine Bleed System (Air Bleed Selection)",
   },
   {
     id: 33,
@@ -265,7 +298,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "If a Bleed Monitoring Computer (BMC) fails:",
     options: ["All systems associated with the failed BMC also fail.", "The associated bleed valves close.", "The remaining BMC will automatically assume most of the failed BMC’s functions."],
     answer: 2,
-    explain: "",
+    explain: "If a Bleed Monitoring Computer fails, the remaining BMC automatically takes over most of the failed one's monitoring functions.",
+    reference: "Pneumatic - Description, Operation Following Failures (BMC Failure)",
   },
   {
     id: 34,
@@ -273,7 +307,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Engine bleed air temperature is controlled by:",
     options: ["Engine oil.", "A pre-cooler that uses fan air.", "Conditioned air from the mixing unit."],
     answer: 1,
-    explain: "",
+    explain: "Engine bleed air temperature is controlled by a precooler that uses fan air as the cooling source.",
+    reference: "Pneumatic - Description, Engine Bleed System (Temperature Regulation and Limitation)",
   },
   {
     id: 35,
@@ -281,7 +316,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "With the APU running, the APU BLEED push button selected ON and the X BLEED selector to AUTO, the APU will:",
     options: ["Only supply bleed air to the left side.", "Supply pneumatic air to both sides of the aircraft because the pneumatic crossbleed valve automatically opens.", "Will supply bleed air only to the left side unless the X BLEED selector is selected OPEN.", "Only supply bleed air to the right side."],
     answer: 1,
-    explain: "",
+    explain: "With APU BLEED selected ON (APU running above 95% and the X BLEED selector on AUTO), the pneumatic crossbleed valve automatically opens because the APU bleed valve is open - so APU air reaches both sides of the aircraft.",
+    reference: "Pneumatic - Description, APU Bleed Air Supply / Crossbleed (General)",
   },
   {
     id: 36,
@@ -289,7 +325,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Should both channels fail in a zone controller:",
     options: ["Temperature optimization is still available for that zone from another controller.", "Temperature optimization and the backup mode are lost.", "The pack is not affected."],
     answer: 1,
-    explain: "",
+    explain: "If both the primary and secondary channels of a zone controller fail, both optimized temperature regulation and the backup mode are lost - the affected packs then deliver a fixed temperature instead.",
+    reference: "Air Conditioning - System Operation Under Failure Condition (Zone Controller)",
   },
   {
     id: 37,
@@ -297,7 +334,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "If one BMC fails, the adjacent BMC takes over the monitoring of the bleed system to issue the following ECAM warnings if necessary:",
     options: ["Overpressure", "Overtemperature", "Wing leak", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "If one BMC fails, the adjacent BMC takes over bleed system monitoring well enough to still issue overpressure, overtemperature, and wing leak ECAM warnings if needed - all of the above.",
+    reference: "Pneumatic - Description, Operation Following Failures (BMC Failure)",
   },
   {
     id: 38,
@@ -305,7 +343,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The AUTO position of the X BLEED selector opens the crossbleed if:",
     options: ["An engine bleed valve is open.", "The APU bleed valve is open.", "When engine start is selected."],
     answer: 1,
-    explain: "",
+    explain: "With the X-BLEED selector in AUTO, the crossbleed valve opens automatically whenever the APU bleed valve is open.",
+    reference: "Pneumatic - Controls and Indicators (Overhead Panel, X-BLEED Selector)",
   },
   {
     id: 39,
@@ -313,7 +352,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Bleed leak protection for the APU pneumatic duct is provided by:",
     options: ["Detection loops associated with BMC #1.", "Detection loops associated with BMC #2.", "The APU BMC.", "All of the above."],
     answer: 0,
-    explain: "",
+    explain: "Bleed leak protection for the APU pneumatic duct comes from detection loops tied to BMC 1 - which is also why, if BMC 1 fails, engine 1 and APU leak detection are specifically what's lost.",
+    reference: "Pneumatic - Description, Operation Following Failures (BMC Failure)",
   },
   {
     id: 40,
@@ -321,7 +361,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Which source controls the crossbleed valve?",
     options: ["Pneumatic.", "Electric."],
     answer: 1,
-    explain: "",
+    explain: "The crossbleed valve is controlled electrically, via a rotary selector on the AIR COND panel.",
+    reference: "Pneumatic - Description, Crossbleed (General)",
   },
   {
     id: 41,
@@ -329,7 +370,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "Temperature regulation for the A320 is controlled by:",
     options: ["One zone controller and two pack controllers.", "Two pack controllers and the BMC’s.", "The BMC’s"],
     answer: 0,
-    explain: "",
+    explain: "Temperature regulation on the A320 is handled automatically by one zone controller and two pack controllers.",
+    reference: "Air Conditioning - Temperature and Flow Regulation (Zone Controller)",
   },
   {
     id: 42,
@@ -337,7 +379,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "If BMC1 fails BMC2 takes over all monitoring functions except:",
     options: ["Engine 1 and APU leak detection.", "Overheat detection.", "Automatic cross-bleed valve control."],
     answer: 0,
-    explain: "",
+    explain: "If BMC 1 fails, BMC 2 takes over most monitoring functions, but engine 1 and APU leak detection specifically are lost (along with the associated FAULT lights and automatic valve closure for that side).",
+    reference: "Pneumatic - Description, Operation Following Failures (BMC Failure)",
   },
   {
     id: 43,
@@ -345,7 +388,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "ECAM BLEED page: when is the GND symbol displayed?",
     options: ["Whenever the aircraft is on the ground.", "All the time.", "Only when a ground air supply is connected."],
     answer: 0,
-    explain: "",
+    explain: "The GND symbol on the ECAM BLEED page is displayed in green whenever the aircraft is on the ground.",
+    reference: "Pneumatic - Controls and Indicators (ECAM Bleed Page)",
   },
   {
     id: 44,
@@ -353,7 +397,8 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "How many motors are available for the outflow valve?",
     options: ["1", "2", "3", "4"],
     answer: 2,
-    explain: "",
+    explain: "The outflow valve actuator has three independent electric motors - two for automatic operation and one for manual operation - any one of which can power the valve.",
+    reference: "Pressurization - Main Components (Outflow Valve)",
   },
   {
     id: 45,
@@ -361,6 +406,7 @@ export const PNEUMATICS_QUESTIONS: Question[] = [
     q: "The pneumatic system supplies high pressure air for:",
     options: ["Air Conditioning, water pressurization and engine starting", "Wing anti-icing.", "Hydraulic reservoir pressurization.", "All of the above."],
     answer: 3,
-    explain: "",
+    explain: "The pneumatic system supplies high-pressure air for all of the listed uses - air conditioning, water pressurization, engine starting, wing anti-icing, and hydraulic reservoir pressurization - plus cargo heating and fuel tank inerting.",
+    reference: "Pneumatic - Description, General",
   },
 ];
