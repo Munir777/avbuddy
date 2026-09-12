@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
-import { QUESTIONS, SYSTEMS, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
+import { QUESTIONS, SUBJECTS, SUBJECT_META, SYSTEMS_BY_SUBJECT, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
 import { shuffle } from "./utils/shuffle";
 import { initAnalytics, trackStudied } from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
@@ -16,6 +16,7 @@ import ScoreBadge from "./components/ScoreBadge";
 import SystemFilter from "./components/SystemFilter";
 import SearchBox from "./components/SearchBox";
 import QuestionCard from "./components/QuestionCard";
+import SubjectToggle from "./components/SubjectToggle";
 import ModeToggle, { type Mode } from "./components/ModeToggle";
 import QuizSetup from "./components/QuizSetup";
 import ResultsScreen from "./components/ResultsScreen";
@@ -27,6 +28,7 @@ import avbuddyLogo from "./assets/avbuddy-logo.png";
 import "./styles/app.css";
 
 function poolFor(
+  subject: string,
   system: string,
   ids: number[],
   missedOnly: boolean,
@@ -35,8 +37,17 @@ function poolFor(
   bookmarkedIds: Set<number>,
   searchQuery: string
 ): Question[] {
+  // Missed/bookmarked review is cross-subject by design: "STUDY MISSED"
+  // from the Progress tab should surface everything you've missed, not
+  // just whichever subject happens to be selected right now. Only when
+  // neither filter is active do we scope the pool down to the current
+  // subject before applying the system filter.
+  const scopedIds =
+    missedOnly || bookmarkedOnly
+      ? ids
+      : ids.filter((id) => QUESTIONS.find((q) => q.id === id)!.subject === subject);
   let filtered =
-    system === "All" ? ids : ids.filter((id) => QUESTIONS.find((q) => q.id === id)!.system === system);
+    system === "All" ? scopedIds : scopedIds.filter((id) => QUESTIONS.find((q) => q.id === id)!.system === system);
   if (missedOnly) filtered = filtered.filter((id) => missedIds.has(id));
   if (bookmarkedOnly) filtered = filtered.filter((id) => bookmarkedIds.has(id));
   let questions = filtered.map((id) => QUESTIONS.find((q) => q.id === id)!);
@@ -60,6 +71,16 @@ export default function App() {
 
   useEffect(() => {
     initAnalytics();
+  }, []);
+
+  // ---- Subject state (top-level grouping above `system`, e.g. A320
+  // Systems vs General Knowledge) ----
+  const [subject, setSubject] = useState<string>(SUBJECTS[0]);
+  const subjectQuestions = useMemo(() => QUESTIONS.filter((q) => q.subject === subject), [subject]);
+  const subjectCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const s of SUBJECTS) counts[s] = QUESTIONS.filter((q) => q.subject === s).length;
+    return counts;
   }, []);
 
   // ---- Account state ----
@@ -117,6 +138,21 @@ export default function App() {
   const systemStats = useMemo(() => getSystemStats(QUESTIONS), [progressTick]);
   const overallStats = useMemo(() => getOverallStats(QUESTIONS), [progressTick]);
 
+  // Missed/bookmarked counts scoped to the current subject, for the chip
+  // labels in SystemFilter/QuizSetup (the underlying missed/bookmarked
+  // *pools* stay cross-subject when actually toggled on -- see poolFor).
+  const missedCountInSubject = useMemo(
+    () => missedQuestions.filter((q) => q.subject === subject).length,
+    [missedQuestions, subject]
+  );
+  const bookmarkedCountInSubject = useMemo(() => {
+    let count = 0;
+    for (const q of subjectQuestions) {
+      if (bookmarkedIds.has(q.id)) count++;
+    }
+    return count;
+  }, [subjectQuestions, bookmarkedIds]);
+
   // ---- Study mode state (infinite loop, running score) ----
   const [studySystem, setStudySystem] = useState<string>("All");
   const [studyMissedOnly, setStudyMissedOnly] = useState(false);
@@ -134,6 +170,7 @@ export default function App() {
   const studyPool = useMemo(
     () =>
       poolFor(
+        subject,
         studySystem,
         studyOrder,
         studyMissedOnly,
@@ -142,7 +179,16 @@ export default function App() {
         bookmarkedIds,
         studySearchQuery
       ),
-    [studySystem, studyOrder, studyMissedOnly, missedIds, studyBookmarkedOnly, bookmarkedIds, studySearchQuery]
+    [
+      subject,
+      studySystem,
+      studyOrder,
+      studyMissedOnly,
+      missedIds,
+      studyBookmarkedOnly,
+      bookmarkedIds,
+      studySearchQuery,
+    ]
   );
   const studyCurrent = studyPool.length > 0 ? studyPool[studyIndex % studyPool.length] : undefined;
   const studyColor = studyCurrent
@@ -231,9 +277,12 @@ export default function App() {
   const [quizResults, setQuizResults] = useState<{ questionId: number; correct: boolean }[]>([]);
 
   const quizCandidatePool = useMemo(() => {
-    const bySystem = quizSystem === "All" ? QUESTIONS : QUESTIONS.filter((q) => q.system === quizSystem);
+    // Missed-only is cross-subject by design (see poolFor), so it draws
+    // from every subject's questions rather than just the selected one.
+    const base = quizMissedOnly ? QUESTIONS : subjectQuestions;
+    const bySystem = quizSystem === "All" ? base : base.filter((q) => q.system === quizSystem);
     return quizMissedOnly ? bySystem.filter((q) => missedIds.has(q.id)) : bySystem;
-  }, [quizSystem, quizMissedOnly, missedIds]);
+  }, [subjectQuestions, quizSystem, quizMissedOnly, missedIds]);
 
   const quizAvailableCount = quizCandidatePool.length;
 
@@ -260,11 +309,11 @@ export default function App() {
     setQuizPhase("active");
   }
 
-  // Anonymous free quiz: always 30 questions drawn from the full pool,
-  // ignoring whatever category/count the (hidden, for anon users) setup
-  // controls are currently set to.
+  // Anonymous free quiz: always 30 questions drawn from the full pool of
+  // the currently selected subject, ignoring whatever category/count the
+  // (hidden, for anon users) setup controls are currently set to.
   function startFreeQuiz() {
-    const drawn = shuffle(QUESTIONS).slice(0, Math.min(FREE_QUIZ_COUNT, QUESTIONS.length));
+    const drawn = shuffle(subjectQuestions).slice(0, Math.min(FREE_QUIZ_COUNT, subjectQuestions.length));
     setQuizQuestions(drawn);
     setQuizIndex(0);
     setQuizSelected(null);
@@ -342,8 +391,8 @@ export default function App() {
   const [examSecondsRemaining, setExamSecondsRemaining] = useState(0);
 
   const examCandidatePool = useMemo(
-    () => (examSystem === "All" ? QUESTIONS : QUESTIONS.filter((q) => q.system === examSystem)),
-    [examSystem]
+    () => (examSystem === "All" ? subjectQuestions : subjectQuestions.filter((q) => q.system === examSystem)),
+    [subjectQuestions, examSystem]
   );
   const examAvailableCount = examCandidatePool.length;
   const examCurrent = examQuestions[examIndex];
@@ -440,6 +489,32 @@ export default function App() {
     if (auth.signedIn) void clearServerProgress();
   }
 
+  // ---- Subject switching ----
+  // Resets every mode's setup/in-progress state so switching subjects never
+  // leaves a stale system filter, an in-progress quiz/exam, or a study
+  // streak bleeding over from the subject you just left.
+  function changeSubject(s: string) {
+    setSubject(s);
+
+    setStudySystem("All");
+    setStudyMissedOnly(false);
+    setStudyBookmarkedOnly(false);
+    setStudySearchQuery("");
+    setStudyOrder(shuffle(QUESTIONS.map((q) => q.id)));
+    setStudyIndex(0);
+    setStudyWrongIndices(new Set());
+    setStudyRevealed(false);
+    setStudyScore({ correct: 0, seen: 0 });
+
+    setQuizSystem("All");
+    setQuizMissedOnly(false);
+    setQuizCount(10);
+    setQuizPhase("setup");
+
+    setExamSystem("All");
+    setExamPhase("setup");
+  }
+
   // ---- Keyboard shortcuts: 1-4 to pick an answer, Enter to advance ----
   // Ignored while typing in any input/textarea (search box, sign-in email
   // field, etc.) so shortcuts never steal a keystroke from actual typing.
@@ -509,7 +584,7 @@ export default function App() {
         <div className="header">
           <div>
             <img src={avbuddyLogo} alt="AvBuddy" className="header__logo" />
-            <div className="header__eyebrow">A320 SYSTEMS TRAINER</div>
+            <div className="header__eyebrow">{SUBJECT_META[subject].label.toUpperCase()} TRAINER</div>
             <div className="header__title">
               {mode === "study"
                 ? "Study mode"
@@ -522,6 +597,14 @@ export default function App() {
           </div>
           {mode === "study" && <ScoreBadge correct={studyScore.correct} seen={studyScore.seen} />}
         </div>
+
+        <SubjectToggle
+          subjects={SUBJECTS}
+          subjectMeta={SUBJECT_META}
+          active={subject}
+          onChange={changeSubject}
+          countBySubject={subjectCounts}
+        />
 
         <ModeToggle mode={mode} onChange={setMode} />
 
@@ -536,15 +619,15 @@ export default function App() {
           <>
             <SearchBox value={studySearchQuery} onChange={studyChangeSearch} />
             <SystemFilter
-              systems={SYSTEMS}
+              systems={SYSTEMS_BY_SUBJECT[subject]}
               active={studySystem}
               onChange={studyChangeSystem}
               missedOnly={studyMissedOnly}
               onMissedOnlyChange={studyChangeMissedOnly}
-              missedCount={missedQuestions.length}
+              missedCount={missedCountInSubject}
               bookmarkedOnly={studyBookmarkedOnly}
               onBookmarkedOnlyChange={studyChangeBookmarkedOnly}
-              bookmarkedCount={bookmarkedIds.size}
+              bookmarkedCount={bookmarkedCountInSubject}
             />
             {studyCurrent ? (
               <QuestionCard
@@ -579,7 +662,7 @@ export default function App() {
 
         {mode === "quiz" && quizPhase === "setup" && authReady && auth.signedIn && (
           <QuizSetup
-            systems={SYSTEMS}
+            systems={SYSTEMS_BY_SUBJECT[subject]}
             system={quizSystem}
             onSystemChange={(s) => {
               setQuizSystem(s);
@@ -591,7 +674,7 @@ export default function App() {
             onStart={startQuiz}
             missedOnly={quizMissedOnly}
             onMissedOnlyChange={quizChangeMissedOnly}
-            missedCount={missedQuestions.length}
+            missedCount={missedCountInSubject}
           />
         )}
 
@@ -638,11 +721,12 @@ export default function App() {
 
         {mode === "exam" && authReady && auth.signedIn && examPhase === "setup" && (
           <ExamSetup
-            systems={SYSTEMS}
+            systems={SYSTEMS_BY_SUBJECT[subject]}
             system={examSystem}
             onSystemChange={(s) => {
               setExamSystem(s);
-              const count = s === "All" ? QUESTIONS.length : QUESTIONS.filter((q) => q.system === s).length;
+              const count =
+                s === "All" ? subjectQuestions.length : subjectQuestions.filter((q) => q.system === s).length;
               setExamLength((l) => Math.min(l, Math.max(count, 1)));
             }}
             availableCount={examAvailableCount}

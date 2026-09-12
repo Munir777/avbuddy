@@ -527,6 +527,54 @@ body {
   color: var(--text-faint);
 }
 
+/* Subject toggle (top-level grouping above mode toggle) */
+.subject-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.subject-toggle__card {
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.subject-toggle__card:hover {
+  border-color: var(--text-dim);
+}
+
+.subject-toggle__card--active {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.subject-toggle__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.subject-toggle__blurb {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.subject-toggle__count {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Mode toggle */
 .mode-toggle {
   display: flex;
@@ -823,5 +871,11 @@ body {
     padding: 8px 2px;
     font-size: 11px;
     letter-spacing: 0.3px;
+  }
+
+  /* Subject cards stack on narrow screens rather than squeezing two
+     side-by-side cards' worth of blurb text into half-width columns. */
+  .subject-toggle {
+    grid-template-columns: 1fr;
   }
 }
