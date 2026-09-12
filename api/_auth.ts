@@ -130,33 +130,55 @@ export function clearSessionCookie(res: VercelResponse): void {
 
 // --- Email ---
 
-// Talks to Resend's HTTP API directly with fetch rather than pulling in
+// Talks to Brevo's HTTP API directly with fetch rather than pulling in
 // their SDK -- one dependency-free POST is simpler than a new package for
 // something this small, consistent with the rest of this project.
+//
+// AUTH_EMAIL_FROM uses the same "Name <email>" format either way; it's
+// parsed into Brevo's separate name/email fields below. Whatever address
+// you put here MUST be verified as a sender in your Brevo account first
+// (Settings > Senders & IP > Senders) -- unlike Resend's onboarding@resend.dev,
+// Brevo has no built-in test sender, so sending will fail until you do this.
+function parseFrom(from: string): { name?: string; email: string } {
+  const match = from.match(/^(.*)<(.+)>$/);
+  if (match) {
+    const name = match[1].trim();
+    return { name: name || undefined, email: match[2].trim() };
+  }
+  return { email: from.trim() };
+}
+
 export async function sendMagicLinkEmail(email: string, link: string): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.AUTH_EMAIL_FROM ?? "AvBuddy <onboarding@resend.dev>";
+  const apiKey = process.env.BREVO_API_KEY;
+  const from = process.env.AUTH_EMAIL_FROM ?? "AvBuddy <noreply@avbuddy.app>";
   if (!apiKey) {
-    // Dev convenience: `vercel dev` sets VERCEL_ENV to "development", so
-    // this only ever silently no-ops locally -- a real deployment missing
-    // the key still fails loudly rather than pretending emails went out.
-    if (process.env.VERCEL_ENV !== "production") {
+    // Dev convenience: `vercel dev` sets VERCEL_ENV to "development" -- that
+    // is the ONLY environment this should silently no-op in. Bug fixed
+    // 2026-09-11: this used to check `!== "production"`, which also matched
+    // "preview" -- so a branch's Vercel preview deployment (VERCEL_ENV is
+    // "preview" there, not "production") silently swallowed the email and
+    // told the caller it succeeded, while the real link only ever reached a
+    // server log nobody could see. A preview URL is somewhere a real person
+    // actually tries to sign in, so it needs to fail loudly here too, same
+    // as production, if the key is missing.
+    if (process.env.VERCEL_ENV === "development") {
       console.log(`[dev] Magic link for ${email}: ${link}`);
       return;
     }
-    throw new Error("RESEND_API_KEY is not set");
+    throw new Error("BREVO_API_KEY is not set");
   }
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      "api-key": apiKey,
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
-      from,
-      to: email,
+      sender: parseFrom(from),
+      to: [{ email }],
       subject: "Sign in to AvBuddy",
-      html: `
+      htmlContent: `
         <div style="font-family: -apple-system, sans-serif; max-width: 480px; margin: 0 auto;">
           <h2 style="color: #111;">Sign in to AvBuddy</h2>
           <p style="color: #333; line-height: 1.5;">
@@ -176,6 +198,6 @@ export async function sendMagicLinkEmail(email: string, link: string): Promise<v
   });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    throw new Error(`Resend request failed: ${res.status} ${body}`);
+    throw new Error(`Brevo request failed: ${res.status} ${body}`);
   }
 }
