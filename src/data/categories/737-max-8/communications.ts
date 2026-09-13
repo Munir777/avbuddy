@@ -155,4 +155,79 @@ export const B737_COMMUNICATIONS_QUESTIONS: Question[] = [
       "Knowing an aircraft's lateral position alone isn't enough to safely separate traffic that may be at different altitudes along similar tracks; automatically reporting pressure altitude alongside identification lets ATC (and systems like traffic-alert and collision avoidance equipment on other aircraft) assess vertical separation as well as lateral position.",
     reference: "Communications - Transponder Altitude Reporting",
   },
+  {
+    id: 11,
+    system: "Communications",
+    q: "What is the general purpose of a dedicated 'company' radio frequency, separate from the frequency used to talk to air traffic control?",
+    options: [
+      "It lets the crew communicate operational information with their own operations/dispatch staff without tying up or cluttering the ATC frequency",
+      "It is used only by air traffic control, never by the operating crew",
+      "It replaces the need for any ATC communication entirely",
+      "It functions only while the aircraft is parked at the gate",
+    ],
+    answer: 0,
+    explain:
+      "A company frequency gives the crew a channel for operational communication with their own operations or dispatch function - things like arrival timing, maintenance status, or gate information - separate from the ATC frequency, which keeps that discussion off the channel ATC needs kept clear for controlling traffic.",
+    reference: "Communications - Company Frequency",
+  },
+  {
+    id: 12,
+    system: "Communications",
+    q: "Why does an emergency locator transmitter (ELT) generally transmit on both 121.5 MHz and 406 MHz?",
+    options: [
+      "406 MHz supports precise, satellite-relayed identification and location of a distress signal, while 121.5 MHz remains useful for closer-range homing by search aircraft or rescue teams",
+      "Both frequencies serve exactly the same purpose with no distinction",
+      "121.5 MHz is used only for routine communications, unrelated to distress",
+      "406 MHz is used only during normal flight, never during an actual emergency",
+    ],
+    answer: 0,
+    explain:
+      "406 MHz ELT transmissions are relayed via satellite and carry an identifying code that helps rescue authorities quickly narrow down which aircraft is in distress and roughly where, while the aircraft's continued transmission on 121.5 MHz supports more localized homing once search and rescue assets are in the vicinity - the two frequencies serve complementary roles in the overall search-and-rescue process.",
+    reference: "Communications - ELT Frequencies",
+  },
+  {
+    id: 13,
+    system: "Communications",
+    q: "Why might an interphone call using a distinct emergency/priority signal be treated differently from a routine interphone call between crew stations?",
+    options: [
+      "A priority signal lets the calling station cut through and get immediate attention at the receiving end, appropriate for an urgent situation rather than a routine coordination call",
+      "Priority calls are always ignored in favor of routine calls",
+      "There is no difference in how the two types of calls are handled",
+      "Priority signaling is used only for non-urgent administrative messages",
+    ],
+    answer: 0,
+    explain:
+      "Interphone systems commonly support a distinct priority or emergency call signal precisely so an urgent call - reporting a fire, an emergency, or another time-critical situation - stands out and demands immediate attention from the receiving crew station, rather than blending in the same way a routine coordination call would.",
+    reference: "Communications - Emergency vs Routine Interphone Priority",
+  },
+  {
+    id: 14,
+    system: "Communications",
+    q: "Why does a VHF data link system typically use a separate radio/channel from the VHF voice communication radios?",
+    options: [
+      "Keeping data link traffic on its own dedicated channel avoids interfering with (or being interfered with by) ongoing voice communications on the working ATC frequency",
+      "Data link messages are always sent over the exact same channel as voice communications, with no separation",
+      "It is done purely to reduce the aircraft's overall weight",
+      "Separate channels exist only to allow different color-coding on the radio panel",
+    ],
+    answer: 0,
+    explain:
+      "Using a dedicated channel for data link communication keeps that digital traffic from competing with or disrupting ongoing voice communication on the working ATC frequency, letting both types of communication happen independently rather than one blocking the other.",
+    reference: "Communications - VHF Data Link Channel Separation",
+  },
+  {
+    id: 15,
+    system: "Communications",
+    q: "Why does air traffic control typically assign an aircraft a discrete transponder code for a given flight, rather than every aircraft using the same code?",
+    options: [
+      "A unique discrete code lets ATC systems and other equipped aircraft distinguish and track that specific aircraft individually, rather than confusing it with other traffic",
+      "Discrete codes are assigned only to aircraft that have lost radio communication",
+      "All aircraft are actually required to use the exact same universal code at all times",
+      "Discrete codes are used only for aircraft operating outside controlled airspace",
+    ],
+    answer: 0,
+    explain:
+      "Assigning each aircraft its own discrete transponder code lets ATC systems (and equipment on other aircraft, such as traffic-alert and collision avoidance systems) correctly associate a specific radar/data return with that particular flight, avoiding the confusion that would result if multiple aircraft shared an identical code.",
+    reference: "Communications - Transponder Discrete Code Assignment",
+  },
 ];

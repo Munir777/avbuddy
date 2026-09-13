@@ -155,4 +155,79 @@ export const B737_HYDRAULICS_QUESTIONS: Question[] = [
       "A steadily decreasing quantity points to an ongoing leak, so a sensible precaution is to reduce non-essential use of that system's hydraulically-powered functions, conserving whatever fluid remains for functions - like extending the landing gear or operating the flight controls - that will still be needed later in the flight.",
     reference: "Hydraulics - Low Quantity Precautions",
   },
+  {
+    id: 11,
+    system: "Hydraulics",
+    q: "What is the general purpose of a hydraulic fuse (flow restrictor) installed in a line feeding a particular component?",
+    options: [
+      "It automatically restricts or blocks fluid flow if it senses an abnormally high flow rate, such as from a burst line downstream, helping contain a leak to that one branch",
+      "It increases fluid flow rate to that component under all conditions",
+      "It filters electrical noise out of the hydraulic system",
+      "It has no protective function and is purely a manufacturing artifact",
+    ],
+    answer: 0,
+    explain:
+      "A hydraulic fuse senses when flow through its line exceeds a normal rate - the signature of a burst or badly leaking line downstream - and restricts or shuts off further flow through that branch, containing the leak to one component's plumbing rather than letting it drain the entire system's fluid supply.",
+    reference: "Hydraulics - Hydraulic Fuse/Flow Restrictor",
+  },
+  {
+    id: 12,
+    system: "Hydraulics",
+    q: "What is the general concept behind a hydraulic priority valve protecting a critical function?",
+    options: [
+      "If system pressure or fluid quantity drops low, the priority valve automatically reduces or cuts off flow to a less critical function so that pressure is preserved for a higher-priority one, such as flight controls or gear braking",
+      "It always shuts down the highest-priority function first to save fluid",
+      "It has no effect on how fluid is distributed among functions",
+      "It only operates while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "A priority valve is a way of automatically rationing a limited hydraulic supply: if pressure or quantity falls into a degraded range, it cuts back or isolates flow to a lower-priority user (such as ground-only equipment) so that a higher-priority, safety-critical function keeps getting the fluid it needs.",
+    reference: "Hydraulics - Priority Valve Concept",
+  },
+  {
+    id: 13,
+    system: "Hydraulics",
+    q: "What is the general purpose of a low hydraulic reservoir quantity caution?",
+    options: [
+      "It alerts the crew early that a system's fluid supply is dropping toward a level where a pump could begin drawing in air, giving them time to respond before the system loses effective pressure",
+      "It only appears after the reservoir is completely empty",
+      "It indicates high pressure rather than low quantity",
+      "It has no operational significance and is purely informational with no action expected",
+    ],
+    answer: 0,
+    explain:
+      "A low quantity caution is deliberately set to trigger before the reservoir is actually empty, giving the crew advance warning so they can take precautions (such as reducing use of that system) before the pump risks drawing air and losing the ability to maintain effective pressure.",
+    reference: "Hydraulics - Reservoir Low-Level Caution",
+  },
+  {
+    id: 14,
+    system: "Hydraulics",
+    q: "What is a general ground-operations use for an electric motor-driven hydraulic pump, separate from its role as an inflight backup?",
+    options: [
+      "It can pressurize a hydraulic system for maintenance checks or to operate certain systems (such as flight controls) while the aircraft is parked with engines shut down",
+      "It can only be used while both engines are running at high power",
+      "It exists solely to charge the aircraft battery",
+      "It has no ground-operations use of any kind",
+    ],
+    answer: 0,
+    explain:
+      "Beyond backing up engine-driven pump output in flight, an electric hydraulic pump is also useful on the ground - letting maintenance personnel pressurize a system to check or exercise flight controls or other hydraulically-powered equipment without needing an engine running.",
+    reference: "Hydraulics - Motor-Driven Pump Ground Use",
+  },
+  {
+    id: 15,
+    system: "Hydraulics",
+    q: "Why does the hydraulic system generally include fluid filters with a monitored condition (such as a bypass or clogging indication)?",
+    options: [
+      "Filters remove contamination that could otherwise damage sensitive components, and monitoring their condition warns of a clogged filter before it either restricts flow or bypasses unfiltered fluid",
+      "Filters exist purely to add weight for balance purposes",
+      "Filter condition has no bearing on hydraulic system health",
+      "Filters are only inspected once at the time of aircraft delivery",
+    ],
+    answer: 0,
+    explain:
+      "Hydraulic fluid can pick up small contaminants that would damage precision components like pumps and actuators if left unfiltered, so filters are fitted with a monitored condition (such as a differential-pressure indicator or bypass warning) that flags a clogging filter before it either restricts needed flow or opens a bypass that lets unfiltered fluid through.",
+    reference: "Hydraulics - Fluid Contamination & Filter Monitoring",
+  },
 ];

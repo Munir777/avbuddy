@@ -155,4 +155,79 @@ export const B737_ANTI_ICE_RAIN_QUESTIONS: Question[] = [
       "Airframe icing generally needs both a sufficiently cold temperature and the presence of moisture (visible or otherwise) to actually occur, so anti-ice activation guidance and detection logic are built around that combined condition - well below freezing with no moisture present, for example, doesn't carry the same icing risk as conditions nearer freezing with visible moisture.",
     reference: "Anti-Ice & Rain - Icing Condition Temperature Band",
   },
+  {
+    id: 11,
+    system: "Anti-Ice & Rain",
+    q: "Besides chemical rain repellent, what other general method can help remove heavy rain from the windshield?",
+    options: [
+      "Conventional windshield wipers, which remain effective for a wide range of rain intensities and speeds even though they become less effective at very high approach/landing speeds",
+      "A dedicated pneumatic rain-removal system is the only method ever used, with wipers never fitted",
+      "Rain is only ever removed by natural airflow, with no wiper or chemical system fitted at all",
+      "Rain removal is accomplished solely by increasing cabin pressurization",
+    ],
+    answer: 0,
+    explain:
+      "Conventional windshield wipers remain a standard, straightforward method of clearing rain across a wide range of conditions, complementing the chemical rain repellent system that becomes especially useful at the higher speeds where mechanical wiper effectiveness starts to fall off.",
+    reference: "Anti-Ice & Rain - Windshield Rain Removal Methods",
+  },
+  {
+    id: 12,
+    system: "Anti-Ice & Rain",
+    q: "What is the general distinction between an 'anti-ice' system and a 'de-ice' system?",
+    options: [
+      "An anti-ice system works continuously or proactively to prevent ice from forming in the first place, while a de-ice system is typically cycled to periodically remove ice that has already accumulated",
+      "The two terms describe exactly the same function with no meaningful difference",
+      "De-ice systems only work in the air, while anti-ice systems only work on the ground",
+      "Anti-ice systems remove existing ice, while de-ice systems prevent ice from ever forming",
+    ],
+    answer: 0,
+    explain:
+      "An anti-ice system is generally designed to run proactively (often continuously) to prevent ice from ever accumulating on the protected surface in the first place, whereas a de-ice system is more commonly designed to be cycled on and off, allowing a small amount of ice to build up before it's periodically shed - two different philosophies for handling the same underlying icing risk.",
+    reference: "Anti-Ice & Rain - Anti-Ice vs De-Ice Distinction",
+  },
+  {
+    id: 13,
+    system: "Anti-Ice & Rain",
+    q: "Why might crews apply an airspeed additive (a small increase to the normal approach speed) after flying through significant airframe icing?",
+    options: [
+      "Any residual ice that anti-ice/de-ice systems haven't fully removed can degrade the wing's aerodynamic performance, so extra speed provides additional margin above the stall in that degraded condition",
+      "The additive is used only to reduce fuel burn, unrelated to icing",
+      "Airspeed additives are applied only in conditions with absolutely no icing risk",
+      "An airspeed additive is applied to intentionally slow the aircraft down further",
+    ],
+    answer: 0,
+    explain:
+      "Even effective anti-ice and de-ice systems may not remove every trace of ice from every surface, and residual ice can degrade lift and increase stall speed, so adding some extra airspeed above the normal reference speed after a significant icing encounter provides additional margin above the stall in that potentially degraded aerodynamic condition.",
+    reference: "Anti-Ice & Rain - Speed Additive After Icing",
+  },
+  {
+    id: 14,
+    system: "Anti-Ice & Rain",
+    q: "Why might a minimum equipment list generally impose a dispatch restriction (such as avoiding known or forecast icing conditions) if a wing or engine anti-ice system is inoperative?",
+    options: [
+      "Without that protection functioning, the aircraft would lack an important defense against ice accumulation, so dispatch is restricted to conditions where that protection isn't expected to be needed",
+      "Anti-ice systems have no bearing on dispatch decisions under any circumstances",
+      "The restriction applies only when every anti-ice system on the aircraft is simultaneously inoperative",
+      "MEL dispatch restrictions apply only to hydraulic systems, never to anti-ice",
+    ],
+    answer: 0,
+    explain:
+      "If an anti-ice system that would normally protect against ice accumulation is inoperative, dispatching into conditions where ice is actually expected would remove an important layer of protection, so a dispatch restriction along those lines - avoiding known or forecast icing - helps ensure the aircraft isn't relying on a system that isn't there to help.",
+    reference: "Anti-Ice & Rain - Dispatch Restriction With Anti-Ice Inoperative",
+  },
+  {
+    id: 15,
+    system: "Anti-Ice & Rain",
+    q: "In general terms, why are engines certified to tolerate ingesting a defined amount of rain and hail without a resulting flameout or serious damage?",
+    options: [
+      "Because operating through heavy rain or hail showers is a realistic operational scenario, so engines are tested and certified to keep running reliably through a representative amount of water/hail ingestion",
+      "Because engines never actually encounter rain or hail under any real operating condition",
+      "Because rain and hail ingestion has no effect on engine operation regardless of quantity",
+      "Because certification testing only considers dry-air conditions, with no water ingestion testing performed",
+    ],
+    answer: 0,
+    explain:
+      "Since aircraft realistically do fly through rain showers and, at times, hail, engines are certified against defined water and hail ingestion tests to demonstrate they keep operating reliably (without flaming out or suffering serious damage) through a representative amount of ingestion - reflecting a real operational condition rather than an idealized dry-air-only environment.",
+    reference: "Anti-Ice & Rain - Engine Water/Hail Ingestion Certification",
+  },
 ];

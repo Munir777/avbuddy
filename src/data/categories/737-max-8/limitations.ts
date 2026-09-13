@@ -156,4 +156,79 @@ export const B737_LIMITATIONS_QUESTIONS: Question[] = [
       "Because the APU is a separate small gas turbine with its own performance characteristics, its ability to start reliably and produce adequate bleed air/electrical output in the thinner air at higher altitudes is validated only up to its own defined altitude limit - which is why the approved limitations generally list a distinct APU operating/start altitude, separate from (and often lower than) the aircraft's own maximum operating altitude.",
     reference: "Limitations - APU Operating Altitude",
   },
+  {
+    id: 11,
+    system: "Limitations",
+    q: "What does it generally mean that the maximum operating speed is expressed as 'VMO/MMO, whichever is lower'?",
+    options: [
+      "At lower altitudes the indicated airspeed limit (VMO) is normally the binding constraint, while at higher altitudes the Mach limit (MMO) becomes the binding constraint, so the crew must respect whichever one is more restrictive at the current altitude",
+      "VMO and MMO are simply two different names for exactly the same limit",
+      "MMO applies only on the ground, and VMO applies only in flight",
+      "The crew may always use whichever of the two limits happens to be higher",
+    ],
+    answer: 0,
+    explain:
+      "VMO (a maximum indicated airspeed) and MMO (a maximum Mach number) are two ways of expressing essentially the same underlying aerodynamic/structural boundary, but they cross over at some altitude; below that crossover, VMO tends to be the binding limit, and above it, MMO becomes binding - so the operating limitation is stated as whichever of the two is currently the more restrictive.",
+    reference: "Limitations - VMO/MMO Relationship",
+  },
+  {
+    id: 12,
+    system: "Limitations",
+    q: "What is the general purpose of a maximum zero fuel weight (MZFW) limitation?",
+    options: [
+      "It caps the aircraft's weight excluding usable fuel, keeping bending loads on the wing (which are relieved by fuel weight in the wing) within the structure's certified limits",
+      "It limits only how much fuel can be carried, with no relationship to payload",
+      "It is simply another name for maximum takeoff weight",
+      "It applies only while the aircraft is on the ground, not in flight",
+    ],
+    answer: 0,
+    explain:
+      "Fuel carried in the wings helps relieve the bending load the wing structure experiences in flight, so the maximum zero fuel weight limitation caps how much weight (essentially the aircraft plus payload, excluding usable fuel) is permitted before any fuel is added - protecting the wing structure from carrying more bending load than it's certified for if there were too little wing fuel to help relieve it.",
+    reference: "Limitations - Maximum Zero Fuel Weight",
+  },
+  {
+    id: 13,
+    system: "Limitations",
+    q: "How does a minimum equipment list (MEL) generally relate to the aircraft's approved limitations?",
+    options: [
+      "The MEL specifies conditions under which the aircraft may be dispatched with certain equipment inoperative, but it operates within (and can add extra restrictions on top of) the aircraft's approved limitations - it doesn't override a limitation itself",
+      "The MEL replaces the approved limitations entirely once it is applied",
+      "The MEL and the limitations section are simply two names for the same document",
+      "The MEL only applies to cabin equipment, never to any system covered by the limitations",
+    ],
+    answer: 0,
+    explain:
+      "A minimum equipment list lets an aircraft be dispatched with specific inoperative items under defined conditions (which can include extra restrictions or procedures), but it works within the aircraft's approved limitations rather than overriding them - a limitation in the approved limitations section still applies regardless of what the MEL separately permits for dispatch with inoperative equipment.",
+    reference: "Limitations - MEL Relationship to Limitations",
+  },
+  {
+    id: 14,
+    system: "Limitations",
+    q: "Why might a maximum brake temperature limitation for dispatch (before departure) be treated separately from the single-stop brake energy limit?",
+    options: [
+      "A single-stop energy limit addresses one demanding stop (like a rejected takeoff), while a pre-departure brake temperature limit addresses whether the brakes have had enough time to cool down from previous use before being relied on again",
+      "The two limitations are identical and exist only for redundancy",
+      "Brake temperature has no bearing on dispatch decisions",
+      "The pre-departure limitation applies only to the nose gear brakes",
+    ],
+    answer: 0,
+    explain:
+      "A single-stop brake energy limit is about whether the brakes can safely absorb the energy of one demanding stop, whereas a pre-departure brake temperature limitation is about confirming the brakes have already cooled down enough from prior taxiing or landing before the aircraft is dispatched again - two related but distinct considerations about brake condition at two different points in time.",
+    reference: "Limitations - Pre-Departure Brake Temperature",
+  },
+  {
+    id: 15,
+    system: "Limitations",
+    q: "What does it generally mean that an engine's takeoff thrust rating is 'flat-rated' to a certain outside air temperature?",
+    options: [
+      "The engine can produce its full rated thrust up to that temperature, with thrust then reducing above it as ambient conditions become hot enough to limit the engine's actual capability",
+      "The engine produces exactly the same fixed thrust value regardless of any operating condition, including altitude and temperature",
+      "Flat-rating means the engine's thrust output decreases steadily with every degree of temperature increase from the coldest possible day",
+      "It refers only to the shape of the engine nacelle, not to its thrust output",
+    ],
+    answer: 0,
+    explain:
+      "A flat-rated thrust rating means the engine can deliver its full rated thrust across a range of temperatures up to a defined breakpoint; beyond that temperature, the engine's actual capability begins to fall off with rising temperature, so the approved rating chart shows constant available thrust up to the flat-rate temperature and a declining value above it.",
+    reference: "Limitations - Flat-Rated Thrust Concept",
+  },
 ];

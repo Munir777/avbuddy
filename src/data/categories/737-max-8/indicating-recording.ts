@@ -156,4 +156,79 @@ export const B737_INDICATING_RECORDING_QUESTIONS: Question[] = [
       "Basic flight parameters like altitude and airspeed show what happened to the aircraft's flight path, but recording control surface positions and control inputs as well shows what the pilot(s) and automatic systems were actually commanding - giving investigators a much more complete picture of cause and effect than flight path data alone could provide.",
     reference: "Indicating & Recording - Control Position Recording",
   },
+  {
+    id: 11,
+    system: "Indicating & Recording",
+    q: "Why are flight recorders generally required to have their own independent power source and crash-protected memory, rather than depending entirely on the aircraft's main electrical system?",
+    options: [
+      "So the recorder can keep capturing data for a defined period even if main aircraft power is lost, and so the recorded data survives the kind of physical impact and heat that could occur in an accident",
+      "Independent power exists only to reduce the recorder's manufacturing cost",
+      "Recorders are actually required to lose power and stop recording the instant main power is interrupted",
+      "Crash-protected memory has no bearing on data survivability after an accident",
+    ],
+    answer: 0,
+    explain:
+      "A flight recorder is only useful for accident investigation if it keeps working right up to the point of an event and the recorded data actually survives afterward, so recorders are designed with a degree of independent power backup and a hardened, crash-protected memory module built to withstand severe impact, heat, and pressure - specifically so the data remains recoverable even in an accident scenario.",
+    reference: "Indicating & Recording - Recorder Power Independence & Crash Protection",
+  },
+  {
+    id: 12,
+    system: "Indicating & Recording",
+    q: "What is the general purpose of a secondary 'status' or system-summary display page, separate from the primary engine/crew-alerting display?",
+    options: [
+      "It gives the crew a place to review more detailed system status and configuration information on demand, without needing to permanently occupy space on the primary display used continuously in flight",
+      "It replaces the need for a primary engine display entirely",
+      "It is used only to show cabin entertainment content",
+      "It functions only while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "A secondary status/summary page lets the crew call up more detailed system configuration or status information when they specifically want to review it, without cluttering the primary display that needs to stay focused on the continuously relevant engine parameters and alerts the crew needs during normal flight.",
+    reference: "Indicating & Recording - Secondary Status Display Page",
+  },
+  {
+    id: 13,
+    system: "Indicating & Recording",
+    q: "What is the general purpose of automatic display brightness adjustment on the flight deck's electronic displays?",
+    options: [
+      "It adapts screen brightness to current ambient lighting conditions, keeping the displays clearly readable in anything from bright sunlight to a darkened night flight deck",
+      "It is used only to save electrical power, with no effect on readability",
+      "It permanently locks brightness at a single fixed level regardless of conditions",
+      "It only functions while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "Ambient lighting on the flight deck can swing from bright direct sunlight to a fully darkened night environment, so automatically adjusting display brightness to match those conditions keeps the displays clearly readable throughout, rather than leaving the crew to constantly manually adjust brightness themselves as lighting conditions change.",
+    reference: "Indicating & Recording - Automatic Display Brightness",
+  },
+  {
+    id: 14,
+    system: "Indicating & Recording",
+    q: "Why does a cockpit voice recorder typically capture radio transmissions in addition to ambient cockpit sounds and crew conversation?",
+    options: [
+      "It gives investigators a fuller picture of what the crew heard and said over the radio - including ATC instructions and read-backs - not just what happened purely inside the cockpit",
+      "Radio transmissions are never included in cockpit voice recordings, only ambient sound",
+      "CVRs record radio calls only, with no ambient cockpit audio captured at all",
+      "It is done solely to test the radios themselves, not for any investigative purpose",
+    ],
+    answer: 0,
+    explain:
+      "Capturing radio transmissions alongside ambient cockpit sound and crew conversation lets investigators reconstruct a much fuller picture of events - what instructions were received from ATC, how the crew read them back, and how that lines up with what was happening and being discussed in the cockpit at the same time - rather than only having half of that exchange.",
+    reference: "Indicating & Recording - CVR Capturing Radio Transmissions",
+  },
+  {
+    id: 15,
+    system: "Indicating & Recording",
+    q: "What is the general purpose of a quick access recorder (QAR), separate from the crash-protected flight data recorder?",
+    options: [
+      "It records a similar range of flight data but on removable or easily downloadable media, letting an operator regularly analyze flight data for trends and safety monitoring without needing to access the crash-protected recorder",
+      "It is simply another name for the crash-protected flight data recorder, with no distinct purpose",
+      "It exists only to record cockpit audio, duplicating the cockpit voice recorder",
+      "It can only be accessed after an accident, just like the crash-protected recorder",
+    ],
+    answer: 0,
+    explain:
+      "A quick access recorder is intended for routine, easy data retrieval - letting an operator regularly download and analyze flight data for trend monitoring and proactive safety programs - which is a very different purpose from the crash-protected flight data recorder that's built to survive an accident and is really only accessed in an investigation.",
+    reference: "Indicating & Recording - Quick Access Recorder",
+  },
 ];

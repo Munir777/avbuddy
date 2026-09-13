@@ -155,4 +155,79 @@ export const B737_FLIGHT_CONTROLS_QUESTIONS: Question[] = [
       "A yaw damper senses the onset of a Dutch roll-type oscillation and automatically applies small, timely rudder inputs to counteract it, damping the oscillation out - sparing the pilot from having to continuously make manual rudder corrections to keep the ride smooth and coordinated.",
     reference: "Flight Controls - Yaw Damper",
   },
+  {
+    id: 11,
+    system: "Flight Controls",
+    q: "Why are the primary flight control surfaces typically actuated by more than one hydraulic system rather than just one?",
+    options: [
+      "So losing hydraulic pressure from one system doesn't remove powered actuation of that surface entirely, since another system (or manual reversion) can still move it",
+      "Multiple hydraulic systems are connected purely for weight and balance reasons",
+      "Only the rudder ever receives hydraulic power; all other surfaces are unpowered",
+      "Using more than one hydraulic system always doubles the surface's maximum deflection",
+    ],
+    answer: 0,
+    explain:
+      "Powering a primary flight control surface from more than one hydraulic system means the loss of any single system doesn't take away all powered actuation of that surface - another system can still drive it (with manual reversion as a further backup), which is central to how the type maintains flight control redundancy after a hydraulic failure.",
+    reference: "Flight Controls - Multiple Hydraulic Actuation Per Surface",
+  },
+  {
+    id: 12,
+    system: "Flight Controls",
+    q: "Why are the two pilots' control columns (and rudder pedals) mechanically interconnected rather than independent?",
+    options: [
+      "So a control input made by either pilot is automatically felt and mirrored at the other's controls, keeping both pilots aware of what's being commanded and allowing either to fly the aircraft",
+      "Interconnection is done purely to save manufacturing cost with no operational purpose",
+      "It prevents either pilot from ever moving the controls without the other's simultaneous input",
+      "Only the rudder pedals are interconnected; the control columns are fully independent",
+    ],
+    answer: 0,
+    explain:
+      "Mechanically linking both pilots' control columns and rudder pedals means an input from either side is transmitted to the other, so both pilots feel and can monitor what's being commanded - and either pilot retains full ability to fly the aircraft, including taking over from the other if needed.",
+    reference: "Flight Controls - Interconnected Dual Controls",
+  },
+  {
+    id: 13,
+    system: "Flight Controls",
+    q: "How does the autopilot generally command the primary flight controls, given that they're mechanically cable-actuated?",
+    options: [
+      "Through a servo that drives the same cable-and-pulley system the pilots' controls use, so the control columns and pedals visibly move as the autopilot flies",
+      "Through an entirely separate, independent set of control surfaces used only by the autopilot",
+      "The autopilot cannot actuate the primary flight controls at all; it can only adjust engine thrust",
+      "By wirelessly commanding the surfaces with no mechanical connection whatsoever",
+    ],
+    answer: 0,
+    explain:
+      "Because the primary flight controls are cable-actuated, the autopilot drives them through a servo that feeds into that same cable system - which is why, with the autopilot engaged, the control columns and rudder pedals can be seen and felt moving as the autopilot commands the surfaces, rather than the autopilot working through some entirely separate actuation path.",
+    reference: "Flight Controls - Autopilot Servo Actuation",
+  },
+  {
+    id: 14,
+    system: "Flight Controls",
+    q: "What is a general backup method for extending trailing edge flaps if the normal hydraulic flap drive is unavailable?",
+    options: [
+      "An alternate (often electrically powered, lower-rate) flap extension system that can drive the flaps down independently of the primary hydraulic drive",
+      "The flaps cannot be extended by any means other than the primary hydraulic drive",
+      "The crew must manually push the flap surfaces by hand from outside the aircraft",
+      "Flaps automatically extend fully the instant hydraulic pressure is lost",
+    ],
+    answer: 0,
+    explain:
+      "An alternate flap extension system - commonly electrically driven and running at a slower rate than the primary hydraulic drive - gives the crew a way to get the flaps down for landing even if the normal hydraulic flap drive isn't available, trading speed of extension for continued availability of the function.",
+    reference: "Flight Controls - Alternate Flap Extension",
+  },
+  {
+    id: 15,
+    system: "Flight Controls",
+    q: "What is the general purpose of a stabilizer trim position indicator in the flight deck?",
+    options: [
+      "It shows the crew the current trim setting of the horizontal stabilizer, letting them confirm it's at an appropriate value for the current phase of flight, such as takeoff",
+      "It shows rudder trim only, never pitch trim",
+      "It indicates landing gear position rather than trim",
+      "It has no functional purpose and is a purely decorative gauge",
+    ],
+    answer: 0,
+    explain:
+      "Because stabilizer trim setting has a significant effect on pitch control and is checked as part of takeoff configuration, a dedicated trim position indicator lets the crew directly confirm the current setting - supporting both routine trim monitoring in flight and the pre-takeoff configuration check.",
+    reference: "Flight Controls - Stabilizer Trim Position Indicator",
+  },
 ];

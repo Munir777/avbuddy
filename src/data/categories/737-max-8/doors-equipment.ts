@@ -155,4 +155,79 @@ export const B737_DOORS_EQUIPMENT_QUESTIONS: Question[] = [
       "An emergency lighting system that depends on its own dedicated battery power stays available precisely in the scenario it matters most - a total loss of the aircraft's main electrical system - ensuring the cabin (and exit markings/path lighting) can still be illuminated to support a safe evacuation.",
     reference: "Doors - Emergency Lighting Power Source",
   },
+  {
+    id: 11,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of a lockable, reinforced cockpit door on modern transport aircraft?",
+    options: [
+      "To restrict access to the flight deck, protecting the crew and flight controls from unauthorized entry during flight",
+      "To provide sound insulation only, with no security purpose at all",
+      "To serve as the primary emergency evacuation exit for passengers",
+      "It exists purely as a decorative partition with no locking capability",
+    ],
+    answer: 0,
+    explain:
+      "A reinforced, lockable cockpit door is specifically intended to restrict flight deck access to authorized crew, protecting the pilots and flight controls from unauthorized entry during flight - a security-driven design distinct from the aircraft's other, non-security cabin doors and partitions.",
+    reference: "Doors & Equipment - Cockpit Door Security",
+  },
+  {
+    id: 12,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of wing illumination (wing scan) lights?",
+    options: [
+      "They let the crew visually inspect the wing leading edge and upper surface at night, for example to check for ice accumulation",
+      "They are used only to signal other aircraft during flight",
+      "They illuminate the cargo compartment, not the wing",
+      "They function only while the aircraft is parked with the engines shut down",
+    ],
+    answer: 0,
+    explain:
+      "Wing illumination lights are aimed to shine across the wing's upper surface and leading edge, letting the crew visually check the wing at night - useful, for example, for assessing whether ice has accumulated there before takeoff or during flight in icing conditions.",
+    reference: "Doors & Equipment - Wing Illumination Lights",
+  },
+  {
+    id: 13,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of a portable megaphone carried as cabin emergency equipment?",
+    options: [
+      "It lets cabin crew amplify their voice to direct passengers during an evacuation if the normal public address system is unavailable (such as after a loss of electrical power)",
+      "It is used only for routine pre-flight safety briefings",
+      "It replaces the need for any other emergency equipment",
+      "It functions only when connected to the aircraft's main electrical system",
+    ],
+    answer: 0,
+    explain:
+      "A portable, battery-powered megaphone gives cabin crew a way to project commands loudly to passengers during an evacuation specifically if the aircraft's normal public address system isn't available - such as after a power failure - which is exactly the scenario where clear crew instructions matter most and the normal PA might not be working.",
+    reference: "Doors & Equipment - Megaphone",
+  },
+  {
+    id: 14,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of a first aid kit carried as standard cabin emergency equipment?",
+    options: [
+      "It provides basic medical supplies cabin crew can use to treat minor injuries or common in-flight medical issues among passengers or crew",
+      "It is intended only for use by ground maintenance personnel, never in flight",
+      "It replaces the need for any other medical equipment onboard",
+      "It functions only as a fire-fighting tool, unrelated to medical care",
+    ],
+    answer: 0,
+    explain:
+      "A first aid kit gives cabin crew ready access to basic medical supplies for handling minor injuries or common in-flight medical situations, supporting an initial response before the aircraft can land and get more advanced medical care involved if needed.",
+    reference: "Doors & Equipment - First Aid Kit",
+  },
+  {
+    id: 15,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of an automated external defibrillator (AED) carried on many passenger aircraft?",
+    options: [
+      "It lets crew deliver a defibrillating shock to a passenger experiencing a sudden cardiac emergency, using automated guidance so it can be operated by crew without specialized medical training",
+      "It is used only to monitor cabin air quality",
+      "It functions as a backup power source for cabin lighting",
+      "It replaces the need to divert or land for any medical emergency",
+    ],
+    answer: 0,
+    explain:
+      "An AED is designed to be usable by crew members without specialized medical training - it analyzes the patient's heart rhythm and gives step-by-step automated guidance - so it can be applied quickly to a passenger in cardiac arrest, potentially providing life-saving treatment well before the aircraft could land and hand the passenger to professional medical care.",
+    reference: "Doors & Equipment - Automated External Defibrillator",
+  },
 ];

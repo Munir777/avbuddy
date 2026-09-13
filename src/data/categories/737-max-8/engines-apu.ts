@@ -155,4 +155,79 @@ export const B737_ENGINES_APU_QUESTIONS: Question[] = [
       "The start valve is what actually admits pneumatic air to the starter motor at the beginning of the start sequence; once the engine has accelerated to a self-sustaining rotational speed on its own combustion, the valve automatically closes, cutting off air to the (now unneeded) starter as the engine continues accelerating to idle by itself.",
     reference: "Engines - Start Valve",
   },
+  {
+    id: 11,
+    system: "Engines & APU",
+    q: "What is the general purpose of a thrust reverser on a turbofan engine?",
+    options: [
+      "It redirects a portion of engine exhaust/fan air forward to help decelerate the aircraft after touchdown, supplementing wheel braking",
+      "It increases forward thrust during takeoff",
+      "It is used only during cruise flight to improve fuel efficiency",
+      "It permanently shuts down the engine once deployed",
+    ],
+    answer: 0,
+    explain:
+      "A thrust reverser redirects a portion of the engine's airflow forward (rather than rearward), producing a deceleration force that supplements wheel braking during the landing roll or a rejected takeoff - it's generally restricted to ground use and stowed again before the aircraft taxis at low speed.",
+    reference: "Engines - Thrust Reversers",
+  },
+  {
+    id: 12,
+    system: "Engines & APU",
+    q: "Why do modern turbofan engines typically use a dual-channel electronic engine control (EEC/FADEC) architecture?",
+    options: [
+      "So a fault in one control channel doesn't leave the engine with no electronic control at all, since the second channel can take over managing the engine",
+      "The second channel exists only to control cabin temperature",
+      "Dual channels are fitted purely to reduce fuel burn, with no redundancy purpose",
+      "Only one channel is ever functional; the second is a non-functional spare with no automatic switchover",
+    ],
+    answer: 0,
+    explain:
+      "A dual-channel electronic engine control is built so that if one channel develops a fault, the system automatically transfers full engine control to the healthy remaining channel, protecting against a single electronic fault leaving the engine without any computerized control of fuel scheduling and limit protection.",
+    reference: "Engines - Dual-Channel Electronic Engine Control",
+  },
+  {
+    id: 13,
+    system: "Engines & APU",
+    q: "What is the general purpose of an engine oil scavenge pump, separate from the pressure pump that supplies oil to bearings and gears?",
+    options: [
+      "It returns oil that has passed through the bearing/gear areas back to the oil tank, since oil can't simply be left to accumulate wherever it drains to inside the engine",
+      "It supplies fresh oil under pressure to the bearings, duplicating the pressure pump's job",
+      "It has no real function and exists only as a backup pressure pump",
+      "It pumps fuel rather than oil",
+    ],
+    answer: 0,
+    explain:
+      "After oil has done its job lubricating and cooling bearings and gears, it has to be actively recovered from wherever it collects inside the engine and returned to the tank; scavenge pumps handle that return trip, which is a distinct job from the pressure pump that pushes fresh oil out to those components in the first place.",
+    reference: "Engines - Oil Scavenge Pumps",
+  },
+  {
+    id: 14,
+    system: "Engines & APU",
+    q: "What is the general purpose of an APU inlet door that opens automatically rather than staying open at all times?",
+    options: [
+      "Keeping it closed except when the APU is running (or about to run) reduces drag and keeps foreign objects/moisture out of the APU compartment the rest of the time",
+      "The door exists solely to control cabin temperature",
+      "The door must always be manually opened by ground crew before every APU start",
+      "It has no aerodynamic or protective purpose at all",
+    ],
+    answer: 0,
+    explain:
+      "Automatically opening the APU inlet door only when the APU is starting or running (and keeping it closed the rest of the time) reduces the drag a permanently open inlet would create and helps keep debris, water, or foreign objects out of the APU compartment when the unit isn't in use.",
+    reference: "APU - Inlet Door Operation",
+  },
+  {
+    id: 15,
+    system: "Engines & APU",
+    q: "Unlike a piston twin, where losing one engine can create a distinctly more hazardous 'critical engine' asymmetric condition, why is that distinction generally much less pronounced on a twin-turbofan jet transport?",
+    options: [
+      "The two engines are mounted close to the fuselage centerline with relatively little offset, and yaw/rudder authority is sized to handle an engine failure from either side without one side being meaningfully worse than the other",
+      "Twin-turbofan jets are incapable of ever losing an engine in flight",
+      "There is no rudder or directional control available on a twin-turbofan jet",
+      "Both engines are mechanically interconnected so a failure of one automatically stops the other",
+    ],
+    answer: 0,
+    explain:
+      "A traditional light piston twin's outboard-mounted, opposite-rotating (or same-rotating) propellers can make losing one engine notably worse than losing the other, but a podded twin-turbofan transport generally has its engines close enough to the centerline, with rudder/directional control authority sized for an engine failure from either side, that there isn't the same kind of pronounced 'critical engine' distinction to plan around.",
+    reference: "Engines - No Pronounced Critical Engine on a Twin-Turbofan",
+  },
 ];

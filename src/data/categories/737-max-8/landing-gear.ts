@@ -155,4 +155,79 @@ export const B737_LANDING_GEAR_QUESTIONS: Question[] = [
       "A chined tire has a specially shaped sidewall that deflects the spray of water or slush thrown up by the nose wheel outward and away from directly ahead of the aircraft, which helps reduce the amount that could otherwise be thrown up into a rear-mounted or low-slung engine inlet during ground operations on a wet or contaminated surface.",
     reference: "Landing Gear - Chined Nose Tires",
   },
+  {
+    id: 11,
+    system: "Landing Gear",
+    q: "What is the general purpose of mechanical up-locks and down-locks on the landing gear, separate from hydraulic pressure holding the gear in position?",
+    options: [
+      "They mechanically hold the gear in the up or down position without needing continuous hydraulic pressure, so the gear stays safely locked even if pressure is later lost",
+      "They exist only to slow down gear retraction, with no locking function",
+      "They are used only during maintenance and have no function in normal operation",
+      "They lock the gear doors rather than the gear legs themselves",
+    ],
+    answer: 0,
+    explain:
+      "Up-locks and down-locks are mechanical devices that physically hold the gear in its retracted or extended position independent of ongoing hydraulic pressure, meaning the gear stays safely locked in place even if hydraulic pressure to that system is subsequently lost - continuous pressure isn't what's keeping the gear where it is once it's locked.",
+    reference: "Landing Gear - Mechanical Up/Down-Locks",
+  },
+  {
+    id: 12,
+    system: "Landing Gear",
+    q: "Besides enabling ground spoiler deployment, what is another general use of a weight-on-wheels (air/ground) signal elsewhere in the aircraft's systems?",
+    options: [
+      "It's used broadly across multiple systems - such as inhibiting certain warnings on the ground, enabling autobrake and antiskid logic, and other functions that should behave differently in the air versus on the ground",
+      "It has no use outside of ground spoiler deployment",
+      "It is used only to control cabin lighting",
+      "It only affects the fuel system, with no other application",
+    ],
+    answer: 0,
+    explain:
+      "A weight-on-wheels signal is one of the more widely used discrete inputs across the aircraft's systems - beyond enabling ground spoilers, it also factors into things like inhibiting certain aural warnings while safely on the ground, and enabling functions such as antiskid and autobrake logic that are only meant to be active once the aircraft is actually on the ground.",
+    reference: "Landing Gear - Weight-on-Wheels Broader System Uses",
+  },
+  {
+    id: 13,
+    system: "Landing Gear",
+    q: "What is a general benefit of a tire pressure monitoring capability?",
+    options: [
+      "It helps alert maintenance or the crew to an underinflated tire before it becomes a bigger problem, since an underinflated tire runs hotter and is at greater risk of failure",
+      "It has no relationship to tire safety or maintenance",
+      "It is used only to inflate tires automatically in flight",
+      "It monitors brake temperature rather than tire pressure",
+    ],
+    answer: 0,
+    explain:
+      "An underinflated tire flexes more and runs hotter during taxi, takeoff, and landing, increasing the risk of tire failure, so a tire pressure monitoring capability - whether continuous or checked periodically - helps catch a developing underinflation issue before it progresses to an actual tire failure.",
+    reference: "Landing Gear - Tire Pressure Monitoring",
+  },
+  {
+    id: 14,
+    system: "Landing Gear",
+    q: "Why is braking applied to the wheels briefly before gear retraction on some aircraft?",
+    options: [
+      "To stop wheel rotation before the gear is stowed, since a still-spinning wheel could otherwise cause vibration, gyroscopic effects, or excess wear as it retracts into the confined wheel well",
+      "To recharge the hydraulic accumulator using the wheel's rotational energy",
+      "It is done purely to test the antiskid system after every takeoff",
+      "It has no functional purpose and happens only by coincidence",
+    ],
+    answer: 0,
+    explain:
+      "A wheel that's still spinning rapidly from the takeoff roll could introduce unwanted vibration or gyroscopic effects, and simply retracting a fast-spinning wheel into a tightly fitted wheel well isn't ideal, so a brief automatic braking action stops wheel rotation before or during retraction on some designs, giving a cleaner, quieter stowage.",
+    reference: "Landing Gear - Wheel Braking During Retraction",
+  },
+  {
+    id: 15,
+    system: "Landing Gear",
+    q: "What is the general purpose of ground lock pins installed in the landing gear while the aircraft is parked or being serviced?",
+    options: [
+      "They mechanically prevent the gear from retracting (even if hydraulic pressure or an electrical fault were to command it) while maintenance personnel are working around or under the aircraft",
+      "They are installed only during flight, never while the aircraft is on the ground",
+      "They control nosewheel steering rather than preventing retraction",
+      "They have no safety function and are purely a cosmetic maintenance item",
+    ],
+    answer: 0,
+    explain:
+      "Ground lock pins are inserted into the gear mechanism specifically to physically block retraction while the aircraft is parked or being serviced, protecting maintenance personnel working underneath or around the gear from an inadvertent (electrical fault or accidental command) retraction attempt - they're removed again before flight.",
+    reference: "Landing Gear - Ground Lock Pins",
+  },
 ];

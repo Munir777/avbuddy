@@ -155,4 +155,79 @@ export const B737_AUTOMATIC_FLIGHT_QUESTIONS: Question[] = [
       "The typical sequence arms the localizer first so the aircraft captures and establishes lateral alignment with the runway centerline, with the glideslope mode then arming and subsequently capturing the vertical path once the aircraft is established - a sequence that reflects getting the aircraft correctly lined up with the runway before beginning to follow the vertical descent profile.",
     reference: "Automatic Flight - Localizer/Glideslope Capture Sequence",
   },
+  {
+    id: 11,
+    system: "Automatic Flight",
+    q: "What is the general purpose of an autothrottle low-speed protection function?",
+    options: [
+      "It can automatically add thrust to prevent airspeed from decaying below a safe minimum, even if the autothrottle is otherwise commanding a lower thrust setting",
+      "It automatically reduces thrust further whenever speed gets low, opposite to what's needed",
+      "It only functions while the aircraft is on the ground",
+      "It has no relationship to airspeed and instead protects against overspeed only",
+    ],
+    answer: 0,
+    explain:
+      "A low-speed protection function within the autothrottle system is designed to step in and add thrust automatically if airspeed decays toward an unsafe minimum, overriding what would otherwise be a lower commanded thrust setting - a safety layer that helps guard against an inadvertent low-speed condition developing unnoticed.",
+    reference: "Automatic Flight - Autothrottle Low-Speed Protection",
+  },
+  {
+    id: 12,
+    system: "Automatic Flight",
+    q: "What is the general purpose of a flight mode annunciator (FMA) on the primary flight display?",
+    options: [
+      "It shows the crew exactly which autopilot, flight director, and autothrottle modes are currently active or armed, so there's no ambiguity about what the automation is doing",
+      "It displays only the current outside air temperature",
+      "It shows fuel quantity rather than automation mode status",
+      "It is visible only when all automation is switched off",
+    ],
+    answer: 0,
+    explain:
+      "The flight mode annunciator is specifically there to remove any guesswork about what the automatic flight system is currently doing - clearly displaying the active and armed lateral, vertical, and autothrottle modes so the crew can confirm the aircraft is actually configured the way they intend, rather than having to infer it from aircraft behavior alone.",
+    reference: "Automatic Flight - Flight Mode Annunciator",
+  },
+  {
+    id: 13,
+    system: "Automatic Flight",
+    q: "Why do autopilot heading/track modes generally include a maximum bank angle limit?",
+    options: [
+      "It keeps automatically-commanded turns within a comfortable, safe bank angle rather than allowing an aggressive turn rate that could be uncomfortable or approach handling limits",
+      "It has no functional purpose and exists only for cosmetic reasons",
+      "It is applied only during an automatic landing, never during cruise",
+      "It forces every turn to use the maximum structural bank angle available",
+    ],
+    answer: 0,
+    explain:
+      "Limiting the bank angle the autopilot will use to make a commanded turn keeps automatic maneuvering within a comfortable, predictable range for passengers and crew, rather than letting the system choose an aggressive bank angle purely to minimize turn time - trading a bit of turn efficiency for smoother, more predictable automated flight.",
+    reference: "Automatic Flight - Bank Angle Limiting",
+  },
+  {
+    id: 14,
+    system: "Automatic Flight",
+    q: "Why is fully automatic landing (autoland) generally only approved for use on certain types of instrument approaches, rather than being available on any approach?",
+    options: [
+      "Autoland relies on a sufficiently precise and reliable vertical and lateral guidance signal (such as an instrument landing system) to safely fly the aircraft all the way to touchdown, which not every approach type provides",
+      "Autoland can be used on literally any approach type with no restriction whatsoever",
+      "Autoland is restricted only by weather, never by the type of approach being flown",
+      "Autoland requires no external guidance signal at all",
+    ],
+    answer: 0,
+    explain:
+      "Flying the aircraft automatically all the way to touchdown demands a guidance signal precise and reliable enough to safely support that - something an instrument landing system approach is specifically built to provide, but many other approach types are not - which is why autoland approval is generally tied to specific approach types rather than being available universally.",
+    reference: "Automatic Flight - Autoland Approach Type Restriction",
+  },
+  {
+    id: 15,
+    system: "Automatic Flight",
+    q: "What is the general function of an altitude hold mode?",
+    options: [
+      "It commands the autopilot to maintain the aircraft's current altitude at the moment the mode is engaged, without requiring the crew to first dial in a target altitude",
+      "It automatically climbs the aircraft to its maximum certificated altitude",
+      "It only functions during an automatic landing sequence",
+      "It disengages the autopilot entirely once selected",
+    ],
+    answer: 0,
+    explain:
+      "Altitude hold simply locks in and maintains whatever altitude the aircraft happens to be at the moment the mode is engaged, giving a quick way to level off at the current altitude without needing to first select a specific target value - distinct from altitude capture, which flies toward a pre-selected target altitude.",
+    reference: "Automatic Flight - Altitude Hold Mode",
+  },
 ];

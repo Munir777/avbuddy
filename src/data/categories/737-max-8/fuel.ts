@@ -155,4 +155,79 @@ export const B737_FUEL_QUESTIONS: Question[] = [
       "A fuel tank vent system keeps the tank's internal air space connected to outside ambient pressure, so as fuel is used (reducing liquid volume) or as temperature changes cause the fuel and vapor to expand or contract, the tank pressure stays equalized rather than building up a harmful positive or negative pressure inside a sealed structure.",
     reference: "Fuel - Tank Venting",
   },
+  {
+    id: 11,
+    system: "Fuel",
+    q: "What is the general purpose of a manual drip-stick (or magnetic dripstick) fuel measurement, alongside the electronic fuel quantity indicating system?",
+    options: [
+      "It provides an independent, purely mechanical way to physically verify fuel quantity in a tank, useful for cross-checking or if the electronic system's reading is in doubt",
+      "It replaces the need for any electronic fuel quantity indication at all",
+      "It measures fuel temperature rather than quantity",
+      "It can only be used while the aircraft is in flight",
+    ],
+    answer: 0,
+    explain:
+      "A manual drip-stick (or similar mechanical dipstick-type) measurement lets ground personnel physically verify how much fuel is actually in a tank, independent of the electronic fuel quantity indicating system - a useful cross-check if the electronic reading looks suspect or needs independent confirmation.",
+    reference: "Fuel - Manual Drip-Stick Cross-Check",
+  },
+  {
+    id: 12,
+    system: "Fuel",
+    q: "What is the general purpose of a fuel filter bypass indication?",
+    options: [
+      "It alerts the crew or maintenance that the fuel filter has become clogged enough that fuel is bypassing it unfiltered, rather than the blockage silently starving the engine of fuel",
+      "It shows how much fuel remains in the tank",
+      "It indicates that the fuel crossfeed valve is open",
+      "It has no relationship to filter condition and only monitors temperature",
+    ],
+    answer: 0,
+    explain:
+      "A fuel filter is generally designed with a spring-loaded bypass that opens if the filter becomes clogged enough to restrict flow significantly, so the engine keeps getting fuel (now unfiltered) rather than being starved; a bypass indication flags to the crew or maintenance that this has happened, since continuing to fly with unfiltered fuel isn't a condition to just leave unaddressed.",
+    reference: "Fuel - Fuel Filter Bypass Indication",
+  },
+  {
+    id: 13,
+    system: "Fuel",
+    q: "What is the general purpose of a fuel heater in the fuel supply system?",
+    options: [
+      "It warms fuel before it reaches sensitive components, reducing the risk of ice crystals (which can form from residual water in the fuel at cold temperatures) restricting fuel flow",
+      "It is used to cool the fuel down before it enters the tanks",
+      "It heats the cabin using fuel as the heat source",
+      "It has no function related to fuel temperature or ice",
+    ],
+    answer: 0,
+    explain:
+      "Fuel can carry small amounts of dissolved or entrained water, which can form ice crystals at the low temperatures encountered at cruise altitude; a fuel heater (often using engine oil heat, which also helps cool the oil) warms the fuel enough to prevent that ice from forming or to melt ice crystals before they can restrict flow through filters or other components.",
+    reference: "Fuel - Fuel Heater",
+  },
+  {
+    id: 14,
+    system: "Fuel",
+    q: "How is the APU typically fed with fuel relative to the main engines' fuel supply?",
+    options: [
+      "It draws from the same tank system (commonly via a dedicated feed line), rather than needing an entirely separate fuel tank of its own",
+      "It has its own completely separate onboard fuel tank, unconnected to the main tanks",
+      "It cannot be fueled at all and instead runs on stored electrical energy",
+      "It can only run using fuel transferred manually by ground crew before each start",
+    ],
+    answer: 0,
+    explain:
+      "The APU generally draws fuel from the same tank system that feeds the main engines - typically via its own dedicated feed line and pump arrangement - rather than requiring a separate, independent fuel tank, keeping the fuel system simpler while still giving the APU a reliable supply.",
+    reference: "Fuel - APU Fuel Feed",
+  },
+  {
+    id: 15,
+    system: "Fuel",
+    q: "What is the general purpose of a low fuel quantity caution in the flight deck?",
+    options: [
+      "It alerts the crew that remaining fuel quantity has dropped to a level where it needs their close attention and planning, well before an actual fuel exhaustion situation could develop",
+      "It only appears after a tank is completely empty",
+      "It indicates a fuel temperature problem rather than quantity",
+      "It has no operational significance and requires no crew action",
+    ],
+    answer: 0,
+    explain:
+      "A low fuel quantity caution is set to trigger with meaningful remaining fuel and time margin, specifically so the crew has advance notice to review their fuel plan, consider diversion options, or take other precautions - rather than the first indication of a developing problem being an imminent fuel exhaustion situation.",
+    reference: "Fuel - Low Fuel Quantity Caution",
+  },
 ];

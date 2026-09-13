@@ -155,4 +155,79 @@ export const B737_NAVIGATION_QUESTIONS: Question[] = [
       "A lateral deviation indication gives the pilot a continuously updated, at-a-glance picture of how far off (left or right) the aircraft currently is from the intended course, letting corrections be made promptly and smoothly rather than needing to compare raw position data to a chart to figure out the current offset.",
     reference: "Flight Management - Lateral Deviation Indication",
   },
+  {
+    id: 11,
+    system: "Navigation",
+    q: "What is the general purpose of a vertical situation display (VSD), where available?",
+    options: [
+      "It presents a side-profile view of the aircraft's vertical flight path relative to terrain and the planned descent profile, complementing the plan-view (lateral) navigation display",
+      "It shows only lateral track information, duplicating the main navigation display",
+      "It displays cabin pressurization data rather than flight path information",
+      "It functions only while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "While the primary navigation display typically shows a plan (top-down) view of the route, a vertical situation display adds a complementary side-profile view showing the aircraft's altitude/path relative to terrain and the planned vertical profile - giving the crew a clearer picture of the vertical dimension that a plan view alone doesn't convey well.",
+    reference: "Flight Management - Vertical Situation Display",
+  },
+  {
+    id: 12,
+    system: "Navigation",
+    q: "What does 'cross-track error' generally represent on a moving-map style navigation display?",
+    options: [
+      "The current lateral distance between the aircraft's actual position and the intended track between two waypoints",
+      "The aircraft's altitude above the terrain directly below it",
+      "The remaining flight time to the destination",
+      "The difference between true and magnetic heading",
+    ],
+    answer: 0,
+    explain:
+      "Cross-track error is simply how far off to one side the aircraft currently is from the straight line (track) it's supposed to be flying between two waypoints - a moving-map display commonly shows this graphically so the pilot can see at a glance how far off course the aircraft has drifted and correct accordingly.",
+    reference: "Flight Management - Cross-Track Error",
+  },
+  {
+    id: 13,
+    system: "Navigation",
+    q: "Why might a navigation system switch its heading reference from magnetic to true north when operating at very high latitudes?",
+    options: [
+      "Magnetic variation becomes very large and changes rapidly near the poles, making a magnetic reference unreliable there, so a true-north reference is used instead for a more stable heading solution",
+      "Magnetic north and true north are always identical everywhere on Earth",
+      "True north referencing is used only near the equator, never near the poles",
+      "It has nothing to do with latitude and depends only on aircraft speed",
+    ],
+    answer: 0,
+    explain:
+      "Near the magnetic poles, magnetic variation becomes extremely large and can change quickly over short distances, making a magnetic heading reference unreliable there; navigation systems can switch to referencing true north instead in these high-latitude regions, avoiding the instability a magnetic reference would otherwise introduce.",
+    reference: "Flight Management - True vs Magnetic Reference at High Latitude",
+  },
+  {
+    id: 14,
+    system: "Navigation",
+    q: "What does a 'direct-to' function on a flight management system generally let the crew do?",
+    options: [
+      "Command the aircraft to fly directly toward a selected waypoint from its present position, rather than continuing to follow the previously planned route sequence",
+      "Automatically declare an emergency to air traffic control",
+      "Bypass all fuel planning calculations entirely",
+      "Force the aircraft to immediately climb to its maximum operating altitude",
+    ],
+    answer: 0,
+    explain:
+      "A direct-to function lets the crew quickly command the aircraft to fly a direct course from its current position to a chosen waypoint, cutting across the previously planned route rather than continuing to follow it leg by leg - useful for a shortcut, a course change requested by ATC, or simply getting back on course after a deviation.",
+    reference: "Flight Management - Direct-To Function",
+  },
+  {
+    id: 15,
+    system: "Navigation",
+    q: "Why is the navigation database used by the flight management system updated on a regular cycle?",
+    options: [
+      "Because published routes, waypoints, procedures, and navigation aid information can and do change over time, so an outdated database could no longer accurately reflect the real-world navigation environment",
+      "The database never needs updating once it is first installed",
+      "It is updated only to change the display's color scheme",
+      "Updates are done solely to add new cosmetic map features, not real navigation data",
+    ],
+    answer: 0,
+    explain:
+      "Waypoints, airways, procedures, and navigation aid details are periodically revised in the real world - new procedures published, old ones withdrawn, frequencies changed - so the navigation database needs regular updating on a defined cycle to keep the flight management system's information consistent with the actual current navigation environment, rather than flying with stale data.",
+    reference: "Flight Management - Navigation Database Currency",
+  },
 ];

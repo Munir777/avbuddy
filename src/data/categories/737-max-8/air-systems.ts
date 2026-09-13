@@ -156,4 +156,79 @@ export const B737_AIR_SYSTEMS_QUESTIONS: Question[] = [
       "The cabin pressure controller deliberately limits how quickly cabin altitude changes - well within what the aircraft's actual rate of climb or descent might otherwise demand - so passengers and crew experience a much gentler pressure change on their ears than the aircraft's own often much faster climb or descent rate would produce if cabin altitude tracked it directly.",
     reference: "Air Systems - Cabin Rate of Change",
   },
+  {
+    id: 11,
+    system: "Air Systems",
+    q: "What is the general purpose of a bleed air isolation valve between the left and right sides of the pneumatic system?",
+    options: [
+      "It lets the crew separate the two sides of the pneumatic system, for example to stop a leak or contamination on one side from affecting the other, or to isolate a failed source",
+      "It permanently joins both sides together with no ability to separate them",
+      "It controls hydraulic pressure rather than bleed air",
+      "It has no function and exists only as a manufacturing artifact",
+    ],
+    answer: 0,
+    explain:
+      "An isolation valve gives the crew the ability to split the pneumatic system into independent left and right sides - useful for containing a leak, duct fault, or contamination event to one side, or for isolating a failed bleed air source while still supplying the rest of the system from the other side.",
+    reference: "Air Systems - Bleed Isolation Valve",
+  },
+  {
+    id: 12,
+    system: "Air Systems",
+    q: "Why are bleed air ducts typically fitted with duct leak/overheat detection along their length?",
+    options: [
+      "A leaking or overheating duct carries hot, high-pressure air that could damage surrounding structure or systems, so detecting it early lets the crew isolate that duct before more serious damage occurs",
+      "Duct temperature has no bearing on aircraft safety",
+      "Detection exists purely to monitor cabin comfort, not duct integrity",
+      "It is required only for ducts located inside the passenger cabin",
+    ],
+    answer: 0,
+    explain:
+      "Bleed air ducts carry air that is both hot and under significant pressure, so a leak or overheat condition along the duct run could damage nearby structure, wiring, or other systems if left unaddressed; dedicated detection along the duct's length lets the crew get an early alert and isolate the affected duct before the damage becomes severe.",
+    reference: "Air Systems - Duct Leak/Overheat Detection",
+  },
+  {
+    id: 13,
+    system: "Air Systems",
+    q: "What is the general purpose of a ground air connection point on the pneumatic system?",
+    options: [
+      "It lets an external ground air cart supply conditioned or high-pressure air to the aircraft, for cabin conditioning or engine starting, without needing the APU or main engines running",
+      "It can only be used to remove air from the aircraft, never supply it",
+      "It functions only once the aircraft is airborne",
+      "It replaces the need for any onboard bleed air system entirely",
+    ],
+    answer: 0,
+    explain:
+      "A ground air connection lets the aircraft take conditioned or high-pressure air from an external ground cart, which can be used for cabin air conditioning during ground servicing or to assist an engine start, giving an alternative to relying on the APU or a running main engine for that air.",
+    reference: "Air Systems - Ground Air Cart Connection",
+  },
+  {
+    id: 14,
+    system: "Air Systems",
+    q: "What is the general purpose of separate cabin temperature zone controls, rather than one single cabin-wide temperature setting?",
+    options: [
+      "Different areas of the cabin (and the flight deck) can have different heating/cooling needs due to factors like sun exposure, occupancy, or equipment heat load, so zone control lets each area be conditioned to a more appropriate temperature",
+      "Zone control exists only to control cabin lighting, not temperature",
+      "Only the flight deck can ever have its own temperature setting; the cabin is always uniform",
+      "It has no real effect since all zones are always held at exactly the same temperature",
+    ],
+    answer: 0,
+    explain:
+      "Different zones of the aircraft - forward cabin, aft cabin, flight deck - can have different heating or cooling needs based on things like sun load, passenger occupancy density, or equipment heat generation, so allowing each zone some independent temperature control lets the conditioning better match the actual needs of each area rather than forcing one setting on the whole aircraft.",
+    reference: "Air Systems - Cabin Temperature Zone Control",
+  },
+  {
+    id: 15,
+    system: "Air Systems",
+    q: "What is the general purpose of a ram air system as a backup source of ventilation air?",
+    options: [
+      "It can bring in outside air directly through an inlet, using the aircraft's forward speed, to provide at least basic ventilation if normal bleed-air-based air conditioning is lost",
+      "It is the primary source of all cabin air under normal operation",
+      "It generates hydraulic power rather than providing air",
+      "It functions only while the aircraft is parked on the ground",
+    ],
+    answer: 0,
+    explain:
+      "A ram air inlet can admit outside air into the cabin ventilation system using the aircraft's own forward motion, without depending on bleed air or the packs - giving the crew a basic, unconditioned but functional source of ventilation air as a backup if the normal bleed-air-based air conditioning system is unavailable.",
+    reference: "Air Systems - Ram Air Backup Ventilation",
+  },
 ];

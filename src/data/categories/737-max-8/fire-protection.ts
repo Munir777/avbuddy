@@ -155,4 +155,79 @@ export const B737_FIRE_PROTECTION_QUESTIONS: Question[] = [
       "A fire indication clearing after extinguishing agent discharge is a good sign, but it doesn't guarantee the fire can't reignite, so continued monitoring remains important - along with being aware of remaining extinguishing capacity, since a second bottle (where fitted) may be needed if the first discharge doesn't fully resolve the situation.",
     reference: "Fire Protection - Post-Extinguishing Monitoring",
   },
+  {
+    id: 11,
+    system: "Fire Protection",
+    q: "Why have many aviation fire extinguishing agents shifted away from older halon-based agents toward alternative agents in newer designs?",
+    options: [
+      "Certain halon agents have environmental concerns (such as ozone-depletion potential), prompting the development and adoption of alternative agents with similar firefighting effectiveness but a better environmental profile",
+      "Halon agents were replaced because they were completely ineffective at extinguishing any fire",
+      "The shift occurred only because halon agents were more expensive with no other consideration",
+      "There has been no shift away from halon agents in aviation at any point",
+    ],
+    answer: 0,
+    explain:
+      "Some traditional halon fire extinguishing agents have recognized environmental concerns, including ozone-depletion potential, which has driven ongoing efforts across the industry to develop and adopt alternative agents that still provide effective fire suppression while reducing that environmental impact.",
+    reference: "Fire Protection - Halon to Alternative Agent Shift",
+  },
+  {
+    id: 12,
+    system: "Fire Protection",
+    q: "Why might cargo compartments be classified into different categories (such as by accessibility and level of built-in fire protection) rather than being treated identically?",
+    options: [
+      "The level of fire risk and the practicality of crew access differ between compartment types, so the required detection and suppression equipment is matched to each compartment's specific risk and accessibility",
+      "All cargo compartments are always treated as functionally identical with no distinction",
+      "Classification is based only on which compartment is largest by volume",
+      "It is done purely for weight and balance labeling with no fire-protection basis",
+    ],
+    answer: 0,
+    explain:
+      "Cargo compartments vary in how accessible they are to the crew in flight and in the kind of fire risk they present, so classifying them accordingly lets detection and suppression requirements be matched appropriately - a compartment that's inaccessible to the crew in flight, for example, generally needs a more self-sufficient built-in detection and suppression capability than one the crew can reach directly.",
+    reference: "Fire Protection - Cargo Compartment Classification",
+  },
+  {
+    id: 13,
+    system: "Fire Protection",
+    q: "Why is a smoke detector's alert threshold generally tuned carefully, rather than set to trigger on the smallest possible amount of smoke?",
+    options: [
+      "Setting the threshold too sensitively risks frequent nuisance alarms from routine sources (like a passenger's vaping or ordinary aerosol use), which could erode crew confidence in genuine warnings",
+      "Threshold tuning has no effect on how often nuisance alarms occur",
+      "A more sensitive threshold is always better with no operational tradeoff",
+      "Smoke detectors are never adjustable and use a single universal threshold across all installations",
+    ],
+    answer: 0,
+    explain:
+      "If a smoke detector's threshold were set to react to the smallest conceivable trace of smoke, it would likely trigger frequently from routine, non-hazardous sources, and frequent nuisance alarms risk eroding crew trust and urgency in responding to a real warning; tuning the threshold balances catching genuine fires promptly against not crying wolf too often.",
+    reference: "Fire Protection - Smoke Detector Alert Threshold",
+  },
+  {
+    id: 14,
+    system: "Fire Protection",
+    q: "How can maintenance personnel generally check that a fire extinguisher bottle is still serviceable (properly charged) without discharging it?",
+    options: [
+      "By checking indications such as the bottle's pressure gauge/pressure switch and the condition of its discharge cartridge, which reflect whether it remains properly charged and ready to fire",
+      "The only way to check serviceability is to actually discharge the bottle and observe the result",
+      "Serviceability cannot be determined by any means short of full disassembly of the aircraft",
+      "Bottles never need any serviceability checks once installed",
+    ],
+    answer: 0,
+    explain:
+      "Fire extinguisher bottles are typically fitted with a pressure indication (a gauge or pressure switch reflecting whether the bottle is still properly charged) and a discharge cartridge whose condition can be checked, letting maintenance confirm the bottle remains serviceable and ready to fire without needing to actually discharge it to find out.",
+    reference: "Fire Protection - Fire Bottle Serviceability Check",
+  },
+  {
+    id: 15,
+    system: "Fire Protection",
+    q: "Why is a fire extinguisher bottle discharge (even a successful one that stops the fire) generally followed by a maintenance logging/inspection requirement?",
+    options: [
+      "A discharge means that bottle's protection is now used up and the affected system needs to be inspected for damage, so recording and following up on the event ensures the aircraft isn't returned to service with reduced fire protection or unaddressed damage",
+      "Logging is done purely for historical record-keeping with no bearing on airworthiness",
+      "No follow-up action is ever required after a successful fire bottle discharge",
+      "The requirement applies only if the discharge failed to extinguish the fire",
+    ],
+    answer: 0,
+    explain:
+      "Once a fire extinguisher bottle has discharged, that bottle's protection capacity is used up and needs to be recharged or replaced, and the area where the fire occurred generally needs inspection for damage from the fire and the extinguishing agent itself - so a maintenance logging and follow-up requirement makes sure the aircraft isn't returned to service with reduced fire protection or unassessed damage left unaddressed.",
+    reference: "Fire Protection - Post-Discharge Maintenance Requirement",
+  },
 ];

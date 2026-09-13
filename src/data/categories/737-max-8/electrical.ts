@@ -155,4 +155,79 @@ export const B737_ELECTRICAL_QUESTIONS: Question[] = [
       "When the aircraft is reduced to a limited power source - such as the battery or a single generator - automatic load shedding disconnects non-essential loads so the available power isn't overwhelmed, preserving capacity for the flight-essential items that actually need to stay powered.",
     reference: "Electrical - Load Shedding",
   },
+  {
+    id: 11,
+    system: "Electrical",
+    q: "What is the general purpose of a generator control unit (GCU)?",
+    options: [
+      "It monitors a generator's output for faults such as overvoltage, undervoltage, or incorrect frequency, and automatically disconnects that generator from the bus if a fault is detected",
+      "It physically spins the generator faster to increase its output",
+      "It has no protective function and only displays generator temperature",
+      "It permanently disables a generator once installed",
+    ],
+    answer: 0,
+    explain:
+      "A generator control unit continuously monitors the quality of a generator's output, and if it detects a fault - an overvoltage, undervoltage, or off-frequency condition - it automatically disconnects that generator from the bus, protecting the rest of the electrical system from being fed bad power rather than waiting for a crew member to notice and react.",
+    reference: "Electrical - Generator Control Unit",
+  },
+  {
+    id: 12,
+    system: "Electrical",
+    q: "Why is an aircraft battery's condition (such as internal temperature, for certain battery chemistries) sometimes actively monitored beyond just its voltage?",
+    options: [
+      "Certain battery chemistries can be at risk of an internal thermal runaway condition, so monitoring beyond simple voltage helps catch a developing problem before it becomes hazardous",
+      "Battery condition has no bearing on safety and is monitored only for record-keeping",
+      "Monitoring exists purely to track how many charge cycles have occurred",
+      "It is done only to control cabin temperature, unrelated to the battery itself",
+    ],
+    answer: 0,
+    explain:
+      "Some aircraft battery chemistries carry a risk of a self-sustaining internal thermal runaway if a fault develops, so beyond simple voltage monitoring, additional indications (such as temperature) can give the crew or maintenance an earlier warning of a developing problem than voltage alone might reveal.",
+    reference: "Electrical - Battery Condition Monitoring",
+  },
+  {
+    id: 13,
+    system: "Electrical",
+    q: "What is the general purpose of an option for the crew to manually select the standby power system, rather than relying only on it engaging automatically?",
+    options: [
+      "It gives the crew a way to deliberately place the electrical system into the standby configuration themselves if they judge it necessary, rather than being limited to only what triggers automatically",
+      "Manual selection is never possible; standby power can only ever engage automatically",
+      "It has no real function since the automatic logic always covers every scenario",
+      "It permanently disables the main generators once selected",
+    ],
+    answer: 0,
+    explain:
+      "While standby power is designed to engage automatically under defined loss-of-power conditions, giving the crew a manual selection option as well means they aren't limited strictly to what the automatic logic is programmed to trigger on - they can deliberately place the system into standby configuration themselves if their own assessment of the situation calls for it.",
+    reference: "Electrical - Manual Standby Power Selection",
+  },
+  {
+    id: 14,
+    system: "Electrical",
+    q: "Why are some circuit breakers placarded or guarded against being reset in flight if they trip?",
+    options: [
+      "Resetting a tripped breaker can reintroduce power to a genuine fault, risking smoke, fire, or further damage, so certain breakers are specifically restricted from an in-flight reset attempt",
+      "All circuit breakers on the aircraft can always be safely reset in flight with no restriction",
+      "The placard exists purely to save weight",
+      "Resetting any breaker in flight is completely forbidden with no exceptions ever made",
+    ],
+    answer: 0,
+    explain:
+      "A tripped circuit breaker can indicate a genuine electrical fault, and blindly resetting it could reintroduce power to that fault - risking smoke, fire, or further equipment damage - so certain breakers, particularly for equipment where this risk is considered significant, carry a placard or guidance against resetting them in flight.",
+    reference: "Electrical - Circuit Breaker Reset Restrictions",
+  },
+  {
+    id: 15,
+    system: "Electrical",
+    q: "Why is wiring for redundant, safety-critical systems typically routed with physical separation between the redundant paths?",
+    options: [
+      "So that a single localized event - such as a fire, mechanical damage, or a cut bundle - can't damage both redundant paths at once and defeat the redundancy entirely",
+      "Physical separation is done purely to make the wiring easier to label",
+      "Redundant wiring is always bundled together for simplicity, with no separation practiced",
+      "It has no safety rationale and is done only to reduce electromagnetic interference",
+    ],
+    answer: 0,
+    explain:
+      "If redundant wiring paths were bundled together, a single localized event - a fire, a mechanical strike, or accidental damage in one area - could potentially damage both paths at once, defeating the whole point of having redundancy; routing them with physical separation means that kind of single event is much less likely to take out both paths simultaneously.",
+    reference: "Electrical - Wiring Segregation",
+  },
 ];
