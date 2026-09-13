@@ -31,6 +31,12 @@ import { B737_ENGINES_APU_QUESTIONS } from "./categories/737-max-8/engines-apu";
 import { B737_FLIGHT_CONTROLS_QUESTIONS } from "./categories/737-max-8/flight-controls";
 import { B737_AIR_SYSTEMS_QUESTIONS } from "./categories/737-max-8/air-systems";
 import { B737_LIMITATIONS_QUESTIONS } from "./categories/737-max-8/limitations";
+import { B737_FUEL_QUESTIONS } from "./categories/737-max-8/fuel";
+import { B737_LANDING_GEAR_QUESTIONS } from "./categories/737-max-8/landing-gear";
+import { B737_NAVIGATION_QUESTIONS } from "./categories/737-max-8/navigation";
+import { B737_WARNING_SYSTEMS_QUESTIONS } from "./categories/737-max-8/warning-systems";
+import { B737_DOORS_EQUIPMENT_QUESTIONS } from "./categories/737-max-8/doors-equipment";
+import { B737_AUTOMATIC_FLIGHT_QUESTIONS } from "./categories/737-max-8/automatic-flight";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -82,6 +88,12 @@ const B737_MAX_8_QUESTIONS: Question[] = [
   ...B737_FLIGHT_CONTROLS_QUESTIONS,
   ...B737_AIR_SYSTEMS_QUESTIONS,
   ...B737_LIMITATIONS_QUESTIONS,
+  ...B737_FUEL_QUESTIONS,
+  ...B737_LANDING_GEAR_QUESTIONS,
+  ...B737_NAVIGATION_QUESTIONS,
+  ...B737_WARNING_SYSTEMS_QUESTIONS,
+  ...B737_DOORS_EQUIPMENT_QUESTIONS,
+  ...B737_AUTOMATIC_FLIGHT_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "737 MAX 8" }));
 
 // Each category file numbers its own questions from 1, so IDs are
@@ -176,6 +188,9 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Engines & APU": { fg: "#E0703A", bg: "#3A1D0D" },
   "Air Systems": { fg: "#D9A441", bg: "#3A2C0D" },
   Limitations: { fg: "#D95F5F", bg: "#3A1414" },
+  "Warning Systems": { fg: "#E0433A", bg: "#3A0F0D" },
+  "Doors & Equipment": { fg: "#C4483B", bg: "#3A1410" },
+  "Automatic Flight": { fg: "#3FA65A", bg: "#0F2E18" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
