@@ -903,4 +903,100 @@ export const OPERATIONAL_PROCEDURES_QUESTIONS: Question[] = [
       "Pushback and engine start involve moving machinery, rotating propellers or engine intakes, and coordinated communication between ground crew and the flight deck - keeping unnecessary activity and distraction to a minimum around the aircraft during this phase reduces the risk of injury to ground personnel or damage to equipment.",
     reference: "Operational Procedures - Ground Operations Safety",
   },
+  {
+    id: 59,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the general difference between a 'MAYDAY' call and a 'PAN PAN' call?",
+    options: [
+      "MAYDAY signals a distress condition (grave and imminent danger requiring immediate assistance); PAN PAN signals an urgency condition that concerns safety but is not immediately life-threatening",
+      "The two calls mean exactly the same thing and are used interchangeably",
+      "PAN PAN is more serious than MAYDAY",
+      "MAYDAY is only used for medical emergencies, and PAN PAN for all other issues",
+    ],
+    answer: 0,
+    explain:
+      "MAYDAY (repeated three times) declares a distress condition - grave and imminent danger requiring immediate assistance - while PAN PAN (also repeated three times) declares an urgency condition, one that concerns the safety of the aircraft or people aboard but does not represent an immediate, grave threat - a graduated way of communicating the seriousness of a situation to ATC and other traffic.",
+    reference: "Operational Procedures - Distress & Urgency Radio Calls",
+  },
+  {
+    id: 60,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the general distinction between a 'ditching' and a 'forced landing'?",
+    options: [
+      "Ditching refers to a controlled emergency landing on water; a forced landing refers to an unplanned landing on land",
+      "The two terms describe exactly the same event, just using different words",
+      "A ditching can only occur intentionally during flight testing, never as an emergency",
+      "A forced landing can only happen over water, never over land",
+    ],
+    answer: 0,
+    explain:
+      "Ditching specifically describes a controlled emergency landing carried out on water, while a forced landing describes an unplanned landing carried out on land - the two terms distinguish the surface being landed on, since the techniques, equipment (life vests, rafts), and preparation involved differ significantly between them.",
+    reference: "Operational Procedures - Ditching & Forced Landing",
+  },
+  {
+    id: 61,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Before a planned ditching, what is a passenger brace position generally intended to help reduce?",
+    options: [
+      "The risk of injury from impact forces and flailing during the landing",
+      "The risk of hypoxia during the descent",
+      "The risk of hearing damage from cabin noise",
+      "The aircraft's structural loading during the flare",
+    ],
+    answer: 0,
+    explain:
+      "A brace position is designed to reduce injury from impact forces and uncontrolled flailing during a hard or emergency landing (including a ditching), by positioning the body to better withstand the deceleration forces involved and reduce the chance of striking nearby surfaces.",
+    reference: "Operational Procedures - Ditching & Forced Landing",
+  },
+  {
+    id: 62,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What type of extinguishing agent is commonly carried in aircraft cabin portable fire extinguishers, given its effectiveness across multiple fire types in an enclosed space?",
+    options: [
+      "A halon-type (halogenated hydrocarbon) agent",
+      "Plain water only, with no other agent used",
+      "Sand only, carried in a dedicated container",
+      "Compressed carbon dioxide only, in every installation",
+    ],
+    answer: 0,
+    explain:
+      "Halon-type extinguishing agents have been widely used in aircraft cabins because they are effective against multiple classes of fire, leave minimal residue, and don't pose the same electrical conductivity or cleanup concerns as water, which is important in a confined cabin environment - though the type and design of extinguishers carried can vary by aircraft and operator.",
+    reference: "Operational Procedures - Cabin Fire Extinguishing Agents",
+  },
+  {
+    id: 63,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "An Emergency Locator Transmitter (ELT) is generally designed to:",
+    options: [
+      "Activate automatically upon a sufficiently severe impact, transmitting a distress signal to aid search and rescue",
+      "Only function if manually switched on by a crew member before impact",
+      "Transmit continuously throughout every normal flight, regardless of any emergency",
+      "Serve only as a two-way voice radio for routine ATC communication",
+    ],
+    answer: 0,
+    explain:
+      "An ELT is generally designed to trigger automatically from the deceleration forces of a sufficiently severe impact, transmitting a distress signal to help search and rescue services locate the aircraft, even if the crew is unable to manually activate it themselves - though most ELTs can also be manually triggered where needed.",
+    reference: "Operational Procedures - Emergency Locator Transmitters",
+  },
+  {
+    id: 64,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "If an in-flight fire is suspected in an area that is not directly accessible to the crew (such as a cargo compartment), what is generally the recommended course of action?",
+    options: [
+      "Follow the applicable fire checklist and divert to land at the nearest suitable aerodrome as soon as practical",
+      "Continue to the original destination regardless of distance, since diverting wastes fuel",
+      "Ignore the indication unless smoke is also visible in the cabin",
+      "Increase cruise altitude to reduce the fire's oxygen supply",
+    ],
+    answer: 0,
+    explain:
+      "A suspected fire in an inaccessible area (such as cargo) is treated as a serious, time-critical threat precisely because it can't be directly fought by the crew - the standard response is to follow the relevant checklist and land as soon as possible at the nearest suitable aerodrome, rather than continuing to the original destination or waiting for further confirmation.",
+    reference: "Operational Procedures - In-Flight Fire Response",
+  },
 ];

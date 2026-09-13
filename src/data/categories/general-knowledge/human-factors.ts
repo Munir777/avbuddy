@@ -916,4 +916,132 @@ export const HUMAN_FACTORS_QUESTIONS: Question[] = [
       "A just culture draws a line between honest, unintentional mistakes (which are treated as valuable safety information and generally not punished) and genuinely reckless or wilful violations (which may still warrant disciplinary action) - the aim being to encourage open, honest reporting of errors and hazards rather than driving them underground through fear of blanket punishment.",
     reference: "Human Factors - Safety Reporting Culture",
   },
+  {
+    id: 59,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "'Hypoxic hypoxia', as one of the four classically described types of hypoxia, is caused by:",
+    options: [
+      "A reduced partial pressure of oxygen reaching the lungs, such as at altitude",
+      "A reduced ability of the blood to carry oxygen even though oxygen is available",
+      "Reduced blood flow (circulation) to the tissues",
+      "Cells being unable to use oxygen properly even though it is delivered normally",
+    ],
+    answer: 0,
+    explain:
+      "Hypoxic hypoxia is the classic altitude-related form: a reduced partial pressure of oxygen in the inspired air (from altitude, or a failed oxygen supply) means less oxygen reaches the lungs and bloodstream in the first place - distinct from the other three classic types, which involve a problem after oxygen has reached (or should have reached) the blood or tissues.",
+    reference: "Human Factors - Types of Hypoxia",
+  },
+  {
+    id: 60,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "'Hypemic hypoxia' is generally caused by:",
+    options: [
+      "A reduced ability of the blood to carry oxygen, such as from carbon monoxide binding to hemoglobin or significant blood loss",
+      "A reduced partial pressure of oxygen in the surrounding air",
+      "Reduced blood flow to the tissues due to G-forces or cold",
+      "Cells being unable to use oxygen despite normal delivery",
+    ],
+    answer: 0,
+    explain:
+      "Hypemic hypoxia occurs when the blood's actual oxygen-carrying capacity is reduced - for example, when carbon monoxide binds to hemoglobin more readily than oxygen does, or through significant blood loss - even if the surrounding air itself has a completely normal oxygen partial pressure.",
+    reference: "Human Factors - Types of Hypoxia",
+  },
+  {
+    id: 61,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "'Stagnant hypoxia' is generally caused by:",
+    options: [
+      "Reduced blood flow (circulation) to the tissues, such as from sustained high G-forces or extreme cold",
+      "A reduced partial pressure of oxygen in the surrounding air",
+      "A reduced ability of the blood itself to carry oxygen",
+      "Cells being unable to use oxygen despite normal delivery",
+    ],
+    answer: 0,
+    explain:
+      "Stagnant hypoxia results from inadequate blood circulation delivering oxygen to the tissues - for example, blood pooling away from the brain and eyes under sustained high-G maneuvering, or reduced peripheral circulation in extreme cold - even though the blood itself may be carrying a normal amount of oxygen.",
+    reference: "Human Factors - Types of Hypoxia",
+  },
+  {
+    id: 62,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "'Histotoxic hypoxia' is generally caused by:",
+    options: [
+      "Cells being unable to properly use the oxygen delivered to them, such as due to alcohol or certain other substances affecting cellular metabolism",
+      "A reduced partial pressure of oxygen in the surrounding air",
+      "A reduced ability of the blood to carry oxygen",
+      "Reduced blood flow to the tissues",
+    ],
+    answer: 0,
+    explain:
+      "Histotoxic hypoxia occurs when oxygen is delivered to the tissues normally, but the cells themselves are unable to make proper use of it - certain substances, including alcohol, can interfere with this cellular-level oxygen utilisation, distinguishing this type from the other three classic hypoxia types, which all involve a problem with oxygen supply rather than its use once delivered.",
+    reference: "Human Factors - Types of Hypoxia",
+  },
+  {
+    id: 63,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "'Spatial disorientation', broadly defined, refers to:",
+    options: [
+      "A pilot's loss of correct perception of the aircraft's position, motion, or attitude relative to the earth's surface",
+      "A permanent physical inner-ear condition unrelated to flying",
+      "A term used only to describe the loss of radio navigation signals",
+      "A visual defect present from birth",
+    ],
+    answer: 0,
+    explain:
+      "Spatial disorientation broadly describes any situation in which a pilot's perception of the aircraft's position, attitude, or motion relative to the earth becomes incorrect, whatever the specific mechanism involved - illusions like the leans, Coriolis, somatogravic, and false horizon are all specific varieties of this broader phenomenon.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
+  {
+    id: 64,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "Alongside the semicircular canals, which other vestibular structures contribute to the inner ear's sense of balance, and what do they primarily detect?",
+    options: [
+      "The otolith organs, which primarily detect linear acceleration and the direction of gravity",
+      "The cochlea, which primarily detects rotational movement",
+      "The eardrum, which primarily detects linear acceleration",
+      "No other structures besides the semicircular canals play any role in balance",
+    ],
+    answer: 0,
+    explain:
+      "The otolith organs (utricle and saccule) sit alongside the semicircular canals within the vestibular system and primarily sense linear acceleration and the direction of gravity, complementing the semicircular canals' sensitivity to rotational movement - together they form the inner ear's overall balance-sensing apparatus.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
+  {
+    id: 65,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "The 'leans' illusion generally results from:",
+    options: [
+      "A very gradual roll rate that goes undetected by the vestibular system, leaving the pilot with a false sense of being level (or in a different bank) than the aircraft's actual attitude",
+      "A sudden, rapid roll that is detected far too strongly by the vestibular system",
+      "A purely visual effect with no vestibular component at all",
+      "An illusion that only occurs while the aircraft is stationary on the ground",
+    ],
+    answer: 0,
+    explain:
+      "The leans occurs when an aircraft rolls into a bank so gradually that the semicircular canals don't register the motion, so the pilot's inner ear reports (falsely) that the aircraft is still wings-level - correcting back to genuinely level flight can then feel like banking the other way, tempting the pilot to lean their body in an attempt to feel 'upright' again.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
+  {
+    id: 66,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "A 'graveyard spiral' generally describes the dangerous sequence in which:",
+    options: [
+      "A pilot in a gradual, undetected bank (often after entering IMC without instrument reference) responds to a false sensory impression by tightening the turn and descending, rather than recognising and correcting the actual bank",
+      "An aircraft enters a fully developed, intentional aerobatic spin",
+      "A pilot deliberately practices a steep spiral descent as a normal training manoeuvre",
+      "An aircraft's spiral instability is fully counteracted by the autopilot with no risk involved",
+    ],
+    answer: 0,
+    explain:
+      "A graveyard spiral typically begins when a pilot loses reliable visual reference (such as flying into IMC without adequate instrument skills) and, due to spatial disorientation, fails to recognise an existing bank - misinterpreting the resulting sensations can lead the pilot to inadvertently tighten the bank and increase the descent rate rather than correct it, a scenario that instrument flight training is specifically aimed at preventing.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
 ];
