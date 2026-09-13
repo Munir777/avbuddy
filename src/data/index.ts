@@ -25,6 +25,12 @@ import { NAVIGATION_FLIGHT_PLANNING_QUESTIONS } from "./categories/general-knowl
 import { OPERATIONAL_PROCEDURES_QUESTIONS } from "./categories/general-knowledge/operational-procedures";
 import { INSTRUMENTS_QUESTIONS } from "./categories/general-knowledge/instruments";
 import { PERFORMANCE_PRINCIPLES_QUESTIONS } from "./categories/general-knowledge/performance-principles";
+import { B737_ELECTRICAL_QUESTIONS } from "./categories/737-max-8/electrical";
+import { B737_HYDRAULICS_QUESTIONS } from "./categories/737-max-8/hydraulics";
+import { B737_ENGINES_APU_QUESTIONS } from "./categories/737-max-8/engines-apu";
+import { B737_FLIGHT_CONTROLS_QUESTIONS } from "./categories/737-max-8/flight-controls";
+import { B737_AIR_SYSTEMS_QUESTIONS } from "./categories/737-max-8/air-systems";
+import { B737_LIMITATIONS_QUESTIONS } from "./categories/737-max-8/limitations";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -69,6 +75,15 @@ const GENERAL_KNOWLEDGE_QUESTIONS: Question[] = [
   ...PERFORMANCE_PRINCIPLES_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "ATPL General Knowledge" }));
 
+const B737_MAX_8_QUESTIONS: Question[] = [
+  ...B737_ELECTRICAL_QUESTIONS,
+  ...B737_HYDRAULICS_QUESTIONS,
+  ...B737_ENGINES_APU_QUESTIONS,
+  ...B737_FLIGHT_CONTROLS_QUESTIONS,
+  ...B737_AIR_SYSTEMS_QUESTIONS,
+  ...B737_LIMITATIONS_QUESTIONS,
+].map((q) => ({ ...q, subject: q.subject ?? "737 MAX 8" }));
+
 // Each category file numbers its own questions from 1, so IDs are
 // reassigned here to be globally unique across the combined bank — this
 // way category files never need to coordinate ID ranges with each other,
@@ -76,9 +91,10 @@ const GENERAL_KNOWLEDGE_QUESTIONS: Question[] = [
 export const QUESTIONS: Question[] = [
   ...A320_SYSTEMS_QUESTIONS,
   ...GENERAL_KNOWLEDGE_QUESTIONS,
+  ...B737_MAX_8_QUESTIONS,
 ].map((q, i) => ({ ...q, id: i + 1 }));
 
-export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge"];
+export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge", "737 MAX 8"];
 
 export const SUBJECT_META: Record<string, SubjectMeta> = {
   "A320 Systems": {
@@ -90,6 +106,11 @@ export const SUBJECT_META: Record<string, SubjectMeta> = {
     label: "ATPL General Knowledge",
     blurb: "Air law, meteorology, human factors, navigation, operational procedures, instruments, and performance — the exam-wide fundamentals.",
     accent: "#a68fd9",
+  },
+  "737 MAX 8": {
+    label: "737 MAX 8",
+    blurb: "Aircraft systems and limitations: electrical, hydraulics, engines/APU, flight controls, air systems.",
+    accent: "#3b82c4",
   },
 };
 
@@ -104,6 +125,10 @@ export const SYSTEMS_BY_SUBJECT: Record<string, string[]> = {
   "ATPL General Knowledge": [
     "All",
     ...Array.from(new Set(GENERAL_KNOWLEDGE_QUESTIONS.map((q) => q.system))),
+  ],
+  "737 MAX 8": [
+    "All",
+    ...Array.from(new Set(B737_MAX_8_QUESTIONS.map((q) => q.system))),
   ],
 };
 
@@ -144,6 +169,13 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Operational Procedures": { fg: "#C0A8D9", bg: "#251A3A" },
   Instruments: { fg: "#A88FD9", bg: "#1E163A" },
   "Performance & Principles of Flight": { fg: "#9F8FD9", bg: "#1A163A" },
+  // 737 MAX 8 subject — reuses the "Electrical" and "Flight Controls" colors
+  // above (same conceptual categories as A320 Systems); these are the new
+  // system names specific to this subject.
+  Hydraulics: { fg: "#3ACEB8", bg: "#0D3A34" },
+  "Engines & APU": { fg: "#E0703A", bg: "#3A1D0D" },
+  "Air Systems": { fg: "#D9A441", bg: "#3A2C0D" },
+  Limitations: { fg: "#D95F5F", bg: "#3A1414" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
