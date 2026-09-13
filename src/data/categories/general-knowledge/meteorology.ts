@@ -7,7 +7,7 @@ import type { Question } from "../../../types";
 export const METEOROLOGY_QUESTIONS: Question[] = [
   {
     id: 1,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "What is the dew point?",
     options: [
@@ -23,7 +23,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 2,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "In an aerodrome weather report, what does the term 'CAVOK' indicate?",
     options: [
@@ -39,7 +39,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 3,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "If the amount of water vapour in a parcel of air stays constant, what happens to its relative humidity as the air cools?",
     options: ["It decreases", "It increases", "It stays the same", "It becomes negative"],
@@ -50,7 +50,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 4,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "What is the tropopause?",
     options: [
@@ -66,7 +66,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 5,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "Under the International Standard Atmosphere (ISA), what are the defined sea-level temperature and pressure?",
     options: ["15°C and 1013.25 hPa", "0°C and 1000 hPa", "20°C and 1020 hPa", "15°C and 1000 hPa"],
@@ -77,7 +77,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 6,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "What best describes a microburst?",
     options: [
@@ -93,7 +93,7 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
   },
   {
     id: 7,
-    subject: "General Knowledge",
+    subject: "ATPL General Knowledge",
     system: "Meteorology",
     q: "Freezing rain is most commonly associated with which condition?",
     options: [
@@ -106,5 +106,524 @@ export const METEOROLOGY_QUESTIONS: Question[] = [
     explain:
       "Freezing rain typically forms when precipitation falls as rain through a warm layer aloft, then passes through a shallow sub-freezing layer near the surface without fully refreezing - so it lands as liquid water that freezes on contact with cold surfaces, making it a significant icing hazard.",
     reference: "Meteorology - Icing & Precipitation Types",
+  },
+  {
+    id: 8,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "A change of state directly from solid ice to water vapour, without passing through a liquid phase, is known as:",
+    options: ["Sublimation", "Condensation", "Deposition", "Evaporation"],
+    answer: 0,
+    explain:
+      "Sublimation describes matter changing directly from solid to vapour. The reverse process - vapour changing directly to solid - is called deposition. Condensation and evaporation instead involve the liquid phase.",
+    reference: "Meteorology - Changes of State",
+  },
+  {
+    id: 9,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "How does the environmental (actual) lapse rate in the real atmosphere compare with the fixed lapse rate defined by the International Standard Atmosphere?",
+    options: [
+      "It varies with time, place, and actual atmospheric conditions, unlike the fixed ISA value",
+      "It always matches the ISA lapse rate exactly",
+      "It is always steeper than the ISA lapse rate",
+      "It is always shallower than the ISA lapse rate",
+    ],
+    answer: 0,
+    explain:
+      "The ISA lapse rate is a fixed reference model (about 1.98°C per 1,000 ft) used for standardising instruments and performance data. The real atmosphere's environmental lapse rate varies continuously with location, season, and weather conditions, and can even reverse into an inversion.",
+    reference: "Meteorology - Atmospheric Structure",
+  },
+  {
+    id: 10,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "The presence of altocumulus lenticularis clouds is generally taken as an indication of:",
+    options: [
+      "Mountain wave activity",
+      "The development of thermal lows",
+      "Valley wind circulations",
+      "An approaching occluded front",
+    ],
+    answer: 0,
+    explain:
+      "Altocumulus lenticularis clouds form in the smooth, wave-like airflow downwind of mountains and ridges, so their presence is a classic visual indicator of mountain wave activity, which can bring significant turbulence even in otherwise clear air.",
+    reference: "Meteorology - Orographic Effects",
+  },
+  {
+    id: 11,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Altostratus clouds are generally classified as:",
+    options: ["Medium-level clouds", "High-level clouds", "Low-level clouds", "Convective clouds"],
+    answer: 0,
+    explain:
+      "Altostratus sits in the medium-level cloud family (roughly 6,500-20,000 ft in temperate latitudes), distinct from high-level clouds like cirrus or low-level clouds like stratus.",
+    reference: "Meteorology - Cloud Classification",
+  },
+  {
+    id: 12,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "From which type of cloud does drizzle typically fall?",
+    options: ["Stratus", "Cirrostratus", "Cumulonimbus", "Altostratus"],
+    answer: 0,
+    explain:
+      "Drizzle - fine, closely-spaced water droplets - is characteristically associated with stratus cloud, a low-level, non-convective cloud type, rather than the convective clouds that produce heavier showers.",
+    reference: "Meteorology - Cloud Classification",
+  },
+  {
+    id: 13,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "What does a SIGMET signify?",
+    options: [
+      "A warning of potentially hazardous en-route weather conditions, such as severe turbulence, severe icing, or thunderstorms",
+      "A routine, scheduled weather observation issued at an aerodrome",
+      "A short-term forecast appended to a METAR covering only the next two hours",
+      "A flight-planning document listing expected winds at cruise altitude",
+    ],
+    answer: 0,
+    explain:
+      "A SIGMET is a specific warning of weather phenomena that could be hazardous to aircraft in flight - such as severe turbulence, severe icing, thunderstorms, or volcanic ash - and is issued as conditions warrant, separate from routine, scheduled weather reports.",
+    reference: "Meteorology - Significant Weather Warnings",
+  },
+  {
+    id: 14,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "In a TAF, what does the 'TEMPO' group generally indicate?",
+    options: [
+      "Temporary fluctuations expected to last less than an hour at a time, and in total less than half the indicated period",
+      "A condition that is certain to persist for the entire forecast period",
+      "A permanent change taking effect at the start of the indicated period",
+      "A change expected only if a PROB group is also present",
+    ],
+    answer: 0,
+    explain:
+      "TEMPO marks temporary, short-lived fluctuations - each individual occurrence generally expected to last under an hour, and collectively covering less than half of the stated time period - as opposed to a BECMG group, which describes a more permanent change taking hold gradually over the period.",
+    reference: "Meteorology - Aerodrome Forecasts (TAF)",
+  },
+  {
+    id: 15,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "The condensation trails (contrails) occasionally seen behind high-flying jet aircraft are mainly formed by:",
+    options: [
+      "Water vapour released during fuel combustion condensing in the cold surrounding air",
+      "Unburned fuel droplets left behind in the exhaust",
+      "Soot particles in the exhaust acting as the sole condensation surface",
+      "A localised pressure increase behind the engine exhaust",
+    ],
+    answer: 0,
+    explain:
+      "Contrails form mainly because burning jet fuel produces water vapour as a combustion byproduct; in the cold, often near-saturated air at high altitude, that vapour condenses (and typically freezes) into visible ice-crystal trails.",
+    reference: "Meteorology - Condensation Trails",
+  },
+  {
+    id: 16,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "What surface weather is typically associated with a stationary high-pressure system sitting over land in winter?",
+    options: [
+      "A tendency toward fog and low stratus cloud",
+      "Frequent thunderstorms",
+      "Continuous nimbostratus rain",
+      "Widespread snow showers",
+    ],
+    answer: 0,
+    explain:
+      "A blocking or stationary winter high tends to produce light winds, clear skies overnight allowing strong radiational cooling, and moist air near the surface - a combination that favours fog and low stratus rather than the active precipitation associated with fronts or convection.",
+    reference: "Meteorology - Pressure Systems & Surface Weather",
+  },
+  {
+    id: 17,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Supercooled water droplets are best described as droplets that:",
+    options: [
+      "Remain in a liquid state at a temperature below freezing",
+      "Have already frozen but retain a rounded, liquid-like shape",
+      "Only exist at temperatures below -60°C",
+      "Are always larger than typical raindrops",
+    ],
+    answer: 0,
+    explain:
+      "Supercooled droplets stay liquid even though their temperature is below 0°C, because pure, undisturbed water droplets often need a nucleation trigger to actually freeze. They readily freeze on contact with an aircraft surface, which is exactly what makes them an airframe icing hazard.",
+    reference: "Meteorology - Icing & Precipitation Types",
+  },
+  {
+    id: 18,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "An isothermal layer in the atmosphere is one in which temperature:",
+    options: [
+      "Remains constant with increasing height",
+      "Decreases with height at a constant rate",
+      "Increases steadily with height",
+      "Fluctuates unpredictably with height",
+    ],
+    answer: 0,
+    explain:
+      "An isothermal layer is defined by temperature staying constant as height increases (a lapse rate of zero) - distinct from a normal lapse layer (temperature falling with height) or an inversion (temperature rising with height).",
+    reference: "Meteorology - Atmospheric Structure",
+  },
+  {
+    id: 19,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "By volume, what is the approximate composition of dry air in the troposphere?",
+    options: [
+      "About 78% nitrogen, 21% oxygen, and roughly 1% other gases",
+      "About 50% oxygen and 40% nitrogen",
+      "About 21% nitrogen and 78% oxygen",
+      "About 10% oxygen and 89% nitrogen",
+    ],
+    answer: 0,
+    explain:
+      "Dry air is made up of roughly 78% nitrogen and 21% oxygen by volume, with the remaining approximately 1% made up of argon, carbon dioxide, and other trace gases.",
+    reference: "Meteorology - Atmospheric Composition",
+  },
+  {
+    id: 20,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "What is an air mass, in meteorological terms?",
+    options: [
+      "A large body of air with fairly uniform temperature and humidity characteristics throughout its horizontal extent",
+      "A localised pocket of turbulence found only near mountain ranges",
+      "The layer of air immediately above a runway surface",
+      "A synonym for a frontal boundary between two different pressure systems",
+    ],
+    answer: 0,
+    explain:
+      "An air mass is a large volume of air that has acquired fairly uniform temperature and humidity properties from the surface it formed over, and tends to retain those properties as it moves - fronts are the boundaries that form where two different air masses meet, not air masses themselves.",
+    reference: "Meteorology - Air Masses & Fronts",
+  },
+  {
+    id: 21,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Which weather is most typically associated with the passage of a fast-moving cold front?",
+    options: [
+      "A narrow band of cumulonimbus cloud with brief but potentially heavy showers, a wind shift, and a temperature drop",
+      "Extensive layered stratiform cloud with prolonged, steady light rain",
+      "Clear skies with no cloud or precipitation at all",
+      "A gradual rise in temperature over several hours with no wind change",
+    ],
+    answer: 0,
+    explain:
+      "A fast-moving cold front tends to force warm air sharply upward along a narrow, steep frontal surface, often producing a squally line of cumulonimbus with brief, sometimes severe showers or thunderstorms, followed by a wind shift (veer) and a marked temperature drop as the colder air mass arrives.",
+    reference: "Meteorology - Air Masses & Fronts",
+  },
+  {
+    id: 22,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Which weather is most typically associated with the approach of a warm front?",
+    options: [
+      "Extensive medium- and low-level stratiform cloud with prolonged, steady light-to-moderate precipitation ahead of the surface front",
+      "A narrow band of severe thunderstorms with no advance warning",
+      "Sudden clearing with rapidly improving visibility",
+      "Isolated afternoon showers with no organised cloud structure",
+    ],
+    answer: 0,
+    explain:
+      "A warm front's gently sloping frontal surface tends to produce an extensive, organised sequence of cloud (typically thickening from cirrus down through altostratus to nimbostratus) with steady, prolonged precipitation well ahead of where the surface front actually crosses.",
+    reference: "Meteorology - Air Masses & Fronts",
+  },
+  {
+    id: 23,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "An occluded front forms when:",
+    options: [
+      "A faster-moving cold front catches up to and overtakes a slower-moving warm front",
+      "Two warm fronts merge into a single stationary front",
+      "A ridge of high pressure blocks a cold front from moving further",
+      "A tropical air mass mixes uniformly with a polar air mass with no boundary remaining",
+    ],
+    answer: 0,
+    explain:
+      "An occlusion forms when a cold front, typically moving faster than the warm front ahead of it, catches up and lifts the warm sector air off the surface - the resulting occluded front can take on characteristics of either a cold-front-type or warm-front-type occlusion depending on the relative air mass temperatures involved.",
+    reference: "Meteorology - Air Masses & Fronts",
+  },
+  {
+    id: 24,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "A katabatic wind is best described as:",
+    options: [
+      "A wind caused by cold, dense air draining downslope, typically overnight as the surface cools",
+      "A wind caused by warm air rising upslope during the day as the surface heats",
+      "A large-scale wind associated only with jet streams",
+      "A wind that only occurs directly over open water",
+    ],
+    answer: 0,
+    explain:
+      "A katabatic wind develops when air in contact with a sloped surface cools (typically overnight through radiational cooling) and, becoming denser than the surrounding air, drains downhill under gravity. The daytime reverse of this - warm air rising upslope - is called an anabatic wind.",
+    reference: "Meteorology - Local Winds",
+  },
+  {
+    id: 25,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Along a coastline on a clear, calm day, when does a sea breeze typically develop and in which direction does it blow?",
+    options: [
+      "During the afternoon, blowing from sea to land as the land heats faster than the water",
+      "During the early morning, blowing from land to sea",
+      "Only at night, blowing from sea to land",
+      "Only in winter, blowing from land to sea",
+    ],
+    answer: 0,
+    explain:
+      "Land heats up faster than water during the day, causing air over land to rise and drawing in cooler air from over the sea - producing an afternoon sea breeze blowing from sea to land. The land breeze is the nighttime reverse, when land cools faster than the sea.",
+    reference: "Meteorology - Local Winds",
+  },
+  {
+    id: 26,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "What does the altimeter setting QNH represent?",
+    options: [
+      "The pressure setting that, when set on the altimeter, causes it to read aerodrome elevation above mean sea level while on the ground",
+      "The pressure setting that causes the altimeter to read zero while on the aerodrome",
+      "The standard pressure setting of 1013.25 hPa used above the transition altitude",
+      "The forecast pressure expected at the destination on arrival",
+    ],
+    answer: 0,
+    explain:
+      "QNH is the local pressure setting that, when set on the altimeter subscale, makes the altimeter read the aerodrome's elevation above mean sea level while the aircraft is on the ground there - it is what's normally used below the transition level for altitude reference relative to sea level.",
+    reference: "Meteorology - Altimeter Setting Definitions",
+  },
+  {
+    id: 27,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "What does the altimeter setting QFE represent?",
+    options: [
+      "The pressure setting that causes the altimeter to read zero at aerodrome elevation",
+      "The pressure setting that causes the altimeter to read the aerodrome's elevation above sea level",
+      "The standard pressure setting of 1013.25 hPa",
+      "The pressure forecast for one hour after the current observation",
+    ],
+    answer: 0,
+    explain:
+      "QFE is the pressure setting referenced to the aerodrome (or a specific runway threshold), which makes the altimeter read zero (or height above that reference point) while the aircraft is on the ground there - useful for reading height above the aerodrome directly, rather than altitude above sea level.",
+    reference: "Meteorology - Altimeter Setting Definitions",
+  },
+  {
+    id: 28,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Clear air turbulence (CAT) is most commonly associated with:",
+    options: [
+      "Strong wind shear found near the jet stream, often with no visible cloud to warn of its presence",
+      "Turbulence generated directly inside towering cumulonimbus clouds",
+      "Turbulence caused only by mechanical mixing near the ground",
+      "Turbulence that only occurs in tropical regions",
+    ],
+    answer: 0,
+    explain:
+      "Clear air turbulence is generally associated with strong wind shear near the core of a jet stream (and near the tropopause), and is notable precisely because it typically occurs without the visible cloud cues that would otherwise warn a crew of turbulence ahead.",
+    reference: "Meteorology - Jet Streams & Clear Air Turbulence",
+  },
+  {
+    id: 29,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "A warm, dry wind that develops on the leeward (downwind) side of a mountain range as air descends and compresses is generally known as:",
+    options: [
+      "A foehn-type wind",
+      "A katabatic wind",
+      "A sea breeze",
+      "An anabatic wind",
+    ],
+    answer: 0,
+    explain:
+      "As air is forced up and over a mountain range, it loses much of its moisture through precipitation on the windward side; descending the leeward side it warms at the (drier) dry adiabatic lapse rate, arriving noticeably warmer and drier than before it crossed the range - a foehn-type effect, distinct from the simple downslope drainage of a katabatic wind.",
+    reference: "Meteorology - Orographic Effects",
+  },
+  {
+    id: 30,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Radiation fog most typically forms under which combination of conditions?",
+    options: [
+      "Clear skies, light wind, and high humidity, typically overnight with strong surface cooling",
+      "Strong winds and overcast skies during the daytime",
+      "Warm, moist air moving rapidly over a much colder surface",
+      "Heavy convective rainfall with strong vertical currents",
+    ],
+    answer: 0,
+    explain:
+      "Radiation fog forms when clear skies allow strong radiational cooling of the surface overnight, and light wind combined with sufficiently moist air lets that cooling bring the air down to its dew point without mixing the cooled layer away - strong wind tends to prevent radiation fog from forming or mixes it into low stratus instead.",
+    reference: "Meteorology - Fog Formation",
+  },
+  {
+    id: 31,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Advection fog typically forms when:",
+    options: [
+      "Relatively warm, moist air moves horizontally over a significantly colder surface",
+      "Air is lifted rapidly by strong convective currents",
+      "Air cools radiationally overnight under clear skies with no wind",
+      "Air passes through a mountain range and descends on the leeward side",
+    ],
+    answer: 0,
+    explain:
+      "Advection fog forms when warmer, moist air is carried by the wind over a colder surface (such as cold ground or cold ocean water) and is cooled from below to its dew point - unlike radiation fog, it can form and persist with a moderate wind and does not depend on overnight radiational cooling.",
+    reference: "Meteorology - Fog Formation",
+  },
+  {
+    id: 32,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Rime ice, as an airframe icing type, is generally associated with which formation conditions?",
+    options: [
+      "Small supercooled droplets freezing rapidly on impact, typically in stratiform cloud, producing a rough, opaque, brittle deposit",
+      "Large supercooled droplets freezing slowly, typically producing a smooth, transparent, glassy deposit",
+      "Only dry snow settling on a cold airframe with no freezing process involved",
+      "Frost forming exclusively on the ground before departure",
+    ],
+    answer: 0,
+    explain:
+      "Rime ice forms from small supercooled droplets (typical of stratiform cloud) that freeze almost instantly on impact, trapping air and producing a rough, opaque, relatively brittle deposit - distinct from clear ice, which comes from larger droplets freezing more slowly into a smooth, harder, more aerodynamically disruptive shape.",
+    reference: "Meteorology - Icing & Precipitation Types",
+  },
+  {
+    id: 33,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Clear ice, as an airframe icing type, tends to form under which conditions, and why is it generally considered more hazardous than rime ice?",
+    options: [
+      "From larger supercooled droplets (typical of cumuliform cloud or freezing rain) that freeze more slowly into a smooth, hard, transparent layer that is harder to see and can more severely disrupt airflow",
+      "From very small droplets that freeze instantly, making it easy to see and remove",
+      "It forms only on the ground and never during flight",
+      "It is generally considered less hazardous than rime ice because it is lighter",
+    ],
+    answer: 0,
+    explain:
+      "Clear ice comes from larger supercooled droplets (often found in cumuliform cloud or freezing rain) that spread out and freeze more slowly, forming a smooth, hard, transparent layer that can be difficult to spot visually and that more severely disrupts the wing's aerodynamic shape than the rougher but more visible rime ice.",
+    reference: "Meteorology - Icing & Precipitation Types",
+  },
+  {
+    id: 34,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "In the classic three-stage life cycle of a thunderstorm cell, which stage is characterised by updrafts only, with no precipitation yet reaching the ground?",
+    options: ["The cumulus (developing) stage", "The mature stage", "The dissipating stage", "None of the stages involve updrafts"],
+    answer: 0,
+    explain:
+      "The cumulus (developing) stage is dominated by a continuous updraft building the cloud vertically, with no significant precipitation yet reaching the surface. The mature stage adds downdrafts alongside the updraft along with heavy precipitation, lightning, and the greatest turbulence, while the dissipating stage is dominated by weakening downdrafts as the updraft cuts off.",
+    reference: "Meteorology - Thunderstorm Development",
+  },
+  {
+    id: 35,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Turbulence encountered near a weather front, distinct from convective or mechanical turbulence, is generally attributed to:",
+    options: [
+      "Wind shear across the frontal boundary, where wind speed and/or direction changes over a short vertical or horizontal distance",
+      "Friction between the aircraft and the cloud droplets themselves",
+      "A sudden, uniform increase in air density with no shear involved",
+      "Only the presence of precipitation, regardless of wind change",
+    ],
+    answer: 0,
+    explain:
+      "Frontal turbulence arises mainly from the wind shear associated with the contrasting air masses either side of a front, particularly where the change in wind speed or direction happens over a short distance - separate from the thermal (convective) turbulence found in cumulus-type clouds or the mechanical turbulence caused by airflow over rough terrain.",
+    reference: "Meteorology - Turbulence Types",
+  },
+  {
+    id: 36,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "The 'geostrophic wind' is best described as:",
+    options: [
+      "A theoretical wind that blows parallel to straight isobars, resulting from a balance between the pressure gradient force and the Coriolis force",
+      "The wind measured directly at the earth's surface, including friction effects",
+      "A wind that only exists within thunderstorm downdrafts",
+      "A wind that blows directly from high pressure to low pressure with no deflection",
+    ],
+    answer: 0,
+    explain:
+      "The geostrophic wind is a theoretical, frictionless wind that results once the pressure gradient force (pushing air from high to low pressure) is balanced by the Coriolis force (deflecting it), causing the wind to flow parallel to straight isobars rather than directly across them - it approximates the actual wind well at altitude, away from surface friction.",
+    reference: "Meteorology - Pressure Systems & Wind",
+  },
+  {
+    id: 37,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "In the Northern Hemisphere, the Coriolis force generally deflects moving air in which direction?",
+    options: ["To the right of its direction of travel", "To the left of its direction of travel", "Directly backward, opposing its motion", "It has no deflecting effect in the Northern Hemisphere"],
+    answer: 0,
+    explain:
+      "In the Northern Hemisphere, the Coriolis force deflects moving air to the right of its direction of travel (and to the left in the Southern Hemisphere) - this deflection is central to why wind circulates clockwise around a Northern Hemisphere high-pressure system and counterclockwise around a low.",
+    reference: "Meteorology - Coriolis Force",
+  },
+  {
+    id: 38,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "On a surface pressure chart, closely spaced isobars generally indicate:",
+    options: [
+      "A strong pressure gradient and correspondingly strong winds",
+      "A weak pressure gradient and correspondingly light winds",
+      "An area of no wind at all, regardless of spacing",
+      "An area guaranteed to be free of precipitation",
+    ],
+    answer: 0,
+    explain:
+      "Isobars spaced closely together indicate pressure changing rapidly over a short distance - a strong pressure gradient force - which drives stronger winds; widely spaced isobars indicate a weak gradient and generally lighter winds.",
+    reference: "Meteorology - Pressure Systems & Wind",
+  },
+  {
+    id: 39,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "Which combination of conditions is generally necessary for a tropical revolving storm (hurricane/typhoon-type system) to form and intensify?",
+    options: [
+      "Warm sea surface temperatures, sufficient distance from the equator for adequate Coriolis effect, and low vertical wind shear",
+      "Cold sea surface temperatures and strong vertical wind shear",
+      "Any sea temperature, provided the system is located exactly at the equator",
+      "High-altitude conditions only, with no dependency on sea surface temperature",
+    ],
+    answer: 0,
+    explain:
+      "Tropical revolving storms generally require sufficiently warm sea surface temperatures to supply energy and moisture, enough distance from the equator for the Coriolis force to organise rotation (which is why they don't form directly on the equator), and low vertical wind shear so the storm's structure isn't disrupted as it develops.",
+    reference: "Meteorology - Tropical Revolving Storms",
+  },
+  {
+    id: 40,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "A jet stream is best described as:",
+    options: [
+      "A narrow, fast-moving band of wind found near the tropopause, associated with a strong horizontal temperature gradient",
+      "A localised, slow-moving column of rising air found only over deserts",
+      "A permanent, unchanging wind pattern found at a single fixed altitude worldwide",
+      "A wind phenomenon found only within thunderstorm cells",
+    ],
+    answer: 0,
+    explain:
+      "A jet stream is a relatively narrow, fast-flowing ribbon of wind found near the tropopause, forming where a strong horizontal temperature gradient (and the associated pressure gradient) between air masses concentrates wind speed into a core - its exact altitude, strength, and position shift with the season and the broader weather pattern.",
+    reference: "Meteorology - Jet Streams & Clear Air Turbulence",
+  },
+  {
+    id: 41,
+    subject: "ATPL General Knowledge",
+    system: "Meteorology",
+    q: "'Virga' refers to:",
+    options: [
+      "Precipitation that falls from a cloud base but evaporates before reaching the ground, visible as trailing streaks",
+      "A type of cloud found only at very high altitude",
+      "A localised area of extremely low pressure at the surface",
+      "Precipitation that freezes instantly upon leaving the cloud base",
+    ],
+    answer: 0,
+    explain:
+      "Virga describes precipitation - typically rain or snow - that can be seen falling from the base of a cloud but evaporates (or sublimates) into the drier air below before it reaches the surface, appearing as wispy streaks or trails hanging beneath the cloud.",
+    reference: "Meteorology - Precipitation Phenomena",
   },
 ];

@@ -22,6 +22,9 @@ import { AIR_LAW_QUESTIONS } from "./categories/general-knowledge/air-law";
 import { METEOROLOGY_QUESTIONS } from "./categories/general-knowledge/meteorology";
 import { HUMAN_FACTORS_QUESTIONS } from "./categories/general-knowledge/human-factors";
 import { NAVIGATION_FLIGHT_PLANNING_QUESTIONS } from "./categories/general-knowledge/navigation-flight-planning";
+import { OPERATIONAL_PROCEDURES_QUESTIONS } from "./categories/general-knowledge/operational-procedures";
+import { INSTRUMENTS_QUESTIONS } from "./categories/general-knowledge/instruments";
+import { PERFORMANCE_PRINCIPLES_QUESTIONS } from "./categories/general-knowledge/performance-principles";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -61,7 +64,10 @@ const GENERAL_KNOWLEDGE_QUESTIONS: Question[] = [
   ...METEOROLOGY_QUESTIONS,
   ...HUMAN_FACTORS_QUESTIONS,
   ...NAVIGATION_FLIGHT_PLANNING_QUESTIONS,
-].map((q) => ({ ...q, subject: q.subject ?? "General Knowledge" }));
+  ...OPERATIONAL_PROCEDURES_QUESTIONS,
+  ...INSTRUMENTS_QUESTIONS,
+  ...PERFORMANCE_PRINCIPLES_QUESTIONS,
+].map((q) => ({ ...q, subject: q.subject ?? "ATPL General Knowledge" }));
 
 // Each category file numbers its own questions from 1, so IDs are
 // reassigned here to be globally unique across the combined bank — this
@@ -72,7 +78,7 @@ export const QUESTIONS: Question[] = [
   ...GENERAL_KNOWLEDGE_QUESTIONS,
 ].map((q, i) => ({ ...q, id: i + 1 }));
 
-export const SUBJECTS: string[] = ["A320 Systems", "General Knowledge"];
+export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge"];
 
 export const SUBJECT_META: Record<string, SubjectMeta> = {
   "A320 Systems": {
@@ -80,9 +86,9 @@ export const SUBJECT_META: Record<string, SubjectMeta> = {
     blurb: "Aircraft systems: hydraulics, electrics, engines, and every other A320 chapter.",
     accent: "#3fa65a",
   },
-  "General Knowledge": {
-    label: "General Knowledge",
-    blurb: "Air law, meteorology, human factors, and navigation — the exam-wide fundamentals.",
+  "ATPL General Knowledge": {
+    label: "ATPL General Knowledge",
+    blurb: "Air law, meteorology, human factors, navigation, operational procedures, instruments, and performance — the exam-wide fundamentals.",
     accent: "#a68fd9",
   },
 };
@@ -95,7 +101,7 @@ export const SYSTEMS_BY_SUBJECT: Record<string, string[]> = {
     "All",
     ...Array.from(new Set(A320_SYSTEMS_QUESTIONS.map((q) => q.system))),
   ],
-  "General Knowledge": [
+  "ATPL General Knowledge": [
     "All",
     ...Array.from(new Set(GENERAL_KNOWLEDGE_QUESTIONS.map((q) => q.system))),
   ],
@@ -128,13 +134,16 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   Limitation: { fg: "#D95F5F", bg: "#3A1414" },
   Navigation: { fg: "#5FD98A", bg: "#0F3320" },
   Oxygen: { fg: "#4AA3D9", bg: "#0D2A3A" },
-  // General Knowledge subject — a distinct purple/indigo palette so these
+  // ATPL General Knowledge subject — a distinct purple/indigo palette so these
   // read as a different "family" of categories at a glance, without
   // clashing with any A320 systems color above.
   "Air Law": { fg: "#B08FD9", bg: "#241A3A" },
   Meteorology: { fg: "#7FA8D9", bg: "#16233A" },
   "Human Factors": { fg: "#D98FC0", bg: "#3A1A2E" },
   "Navigation & Flight Planning": { fg: "#8FC0D9", bg: "#16303A" },
+  "Operational Procedures": { fg: "#C0A8D9", bg: "#251A3A" },
+  Instruments: { fg: "#A88FD9", bg: "#1E163A" },
+  "Performance & Principles of Flight": { fg: "#9F8FD9", bg: "#1A163A" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };

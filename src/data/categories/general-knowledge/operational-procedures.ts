@@ -1,0 +1,554 @@
+import type { Question } from "../../../types";
+
+// General aviation knowledge - Operational Procedures.
+// Original questions written from general, widely-published aviation
+// operational-procedures knowledge, not copied from any single source
+// document. No company, brand, or publisher names appear anywhere below.
+export const OPERATIONAL_PROCEDURES_QUESTIONS: Question[] = [
+  {
+    id: 1,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "The risk of dynamic hydroplaning on a runway depends primarily on which factor?",
+    options: [
+      "The depth of standing water on the runway",
+      "The aircraft's total weight",
+      "The strength of the headwind component",
+      "The amount of speed remaining after lift-off",
+    ],
+    answer: 0,
+    explain:
+      "Dynamic hydroplaning occurs when a wedge of standing water builds up faster than it can escape from under the tire, effectively lifting the tire off the runway surface - so the depth of standing water (relative to tire pressure/speed) is the dominant factor, more than aircraft weight.",
+    reference: "Operational Procedures - Runway Contamination & Hydroplaning",
+  },
+  {
+    id: 2,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Under a common operational definition, a runway is considered 'damp' when:",
+    options: [
+      "Its surface is not dry, but surface moisture does not give it a shiny appearance",
+      "It is covered with a film of water more than 3 mm deep",
+      "It shows a clearly shiny, wet appearance",
+      "Any precipitation has been reported within the last hour, regardless of surface condition",
+    ],
+    answer: 0,
+    explain:
+      "A damp runway is one whose surface is not dry but isn't covered by a visible film of water giving it a shiny appearance either - that visibly shiny, standing-water condition is instead what distinguishes a 'wet' runway.",
+    reference: "Operational Procedures - Runway Surface Condition Definitions",
+  },
+  {
+    id: 3,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "If no specific wet-runway correction factor is published in the aircraft's performance data, landing distance on a wet runway should generally be increased over the dry landing distance by approximately:",
+    options: ["15%", "5%", "50%", "100%"],
+    answer: 0,
+    explain:
+      "A commonly applied default correction, absent specific manufacturer data for the type, is to increase the dry landing distance by about 15% to account for reduced wet-runway braking performance.",
+    reference: "Operational Procedures - Wet & Contaminated Runway Performance",
+  },
+  {
+    id: 4,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "In still air, the wingtip vortices produced by an aircraft at take-off tend to:",
+    options: [
+      "Separate and move outward, one to each side of the flight path",
+      "Stay perfectly stationary in place over the runway",
+      "Travel only in the direction of the prevailing surface wind",
+      "Collapse immediately once the gear is retracted",
+    ],
+    answer: 0,
+    explain:
+      "With no wind to push them one way, the pair of wingtip vortices trailing an aircraft tend to drift apart, moving outward to each side of the flight path at a few knots, which is part of why crosswind conditions can push one vortex back over the runway.",
+    reference: "Operational Procedures - Wake Turbulence Behaviour",
+  },
+  {
+    id: 5,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "For weather-driven alternate-aerodrome planning on a twin-engine aircraft, a commonly applied rule requires a suitable diversion aerodrome to be reachable within approximately:",
+    options: [
+      "1 hour of flight at single-engine (one-engine-inoperative) cruise speed",
+      "2 hours of flight at all-engines cruise speed",
+      "30 minutes of flight at all-engines cruise speed",
+      "4 hours of flight at single-engine cruise speed",
+    ],
+    answer: 0,
+    explain:
+      "A long-standing planning principle for twin-engine aircraft not operating under extended-range approval is that a usable alternate should be reachable within about an hour, flown at the reduced cruise speed available with one engine inoperative - a conservative planning margin distinct from the enroute alternate rules used for extended-range (ETOPS-style) operations.",
+    reference: "Operational Procedures - Alternate Aerodrome Planning",
+  },
+  {
+    id: 6,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the maximum validity period generally applied to a SNOWTAM?",
+    options: ["24 hours", "3 hours", "12 hours", "6 hours"],
+    answer: 0,
+    explain:
+      "A SNOWTAM reporting runway surface conditions (snow, ice, slush, standing water) is generally valid for up to 24 hours, or until superseded by a fresh report - conditions are expected to be re-assessed and re-published at least that often.",
+    reference: "Operational Procedures - Runway Condition Reporting",
+  },
+  {
+    id: 7,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "When an aircraft flies into windshear, which parameter is typically the first to visibly change?",
+    options: ["Indicated airspeed", "Groundspeed", "Pitch angle", "Vertical speed"],
+    answer: 0,
+    explain:
+      "A sudden shift in the surrounding air mass immediately changes the airflow over the aircraft, so indicated airspeed reacts first - pitch angle, vertical speed, and groundspeed follow only as the aircraft's flight path actually responds to that airspeed change.",
+    reference: "Operational Procedures - Windshear Recognition",
+  },
+  {
+    id: 8,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Flight crew members occupying the flight deck are generally required to keep their safety belt fastened:",
+    options: [
+      "Whenever they are at their station, not only during take-off and landing",
+      "Only during take-off and landing",
+      "Only when explicitly instructed by the commander",
+      "Only above a specified altitude such as FL200",
+    ],
+    answer: 0,
+    explain:
+      "The general rule is that a crew member occupying a flight deck seat keeps the safety belt (and, where fitted, harness) fastened for the whole time they are at that station, not just during the take-off and landing phases.",
+    reference: "Operational Procedures - Flight Deck Safety Requirements",
+  },
+  {
+    id: 9,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "A runway braking action report of 0.25 or below is generally classified as:",
+    options: ["Poor", "Medium", "Good", "Unreliable, and therefore ignored"],
+    answer: 0,
+    explain:
+      "On the commonly used braking-action reporting scale, a friction coefficient of about 0.25 or lower corresponds to a 'poor' classification, signalling a significantly reduced ability to stop or maintain directional control.",
+    reference: "Operational Procedures - Runway Braking Action Reports",
+  },
+  {
+    id: 10,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "For wake turbulence radar separation, when a heavy aircraft is following directly behind another heavy aircraft on approach to the same runway, the applicable minimum is generally about:",
+    options: ["7.4 km (4 nm)", "3.7 km (2 nm)", "9.3 km (5 nm)", "11.1 km (6 nm)"],
+    answer: 0,
+    explain:
+      "Heavy-behind-heavy is the one wake-turbulence radar-separation case that uses a reduced 4 nm minimum, reflecting that both aircraft can tolerate somewhat more wake exposure than lighter aircraft following a heavy one, which instead need larger separations.",
+    reference: "Operational Procedures - Wake Turbulence Separation Minima",
+  },
+  {
+    id: 11,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "For non-radar wake-turbulence time separation, when a light aircraft is landing behind a medium aircraft, the applicable minimum is generally:",
+    options: ["3 minutes", "1 minute", "2 minutes", "5 minutes"],
+    answer: 0,
+    explain:
+      "A light aircraft landing behind a medium aircraft is one of the cases requiring the longer 3-minute non-radar time separation, reflecting the lighter aircraft's greater vulnerability to the preceding aircraft's wake.",
+    reference: "Operational Procedures - Wake Turbulence Separation Minima",
+  },
+  {
+    id: 12,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Wake turbulence intensity behind a given aircraft is generally greatest when that aircraft is:",
+    options: [
+      "Heavy, slow, and in a clean configuration (flaps and gear retracted)",
+      "Light, fast, and in a clean configuration",
+      "Heavy and fast, regardless of configuration",
+      "Light, slow, with flaps and gear extended",
+    ],
+    answer: 0,
+    explain:
+      "Wake vortex strength scales with the lift the wing is generating, which is greatest for a heavy aircraft flying slowly in a clean configuration - flaps and gear extended tend to break up and weaken the vortex somewhat, which is part of why the heavy/slow/clean combination is treated as the worst case.",
+    reference: "Operational Procedures - Wake Turbulence Behaviour",
+  },
+  {
+    id: 13,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "For a Category IIIA precision approach, what is the general minimum RVR requirement?",
+    options: [
+      "Not less than about 200 m, with no decision height or a DH below 100 ft",
+      "Not less than about 550 m, with a decision height of 200 ft",
+      "Not less than about 800 m, with no decision height at all",
+      "Not less than about 50 m, with no decision height",
+    ],
+    answer: 0,
+    explain:
+      "Category IIIA approaches are generally flown to an RVR of not less than about 200 m, either with no applicable decision height or with a DH lower than 100 ft. The even lower minima associated with Category IIIB require additional certification and are not simply a smaller version of IIIA.",
+    reference: "Operational Procedures - Approach Categories & Minima",
+  },
+  {
+    id: 14,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Roughly how long does it take for the wake turbulence generated by a large, wide-body aircraft at take-off to dissipate?",
+    options: [
+      "On the order of a few minutes",
+      "Around 30 seconds",
+      "Around 10 hours",
+      "It never fully dissipates and must be avoided indefinitely",
+    ],
+    answer: 0,
+    explain:
+      "A large aircraft's wake vortices typically break down and dissipate within a few minutes under normal conditions, which is part of the reasoning behind the standard 2-3 minute non-radar time-based wake turbulence separations.",
+    reference: "Operational Procedures - Wake Turbulence Behaviour",
+  },
+  {
+    id: 15,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "In the event of severe smoke in the cabin, is it useful and recommended for passengers to use the supplied oxygen masks?",
+    options: [
+      "Yes - it is possible and recommended, since the supplied oxygen itself is not made unsafe by surrounding smoke",
+      "No - using oxygen in the presence of smoke is always explosive and must be avoided",
+      "No - the oxygen units automatically stop supplying oxygen whenever smoke is detected",
+      "It has no effect either way and is neither helpful nor harmful",
+    ],
+    answer: 0,
+    explain:
+      "Using passenger oxygen during a smoke event is both possible and recommended - the toxic smoke in the cabin doesn't get mixed into the oxygen supply itself, so the mask still delivers breathable oxygen even while ambient cabin air is contaminated.",
+    reference: "Operational Procedures - Cabin Smoke & Emergency Oxygen",
+  },
+  {
+    id: 16,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "An aircraft suffers an explosive decompression while cruising at a high flight level. What is generally the crew's first priority action?",
+    options: [
+      "Don oxygen masks",
+      "Transmit a distress (MAYDAY) call",
+      "Disconnect the autopilot",
+      "Reassure the passengers over the PA system",
+    ],
+    answer: 0,
+    explain:
+      "Immediate donning of oxygen masks takes priority, since useful time of consciousness at high altitude after a decompression can be very short - other actions such as beginning a descent, notifying ATC, and managing the cabin follow once the crew themselves are safely on oxygen.",
+    reference: "Operational Procedures - Decompression Emergency Procedures",
+  },
+  {
+    id: 17,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Once an aircraft has accelerated beyond V1 during the take-off roll, what is the crew generally expected to do if an engine then fails?",
+    options: [
+      "Continue the take-off, since stopping safely within the remaining distance is no longer assured",
+      "Reject the take-off immediately regardless of speed",
+      "Immediately shut down the remaining engine as well",
+      "Continue accelerating past VR without rotating",
+    ],
+    answer: 0,
+    explain:
+      "V1 is defined so that stopping safely within the accelerate-stop distance is no longer assured once it is exceeded, so the standard procedure after V1 is to continue the take-off and handle the failure airborne, rather than attempt a late rejected take-off.",
+    reference: "Operational Procedures - Rejected Take-off Decision",
+  },
+  {
+    id: 18,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is generally meant by a 'stabilized approach'?",
+    options: [
+      "An approach flown in the landing configuration, on the correct flight path and speed, with a steady rate of descent, by a defined height above the runway",
+      "Any approach flown with the autopilot engaged throughout",
+      "An approach where the aircraft is exactly on the ILS glideslope only at the point of touchdown",
+      "An approach where power is kept at idle from the top of descent onward",
+    ],
+    answer: 0,
+    explain:
+      "A stabilized approach requires the aircraft to be in the correct landing configuration, on the intended flight path, at an appropriate speed, with a steady rate of descent and appropriate power setting, established by a defined height (commonly 1,000 ft in instrument conditions or 500 ft in visual conditions) - failing to meet these criteria is a standard trigger for a go-around.",
+    reference: "Operational Procedures - Stabilized Approach Criteria",
+  },
+  {
+    id: 19,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Up until what point during a landing can a go-around generally still be initiated?",
+    options: [
+      "At any time up until touchdown (and in some cases even after touchdown, if certified for it)",
+      "Only before passing the outer marker",
+      "Only above 1,000 ft above the runway",
+      "Only if requested in advance from air traffic control",
+    ],
+    answer: 0,
+    explain:
+      "A go-around remains an available option at any point up until touchdown - and some aircraft types are certified for a go-around initiated even after the main gear briefly touches down - reflecting that safety takes priority over completing a landing that isn't developing as expected.",
+    reference: "Operational Procedures - Go-Around Decision",
+  },
+  {
+    id: 20,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Under the commonly applied 'sterile flight deck' rule, non-essential conversation and activity are generally restricted during which phases of flight?",
+    options: [
+      "Below a specified altitude (commonly 10,000 ft) during climb and descent, and during taxi",
+      "Only during the cruise phase at high altitude",
+      "Only when passengers are being served a meal",
+      "At all times throughout the entire flight equally",
+    ],
+    answer: 0,
+    explain:
+      "The sterile flight deck concept restricts flight crew conversation and activity to only what's essential for safely operating the aircraft during critical phases - typically taxi, take-off, climb, approach, and landing below a specified altitude such as 10,000 ft - reducing distraction during the periods with the least margin for error.",
+    reference: "Operational Procedures - Sterile Flight Deck",
+  },
+  {
+    id: 21,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "In runway contamination reporting, what does 'slush' generally refer to?",
+    options: [
+      "Partially melted snow or ice with a high water content, of a consistency that splashes when stepped on",
+      "Freshly fallen, dry powder snow with no melting",
+      "A thin, invisible film of ice on the surface",
+      "Compacted snow that has been packed down by aircraft and vehicle traffic",
+    ],
+    answer: 0,
+    explain:
+      "Slush is water-saturated snow that, due to its high water content, splashes when stamped on firmly - it is treated differently from dry snow or compacted snow in performance calculations because of its higher drag and hydroplaning-type risk at speed.",
+    reference: "Operational Procedures - Runway Contamination Reporting",
+  },
+  {
+    id: 22,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the general purpose of a Minimum Equipment List (MEL)?",
+    options: [
+      "To define the conditions under which an aircraft may legally be dispatched with certain inoperative equipment",
+      "To list the equipment required only for maintenance training purposes",
+      "To specify the minimum crew qualifications required for a given aircraft type",
+      "To set out passenger cabin service standards",
+    ],
+    answer: 0,
+    explain:
+      "A Minimum Equipment List sets out which items of equipment may be inoperative for dispatch, and under what conditions or operational limitations, without compromising the required level of safety - it does not mean any listed item may simply be ignored, but defines a controlled, approved way of managing it.",
+    reference: "Operational Procedures - Minimum Equipment List",
+  },
+  {
+    id: 23,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Under what general circumstances might an aircraft need to dump (jettison) fuel before landing?",
+    options: [
+      "When it needs to reduce weight quickly to get below its maximum landing weight for an early, urgent landing",
+      "Whenever a flight is diverted for any reason, regardless of weight",
+      "As a routine step before every normal landing",
+      "Only to correct a lateral fuel imbalance between tanks",
+    ],
+    answer: 0,
+    explain:
+      "Fuel jettison (where the aircraft type is equipped for it) is generally used to reduce aircraft weight quickly when an early, urgent landing is required and the aircraft would otherwise be above its structural maximum landing weight - not a routine procedure, and not the standard way to correct a simple tank imbalance.",
+    reference: "Operational Procedures - Fuel Jettison",
+  },
+  {
+    id: 24,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "During an emergency descent following a decompression, what is generally the crew's priority order of actions?",
+    options: [
+      "Don oxygen masks, then initiate the descent, then notify air traffic control",
+      "Notify air traffic control, then don oxygen masks, then descend",
+      "Initiate the descent first, then don oxygen masks once level",
+      "Brief the cabin crew first, before taking any other action",
+    ],
+    answer: 0,
+    explain:
+      "Because useful time of consciousness can be very short at high altitude following a decompression, the crew's own oxygen masks go on first, before beginning the emergency descent - notifying air traffic control and further cabin actions follow once the aircraft is safely descending and the crew are protected.",
+    reference: "Operational Procedures - Emergency Descent Procedures",
+  },
+  {
+    id: 25,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "When an evacuation is ordered, what is generally the first priority communicated to the cabin?",
+    options: [
+      "A clear, direct evacuation command instructing passengers to leave immediately, leaving belongings behind",
+      "A detailed explanation of what caused the emergency",
+      "Individual seat-by-seat boarding-style instructions",
+      "A request for passengers to first collect their carry-on baggage",
+    ],
+    answer: 0,
+    explain:
+      "An evacuation command is kept short, direct, and repeated (such as instructions to release belts, leave everything behind, and move to the exits) so it is immediately understood and acted on under stress - passengers taking time to gather baggage is a well-documented factor that has slowed real evacuations and increased risk.",
+    reference: "Operational Procedures - Emergency Evacuation",
+  },
+  {
+    id: 26,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Which of the following would generally be considered a factor in deciding whether to divert to an alternate aerodrome?",
+    options: [
+      "Deteriorating weather at the destination, a technical issue, insufficient fuel to hold, or a medical emergency onboard",
+      "Only a change in the forecast wind direction at cruise altitude",
+      "The time of day alone, regardless of any other factor",
+      "Only a request from the cabin crew for a meal-service delay",
+    ],
+    answer: 0,
+    explain:
+      "A diversion decision generally weighs several factors together - deteriorating destination weather, a technical problem affecting continued safe flight, fuel state relative to holding or further delay, and onboard medical emergencies - rather than any single, narrow trigger.",
+    reference: "Operational Procedures - Diversion Decision Factors",
+  },
+  {
+    id: 27,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "In a crosswind landing, what is the general purpose of aligning the aircraft's longitudinal axis with the runway before or at touchdown (whether by the crab, wing-low, or a combined technique)?",
+    options: [
+      "To avoid excessive side loads on the landing gear and maintain directional control as the aircraft touches down",
+      "To increase the aircraft's groundspeed at touchdown",
+      "To reduce the aircraft's stall speed during the flare",
+      "To comply with a requirement that applies only above a specific crosswind component",
+    ],
+    answer: 0,
+    explain:
+      "Landing with the aircraft's longitudinal axis skewed relative to the runway direction imposes side loads on the landing gear and increases the risk of a directional control upset, so crosswind techniques (whether crabbing until just before touchdown, holding a wing low with opposite rudder, or a blend of both) are aimed at aligning the aircraft with the runway at touchdown.",
+    reference: "Operational Procedures - Crosswind Landing Technique",
+  },
+  {
+    id: 28,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "If a TCAS resolution advisory (RA) conflicts with a simultaneous instruction from air traffic control, which is the crew generally expected to follow?",
+    options: [
+      "The TCAS resolution advisory",
+      "The air traffic control instruction",
+      "Neither; the crew should ask the other pilot to decide",
+      "Whichever instruction was received first, regardless of source",
+    ],
+    answer: 0,
+    explain:
+      "A TCAS resolution advisory is generally treated as taking priority over a conflicting ATC instruction, since it reflects an imminent, close-in traffic conflict that the automated system has already resolved using both aircraft's TCAS logic - ATC may not even be aware of the specific conflict driving the RA.",
+    reference: "Operational Procedures - TCAS Resolution Advisories",
+  },
+  {
+    id: 29,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is a de-icing/anti-icing fluid's 'holdover time' (HOT)?",
+    options: [
+      "The estimated period during which the fluid is expected to prevent frost, ice, or snow from accumulating on the treated surfaces",
+      "The maximum time the fluid can remain in its storage tank before it must be discarded",
+      "The time it takes for the fluid to be fully absorbed into the airframe structure",
+      "A fixed period that never varies regardless of the weather",
+    ],
+    answer: 0,
+    explain:
+      "Holdover time is an estimated, condition-dependent window (varying with precipitation type, intensity, and temperature) during which applied de-icing/anti-icing fluid is expected to keep protected surfaces free of frozen contamination - once that time is exceeded, the protection can no longer be relied on and re-treatment or a fresh inspection is generally required before takeoff.",
+    reference: "Operational Procedures - De-icing & Anti-icing Procedures",
+  },
+  {
+    id: 30,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the general purpose of activating Low Visibility Procedures (LVPs) at an aerodrome?",
+    options: [
+      "To provide extra protection (such as safeguarding sensitive ILS signal areas and increasing separation) needed to support low-visibility approach and landing operations",
+      "To close the aerodrome entirely to all traffic until visibility improves",
+      "To increase the maximum permitted taxi speed for departing aircraft",
+      "To cancel all instrument approach procedures until visibility improves",
+    ],
+    answer: 0,
+    explain:
+      "Low Visibility Procedures introduce additional protections - such as safeguarding the ILS critical/sensitive areas from vehicle or aircraft intrusion and increasing spacing between movements - that are needed to support the lower-minima approach and landing operations (Category II/III) that become necessary once visibility or RVR drops below defined thresholds.",
+    reference: "Operational Procedures - Low Visibility Procedures",
+  },
+  {
+    id: 31,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "How does an 'explosive' decompression generally differ from a slow (gradual) decompression in terms of how quickly it develops?",
+    options: [
+      "An explosive decompression occurs almost instantaneously (often under a second), while a slow decompression develops gradually and may go unnoticed without a cabin altitude warning",
+      "Both types occur over several minutes, with no meaningful difference in speed",
+      "A slow decompression is always more dangerous because it gives no warning at all",
+      "An explosive decompression can only happen on the ground, never at altitude",
+    ],
+    answer: 0,
+    explain:
+      "An explosive decompression - typically from a large, sudden structural opening - equalises cabin and outside pressure almost instantly, whereas a slow decompression develops gradually enough that, without an automated cabin altitude warning, the crew and passengers might not immediately notice the pressure loss until symptoms of hypoxia begin to appear.",
+    reference: "Operational Procedures - Decompression Emergency Procedures",
+  },
+  {
+    id: 32,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is the general distinction between 'fuel exhaustion' and 'fuel starvation'?",
+    options: [
+      "Fuel exhaustion means no usable fuel remains onboard; fuel starvation means usable fuel exists onboard but fails to reach the engine(s)",
+      "The two terms describe exactly the same situation and are used interchangeably",
+      "Fuel exhaustion refers only to a fuel leak, while fuel starvation refers only to a fuel-gauge malfunction",
+      "Fuel starvation can only occur on the ground, never in flight",
+    ],
+    answer: 0,
+    explain:
+      "Fuel exhaustion means the aircraft has genuinely run out of usable fuel; fuel starvation means fuel is still present onboard but, due to a blocked line, mismanaged tank selection, or a similar issue, is not reaching the engine(s) that need it - an important distinction for both troubleshooting in flight and post-incident investigation.",
+    reference: "Operational Procedures - Fuel Management",
+  },
+  {
+    id: 33,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "What is generally meant by a 'runway incursion'?",
+    options: [
+      "Any unauthorised presence of an aircraft, vehicle, or person on the protected area of a surface designated for landing and takeoff",
+      "Any aircraft landing long on a runway with adequate remaining distance",
+      "A normal, authorised runway crossing by a taxiing aircraft with an ATC clearance",
+      "A go-around performed for any reason",
+    ],
+    answer: 0,
+    explain:
+      "A runway incursion is any incorrect or unauthorised presence of an aircraft, vehicle, or person within the protected runway area - a category of safety event distinct from a normal, properly cleared and authorised runway crossing or occupation.",
+    reference: "Operational Procedures - Runway Safety",
+  },
+  {
+    id: 34,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "During the landing roll, at what point is reverse thrust generally most effective at helping decelerate the aircraft?",
+    options: [
+      "At higher groundspeed, shortly after touchdown, with effectiveness reducing as the aircraft slows",
+      "At very low groundspeed, just before the aircraft comes to a stop",
+      "Reverse thrust effectiveness is constant regardless of groundspeed",
+      "Reverse thrust is only effective once the aircraft has already stopped",
+    ],
+    answer: 0,
+    explain:
+      "Reverse thrust contributes the most stopping benefit at higher groundspeeds shortly after touchdown, when it is redirecting a large mass of fast-moving air; its effectiveness diminishes as the aircraft slows, which is why wheel braking (largely unaffected by speed in the same way) becomes progressively more important later in the landing roll.",
+    reference: "Operational Procedures - Reverse Thrust Use",
+  },
+  {
+    id: 35,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "Following a suspected bird strike, what is generally the recommended course of action?",
+    options: [
+      "Report the strike and have the aircraft inspected for damage before further flight, particularly if an engine or other critical component may have been affected",
+      "No action is needed if the flight controls still respond normally",
+      "Simply note it in the logbook at the end of the flying day with no inspection required",
+      "Only take action if the strike happened during the landing roll, not during takeoff or climb",
+    ],
+    answer: 0,
+    explain:
+      "A suspected bird strike is generally reported and followed by an inspection for damage - especially to engines, which can suffer serious internal damage from ingestion that isn't necessarily obvious from the flight deck - before the aircraft is considered fit for further flight.",
+    reference: "Operational Procedures - Bird Strike Procedures",
+  },
+  {
+    id: 36,
+    subject: "ATPL General Knowledge",
+    system: "Operational Procedures",
+    q: "During a go-around with one engine inoperative, what additional demand does asymmetric thrust generally place on the crew compared with an all-engines go-around?",
+    options: [
+      "Increased directional control demands (rudder input to counter the yawing moment) alongside reduced climb performance",
+      "No additional demand at all; performance and handling are unaffected by the inoperative engine",
+      "A requirement to reduce flap setting immediately, regardless of speed",
+      "A requirement to shut down the remaining engine as well for safety",
+    ],
+    answer: 0,
+    explain:
+      "With one engine inoperative, the asymmetric thrust from the remaining engine(s) produces a yawing moment that must be countered with rudder to maintain directional control, on top of which the aircraft has reduced total available thrust and therefore reduced climb performance compared with an all-engines-operating go-around.",
+    reference: "Operational Procedures - Asymmetric Go-Around Considerations",
+  },
+];

@@ -74,7 +74,7 @@ export default function App() {
   }, []);
 
   // ---- Subject state (top-level grouping above `system`, e.g. A320
-  // Systems vs General Knowledge) ----
+  // Systems vs ATPL General Knowledge) ----
   const [subject, setSubject] = useState<string>(SUBJECTS[0]);
   const subjectQuestions = useMemo(() => QUESTIONS.filter((q) => q.subject === subject), [subject]);
   const subjectCounts = useMemo(() => {
