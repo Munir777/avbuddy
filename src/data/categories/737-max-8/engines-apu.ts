@@ -80,4 +80,79 @@ export const B737_ENGINES_APU_QUESTIONS: Question[] = [
       "Using two independent detection loops around the engine (rather than one) means a genuine fire/overheat condition is confirmed by both before certain warning logic triggers, and a fault reported by only one loop is more easily identified as a sensor problem rather than a real fire - improving overall reliability and cutting down on spurious fire warnings from a single failed sensing element.",
     reference: "Fire Protection - Engine Fire/Overheat Detection",
   },
+  {
+    id: 6,
+    system: "Engines & APU",
+    q: "What is the general purpose of monitoring exhaust gas temperature (EGT) on a turbine engine?",
+    options: [
+      "To help protect the turbine section from thermal damage, since exceeding a defined EGT limit risks overheating hot-section components",
+      "To measure how much fuel remains in the tanks",
+      "To determine cabin pressurization altitude",
+      "EGT has no relationship to engine health or limits",
+    ],
+    answer: 0,
+    explain:
+      "Exhaust gas temperature is one of the key parameters protecting the turbine's hot-section components from thermal damage; staying within the defined EGT limit for a given condition (start, takeoff, or continuous operation) helps ensure those components aren't exposed to more heat than they're designed to tolerate.",
+    reference: "Engines - EGT Limits",
+  },
+  {
+    id: 7,
+    system: "Engines & APU",
+    q: "What is the general purpose of monitoring engine oil pressure, temperature, and quantity together?",
+    options: [
+      "Together they give an overall picture of the lubrication system's health, helping the crew catch a developing mechanical problem before it becomes a failure",
+      "Oil parameters are monitored only for record-keeping, with no operational significance",
+      "Only oil quantity matters; pressure and temperature are irrelevant",
+      "These parameters are used exclusively to compute fuel flow",
+    ],
+    answer: 0,
+    explain:
+      "Oil pressure, temperature, and quantity together reflect the health of the engine's lubrication and cooling system - a falling quantity, rising temperature, or falling pressure can each independently point to a developing mechanical problem, so monitoring all three gives the crew an early warning that a single parameter alone might miss.",
+    reference: "Engines - Oil System Monitoring",
+  },
+  {
+    id: 8,
+    system: "Engines & APU",
+    q: "What is the general purpose of monitoring engine vibration levels in flight?",
+    options: [
+      "Elevated vibration can indicate developing mechanical damage or imbalance inside the engine, giving the crew (and maintenance) an early warning sign",
+      "Vibration monitoring exists purely to control cabin noise levels",
+      "It is used only to measure outside air turbulence",
+      "It has no diagnostic value and is displayed only as a formality",
+    ],
+    answer: 0,
+    explain:
+      "A rotating turbine engine that develops internal damage or imbalance - such as a damaged blade - often shows it first as increased vibration, so monitoring vibration levels gives an early indication of a developing mechanical problem, sometimes before it shows up in other parameters.",
+    reference: "Engines - Vibration Monitoring",
+  },
+  {
+    id: 9,
+    system: "Engines & APU",
+    q: "What is the general purpose of automatic APU shutdown protections, such as for overspeed, overtemperature, or a detected fire?",
+    options: [
+      "They automatically shut the APU down when a genuinely hazardous condition is detected, without requiring a crew member to notice and react manually",
+      "They exist only to save fuel during normal operation",
+      "They are purely cosmetic and have no actual shutdown function",
+      "They only function while the APU is being used for ground air conditioning",
+    ],
+    answer: 0,
+    explain:
+      "Because the APU can run unattended (with no one directly monitoring it the way a pilot monitors engine instruments), automatic protective shutdown logic for conditions like overspeed, overtemperature, or a detected fire is built in specifically so a genuinely hazardous condition is addressed immediately, without depending on a crew member noticing and reacting manually in time.",
+    reference: "APU - Automatic Protective Shutdowns",
+  },
+  {
+    id: 10,
+    system: "Engines & APU",
+    q: "What is the general purpose of an engine start valve during the start sequence?",
+    options: [
+      "It opens to admit pneumatic air to the starter to begin engine rotation, then closes automatically once the engine reaches a self-sustaining speed",
+      "It stays open continuously throughout the entire flight",
+      "It controls fuel flow rather than air flow",
+      "It is used only to shut down the engine, never to start it",
+    ],
+    answer: 0,
+    explain:
+      "The start valve is what actually admits pneumatic air to the starter motor at the beginning of the start sequence; once the engine has accelerated to a self-sustaining rotational speed on its own combustion, the valve automatically closes, cutting off air to the (now unneeded) starter as the engine continues accelerating to idle by itself.",
+    reference: "Engines - Start Valve",
+  },
 ];

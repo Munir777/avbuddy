@@ -80,4 +80,79 @@ export const B737_WARNING_SYSTEMS_QUESTIONS: Question[] = [
       "Once a caution light has been individually cancelled, a recall function lets the crew bring back the full set of active-but-cancelled caution indications for review, which is useful if the crew wants to double-check what's still active after having cleared the master caution light earlier.",
     reference: "Warning Systems - Master Caution Recall",
   },
+  {
+    id: 6,
+    system: "Warning Systems",
+    q: "What does a landing gear warning horn generally alert the crew to?",
+    options: [
+      "That the aircraft is in a landing-type configuration (such as low power and flaps extended) with the landing gear not down and locked",
+      "That the landing gear has just been successfully retracted after takeoff",
+      "That the parking brake has been set",
+      "That the cabin has become depressurized",
+    ],
+    answer: 0,
+    explain:
+      "A landing gear warning horn is triggered when the aircraft's configuration (typically low thrust setting combined with flaps at or beyond a defined position) matches what would be expected on approach to land, but the landing gear isn't down and locked - giving the crew a clear, hard-to-miss alert before an attempted gear-up landing.",
+    reference: "Warning Systems - Landing Gear Warning Horn",
+  },
+  {
+    id: 7,
+    system: "Warning Systems",
+    q: "What does a cabin altitude warning generally alert the crew to?",
+    options: [
+      "That cabin altitude has climbed above a safe threshold, indicating a pressurization problem that may require an emergency descent and oxygen use",
+      "That the cabin has become too cold",
+      "That the aircraft's actual (not cabin) altitude has exceeded its maximum operating altitude",
+      "That a passenger has manually opened an emergency exit",
+    ],
+    answer: 0,
+    explain:
+      "A cabin altitude warning is specifically tied to the cabin's own pressurization state, alerting the crew if cabin altitude climbs above a defined safe threshold - a sign of a pressurization system problem that generally calls for donning oxygen and beginning an emergency descent, rather than simply continuing the flight unchanged.",
+    reference: "Warning Systems - Cabin Altitude Warning",
+  },
+  {
+    id: 8,
+    system: "Warning Systems",
+    q: "What is the general purpose of a distinct aural/visual alert specifically for an autopilot disconnect?",
+    options: [
+      "It clearly flags the moment control has reverted back to the pilot - whether the disconnect was deliberate or automatic - so the crew doesn't fly on unaware that the autopilot is no longer engaged",
+      "It only ever occurs when the autopilot is first engaged, not when it disconnects",
+      "It has no purpose beyond decoration on the flight deck",
+      "It permanently disables the autopilot from being re-engaged for the rest of the flight",
+    ],
+    answer: 0,
+    explain:
+      "Because the aircraft needs active pilot control the instant the autopilot disconnects - whether the crew disconnected it deliberately or it dropped out on its own due to a fault - a distinct aural tone and visual indication makes that transition unmistakable, rather than leaving the crew to notice only by chance that the aircraft is no longer being flown automatically.",
+    reference: "Warning Systems - Autopilot Disconnect Alert",
+  },
+  {
+    id: 9,
+    system: "Warning Systems",
+    q: "How does a confirmed fire warning (bell and/or dedicated light) generally differ from an ordinary caution indication?",
+    options: [
+      "It represents one of the most time-critical, immediate-action conditions on the aircraft, so it uses its own distinct, highly attention-getting alert rather than blending in with routine caution messages",
+      "A fire warning is treated as less urgent than a routine caution",
+      "Fire warnings and cautions use exactly the same alert with no distinguishing features",
+      "Fire warnings are silent, with no aural component at all",
+    ],
+    answer: 0,
+    explain:
+      "A confirmed fire is about as time-critical as an inflight condition gets, so it's deliberately given its own highly distinct alert (often a dedicated bell and/or guarded light) rather than being folded into the general caution/warning tone hierarchy - ensuring it can never be mistaken for a lower-priority condition.",
+    reference: "Warning Systems - Fire Warning",
+  },
+  {
+    id: 10,
+    system: "Warning Systems",
+    q: "Why do ground proximity-type warning systems typically include a mode specifically for excessive descent rate, separate from a mode for terrain closure?",
+    options: [
+      "An unusually high descent rate can be hazardous even over benign, non-rising terrain, so it needs its own dedicated detection logic rather than only being caught by a mode that's watching for terrain getting closer than expected",
+      "Descent rate and terrain closure are always the exact same thing, so a separate mode is redundant",
+      "The excessive descent rate mode exists only to save fuel",
+      "This mode is used only while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "An excessive rate of descent can be dangerous purely on its own terms - even with flat, non-threatening terrain below - so ground proximity-type systems include a dedicated mode watching descent rate directly, complementing (rather than duplicating) a separate mode that's specifically watching for the aircraft closing in on rising or nearby terrain.",
+    reference: "Warning Systems - Excessive Descent Rate Mode",
+  },
 ];

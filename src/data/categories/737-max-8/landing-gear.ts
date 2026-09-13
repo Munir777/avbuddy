@@ -80,4 +80,79 @@ export const B737_LANDING_GEAR_QUESTIONS: Question[] = [
       "Gear doors are generally sequenced to open only for the brief period the gear is actually moving through the wheel well, then close again once the gear is fully retracted (or, on extension, once the gear is down) - keeping the fuselage/wing aerodynamically faired over the wheel well rather than leaving an open cavity for the rest of the flight.",
     reference: "Landing Gear - Gear Doors",
   },
+  {
+    id: 6,
+    system: "Landing Gear",
+    q: "What is the general purpose of an antiskid (anti-lock) braking system on the main gear?",
+    options: [
+      "It automatically reduces or releases brake pressure on a wheel that's about to skid, preserving braking friction and protecting the tire from a flat spot",
+      "It applies maximum brake pressure to every wheel simultaneously regardless of runway condition",
+      "It is used only to keep the wheels spinning in flight for balance",
+      "It disables braking entirely below a defined groundspeed",
+    ],
+    answer: 0,
+    explain:
+      "A skidding (locked) wheel loses much of its braking effectiveness and risks a badly worn flat spot on the tire; an antiskid system senses an impending skid on each wheel and automatically modulates that wheel's brake pressure to stay near the point of maximum braking friction, improving stopping performance while protecting the tires.",
+    reference: "Landing Gear - Antiskid System",
+  },
+  {
+    id: 7,
+    system: "Landing Gear",
+    q: "What is the general purpose of an autobrake system?",
+    options: [
+      "It automatically applies braking to a pre-selected deceleration level after touchdown (or a rejected takeoff), without the crew needing to manually modulate the brake pedals",
+      "It prevents the brakes from ever being used automatically, requiring only manual pedal braking",
+      "It is used only to set the parking brake",
+      "It controls nosewheel steering rather than braking",
+    ],
+    answer: 0,
+    explain:
+      "An autobrake system lets the crew select a target deceleration level before landing (or arm it for a rejected takeoff), after which it automatically applies and modulates braking to achieve that deceleration once the relevant conditions are met - reducing crew workload at a busy phase of flight while still allowing manual override if needed.",
+    reference: "Landing Gear - Autobrake System",
+  },
+  {
+    id: 8,
+    system: "Landing Gear",
+    q: "Why is brake temperature monitored, particularly after a demanding stop such as a rejected takeoff?",
+    options: [
+      "Very hot brakes need time to cool before they can safely handle another demanding stop, and excessive heat can also raise the risk of a tire failure or brake fire",
+      "Brake temperature has no bearing on brake or tire safety",
+      "It is monitored only to control cabin temperature",
+      "Brake temperature monitoring exists solely to satisfy a cosmetic cockpit indication requirement",
+    ],
+    answer: 0,
+    explain:
+      "A brake absorbing a large amount of kinetic energy (as in a high-speed rejected takeoff) can become extremely hot, and if it doesn't get adequate time to cool before another demanding stop is required, there's an increased risk of reduced braking performance, a brake-related tire failure, or even a brake fire - so brake temperature is monitored and factored into decisions like turnaround time or takeoff delay.",
+    reference: "Landing Gear - Brake Temperature",
+  },
+  {
+    id: 9,
+    system: "Landing Gear",
+    q: "What is the general function of the shock strut ('oleo') in each landing gear leg?",
+    options: [
+      "It absorbs and dampens the loads from landing impact and taxiing, typically using a combination of compressed oil and nitrogen gas",
+      "It only provides steering input, with no shock absorption at all",
+      "It generates hydraulic power for the rest of the aircraft",
+      "It has no function other than holding the wheel axle in place",
+    ],
+    answer: 0,
+    explain:
+      "A shock strut absorbs the impact loads of landing and the ongoing loads of taxiing over an uneven surface, typically by compressing a combination of hydraulic oil and nitrogen gas within the strut - converting a sudden physical impact into a controlled, cushioned deceleration rather than transmitting the full shock directly into the airframe.",
+    reference: "Landing Gear - Shock Strut",
+  },
+  {
+    id: 10,
+    system: "Landing Gear",
+    q: "What is the general purpose of a 'chined' nose tire design, as used on some aircraft?",
+    options: [
+      "Its shaped sidewall deflects water and slush sideways and away from the area in front of the engine inlets, reducing the risk of ingestion during takeoff and landing on a wet or contaminated runway",
+      "It is a purely decorative tread pattern with no functional purpose",
+      "It reduces tire weight with no effect on water/slush handling",
+      "It is used only on the main gear, never the nose gear",
+    ],
+    answer: 0,
+    explain:
+      "A chined tire has a specially shaped sidewall that deflects the spray of water or slush thrown up by the nose wheel outward and away from directly ahead of the aircraft, which helps reduce the amount that could otherwise be thrown up into a rear-mounted or low-slung engine inlet during ground operations on a wet or contaminated surface.",
+    reference: "Landing Gear - Chined Nose Tires",
+  },
 ];

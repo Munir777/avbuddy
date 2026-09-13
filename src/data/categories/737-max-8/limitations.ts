@@ -81,4 +81,79 @@ export const B737_LIMITATIONS_QUESTIONS: Question[] = [
       "An excessive difference in fuel quantity between the left and right main tanks shifts the aircraft's lateral center of gravity and can affect handling, so the limitations section defines a maximum permitted imbalance, with a crossfeed capability available to help correct it if it's exceeded.",
     reference: "Limitations - Fuel Imbalance",
   },
+  {
+    id: 6,
+    system: "Limitations",
+    q: "Why do approved limitations generally include minimum and maximum outside air temperatures for engine and APU starting?",
+    options: [
+      "Engine/APU systems, fluids, and materials have a validated operating temperature range, outside of which a start isn't approved because normal operation can't be assured",
+      "Temperature limitations exist only for passenger comfort, with no bearing on engines or the APU",
+      "There is no such limitation; engines and the APU can be started at any temperature",
+      "The limitation applies only to the airframe structure, never to the engines or APU",
+    ],
+    answer: 0,
+    explain:
+      "Engine and APU starting has only been tested and validated across a certain temperature range, so the approved limitations define minimum and maximum starting temperatures reflecting that validated envelope - starting outside that range risks a condition (such as inadequate lubrication flow when very cold) that hasn't been shown to work reliably.",
+    reference: "Limitations - Engine/APU Starting Temperature",
+  },
+  {
+    id: 7,
+    system: "Limitations",
+    q: "Why is there generally a maximum tire groundspeed limitation?",
+    options: [
+      "Tires generate heat and experience centrifugal stress that increase with rotational speed, so a maximum groundspeed limitation keeps them within their certified safe operating envelope",
+      "Tire speed has no bearing on tire safety at any groundspeed",
+      "The limitation exists only to control noise levels during taxi",
+      "It only applies to the nose gear, never to the main gear",
+    ],
+    answer: 0,
+    explain:
+      "As a tire rotates faster, it experiences greater centrifugal stress and generates more heat, both of which are factored into its certified limits, so a maximum groundspeed limitation exists to keep the tire operating within the envelope it was actually tested and approved for.",
+    reference: "Limitations - Maximum Tire Groundspeed",
+  },
+  {
+    id: 8,
+    system: "Limitations",
+    q: "What is the general concept behind a brake energy (or 'brake kinetic energy') limit?",
+    options: [
+      "A given combination of aircraft weight and speed corresponds to a certain amount of kinetic energy the brakes must absorb as heat during a stop, and this is limited to avoid exceeding what the brakes can safely handle in a single application",
+      "It limits only how many times the brakes can be used across the aircraft's entire service life",
+      "It has no connection to weight or speed and applies a single fixed number regardless of conditions",
+      "It limits fuel consumption during taxi",
+    ],
+    answer: 0,
+    explain:
+      "Stopping the aircraft converts its kinetic energy (driven by weight and speed) into heat absorbed by the brakes, so the approved limitations define a maximum energy the brakes can safely absorb in a single stop - relevant, for example, to a high-speed rejected takeoff - beyond which brake damage, fire risk, or reduced structural margin could result.",
+    reference: "Limitations - Brake Energy Limit",
+  },
+  {
+    id: 9,
+    system: "Limitations",
+    q: "Why might the approved limitations specify a maximum taxi speed for turns, separate from the maximum straight-ahead taxi speed?",
+    options: [
+      "Turning at speed generates additional side loads on the landing gear and tires beyond what straight-ahead taxiing produces, so a lower speed limit applies specifically to turning",
+      "Turning at any speed is always safer than taxiing in a straight line",
+      "There is no meaningful difference between turning and straight-ahead taxi loads",
+      "The limitation exists purely to reduce cabin noise during ground movement",
+    ],
+    answer: 0,
+    explain:
+      "Making a turn while taxiing introduces lateral (side) loads on the landing gear and tires that straight-ahead taxiing doesn't produce, so a separate, generally lower speed limitation for turns helps keep those side loads within the gear and tires' safe structural margin.",
+    reference: "Limitations - Taxi Turn Speed",
+  },
+  {
+    id: 10,
+    system: "Limitations",
+    q: "Why does the approved limitations section generally specify a separate (and often lower) maximum altitude for APU operation and starting, distinct from the aircraft's own maximum operating altitude?",
+    options: [
+      "The APU's own performance and start reliability degrade with the thinner air at higher altitude, so its safe/reliable operating envelope is validated only up to its own defined altitude limit",
+      "The APU's altitude limit is always identical to the aircraft's maximum operating altitude, with no separate figure",
+      "APU altitude limitations exist purely for noise abatement purposes",
+      "The APU can be operated at any altitude with no limitation of its own",
+    ],
+    answer: 0,
+    explain:
+      "Because the APU is a separate small gas turbine with its own performance characteristics, its ability to start reliably and produce adequate bleed air/electrical output in the thinner air at higher altitudes is validated only up to its own defined altitude limit - which is why the approved limitations generally list a distinct APU operating/start altitude, separate from (and often lower than) the aircraft's own maximum operating altitude.",
+    reference: "Limitations - APU Operating Altitude",
+  },
 ];

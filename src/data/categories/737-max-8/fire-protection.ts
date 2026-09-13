@@ -80,4 +80,79 @@ export const B737_FIRE_PROTECTION_QUESTIONS: Question[] = [
       "Fire protection is generally designed around each defined fire zone of the aircraft - not just the engines - since overheat or fire conditions can develop wherever there's a meaningful ignition/fuel source, such as a wheel well (from an overheated brake) or the APU compartment, so each such zone gets its own dedicated detection coverage rather than relying on engine-area detection alone.",
     reference: "Fire Protection - Fire Zone Detection Coverage",
   },
+  {
+    id: 6,
+    system: "Fire Protection",
+    q: "What is the general purpose of a fire detection/warning system test function that the crew can activate before flight?",
+    options: [
+      "It lets the crew confirm the detection and warning circuitry itself is functioning correctly, without needing an actual fire to verify it",
+      "It permanently disables the fire detection system for the remainder of the flight once used",
+      "It can only be performed by ground maintenance personnel, never the flight crew",
+      "It has no real diagnostic function and exists purely as a checklist formality",
+    ],
+    answer: 0,
+    explain:
+      "A pre-flight fire detection/warning test lets the crew confirm that the detection loops and warning indications actually respond correctly, giving confidence the system will work if it's ever genuinely needed - rather than only discovering a fault in the wiring or indications during an actual fire.",
+    reference: "Fire Protection - Fire Detection Test Function",
+  },
+  {
+    id: 7,
+    system: "Fire Protection",
+    q: "In general terms, how does a fire extinguishing agent typically work to put out a fire, beyond simply cooling it?",
+    options: [
+      "Many agents work by displacing oxygen around the fire and/or interrupting the chemical chain reaction of combustion, not just by lowering temperature",
+      "All extinguishing agents work exclusively by cooling, with no other mechanism involved",
+      "Extinguishing agents work only by adding more fuel to burn the fire out faster",
+      "Extinguishing agents function only in a vacuum with no atmosphere present",
+    ],
+    answer: 0,
+    explain:
+      "Beyond any cooling effect, many aviation fire extinguishing agents work by displacing the oxygen available to the fire and/or chemically interrupting the combustion reaction itself, both of which can stop a fire from sustaining itself even without dramatically lowering the surrounding temperature.",
+    reference: "Fire Protection - Extinguishing Agent Mechanism",
+  },
+  {
+    id: 8,
+    system: "Fire Protection",
+    q: "Why are engine fire zones generally designed with defined ventilation and drainage paths?",
+    options: [
+      "To prevent flammable fluids (such as fuel or oil from a leak) from pooling and accumulating in the fire zone, which would otherwise increase fire risk and severity",
+      "Ventilation and drainage exist purely to reduce engine noise",
+      "They exist only to cool the fire zone in cold weather",
+      "Fire zones are deliberately sealed with no ventilation or drainage at all",
+    ],
+    answer: 0,
+    explain:
+      "If a flammable fluid leak (fuel, oil, or hydraulic fluid) were allowed to simply pool inside an engine fire zone, it would significantly raise the risk and potential severity of a fire; defined ventilation and drainage paths are designed in specifically to carry such fluids away rather than letting them accumulate.",
+    reference: "Fire Protection - Fire Zone Ventilation & Drainage",
+  },
+  {
+    id: 9,
+    system: "Fire Protection",
+    q: "Why is a fire detection system generally required to respond within a defined, tested time limit, rather than simply being judged on whether it eventually detects a fire?",
+    options: [
+      "A fire left undetected for too long can grow far more dangerous, so the system's actual response speed - not just its eventual ability to detect - is what makes it operationally useful",
+      "Response time has no bearing on how useful a fire detection system actually is",
+      "A slower detection response is always preferred to avoid false alarms",
+      "This requirement applies only to smoke detectors, never to fire/overheat loops",
+    ],
+    answer: 0,
+    explain:
+      "A fire that grows for an extended period before being detected is far more dangerous and harder to control than one caught early, so fire detection systems are validated against a defined response-time requirement - being correct only eventually isn't good enough if it comes too late to matter operationally.",
+    reference: "Fire Protection - Detection Response Time",
+  },
+  {
+    id: 10,
+    system: "Fire Protection",
+    q: "After successfully discharging an extinguishing agent into an engine and seeing the fire indication clear, what is a generally sensible crew consideration?",
+    options: [
+      "Continue monitoring closely for any sign of re-ignition, and be aware of how much extinguishing agent (if any) remains available should a second discharge be needed",
+      "Immediately disregard the engine entirely, since a fire indication clearing means no further monitoring is needed",
+      "Restart the affected engine right away regardless of the fire history",
+      "Assume the fire warning system itself is now permanently unreliable",
+    ],
+    answer: 0,
+    explain:
+      "A fire indication clearing after extinguishing agent discharge is a good sign, but it doesn't guarantee the fire can't reignite, so continued monitoring remains important - along with being aware of remaining extinguishing capacity, since a second bottle (where fitted) may be needed if the first discharge doesn't fully resolve the situation.",
+    reference: "Fire Protection - Post-Extinguishing Monitoring",
+  },
 ];

@@ -80,4 +80,79 @@ export const B737_DOORS_EQUIPMENT_QUESTIONS: Question[] = [
       "Lavatories and cargo compartments aren't under constant direct crew observation the way the cabin aisle is, so a dedicated smoke detector gives an automatic alert if smoke develops there, prompting the crew to respond (and, in a cargo compartment, often triggering or supporting an automatic fire suppression system) well before the condition might otherwise be noticed.",
     reference: "Doors & Equipment - Smoke Detection",
   },
+  {
+    id: 6,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of a door pressure indicator or lock showing whether it's safe to open a passenger door?",
+    options: [
+      "It warns the crew/ground staff that a pressurized cabin door should not be opened until cabin pressure has been equalized with the outside, since opening it under differential pressure would be extremely dangerous",
+      "It shows only whether the door has been painted the correct color",
+      "It indicates fuel quantity rather than door status",
+      "It has no safety function and is purely a maintenance record",
+    ],
+    answer: 0,
+    explain:
+      "Opening a door while the cabin is still pressurized relative to the outside would be extremely hazardous, so this kind of indicator (or an associated lock/warning) helps ensure the door is only opened once cabin pressure has equalized with ambient - protecting against a dangerous premature opening attempt.",
+    reference: "Doors - Pressure Indication/Lock",
+  },
+  {
+    id: 7,
+    system: "Doors & Equipment",
+    q: "How do simple overwing emergency exits typically differ from the powered main entry/service doors?",
+    options: [
+      "They are generally lighter, simpler hatch-type exits that the operator (crew or a passenger, if needed) manually removes or swings open, rather than a heavier door with dedicated actuation and slide mechanisms",
+      "They are always larger than the main entry doors",
+      "They can only be opened from outside the aircraft, never from inside",
+      "They serve no emergency function and are purely a structural access panel",
+    ],
+    answer: 0,
+    explain:
+      "Overwing exits are typically simpler, lighter hatch-type panels - designed to be manually removed or swung open by whoever operates them in an emergency - in contrast to the heavier, more mechanically complex main entry/service doors, which usually integrate their own evacuation slide and arming mechanism.",
+    reference: "Doors - Overwing Emergency Exits",
+  },
+  {
+    id: 8,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of carrying life vests (and, on some routes, life rafts) as emergency equipment?",
+    options: [
+      "To support passengers and crew in the event of a ditching or an evacuation into water, particularly relevant for flights operating over water",
+      "They are used only for routine flotation during normal flight",
+      "They replace the need for any other emergency equipment",
+      "They are required only for flights that never cross any body of water",
+    ],
+    answer: 0,
+    explain:
+      "Life vests (and, depending on the specific route and regulatory requirements, life rafts) are carried to support occupants in the water following a ditching or a water-adjacent evacuation - equipment whose carriage requirement is generally tied to how much of the route is flown over water and how far from land.",
+    reference: "Doors - Life Vests & Rafts",
+  },
+  {
+    id: 9,
+    system: "Doors & Equipment",
+    q: "What is the general purpose of portable protective breathing equipment (PBE) carried for crew use?",
+    options: [
+      "It supplies the wearer with breathable air/oxygen and eye protection so a crew member can move through and fight a smoke-filled area without being incapacitated by the smoke themselves",
+      "It is a passenger-only item, never intended for crew use",
+      "It is used only to communicate with air traffic control",
+      "It functions only when the cabin is fully depressurized",
+    ],
+    answer: 0,
+    explain:
+      "Protective breathing equipment gives a crew member their own supply of breathable air/oxygen along with eye protection, letting them move through smoke - for example, to investigate or fight a fire - without themselves being overcome by the smoke they're dealing with.",
+    reference: "Doors - Protective Breathing Equipment",
+  },
+  {
+    id: 10,
+    system: "Doors & Equipment",
+    q: "Why is emergency cabin lighting typically powered by its own independent battery source, rather than relying solely on the aircraft's main electrical system?",
+    options: [
+      "So the cabin retains usable lighting for an evacuation even if the aircraft's main electrical power has failed entirely",
+      "Independent battery power is used purely to reduce the weight of cabin wiring",
+      "Emergency lighting is never needed if the main electrical system is working",
+      "It has no benefit over drawing power from the main system in every case",
+    ],
+    answer: 0,
+    explain:
+      "An emergency lighting system that depends on its own dedicated battery power stays available precisely in the scenario it matters most - a total loss of the aircraft's main electrical system - ensuring the cabin (and exit markings/path lighting) can still be illuminated to support a safe evacuation.",
+    reference: "Doors - Emergency Lighting Power Source",
+  },
 ];

@@ -81,4 +81,79 @@ export const B737_AIR_SYSTEMS_QUESTIONS: Question[] = [
       "Recirculation fans take a portion of the cabin's existing (filtered) air and mix it back in with fresh, bleed-air-sourced conditioned air, which maintains good total airflow through the cabin while reducing how much fresh bleed air the engines need to supply - improving engine efficiency compared with using 100% fresh bleed air throughout the flight.",
     reference: "Air Systems - Cabin Air Recirculation",
   },
+  {
+    id: 6,
+    system: "Air Systems",
+    q: "What is the general purpose of a cabin pressurization negative-relief valve?",
+    options: [
+      "It prevents outside pressure from exceeding cabin pressure by an unsafe amount (a 'negative' differential), which could otherwise damage the fuselage structure or cabin fittings",
+      "It caps the maximum positive cabin pressure differential, protecting against over-pressurization",
+      "It controls cabin temperature rather than pressure",
+      "It has no protective function and is purely decorative",
+    ],
+    answer: 0,
+    explain:
+      "A negative-relief valve opens automatically to admit outside air into the cabin if outside pressure would otherwise exceed cabin pressure by more than a safe margin - protecting the fuselage structure (which is generally designed for pressure differential in one direction) from being pushed the 'wrong way.'",
+    reference: "Air Systems - Negative Pressure Relief Valve",
+  },
+  {
+    id: 7,
+    system: "Air Systems",
+    q: "What is the general purpose of a positive pressure relief valve on the cabin?",
+    options: [
+      "It automatically vents excess air if cabin pressure differential would otherwise exceed a safe maximum, protecting the fuselage from over-pressurization",
+      "It is the same component as the negative-relief valve, just under a different name",
+      "It only operates while the aircraft is on the ground",
+      "It controls how much fresh air enters the cabin during normal cruise",
+    ],
+    answer: 0,
+    explain:
+      "A positive pressure relief valve is a safety backup that automatically opens to vent air overboard if the cabin-to-outside pressure differential would otherwise climb beyond its safe maximum - protecting the fuselage structure even if the normal pressure controller and outflow valve failed to limit it themselves.",
+    reference: "Air Systems - Positive Pressure Relief Valve",
+  },
+  {
+    id: 8,
+    system: "Air Systems",
+    q: "What is the general purpose of a dedicated equipment cooling system for avionics/electronics compartments?",
+    options: [
+      "It circulates cooling air specifically to electronic equipment bays, removing the heat that densely packed avionics generate, separate from cabin air conditioning",
+      "It is simply another name for the cabin air conditioning packs",
+      "It exists only to warm avionics equipment in cold weather",
+      "It has no distinct function separate from wing anti-ice",
+    ],
+    answer: 0,
+    explain:
+      "Densely packed electronic equipment generates significant heat that needs to be continuously removed to keep it operating reliably, so a dedicated equipment cooling system circulates air specifically through avionics bays - a distinct function from the cabin air conditioning system, even though both may draw from related sources of air.",
+    reference: "Air Systems - Equipment Cooling",
+  },
+  {
+    id: 9,
+    system: "Air Systems",
+    q: "What is a general purpose of cargo compartment heating/ventilation?",
+    options: [
+      "It keeps the cargo compartment within an acceptable temperature range, which matters both for temperature-sensitive cargo and for compartments that may carry live animals",
+      "It exists solely to pressurize the hydraulic reservoirs",
+      "Cargo compartments are never heated or ventilated on any aircraft",
+      "It is used only to cool the engines during ground operations",
+    ],
+    answer: 0,
+    explain:
+      "Cargo compartment heating/ventilation keeps the compartment within a reasonable temperature range in flight, which matters for temperature-sensitive cargo and is particularly important in compartments approved to carry live animals, rather than leaving the compartment to passively follow the very cold temperatures found at cruise altitude.",
+    reference: "Air Systems - Cargo Compartment Heating",
+  },
+  {
+    id: 10,
+    system: "Air Systems",
+    q: "Why does cabin altitude typically change more gradually than the aircraft's actual altitude during climb and descent, rather than matching it directly?",
+    options: [
+      "The cabin pressure controller deliberately schedules cabin altitude to change at a comfortable, limited rate, protecting passenger and crew ears/comfort rather than tracking the aircraft's often much faster rate of altitude change",
+      "Cabin altitude is completely unrelated to aircraft altitude and changes on its own arbitrary schedule",
+      "The outflow valve is physically incapable of responding quickly to changes in aircraft altitude",
+      "Cabin altitude actually changes faster than aircraft altitude during climb, not slower",
+    ],
+    answer: 0,
+    explain:
+      "The cabin pressure controller deliberately limits how quickly cabin altitude changes - well within what the aircraft's actual rate of climb or descent might otherwise demand - so passengers and crew experience a much gentler pressure change on their ears than the aircraft's own often much faster climb or descent rate would produce if cabin altitude tracked it directly.",
+    reference: "Air Systems - Cabin Rate of Change",
+  },
 ];

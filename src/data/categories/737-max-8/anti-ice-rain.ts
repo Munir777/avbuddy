@@ -80,4 +80,79 @@ export const B737_ANTI_ICE_RAIN_QUESTIONS: Question[] = [
       "Verifying anti-ice system operation on the ground - regardless of the actual outside temperature - confirms the system itself is functional before the flight, since discovering a fault only after encountering real icing conditions in flight would be a much worse time to find out; a functional check doesn't require actual ice to be present.",
     reference: "Anti-Ice & Rain - Pre-Flight System Checks",
   },
+  {
+    id: 6,
+    system: "Anti-Ice & Rain",
+    q: "Why is wing leading-edge (thermal bleed-air) anti-ice typically inhibited or restricted while the aircraft is stationary on the ground with engines producing high power?",
+    options: [
+      "Without forward airflow to help carry the heat away, the leading edge structure could overheat from the concentrated bleed air heating while the aircraft isn't moving",
+      "Ground anti-ice use has no restriction of any kind compared with in-flight use",
+      "It is restricted only to reduce noise on the ramp",
+      "It is restricted because bleed air is entirely unavailable while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "In flight, forward airspeed helps carry heat away from the anti-iced leading edge surfaces; without that airflow while stationary on the ground, the same bleed-air heating that's safe in flight can risk locally overheating the structure, which is why wing anti-ice use is typically restricted or handled differently during extended high-power ground operation.",
+    reference: "Anti-Ice & Rain - Ground Use Restriction",
+  },
+  {
+    id: 7,
+    system: "Anti-Ice & Rain",
+    q: "Why is pitot, static, and angle-of-attack probe heating generally left on continuously in flight, rather than only being switched on once the crew visually notices icing conditions?",
+    options: [
+      "Ice can form on these small, safety-critical probes quickly and sometimes without being visually obvious to the crew, so continuous heating avoids depending on the crew to notice and react in time",
+      "These probes are never at risk of icing under any conditions",
+      "Continuous heating is used only to prevent lightning strikes",
+      "It is switched on only after landing, never in flight",
+    ],
+    answer: 0,
+    explain:
+      "Because these probes are small, safety-critical, and can ice over quickly - sometimes without being visually apparent to the crew from the flight deck - probe heating is generally kept on continuously in flight rather than being something the crew has to remember to activate only once icing is noticed, removing a step that could otherwise be missed.",
+    reference: "Anti-Ice & Rain - Continuous Probe Heating",
+  },
+  {
+    id: 8,
+    system: "Anti-Ice & Rain",
+    q: "Besides the wing leading edge, what other engine-related surface is commonly protected by thermal (bleed-air) anti-ice?",
+    options: [
+      "The engine inlet cowl/lip, to prevent ice from forming there and potentially being ingested into the engine",
+      "The engine exhaust nozzle only, with the inlet left completely unprotected",
+      "Only the fan blades themselves, with the inlet cowl left unprotected",
+      "No engine surface besides the wing leading edge is ever anti-iced",
+    ],
+    answer: 0,
+    explain:
+      "The engine inlet cowl/lip is commonly protected with thermal (bleed-air) anti-ice as well, since ice forming there could break off and be ingested into the engine core or fan - a distinct anti-ice application from the wing leading edge, but using a similar bleed-air-based approach.",
+    reference: "Anti-Ice & Rain - Engine Inlet Anti-Ice",
+  },
+  {
+    id: 9,
+    system: "Anti-Ice & Rain",
+    q: "What is the general benefit of an 'automatic' anti-ice mode that can engage protection based on ice-detection input, compared with a purely manual on/off selection?",
+    options: [
+      "It can activate anti-ice protection as soon as icing conditions are detected, without depending on the crew to notice the conditions and select it manually",
+      "Automatic mode permanently disables the ability to manually select anti-ice at all",
+      "It has no advantage over manual selection in any respect",
+      "It only works while the aircraft is on the ground",
+    ],
+    answer: 0,
+    explain:
+      "An automatic anti-ice mode tied to ice-detection input can turn protection on as soon as icing conditions are actually sensed, reducing the chance of a delay between conditions developing and the crew noticing and manually selecting anti-ice on - while a manual mode remains available for the crew to select protection proactively regardless of what the detector reports.",
+    reference: "Anti-Ice & Rain - Automatic vs Manual Anti-Ice Selection",
+  },
+  {
+    id: 10,
+    system: "Anti-Ice & Rain",
+    q: "Why do anti-ice systems generally have a defined temperature band in which icing is considered a genuine risk, rather than needing to run in all conditions?",
+    options: [
+      "Airframe icing generally requires both sufficiently cold temperatures and the presence of moisture, so anti-ice need/activation logic is built around that specific combination rather than temperature alone",
+      "Icing risk is completely unrelated to temperature",
+      "Anti-ice systems must always run throughout every flight regardless of conditions",
+      "The temperature band exists only to control cabin comfort, not actual icing risk",
+    ],
+    answer: 0,
+    explain:
+      "Airframe icing generally needs both a sufficiently cold temperature and the presence of moisture (visible or otherwise) to actually occur, so anti-ice activation guidance and detection logic are built around that combined condition - well below freezing with no moisture present, for example, doesn't carry the same icing risk as conditions nearer freezing with visible moisture.",
+    reference: "Anti-Ice & Rain - Icing Condition Temperature Band",
+  },
 ];

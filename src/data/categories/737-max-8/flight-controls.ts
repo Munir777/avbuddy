@@ -80,4 +80,79 @@ export const B737_FLIGHT_CONTROLS_QUESTIONS: Question[] = [
       "As a safety feature, applying a large enough manual force to the control column while the autopilot is engaged triggers an automatic autopilot disconnect, so the pilot can always physically override and immediately regain manual control rather than having to fight the autopilot or hunt for a disconnect switch.",
     reference: "Flight Controls - Autopilot Force Disconnect",
   },
+  {
+    id: 6,
+    system: "Flight Controls",
+    q: "Why do hydraulically-boosted flight controls typically include an artificial 'feel' system, rather than leaving the pilot to feel only what the hydraulic actuators themselves transmit?",
+    options: [
+      "Hydraulic boost largely masks the real aerodynamic forces on the control surfaces, so an artificial feel system generates a synthetic resistance (varying with airspeed/configuration) to give the pilot meaningful tactile feedback",
+      "Artificial feel exists purely for passenger comfort, with no connection to the pilot's controls",
+      "Feel systems are used only on aircraft with no hydraulic boost at all",
+      "It has no real purpose and is included only for symmetry between the two control columns",
+    ],
+    answer: 0,
+    explain:
+      "Because hydraulic boost does most of the actual work of moving the control surfaces, the pilot would otherwise feel very little of the real aerodynamic load; an artificial feel system generates a synthetic resistance on the controls - typically increasing with airspeed - so the pilot still gets meaningful, speed-appropriate tactile feedback rather than an unnaturally light or constant feel.",
+    reference: "Flight Controls - Artificial Feel System",
+  },
+  {
+    id: 7,
+    system: "Flight Controls",
+    q: "What is the general purpose of a rudder travel limiter?",
+    options: [
+      "It restricts the maximum available rudder deflection at higher airspeeds, protecting the vertical stabilizer from excessive structural loads while still allowing full rudder travel at low speed",
+      "It prevents the rudder from moving at all above a certain speed",
+      "It only functions while the aircraft is on the ground",
+      "It increases available rudder travel as airspeed increases",
+    ],
+    answer: 0,
+    explain:
+      "A rudder travel limiter reduces the maximum rudder deflection available as airspeed increases, since a large rudder deflection at high speed can generate side loads on the vertical stabilizer well beyond what's needed (or structurally desirable) - while still permitting full rudder authority at the lower speeds where it may genuinely be needed, such as for crosswind control.",
+    reference: "Flight Controls - Rudder Travel Limiter",
+  },
+  {
+    id: 8,
+    system: "Flight Controls",
+    q: "Leading edge slats and Krueger-type flaps are typically actuated by which general power source?",
+    options: [
+      "Hydraulic (or, as a backup on some systems, pneumatic) power, driven through a common drive shaft/gearbox arrangement across the wing",
+      "Purely by aerodynamic forces alone, with no powered actuation at all",
+      "By a separate battery-powered electric motor for each individual panel with no shared drive",
+      "By manual pilot force transmitted directly with no mechanical assistance",
+    ],
+    answer: 0,
+    explain:
+      "Leading edge devices are typically driven hydraulically (with a pneumatic backup drive on some designs) through a shared drive shaft and gearbox arrangement running along the wing, so all the leading edge panels extend and retract together in a coordinated way rather than each needing its own independent actuator.",
+    reference: "Flight Controls - Leading Edge Device Actuation",
+  },
+  {
+    id: 9,
+    system: "Flight Controls",
+    q: "What is the general purpose of a flap/slat asymmetry protection system?",
+    options: [
+      "It detects if the leading or trailing edge devices extend unevenly between the left and right wing, and stops further movement to prevent an uncontrollable roll tendency",
+      "It intentionally creates an asymmetric flap condition to help with crosswind landings",
+      "It only functions while the aircraft is fully retracted on the ground",
+      "It has no protective function and is a purely cosmetic indication",
+    ],
+    answer: 0,
+    explain:
+      "If the flap or slat system were to extend unevenly between the wings, the resulting lift asymmetry could produce a significant, potentially uncontrollable rolling tendency; an asymmetry protection system is designed to detect that condition and stop further movement, limiting how far the mismatch can develop before the crew can respond.",
+    reference: "Flight Controls - Flap/Slat Asymmetry Protection",
+  },
+  {
+    id: 10,
+    system: "Flight Controls",
+    q: "What is the general purpose of a yaw damper?",
+    options: [
+      "It automatically commands small rudder inputs to damp out Dutch roll oscillations, improving ride comfort and handling without requiring constant pilot correction",
+      "It permanently locks the rudder in a fixed position",
+      "It only operates when the landing gear is down",
+      "It increases, rather than reduces, any yaw oscillation",
+    ],
+    answer: 0,
+    explain:
+      "A yaw damper senses the onset of a Dutch roll-type oscillation and automatically applies small, timely rudder inputs to counteract it, damping the oscillation out - sparing the pilot from having to continuously make manual rudder corrections to keep the ride smooth and coordinated.",
+    reference: "Flight Controls - Yaw Damper",
+  },
 ];

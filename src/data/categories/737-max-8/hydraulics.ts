@@ -80,4 +80,79 @@ export const B737_HYDRAULICS_QUESTIONS: Question[] = [
       "Keeping the reservoirs under a positive air pressure (commonly supplied from the pneumatic system) helps push fluid reliably into the pump inlets, especially at altitude where ambient pressure is low - reducing the risk of the pump drawing in air (cavitation) and losing effective pressure output.",
     reference: "Hydraulics - Reservoir Pressurization",
   },
+  {
+    id: 6,
+    system: "Hydraulics",
+    q: "Why is aircraft hydraulic fluid generally a fire-resistant synthetic fluid rather than a simple petroleum-based oil?",
+    options: [
+      "Because hydraulic lines run through areas with hot surfaces and potential ignition sources, so a fluid resistant to catching fire reduces that risk if a leak occurs",
+      "Because synthetic fluid is significantly cheaper to manufacture than petroleum-based oil",
+      "Because fire resistance has no bearing on the choice of hydraulic fluid",
+      "Because synthetic fluid is required only for aesthetic (color) reasons",
+    ],
+    answer: 0,
+    explain:
+      "Hydraulic lines and components are routed through areas that can include hot engine or APU surfaces, so using a fire-resistant synthetic fluid (rather than a more flammable petroleum-based oil) reduces the risk that a hydraulic leak turns into a fire hazard.",
+    reference: "Hydraulics - Hydraulic Fluid Properties",
+  },
+  {
+    id: 7,
+    system: "Hydraulics",
+    q: "What is the general purpose of hydraulic system quantity and pressure gauges in the flight deck?",
+    options: [
+      "They let the crew monitor each system's fluid level and pressure, helping detect a developing leak or pump problem before it becomes a bigger issue",
+      "They only ever display information while the aircraft is on the ground",
+      "They measure cabin pressure, not hydraulic system status",
+      "They exist purely as a backup for the fuel quantity indication",
+    ],
+    answer: 0,
+    explain:
+      "Continuously displaying each hydraulic system's fluid quantity and pressure gives the crew an early indication of a developing problem - a slow leak or failing pump - so it can potentially be addressed or worked around before a system loses function entirely.",
+    reference: "Hydraulics - Quantity & Pressure Indication",
+  },
+  {
+    id: 8,
+    system: "Hydraulics",
+    q: "Why are the three hydraulic systems kept physically separate, with their own reservoirs and fluid lines, rather than sharing one common reservoir?",
+    options: [
+      "So that a fluid leak in one system doesn't drain fluid from (and disable) the other systems as well, keeping the loss contained to just the affected system",
+      "Sharing a single reservoir would make the aircraft lighter with no downside",
+      "Physical separation is done purely for ease of manufacturing, with no safety benefit",
+      "It is required only so each system can use a different color of fluid",
+    ],
+    answer: 0,
+    explain:
+      "Keeping each hydraulic system's reservoir and fluid lines physically separate from the others means a leak in one system can only drain that system's own fluid - it can't also drain the other systems - which is exactly the kind of containment that keeps a single leak from turning into a total hydraulic failure.",
+    reference: "Hydraulics - System Separation",
+  },
+  {
+    id: 9,
+    system: "Hydraulics",
+    q: "Unlike some other twin-engine jet types, this class of aircraft typically relies on which combination for emergency electrical power, rather than a ram air turbine (RAT)?",
+    options: [
+      "The APU generator together with the battery/standby power system",
+      "A wind-driven propeller mounted on the nose",
+      "A dedicated fifth engine carried solely for emergency power",
+      "There is no emergency electrical power source at all on this class of aircraft",
+    ],
+    answer: 0,
+    explain:
+      "Rather than deploying a ram air turbine into the airstream, this class of aircraft is typically designed to fall back on the APU generator (started in flight if needed) together with the battery-fed standby power system, providing emergency electrical power through existing installed equipment instead of a dedicated wind-driven emergency generator.",
+    reference: "Hydraulics - Emergency Power Source Comparison",
+  },
+  {
+    id: 10,
+    system: "Hydraulics",
+    q: "If the crew observes a hydraulic system's fluid quantity steadily decreasing in flight, what is a generally sensible precaution regarding use of that system?",
+    options: [
+      "Minimize unnecessary use of hydraulically-powered functions on that system to conserve the remaining fluid for functions that will still be needed later, such as landing gear or flight controls",
+      "Immediately shut down both engines",
+      "Continue using every hydraulically-powered function exactly as normal, since fluid quantity has no operational significance",
+      "Manually vent the remaining fluid overboard to prevent a fire",
+    ],
+    answer: 0,
+    explain:
+      "A steadily decreasing quantity points to an ongoing leak, so a sensible precaution is to reduce non-essential use of that system's hydraulically-powered functions, conserving whatever fluid remains for functions - like extending the landing gear or operating the flight controls - that will still be needed later in the flight.",
+    reference: "Hydraulics - Low Quantity Precautions",
+  },
 ];

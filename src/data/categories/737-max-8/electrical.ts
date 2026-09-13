@@ -80,4 +80,79 @@ export const B737_ELECTRICAL_QUESTIONS: Question[] = [
       "The electrical system is designed with automatic bus-tie logic so that losing one generator doesn't strand its bus - the system automatically reconfigures to feed it from the remaining generator or another available source, minimizing what the crew has to do manually.",
     reference: "Electrical - Bus Tie & Load Distribution",
   },
+  {
+    id: 6,
+    system: "Electrical",
+    q: "What is the general purpose of an external (ground) power receptacle?",
+    options: [
+      "It lets the aircraft's electrical systems run from a ground power unit before the engines or APU are started, without draining the battery",
+      "It can only ever be used after both engines are already running",
+      "It exists solely to charge the battery, with no other electrical function",
+      "It is used only to power the cabin lighting during flight",
+    ],
+    answer: 0,
+    explain:
+      "An external power receptacle lets ground crews plug in a ground power unit to run aircraft systems - lighting, avionics, air conditioning - during servicing and before engine or APU start, avoiding unnecessary battery drain for routine ground operations.",
+    reference: "Electrical - External Power",
+  },
+  {
+    id: 7,
+    system: "Electrical",
+    q: "Why is a generator commonly driven through a constant-speed drive unit rather than being connected directly to the engine's own variable rotational speed?",
+    options: [
+      "Because the generator needs to be driven at a constant speed to produce a stable AC frequency, even though engine rotational speed varies with power setting",
+      "Because a constant-speed drive increases engine thrust output",
+      "Because generators cannot produce any power unless driven at a variable speed",
+      "Because it eliminates the need for a generator altogether",
+    ],
+    answer: 0,
+    explain:
+      "AC electrical equipment generally needs a stable frequency to function correctly, but engine rotational speed changes continuously with power setting; a constant-speed drive sits between the engine and the generator specifically to keep the generator itself spinning at a constant speed, producing stable-frequency AC power regardless of how engine speed varies.",
+    reference: "Electrical - Constant-Speed Drive",
+  },
+  {
+    id: 8,
+    system: "Electrical",
+    q: "What is the general function of a transformer-rectifier unit (TRU) in the electrical system?",
+    options: [
+      "It converts AC power into DC power for the DC buses and battery charging",
+      "It converts DC power into AC power for the main AC buses",
+      "It generates electrical power independently of the generators",
+      "It has no electrical function and is purely a structural mounting bracket",
+    ],
+    answer: 0,
+    explain:
+      "A transformer-rectifier unit steps down and converts available AC power into DC power, supplying the aircraft's DC buses and supporting battery charging - the reverse conversion direction from a static inverter, which instead turns DC into limited AC.",
+    reference: "Electrical - Transformer-Rectifier Units",
+  },
+  {
+    id: 9,
+    system: "Electrical",
+    q: "What is the general purpose of a battery charger in the electrical system?",
+    options: [
+      "It keeps the battery charged and topped up whenever AC power is available, so it's ready to supply its full capacity if it's ever needed as a power source",
+      "It permanently disconnects the battery from the aircraft once installed",
+      "It discharges the battery intentionally during normal operation",
+      "It only operates while the aircraft is airborne, never on the ground",
+    ],
+    answer: 0,
+    explain:
+      "Whenever normal AC power is available, the battery charger keeps the battery topped up to its full charge, so that if the battery is later called on - for an engine/APU start, or as a standby power source - it can deliver its rated capacity rather than being found partially depleted.",
+    reference: "Electrical - Battery Charger",
+  },
+  {
+    id: 10,
+    system: "Electrical",
+    q: "What is the general purpose of automatic electrical 'load shedding' when the aircraft is operating on a reduced set of power sources?",
+    options: [
+      "Non-essential electrical loads are automatically disconnected so the remaining, more limited power source isn't overloaded and essential items stay powered",
+      "It permanently disables the flight instruments to save power",
+      "It only ever affects cabin lighting, never any other system",
+      "It has no real function and exists purely as a cockpit indication",
+    ],
+    answer: 0,
+    explain:
+      "When the aircraft is reduced to a limited power source - such as the battery or a single generator - automatic load shedding disconnects non-essential loads so the available power isn't overwhelmed, preserving capacity for the flight-essential items that actually need to stay powered.",
+    reference: "Electrical - Load Shedding",
+  },
 ];
