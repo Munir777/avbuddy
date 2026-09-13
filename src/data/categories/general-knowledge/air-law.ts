@@ -1184,4 +1184,52 @@ export const AIR_LAW_QUESTIONS: Question[] = [
       "A blast pad is built to resist erosion from the blast of jet or propeller wash near the runway end, but - unlike a stopway - it is not necessarily constructed to bear the weight of an aircraft attempting to stop on it, so the two surfaces serve related but distinct purposes.",
     reference: "Air Law - Runway & Takeoff Area Definitions",
   },
+  {
+    id: 79,
+    subject: "ATPL General Knowledge",
+    system: "Air Law",
+    q: "What is the general purpose of a published Standard Instrument Departure (SID)?",
+    options: [
+      "To provide a predefined, obstacle-checked departure route (often with a minimum climb gradient) so aircraft can transition from the runway to the enroute structure without needing individual radar vectoring",
+      "To specify only the arrival routing for an aerodrome, never the departure routing",
+      "To replace the need for any obstacle clearance calculations during take-off planning",
+      "To apply exclusively to VFR flights",
+    ],
+    answer: 0,
+    explain:
+      "A SID is a published instrument departure procedure whose route and (where relevant) minimum climb gradient have already been checked against surrounding obstacles, allowing aircraft to fly a standard, predictable path from the runway into the enroute airway structure without requiring individual ATC vectoring for every departure.",
+    reference: "Air Law - Standard Instrument Departures",
+  },
+  {
+    id: 80,
+    subject: "ATPL General Knowledge",
+    system: "Air Law",
+    q: "What is the general purpose of a published Standard Terminal Arrival Route (STAR)?",
+    options: [
+      "To provide a standardised routing from the enroute structure to a point near the destination aerodrome, reducing radio workload and giving predictable traffic flow ahead of the approach",
+      "To define the maximum permitted cruising altitude for the entire flight",
+      "To replace the need for an instrument approach procedure entirely",
+      "To apply only to cargo flights",
+    ],
+    answer: 0,
+    explain:
+      "A STAR links the enroute phase of flight to the approach phase using a standardised, published routing, which reduces the need for individual routing instructions and radio calls and helps air traffic control sequence arriving traffic in a predictable way before an aircraft is cleared for its approach.",
+    reference: "Air Law - Standard Terminal Arrival Routes",
+  },
+  {
+    id: 81,
+    subject: "ATPL General Knowledge",
+    system: "Air Law",
+    q: "Why are the weather minima required for a designated alternate aerodrome generally set higher than the landing minima used for the destination itself?",
+    options: [
+      "Because the alternate must offer a safe margin of confidence that a landing will actually be possible there if a diversion becomes necessary, given that its forecast weather carries more uncertainty by the time it might be used",
+      "Because alternate aerodromes are always smaller and therefore inherently more dangerous",
+      "Because regulations require alternate minima to always match the destination minima exactly",
+      "Because an alternate is never actually intended to be used, so its minima are set arbitrarily",
+    ],
+    answer: 0,
+    explain:
+      "An alternate is only flown to if things have already gone wrong at the destination, so its forecast weather at the (later) time of possible use is less certain; requiring higher, more conservative alternate minima than the destination's own landing minima builds in a margin of confidence that the diversion aerodrome will actually be usable when needed.",
+    reference: "Air Law - Alternate Aerodrome Minima",
+  },
 ];

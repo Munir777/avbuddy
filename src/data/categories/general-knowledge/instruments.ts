@@ -1243,4 +1243,68 @@ export const INSTRUMENTS_QUESTIONS: Question[] = [
       "If a propeller is left unfeathered after an engine failure, the airflow can drive it to continue rotating (windmilling) with the blades at an angle that produces considerable aerodynamic drag; feathering rotates the blades so their chord line is aligned edge-on to the airflow, stopping rotation and minimising that drag - also helping starve an engine fire of windmilling-induced airflow.",
     reference: "Instruments - Propeller Feathering & Windmilling",
   },
+  {
+    id: 79,
+    subject: "ATPL General Knowledge",
+    system: "Instruments",
+    q: "What is the general function of a Flight Management System (FMS)?",
+    options: [
+      "It integrates navigation, performance, and flight planning data into a single system, computing a lateral and vertical flight path and guiding the flight director, autopilot, and autothrottle along it",
+      "It exists solely to display outside air temperature to the crew",
+      "It replaces the need for any pre-flight fuel planning",
+      "It is a purely mechanical system with no connection to the autopilot",
+    ],
+    answer: 0,
+    explain:
+      "A flight management system combines navigation sensors, a stored route/performance database, and pilot-entered data to compute an optimised lateral and vertical flight path, which it can then use to drive the flight director cues, the autopilot, and the autothrottle/autothrust system so the aircraft follows that computed path with reduced manual pilot workload.",
+    reference: "Instruments - Flight Management Systems",
+  },
+  {
+    id: 80,
+    subject: "ATPL General Knowledge",
+    system: "Instruments",
+    q: "In general terms, how do Category I, II, and III instrument approach/autoland classifications differ from each other?",
+    options: [
+      "They correspond to progressively lower decision heights and lower visibility/RVR minima, with the lowest Category III sub-categories permitting an approach (and often an automatic landing) with very little or no outside visual reference at all",
+      "They only describe the type of navigation aid used, with no relation to decision height or visibility",
+      "Category III always has a higher decision height than Category I",
+      "The categories apply only to VFR approaches, never to instrument approaches",
+    ],
+    answer: 0,
+    explain:
+      "Category I, II, and III approaches represent progressively more demanding conditions and lower minima: Category I permits a comparatively higher decision height and visibility, Category II lower still, and Category III (particularly its lowest sub-categories) allows an approach - typically flown as an automatic landing - to be continued to touchdown with very low or effectively no decision height and minimal outside visual reference, relying on a suitably certified and redundant automatic landing system.",
+    reference: "Instruments - Approach & Autoland Categories",
+  },
+  {
+    id: 81,
+    subject: "ATPL General Knowledge",
+    system: "Instruments",
+    q: "When an autopilot is described as coupled to 'LNAV' and 'VNAV' modes, what does this generally mean?",
+    options: [
+      "The autopilot is following the lateral (LNAV) and vertical (VNAV) flight path computed by the navigation/flight management system, rather than a manually selected heading or a fixed pitch/vertical speed",
+      "LNAV and VNAV are simply two names for exactly the same autopilot mode",
+      "LNAV controls engine thrust and VNAV controls the rudder",
+      "These modes can only be used below 10,000 feet",
+    ],
+    answer: 0,
+    explain:
+      "LNAV describes the autopilot flying the lateral track defined by the computed route (rather than a manually selected heading), while VNAV describes it following a computed vertical profile (climb, cruise, and descent path) rather than a manually selected pitch, vertical speed, or altitude target - together letting the aircraft fly the planned three-dimensional path with reduced manual mode selection.",
+    reference: "Instruments - LNAV & VNAV Autopilot Modes",
+  },
+  {
+    id: 82,
+    subject: "ATPL General Knowledge",
+    system: "Instruments",
+    q: "In general terms, how is cabin pressure controlled on a pressurized transport aircraft?",
+    options: [
+      "Pressurized air (typically bleed air) continuously flows into the cabin, and a controllable outflow valve regulates how much of it is allowed to escape, so the pressure differential (and therefore cabin altitude) can be held at the desired level",
+      "Cabin pressure is fixed once on the ground and cannot be adjusted in flight",
+      "Cabin pressure is controlled entirely by adjusting engine thrust",
+      "The cabin is sealed completely, with no air inflow or outflow while airborne",
+    ],
+    answer: 0,
+    explain:
+      "Pressurized air is fed into the cabin continuously (commonly via bleed air through the air conditioning packs), and a cabin pressure controller automatically modulates an outflow valve to control how much of that air is vented overboard, which sets the resulting cabin pressure differential and cabin altitude for the current flight level.",
+    reference: "Instruments - Cabin Pressurization Control",
+  },
 ];

@@ -1344,4 +1344,84 @@ export const PERFORMANCE_PRINCIPLES_QUESTIONS: Question[] = [
       "Adverse yaw arises because the down-going aileron on the rising wing generally produces more induced drag than the up-going aileron on the descending wing produces; differential ailerons are rigged to deflect the up-going aileron through a larger angle than the down-going one, while Frise ailerons project part of the up-going aileron's leading edge below the wing to deliberately add drag on that side - both approaches are built-in design solutions that reduce the drag imbalance between the two ailerons, lessening adverse yaw without relying solely on pilot-applied rudder.",
     reference: "Performance - Differential & Frise Ailerons",
   },
+  {
+    id: 85,
+    subject: "ATPL General Knowledge",
+    system: "Performance & Principles of Flight",
+    q: "What is the general purpose of a recommended 'rough air' (turbulence penetration) speed published for some aircraft?",
+    options: [
+      "A recommended reduced speed for penetrating significant turbulence, balancing an adequate stall margin against structural gust-load limits",
+      "The maximum speed permitted only during a normal, smooth-air cruise",
+      "The minimum speed at which the autopilot may be engaged",
+      "A speed used exclusively for calculating landing distance",
+    ],
+    answer: 0,
+    explain:
+      "A recommended rough air (turbulence penetration) speed is a compromise: slow enough to keep structural gust loads within limits, but fast enough to retain an adequate margin above the stall and any low-speed buffet in turbulent, gusty conditions - crews are generally advised to reduce toward around this speed when significant turbulence is encountered.",
+    reference: "Performance - Turbulence Penetration Speed",
+  },
+  {
+    id: 86,
+    subject: "ATPL General Knowledge",
+    system: "Performance & Principles of Flight",
+    q: "What does 'cost index' generally represent in flight planning?",
+    options: [
+      "A value expressing the ratio of time-related operating costs to fuel cost, used by the flight management system to compute a cruise speed that balances the two",
+      "A fixed regulatory limit on how much fuel an aircraft may carry",
+      "A measure of how many passengers are on board relative to maximum capacity",
+      "A code that identifies which alternate aerodrome has been selected",
+    ],
+    answer: 0,
+    explain:
+      "Cost index expresses the relationship between time-related costs (such as crew and aircraft ownership costs) and the cost of fuel; a low cost index biases the computed cruise speed toward maximum fuel efficiency (closer to the speed for maximum/long-range cruise), while a higher cost index biases it toward a faster speed that saves time at the expense of burning more fuel.",
+    reference: "Performance - Cost Index",
+  },
+  {
+    id: 87,
+    subject: "ATPL General Knowledge",
+    system: "Performance & Principles of Flight",
+    q: "What is generally meant by a takeoff being 'WAT-limited'?",
+    options: [
+      "The maximum permissible takeoff weight is limited by the combination of Weight, Altitude, and Temperature, rather than by runway length or obstacle clearance",
+      "The takeoff is limited purely by the amount of water present on the runway",
+      "WAT refers to a limit that only ever applies to landing, never to takeoff",
+      "WAT-limited means the aircraft cannot take off under any circumstances",
+    ],
+    answer: 0,
+    explain:
+      "A WAT limit reflects that an aircraft's maximum takeoff weight for adequate climb performance (particularly an engine-out climb gradient) depends on pressure altitude and temperature as well as weight; at a high enough altitude and/or temperature, this Weight-Altitude-Temperature limit - rather than runway length or obstacle clearance - can become the binding restriction on takeoff weight.",
+    reference: "Performance - WAT Limits",
+  },
+  {
+    id: 88,
+    subject: "ATPL General Knowledge",
+    system: "Performance & Principles of Flight",
+    q: "What is the general principle behind an 'assumed temperature' (flexible/derated) takeoff thrust setting?",
+    options: [
+      "The takeoff performance calculation deliberately uses a temperature higher than the actual outside air temperature, which the engines' thrust-setting logic interprets as calling for reduced thrust, so long as full-rated thrust still isn't actually needed for the conditions",
+      "It permanently modifies the engine's maximum rated thrust for all future flights",
+      "It is only usable when the actual outside air temperature is below freezing",
+      "It requires the runway to be contaminated with water or slush",
+    ],
+    answer: 0,
+    explain:
+      "When performance margins allow, the crew can enter an 'assumed' temperature higher than the actual outside air temperature; because the thrust required for a given performance margin generally decreases as the entered temperature increases, this causes the thrust-setting system to command less than full-rated takeoff thrust, reducing engine wear - while still leaving adequate performance margin for the take-off actually being flown, and remaining reducible to full thrust at any time if needed.",
+    reference: "Performance - Assumed Temperature (Flexible) Thrust",
+  },
+  {
+    id: 89,
+    subject: "ATPL General Knowledge",
+    system: "Performance & Principles of Flight",
+    q: "In the context of takeoff performance, what is generally meant by the 'second segment' of the climb-out?",
+    options: [
+      "The climb segment from gear retraction up to a defined height (commonly around 400 ft above the runway), flown with one engine inoperative at a minimum specified climb gradient, still in the takeoff flap/slat configuration",
+      "The segment of climb flown only after the aircraft has reached its cruising altitude",
+      "The final approach segment immediately before landing",
+      "A segment that only applies to single-engine aircraft",
+    ],
+    answer: 0,
+    explain:
+      "The second climb segment begins once the landing gear is retracted (following the initial segment from lift-off to gear-up) and continues, still in the takeoff flap/slat configuration, up to a defined height such as roughly 400 ft above the runway; with the critical engine inoperative, this segment carries one of the most demanding minimum climb gradient requirements of the whole departure profile, since drag remains relatively high with the takeoff configuration still retained.",
+    reference: "Performance - Second Segment Climb",
+  },
 ];

@@ -1144,4 +1144,20 @@ export const NAVIGATION_FLIGHT_PLANNING_QUESTIONS: Question[] = [
       "Differential GPS relies on a ground reference station at a precisely known, surveyed position computing the difference between that known position and the position its own GPS receiver calculates; this correction factor is then broadcast to nearby aircraft, allowing them to apply the same correction to their own GPS position and achieve substantially better accuracy than an uncorrected GPS fix.",
     reference: "Navigation - Differential GPS",
   },
+  {
+    id: 75,
+    subject: "ATPL General Knowledge",
+    system: "Navigation & Flight Planning",
+    q: "Why are maximum permitted holding speeds generally specified, and how do they typically vary with altitude?",
+    options: [
+      "To keep holding aircraft within the pattern's protected airspace; the permitted maximum speed generally increases in defined steps at higher altitudes, to allow for the higher true airspeed needed there to keep the same margin above stall/manoeuvring speed",
+      "Holding speed limits are identical at every altitude, with no variation at all",
+      "Holding speed limits exist only to reduce fuel consumption, unrelated to airspace protection",
+      "Higher-altitude holds are given a lower maximum speed than low-altitude holds",
+    ],
+    answer: 0,
+    explain:
+      "A holding pattern's protected airspace is sized around an assumed maximum speed, so limiting how fast an aircraft may fly while holding keeps it within that protected area; because aircraft need a higher true airspeed at altitude to maintain the same margin above stall/manoeuvring speed, the permitted maximum holding speed generally increases in defined steps at higher altitudes.",
+    reference: "Navigation - Holding Speed Limits",
+  },
 ];
