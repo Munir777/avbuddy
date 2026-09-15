@@ -4,11 +4,25 @@
 // planned future feature). Entries get added here as material is collected;
 // each entry should note where/how it was gathered so readers can judge its
 // currency, since airline interview processes change over time.
+//
+// An entry is either:
+//   - a simple Q&A-style card: just `body` (plain text, paragraphs separated
+//     by blank lines), used for the Riyadh Air technical question pool, or
+//   - a structured, blog-style post: `sections` (a sequence of headed
+//     sections), used for a full interview-day writeup like the Etihad one.
+// Both are collapsed by default behind `title` + `summary` in the UI.
+
+export interface SharedSection {
+  heading: string;
+  body: string;
+}
 
 export interface SharedEntry {
   id: number;
   title: string;
-  body: string;
+  summary?: string; // one-line teaser shown when collapsed
+  body?: string; // simple Q&A-style content
+  sections?: SharedSection[]; // structured blog-style content
   note?: string; // e.g. how/when this was gathered
 }
 
@@ -19,11 +33,62 @@ export type Airline = (typeof AIRLINES)[number];
 export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   Emirates: [],
   "Qatar Airways": [],
-  Etihad: [],
+  Etihad: [
+  {
+    id: 1,
+    title: "A320 First Officer Assessment Day (Non-Type-Rated), Abu Dhabi",
+    summary:
+      "A full day-by-day account of the assessment: written test, simulator, technical interview, documentation check, and group exercise.",
+    sections: [
+      {
+        heading: "Arrival & Company Presentation",
+        body:
+          "Candidates arrived around 7:45 a.m. and the day opened with a company presentation. After that, everyone was split into groups — some went straight into the group exercise, others started with the written ATPL test.",
+      },
+      {
+        heading: "The Written ATPL Test",
+        body:
+          "50 questions in 45 minutes. Almost all of the material lined up with the well-known LPJ-style ATPL question bank, but the answer choices on this test were noticeably closer together than in typical practice material, so reading each option carefully mattered more than usual. This candidate's advice: study broadly rather than just memorising a single compilation, since the discriminating factor here was precision, not raw coverage. From what they recalled, the passing mark was around 50%.",
+      },
+      {
+        heading: "Simulator Assessment (Non-Type-Rated, A320)",
+        body:
+          "About an hour after the written test, this candidate went into the simulator for the non-type-rated assessment. The exercise starts on the runway with both engines already running — no briefing is required, though a short one to organise your own thoughts is fine and doesn't count against you.\n\n" +
+          "Shortly after takeoff, a windshear encounter was introduced. The advice here: fly the windshear procedure exactly as you're trained on whatever aircraft you currently fly, but more importantly, show clear prioritisation — aviate, navigate, communicate, in that order. Worth mentioning out loud during the exercise: filing an Air Safety Report, informing the cabin crew, and giving a PA to passengers once clear of the sterile cockpit phase.\n\n" +
+          "After that, the examiner began vectoring for a return. Partway through, the cabin crew called the flight deck to report a passenger suspected of having a stroke (this candidate was flying from the right seat, with a company captain in the left seat supporting the exercise). Same priority order applied — aviate, navigate, communicate — before assessing the situation and deciding to return.\n\n" +
+          "On the way back, the candidate was vectored onto the ILS with roughly a 30-degree intercept angle, then asked to disconnect the autopilot and flight director and fly it manually — requesting Bird ON and hand-flying both the localiser and glideslope intercept. The first approach was stabilised and the landing was fine, but the examiner asked for it to be repeated anyway, this time set up on a straight-in final rather than an intercept. A second stabilised approach and normal landing closed out the simulator portion.",
+      },
+      {
+        heading: "Technical Interview",
+        body:
+          "A mix of 'tell me about a time...' behavioral questions, general personal questions, and a solid block of technical questions. On the technical side: the meaning of an Approach Ban, what the METAR and TAF abbreviations stand for, and several questions around alternate airport planning.\n\n" +
+          "One scenario given: flying from São Paulo/Guarulhos to Miami, and the destination airport closes before departure — would you still be able to depart? From there, the panel explored alternate requirements, flight planning considerations, and the decision-making behind it.\n\n" +
+          "Toward the end, they asked if the candidate had any questions of their own, and also asked about the lowest point in their career.",
+      },
+      {
+        heading: "Documentation Check",
+        body: "Straightforward — this step was simply a verification that all the required documents were in order, nothing more involved than that.",
+      },
+      {
+        heading: "Group Exercise",
+        body:
+          "The group was given a scenario requiring consensus on the order in which six people should be let go, with about 20 minutes to discuss it. The point wasn't to land on a 'correct' ranking — it was to demonstrate communication, teamwork, and the ability to actually reach a shared decision as a group. This candidate found it fairly straightforward.",
+      },
+      {
+        heading: "Results & Overall Impressions",
+        body:
+          "Results were announced at the end of the day — out of roughly 16 candidates, around seven or eight were successful. Overall the atmosphere was friendly and relaxed, with drinks and snacks available throughout the day.\n\n" +
+          "This candidate's main advice: prepare thoroughly for the technical interview, since the panel will dig deeper into any topic where they sense an opening to test your knowledge further. And above all — be honest, especially when you don't know the answer to something, rather than trying to bluff through it.",
+      },
+    ],
+    note: "Shared by a candidate who went through this assessment day for an A320 First Officer (non-type-rated) role. Interview processes change over time, so treat this as a helpful reference rather than a guarantee of what you'll experience.",
+  },
+  ],
   "Riyadh Air": [
   {
     id: 1,
     title: "Aerodynamics",
+    summary: "Dutch roll, swept wings, CG effects, contaminated-wing stall, flaps, laminar flow.",
     body:
       "What causes Dutch roll on a swept-wing jet? A coupling between yaw and roll — swept wings produce a fairly strong dihedral (roll) effect relative to a comparatively weak directional (yaw) stability, so a yaw disturbance keeps re-triggering a roll response and vice versa; a yaw damper is what keeps it in check.\n\n" +
       "Why do jet aircraft use swept wings? Sweep delays the onset of the critical Mach number and reduces wave drag, which improves efficiency at high cruise speeds.\n\n" +
@@ -38,6 +103,7 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   {
     id: 2,
     title: "Engines & Systems",
+    summary: "Turbine function, thrust reversers, stick pusher, FBW flight control computer, bleed air, IRS drift.",
     body:
       "What does the turbine section of a jet engine actually do? It extracts energy from the hot expanding exhaust gas and uses that energy to drive the compressor (and, on a turbofan, the fan and accessories) — it's what keeps the engine running.\n\n" +
       "What's the main job of thrust reversers? They redirect engine thrust forward, helping decelerate the aircraft after landing or during a rejected takeoff.\n\n" +
@@ -51,6 +117,7 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   {
     id: 3,
     title: "Meteorology",
+    summary: "Isobars, jet streams, sea breeze, inversions, microbursts, CAT, cold fronts, tropopause, altimeter errors.",
     body:
       "What are isobars? Lines on a weather chart joining points of equal atmospheric pressure.\n\n" +
       "How is a jet stream shown on a significant weather chart? As a core line with arrows showing direction, shaded bands (isotachs) showing speed, and labels for wind speed and the flight level(s) it's found at.\n\n" +
@@ -67,6 +134,7 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   {
     id: 4,
     title: "Performance",
+    summary: "Weight vs takeoff distance, contaminated runways, hydroplaning speed, pressure altitude, thrust settings, HOT.",
     body:
       "How does aircraft weight affect takeoff distance? A heavier aircraft needs a significantly longer takeoff roll — the relationship is roughly proportional to the square of the weight, since a heavier aircraft needs a higher speed to generate enough lift, and distance grows with the square of that speed.\n\n" +
       "How does a contaminated runway (standing water, slush, snow) affect landing distance? Landing distance increases, mainly due to reduced braking effectiveness and the risk of hydroplaning.\n\n" +
@@ -81,6 +149,7 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   {
     id: 5,
     title: "Navigation & Instruments",
+    summary: "Pressure-error mnemonics, Mach number, CDI indications, VOR tracking with wind, WAAS.",
     body:
       "What happens if you fly from a region of high pressure into one of low pressure without resetting the altimeter? The aircraft ends up lower than the altimeter indicates — the classic memory aid is 'from high to low, look out below'.\n\n" +
       "What does Mach number represent? The ratio of true airspeed to the local speed of sound.\n\n" +
