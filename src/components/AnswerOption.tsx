@@ -19,12 +19,24 @@ export default function AnswerOption({
   onPick,
 }: AnswerOptionProps) {
   let className = "option";
-  if (revealed && isAnswer) className += " option--correct";
-  else if (isWrong) className += " option--incorrect";
+  const showCorrect = revealed && isAnswer;
+  const showIncorrect = isWrong;
+  if (showCorrect) className += " option--correct";
+  else if (showIncorrect) className += " option--incorrect";
 
   return (
     <button className={className} disabled={revealed || isWrong} onClick={() => onPick(index)}>
-      {text}
+      {showCorrect && (
+        <svg className="option__icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M4 12.5 L9.5 18 L20 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )}
+      {showIncorrect && (
+        <svg className="option__icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M5 5 L19 19 M19 5 L5 19" strokeLinecap="round" />
+        </svg>
+      )}
+      <span>{text}</span>
     </button>
   );
 }

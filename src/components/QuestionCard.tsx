@@ -56,7 +56,9 @@ export default function QuestionCard({
               aria-label={bookmarked ? "Remove bookmark" : "Bookmark this question"}
               title={bookmarked ? "Remove bookmark" : "Bookmark this question"}
             >
-              {bookmarked ? "★" : "☆"}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill={bookmarked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8">
+                <path d="M12 2 L15 9 L22 10 L17 15 L18 22 L12 18.5 L6 22 L7 15 L2 10 L9 9 Z" strokeLinejoin="round" />
+              </svg>
             </button>
           )}
         </div>
