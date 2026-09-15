@@ -83,6 +83,55 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
     ],
     note: "Shared by a candidate who went through this assessment day for an A320 First Officer (non-type-rated) role. Interview processes change over time, so treat this as a helpful reference rather than a guarantee of what you'll experience.",
   },
+  {
+    id: 2,
+    title: "Another Candidate From a Recent Interview",
+    summary:
+      "A broader assessment process — simulator in both seats, technical and behavioural interview, group exercise, hotel-based psychometric testing, a medical day, and the video-interview stage reported separately.",
+    sections: [
+      {
+        heading: "Written Test (Day 1)",
+        body:
+          "Day 1 opened with a written test built mostly around the well-known LPJ-style A320/ATPL question bank — consistent with what the previous candidate in this section reported. Beyond that core, several candidates flagged a distinct block of general technical and regulatory trivia that's worth a dedicated pass of revision, separate from the usual ATPL study materials.\n\n" +
+          "Topics that came up: the taxiway holding-position marking that protects the ILS critical area, the transponder emergency codes (7500/7600/7700), the METAR present-weather abbreviations for haze, mist and fog, RNP4 as the standard supporting 30 nm lateral/longitudinal separation in oceanic and remote airspace, the practical differences between Class A, Class B and Class G airspace, the METAR code for dust/sand whirls, the altitude (commonly quoted as 400 ft above the runway, or above the departure end of runway) below which an aircraft shouldn't normally turn after takeoff unless a procedure requires it, the runway centreline lighting convention (red-only lighting begins at 1,000 ft of runway remaining), the ICAO charting symbol for an NDB, the four segments of a takeoff flight path, the meaning of the different tower light-gun signals, the ISA standard temperature lapse rate (roughly 2°C per 1,000 ft), the dangerous-goods placard for toxic substances, ICAO marshalling signals (including the one instructing the flight crew not to touch the controls), the extra equipment required for RVSM operations, the practical meaning of QNH (a sea-level-reduced pressure setting that, once set on the altimeter, reads altitude above mean sea level), right-of-way rules between aircraft, where smoke detectors are typically fitted on an Airbus, what happens to the displayed air data when an ADR is selected to the ATT (attitude) position, what a Generator Control Unit actually does, and a string of A320-specific limitations — the altitude limit for starting the APU, the maximum landing-gear retraction speed, structural G-load limits, the flap-retraction speed schedule, when the PFD's energy circle appears, the APU fire-bottle discharge disc, the green oxygen-system indicator checked on the walkaround, and the number of fire-detection loops per engine (two). None of it is exotic — it's standard type and general-knowledge material — but it's a different flavour of question from the usual ATPL bank, so it rewards a dedicated systems-and-regulations review rather than relying on ATPL practice questions alone.",
+      },
+      {
+        heading: "Simulator Assessment — Two Seats, Two Scenarios",
+        body:
+          "This assessment placed candidates in both seats across separate profiles. As captain, the reported sequence was: a takeoff with a landing-gear not-down-locked indication, followed by the ECAM resetting itself, then a left-and-right aileron fault severe enough to trigger Alternate Law, weather requiring deviation, and a landing carried out in Direct Law without a flight director — hand-flown on raw data. As first officer, the sequence was different: a takeoff, a windshear encounter, a radial interception, an engine vibration indication, and again a raw-data landing without automation.\n\n" +
+          "Other candidates in the same intake reported different combinations drawn from the same pool — pilot incapacitation, a hydraulic failure, loss of braking, windshear, and TCAS events all came up — which suggests the exercises are pulled from a bank of failure scenarios rather than one fixed script. The consistent thread across every account: finish the ECAM actions before moving on to the next task, fly a tight, standard scan, and keep the callouts and CRM visibly sharp. Several candidates specifically flagged that the assessors seem to be watching workload management and adherence to SOP as much as the raw handling.",
+      },
+      {
+        heading: "Technical & Behavioural Interview",
+        body:
+          "The technical side covered noise abatement departure procedures, which hydraulic system is normally electrically powered (with the ram air turbine as its backup) — recalled by candidates as the aircraft's third, standby-style system — and how the power-transfer unit moves hydraulic power between the other two systems without transferring fluid between them, activating automatically off a pressure differential rather than needing to be selected. Alongside that: a candidate's own background, how many memory items they could recall, and how to handle an unreliable airspeed indication.\n\n" +
+          "Recurring behavioural prompts included a story about handling a difficult situation with a first officer in the cockpit, working effectively across a multicultural crew, what to do if a captain did something the candidate disagreed with, why this airline specifically, a scenario question — as pilot monitoring on approach, the aircraft is fast and high, what would you do? — and whether the candidate had any interest in flying wide-body aircraft.",
+      },
+      {
+        heading: "Group Exercise",
+        body:
+          "The group task matched what the previous candidate in this section described — reaching a group consensus on the order in which a list of employees should be made redundant, within a limited time. As before, the actual ranking mattered less than demonstrating clear communication and the ability to actually converge on a shared decision as a group.",
+      },
+      {
+        heading: "Hotel-Based Psychometric Testing",
+        body:
+          "That evening, at the hotel, candidates worked through a battery of psychometric and aptitude tests: a compass/spatial-orientation test, a simple multitasking exercise, a short-term memory test (candidates were typically asked to hold two or three items in mind at once), a flight-director tracking task where the only requirement was to follow the bars accurately, and a personality questionnaire of around 225 questions.\n\n" +
+          "Several candidates noted they were told, at the end of Day 1, that they'd been provisionally successful before this testing had even finished — though that timing may not be consistent for every intake.",
+      },
+      {
+        heading: "Day 2 — Medical Examination",
+        body:
+          "Day 2 was a full aviation medical: eyesight, hearing, a urine drug screen, a general urine test, bloodwork, weight and height, an ECG, a lung-function (spirometry) test, and a final review with the doctor. Candidates also completed a second, longer personality questionnaire at the hotel — around 335 questions this time.",
+      },
+      {
+        heading: "The Recurring Core-Competency Questions",
+        body:
+          "Across both this candidate's panel interview and a separate candidate's asynchronous video-interview stage (recorded remotely, with the ability to re-record an answer and some thinking time built in before each question), the same small set of core competency prompts kept reappearing: a time you pursued a new opportunity or challenge and what motivated you, a time you noticed someone not following an established procedure or safety protocol and how you handled it, how you'd talk through the recovery technique for an unexpected windshear encounter right after takeoff, a time you had to make a quick decision with limited information, and a time you built a genuinely strong working relationship with a colleague or team.\n\n" +
+          "Because the same prompts turned up in both the live panel format and the remote video format, preparing one solid, specific story for each of these five covers most of what came up across both stages.",
+      },
+    ],
+    note: "Compiled from several candidates' accounts of a broader assessment process than the one above — simulator work in both seats, a technical and behavioural interview, a group exercise, hotel-based psychometric testing, and a separate medical day, plus an asynchronous video-interview stage reported separately by another candidate. Processes vary between intakes and role types, so treat this as a helpful reference rather than a guarantee of what you'll experience.",
+  },
   ],
   "Riyadh Air": [
   {
