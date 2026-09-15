@@ -36,6 +36,18 @@ export async function createMagicLinkToken(userId: string): Promise<string> {
   return raw;
 }
 
+// Compensating delete for when the email after createMagicLinkToken()
+// fails to send -- see the try/catch around sendMagicLinkEmail in
+// api/auth/_requestLink.ts. Without this, a failed send still leaves a
+// row in auth_tokens, and that row is exactly what the resend-cooldown
+// check there looks for, so the next attempt (and the one after that,
+// for the rest of the cooldown window) would be fooled into reporting
+// success without ever trying to send again.
+export async function deleteMagicLinkToken(raw: string): Promise<void> {
+  const tokenHash = hashToken(raw);
+  await sql`DELETE FROM auth_tokens WHERE token_hash = ${tokenHash}`;
+}
+
 // Consumes the token (marks it used) if valid. A token is valid exactly
 // once, before it expires. Returns the user id, or null if invalid/expired/
 // already used.

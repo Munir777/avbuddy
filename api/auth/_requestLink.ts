@@ -1,6 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql, ensureSchema } from "../_db.js";
-import { createMagicLinkToken, getOrCreateUserByEmail, sendMagicLinkEmail } from "../_auth.js";
+import {
+  createMagicLinkToken,
+  deleteMagicLinkToken,
+  getOrCreateUserByEmail,
+  sendMagicLinkEmail,
+} from "../_auth.js";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RESEND_COOLDOWN_MS = 60 * 1000;
@@ -46,7 +51,18 @@ export async function handleRequestLink(req: VercelRequest, res: VercelResponse)
     const rawToken = await createMagicLinkToken(userId);
     const origin = `https://${req.headers.host}`;
     const link = `${origin}/auth/callback?token=${encodeURIComponent(rawToken)}`;
-    await sendMagicLinkEmail(email, link);
+
+    try {
+      await sendMagicLinkEmail(email, link);
+    } catch (sendErr) {
+      // Don't leave a token behind for the cooldown check above to
+      // mistake as "already sent" -- a failed send should be
+      // immediately retryable, not silently masked as success for the
+      // rest of the cooldown window. Best-effort: if this delete
+      // itself fails, fall through to the same error response anyway.
+      await deleteMagicLinkToken(rawToken).catch(() => {});
+      throw sendErr;
+    }
 
     // Always the same response regardless of whether the email is new,
     // existing, or rate-limited -- don't give a caller a way to probe
