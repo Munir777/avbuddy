@@ -116,7 +116,84 @@ export function ensureSchema() {
         `
       )
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_shared_submissions_status ON shared_submissions (status)`)
-      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_shared_submissions_user ON shared_submissions (user_id)`);
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_shared_submissions_user ON shared_submissions (user_id)`)
+      // --- Community chat -- per-airline rooms, near-live via polling
+      // (see api/community/*.ts). `app_settings` is a small generic
+      // key/value table; the one key it holds today is
+      // 'community_enabled', the global kill switch checked before
+      // anything else. `community_rooms` holds each room's status
+      // ('open' | 'read_only' | 'hidden'); a room with no row here is
+      // treated as 'open' by convention, so the table only needs a row
+      // once an admin actually changes something away from the default.
+      .then(() => sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS display_name TEXT`)
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS app_settings (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL,
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        `
+      )
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS community_rooms (
+            room TEXT PRIMARY KEY,
+            status TEXT NOT NULL DEFAULT 'open',
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        `
+      )
+      // `seq` is what polling clients page on ("give me everything after
+      // seq N") -- a plain increasing integer avoids the same-millisecond
+      // ordering ambiguity two UUID-keyed rows with an identical
+      // created_at could otherwise cause.
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS community_messages (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            seq BIGSERIAL,
+            room TEXT NOT NULL,
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            body TEXT NOT NULL,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            deleted_at TIMESTAMPTZ,
+            deleted_reason TEXT,
+            flagged BOOLEAN NOT NULL DEFAULT false,
+            flag_count INTEGER NOT NULL DEFAULT 0
+          )
+        `
+      )
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_room_seq ON community_messages (room, seq)`)
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_user ON community_messages (user_id)`)
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_flagged ON community_messages (flagged)`)
+      // One report per user per message (PK), so re-clicking "report"
+      // can't inflate the count -- flag_count on the message itself is
+      // still what the admin queue sorts/displays by.
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS community_message_reports (
+            message_id UUID NOT NULL REFERENCES community_messages (id) ON DELETE CASCADE,
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            reason TEXT,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            PRIMARY KEY (message_id, user_id)
+          )
+        `
+      )
+      // A mute is scoped to Community only -- it never touches the
+      // account itself, so a muted user keeps their quiz/progress access.
+      // muted_until = NULL means indefinite, until an admin unmutes.
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS community_mutes (
+            user_id UUID PRIMARY KEY REFERENCES users (id) ON DELETE CASCADE,
+            muted_until TIMESTAMPTZ,
+            reason TEXT,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        `
+      );
   }
   return schemaReady;
 }

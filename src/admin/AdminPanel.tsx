@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./admin.css";
 import SubmissionsPanel from "./SubmissionsPanel";
+import CommunityPanel from "./CommunityPanel";
 
 interface Stats {
   totalSessions: number;
@@ -20,7 +21,7 @@ interface Stats {
 
 const SECRET_KEY = "avbuddy_admin_secret";
 
-type Tab = "usage" | "submissions";
+type Tab = "usage" | "submissions" | "community";
 
 function formatDuration(totalSeconds: number): string {
   const minutes = Math.floor(totalSeconds / 60);
@@ -97,7 +98,9 @@ export default function AdminPanel() {
     <div className="admin">
       <div className="admin__container">
         <div className="admin__eyebrow">AVBUDDY ADMIN</div>
-        <div className="admin__title">{tab === "usage" ? "Usage" : "Shared Material Submissions"}</div>
+        <div className="admin__title">
+          {tab === "usage" ? "Usage" : tab === "submissions" ? "Shared Material Submissions" : "Community"}
+        </div>
 
         <div className="admin__tabs">
           <button
@@ -114,9 +117,17 @@ export default function AdminPanel() {
           >
             Submissions
           </button>
+          <button
+            type="button"
+            className={"admin__tab" + (tab === "community" ? " admin__tab--active" : "")}
+            onClick={() => setTab("community")}
+          >
+            Community
+          </button>
         </div>
 
         {tab === "submissions" && <SubmissionsPanel secret={secret} />}
+        {tab === "community" && <CommunityPanel secret={secret} />}
 
         {tab === "usage" && (
           <>
