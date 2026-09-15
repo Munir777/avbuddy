@@ -25,6 +25,16 @@ import { NAVIGATION_FLIGHT_PLANNING_QUESTIONS } from "./categories/general-knowl
 import { OPERATIONAL_PROCEDURES_QUESTIONS } from "./categories/general-knowledge/operational-procedures";
 import { INSTRUMENTS_QUESTIONS } from "./categories/general-knowledge/instruments";
 import { PERFORMANCE_PRINCIPLES_QUESTIONS } from "./categories/general-knowledge/performance-principles";
+import { POWERPLANT_QUESTIONS } from "./categories/general-knowledge/powerplant";
+import { ELECTRICS_QUESTIONS } from "./categories/general-knowledge/electrics";
+import { ATPL_HYDRAULICS_QUESTIONS } from "./categories/general-knowledge/hydraulics";
+import { ATPL_FUEL_QUESTIONS } from "./categories/general-knowledge/fuel-systems";
+import { AIRFRAME_STRUCTURES_QUESTIONS } from "./categories/general-knowledge/airframe-structures";
+import { ATPL_FLIGHT_CONTROLS_QUESTIONS } from "./categories/general-knowledge/flight-controls";
+import { ATPL_FIRE_PROTECTION_QUESTIONS } from "./categories/general-knowledge/fire-protection";
+import { ATPL_ICE_PROTECTION_QUESTIONS } from "./categories/general-knowledge/ice-protection";
+import { ATPL_AIRCOND_QUESTIONS } from "./categories/general-knowledge/air-cond-pressurization";
+import { ATPL_OXYGEN_QUESTIONS } from "./categories/general-knowledge/oxygen";
 import { B737_ELECTRICAL_QUESTIONS } from "./categories/737-max-8/electrical";
 import { B737_HYDRAULICS_QUESTIONS } from "./categories/737-max-8/hydraulics";
 import { B737_ENGINES_APU_QUESTIONS } from "./categories/737-max-8/engines-apu";
@@ -83,6 +93,16 @@ const GENERAL_KNOWLEDGE_QUESTIONS: Question[] = [
   ...OPERATIONAL_PROCEDURES_QUESTIONS,
   ...INSTRUMENTS_QUESTIONS,
   ...PERFORMANCE_PRINCIPLES_QUESTIONS,
+  ...POWERPLANT_QUESTIONS,
+  ...ELECTRICS_QUESTIONS,
+  ...ATPL_HYDRAULICS_QUESTIONS,
+  ...ATPL_FUEL_QUESTIONS,
+  ...AIRFRAME_STRUCTURES_QUESTIONS,
+  ...ATPL_FLIGHT_CONTROLS_QUESTIONS,
+  ...ATPL_FIRE_PROTECTION_QUESTIONS,
+  ...ATPL_ICE_PROTECTION_QUESTIONS,
+  ...ATPL_AIRCOND_QUESTIONS,
+  ...ATPL_OXYGEN_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "ATPL General Knowledge" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
@@ -201,7 +221,9 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Automatic Flight": { fg: "#3FA65A", bg: "#0F2E18" },
   "Anti-Ice & Rain": { fg: "#7FC8E0", bg: "#0D2A32" },
   Communications: { fg: "#8F6FC4", bg: "#241A3A" },
-  "Indicating & Recording": { fg: "#9B9FA6", bg: "#232527" },
+  // New ATPL General Knowledge categories added from a second source doc.
+  Powerplant: { fg: "#C48F5F", bg: "#2E1F10" },
+  "Airframe & Structures": { fg: "#8FA6C4", bg: "#16202E" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
