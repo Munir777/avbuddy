@@ -40,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   background:
-    radial-gradient(1400px 600px at 50% -12%, var(--bg-glow) 0%, transparent 60%),
+    radial-gradient(1800px 650px at 50% -12%, var(--bg-glow) 0%, transparent 60%),
     var(--bg);
   position: relative;
 }
@@ -62,7 +62,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 640px;
+  max-width: 880px;
   position: relative;
 }
 
