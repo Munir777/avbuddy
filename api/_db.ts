@@ -88,7 +88,35 @@ export function ensureSchema() {
             PRIMARY KEY (user_id, question_key)
           )
         `
-      );
+      )
+      // --- Community-submitted shared material -- candidates' own
+      // write-ups, submitted signed-in via the Shared Material tab and held
+      // as `pending` until reviewed and rewritten in the admin panel
+      // (/admin -- same shared-secret gate as the stats view). Only
+      // `status = 'approved'` rows are ever served back to the public, by
+      // api/shared-material.ts; the raw_* fields are never shown to anyone
+      // but the admin and the original submitter (their own status only).
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS shared_submissions (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            airline TEXT NOT NULL,
+            raw_title TEXT,
+            raw_body TEXT NOT NULL,
+            status TEXT NOT NULL DEFAULT 'pending',
+            published_title TEXT,
+            published_summary TEXT,
+            published_body TEXT,
+            admin_notes TEXT,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+            reviewed_at TIMESTAMPTZ
+          )
+        `
+      )
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_shared_submissions_status ON shared_submissions (status)`)
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_shared_submissions_user ON shared_submissions (user_id)`);
   }
   return schemaReady;
 }

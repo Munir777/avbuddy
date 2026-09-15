@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./admin.css";
+import SubmissionsPanel from "./SubmissionsPanel";
 
 interface Stats {
   totalSessions: number;
@@ -18,6 +19,8 @@ interface Stats {
 }
 
 const SECRET_KEY = "avbuddy_admin_secret";
+
+type Tab = "usage" | "submissions";
 
 function formatDuration(totalSeconds: number): string {
   const minutes = Math.floor(totalSeconds / 60);
@@ -42,6 +45,7 @@ export default function AdminPanel() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [tab, setTab] = useState<Tab>("usage");
 
   useEffect(() => {
     if (!secret) return;
@@ -93,163 +97,186 @@ export default function AdminPanel() {
     <div className="admin">
       <div className="admin__container">
         <div className="admin__eyebrow">AVBUDDY ADMIN</div>
-        <div className="admin__title">Usage</div>
+        <div className="admin__title">{tab === "usage" ? "Usage" : "Shared Material Submissions"}</div>
 
-        {loading && <div className="admin__loading">Loading…</div>}
-        {error && <div className="admin__error">{error}</div>}
+        <div className="admin__tabs">
+          <button
+            type="button"
+            className={"admin__tab" + (tab === "usage" ? " admin__tab--active" : "")}
+            onClick={() => setTab("usage")}
+          >
+            Usage
+          </button>
+          <button
+            type="button"
+            className={"admin__tab" + (tab === "submissions" ? " admin__tab--active" : "")}
+            onClick={() => setTab("submissions")}
+          >
+            Submissions
+          </button>
+        </div>
 
-        {stats && (
+        {tab === "submissions" && <SubmissionsPanel secret={secret} />}
+
+        {tab === "usage" && (
           <>
-            <div className="admin__grid">
-              <div className="admin__tile admin__tile--accent">
-                <div className="admin__tile-value">{stats.totalUsers}</div>
-                <div className="admin__tile-label">Signed-up accounts</div>
-              </div>
-              <div className="admin__tile admin__tile--accent">
-                <div className="admin__tile-value">{stats.signupsToday}</div>
-                <div className="admin__tile-label">Signups today</div>
-              </div>
-              <div className="admin__tile admin__tile--accent">
-                <div className="admin__tile-value">{stats.signups7d}</div>
-                <div className="admin__tile-label">Signups (7 days)</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{stats.uniqueVisitors}</div>
-                <div className="admin__tile-label">Unique visitors</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{stats.totalSessions}</div>
-                <div className="admin__tile-label">Total sessions</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{stats.sessionsToday}</div>
-                <div className="admin__tile-label">Sessions today</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{formatDuration(stats.avgDurationSeconds)}</div>
-                <div className="admin__tile-label">Avg. session length</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{stats.studiedPct}%</div>
-                <div className="admin__tile-label">Sessions that studied</div>
-              </div>
-              <div className="admin__tile">
-                <div className="admin__tile-value">{stats.studiedSessions}</div>
-                <div className="admin__tile-label">Studied (count)</div>
-              </div>
-            </div>
+            {loading && <div className="admin__loading">Loading…</div>}
+            {error && <div className="admin__error">{error}</div>}
 
-            <div className="admin__trend-label">Recent signups</div>
-            <table className="admin__trend-table">
-              <thead>
-                <tr>
-                  <th>Email</th>
-                  <th>Joined</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stats.recentSignups.length === 0 && (
-                  <tr>
-                    <td colSpan={2} className="admin__trend-empty">
-                      No sign-ups yet.
-                    </td>
-                  </tr>
-                )}
-                {stats.recentSignups.map((row) => (
-                  <tr key={row.email}>
-                    <td>{row.email}</td>
-                    <td>{row.joinedAt}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            {stats && (
+              <>
+                <div className="admin__grid">
+                  <div className="admin__tile admin__tile--accent">
+                    <div className="admin__tile-value">{stats.totalUsers}</div>
+                    <div className="admin__tile-label">Signed-up accounts</div>
+                  </div>
+                  <div className="admin__tile admin__tile--accent">
+                    <div className="admin__tile-value">{stats.signupsToday}</div>
+                    <div className="admin__tile-label">Signups today</div>
+                  </div>
+                  <div className="admin__tile admin__tile--accent">
+                    <div className="admin__tile-value">{stats.signups7d}</div>
+                    <div className="admin__tile-label">Signups (7 days)</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.uniqueVisitors}</div>
+                    <div className="admin__tile-label">Unique visitors</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.totalSessions}</div>
+                    <div className="admin__tile-label">Total sessions</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.sessionsToday}</div>
+                    <div className="admin__tile-label">Sessions today</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{formatDuration(stats.avgDurationSeconds)}</div>
+                    <div className="admin__tile-label">Avg. session length</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.studiedPct}%</div>
+                    <div className="admin__tile-label">Sessions that studied</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.studiedSessions}</div>
+                    <div className="admin__tile-label">Studied (count)</div>
+                  </div>
+                </div>
 
-            <div className="admin__trend-label">Last 7 days</div>
-            <table className="admin__trend-table">
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Sessions</th>
-                  <th>Studied</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stats.dailyTrend.length === 0 && (
-                  <tr>
-                    <td colSpan={3} className="admin__trend-empty">
-                      No sessions yet in this window.
-                    </td>
-                  </tr>
-                )}
-                {stats.dailyTrend.map((row) => (
-                  <tr key={row.day}>
-                    <td>{row.day}</td>
-                    <td>{row.sessions}</td>
-                    <td>{row.studied}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <div className="admin__trend-label">Recent signups</div>
+                <table className="admin__trend-table">
+                  <thead>
+                    <tr>
+                      <th>Email</th>
+                      <th>Joined</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.recentSignups.length === 0 && (
+                      <tr>
+                        <td colSpan={2} className="admin__trend-empty">
+                          No sign-ups yet.
+                        </td>
+                      </tr>
+                    )}
+                    {stats.recentSignups.map((row) => (
+                      <tr key={row.email}>
+                        <td>{row.email}</td>
+                        <td>{row.joinedAt}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
 
-            <div className="admin__trend-label">Traffic sources</div>
-            <table className="admin__trend-table">
-              <thead>
-                <tr>
-                  <th>Source</th>
-                  <th>Sessions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stats.topSources.length === 0 && (
-                  <tr>
-                    <td colSpan={2} className="admin__trend-empty">
-                      No sessions yet.
-                    </td>
-                  </tr>
-                )}
-                {stats.topSources.map((row) => (
-                  <tr key={row.source}>
-                    <td>{row.source}</td>
-                    <td>{row.sessions}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <div className="admin__trend-label">Last 7 days</div>
+                <table className="admin__trend-table">
+                  <thead>
+                    <tr>
+                      <th>Day</th>
+                      <th>Sessions</th>
+                      <th>Studied</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.dailyTrend.length === 0 && (
+                      <tr>
+                        <td colSpan={3} className="admin__trend-empty">
+                          No sessions yet in this window.
+                        </td>
+                      </tr>
+                    )}
+                    {stats.dailyTrend.map((row) => (
+                      <tr key={row.day}>
+                        <td>{row.day}</td>
+                        <td>{row.sessions}</td>
+                        <td>{row.studied}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
 
-            <div className="admin__trend-label">Traffic by country</div>
-            <table className="admin__trend-table">
-              <thead>
-                <tr>
-                  <th>Country</th>
-                  <th>Sessions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stats.topCountries.length === 0 && (
-                  <tr>
-                    <td colSpan={2} className="admin__trend-empty">
-                      No sessions yet.
-                    </td>
-                  </tr>
-                )}
-                {stats.topCountries.map((row) => (
-                  <tr key={row.country}>
-                    <td>{row.country}</td>
-                    <td>{row.sessions}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <div className="admin__trend-label">Traffic sources</div>
+                <table className="admin__trend-table">
+                  <thead>
+                    <tr>
+                      <th>Source</th>
+                      <th>Sessions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.topSources.length === 0 && (
+                      <tr>
+                        <td colSpan={2} className="admin__trend-empty">
+                          No sessions yet.
+                        </td>
+                      </tr>
+                    )}
+                    {stats.topSources.map((row) => (
+                      <tr key={row.source}>
+                        <td>{row.source}</td>
+                        <td>{row.sessions}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
 
-            <div className="admin__note">
-              "Signed-up accounts" = anyone who has completed the magic-link email sign-in at
-              least once (recent signups list shows their email + join time, server clock/UTC).
-              "Studied" = answered at least one question during the session, in either Study or
-              Quiz mode. Session length is capped at 2h to avoid a backgrounded tab skewing the
-              average. Sessions recorded before traffic-source tracking was added show as
-              "Direct / None"; country is detected server-side from IP location at the edge (not
-              stored as a raw IP) and only resolves on the live deployment, not local dev.
-            </div>
+                <div className="admin__trend-label">Traffic by country</div>
+                <table className="admin__trend-table">
+                  <thead>
+                    <tr>
+                      <th>Country</th>
+                      <th>Sessions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.topCountries.length === 0 && (
+                      <tr>
+                        <td colSpan={2} className="admin__trend-empty">
+                          No sessions yet.
+                        </td>
+                      </tr>
+                    )}
+                    {stats.topCountries.map((row) => (
+                      <tr key={row.country}>
+                        <td>{row.country}</td>
+                        <td>{row.sessions}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                <div className="admin__note">
+                  "Signed-up accounts" = anyone who has completed the magic-link email sign-in at
+                  least once (recent signups list shows their email + join time, server clock/UTC).
+                  "Studied" = answered at least one question during the session, in either Study or
+                  Quiz mode. Session length is capped at 2h to avoid a backgrounded tab skewing the
+                  average. Sessions recorded before traffic-source tracking was added show as
+                  "Direct / None"; country is detected server-side from IP location at the edge (not
+                  stored as a raw IP) and only resolves on the live deployment, not local dev.
+                </div>
+              </>
+            )}
           </>
         )}
       </div>

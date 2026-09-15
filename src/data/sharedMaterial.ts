@@ -1,9 +1,13 @@
 // Shared Material — interview experiences and notes organised by airline.
 //
-// Curated content only for now (no public submission form yet — that's a
-// planned future feature). Entries get added here as material is collected;
-// each entry should note where/how it was gathered so readers can judge its
-// currency, since airline interview processes change over time.
+// The entries below are curated directly (pasted in, rewritten, de-branded,
+// and committed here). There's a second source now too: signed-in users can
+// submit their own experience from the Shared Material tab, which lands in
+// the `shared_submissions` table as `pending` and only reaches the public
+// site once it's been reviewed and rewritten in the admin panel (/admin) --
+// see api/submissions/*.ts, api/shared-material.ts, and
+// src/lib/submissions.ts. Those approved submissions are merged in
+// client-side by SharedMaterialView; they never live in this file.
 //
 // An entry is either:
 //   - a simple Q&A-style card: just `body` (plain text, paragraphs separated

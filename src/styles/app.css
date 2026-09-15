@@ -1263,3 +1263,124 @@ body {
   height: 40px;
   width: auto;
 }
+
+/* --- Shared Material: submission form, community entries, status badges --- */
+/* (feature: signed-in users can submit their own interview experience for
+   review -- see SharedMaterialView.tsx / src/lib/submissions.ts) */
+
+.share-panel {
+  margin-bottom: 16px;
+}
+
+.share-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.share-form__label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.share-form__hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.share-form__success {
+  font-size: 12.5px;
+  color: var(--accent-text);
+  margin: 0 0 10px;
+}
+
+.share-form__actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.share-panel__gate-actions {
+  margin-top: 10px;
+}
+
+.shared-entry__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shared-entry__badge {
+  flex-shrink: 0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--cyan);
+  border: 1px solid color-mix(in oklch, var(--cyan) 45%, var(--border));
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+
+.my-submissions {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-submissions__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 12.5px;
+}
+
+.my-submissions__title {
+  color: var(--text-bright);
+  flex: 1;
+  min-width: 0;
+}
+
+.my-submissions__note {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.status-badge--pending {
+  color: var(--text-dim);
+  background: var(--panel-flat);
+  border: 1px solid var(--border);
+}
+
+.status-badge--approved {
+  color: var(--accent-text);
+  background: var(--accent-bg);
+}
+
+.status-badge--rejected {
+  color: var(--danger-text);
+  background: var(--danger-bg);
+}

@@ -206,3 +206,105 @@
     padding: 20px 12px;
   }
 }
+
+/* --- Submissions review tab (see src/admin/SubmissionsPanel.tsx) --- */
+
+.admin__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.admin__tab {
+  background: var(--panel-flat);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.admin__tab:hover {
+  color: var(--text-bright);
+  border-color: var(--text-dim);
+}
+
+.admin__tab--active {
+  background: color-mix(in oklch, var(--accent) 16%, var(--panel-flat));
+  color: var(--text-bright);
+  border-color: color-mix(in oklch, var(--accent) 65%, var(--border));
+}
+
+.admin__field {
+  margin-bottom: 10px;
+}
+
+.admin__label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.admin__textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.admin__raw {
+  white-space: pre-wrap;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  background: var(--panel-flat);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.admin__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.admin__btn--danger {
+  background: transparent;
+  border: 1px solid color-mix(in oklch, var(--danger) 55%, var(--border));
+  color: var(--danger-text);
+  box-shadow: none;
+}
+
+.admin__review-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--panel-top), var(--panel-bottom));
+}
+
+.admin__review-meta {
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.admin__review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin__resolved-note {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
