@@ -1044,4 +1044,132 @@ export const HUMAN_FACTORS_QUESTIONS: Question[] = [
       "A graveyard spiral typically begins when a pilot loses reliable visual reference (such as flying into IMC without adequate instrument skills) and, due to spatial disorientation, fails to recognise an existing bank - misinterpreting the resulting sensations can lead the pilot to inadvertently tighten the bank and increase the descent rate rather than correct it, a scenario that instrument flight training is specifically aimed at preventing.",
     reference: "Human Factors - Vestibular System & Spatial Disorientation",
   },
+  {
+    id: 67,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "On a final approach at night over featureless dark terrain or water with few surrounding ground lights (a 'black hole' approach), which illusion commonly leads pilots into a dangerously low approach?",
+    options: [
+      "The absence of a normal visual horizon and surrounding lighting reference removes the peripheral cues normally used to judge height and glidepath, commonly leading to an unconsciously low approach",
+      "The pilot consistently perceives the runway as farther away than it is, leading to a high approach",
+      "The illusion causes the aircraft to actually descend faster than the flight instruments indicate",
+      "The black hole effect only affects student pilots and has no effect on experienced crews",
+    ],
+    answer: 0,
+    explain:
+      "With no peripheral visual cues from surrounding terrain lighting, the brain has little reliable information to judge height and descent rate other than the runway lighting itself, which commonly leads to an unconsciously low, unstable approach unless the crew relies on instrument glidepath guidance (such as an ILS or PAPI) rather than visual impression alone.",
+    reference: "Human Factors - Visual Illusions",
+  },
+  {
+    id: 68,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "A landing runway that is narrower than the pilot is normally accustomed to tends to create which visual illusion on approach?",
+    options: [
+      "The runway appears farther away than it actually is, which can lead the pilot to fly a lower approach than intended",
+      "The runway appears closer than it actually is, which can lead the pilot to fly a higher approach than intended",
+      "The runway appears to be sloped uphill regardless of its actual gradient",
+      "The illusion causes no meaningful effect on approach path judgement",
+    ],
+    answer: 0,
+    explain:
+      "A narrower-than-usual runway subtends a smaller visual angle at a given distance, which the brain can misinterpret as the runway being farther away than it really is - this false impression of being high can lead a pilot to fly an approach that is, in fact, dangerously low. A wider-than-usual runway produces the opposite illusion, making the runway appear closer and tempting a higher-than-intended approach.",
+    reference: "Human Factors - Visual Illusions",
+  },
+  {
+    id: 69,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "Landing on a runway with a significant upslope commonly creates which illusion, all else being equal?",
+    options: [
+      "The illusion of being higher on the approach path than actually the case, tending to result in a lower-than-intended approach",
+      "The illusion of being lower on the approach path than actually the case, tending to result in a higher-than-intended approach",
+      "No illusion at all, since runway slope has no visual effect",
+      "The illusion of excess airspeed, leading pilots to reduce power unnecessarily",
+    ],
+    answer: 0,
+    explain:
+      "An upsloping runway can make a pilot feel they are higher on (or further along) the approach than they actually are, which tends to bias the approach low; a downsloping runway produces the reverse illusion, biasing the approach high. Relying on instrument or visual glidepath guidance rather than the runway's apparent picture alone helps counter this.",
+    reference: "Human Factors - Visual Illusions",
+  },
+  {
+    id: 70,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "In aviation maintenance human factors, the 'Dirty Dozen' refers to:",
+    options: [
+      "A widely taught list of twelve commonly identified human factors that contribute to maintenance errors, such as fatigue, complacency, lack of communication, and pressure",
+      "The twelve most common structural failure points on an aging airframe",
+      "A checklist of twelve mandatory pre-flight walk-around inspection items",
+      "The twelve highest-risk weather phenomena for ground operations",
+    ],
+    answer: 0,
+    explain:
+      "The Dirty Dozen is a widely taught maintenance human factors framework listing twelve recurring contributors to maintenance error - factors such as fatigue, complacency, lack of communication, distraction, lack of teamwork, pressure, lack of assertiveness, stress, lack of awareness, norms, knowledge, and resources - used to help maintenance personnel recognise and manage the conditions that lead to mistakes.",
+    reference: "Human Factors - Maintenance Human Factors",
+  },
+  {
+    id: 71,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "The 'Swiss cheese' model of accident causation, generally attributed to James Reason, illustrates that:",
+    options: [
+      "Accidents typically result from a rare alignment of holes (weaknesses) across multiple defensive layers, rather than from a single cause",
+      "Accidents are always caused by one single, easily identifiable failure",
+      "Modern aircraft have no meaningful layers of defence against error",
+      "Human error is the sole layer of defence in aviation safety",
+    ],
+    answer: 0,
+    explain:
+      "The model pictures an organisation's safety defences as a series of slices, each with holes (latent weaknesses or active failures) that shift over time - an accident generally requires those holes to align across several layers at once, which is why safety systems focus on strengthening multiple independent layers rather than relying on any single barrier.",
+    reference: "Human Factors - Accident Causation Models",
+  },
+  {
+    id: 72,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "The 'IMSAFE' checklist is a personal self-assessment tool used by pilots primarily to evaluate:",
+    options: [
+      "Their own fitness to fly, covering factors such as Illness, Medication, Stress, Alcohol, Fatigue, and Emotion",
+      "The aircraft's fuel, instruments, structure, avionics, fluids, and engines before flight",
+      "Airport infrastructure, marshalling, safety equipment, apron, fuelling, and egress routes",
+      "Insurance, maintenance schedule, airworthiness, fuel reserves, and en-route alternates",
+    ],
+    answer: 0,
+    explain:
+      "IMSAFE is a mnemonic personal-readiness checklist - Illness, Medication, Stress, Alcohol, Fatigue, Emotion - that pilots are trained to run through before flight to self-assess whether personal factors might compromise their fitness to safely operate the aircraft, complementing the physical pre-flight inspection of the aircraft itself.",
+    reference: "Human Factors - Personal Fitness to Fly",
+  },
+  {
+    id: 73,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "The 'elevator illusion' (sometimes called the 'giant hand' illusion) is caused by which situation?",
+    options: [
+      "An abrupt upward vertical acceleration (such as an updraft) creates a false sensation of pitching nose-up, which can prompt an inappropriate nose-down correction",
+      "A sustained level turn creates a false sensation of climbing",
+      "A gradual descent at a constant rate produces no sensory effect at all",
+      "It only occurs during a genuine elevator control system malfunction",
+    ],
+    answer: 0,
+    explain:
+      "The otolith organs of the inner ear respond to linear acceleration, so an abrupt vertical acceleration - such as encountering an updraft or a sudden climb - can be falsely interpreted as a nose-up pitch change even when the aircraft's actual attitude hasn't changed, tempting an unwary pilot flying without visual or instrument reference to push the nose down inappropriately in response. A sudden downward acceleration produces the reverse illusion.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
+  {
+    id: 74,
+    subject: "ATPL General Knowledge",
+    system: "Human Factors",
+    q: "The 'inversion illusion' can occur in which of the following circumstances?",
+    options: [
+      "An abrupt return to level flight after a sustained climb, which can produce a disorienting sensation of tumbling backward",
+      "A steady, unaccelerated straight-and-level cruise",
+      "A slow, gentle turn onto a new heading",
+      "Taxiing on the ground before take-off",
+    ],
+    answer: 0,
+    explain:
+      "During a prolonged climb, the semicircular canals adapt to the sustained pitch-up sensation; an abrupt levelling-off can then be misinterpreted by the vestibular system as a backward tumble (a pitch-down past level), a disorienting sensation known as the inversion illusion, most likely to occur without visual reference available to correct it.",
+    reference: "Human Factors - Vestibular System & Spatial Disorientation",
+  },
 ];
