@@ -52,7 +52,8 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
         heading: "The Flight-Plan Briefing Exercise",
         body:
           "The core of the interview is the same for everyone, even though the scenario details vary: a flight plan appears on screen with the departure and arrival airports, an alternate, the weather for all three, and the operational extras that actually make it interesting — NOTAMs, MEL items, and the NOTOC. You get somewhere around 5 to 10 minutes to work through it before briefing the panel (one candidate specifically had to brief a captain who arrived to the room late, so be ready to just start the brief for whoever's in front of you). Both candidates could refer to their own company's iPad and manuals while preparing, so it isn't a closed-book memory test — it's testing whether you can pull the relevant considerations out of a realistic flight plan and communicate them clearly.\n\n" +
-          "Expect the panel to interrupt with questions that follow directly from whatever you raise in the brief, rather than working through a fixed list — mention high elevation and temperature and be ready to talk performance; mention weather and be ready to talk the specific procedure for it.",
+          "Expect the panel to interrupt with questions that follow directly from whatever you raise in the brief, rather than working through a fixed list — mention high elevation and temperature and be ready to talk performance; mention weather and be ready to talk the specific procedure for it.\n\n" +
+          "This stage can also run online rather than in person, in which case the scenario is typically drawn from one of three broad weather categories depending on the route — cold-weather, hot-weather, or monsoon/tropical — each with its own METAR/TAF, NOTAMs and MEL items, and 10 to 15 minutes to prepare. The three worked examples below happen to be one from each of those categories. However it's delivered, structure the brief around the threat-and-error model rather than just reading the flight plan back: actively call out the threats the scenario is presenting, the errors they could lead to, and how you'd manage or trap each one.",
       },
       {
         heading: "Example Scenario: Hot-Weather Operations",
@@ -75,6 +76,54 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
       },
     ],
     note: "Compiled from three candidates' accounts of the flight-plan briefing stage of the panel interview, reported around the same time. The exact scenario, weather, and follow-up questions vary by candidate and session — the examples above are what came up for these three, not a fixed script.",
+  },
+  {
+    id: 2,
+    title: "Online Psychometric Testing",
+    summary:
+      "A 200-question personality inventory and a 35-item abstract reasoning test, done online, with practice examples given before the scored section.",
+    body:
+      "The online psychometric stage runs in two parts. The first is a personality inventory of around 200 questions — candidates who've done it describe it as noticeably repetitive, with very similarly worded statements coming back around from different angles. The general advice is the same as for any personality inventory: answer as yourself rather than trying to guess a 'correct' profile, since consistency across the repeated items is part of what it's actually checking.\n\n" +
+      "The second part is a 35-question abstract reasoning test — pattern and sequence reasoning rather than anything aviation-specific. Before the timed, scored section starts, candidates are given practice exercises to work through, so there's no need to walk in cold; use those to get comfortable with the question format and pacing first.",
+    note: "Reported by a candidate who went through the online stage of the selection process.",
+  },
+  {
+    id: 3,
+    title: "Technical Multiple-Choice Exam (Airbus Type-Rated)",
+    summary:
+      "A partial recall of a 20-item multiple-choice technical exam for Airbus type-rated applicants — V1, engine tailpipe fires, tailwind effects on climb, and runway braking action.",
+    body:
+      "This is one candidate's partial recall of a 20-item multiple-choice technical exam for Airbus type-rated applicants — these ten are what they remembered clearly, not the full set.\n\n" +
+      "What does V1 actually guarantee? It's a balanced speed, not a single guarantee in one direction: stopping within the accelerate-stop distance available is assured if the decision to stop is made at or before V1, and continuing is assured — reaching the required height above the runway by the end of the takeoff distance available, on the remaining engine after a failure — if the takeoff is continued from V1 onward. This exam's question leaned on the stopping half of that definition.\n\n" +
+      "Why can't the engine fire extinguisher be used on an engine tailpipe fire? The fixed extinguishing bottles discharge into the engine core and nacelle area, not the tailpipe, so they physically can't reach a fire that's confined to the exhaust — this came up twice, worded slightly differently each time. A tailpipe fire during engine start is usually unburned fuel igniting in the exhaust rather than a genuine engine fire, and the standard response is to keep motoring the engine with the starter to blow the fire out the back, rather than reaching for the fire handle.\n\n" +
+      "How does a tailwind affect the climb after takeoff? The reliable, testable mechanism is distance, not time: a tailwind doesn't change how quickly the aircraft gains height, but it does mean more ground is covered while doing it, so the horizontal distance needed to reach a required height increases — that's the number that actually drives obstacle-clearance and net takeoff flight path calculations. If the exam framed this as increasing 'climb time', treat that as pointing at the same distance effect rather than a literal change in climb rate.\n\n" +
+      "What braking action does a measured runway friction coefficient of around 0.25 correspond to? Poor — reference tables used across Airbus and Boeing performance material commonly put a coefficient around that value or below into the Poor band, well short of Medium, which is the kind of number that should be driving a serious rethink of the day's takeoff or landing performance rather than a passing mental note. Exact thresholds vary a little between references, so treat 0.25 as a well-known reference point rather than a universal cutoff.\n\n" +
+      "When should terrain be selected on the Navigation Display for takeoff and landing? As a general practice, both — terrain awareness matters most during these low-altitude phases, so displaying terrain on the ND for takeoff and landing (not just when a terrain-related airport is involved) is the safer default the exam was pointing at.\n\n" +
+      "With brake temperatures around 500°C after a quick turnaround, is it safe to run the brake fan? No — the common guidance across types is not to run the brake fan while brake temperature is still that high. Let the brakes cool passively first, then use the fan once temperature is back within its normal range; running a fan on very hot brakes risks damaging the fan itself or fanning smouldering brake material.\n\n" +
+      "What does a fuel over-read look like? If the indicated fuel on board plus the cumulative fuel used since departure adds up to more than the fuel on board at departure, the indicating system is showing more fuel than can actually be accounted for — a sign the gauges are over-reading rather than a genuine leak (which would show the opposite pattern).\n\n" +
+      "When does a 'DON'T SINK' call happen? It's a GPWS/EGPWS caution for an unintended loss of altitude shortly after takeoff or during a missed approach/go-around — specifically when the aircraft is sinking when the flight path should be climbing.\n\n" +
+      "Can an RNP/RNAV approach still be continued with only one autopilot? Often yes for a standard RNP approach, but this is exactly the kind of thing that depends on the specific RNP value and the operator's approved minima — tighter RNP AR procedures commonly demand a coupled (sometimes dual) autopilot, while a more standard RNP APCH may allow single-autopilot or even manual flight with flight-director guidance. Know your own operator's rule rather than assuming one answer covers every RNP approach.\n\n" +
+      "What prompts the pilot monitoring's deviation call during an ILS approach? Many SOPs set the threshold at half a dot of localizer deviation — once it's exceeded, the PM calls it out so the pilot flying can correct back onto the centreline.",
+    note: "One candidate's partial recall of a 20-item Airbus type-rated technical exam — treat this as a sample of the kind of question asked, not a complete question bank.",
+  },
+  {
+    id: 4,
+    title: "Simulator Assessment (Airbus Type-Rated)",
+    summary:
+      "Two profiles out of Doha (OTHH) runway 34R — an engine fire leading to an emergency evacuation, then a V1 engine failure through to a go-around, a localizer-only approach, and a stop on the runway.",
+    sections: [
+      {
+        heading: "First Profile: Engine Fire and Evacuation",
+        body:
+          "The assessment starts already lined up on runway 34R at Doha, flying the Kupro 2E departure. After a normal takeoff, an engine fire is introduced at 9,000 feet, leading into an ILS approach back to 34R and, after landing, an emergency evacuation.",
+      },
+      {
+        heading: "Second Profile: V1 Engine Failure Through to a Full Stop",
+        body:
+          "After repositioning back to runway 34R, the second profile opens with an engine failure timed right at V1 — the classic go/no-go decision point, where the takeoff is continued on the remaining engine. That's followed by an ILS approach, a go-around, then a second approach flown as a localizer-only approach (no glideslope) into 34R, ending with a stop on the runway rather than a full landing and taxi-in.",
+      },
+    ],
+    note: "One candidate's account of the two profiles flown during the type-rated simulator assessment out of Doha — the specific failures and sequence are likely to vary between sessions.",
   },
   ],
   Etihad: [
