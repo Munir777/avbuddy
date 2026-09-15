@@ -36,7 +36,47 @@ export type Airline = (typeof AIRLINES)[number];
 
 export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   Emirates: [],
-  "Qatar Airways": [],
+  "Qatar Airways": [
+  {
+    id: 1,
+    title: "Panel Interview: The Flight-Plan Briefing Exercise",
+    summary:
+      "Panel format (HR plus two captains or TREs), plus three real scenarios from the on-screen flight-plan briefing exercise — hot-weather performance, a low-visibility cold-weather diversion, and a thunderstorm departure with a pack fault in cruise.",
+    sections: [
+      {
+        heading: "Format",
+        body:
+          "The panel was three people — an HR representative and two captains (one Boeing, one Airbus) — and the tone across both accounts was relaxed and professional rather than adversarial. HR opens by introducing themselves, then each captain introduces themselves, before asking the candidate to talk briefly about themselves and why they want to join. Both candidates found this a straightforward warm-up rather than a hurdle.",
+      },
+      {
+        heading: "The Flight-Plan Briefing Exercise",
+        body:
+          "The core of the interview is the same for everyone, even though the scenario details vary: a flight plan appears on screen with the departure and arrival airports, an alternate, the weather for all three, and the operational extras that actually make it interesting — NOTAMs, MEL items, and the NOTOC. You get somewhere around 5 to 10 minutes to work through it before briefing the panel (one candidate specifically had to brief a captain who arrived to the room late, so be ready to just start the brief for whoever's in front of you). Both candidates could refer to their own company's iPad and manuals while preparing, so it isn't a closed-book memory test — it's testing whether you can pull the relevant considerations out of a realistic flight plan and communicate them clearly.\n\n" +
+          "Expect the panel to interrupt with questions that follow directly from whatever you raise in the brief, rather than working through a fixed list — mention high elevation and temperature and be ready to talk performance; mention weather and be ready to talk the specific procedure for it.",
+      },
+      {
+        heading: "Example Scenario: Hot-Weather Operations",
+        body:
+          "One candidate's scenario was built around hot-weather operations. Bringing up the high airport elevation and high outside air temperature was enough to prompt a follow-up on how that combination affects takeoff performance — worth having ready: both factors reduce air density, which cuts engine thrust and wing lift, lengthens the takeoff roll, and erodes the climb gradient, so depending on the aircraft's performance data for the day it can drive a weight restriction or a higher takeoff speed schedule. Mentioning windshear in the brief drew a follow-up on the windshear recovery manoeuvre itself, so it's worth being able to talk through your own aircraft's windshear escape technique on demand, not just gesture at following the flight director.",
+      },
+      {
+        heading: "Example Scenario: Low-Visibility, Cold-Weather Operations",
+        body:
+          "The other candidate's scenario was a Milan Malpensa–Zurich sector with Basel as the alternate: Category III weather at Malpensa (the departure), reduced but still landable visibility at Zurich, and good weather at Basel. Layered on top of that: an MEL item for an inoperative autobrake system, NOTAMs for a couple of unserviceable navigation aids at both Malpensa and Zurich, and a NOTOC listing fresh vegetables in the forward hold (needing to stay within a stated temperature range) and four oxygen bottles.\n\n" +
+          "After the prep time, the two questions that followed the brief were about fuel considerations for the flight, and whether a return to Malpensa was possible if something went wrong shortly after takeoff. The second one is really a takeoff-alternate question in disguise: with the departure airport sitting at Category III weather — at or below what's needed to land there — the crew can't count on getting back in if they need to shortly after departure, which is exactly why a takeoff alternate within the required diversion time is a planning requirement in the first place. On the fuel side, a complete answer reaches beyond basic trip fuel to cover contingency for the low-visibility approach at the destination, whatever's needed to reach the takeoff alternate if it's required, and the fact that an inoperative autobrake system can itself affect landing-distance and go-around planning at either end.",
+      },
+      {
+        heading: "Example Scenario: Bangkok–Doha, Thunderstorm Departure",
+        body:
+          "A third candidate's panel was slightly different in composition — one HR representative and two Type Rating Examiners, one Boeing and one Airbus — but the exercise itself followed the same shape: introduce yourself, then work through a flight plan, this time for a Bangkok–Doha sector. This session also included a significant weather chart, with the panel asking about specific symbols on it, so it's worth being comfortable reading a SIGWX chart cold rather than just knowing the concepts in the abstract.\n\n" +
+          "The MEL list carried two items: the reactive windshear system and the autobrake system, both unserviceable. On top of that, the departure airport had a large cumulonimbus sitting overhead, which the panel used to probe departure considerations — with no reactive windshear system to rely on, the honest answer leans more heavily on visual/radar avoidance of the cell, being ready for the manual windshear escape manoeuvre if it's encountered anyway, and being willing to hold or delay the departure if the cell is a genuine threat rather than pushing through it. That naturally led into the aircraft's windshear memory items themselves, which the candidate was expected to run through directly.\n\n" +
+          "The other scenario thread was a pack fault in cruise: one air-conditioning pack failing, and what to do about it for the rest of the flight. The core of a good answer covers the immediate systems consequence — running on the remaining pack alone, watching the pressurisation and any duct-temperature limits that come with single-pack operation — and then the knock-on planning: whether the cruise altitude needs revisiting, the fuel effect of any level change, and whether continuing to the planned destination is still the right call or a diversion is worth considering, given the sector and what else is going on with the aircraft.\n\n" +
+          "This candidate described the panel as friendly and low-pressure throughout, with the whole thing wrapped up in around 30 minutes.",
+      },
+    ],
+    note: "Compiled from three candidates' accounts of the flight-plan briefing stage of the panel interview, reported around the same time. The exact scenario, weather, and follow-up questions vary by candidate and session — the examples above are what came up for these three, not a fixed script.",
+  },
+  ],
   Etihad: [
   {
     id: 1,
