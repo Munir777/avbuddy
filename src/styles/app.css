@@ -1224,3 +1224,17 @@ body {
     padding: 11px 3px;
   }
 }
+
+/* Persistent brand bar — logo shown above the section nav on every tab,
+   not just inside the Study-for-your-Technical header. */
+.brand-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.brand-bar__logo {
+  display: block;
+  height: 26px;
+  width: auto;
+}

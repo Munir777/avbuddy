@@ -586,6 +586,10 @@ export default function App() {
         />
         {signInOpen && <SignInModal onClose={() => setSignInOpen(false)} />}
 
+        <div className="brand-bar">
+          <img src={avbuddyLogo} alt="AvBuddy" className="brand-bar__logo" />
+        </div>
+
         <SectionNav section={section} onChange={setSection} />
 
         {section === "interview" && <InterviewPrepView />}
@@ -595,7 +599,6 @@ export default function App() {
         <>
         <div className="header">
           <div>
-            <img src={avbuddyLogo} alt="AvBuddy" className="header__logo" />
             <div className="header__eyebrow">{SUBJECT_META[subject].label.toUpperCase()} TRAINER</div>
             <div className="header__title">
               {mode === "study"
