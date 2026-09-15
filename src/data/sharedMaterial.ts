@@ -36,9 +36,9 @@ export const SHARED_MATERIAL: Record<Airline, SharedEntry[]> = {
   Etihad: [
   {
     id: 1,
-    title: "A320 First Officer Assessment Day (Non-Type-Rated), Abu Dhabi",
+    title: "Candidate From a Recent Interview",
     summary:
-      "A full day-by-day account of the assessment: written test, simulator, technical interview, documentation check, and group exercise.",
+      "A320 First Officer (non-type-rated) assessment day, Abu Dhabi — written test, simulator, technical interview, documentation check, and group exercise.",
     sections: [
       {
         heading: "Arrival & Company Presentation",

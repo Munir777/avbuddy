@@ -47,7 +47,10 @@ export default function InterviewPrepView() {
                 className="interview-item__question"
                 onClick={() => setOpenId(isOpen ? null : q.id)}
               >
-                <span className="interview-item__text">{q.question}</span>
+                <span className="shared-entry__heading">
+                  <span className="interview-item__text">{q.question}</span>
+                  {!isOpen && <span className="shared-entry__summary">{q.teaser}</span>}
+                </span>
                 <span className="interview-item__chevron">{isOpen ? "−" : "+"}</span>
               </button>
               {isOpen && (
