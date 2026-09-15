@@ -108,12 +108,36 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .sort((a, b) => b.sessions - a.sessions)
       .slice(0, 10);
 
+    // Signed-up accounts (magic-link email sign-in creates a row in `users`
+    // the first time someone signs in) -- separate from the anonymous
+    // `sessions` visit-tracking above.
+    const signupTotals = await sql`
+      SELECT
+        COUNT(*)::int AS total_users,
+        COUNT(*) FILTER (WHERE created_at >= CURRENT_DATE)::int AS signups_today,
+        COUNT(*) FILTER (WHERE created_at >= now() - interval '7 days')::int AS signups_7d
+      FROM users
+    `;
+
+    const recentSignups = await sql`
+      SELECT email, to_char(created_at, 'YYYY-MM-DD HH24:MI') AS joined_at
+      FROM users
+      ORDER BY created_at DESC
+      LIMIT 50
+    `;
+
     const row = totals[0] ?? {
       total_sessions: 0,
       unique_visitors: 0,
       studied_sessions: 0,
       sessions_today: 0,
       avg_duration_seconds: 0,
+    };
+
+    const signupRow = signupTotals[0] ?? {
+      total_users: 0,
+      signups_today: 0,
+      signups_7d: 0,
     };
 
     res.status(200).json({
@@ -127,6 +151,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       dailyTrend: dailyTrend,
       topSources,
       topCountries,
+      totalUsers: signupRow.total_users,
+      signupsToday: signupRow.signups_today,
+      signups7d: signupRow.signups_7d,
+      recentSignups: (recentSignups as { email: string; joined_at: string }[]).map((r) => ({
+        email: r.email,
+        joinedAt: r.joined_at,
+      })),
     });
   } catch (err) {
     console.error("stats error", err);

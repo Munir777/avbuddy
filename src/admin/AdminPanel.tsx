@@ -11,6 +11,10 @@ interface Stats {
   dailyTrend: { day: string; sessions: number; studied: number }[];
   topSources: { source: string; sessions: number }[];
   topCountries: { country: string; sessions: number }[];
+  totalUsers: number;
+  signupsToday: number;
+  signups7d: number;
+  recentSignups: { email: string; joinedAt: string }[];
 }
 
 const SECRET_KEY = "avbuddy_admin_secret";
@@ -97,6 +101,18 @@ export default function AdminPanel() {
         {stats && (
           <>
             <div className="admin__grid">
+              <div className="admin__tile admin__tile--accent">
+                <div className="admin__tile-value">{stats.totalUsers}</div>
+                <div className="admin__tile-label">Signed-up accounts</div>
+              </div>
+              <div className="admin__tile admin__tile--accent">
+                <div className="admin__tile-value">{stats.signupsToday}</div>
+                <div className="admin__tile-label">Signups today</div>
+              </div>
+              <div className="admin__tile admin__tile--accent">
+                <div className="admin__tile-value">{stats.signups7d}</div>
+                <div className="admin__tile-label">Signups (7 days)</div>
+              </div>
               <div className="admin__tile">
                 <div className="admin__tile-value">{stats.uniqueVisitors}</div>
                 <div className="admin__tile-label">Unique visitors</div>
@@ -122,6 +138,31 @@ export default function AdminPanel() {
                 <div className="admin__tile-label">Studied (count)</div>
               </div>
             </div>
+
+            <div className="admin__trend-label">Recent signups</div>
+            <table className="admin__trend-table">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Joined</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.recentSignups.length === 0 && (
+                  <tr>
+                    <td colSpan={2} className="admin__trend-empty">
+                      No sign-ups yet.
+                    </td>
+                  </tr>
+                )}
+                {stats.recentSignups.map((row) => (
+                  <tr key={row.email}>
+                    <td>{row.email}</td>
+                    <td>{row.joinedAt}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
             <div className="admin__trend-label">Last 7 days</div>
             <table className="admin__trend-table">
@@ -201,6 +242,8 @@ export default function AdminPanel() {
             </table>
 
             <div className="admin__note">
+              "Signed-up accounts" = anyone who has completed the magic-link email sign-in at
+              least once (recent signups list shows their email + join time, server clock/UTC).
               "Studied" = answered at least one question during the session, in either Study or
               Quiz mode. Session length is capped at 2h to avoid a backgrounded tab skewing the
               average. Sessions recorded before traffic-source tracking was added show as
