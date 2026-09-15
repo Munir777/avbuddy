@@ -24,6 +24,9 @@ import ExamSetup from "./components/ExamSetup";
 import ExamQuestionCard from "./components/ExamQuestionCard";
 import ExamResults from "./components/ExamResults";
 import ProgressView from "./components/ProgressView";
+import SectionNav, { type Section } from "./components/SectionNav";
+import InterviewPrepView from "./components/InterviewPrepView";
+import SharedMaterialView from "./components/SharedMaterialView";
 import avbuddyLogo from "./assets/avbuddy-logo.png";
 import "./styles/app.css";
 
@@ -67,6 +70,8 @@ export default function App() {
   // Quiz is the default landing mode: it's the only thing a signed-out
   // visitor can use without an account, so it's what they should land on
   // rather than immediately hitting the Study-mode sign-in gate.
+  const [section, setSection] = useState<Section>("technical");
+
   const [mode, setMode] = useState<Mode>("quiz");
 
   useEffect(() => {
@@ -581,6 +586,13 @@ export default function App() {
         />
         {signInOpen && <SignInModal onClose={() => setSignInOpen(false)} />}
 
+        <SectionNav section={section} onChange={setSection} />
+
+        {section === "interview" && <InterviewPrepView />}
+        {section === "shared" && <SharedMaterialView />}
+
+        {section === "technical" && (
+        <>
         <div className="header">
           <div>
             <img src={avbuddyLogo} alt="AvBuddy" className="header__logo" />
@@ -777,6 +789,8 @@ export default function App() {
             onQuizMissed={goQuizMissed}
             onReset={handleResetProgress}
           />
+        )}
+        </>
         )}
       </div>
     </div>
