@@ -1,7 +1,8 @@
 // Client-side helpers for the Shared Material submission pipeline -- talks
-// to /api/submissions/* and /api/shared-material, mirroring the pattern in
-// lib/auth.ts (session cookie handled by the browser, this module just
-// wraps the fetch calls and normalises the response shape).
+// to /api/submissions (one consolidated endpoint, see the comment at the
+// top of that file for why) and /api/shared-material, mirroring the
+// pattern in lib/auth.ts (session cookie handled by the browser, this
+// module just wraps the fetch calls and normalises the response shape).
 import type { Airline } from "../data/sharedMaterial";
 
 export interface MySubmission {
@@ -27,11 +28,11 @@ export async function submitExperience(
   rawBody: string
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    const res = await fetch("/api/submissions/create", {
+    const res = await fetch("/api/submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-      body: JSON.stringify({ airline, rawTitle, rawBody }),
+      body: JSON.stringify({ op: "create", airline, rawTitle, rawBody }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) return { ok: false, error: data.error ?? "request_failed" };
@@ -43,7 +44,7 @@ export async function submitExperience(
 
 export async function fetchMySubmissions(): Promise<MySubmission[]> {
   try {
-    const res = await fetch("/api/submissions/mine", { credentials: "include" });
+    const res = await fetch("/api/submissions?resource=mine", { credentials: "include" });
     if (!res.ok) return [];
     const data = await res.json();
     return data.ok ? data.submissions : [];

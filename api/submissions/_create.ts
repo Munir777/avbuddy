@@ -7,7 +7,7 @@ const MAX_TITLE_LEN = 200;
 const MIN_BODY_LEN = 30;
 const MAX_BODY_LEN = 20000;
 // Basic anti-spam, same idea as the auth_tokens resend cooldown in
-// api/auth/request-link.ts: a signed-in account (itself gated behind
+// api/auth/_requestLink.ts: a signed-in account (itself gated behind
 // email verification) can only fire this so often, and can only have so
 // many things sitting in the review queue at once.
 const SUBMIT_COOLDOWN_MS = 2 * 60 * 1000;
@@ -19,7 +19,8 @@ interface Body {
   rawBody?: unknown;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/submissions/create.ts -- see api/submissions.ts.
+export async function handleCreate(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

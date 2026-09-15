@@ -19,7 +19,8 @@ interface Row {
 
 const VALID_STATUSES = ["pending", "approved", "rejected"];
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/submissions/list.ts -- see api/submissions.ts.
+export async function handleList(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

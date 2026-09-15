@@ -8,7 +8,7 @@ const MAX_BODY_LEN = 2000;
 // A message every couple of seconds is normal typing pace -- this only
 // catches a runaway script or a fast double-submit, not an actual
 // conversation, same spirit as the submissions cooldown in
-// api/submissions/create.ts.
+// api/submissions/_create.ts.
 const SEND_COOLDOWN_MS = 1500;
 
 interface Body {
@@ -16,7 +16,8 @@ interface Body {
   body?: unknown;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/community/send.ts -- see api/community/actions.ts.
+export async function handleSend(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

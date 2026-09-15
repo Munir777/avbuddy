@@ -6,7 +6,9 @@ import { COMMUNITY_ROOMS, isCommunityEnabled, getAllRoomStatuses } from "./_comm
 // open is part of "read is open to everyone" (see CommunityView.tsx). The
 // room list itself is the fixed COMMUNITY_ROOMS set; this only adds live
 // status on top of it.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+//
+// Logic moved out of api/community/rooms.ts -- see api/community/index.ts.
+export async function handleRooms(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

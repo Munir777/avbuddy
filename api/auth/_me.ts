@@ -2,7 +2,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { ensureSchema } from "../_db.js";
 import { getSessionUser } from "../_auth.js";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/auth/me.ts -- see api/auth.ts.
+export async function handleMe(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

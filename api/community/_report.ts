@@ -15,8 +15,10 @@ interface Body {
 // RETURNING clause only comes back non-empty the first time, so the
 // flag_count increment only ever fires once per user per message. A
 // single report is enough to land a message in the admin queue (see
-// api/community/admin/reports.ts) -- there's no threshold to clear.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// api/community/_adminReports.ts) -- there's no threshold to clear.
+//
+// Logic moved out of api/community/report.ts -- see api/community/actions.ts.
+export async function handleReport(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

@@ -6,7 +6,8 @@ interface Body {
   token?: unknown;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/auth/verify.ts -- see api/auth.ts.
+export async function handleVerify(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

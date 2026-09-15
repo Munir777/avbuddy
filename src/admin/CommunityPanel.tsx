@@ -25,8 +25,12 @@ interface ModeratePayload {
   muteHours?: number;
 }
 
+// Talks to /api/community/admin (one consolidated endpoint -- see the
+// comment at the top of api/community/admin.ts for why). GET takes
+// ?resource=settings|reports; POST needs an op field ("settings" or
+// "moderate") alongside the payload itself.
 async function fetchSettings(secret: string): Promise<{ enabled: boolean; rooms: RoomRow[] }> {
-  const res = await fetch("/api/community/admin/settings", { headers: { "x-admin-secret": secret } });
+  const res = await fetch("/api/community/admin?resource=settings", { headers: { "x-admin-secret": secret } });
   if (!res.ok) throw new Error(res.status === 401 ? "Wrong password." : "Couldn't load settings.");
   const data = await res.json();
   return { enabled: data.enabled, rooms: data.rooms };
@@ -36,10 +40,10 @@ async function postSettings(
   secret: string,
   payload: { enabled?: boolean; room?: string; status?: string }
 ): Promise<{ enabled: boolean; rooms: RoomRow[] } | null> {
-  const res = await fetch("/api/community/admin/settings", {
+  const res = await fetch("/api/community/admin", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-admin-secret": secret },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ op: "settings", ...payload }),
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok || !data.ok) return null;
@@ -47,17 +51,17 @@ async function postSettings(
 }
 
 async function fetchReports(secret: string): Promise<ReportRow[]> {
-  const res = await fetch("/api/community/admin/reports", { headers: { "x-admin-secret": secret } });
+  const res = await fetch("/api/community/admin?resource=reports", { headers: { "x-admin-secret": secret } });
   if (!res.ok) throw new Error(res.status === 401 ? "Wrong password." : "Couldn't load reports.");
   const data = await res.json();
   return data.reports;
 }
 
 async function moderate(secret: string, payload: ModeratePayload): Promise<boolean> {
-  const res = await fetch("/api/community/admin/moderate", {
+  const res = await fetch("/api/community/admin", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-admin-secret": secret },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ op: "moderate", ...payload }),
   });
   const data = await res.json().catch(() => ({}));
   return res.ok && !!data.ok;

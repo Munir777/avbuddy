@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { ensureSchema } from "../../_db.js";
-import { checkAdminAuth } from "../../_admin.js";
+import { ensureSchema } from "../_db.js";
+import { checkAdminAuth } from "../_admin.js";
 import {
   COMMUNITY_ROOMS,
   isCommunityEnabled,
@@ -8,7 +8,7 @@ import {
   getAllRoomStatuses,
   setRoomStatus,
   type RoomStatus,
-} from "../_common.js";
+} from "./_common.js";
 
 const VALID_STATUSES: RoomStatus[] = ["open", "read_only", "hidden"];
 
@@ -22,7 +22,11 @@ interface Body {
 // flag (community_enabled in app_settings) and a single room's status.
 // A request can set either or both in one call -- GET just reads the
 // current state, which the admin panel also uses to repaint after a POST.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Already handled both GET and POST itself before the consolidation, so
+// api/community/admin.ts forwards to it for both methods.
+//
+// Logic moved out of api/community/admin/settings.ts -- see api/community/admin.ts.
+export async function handleAdminSettings(req: VercelRequest, res: VercelResponse) {
   if (!checkAdminAuth(req, res)) return;
 
   try {

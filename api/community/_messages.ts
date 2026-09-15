@@ -19,7 +19,9 @@ interface Row {
 // `after` (the highest `seq` they already have) and get back only what's
 // new since then, in seq order -- that's the whole near-live mechanism,
 // no sockets involved. See CommunityView.tsx for the polling loop.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+//
+// Logic moved out of api/community/messages.ts -- see api/community/index.ts.
+export async function handleMessages(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

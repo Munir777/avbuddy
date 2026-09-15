@@ -16,8 +16,12 @@ interface AdminSubmission {
   submitterEmail: string;
 }
 
+// Talks to /api/submissions (one consolidated endpoint -- see the
+// comment at the top of api/submissions.ts for why). GET (no ?resource=,
+// defaults to the admin list) takes ?status=; POST needs op: "review"
+// alongside the review payload itself.
 async function fetchSubmissions(secret: string, status: string): Promise<AdminSubmission[]> {
-  const res = await fetch(`/api/submissions/list?status=${status}`, {
+  const res = await fetch(`/api/submissions?status=${status}`, {
     headers: { "x-admin-secret": secret },
   });
   if (!res.ok) throw new Error(res.status === 401 ? "Wrong password." : "Couldn't load submissions.");
@@ -35,10 +39,10 @@ interface ReviewPayload {
 }
 
 async function reviewSubmission(secret: string, payload: ReviewPayload): Promise<boolean> {
-  const res = await fetch("/api/submissions/review", {
+  const res = await fetch("/api/submissions", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-admin-secret": secret },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ op: "review", ...payload }),
   });
   const data = await res.json().catch(() => ({}));
   return res.ok && !!data.ok;

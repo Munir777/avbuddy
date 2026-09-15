@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { sql, ensureSchema } from "../../_db.js";
-import { checkAdminAuth } from "../../_admin.js";
+import { sql, ensureSchema } from "../_db.js";
+import { checkAdminAuth } from "../_admin.js";
 
 interface Row {
   id: string;
@@ -15,9 +15,11 @@ interface Row {
 
 // Flagged, not-yet-deleted messages, most-reported first -- this is the
 // whole admin moderation queue. A message drops off the list the moment
-// it's soft-deleted or cleared (see admin/moderate.ts), so there's no
-// separate "handled" flag to manage.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// it's soft-deleted or cleared (see api/community/_adminModerate.ts), so
+// there's no separate "handled" flag to manage.
+//
+// Logic moved out of api/community/admin/reports.ts -- see api/community/admin.ts.
+export async function handleAdminReports(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

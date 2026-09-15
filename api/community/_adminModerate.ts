@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { sql, ensureSchema } from "../../_db.js";
-import { checkAdminAuth } from "../../_admin.js";
+import { sql, ensureSchema } from "../_db.js";
+import { checkAdminAuth } from "../_admin.js";
 
 const MAX_REASON_LEN = 300;
 
@@ -8,7 +8,7 @@ type Action = "delete_message" | "clear_flag" | "mute_user" | "unmute_user";
 const VALID_ACTIONS: Action[] = ["delete_message", "clear_flag", "mute_user", "unmute_user"];
 
 interface Body {
-  action?: unknown;
+  action?: unknown; // this message/user-scoped decision -- unrelated to api/community/admin.ts's `op` field
   messageId?: unknown;
   userId?: unknown;
   reason?: unknown;
@@ -16,12 +16,14 @@ interface Body {
 }
 
 // Four moderation actions behind one endpoint, same shape as
-// api/submissions/review.ts (id + action). delete_message soft-deletes
+// api/submissions/_review.ts (id + action). delete_message soft-deletes
 // (deleted_at, not a row removal, so it can still be audited) and
 // clear_flag un-flags a message the admin decided was fine without
 // touching it -- both act on a message id; mute_user / unmute_user act on
 // a user id and are scoped to Community only, see community_mutes.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+//
+// Logic moved out of api/community/admin/moderate.ts -- see api/community/admin.ts.
+export async function handleAdminModerate(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

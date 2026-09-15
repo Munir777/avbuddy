@@ -9,7 +9,7 @@ const MAX_NOTES_LEN = 1000;
 
 interface Body {
   id?: unknown;
-  action?: unknown; // "approve" | "reject"
+  action?: unknown; // "approve" | "reject" -- this submission's own decision, not the api/submissions.ts dispatcher's `op` field
   publishedTitle?: unknown;
   publishedSummary?: unknown;
   publishedBody?: unknown;
@@ -20,7 +20,9 @@ interface Body {
 // this safe against a double-click or two admin tabs open at once --
 // whichever request lands first flips the row out of 'pending', so the
 // second is a no-op rather than a second publish/reject.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+//
+// Logic moved out of api/submissions/review.ts -- see api/submissions.ts.
+export async function handleReview(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

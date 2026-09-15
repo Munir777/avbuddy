@@ -17,8 +17,13 @@ interface Body {
 // GET returns the signed-in user's current Community display name (and
 // the anonymous default they'd fall back to); POST sets it. Nobody has to
 // set one -- the default (see _common.ts: anonName) is deterministic and
-// never exposes the account's email in a public room.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// never exposes the account's email in a public room. Unlike the other
+// community/_*.ts files, this one already handled both GET and POST
+// itself before the consolidation, so api/community/index.ts forwards to
+// it regardless of method rather than picking a single one.
+//
+// Logic moved out of api/community/profile.ts -- see api/community/index.ts.
+export async function handleProfile(req: VercelRequest, res: VercelResponse) {
   try {
     await ensureSchema();
     const user = await getSessionUser(req);

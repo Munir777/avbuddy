@@ -9,7 +9,8 @@ interface Body {
   email?: unknown;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Logic moved out of api/auth/request-link.ts -- see api/auth.ts.
+export async function handleRequestLink(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;

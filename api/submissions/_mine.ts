@@ -15,7 +15,9 @@ interface Row {
 // pending / published / not published, with the admin's note if they left
 // one on a rejection -- without needing to ask separately. Deliberately
 // never exposes anyone else's submissions or raw content.
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+//
+// Logic moved out of api/submissions/mine.ts -- see api/submissions.ts.
+export async function handleMine(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
     res.status(405).json({ ok: false });
     return;

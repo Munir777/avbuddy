@@ -1,8 +1,10 @@
-// Client-side helpers for the Community feature -- talks to
-// /api/community/*. Polling (not sockets) is the whole design: CommunityView
-// calls fetchMessages on an interval, only while its tab is mounted and the
-// browser tab itself is foreground (Page Visibility API) -- see that
-// component for the actual loop.
+// Client-side helpers for the Community feature -- talks to three
+// consolidated Vercel Functions (api/community/{index,actions,admin}.ts;
+// see the comment at the top of index.ts for why it's three files rather
+// than the original eight). Polling (not sockets) is the whole design:
+// CommunityView calls fetchMessages on an interval, only while its tab is
+// mounted and the browser tab itself is foreground (Page Visibility
+// API) -- see that component for the actual loop.
 export type RoomStatus = "open" | "read_only" | "hidden";
 
 export interface RoomInfo {
@@ -20,7 +22,7 @@ export interface CommunityMessage {
 
 export async function fetchRooms(): Promise<{ enabled: boolean; rooms: RoomInfo[] }> {
   try {
-    const res = await fetch("/api/community/rooms");
+    const res = await fetch("/api/community?resource=rooms");
     if (!res.ok) return { enabled: false, rooms: [] };
     const data = await res.json();
     return data.ok ? { enabled: data.enabled, rooms: data.rooms } : { enabled: false, rooms: [] };
@@ -34,7 +36,9 @@ export async function fetchMessages(
   after: number
 ): Promise<{ enabled: boolean; status: RoomStatus; messages: CommunityMessage[]; latestSeq: number }> {
   try {
-    const res = await fetch(`/api/community/messages?room=${encodeURIComponent(room)}&after=${after}`);
+    const res = await fetch(
+      `/api/community?resource=messages&room=${encodeURIComponent(room)}&after=${after}`
+    );
     if (!res.ok) return { enabled: false, status: "hidden", messages: [], latestSeq: after };
     const data = await res.json();
     if (!data.ok) return { enabled: false, status: "hidden", messages: [], latestSeq: after };
@@ -49,11 +53,11 @@ export async function sendMessage(
   body: string
 ): Promise<{ ok: boolean; message?: CommunityMessage; error?: string }> {
   try {
-    const res = await fetch("/api/community/send", {
+    const res = await fetch("/api/community/actions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-      body: JSON.stringify({ room, body }),
+      body: JSON.stringify({ op: "send", room, body }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) return { ok: false, error: data.error ?? "request_failed" };
@@ -65,11 +69,11 @@ export async function sendMessage(
 
 export async function reportMessage(messageId: string, reason?: string): Promise<boolean> {
   try {
-    const res = await fetch("/api/community/report", {
+    const res = await fetch("/api/community/actions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-      body: JSON.stringify({ messageId, reason }),
+      body: JSON.stringify({ op: "report", messageId, reason }),
     });
     const data = await res.json().catch(() => ({}));
     return res.ok && !!data.ok;
@@ -86,7 +90,7 @@ export interface ProfileInfo {
 
 export async function fetchProfile(): Promise<ProfileInfo | null> {
   try {
-    const res = await fetch("/api/community/profile", { credentials: "include" });
+    const res = await fetch("/api/community?resource=profile", { credentials: "include" });
     if (!res.ok) return null;
     const data = await res.json();
     if (!data.ok) return null;
@@ -98,7 +102,7 @@ export async function fetchProfile(): Promise<ProfileInfo | null> {
 
 export async function setDisplayName(displayName: string): Promise<{ ok: boolean; error?: string }> {
   try {
-    const res = await fetch("/api/community/profile", {
+    const res = await fetch("/api/community?resource=profile", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
