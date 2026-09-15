@@ -15,16 +15,6 @@ export default function InterviewPrepView() {
 
   return (
     <div>
-      <div className="card interview-intro">
-        <div className="interview-intro__title">Behavioral & competency interview practice</div>
-        <p className="interview-intro__text">
-          These are the kinds of questions airlines ask about decision-making, safety culture, and working with a
-          crew — not multiple choice. Click a question to see how to structure a strong answer. The content of your
-          answer should always be a real, specific story from your own flying — the guidance here is about
-          structure and delivery, not a script to memorise.
-        </p>
-      </div>
-
       <div className="filters">
         <button
           onClick={() => setActiveCategory("All")}
@@ -57,13 +47,11 @@ export default function InterviewPrepView() {
                 className="interview-item__question"
                 onClick={() => setOpenId(isOpen ? null : q.id)}
               >
-                <span className="interview-item__category">{q.category}</span>
                 <span className="interview-item__text">{q.question}</span>
                 <span className="interview-item__chevron">{isOpen ? "−" : "+"}</span>
               </button>
               {isOpen && (
                 <div className="interview-item__answer">
-                  <div className="interview-item__answer-label">HOW TO ANSWER THIS</div>
                   <p>{q.howToAnswer}</p>
                 </div>
               )}
