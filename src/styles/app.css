@@ -1206,9 +1206,10 @@ body {
 .shared-entry__body {
   font-size: 12.5px;
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: 1.7;
   padding: 8px 20px 0;
   margin: 0;
+  white-space: pre-line;
 }
 
 .shared-entry__note {
