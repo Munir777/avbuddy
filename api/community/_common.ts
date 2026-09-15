@@ -1,9 +1,19 @@
 import { sql } from "../_db.js";
 
-// Kept in sync by hand with AIRLINES in src/data/sharedMaterial.ts, same
-// reasoning as api/_shared.ts -- these are the pre-made rooms, one per
-// airline. Not imported across the api/src boundary on purpose.
-export const COMMUNITY_ROOMS = ["Emirates", "Qatar Airways", "Etihad", "Riyadh Air", "FlyDubai"] as const;
+// Community's own room list -- it started as a copy of AIRLINES in
+// src/data/sharedMaterial.ts (same reasoning as api/_shared.ts: not
+// imported across the api/src boundary on purpose) but has since grown
+// two rooms (Air Arabia, Oman Air) that Shared Material doesn't have, so
+// don't assume the two lists stay identical going forward.
+export const COMMUNITY_ROOMS = [
+  "Emirates",
+  "Qatar Airways",
+  "Etihad",
+  "Riyadh Air",
+  "FlyDubai",
+  "Air Arabia",
+  "Oman Air",
+] as const;
 export type CommunityRoom = (typeof COMMUNITY_ROOMS)[number];
 
 export type RoomStatus = "open" | "read_only" | "hidden";
