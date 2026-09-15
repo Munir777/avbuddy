@@ -202,7 +202,11 @@ function RoomChat({
         )}
       </div>
 
-      {authReady && !signedIn && (
+      {roomStatus === "hidden" && (
+        <div className="community-room__notice">This room isn't available right now.</div>
+      )}
+
+      {roomStatus !== "hidden" && authReady && !signedIn && (
         <div className="gate community-room__gate">
           <div className="gate__title">Sign in to post</div>
           <p className="gate__text">Reading is open to everyone — posting needs a free account.</p>
@@ -212,11 +216,11 @@ function RoomChat({
         </div>
       )}
 
-      {authReady && signedIn && roomStatus === "read_only" && (
+      {roomStatus === "read_only" && authReady && signedIn && (
         <div className="community-room__notice">This room is read-only right now.</div>
       )}
 
-      {authReady && signedIn && roomStatus === "open" && (
+      {roomStatus === "open" && authReady && signedIn && (
         <>
           <div className="community-room__identity">
             {nameEditing ? (
