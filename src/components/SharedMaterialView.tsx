@@ -181,7 +181,7 @@ export default function SharedMaterialView() {
   return (
     <div>
       <div className="card interview-intro">
-        <div className="interview-intro__title">Shared interview material, by airline</div>
+        <div className="interview-intro__title">Shared interview material, by other applicants</div>
         <p className="interview-intro__text">
           Notes and experiences gathered from real interview processes, organised by airline — some curated
           directly, some submitted by other AvBuddy users below. Every submission is reviewed before it's posted,
