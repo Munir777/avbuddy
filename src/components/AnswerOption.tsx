@@ -1,5 +1,9 @@
 interface AnswerOptionProps {
   text: string;
+  // Set for a question whose options are pictures (a wind-barb symbol, a
+  // chart glyph) rather than words -- `text` is still used as the image's
+  // alt text and for search, but rendered instead of shown.
+  imageSrc?: string;
   index: number;
   isAnswer: boolean;
   // True once this specific option has been picked and found wrong — in
@@ -12,6 +16,7 @@ interface AnswerOptionProps {
 
 export default function AnswerOption({
   text,
+  imageSrc,
   index,
   isAnswer,
   isWrong,
@@ -39,7 +44,13 @@ export default function AnswerOption({
           <path d="M5 5 L19 19 M19 5 L5 19" strokeLinecap="round" />
         </svg>
       )}
-      <span>{text}</span>
+      {imageSrc ? (
+        <span className="option__image-wrap">
+          <img src={imageSrc} alt={text} className="option__image" />
+        </span>
+      ) : (
+        <span>{text}</span>
+      )}
     </button>
   );
 }

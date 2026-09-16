@@ -65,11 +65,18 @@ export default function QuestionCard({
 
         <div className="card__question">{question.q}</div>
 
+        {question.diagram && (
+          <div className="card__diagram">
+            <img src={question.diagram} alt="" />
+          </div>
+        )}
+
         <div className="options">
           {question.options.map((opt, i) => (
             <AnswerOption
               key={i}
               text={opt}
+              imageSrc={question.optionImages?.[i]}
               index={i}
               isAnswer={i === question.answer}
               isWrong={wrongIndices.has(i)}

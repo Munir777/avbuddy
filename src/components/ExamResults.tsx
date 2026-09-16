@@ -40,23 +40,42 @@ export default function ExamResults({ items, passThresholdPct, onNewExam }: Exam
           <div className="setup__label" style={{ textAlign: "left", marginTop: 28, marginBottom: 10 }}>
             REVIEW MISSED ({missed.length})
           </div>
-          {missed.map(({ question, selected }) => (
-            <div key={question.id} className="exam-review__item">
-              <div className="exam-review__q">{question.q}</div>
-              <div className="exam-review__a exam-review__a--wrong">
-                Your answer: {selected !== null ? question.options[selected] : "(skipped — time ran out)"}
-              </div>
-              <div className="exam-review__a exam-review__a--correct">
-                Correct: {question.options[question.answer]}
-              </div>
-              {question.explain && (
-                <div className="exam-review__explain">
-                  {question.explain}
-                  {question.reference && <div className="reference">Ref: {question.reference}</div>}
+          {missed.map(({ question, selected }) => {
+            // A question whose options are pictures (optionImages set) has
+            // nothing useful in options[i] itself beyond alt text -- show
+            // the actual image in the review instead of that placeholder.
+            const renderChoice = (i: number | null) => {
+              if (i === null) return "(skipped — time ran out)";
+              const img = question.optionImages?.[i];
+              return img ? (
+                <img src={img} alt={question.options[i]} className="exam-review__image" />
+              ) : (
+                question.options[i]
+              );
+            };
+            return (
+              <div key={question.id} className="exam-review__item">
+                <div className="exam-review__q">{question.q}</div>
+                {question.diagram && (
+                  <div className="card__diagram">
+                    <img src={question.diagram} alt="" />
+                  </div>
+                )}
+                <div className="exam-review__a exam-review__a--wrong">
+                  Your answer: {renderChoice(selected)}
                 </div>
-              )}
-            </div>
-          ))}
+                <div className="exam-review__a exam-review__a--correct">
+                  Correct: {renderChoice(question.answer)}
+                </div>
+                {question.explain && (
+                  <div className="exam-review__explain">
+                    {question.explain}
+                    {question.reference && <div className="reference">Ref: {question.reference}</div>}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

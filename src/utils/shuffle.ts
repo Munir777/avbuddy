@@ -15,11 +15,17 @@ export function shuffle<T>(arr: T[]): T[] {
 // randomly reordered -- the original Question object is never mutated, so
 // it's still safe to read q.answer/q.options straight off the shared
 // QUESTIONS array anywhere else in the app.
-export function shuffleOptions<Q extends { options: string[]; answer: number }>(question: Q): Q {
+export function shuffleOptions<Q extends { options: string[]; answer: number; optionImages?: string[] }>(
+  question: Q
+): Q {
   const order = shuffle(question.options.map((_, i) => i));
   return {
     ...question,
     options: order.map((i) => question.options[i]),
     answer: order.indexOf(question.answer),
+    // Image-only options (see Question.optionImages) have to move in lockstep
+    // with the text reorder above, or the letter/answer would point at the
+    // wrong picture.
+    optionImages: question.optionImages ? order.map((i) => question.optionImages![i]) : question.optionImages,
   };
 }

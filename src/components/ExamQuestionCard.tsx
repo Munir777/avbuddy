@@ -61,18 +61,33 @@ export default function ExamQuestionCard({
 
         <div className="card__question">{question.q}</div>
 
+        {question.diagram && (
+          <div className="card__diagram">
+            <img src={question.diagram} alt="" />
+          </div>
+        )}
+
         <div className="options">
-          {question.options.map((opt, i) => (
-            <button
-              key={i}
-              className={"option" + (selected === i ? " option--selected" : "")}
-              disabled={selected !== null}
-              onClick={() => onPick(i)}
-            >
-              <span className="option__letter">{String.fromCharCode(65 + i)}</span>
-              <span>{opt}</span>
-            </button>
-          ))}
+          {question.options.map((opt, i) => {
+            const imageSrc = question.optionImages?.[i];
+            return (
+              <button
+                key={i}
+                className={"option" + (selected === i ? " option--selected" : "")}
+                disabled={selected !== null}
+                onClick={() => onPick(i)}
+              >
+                <span className="option__letter">{String.fromCharCode(65 + i)}</span>
+                {imageSrc ? (
+                  <span className="option__image-wrap">
+                    <img src={imageSrc} alt={opt} className="option__image" />
+                  </span>
+                ) : (
+                  <span>{opt}</span>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         <div className="card__actions" style={{ justifyContent: "flex-end" }}>

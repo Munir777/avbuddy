@@ -588,6 +588,53 @@ body {
   color: currentColor;
 }
 
+/* A chart/diagram shown above a question's text -- kept on its own light
+   card regardless of the app's dark theme, since these are line-drawn
+   technical charts that need to stay legible (same reasoning as the
+   picture-based answer options below). */
+.card__diagram {
+  margin: 4px 0 16px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  text-align: center;
+}
+
+.card__diagram img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* An answer option rendered as a picture (e.g. a wind-barb symbol) instead
+   of text -- same light card treatment as .card__diagram, sized down to sit
+   comfortably inside a single option row. */
+.option__image-wrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.option__image {
+  max-height: 28px;
+  max-width: 140px;
+  display: block;
+}
+
+.exam-review__image {
+  max-height: 24px;
+  max-width: 120px;
+  vertical-align: middle;
+  background: #fff;
+  border-radius: 3px;
+  padding: 3px 6px;
+  margin-left: 4px;
+}
+
 .explain {
   margin-top: 16px;
   padding-top: 14px;
