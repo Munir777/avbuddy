@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
 import { QUESTIONS, SUBJECTS, SUBJECT_META, SYSTEMS_BY_SUBJECT, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
-import { shuffle } from "./utils/shuffle";
+import { shuffle, shuffleOptions } from "./utils/shuffle";
 import { initAnalytics, trackStudied } from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
 import { syncProgressOnSignIn, pushProgressEntries, clearServerProgress } from "./lib/progressSync";
@@ -196,7 +196,15 @@ export default function App() {
       studySearchQuery,
     ]
   );
-  const studyCurrent = studyPool.length > 0 ? studyPool[studyIndex % studyPool.length] : undefined;
+  // Shuffled once per question shown (memoized on the raw pool entry, not
+  // re-run on every render) so a reveal/progress-tick re-render doesn't
+  // reorder the options out from under whoever is looking at them -- see
+  // shuffleOptions() for why this needs to happen at all.
+  const studyCurrentRaw = studyPool.length > 0 ? studyPool[studyIndex % studyPool.length] : undefined;
+  const studyCurrent = useMemo(
+    () => (studyCurrentRaw ? shuffleOptions(studyCurrentRaw) : undefined),
+    [studyCurrentRaw]
+  );
   const studyColor = studyCurrent
     ? SYSTEM_COLORS[studyCurrent.system] ?? DEFAULT_SYSTEM_COLOR
     : DEFAULT_SYSTEM_COLOR;
@@ -307,7 +315,7 @@ export default function App() {
 
   function startQuiz() {
     const drawn = shuffle(quizCandidatePool).slice(0, Math.min(quizCount, quizCandidatePool.length));
-    setQuizQuestions(drawn);
+    setQuizQuestions(drawn.map(shuffleOptions));
     setQuizIndex(0);
     setQuizSelected(null);
     setQuizRevealed(false);
@@ -320,7 +328,7 @@ export default function App() {
   // (hidden, for anon users) setup controls are currently set to.
   function startFreeQuiz() {
     const drawn = shuffle(subjectQuestions).slice(0, Math.min(FREE_QUIZ_COUNT, subjectQuestions.length));
-    setQuizQuestions(drawn);
+    setQuizQuestions(drawn.map(shuffleOptions));
     setQuizIndex(0);
     setQuizSelected(null);
     setQuizRevealed(false);
@@ -365,7 +373,7 @@ export default function App() {
   }
 
   function quizRetrySameSet() {
-    setQuizQuestions((qs) => shuffle(qs));
+    setQuizQuestions((qs) => shuffle(qs).map(shuffleOptions));
     setQuizIndex(0);
     setQuizSelected(null);
     setQuizRevealed(false);
@@ -419,7 +427,7 @@ export default function App() {
   function startExam() {
     const len = Math.min(examLength, examCandidatePool.length);
     const drawn = shuffle(examCandidatePool).slice(0, len);
-    setExamQuestions(drawn);
+    setExamQuestions(drawn.map(shuffleOptions));
     setExamIndex(0);
     setExamSelected(null);
     setExamAnswers(new Array(drawn.length).fill(null));

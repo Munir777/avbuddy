@@ -69,7 +69,8 @@ export default function ExamQuestionCard({
               disabled={selected !== null}
               onClick={() => onPick(i)}
             >
-              {opt}
+              <span className="option__letter">{String.fromCharCode(65 + i)}</span>
+              <span>{opt}</span>
             </button>
           ))}
         </div>

@@ -24,8 +24,11 @@ export default function AnswerOption({
   if (showCorrect) className += " option--correct";
   else if (showIncorrect) className += " option--incorrect";
 
+  const letter = String.fromCharCode(65 + index);
+
   return (
     <button className={className} disabled={revealed || isWrong} onClick={() => onPick(index)}>
+      <span className="option__letter">{letter}</span>
       {showCorrect && (
         <svg className="option__icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M4 12.5 L9.5 18 L20 6" strokeLinecap="round" strokeLinejoin="round" />
