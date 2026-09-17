@@ -167,6 +167,11 @@ export function ensureSchema() {
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_room_seq ON community_messages (room, seq)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_user ON community_messages (user_id)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_community_messages_flagged ON community_messages (flagged)`)
+      // Set only when an admin edits a post's body after the fact (see
+      // api/community/_adminModerate.ts's edit_message action) -- NULL
+      // means the message is exactly as the author submitted it. Shown to
+      // everyone as an "(edited)" tag so an edit is never silent.
+      .then(() => sql`ALTER TABLE community_messages ADD COLUMN IF NOT EXISTS edited_at TIMESTAMPTZ`)
       // One report per user per message (PK), so re-clicking "report"
       // can't inflate the count -- flag_count on the message itself is
       // still what the admin queue sorts/displays by.

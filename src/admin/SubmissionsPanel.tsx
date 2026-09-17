@@ -31,7 +31,7 @@ async function fetchSubmissions(secret: string, status: string): Promise<AdminSu
 
 interface ReviewPayload {
   id: string;
-  action: "approve" | "reject";
+  action: "approve" | "reject" | "edit";
   publishedTitle?: string;
   publishedSummary?: string;
   publishedBody?: string;
@@ -69,6 +69,9 @@ function ReviewCard({
   const [notes, setNotes] = useState(submission.adminNotes ?? "");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Published posts render read-only until the admin explicitly opens
+  // this -- editing an already-live post is the exception, not the flow.
+  const [editing, setEditing] = useState(false);
 
   async function handleApprove() {
     if (!title.trim() || !text.trim()) {
@@ -97,6 +100,28 @@ function ReviewCard({
     setBusy(false);
     if (ok) onHandled();
     else setError("Something went wrong.");
+  }
+
+  async function handleSaveEdit() {
+    if (!title.trim() || !text.trim()) {
+      setError("Needs a title and a body before it can go live.");
+      return;
+    }
+    setBusy(true);
+    setError(null);
+    const ok = await reviewSubmission(secret, {
+      id: submission.id,
+      action: "edit",
+      publishedTitle: title,
+      publishedSummary: summary,
+      publishedBody: text,
+      adminNotes: notes,
+    });
+    setBusy(false);
+    if (ok) {
+      setEditing(false);
+      onHandled();
+    } else setError("Something went wrong saving that.");
   }
 
   return (
@@ -175,11 +200,90 @@ function ReviewCard({
             </button>
           </div>
         </>
+      ) : submission.status === "approved" && editing ? (
+        <>
+          <div className="admin__field">
+            <label className="admin__label" htmlFor={`title-${submission.id}`}>
+              Published title
+            </label>
+            <input
+              id={`title-${submission.id}`}
+              className="admin__input"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+
+          <div className="admin__field">
+            <label className="admin__label" htmlFor={`summary-${submission.id}`}>
+              Published summary (optional teaser)
+            </label>
+            <input
+              id={`summary-${submission.id}`}
+              className="admin__input"
+              value={summary}
+              onChange={(e) => setSummary(e.target.value)}
+            />
+          </div>
+
+          <div className="admin__field">
+            <label className="admin__label" htmlFor={`body-${submission.id}`}>
+              Published body
+            </label>
+            <textarea
+              id={`body-${submission.id}`}
+              className="admin__input admin__textarea"
+              rows={12}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+          </div>
+
+          <div className="admin__field">
+            <label className="admin__label" htmlFor={`notes-${submission.id}`}>
+              Admin notes
+            </label>
+            <input
+              id={`notes-${submission.id}`}
+              className="admin__input"
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+            />
+          </div>
+
+          {error && <div className="admin__error">{error}</div>}
+
+          <div className="admin__actions">
+            <button type="button" className="admin__btn" onClick={handleSaveEdit} disabled={busy}>
+              {busy ? "Saving…" : "Save changes"}
+            </button>
+            <button
+              type="button"
+              className="admin__btn admin__btn--danger"
+              disabled={busy}
+              onClick={() => {
+                setTitle(submission.publishedTitle ?? "");
+                setSummary(submission.publishedSummary ?? "");
+                setText(submission.publishedBody ?? "");
+                setNotes(submission.adminNotes ?? "");
+                setError(null);
+                setEditing(false);
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </>
       ) : (
         <div className="admin__resolved-note">
           {submission.status === "approved" ? "Published" : "Rejected"}
           {submission.publishedTitle ? ` as "${submission.publishedTitle}"` : ""}
           {submission.adminNotes ? ` — note: ${submission.adminNotes}` : ""}
+          {submission.status === "approved" && (
+            <button type="button" className="admin__btn admin__resolved-note-edit" onClick={() => setEditing(true)}>
+              Edit
+            </button>
+          )}
         </div>
       )}
     </div>

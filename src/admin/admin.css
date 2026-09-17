@@ -308,3 +308,7 @@
   color: var(--text-dim);
   line-height: 1.6;
 }
+
+.admin__resolved-note-edit {
+  margin-left: 12px;
+}

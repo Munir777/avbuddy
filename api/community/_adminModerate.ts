@@ -3,9 +3,13 @@ import { sql, ensureSchema } from "../_db.js";
 import { checkAdminAuth } from "../_admin.js";
 
 const MAX_REASON_LEN = 300;
+// Same cap as api/community/_send.ts's own MAX_BODY_LEN -- an admin edit
+// is still a message body, so it stays inside the limit a normal post
+// would have to.
+const MAX_BODY_LEN = 2000;
 
-type Action = "delete_message" | "clear_flag" | "mute_user" | "unmute_user";
-const VALID_ACTIONS: Action[] = ["delete_message", "clear_flag", "mute_user", "unmute_user"];
+type Action = "delete_message" | "clear_flag" | "mute_user" | "unmute_user" | "edit_message";
+const VALID_ACTIONS: Action[] = ["delete_message", "clear_flag", "mute_user", "unmute_user", "edit_message"];
 
 interface Body {
   action?: unknown; // this message/user-scoped decision -- unrelated to api/community/admin.ts's `op` field
@@ -13,14 +17,19 @@ interface Body {
   userId?: unknown;
   reason?: unknown;
   muteHours?: unknown; // omitted/0 = indefinite, until manually unmuted
+  body?: unknown; // edit_message only -- the replacement text
 }
 
-// Four moderation actions behind one endpoint, same shape as
+// Five moderation actions behind one endpoint, same shape as
 // api/submissions/_review.ts (id + action). delete_message soft-deletes
-// (deleted_at, not a row removal, so it can still be audited) and
-// clear_flag un-flags a message the admin decided was fine without
-// touching it -- both act on a message id; mute_user / unmute_user act on
-// a user id and are scoped to Community only, see community_mutes.
+// (deleted_at, not a row removal, so it can still be audited), clear_flag
+// un-flags a message the admin decided was fine without touching it, and
+// edit_message rewrites the body in place and stamps edited_at (also not
+// a row removal -- the original text isn't kept anywhere separate, same
+// as delete_message doesn't keep the pre-delete body, but the edited_at
+// timestamp is exposed to every reader so an edit is never silent) --
+// all three act on a message id; mute_user / unmute_user act on a user
+// id and are scoped to Community only, see community_mutes.
 //
 // Logic moved out of api/community/admin/moderate.ts -- see api/community/admin.ts.
 export async function handleAdminModerate(req: VercelRequest, res: VercelResponse) {
@@ -40,7 +49,7 @@ export async function handleAdminModerate(req: VercelRequest, res: VercelRespons
       return;
     }
 
-    if (action === "delete_message" || action === "clear_flag") {
+    if (action === "delete_message" || action === "clear_flag" || action === "edit_message") {
       const messageId = typeof body.messageId === "string" ? body.messageId : "";
       if (!messageId) {
         res.status(400).json({ ok: false, error: "invalid_request" });
@@ -52,8 +61,19 @@ export async function handleAdminModerate(req: VercelRequest, res: VercelRespons
           SET deleted_at = now(), deleted_reason = ${reason || null}
           WHERE id = ${messageId}
         `;
-      } else {
+      } else if (action === "clear_flag") {
         await sql`UPDATE community_messages SET flagged = false WHERE id = ${messageId}`;
+      } else {
+        const text = typeof body.body === "string" ? body.body.trim() : "";
+        if (text.length < 1 || text.length > MAX_BODY_LEN) {
+          res.status(400).json({ ok: false, error: "invalid_body" });
+          return;
+        }
+        await sql`
+          UPDATE community_messages
+          SET body = ${text}, edited_at = now()
+          WHERE id = ${messageId} AND deleted_at IS NULL
+        `;
       }
       res.status(200).json({ ok: true });
       return;
