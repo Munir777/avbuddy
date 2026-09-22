@@ -6,7 +6,14 @@ import { initAnalytics, trackStudied } from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
 import { syncProgressOnSignIn, pushProgressEntries, clearServerProgress } from "./lib/progressSync";
 import { fetchMe, signOut as authSignOut, type AuthState } from "./lib/auth";
-import { hasUsedFreeQuiz, markFreeQuizUsed, FREE_QUIZ_COUNT } from "./lib/freeTier";
+import {
+  hasUsedFreeQuiz,
+  markFreeQuizUsed,
+  FREE_QUIZ_COUNT,
+  saveFreeQuizState,
+  loadFreeQuizState,
+  clearFreeQuizState,
+} from "./lib/freeTier";
 import { getBookmarkedIds, toggleBookmark } from "./lib/bookmarks";
 import { EXAM_LENGTH_OPTIONS, EXAM_PASS_THRESHOLD, EXAM_SECONDS_PER_QUESTION } from "./lib/exam";
 import AccountBar from "./components/AccountBar";
@@ -110,6 +117,9 @@ export default function App() {
   useEffect(() => {
     if (authReady && auth.signedIn) {
       syncProgressOnSignIn().then(() => setProgressTick((t) => t + 1));
+      // A real account now covers this device's progress -- the anonymous
+      // free-quiz resume state (if any) no longer serves a purpose.
+      clearFreeQuizState();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authReady, auth.signedIn]);
@@ -340,13 +350,45 @@ export default function App() {
 
   // Signed-out visitors who still have their free quiz available shouldn't
   // have to click through an offer screen -- drop them straight into the
-  // first question the moment we know they're signed out and unused.
+  // first question the moment we know they're signed out and unused. If
+  // they've already used it but a refresh (accidental or not) wiped the
+  // in-memory quiz state, resume exactly where they left off from the
+  // saved copy instead of just showing them the "sign in" gate -- an
+  // accidental reload shouldn't burn their one free quiz.
   useEffect(() => {
-    if (mode === "quiz" && quizPhase === "setup" && authReady && !auth.signedIn && !freeQuizUsed) {
+    if (mode !== "quiz" || quizPhase !== "setup" || !authReady || auth.signedIn) return;
+    if (!freeQuizUsed) {
       startFreeQuiz();
+      return;
+    }
+    const saved = loadFreeQuizState();
+    if (saved) {
+      setQuizQuestions(saved.questions);
+      setQuizIndex(saved.index);
+      setQuizSelected(saved.selected);
+      setQuizRevealed(saved.revealed);
+      setQuizResults(saved.results);
+      setQuizPhase(saved.phase);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed]);
+
+  // Keep the free quiz's progress persisted after every answer/advance so
+  // an accidental refresh resumes it instead of silently losing it.
+  useEffect(() => {
+    if (auth.signedIn) return;
+    if (mode !== "quiz") return;
+    if (quizPhase !== "active" && quizPhase !== "results") return;
+    if (quizQuestions.length === 0) return;
+    saveFreeQuizState({
+      phase: quizPhase,
+      questions: quizQuestions,
+      index: quizIndex,
+      selected: quizSelected,
+      revealed: quizRevealed,
+      results: quizResults,
+    });
+  }, [auth.signedIn, mode, quizPhase, quizQuestions, quizIndex, quizSelected, quizRevealed, quizResults]);
 
   function quizPick(i: number) {
     if (quizRevealed || !quizCurrent) return;
@@ -382,6 +424,7 @@ export default function App() {
   }
 
   function quizNewQuiz() {
+    if (!auth.signedIn) clearFreeQuizState();
     setQuizPhase("setup");
   }
 
