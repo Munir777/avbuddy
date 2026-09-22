@@ -1566,3 +1566,21 @@ body {
     max-height: 320px;
   }
 }
+
+.app-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.app-footer__link {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.app-footer__link:hover {
+  color: var(--accent-text);
+}

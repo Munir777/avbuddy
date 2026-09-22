@@ -805,6 +805,12 @@ export default function App() {
         )}
         </>
         )}
+
+        <div className="app-footer">
+          <a href="/library" className="app-footer__link">
+            Browse the free Study Library — sample questions, no sign-in needed
+          </a>
+        </div>
       </div>
     </div>
   );
