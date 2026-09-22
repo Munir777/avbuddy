@@ -13,6 +13,9 @@ import {
   saveFreeQuizState,
   loadFreeQuizState,
   clearFreeQuizState,
+  FREE_STUDY_LIMIT,
+  getFreeStudySeenIds,
+  recordFreeStudyQuestionSeen,
 } from "./lib/freeTier";
 import { getBookmarkedIds, toggleBookmark } from "./lib/bookmarks";
 import { EXAM_LENGTH_OPTIONS, EXAM_PASS_THRESHOLD, EXAM_SECONDS_PER_QUESTION } from "./lib/exam";
@@ -135,6 +138,11 @@ export default function App() {
   const [freeQuizUsedTick, setFreeQuizUsedTick] = useState(0);
   const freeQuizUsed = useMemo(() => hasUsedFreeQuiz(), [freeQuizUsedTick]);
 
+  // Anonymous visitors: Study mode too, capped at FREE_STUDY_LIMIT distinct
+  // questions ever unlocked for this browser. Same tick pattern as above.
+  const [freeStudySeenTick, setFreeStudySeenTick] = useState(0);
+  const freeStudySeenIds = useMemo(() => getFreeStudySeenIds(), [freeStudySeenTick]);
+
   // Manual "revisit this" bookmarks -- independent of the auto-tracked missed
   // list. Same localStorage + tick pattern as the rest of this file's derived state.
   const [bookmarkTick, setBookmarkTick] = useState(0);
@@ -218,6 +226,27 @@ export default function App() {
   const studyColor = studyCurrent
     ? SYSTEM_COLORS[studyCurrent.system] ?? DEFAULT_SYSTEM_COLOR
     : DEFAULT_SYSTEM_COLOR;
+
+  // True only when a signed-out visitor has already unlocked their
+  // FREE_STUDY_LIMIT free questions AND the one currently up isn't one of
+  // those already-unlocked ones -- so they can keep revisiting the ones
+  // they've earned (via search/missed/bookmarked filters), but reaching a
+  // new, never-seen question requires signing in.
+  const freeStudyLimitReached =
+    !auth.signedIn &&
+    !!studyCurrent &&
+    freeStudySeenIds.size >= FREE_STUDY_LIMIT &&
+    !freeStudySeenIds.has(studyCurrent.id);
+
+  // Unlock the current question into the free-study set the moment it's
+  // shown to a signed-out visitor (no-ops once the cap is hit or it's
+  // already unlocked).
+  useEffect(() => {
+    if (auth.signedIn || !studyCurrent) return;
+    if (freeStudySeenIds.has(studyCurrent.id) || freeStudySeenIds.size >= FREE_STUDY_LIMIT) return;
+    recordFreeStudyQuestionSeen(studyCurrent.id);
+    setFreeStudySeenTick((t) => t + 1);
+  }, [auth.signedIn, studyCurrent, freeStudySeenIds]);
 
   function studyPick(i: number) {
     if (studyRevealed || !studyCurrent || studyWrongIndices.has(i)) return;
@@ -581,7 +610,7 @@ export default function App() {
       const tag = target?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || target?.isContentEditable) return;
 
-      if (mode === "study" && auth.signedIn && studyCurrent) {
+      if (mode === "study" && !freeStudyLimitReached && studyCurrent) {
         if (!studyRevealed && ["1", "2", "3", "4"].includes(e.key)) {
           const idx = Number(e.key) - 1;
           if (idx < studyCurrent.options.length) studyPick(idx);
@@ -617,6 +646,7 @@ export default function App() {
   }, [
     mode,
     auth.signedIn,
+    freeStudyLimitReached,
     studyCurrent,
     studyRevealed,
     quizPhase,
@@ -676,14 +706,14 @@ export default function App() {
 
         <ModeToggle mode={mode} onChange={setMode} />
 
-        {mode === "study" && authReady && !auth.signedIn && (
+        {mode === "study" && authReady && freeStudyLimitReached && (
           <AccountGate
-            message="Study mode tracks your weak areas with spaced repetition and syncs across your devices — sign in to unlock it."
+            message={`You've used your ${FREE_STUDY_LIMIT} free study questions. Sign in for unlimited Study mode with spaced repetition and progress tracking that syncs across your devices.`}
             onSignIn={() => setSignInOpen(true)}
           />
         )}
 
-        {mode === "study" && authReady && auth.signedIn && (
+        {mode === "study" && authReady && !freeStudyLimitReached && (
           <>
             <SearchBox value={studySearchQuery} onChange={studyChangeSearch} />
             <SystemFilter

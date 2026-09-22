@@ -69,3 +69,34 @@ export function clearFreeQuizState(): void {
     // Best-effort.
   }
 }
+
+// Anonymous (signed-out) visitors also get Study mode, capped at a running
+// total of distinct questions seen (not per-category, not per-session --
+// once a question's been unlocked for free it stays revisitable forever,
+// but the 26th *new* one requires an account). Same soft-gate philosophy
+// as the free quiz: simple, not a security boundary, easy to clear by
+// clearing localStorage.
+const FREE_STUDY_KEY = "avbuddy_free_study_seen";
+export const FREE_STUDY_LIMIT = 25;
+
+export function getFreeStudySeenIds(): Set<number> {
+  try {
+    const raw = localStorage.getItem(FREE_STUDY_KEY);
+    if (!raw) return new Set();
+    const parsed = JSON.parse(raw) as unknown;
+    return new Set(Array.isArray(parsed) ? (parsed as number[]) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+export function recordFreeStudyQuestionSeen(id: number): void {
+  try {
+    const seen = getFreeStudySeenIds();
+    if (seen.has(id) || seen.size >= FREE_STUDY_LIMIT) return;
+    seen.add(id);
+    localStorage.setItem(FREE_STUDY_KEY, JSON.stringify(Array.from(seen)));
+  } catch {
+    // Best-effort.
+  }
+}
