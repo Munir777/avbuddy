@@ -262,9 +262,12 @@ export default function LibraryApp() {
   return (
     <div className="lib">
       <div className="lib__container">
-        <LibraryLink to="/" navigate={navigate} className="lib__brand">
+        {/* Plain link, not the SPA-style LibraryLink: "/" is a different
+            React root entirely (the real App), so this needs a real page
+            load, not a pushState within the Library's own router. */}
+        <a href="/" className="lib__brand">
           <img src={avbuddyLogo} alt="AvBuddy" />
-        </LibraryLink>
+        </a>
 
         {!subjectSlug && <LibraryIndex navigate={navigate} />}
         {subjectSlug && !systemSlug && <LibrarySubjectPage subjectSlug={subjectSlug} navigate={navigate} />}
