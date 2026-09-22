@@ -10,6 +10,12 @@ interface Stats {
   sessionsToday: number;
   avgDurationSeconds: number;
   studiedPct: number;
+  quizLimitHits: number;
+  quizLimitSigninClicks: number;
+  quizLimitSigninPct: number;
+  studyLimitHits: number;
+  studyLimitSigninClicks: number;
+  studyLimitSigninPct: number;
   dailyTrend: { day: string; sessions: number; studied: number }[];
   topSources: { source: string; sessions: number }[];
   topCountries: { country: string; sessions: number }[];
@@ -172,6 +178,39 @@ export default function AdminPanel() {
                   <div className="admin__tile">
                     <div className="admin__tile-value">{stats.studiedSessions}</div>
                     <div className="admin__tile-label">Studied (count)</div>
+                  </div>
+                </div>
+
+                {/* Free-tier limit funnel: did hitting the free quiz / free
+                    study cap make someone click Sign In right there, or did
+                    they bounce? Doesn't capture whether they went on to
+                    finish the magic-link email (can happen on another
+                    device) -- the click is the honest signal available. */}
+                <div className="admin__trend-label">Free-tier limit → sign-in click-through</div>
+                <div className="admin__grid">
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.quizLimitHits}</div>
+                    <div className="admin__tile-label">Hit free quiz limit</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.quizLimitSigninClicks}</div>
+                    <div className="admin__tile-label">→ clicked Sign In</div>
+                  </div>
+                  <div className="admin__tile admin__tile--accent">
+                    <div className="admin__tile-value">{stats.quizLimitSigninPct}%</div>
+                    <div className="admin__tile-label">Quiz limit → sign-in rate</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.studyLimitHits}</div>
+                    <div className="admin__tile-label">Hit free study limit</div>
+                  </div>
+                  <div className="admin__tile">
+                    <div className="admin__tile-value">{stats.studyLimitSigninClicks}</div>
+                    <div className="admin__tile-label">→ clicked Sign In</div>
+                  </div>
+                  <div className="admin__tile admin__tile--accent">
+                    <div className="admin__tile-value">{stats.studyLimitSigninPct}%</div>
+                    <div className="admin__tile-label">Study limit → sign-in rate</div>
                   </div>
                 </div>
 

@@ -33,6 +33,22 @@ export function ensureSchema() {
       // already existed before these columns were introduced.
       .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS referrer TEXT`)
       .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS country TEXT`)
+      // Free-tier limit funnel: did this (anonymous) session ever hit the
+      // free quiz / free study cap, and did they click "Sign in" right there
+      // on that specific gate (as opposed to signing in from somewhere
+      // else)? Answers "are people converting at the wall or bouncing" --
+      // see api/track.ts and src/lib/analytics.ts. Doesn't track whether
+      // they went on to finish the magic-link email, which can happen on a
+      // different device -- the click is the honest signal available here.
+      .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS hit_quiz_limit BOOLEAN NOT NULL DEFAULT false`)
+      .then(
+        () => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS quiz_limit_signin_click BOOLEAN NOT NULL DEFAULT false`
+      )
+      .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS hit_study_limit BOOLEAN NOT NULL DEFAULT false`)
+      .then(
+        () =>
+          sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS study_limit_signin_click BOOLEAN NOT NULL DEFAULT false`
+      )
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_visitor ON sessions (visitor_id)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_started ON sessions (started_at)`)
       // --- Accounts (magic-link auth) ---

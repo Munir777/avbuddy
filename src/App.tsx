@@ -2,7 +2,14 @@ import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
 import { QUESTIONS, SUBJECTS, SUBJECT_META, SYSTEMS_BY_SUBJECT, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
 import { shuffle, shuffleOptions } from "./utils/shuffle";
-import { initAnalytics, trackStudied } from "./lib/analytics";
+import {
+  initAnalytics,
+  trackStudied,
+  trackQuizLimitHit,
+  trackQuizLimitSigninClick,
+  trackStudyLimitHit,
+  trackStudyLimitSigninClick,
+} from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
 import { syncProgressOnSignIn, pushProgressEntries, clearServerProgress } from "./lib/progressSync";
 import { fetchMe, signOut as authSignOut, type AuthState } from "./lib/auth";
@@ -238,6 +245,10 @@ export default function App() {
     freeStudySeenIds.size >= FREE_STUDY_LIMIT &&
     !freeStudySeenIds.has(studyCurrent.id);
 
+  useEffect(() => {
+    if (freeStudyLimitReached) trackStudyLimitHit();
+  }, [freeStudyLimitReached]);
+
   // Unlock the current question into the free-study set the moment it's
   // shown to a signed-out visitor (no-ops once the cap is hit or it's
   // already unlocked).
@@ -398,6 +409,13 @@ export default function App() {
       setQuizRevealed(saved.revealed);
       setQuizResults(saved.results);
       setQuizPhase(saved.phase);
+    } else {
+      // Nothing to resume -- this is the genuine "hit the wall" case, the
+      // sign-in gate is what's about to render. Fired here rather than a
+      // separate effect watching the same condition, since that would also
+      // fire (incorrectly) on the resume branch above for one render before
+      // quizPhase catches up.
+      trackQuizLimitHit();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed]);
@@ -709,7 +727,10 @@ export default function App() {
         {mode === "study" && authReady && freeStudyLimitReached && (
           <AccountGate
             message={`You've used your ${FREE_STUDY_LIMIT} free study questions. Sign in for unlimited Study mode with spaced repetition and progress tracking that syncs across your devices.`}
-            onSignIn={() => setSignInOpen(true)}
+            onSignIn={() => {
+              trackStudyLimitSigninClick();
+              setSignInOpen(true);
+            }}
           />
         )}
 
@@ -779,7 +800,10 @@ export default function App() {
         {mode === "quiz" && quizPhase === "setup" && authReady && !auth.signedIn && freeQuizUsed && (
           <AccountGate
             message="You've used your free quiz. Sign in for unlimited quizzes, Study mode, and progress tracking."
-            onSignIn={() => setSignInOpen(true)}
+            onSignIn={() => {
+              trackQuizLimitSigninClick();
+              setSignInOpen(true);
+            }}
           />
         )}
 

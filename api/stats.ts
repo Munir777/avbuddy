@@ -54,7 +54,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         COUNT(DISTINCT visitor_id)::int AS unique_visitors,
         COUNT(*) FILTER (WHERE studied)::int AS studied_sessions,
         COUNT(*) FILTER (WHERE started_at >= CURRENT_DATE)::int AS sessions_today,
-        ROUND(AVG(LEAST(EXTRACT(EPOCH FROM (last_ping_at - started_at)), 7200)))::int AS avg_duration_seconds
+        ROUND(AVG(LEAST(EXTRACT(EPOCH FROM (last_ping_at - started_at)), 7200)))::int AS avg_duration_seconds,
+        COUNT(*) FILTER (WHERE hit_quiz_limit)::int AS quiz_limit_hits,
+        COUNT(*) FILTER (WHERE hit_quiz_limit AND quiz_limit_signin_click)::int AS quiz_limit_signin_clicks,
+        COUNT(*) FILTER (WHERE hit_study_limit)::int AS study_limit_hits,
+        COUNT(*) FILTER (WHERE hit_study_limit AND study_limit_signin_click)::int AS study_limit_signin_clicks
       FROM sessions
     `;
 
@@ -132,6 +136,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       studied_sessions: 0,
       sessions_today: 0,
       avg_duration_seconds: 0,
+      quiz_limit_hits: 0,
+      quiz_limit_signin_clicks: 0,
+      study_limit_hits: 0,
+      study_limit_signin_clicks: 0,
     };
 
     const signupRow = signupTotals[0] ?? {
@@ -148,6 +156,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       sessionsToday: row.sessions_today,
       avgDurationSeconds: row.avg_duration_seconds ?? 0,
       studiedPct: row.total_sessions > 0 ? Math.round((row.studied_sessions / row.total_sessions) * 100) : 0,
+      quizLimitHits: row.quiz_limit_hits,
+      quizLimitSigninClicks: row.quiz_limit_signin_clicks,
+      quizLimitSigninPct:
+        row.quiz_limit_hits > 0 ? Math.round((row.quiz_limit_signin_clicks / row.quiz_limit_hits) * 100) : 0,
+      studyLimitHits: row.study_limit_hits,
+      studyLimitSigninClicks: row.study_limit_signin_clicks,
+      studyLimitSigninPct:
+        row.study_limit_hits > 0 ? Math.round((row.study_limit_signin_clicks / row.study_limit_hits) * 100) : 0,
       dailyTrend: dailyTrend,
       topSources,
       topCountries,

@@ -7,7 +7,14 @@ const VISITOR_KEY = "avbuddy_visitor_id";
 const SESSION_KEY = "avbuddy_session_id";
 const HEARTBEAT_MS = 20_000;
 
-type TrackEvent = "start" | "heartbeat" | "studied";
+type TrackEvent =
+  | "start"
+  | "heartbeat"
+  | "studied"
+  | "quiz_limit_hit"
+  | "quiz_limit_signin_click"
+  | "study_limit_hit"
+  | "study_limit_signin_click";
 
 function randomId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -57,6 +64,10 @@ function send(event: TrackEvent, extra?: Record<string, string>) {
 
 let initialized = false;
 let studiedSent = false;
+let quizLimitHitSent = false;
+let quizLimitSigninClickSent = false;
+let studyLimitHitSent = false;
+let studyLimitSigninClickSent = false;
 
 // Where the visit came from: an explicit ?utm_source=... wins (survives
 // social/in-app browsers that strip the referrer header), falling back to
@@ -93,4 +104,33 @@ export function trackStudied(): void {
   if (studiedSent) return;
   studiedSent = true;
   send("studied");
+}
+
+// Free-tier limit funnel (see api/track.ts / api/stats.ts): "hit" fires the
+// moment the gate actually shows; "signin click" fires only for a click on
+// that specific gate's Sign In button, not sign-ins from elsewhere -- so
+// the two together answer "did hitting this wall make them try to sign in,
+// or did they just bounce."
+export function trackQuizLimitHit(): void {
+  if (quizLimitHitSent) return;
+  quizLimitHitSent = true;
+  send("quiz_limit_hit");
+}
+
+export function trackQuizLimitSigninClick(): void {
+  if (quizLimitSigninClickSent) return;
+  quizLimitSigninClickSent = true;
+  send("quiz_limit_signin_click");
+}
+
+export function trackStudyLimitHit(): void {
+  if (studyLimitHitSent) return;
+  studyLimitHitSent = true;
+  send("study_limit_hit");
+}
+
+export function trackStudyLimitSigninClick(): void {
+  if (studyLimitSigninClickSent) return;
+  studyLimitSigninClickSent = true;
+  send("study_limit_signin_click");
 }

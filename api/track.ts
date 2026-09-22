@@ -1,7 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql, ensureSchema } from "./_db.js";
 
-type TrackEvent = "start" | "heartbeat" | "studied";
+type TrackEvent =
+  | "start"
+  | "heartbeat"
+  | "studied"
+  | "quiz_limit_hit"
+  | "quiz_limit_signin_click"
+  | "study_limit_hit"
+  | "study_limit_signin_click";
 
 interface TrackBody {
   visitorId?: unknown;
@@ -10,7 +17,15 @@ interface TrackBody {
   referrer?: unknown;
 }
 
-const VALID_EVENTS: readonly TrackEvent[] = ["start", "heartbeat", "studied"];
+const VALID_EVENTS: readonly TrackEvent[] = [
+  "start",
+  "heartbeat",
+  "studied",
+  "quiz_limit_hit",
+  "quiz_limit_signin_click",
+  "study_limit_hit",
+  "study_limit_signin_click",
+];
 
 function isValidId(value: unknown): value is string {
   return typeof value === "string" && value.length > 0 && value.length <= 100;
@@ -71,6 +86,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     } else if (event === "studied") {
       await sql`
         UPDATE sessions SET studied = true, last_ping_at = now() WHERE session_id = ${sessionId}
+      `;
+    } else if (event === "quiz_limit_hit") {
+      await sql`
+        UPDATE sessions SET hit_quiz_limit = true WHERE session_id = ${sessionId}
+      `;
+    } else if (event === "quiz_limit_signin_click") {
+      await sql`
+        UPDATE sessions SET quiz_limit_signin_click = true WHERE session_id = ${sessionId}
+      `;
+    } else if (event === "study_limit_hit") {
+      await sql`
+        UPDATE sessions SET hit_study_limit = true WHERE session_id = ${sessionId}
+      `;
+    } else if (event === "study_limit_signin_click") {
+      await sql`
+        UPDATE sessions SET study_limit_signin_click = true WHERE session_id = ${sessionId}
       `;
     }
 
