@@ -192,6 +192,7 @@ function LibraryCategoryPage({
   navigate: (to: string) => void;
 }) {
   const category = findLibraryCategory(subjectSlug, systemSlug);
+  const subject = category ? findLibrarySubject(category.subjectSlug) : undefined;
   const sample = category ? getSampleQuestions(category.subjectName, category.system) : [];
   useDocMeta(
     category ? `${category.system} Questions — ${category.subjectName} — AvBuddy` : "Study Library — AvBuddy",
@@ -249,7 +250,7 @@ function LibraryCategoryPage({
         </div>
       ))}
 
-      <SignInCta subjectName={category.subjectName} questionCount={category.questionCount} />
+      <SignInCta subjectName={category.subjectName} questionCount={subject?.questionCount ?? category.questionCount} />
     </>
   );
 }
