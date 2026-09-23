@@ -72,6 +72,7 @@ import { CANADA_TC_ATPL_BATCH_01_QUESTIONS } from "./categories/canada-tc-atpl/b
 import { CANADA_TC_ATPL_BATCH_02_QUESTIONS } from "./categories/canada-tc-atpl/batch-02";
 import { CANADA_TC_ATPL_BATCH_03_QUESTIONS } from "./categories/canada-tc-atpl/batch-03";
 import { CANADA_TC_ATPL_BATCH_04_QUESTIONS } from "./categories/canada-tc-atpl/batch-04";
+import { CANADA_TC_ATPL_BATCH_05_QUESTIONS } from "./categories/canada-tc-atpl/batch-05";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -151,6 +152,7 @@ const CANADA_TC_ATPL_QUESTIONS: Question[] = [
   ...CANADA_TC_ATPL_BATCH_02_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_03_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_04_QUESTIONS,
+  ...CANADA_TC_ATPL_BATCH_05_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "Canada TC ATPL" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
@@ -308,6 +310,7 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Airframes, Power Plants, Propellers and Aircraft Systems": { fg: "#C4703B", bg: "#331F0D" },
   // "Instruments" reuses the ATPL General Knowledge color defined above.
   "Navigation - General": { fg: "#5FA6C4", bg: "#12232E" },
+  "Flight Operations": { fg: "#7FC97F", bg: "#132E13" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
