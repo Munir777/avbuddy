@@ -688,7 +688,14 @@ export default function App() {
         {signInOpen && <SignInModal onClose={() => setSignInOpen(false)} />}
 
         <div className="brand-bar">
-          <img src={avbuddyLogo} alt="AvBuddy" className="brand-bar__logo" />
+          <button
+            type="button"
+            className="brand-bar__link"
+            onClick={() => setSection("technical")}
+            aria-label="Go to AvBuddy home"
+          >
+            <img src={avbuddyLogo} alt="AvBuddy" className="brand-bar__logo" />
+          </button>
         </div>
 
         <SectionNav section={section} onChange={setSection} />
