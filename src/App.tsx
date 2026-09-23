@@ -33,7 +33,7 @@ import ScoreBadge from "./components/ScoreBadge";
 import SystemFilter from "./components/SystemFilter";
 import SearchBox from "./components/SearchBox";
 import QuestionCard from "./components/QuestionCard";
-import SubjectToggle from "./components/SubjectToggle";
+import SubjectSidebar from "./components/SubjectSidebar";
 import ModeToggle, { type Mode } from "./components/ModeToggle";
 import QuizSetup from "./components/QuizSetup";
 import ResultsScreen from "./components/ResultsScreen";
@@ -713,7 +713,15 @@ export default function App() {
         {section === "community" && <CommunityView />}
 
         {section === "technical" && (
-        <>
+        <div className="subject-layout">
+          <SubjectSidebar
+            subjects={SUBJECTS}
+            subjectMeta={SUBJECT_META}
+            active={subject}
+            onChange={changeSubject}
+            countBySubject={subjectCounts}
+          />
+          <div className="subject-main">
         <div className="header">
           <div>
             <div className="header__eyebrow">{SUBJECT_META[subject].label.toUpperCase()} TRAINER</div>
@@ -729,14 +737,6 @@ export default function App() {
           </div>
           {mode === "study" && <ScoreBadge correct={studyScore.correct} seen={studyScore.seen} />}
         </div>
-
-        <SubjectToggle
-          subjects={SUBJECTS}
-          subjectMeta={SUBJECT_META}
-          active={subject}
-          onChange={changeSubject}
-          countBySubject={subjectCounts}
-        />
 
         <ModeToggle mode={mode} onChange={setMode} />
 
@@ -916,7 +916,8 @@ export default function App() {
             onReset={handleResetProgress}
           />
         )}
-        </>
+          </div>
+        </div>
         )}
 
         <div className="app-footer">
