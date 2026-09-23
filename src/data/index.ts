@@ -91,6 +91,7 @@ import { CANADA_TC_ATPL_BATCH_20_QUESTIONS } from "./categories/canada-tc-atpl/b
 import { CANADA_TC_ATPL_BATCH_21_QUESTIONS } from "./categories/canada-tc-atpl/batch-21";
 import { CANADA_TC_ATPL_BATCH_22_QUESTIONS } from "./categories/canada-tc-atpl/batch-22";
 import { CANADA_TC_ATPL_BATCH_23_QUESTIONS } from "./categories/canada-tc-atpl/batch-23";
+import { CANADA_TC_ATPL_BATCH_24_QUESTIONS } from "./categories/canada-tc-atpl/batch-24";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -189,6 +190,7 @@ const CANADA_TC_ATPL_QUESTIONS: Question[] = [
   ...CANADA_TC_ATPL_BATCH_21_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_22_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_23_QUESTIONS,
+  ...CANADA_TC_ATPL_BATCH_24_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "Canada TC ATPL" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
