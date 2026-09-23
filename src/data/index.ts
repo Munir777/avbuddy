@@ -58,6 +58,7 @@ import { FAA_ATP_BATCH_04_QUESTIONS } from "./categories/faa-atp/batch-04";
 import { FAA_ATP_BATCH_05_QUESTIONS } from "./categories/faa-atp/batch-05";
 import { FAA_ATP_BATCH_06_QUESTIONS } from "./categories/faa-atp/batch-06";
 import { FAA_ATP_BATCH_07_QUESTIONS } from "./categories/faa-atp/batch-07";
+import { FAA_ATP_BATCH_08_QUESTIONS } from "./categories/faa-atp/batch-08";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -120,6 +121,7 @@ const FAA_ATP_QUESTIONS: Question[] = [
   ...FAA_ATP_BATCH_05_QUESTIONS,
   ...FAA_ATP_BATCH_06_QUESTIONS,
   ...FAA_ATP_BATCH_07_QUESTIONS,
+  ...FAA_ATP_BATCH_08_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "FAA ATP" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
