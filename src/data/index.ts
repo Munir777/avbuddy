@@ -56,6 +56,7 @@ import { FAA_ATP_BATCH_02_QUESTIONS } from "./categories/faa-atp/batch-02";
 import { FAA_ATP_BATCH_03_QUESTIONS } from "./categories/faa-atp/batch-03";
 import { FAA_ATP_BATCH_04_QUESTIONS } from "./categories/faa-atp/batch-04";
 import { FAA_ATP_BATCH_05_QUESTIONS } from "./categories/faa-atp/batch-05";
+import { FAA_ATP_BATCH_06_QUESTIONS } from "./categories/faa-atp/batch-06";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -116,6 +117,7 @@ const FAA_ATP_QUESTIONS: Question[] = [
   ...FAA_ATP_BATCH_03_QUESTIONS,
   ...FAA_ATP_BATCH_04_QUESTIONS,
   ...FAA_ATP_BATCH_05_QUESTIONS,
+  ...FAA_ATP_BATCH_06_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "FAA ATP" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
@@ -254,6 +256,7 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Emergency & Survival Equipment": { fg: "#E0433A", bg: "#3A0F0D" },
   "Airport & Approach Operations": { fg: "#4A90D9", bg: "#0D223A" },
   "Abnormal & Emergency Procedures": { fg: "#D95F5F", bg: "#3A1414" },
+  "Aerodynamics & Aircraft Performance": { fg: "#7FC97F", bg: "#0F2E10" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
