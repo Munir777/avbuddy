@@ -76,6 +76,7 @@ import { CANADA_TC_ATPL_BATCH_05_QUESTIONS } from "./categories/canada-tc-atpl/b
 import { CANADA_TC_ATPL_BATCH_06_QUESTIONS } from "./categories/canada-tc-atpl/batch-06";
 import { CANADA_TC_ATPL_BATCH_07_QUESTIONS } from "./categories/canada-tc-atpl/batch-07";
 import { CANADA_TC_ATPL_BATCH_08_QUESTIONS } from "./categories/canada-tc-atpl/batch-08";
+import { CANADA_TC_ATPL_BATCH_09_QUESTIONS } from "./categories/canada-tc-atpl/batch-09";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -159,6 +160,7 @@ const CANADA_TC_ATPL_QUESTIONS: Question[] = [
   ...CANADA_TC_ATPL_BATCH_06_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_07_QUESTIONS,
   ...CANADA_TC_ATPL_BATCH_08_QUESTIONS,
+  ...CANADA_TC_ATPL_BATCH_09_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "Canada TC ATPL" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
@@ -318,6 +320,7 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Navigation - General": { fg: "#5FA6C4", bg: "#12232E" },
   "Flight Operations": { fg: "#7FC97F", bg: "#132E13" },
   "Theory of Flight": { fg: "#9F8FD9", bg: "#1A163A" },
+  "Flight Planning": { fg: "#D9A05F", bg: "#3A2810" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
