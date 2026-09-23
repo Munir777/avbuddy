@@ -6,6 +6,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { getLibrarySubjects } from "../src/lib/library";
+import { LICENSING_AUTHORITIES, LICENSE_LEVELS } from "../src/data/licensing";
 
 const BASE = "https://avbuddy.app";
 const today = new Date().toISOString().slice(0, 10);
@@ -19,6 +20,7 @@ interface SitemapUrl {
 const urls: SitemapUrl[] = [
   { loc: `${BASE}/`, priority: "1.0", changefreq: "weekly" },
   { loc: `${BASE}/library`, priority: "0.8", changefreq: "weekly" },
+  { loc: `${BASE}/licensing`, priority: "0.7", changefreq: "monthly" },
 ];
 
 for (const subject of getLibrarySubjects()) {
@@ -27,6 +29,17 @@ for (const subject of getLibrarySubjects()) {
     urls.push({
       loc: `${BASE}/library/${subject.slug}/${category.slug}`,
       priority: "0.6",
+      changefreq: "monthly",
+    });
+  }
+}
+
+for (const authority of LICENSING_AUTHORITIES) {
+  urls.push({ loc: `${BASE}/licensing/${authority.key}`, priority: "0.6", changefreq: "monthly" });
+  for (const level of LICENSE_LEVELS) {
+    urls.push({
+      loc: `${BASE}/licensing/${authority.key}/${level.key}`,
+      priority: "0.5",
       changefreq: "monthly",
     });
   }
