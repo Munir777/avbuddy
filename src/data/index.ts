@@ -69,6 +69,7 @@ import { FAA_ATP_BATCH_15_QUESTIONS } from "./categories/faa-atp/batch-15";
 import { FAA_ATP_BATCH_16_QUESTIONS } from "./categories/faa-atp/batch-16";
 import { FAA_ATP_BATCH_17_QUESTIONS } from "./categories/faa-atp/batch-17";
 import { CANADA_TC_ATPL_BATCH_01_QUESTIONS } from "./categories/canada-tc-atpl/batch-01";
+import { CANADA_TC_ATPL_BATCH_02_QUESTIONS } from "./categories/canada-tc-atpl/batch-02";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -145,6 +146,7 @@ const FAA_ATP_QUESTIONS: Question[] = [
 
 const CANADA_TC_ATPL_QUESTIONS: Question[] = [
   ...CANADA_TC_ATPL_BATCH_01_QUESTIONS,
+  ...CANADA_TC_ATPL_BATCH_02_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "Canada TC ATPL" }));
 
 const B737_MAX_8_QUESTIONS: Question[] = [
@@ -299,6 +301,7 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   // Canada TC ATPL subject -- a maple-red family distinct from every
   // palette above.
   "Air Law and Procedures": { fg: "#D95F52", bg: "#3A1712" },
+  "Airframes, Power Plants, Propellers and Aircraft Systems": { fg: "#C4703B", bg: "#331F0D" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };

@@ -76,6 +76,7 @@ export function findLicenseLevel(key: string): LicenseLevelInfo | undefined {
 // soon" note. Key is `${authorityKey}/${levelKey}`.
 export const LICENSING_QUESTION_SUBJECTS: Record<string, string> = {
   "us/atpl": "FAA ATP",
+  "canada/atpl": "Canada TC ATPL",
 };
 
 export function findLicensingQuestionSubject(authorityKey: string, levelKey: string): string | undefined {
