@@ -1584,3 +1584,179 @@ body {
 .app-footer__link:hover {
   color: var(--accent-text);
 }
+
+/* Licensing Hub — country sidebar with license-level sub-items, plus a
+   content panel. Sidebar stacks above content on narrow screens. */
+.licensing {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.licensing__sidebar {
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.licensing__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.licensing__authority {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--panel-flat);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.licensing__authority:hover {
+  color: var(--text-bright);
+}
+
+.licensing__authority--active {
+  color: var(--cyan);
+  border-color: color-mix(in oklch, var(--cyan) 45%, var(--border-soft));
+  background: color-mix(in oklch, var(--cyan) 10%, var(--panel-flat));
+}
+
+.licensing__authority-abbr {
+  font-size: 10px;
+  color: var(--text-faint);
+  letter-spacing: 0.5px;
+}
+
+.licensing__authority--active .licensing__authority-abbr {
+  color: var(--cyan);
+}
+
+.licensing__levels {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0 8px 10px;
+  border-left: 1px solid var(--border-soft);
+  padding-left: 10px;
+  gap: 2px;
+}
+
+.licensing__level {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 7px 6px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.licensing__level:hover {
+  color: var(--text-bright);
+}
+
+.licensing__level--active {
+  color: var(--accent-text);
+  background: var(--accent-bg);
+}
+
+.licensing__content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.licensing__content-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.licensing__crumb {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+.licensing__content-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.licensing__content-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-text);
+  background: var(--accent-bg);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.licensing__content-reg {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.licensing__content-body {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+}
+
+.licensing__soon {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  background: var(--panel-flat);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.licensing__soon strong {
+  color: var(--text-bright);
+}
+
+@media (max-width: 560px) {
+  .licensing {
+    flex-direction: column;
+  }
+
+  .licensing__sidebar {
+    flex: 1 1 auto;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .licensing__group {
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
+}

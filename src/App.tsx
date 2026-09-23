@@ -44,6 +44,7 @@ import ProgressView from "./components/ProgressView";
 import SectionNav, { type Section } from "./components/SectionNav";
 import InterviewPrepView from "./components/InterviewPrepView";
 import SharedMaterialView from "./components/SharedMaterialView";
+import LicensingView from "./components/LicensingView";
 import CommunityView from "./components/CommunityView";
 import avbuddyLogo from "./assets/avbuddy-logo.png";
 import "./styles/app.css";
@@ -694,6 +695,7 @@ export default function App() {
 
         {section === "interview" && <InterviewPrepView />}
         {section === "shared" && <SharedMaterialView />}
+        {section === "licensing" && <LicensingView />}
         {section === "community" && <CommunityView />}
 
         {section === "technical" && (

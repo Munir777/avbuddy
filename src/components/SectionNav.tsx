@@ -1,4 +1,4 @@
-export type Section = "technical" | "interview" | "shared" | "community";
+export type Section = "technical" | "interview" | "shared" | "licensing" | "community";
 
 interface SectionNavProps {
   section: Section;
@@ -9,6 +9,7 @@ const SECTIONS: { key: Section; label: string }[] = [
   { key: "technical", label: "STUDY FOR YOUR TECHNICAL" },
   { key: "interview", label: "INTERVIEW PREPARATION" },
   { key: "shared", label: "SHARED MATERIAL" },
+  { key: "licensing", label: "LICENSING HUB" },
   { key: "community", label: "COMMUNITY" },
 ];
 
