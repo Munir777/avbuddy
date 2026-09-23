@@ -1,0 +1,422 @@
+import type { Question } from "../../../types";
+
+// FAA ATP written-test question bank, batch 7.
+// Source: Prepware "Study Session Results" printout, source questions 484-556
+// (PDF pages 91-105 of 258).
+// This page range is dominated by performance-chart reading questions
+// ("Refer to Figures ..." for cruise/climb/takeoff/landing performance
+// tables, EPR charts, drift-down charts, flight-log computations, etc.)
+// that depend on charts not included in the source PDF, so the skip rate
+// is much higher than earlier batches. Skipped original source numbers:
+// 494, 496, 497, 499, 504, 505, 509, 510, 513, 514, 515, 517, 518, 519,
+// 521, 522, 524, 525, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536,
+// 537, 539, 542, 543, 548, 549, 551, 554, and 556.
+// This batch introduces a new system, "Powerplant & Systems," for
+// turbine/reciprocating engine internals (turbine wheel stresses,
+// compressor stalls, ESHP, supercharger critical altitude) that are
+// distinct from the general aerodynamics/performance questions.
+export const FAA_ATP_BATCH_07_QUESTIONS: Question[] = [
+  {
+    id: 1,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What is one disadvantage of a sweptwing design?",
+    options: ["The wing root stalls prior to the wingtip section.", "The wingtip section stalls prior to the wing root.", "Severe pitchdown moment when the center of pressure shifts forward."],
+    answer: 1,
+    explain: "When sweepback is combined with taper there is an extremely powerful tendency for the wing tip to stall first.",
+    reference: "FAA Airplane Flying Handbook - High-Speed Flight",
+  },
+  {
+    id: 2,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "If an aircraft with a gross weight of 2,000 pounds were subjected to a total load of 6,000 pounds in flight, the load factor would be",
+    options: ["2 Gs.", "3 Gs.", "9 Gs."],
+    answer: 1,
+    explain: "Load factor is the ratio of the total load supported by the airplane's wings to the actual weight of the airplane and its contents, or the actual load supported by the wings divided by the total weight of the airplane: 6,000 pounds/2,000 pounds = 3 Gs",
+    reference: "FAA Airplane Flying Handbook - Load Factor",
+  },
+  {
+    id: 3,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What is the result of a shock-induced separation of airflow occurring symmetrically near the wing root of a sweptwing aircraft?",
+    options: ["A high-speed stall and sudden pitchup.", "A severe moment or 'Mach tuck.'", "Severe porpoising."],
+    answer: 1,
+    explain:
+      "If the shock-induced separation occurs symmetrically near the wing root, there is an accompanying loss of lift. A decrease in downwash on the horizontal tail will create a diving moment and the aircraft will 'tuck under.' Answer (A) is incorrect because there is a sudden pitch down when a shock-induced separation of airflow occurs symmetrically near the wing root of a sweptwing aircraft. Answer (C) is incorrect because there is a diving moment when a shock-induced separation of airflow occurs symmetrically near the wing root of a sweptwing aircraft.",
+    reference: "FAA Airplane Flying Handbook - High-Speed Flight",
+  },
+  {
+    id: 4,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What effect does the leading edge slot in the wing have on performance?",
+    options: ["Decreases profile drag.", "Changes the stalling angle of attack to a higher angle.", "Decelerates the upper surface boundary layer air."],
+    answer: 1,
+    explain:
+      "The slot delays stall to a higher angle of attack. Answer (A) is incorrect because, at low angles of attack, there is little or no profile drag increase. At high angles of attack, the slot delays the stall characteristics of the wing. Answer (C) is incorrect because the leading-edge slot actually increases airflow on the upper wing surface to allow higher angles of attack.",
+    reference: "FAA Airplane Flying Handbook - High-Lift Devices",
+  },
+  {
+    id: 5,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "The stall speed of an airplane",
+    options: ["is constant regardless of weight or airfoil configuration.", "is affected by weight, and bank angle.", "is not affected by dynamic pressures and lift co-efficient."],
+    answer: 1,
+    explain:
+      "Airplanes stall at the same angle of attack regardless of weight, dynamic pressure, bank angle, etc. The stall speed of the aircraft will be affected by weight, bank angle, and other factors since the product of dynamic pressure, wing area, and lift coefficient must produce the required lift.",
+    reference: "FAA Airplane Flying Handbook - Stall Speed",
+  },
+  {
+    id: 6,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What is the effect on total drag of an aircraft if the airspeed decreases in level flight below that speed for maximum L/D?",
+    options: ["Drag increases because of increased induced drag.", "Drag increases because of increased parasite drag.", "Drag decreases because of lower induced drag."],
+    answer: 0,
+    explain:
+      "The airspeed at which minimum drag occurs is the same airspeed at which the maximum lift/drag ratio (L/D) takes place. At speeds below maximum L/D, any decrease in airspeed will result in an increase in total drag due to the increase in induced drag. Answer (B) is incorrect because parasite drag varies directly (not inversely) with airspeed. Answer (C) is incorrect because drag increases (not decreases) from any speed other than that for maximum L/D.",
+    reference: "FAA Airplane Flying Handbook - Region of Reversed Command",
+  },
+  {
+    id: 7,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "At what Mach range does the subsonic flight range normally occur?",
+    options: ["Below .75 Mach.", "From .75 to 1.20 Mach.", "From 1.20 to 2.50 Mach."],
+    answer: 0,
+    explain:
+      "Flight regimes are defined as follows: Subsonic - Mach numbers below 0.75. Transonic - Mach numbers from 0.75 to 1.20. Supersonic - Mach numbers from 1.20 to 5.00. Hypersonic - Mach numbers above 5.00. Answer (B) is incorrect because .75 to 1.20 Mach would be transonic flight. Answer (C) is incorrect because 1.20 to 2.50 Mach would be supersonic flight.",
+    reference: "FAA Airplane Flying Handbook - Flight Regimes",
+  },
+  {
+    id: 8,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What is a purpose of flight spoilers?",
+    options: ["Increase the camber of the wing.", "Reduce lift without decreasing airspeed.", "Direct airflow over the top of the wing at high angles of attack."],
+    answer: 1,
+    explain:
+      "The purpose of the spoilers is to disturb the smooth airflow across the top of the wing thereby creating an increased amount of drag and a reduced amount of lift. Answer (A) is incorrect because flaps (not spoilers) increase the camber of the wing. Answer (C) is incorrect because slots and slats direct airflow over the top of the wing at high angles of attack.",
+    reference: "FAA Airplane Flying Handbook - Spoilers",
+  },
+  {
+    id: 9,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "A turbojet airplane has an increase in specific range with altitude, which can be attributed to three factors. One of those factors is",
+    options: ["an increase in altitude in the troposphere results in higher energy air flow.", "an increase in proportion of velocity versus thrust required.", "decreased engine turbine speeds."],
+    answer: 1,
+    explain:
+      "One of the three factors that leads to the increase in specific range with altitude in a turbojet airplane is that higher altitude increases the proportion of V/Tr (velocity versus required thrust), which in turn provides a greater true airspeed for the same amount of thrust. The other two factors involved are that, (1) an increase in tropospheric altitude produces a lower inlet air temperature, which then reduces the specific fuel consumption, and (2) an increase in altitude requires increased engine RPM for cruise thrust, and then the specific fuel consumption is reduced as the engine approaches the normal-rated RPM.",
+    reference: "FAA Airplane Flying Handbook - Turbojet Range Performance",
+  },
+  {
+    id: 10,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What effect does landing at high elevation airports have on groundspeed with comparable conditions relative to temperature, wind, and airplane weight?",
+    options: ["Higher than at low elevation.", "Lower than at low elevation.", "The same as at low elevation."],
+    answer: 0,
+    explain:
+      "An airplane at altitude will land at the same indicated airspeed as at sea level but, because of the reduced air density, the true airspeed will be greater. Given the same wind conditions, this will also make the ground speed higher than at sea level. Answer (B) is incorrect because at high elevation there is reduced air density, and thus TAS will increase. As TAS increases, ground speed will increase. Answer (C) is incorrect because, under comparable conditions, TAS will increase and cause the ground speed to be higher, at higher elevation.",
+    reference: "FAA Airplane Flying Handbook - Landing Performance",
+  },
+  {
+    id: 11,
+    subject: "FAA ATP",
+    system: "Powerplant & Systems",
+    q: "Under normal operating conditions, which combination of MAP and RPM produce the most severe wear, fatigue, and damage to high performance reciprocating engines?",
+    options: ["High RPM and low MAP.", "Low RPM and high MAP.", "High RPM and high MAP."],
+    answer: 0,
+    explain:
+      "The most severe rate of wear and fatigue damage occurs at high RPM and low MAP. Answer (B) is incorrect because while low RPM and high MAP produce severe wear to high performance reciprocating engines, the most damage is done by high RPM and low manifold pressure. Answer (C) is incorrect because a high RPM and a low MAP produce the most severe wear to high performance reciprocating engines.",
+    reference: "FAA Airplane Flying Handbook - Reciprocating Engine Operation",
+  },
+  {
+    id: 12,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Which is the correct symbol for the minimum steady-flight speed or stalling speed in the landing configuration?",
+    options: ["V(S).", "V(S1).", "V(S0)."],
+    answer: 2,
+    explain:
+      "V(S0) means the stalling speed or the minimum steady flight speed in the landing configuration. Answer (A) is incorrect because V(S) is the stalling speed or the minimum steady flight speed at which the airplane is controllable. Answer (B) is incorrect because V(S1) is the stalling speed or the minimum steady flight speed in a specific configuration.",
+    reference: "14 CFR Part 1 - V-Speed Definitions",
+  },
+  {
+    id: 13,
+    subject: "FAA ATP",
+    system: "Powerplant & Systems",
+    q: "Which part(s) in the turbojet engine is subjected to the high temperatures and severe centrifugal forces?",
+    options: ["Turbine wheel(s).", "Turbine vanes.", "Compressor rotor(s) or impeller(s)."],
+    answer: 0,
+    explain:
+      "The turbine wheels are found at the back of the turbine section, in the area of very high temperatures and high centrifugal forces. Very hot, high pressure gases enter the turbine section from the combustor. The function of the gas generator's turbine wheels is to transfer the energy from the hot, high pressure gases to drive the shaft which is connected to the compressor wheel at the front of the engine. This in turn compresses air into the combustor where fuel is added and ignited. During normal operations, the turbine wheel rotates at many thousands of RPM. Answer (B) is incorrect because although turbine vanes (inlet guide vanes) are exposed to higher temperatures, they are stationary and thus are not subject to centrifugal forces. Answer (C) is incorrect because turbine wheels, or disks, with their attached blades, are the most highly stressed components on a turbojet engine.",
+    reference: "FAA Airplane Flying Handbook - Turbojet Engine Components",
+  },
+  {
+    id: 14,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What effect, if any, will landing at a higher-than-recommended touchdown speed have on hydroplaning?",
+    options: ["No effect on hydroplaning, but increases landing roll.", "Reduces hydroplaning potential if heavy braking is applied.", "Increases hydroplaning potential regardless of braking."],
+    answer: 2,
+    explain: "Hydroplaning is most likely to occur during conditions of standing water or slush on a runway with a smooth textured surface. The higher the aircraft speed, the more likely it is to hydroplane.",
+    reference: "FAA Airplane Flying Handbook - Hydroplaning",
+  },
+  {
+    id: 15,
+    subject: "FAA ATP",
+    system: "Airport & Approach Operations",
+    q: "What is the name of an area beyond the end of a runway which does not contain obstructions and can be considered when calculating takeoff performance of turbine-powered aircraft?",
+    options: ["Clearway.", "Stopway.", "Obstruction clearance plane."],
+    answer: 0,
+    explain:
+      "'Clearway' means, for turbine-powered airplanes, an area beyond the end of the runway, centrally located about the extended centerline and under the control of the airport authorities. Clearway distance may be used in the calculation of takeoff distance. Answer (B) is incorrect because a stopway is an area beyond the takeoff runway, not any less wide than the runway, centered upon the extended centerline of the runway, and able to support the airplane during an aborted takeoff. Answer (C) is incorrect because an obstruction clearance plane is not defined in 14 CFR Part 1.",
+    reference: "14 CFR Part 1 - Clearway",
+  },
+  {
+    id: 16,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "One typical takeoff error is",
+    options: ["delayed rotation, which may extend the climb distance.", "premature rotation, which may increase takeoff distance.", "extended rotation, which may degrade acceleration."],
+    answer: 0,
+    explain:
+      "In training it is common for the pilot to overshoot VR and then overshoot V2 because the pilot not flying will call for rotation at, or just past VR. The reaction of the pilot flying is to visually verify VR and then rotate. The airplane then leaves the ground at or above V2. The excess airspeed may be of little concern on a normal takeoff, but a delayed rotation can be critical when runway length or obstacle clearance is limited.",
+    reference: "FAA Airplane Flying Handbook - Takeoff Errors",
+  },
+  {
+    id: 17,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "You are rolling out after touchdown and decide you really need to abort your landing, and takeoff. Your airplane is at 116 knots and your engines have spooled down to 71% idle. You need a V2 of 142 to safely lift off and climb. The airplane will require 6 seconds to accelerate after the engines spool up to takeoff thrust, which requires 4 seconds. How much runway will you require for a safe landing abort from your decision point? (Use an average of 129 knots ground speed.)",
+    options: ["1,738 feet.", "2,178 feet.", "3,601 feet."],
+    answer: 1,
+    explain: "At a ground speed of 129 knots, the question assumes it takes 10 seconds to takeoff. The distance required to fly to the decision point would be calculated using 129 knots ground speed. 1 knot = 1.69 feet per second = 218 ft/seconds. 218 x 10 sec = 2,180 feet.",
+    reference: "FAA Airplane Flying Handbook - Rejected Landing Performance",
+  },
+  {
+    id: 18,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Under what condition is V(MC) the highest?",
+    options: ["Gross weight is at the maximum allowable value.", "CG is at the most rearward allowable position.", "CG is at the most forward allowable position."],
+    answer: 1,
+    explain:
+      "V(MC) is greater when the center of gravity is at the most rearward-allowed position. Answer (A) is incorrect because the location of the weight (i.e., CG) is more critical than the amount of weight. Answer (C) is incorrect because a forward CG increases rudder effectiveness and reduces V(MC).",
+    reference: "FAA Airplane Flying Handbook - Minimum Controllable Airspeed",
+  },
+  {
+    id: 19,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Excessive takeoff speeds may result in approximately a",
+    options: ["4% takeoff distance increase for each 1% of additional takeoff speed.", "1% takeoff distance increase for each 2% of additional takeoff speed.", "2% takeoff distance increase for each 1% of additional takeoff speed."],
+    answer: 2,
+    explain:
+      "An excessive airspeed at takeoff may improve the initial rate of climb and 'feel' of the airplane but will produce an undesirable increase in takeoff distance. Assuming that the acceleration is essentially unaffected, the takeoff distance varies as the square of the takeoff velocity. Thus, a 10% increase excess airspeed would increase the takeoff distance 21%.",
+    reference: "FAA Airplane Flying Handbook - Takeoff Performance",
+  },
+  {
+    id: 20,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "How can turbulent air cause an increase in stalling speed of an airfoil?",
+    options: ["An abrupt change in relative wind.", "A decrease in angle of attack.", "Sudden decrease in load factor."],
+    answer: 0,
+    explain:
+      "When an airplane flying at a high speed with a low angle of attack suddenly encounters a vertical current of air moving upward, the relative wind changes in an upward direction as it meets the airfoil. This increases the angle of attack. A downward gust would have the effect of decreasing the angle of attack. Answer (B) is incorrect because a decrease in angle of attack would decrease the possibility of a stall. Answer (C) is incorrect because a sudden decrease in load factor would decrease the stalling speed.",
+    reference: "FAA Airplane Flying Handbook - Turbulence Effects on Stall",
+  },
+  {
+    id: 21,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Low pressure air decreases aircraft performance because",
+    options: ["the air is denser than higher pressure air.", "the air is less dense than high pressure air.", "air expands in the engine during the combustion process."],
+    answer: 1,
+    explain: "Thrust output decreases with increasing density altitude. Decreasing air pressure increases density altitude.",
+    reference: "FAA Airplane Flying Handbook - Density Altitude Effects",
+  },
+  {
+    id: 22,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "If severe turbulence is encountered, which procedure is recommended?",
+    options: ["Maintain a constant altitude.", "Maintain a constant attitude.", "Maintain constant airspeed and altitude."],
+    answer: 1,
+    explain:
+      "In severe turbulence, the airspeed indicator is inaccurate; therefore the pilot should set power for the recommended rough air speed and then maintain a level flight attitude, accepting variations in indicated airspeed and altitude. Answer (A) is incorrect because severe turbulence causes large variations in both indicated airspeed and altitude. Any attempt to maintain constant airspeed and altitude may overstress the aircraft. Answer (C) is incorrect because severe turbulence causes large variations in both indicated airspeed and altitude. Any attempt to maintain constant airspeed and altitude may overstress the aircraft.",
+    reference: "FAA Airplane Flying Handbook - Severe Turbulence Procedures",
+  },
+  {
+    id: 23,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "You touchdown long with a speed of 145 knots on a 8,501 foot runway and the braking is not working, so you decide to takeoff and climbout. The engines require 5 seconds to spool up and then the airplane requires 10 seconds of acceleration to lift off again. The 4,000 foot marker flashed by 2 seconds ago. Do you have enough runway to lift off? (Use 143 knots for average ground speed due to the tailwind.)",
+    options: [
+      "Yes, there will be a margin of about 850 feet which is almost 3 seconds of decision time.",
+      "Yes, there will be a margin of almost 101 feet which is about 1.5 seconds of decision time.",
+      "No, the runway is 99 feet too short and my decision was about 0.4 seconds too late.",
+    ],
+    answer: 2,
+    explain:
+      "1. Calculate distance traveled per second (1 knot = 1.69 feet per second) at 143 knots x 1.69 feet per second for 241.67 feet per second. 2. Calculate distance past 4,000 marker by 241.67 (distance traveled per second) x 2 (time past marker) = 483.34 feet. 3. Subtract distance past marker from the marker passed (4,000 - 483.34 = 3,516.66) to find remaining runway. 4. Calculate Liftoff Distance - Total of 15 seconds (5 for spool up and 10 for liftoff) multiplied by distance traveled per second 241.67 = 3,625.05 feet of liftoff distance needed. 5. Calculate if any excess runway is present 3516.66 remaining - 3625.05 required for liftoff = -108.39 feet available. This calculation indicates an extra 108.39 feet would be needed to make the takeoff. 6. Calculate time needed to make a decision by dividing 108.39 feet required / 241.67 feet per second = .448 seconds. This calculation indicates the decision would have needed to be made .448 seconds ago.",
+    reference: "FAA Airplane Flying Handbook - Rejected Landing Performance",
+  },
+  {
+    id: 24,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Which is a definition of V(2) speed?",
+    options: ["Takeoff decision speed.", "Takeoff safety speed.", "Minimum takeoff speed."],
+    answer: 1,
+    explain: "V(2) means takeoff safety speed. Answer (A) is incorrect because V(1) is takeoff decision speed. Answer (C) is incorrect because minimum takeoff speed doesn't describe a defined speed.",
+    reference: "14 CFR Part 1 - V-Speed Definitions",
+  },
+  {
+    id: 25,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What action is appropriate when encountering the first ripple of reported clear air turbulence (CAT)?",
+    options: ["Extend flaps to decrease wing loading.", "Extend gear to provide more drag and increase stability.", "Adjust airspeed to that recommended for rough air."],
+    answer: 2,
+    explain:
+      "In an area where significant clear air turbulence has been reported or is forecast, the pilot should adjust the speed to fly at the recommended rough air speed on encountering the first ripple, since the intensity of such turbulence may build up rapidly. Answer (A) is incorrect because use of flaps increases the camber of the wing and angle of attack, but does not decrease the amount of wing loading. Answer (B) is incorrect because extending the gear would increase the drag, but would not change the stability of the airplane.",
+    reference: "FAA Airplane Flying Handbook - Clear Air Turbulence Procedures",
+  },
+  {
+    id: 26,
+    subject: "FAA ATP",
+    system: "Regulations & Certification",
+    q: "What effective runway length is required for a turbojet-powered airplane at the destination airport if the runways are forecast to be wet or slippery at the ETA?",
+    options: [
+      "70 percent of the actual runway available, from a height of 50 feet over the threshold.",
+      "115 percent of the runway length required for a dry runway.",
+      "115 percent of the runway length required for a wet runway.",
+    ],
+    answer: 1,
+    explain:
+      "No person may takeoff in a turbojet-powered airplane when the appropriate weather reports and forecasts, or combination thereof, indicate that the runways at the destination airport may be wet or slippery at the estimated time of arrival unless the effective runway length at the destination airport is at least 115% of the runway length required for a landing on a dry runway. Answer (A) is incorrect because 70% is the requirement for the turbopropeller aircraft. Answer (C) is incorrect because the effective runway length is based on a dry runway.",
+    reference: "14 CFR Part 121 - Landing Distance Requirements",
+  },
+  {
+    id: 27,
+    subject: "FAA ATP",
+    system: "Regulations & Certification",
+    q: "Which operational requirement must be observed when ferrying a large, turbine-engine-powered airplane when one of its engines is inoperative?",
+    options: [
+      "The weather conditions at takeoff and destination must be VFR.",
+      "Weather conditions must exceed the basic VFR minimums for the entire route, including takeoff and landing.",
+      "The flight cannot be conducted between official sunset and sunrise.",
+    ],
+    answer: 0,
+    explain:
+      "A commercial operator of large aircraft may conduct a ferry flight of a four-engine airplane or a turbine-engine-powered, three-engine airplane with one engine inoperative, to a base for the purpose of repairing the engine. Several restrictions apply to such flights. These include: 1. The Airplane Flight Manual must include procedures and performance data which allow for the safe operation of such a flight. 2. The initial climb cannot be over thickly-populated areas. 3. Weather conditions at the takeoff and destination airports must be VFR. 4. Only required flight crewmembers may be on board the aircraft. Answer (B) is incorrect because the weather conditions must be VFR only for takeoff and landing. Answer (C) is incorrect because a ferry flight may be conducted after sunset and before sunrise as long as the takeoff and destination airports are VFR.",
+    reference: "14 CFR Part 121 - Ferry Flight with One Engine Inoperative",
+  },
+  {
+    id: 28,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "How should reverse thrust propellers be used during landing for maximum effectiveness in stopping?",
+    options: ["Gradually increase reverse power to maximum as rollout speed decreases.", "Use maximum reverse power as soon as possible after touchdown.", "Select reverse-pitch after landing and use idle power setting of the engines."],
+    answer: 1,
+    explain: "Reverse thrust is most effective at high airspeeds. It should be used as soon as possible after touchdown.",
+    reference: "FAA Airplane Flying Handbook - Reverse Thrust",
+  },
+  {
+    id: 29,
+    subject: "FAA ATP",
+    system: "Powerplant & Systems",
+    q: "Which type of compressor stall has the greatest potential for severe engine damage?",
+    options: ["Intermittent 'backfire' stall.", "Transient 'backfire' stall.", "Steady, continuous flow reversal stall."],
+    answer: 2,
+    explain:
+      "If a compressor stall is transient and intermittent, the indication will be an intermittent 'bang' as backfire and flow reversal take place. If the stall develops and becomes steady, strong vibration and a loud roar develop from the continuous flow reversal. The possibility of damage is immediate from a steady stall. Recovery must be accomplished quickly by reducing throttle setting, lowering the airplane angle of attack, and increasing airspeed.",
+    reference: "FAA Airplane Flying Handbook - Compressor Stalls",
+  },
+  {
+    id: 30,
+    subject: "FAA ATP",
+    system: "Powerplant & Systems",
+    q: "Equivalent shaft horsepower (ESHP) of a turboprop engine is a measure of",
+    options: ["turbine inlet temperature.", "shaft horsepower and jet thrust.", "propeller thrust only."],
+    answer: 1,
+    explain: "Turboprop engines get 15 to 25% of their total thrust output from jet exhaust. ESHP (Equivalent Shaft Horsepower) is the term used to describe the shaft horsepower applied to the propeller plus this jet thrust.",
+    reference: "FAA Airplane Flying Handbook - Turboprop Engines",
+  },
+  {
+    id: 31,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Which is the correct symbol for the stalling speed or the minimum steady flight speed at which the airplane is controllable?",
+    options: ["V(S0).", "V(S).", "V(S1)."],
+    answer: 1,
+    explain:
+      "V(S) means the stalling speed or the minimum steady flight speed at which the airplane is controllable. Answer (A) is incorrect because V(S0) is the stalling speed or the minimum steady flight speed in the landing configuration. Answer (C) is incorrect because V(S1) is the stalling speed or the minimum steady flight speed in a specific configuration.",
+    reference: "14 CFR Part 1 - V-Speed Definitions",
+  },
+  {
+    id: 32,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Maximum range performance of a turbojet aircraft is obtained by which procedure as aircraft weight reduces?",
+    options: ["Increasing speed or altitude.", "Increasing altitude or decreasing speed.", "Increasing speed or decreasing altitude."],
+    answer: 1,
+    explain:
+      "As a turbojet-powered airplane burns fuel, its maximum range profile can be maintained by increasing the cruise altitude to improve the specific fuel consumption of the engines and by decreasing airspeed to maintain the optimum L/D ratio. Answer (A) is incorrect because, as weight decreases, the optimum speed decreases, or altitude increases. Answer (C) is incorrect because, as weight decreases, speed decreases, or altitude increases.",
+    reference: "FAA Airplane Flying Handbook - Turbojet Range Performance",
+  },
+  {
+    id: 33,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "Which condition reduces the required runway for takeoff?",
+    options: ["Higher-than-recommended airspeed before rotation.", "Lower-than-standard air density.", "Increased headwind component."],
+    answer: 2,
+    explain:
+      "A headwind, in effect, gives an airplane part of its airspeed prior to starting the takeoff roll. This allows the airplane to reach its takeoff speed after a shorter takeoff roll than in no wind conditions. High rotation speeds and lower air density (high density altitude) both have the effect of increasing takeoff distance. Answer (A) is incorrect because higher-than-recommended airspeed before rotation and lower-than-standard air density would increase the required runway for takeoff. Answer (B) is incorrect because higher-than-recommended airspeed before rotation and lower-than-standard air density would increase the required runway for takeoff.",
+    reference: "FAA Airplane Flying Handbook - Takeoff Performance",
+  },
+  {
+    id: 34,
+    subject: "FAA ATP",
+    system: "Powerplant & Systems",
+    q: "Where is the critical altitude of a supercharged-reciprocating engine?",
+    options: ["The highest altitude at which a desired manifold pressure can be obtained.", "Highest altitude where the mixture can be leaned to best power ratio.", "The altitude at which maximum allowable BMEP can be obtained."],
+    answer: 0,
+    explain:
+      "The critical altitude of a supercharged reciprocating engine is the highest altitude at which a desired MAP can be maintained. Answer (B) is incorrect because critical altitude is the highest altitude at which a manifold pressure can be obtained. Answer (C) is incorrect because BMEP is pressure representing the mean gas load on the piston during the power stroke.",
+    reference: "FAA Airplane Flying Handbook - Supercharged Engine Operation",
+  },
+  {
+    id: 35,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "What is the correct symbol for minimum unstick speed?",
+    options: ["V(MU).", "V(MD).", "V(FC)."],
+    answer: 0,
+    explain: "V(MU) means minimum unstick speed. Answer (B) is incorrect because V(MD) is not a concept that is defined in 14 CFR 1.2. Answer (C) is incorrect because V(FC) /M(FC) is maximum speed for stability characteristics.",
+    reference: "14 CFR Part 1 - V-Speed Definitions",
+  },
+  {
+    id: 36,
+    subject: "FAA ATP",
+    system: "Aerodynamics & Aircraft Performance",
+    q: "You touchdown long with a speed of 145 knots on a 9,001 foot runway and the braking is not working, so you decide to takeoff and climb out. The engines require 5 seconds to spool up and then the airplane requires 10 seconds of acceleration to lift off again. The 5,000 foot marker flashes by. Do you have enough runway to lift off? (Use 132 knots for the average ground speed.)",
+    options: [
+      "Yes, there will be a margin of about 850 feet and almost 3 seconds of decision time.",
+      "Yes, there will be a margin of 2,001 feet and almost 5 seconds of decision time.",
+      "No, the runway is 1,340 feet too short and my decision is about 6 seconds too late.",
+    ],
+    answer: 1,
+    explain:
+      "1. Calculate distance traveled per second (1 knot = 1.69 feet per second) at 132 knots x 1.69 feet per second for 223.08 feet per second. 2. Calculate Liftoff Distance - Total of 15 seconds (5 for spool up and 10 for liftoff) multiplied by distance traveled per second 223.08 = 3,346.2 feet of liftoff distance needed. 3. Calculate Distance remaining (at 5,000 marker) 5,000 - 3,346.2 (liftoff distance) = 1,653.8 feet remaining. 4. Calculate time for decision by dividing 1,653.8 by 223.08 (distance traveled per second) = 7.41 seconds available to make a decision.",
+    reference: "FAA Airplane Flying Handbook - Rejected Landing Performance",
+  },
+];
