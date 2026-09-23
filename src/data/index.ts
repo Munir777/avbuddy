@@ -68,6 +68,7 @@ import { FAA_ATP_BATCH_14_QUESTIONS } from "./categories/faa-atp/batch-14";
 import { FAA_ATP_BATCH_15_QUESTIONS } from "./categories/faa-atp/batch-15";
 import { FAA_ATP_BATCH_16_QUESTIONS } from "./categories/faa-atp/batch-16";
 import { FAA_ATP_BATCH_17_QUESTIONS } from "./categories/faa-atp/batch-17";
+import { CANADA_TC_ATPL_BATCH_01_QUESTIONS } from "./categories/canada-tc-atpl/batch-01";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -142,6 +143,10 @@ const FAA_ATP_QUESTIONS: Question[] = [
   ...FAA_ATP_BATCH_17_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "FAA ATP" }));
 
+const CANADA_TC_ATPL_QUESTIONS: Question[] = [
+  ...CANADA_TC_ATPL_BATCH_01_QUESTIONS,
+].map((q) => ({ ...q, subject: q.subject ?? "Canada TC ATPL" }));
+
 const B737_MAX_8_QUESTIONS: Question[] = [
   ...B737_ELECTRICAL_QUESTIONS,
   ...B737_HYDRAULICS_QUESTIONS,
@@ -170,9 +175,10 @@ export const QUESTIONS: Question[] = [
   ...GENERAL_KNOWLEDGE_QUESTIONS,
   ...B737_MAX_8_QUESTIONS,
   ...FAA_ATP_QUESTIONS,
+  ...CANADA_TC_ATPL_QUESTIONS,
 ].map((q, i) => ({ ...q, id: i + 1 }));
 
-export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge", "737 MAX 8", "FAA ATP"];
+export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge", "737 MAX 8", "FAA ATP", "Canada TC ATPL"];
 
 export const SUBJECT_META: Record<string, SubjectMeta> = {
   "A320 Systems": {
@@ -195,6 +201,11 @@ export const SUBJECT_META: Record<string, SubjectMeta> = {
     blurb: "FAA Airline Transport Pilot written-test questions: 14 CFR Part 121/117 regulations, crew rest and duty limits, emergency equipment, and human factors.",
     accent: "#c47a3b",
   },
+  "Canada TC ATPL": {
+    label: "Canada TC ATPL",
+    blurb: "Transport Canada SARON/SAMRA written-exam questions: CARs, TC AIM procedures, aircraft systems, meteorology, and flight planning, with regulation references.",
+    accent: "#c4423b",
+  },
 };
 
 // Per-subject system lists, in the order they should appear in filter chips
@@ -216,6 +227,10 @@ export const SYSTEMS_BY_SUBJECT: Record<string, string[]> = {
   "FAA ATP": [
     "All",
     ...Array.from(new Set(FAA_ATP_QUESTIONS.map((q) => q.system))),
+  ],
+  "Canada TC ATPL": [
+    "All",
+    ...Array.from(new Set(CANADA_TC_ATPL_QUESTIONS.map((q) => q.system))),
   ],
 };
 
@@ -281,6 +296,9 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   "Aerodynamics & Aircraft Performance": { fg: "#7FC97F", bg: "#0F2E10" },
   "Powerplant & Systems": { fg: "#B08FD9", bg: "#241A3A" },
   "Weight & Balance": { fg: "#E0B354", bg: "#332405" },
+  // Canada TC ATPL subject -- a maple-red family distinct from every
+  // palette above.
+  "Air Law and Procedures": { fg: "#D95F52", bg: "#3A1712" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };
