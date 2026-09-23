@@ -69,3 +69,15 @@ export function findLicensingAuthority(key: string): LicensingAuthority | undefi
 export function findLicenseLevel(key: string): LicenseLevelInfo | undefined {
   return LICENSE_LEVELS.find((l) => l.key === key);
 }
+
+// Maps an authority/level leaf to a real, quizzable subject in src/data
+// (see SUBJECTS in src/data/index.ts) once a practice bank exists for it.
+// A leaf with no entry here still shows the general overview + "coming
+// soon" note. Key is `${authorityKey}/${levelKey}`.
+export const LICENSING_QUESTION_SUBJECTS: Record<string, string> = {
+  "us/atpl": "FAA ATP",
+};
+
+export function findLicensingQuestionSubject(authorityKey: string, levelKey: string): string | undefined {
+  return LICENSING_QUESTION_SUBJECTS[`${authorityKey}/${levelKey}`];
+}

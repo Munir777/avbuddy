@@ -702,7 +702,14 @@ export default function App() {
 
         {section === "interview" && <InterviewPrepView />}
         {section === "shared" && <SharedMaterialView />}
-        {section === "licensing" && <LicensingView />}
+        {section === "licensing" && (
+          <LicensingView
+            onStudySubject={(subj) => {
+              setSubject(subj);
+              setSection("technical");
+            }}
+          />
+        )}
         {section === "community" && <CommunityView />}
 
         {section === "technical" && (

@@ -7,7 +7,9 @@ import {
   LICENSE_LEVELS,
   findLicensingAuthority,
   findLicenseLevel,
+  findLicensingQuestionSubject,
 } from "../data/licensing";
+import { QUESTIONS } from "../data";
 
 // Public, crawlable Licensing Hub pages: no sign-in, no clicks required to
 // see real content. Mirrors the /library pattern (its own tiny router,
@@ -81,7 +83,21 @@ function LicensingLink({
   );
 }
 
-function SignInCta() {
+function SignInCta({ questionSubject, questionCount }: { questionSubject?: string; questionCount: number }) {
+  if (questionSubject) {
+    return (
+      <div className="lib__cta">
+        <p className="lib__cta-text">
+          {questionCount} real {questionSubject} practice questions are ready now, with
+          explanations, in Study, Quiz and Exam mode with progress tracking that syncs across your
+          devices.
+        </p>
+        <a className="btn-primary" href="/">
+          Open AvBuddy — study {questionSubject} free
+        </a>
+      </div>
+    );
+  }
   return (
     <div className="lib__cta">
       <p className="lib__cta-text">
@@ -193,6 +209,8 @@ function LicensingLevelPage({
 }) {
   const authority = findLicensingAuthority(authoritySlug);
   const level = findLicenseLevel(levelSlug);
+  const questionSubject = authority && level ? findLicensingQuestionSubject(authority.key, level.key) : undefined;
+  const questionCount = questionSubject ? QUESTIONS.filter((q) => q.subject === questionSubject).length : 0;
   useDocMeta(
     authority && level
       ? `${authority.authorityAbbr} ${level.label} (${level.fullName}) — AvBuddy`
@@ -237,7 +255,7 @@ function LicensingLevelPage({
         <p className="lib__q-text">{authority.summary}</p>
       </div>
 
-      <SignInCta />
+      <SignInCta questionSubject={questionSubject} questionCount={questionCount} />
     </>
   );
 }

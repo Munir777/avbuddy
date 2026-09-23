@@ -51,6 +51,7 @@ import { B737_ANTI_ICE_RAIN_QUESTIONS } from "./categories/737-max-8/anti-ice-ra
 import { B737_COMMUNICATIONS_QUESTIONS } from "./categories/737-max-8/communications";
 import { B737_FIRE_PROTECTION_QUESTIONS } from "./categories/737-max-8/fire-protection";
 import { B737_INDICATING_RECORDING_QUESTIONS } from "./categories/737-max-8/indicating-recording";
+import { FAA_ATP_BATCH_01_QUESTIONS } from "./categories/faa-atp/batch-01";
 
 // To add a new category to an existing subject:
 //   1. Create src/data/categories/<name>.ts (or categories/<subject-folder>/<name>.ts)
@@ -105,6 +106,10 @@ const GENERAL_KNOWLEDGE_QUESTIONS: Question[] = [
   ...ATPL_OXYGEN_QUESTIONS,
 ].map((q) => ({ ...q, subject: q.subject ?? "ATPL General Knowledge" }));
 
+const FAA_ATP_QUESTIONS: Question[] = [
+  ...FAA_ATP_BATCH_01_QUESTIONS,
+].map((q) => ({ ...q, subject: q.subject ?? "FAA ATP" }));
+
 const B737_MAX_8_QUESTIONS: Question[] = [
   ...B737_ELECTRICAL_QUESTIONS,
   ...B737_HYDRAULICS_QUESTIONS,
@@ -132,9 +137,10 @@ export const QUESTIONS: Question[] = [
   ...A320_SYSTEMS_QUESTIONS,
   ...GENERAL_KNOWLEDGE_QUESTIONS,
   ...B737_MAX_8_QUESTIONS,
+  ...FAA_ATP_QUESTIONS,
 ].map((q, i) => ({ ...q, id: i + 1 }));
 
-export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge", "737 MAX 8"];
+export const SUBJECTS: string[] = ["A320 Systems", "ATPL General Knowledge", "737 MAX 8", "FAA ATP"];
 
 export const SUBJECT_META: Record<string, SubjectMeta> = {
   "A320 Systems": {
@@ -151,6 +157,11 @@ export const SUBJECT_META: Record<string, SubjectMeta> = {
     label: "737 MAX 8",
     blurb: "Aircraft systems and limitations: electrical, hydraulics, engines/APU, flight controls, air systems.",
     accent: "#3b82c4",
+  },
+  "FAA ATP": {
+    label: "FAA ATP",
+    blurb: "FAA Airline Transport Pilot written-test questions: 14 CFR Part 121/117 regulations, crew rest and duty limits, emergency equipment, and human factors.",
+    accent: "#c47a3b",
   },
 };
 
@@ -169,6 +180,10 @@ export const SYSTEMS_BY_SUBJECT: Record<string, string[]> = {
   "737 MAX 8": [
     "All",
     ...Array.from(new Set(B737_MAX_8_QUESTIONS.map((q) => q.system))),
+  ],
+  "FAA ATP": [
+    "All",
+    ...Array.from(new Set(FAA_ATP_QUESTIONS.map((q) => q.system))),
   ],
 };
 
@@ -224,6 +239,13 @@ export const SYSTEM_COLORS: Record<string, SystemColor> = {
   // New ATPL General Knowledge categories added from a second source doc.
   Powerplant: { fg: "#C48F5F", bg: "#2E1F10" },
   "Airframe & Structures": { fg: "#8FA6C4", bg: "#16202E" },
+  // FAA ATP subject — a warm amber/orange family distinct from the A320,
+  // ATPL GK, and 737 palettes above.
+  "Regulations & Certification": { fg: "#C4923B", bg: "#332508" },
+  "Crew Rest & Duty Limits": { fg: "#D9A05F", bg: "#3A2810" },
+  "Emergency & Survival Equipment": { fg: "#E0433A", bg: "#3A0F0D" },
+  "Airport & Approach Operations": { fg: "#4A90D9", bg: "#0D223A" },
+  "Abnormal & Emergency Procedures": { fg: "#D95F5F", bg: "#3A1414" },
 };
 
 export const DEFAULT_SYSTEM_COLOR: SystemColor = { fg: "#8FA68E", bg: "#1a2620" };

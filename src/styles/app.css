@@ -1763,6 +1763,20 @@ body {
   color: var(--text-bright);
 }
 
+.licensing__soon--ready {
+  border-color: color-mix(in oklch, var(--accent) 45%, var(--border-soft));
+  background: var(--accent-bg);
+  color: var(--accent-text);
+}
+
+.licensing__soon--ready strong {
+  color: var(--accent-text);
+}
+
+.licensing__cta-row {
+  margin-top: 12px;
+}
+
 @media (max-width: 560px) {
   .licensing {
     flex-direction: column;

@@ -2,16 +2,26 @@ import { useState } from "react";
 import {
   LICENSING_AUTHORITIES,
   LICENSE_LEVELS,
+  findLicensingQuestionSubject,
   type LicenseLevelKey,
 } from "../data/licensing";
+import { QUESTIONS } from "../data";
 
-export default function LicensingView() {
+interface LicensingViewProps {
+  onStudySubject: (subject: string) => void;
+}
+
+export default function LicensingView({ onStudySubject }: LicensingViewProps) {
   const [authorityKey, setAuthorityKey] = useState(LICENSING_AUTHORITIES[0].key);
   const [levelKey, setLevelKey] = useState<LicenseLevelKey>(LICENSE_LEVELS[0].key);
 
   const authority =
     LICENSING_AUTHORITIES.find((a) => a.key === authorityKey) ?? LICENSING_AUTHORITIES[0];
   const level = LICENSE_LEVELS.find((l) => l.key === levelKey) ?? LICENSE_LEVELS[0];
+  const questionSubject = findLicensingQuestionSubject(authority.key, level.key);
+  const questionCount = questionSubject
+    ? QUESTIONS.filter((q) => q.subject === questionSubject).length
+    : 0;
 
   return (
     <div>
@@ -71,12 +81,26 @@ export default function LicensingView() {
             <span className="licensing__content-reg">{authority.regulator}</span>
           </div>
           <p className="licensing__content-body">{authority.summary}</p>
-          <div className="licensing__soon">
-            <strong>Coming soon —</strong> {authority.authorityAbbr} {level.label} requirements,
-            exam structure, and dedicated practice questions. In the meantime, the ATPL General
-            Knowledge, A320 Systems, and 737 MAX 8 question banks are ready now in Study, Quiz,
-            and Exam mode.
-          </div>
+
+          {questionSubject ? (
+            <div className="licensing__soon licensing__soon--ready">
+              <strong>{questionCount} practice questions are ready now —</strong> real{" "}
+              {authority.authorityAbbr} {level.label} questions with explanations, available in
+              Study, Quiz, and Exam mode.
+              <div className="licensing__cta-row">
+                <button type="button" className="btn-primary" onClick={() => onStudySubject(questionSubject)}>
+                  Study {questionSubject} now
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="licensing__soon">
+              <strong>Coming soon —</strong> {authority.authorityAbbr} {level.label} requirements,
+              exam structure, and dedicated practice questions. In the meantime, the ATPL General
+              Knowledge, A320 Systems, and 737 MAX 8 question banks are ready now in Study, Quiz,
+              and Exam mode.
+            </div>
+          )}
         </div>
       </div>
     </div>
