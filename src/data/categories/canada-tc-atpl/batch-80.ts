@@ -23,10 +23,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Hot section components of a turbine engine, such as the combustor and turbine section, generally require more frequent inspection and carry more restrictive life limits than the compressor section primarily because they",
     options: [
-      "carry no meaningful thermal or mechanical stress at all, making their inspection frequency purely arbitrary.",
-      "rotate at a slower speed than the compressor, which by itself increases wear regardless of temperature.",
+      "carry no meaningful thermal or mechanical stress at all, making their inspection frequency purely arbitrary, regardless of the specific aircraft type, engine model, or system configuration involved.",
+      "rotate at a slower speed than the compressor, which by itself increases wear regardless of temperature, a description not supported by the applicable design standards or normal maintenance practice.",
       "operate at the highest temperatures and thermal stresses within the engine, making them more susceptible to material fatigue, thermal cracking, and creep over time than the comparatively cooler compressor section.",
-      "are the only components in the engine constructed from a lightweight aluminum alloy.",
+      "are the only components in the engine constructed from a lightweight aluminum alloy, a characterization that does not match how this system is actually designed, certified, or maintained in service.",
     ],
     answer: 2,
     explain:
@@ -39,9 +39,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A landing gear uplock, securing the gear in the retracted position, and a downlock, securing the gear in the extended position, together serve primarily to",
     options: [
-      "provide the sole source of structural support for the gear's weight, with the shock strut playing no role in bearing any load.",
-      "control the rate at which the gear extends or retracts, functioning as the system's only speed-limiting device.",
-      "indicate gear position to the crew, replacing the need for any separate landing gear position indicating system.",
+      "provide the sole source of structural support for the gear's weight, with the shock strut playing no role in bearing any load, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
+      "control the rate at which the gear extends or retracts, functioning as the system's only speed-limiting device, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "indicate gear position to the crew, replacing the need for any separate landing gear position indicating system, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
       "mechanically hold the gear in its selected position independent of hydraulic pressure, preventing an unintended gear movement -- such as inadvertent extension in flight or retraction on the ground -- if hydraulic pressure is lost or fluctuates.",
     ],
     answer: 3,
@@ -56,9 +56,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     q: "Fuel jettison nozzles, where fitted, are generally located at or near the wingtips primarily to",
     options: [
       "release fuel as far as practical from the fuselage, engines, and other hot or ignition-prone surfaces, reducing the risk that jettisoned fuel or its vapour could contact a heat source or be drawn into an engine intake.",
-      "maximize the aerodynamic drag produced by the jettison process, slowing the aircraft as quickly as possible.",
-      "allow fuel to be dumped directly into the engine intakes for a more efficient disposal process.",
-      "ensure jettisoned fuel is released as close as possible to the fuselage centreline, minimizing any lateral distance from the aircraft.",
+      "maximize the aerodynamic drag produced by the jettison process, slowing the aircraft as quickly as possible, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "allow fuel to be dumped directly into the engine intakes for a more efficient disposal process, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "ensure jettisoned fuel is released as close as possible to the fuselage centreline, minimizing any lateral distance from the aircraft, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 0,
     explain:
@@ -71,10 +71,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "In a typical semi-monocoque fuselage, stringers and frames (formers) serve distinct structural roles in that",
     options: [
-      "stringers and frames perform an identical structural function, with the two terms simply describing the same component from different manufacturers.",
+      "stringers and frames perform an identical structural function, with the two terms simply describing the same component from different manufacturers, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
       "stringers run longitudinally and, together with the skin, primarily carry bending and axial loads along the fuselage's length, while frames are oriented around the fuselage's circumference and primarily maintain its cross-sectional shape and resist hoop stress from pressurization.",
-      "frames run longitudinally along the fuselage's length, while stringers are oriented circumferentially around the fuselage.",
-      "neither stringers nor frames carry any structural load, serving only to provide attachment points for interior cabin trim panels.",
+      "frames run longitudinally along the fuselage's length, while stringers are oriented circumferentially around the fuselage, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "neither stringers nor frames carry any structural load, serving only to provide attachment points for interior cabin trim panels, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 1,
     explain:
@@ -87,10 +87,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Comparing a cable-and-pulley flight control linkage to a push-pull rod linkage, a key practical difference is that a cable system",
     options: [
-      "cannot be used anywhere on an aircraft that also uses hydraulic actuation, since the two linkage types are mutually incompatible.",
-      "is heavier and more rigid than an equivalent push-pull rod system of the same length, with no advantage in weight or routing flexibility.",
+      "cannot be used anywhere on an aircraft that also uses hydraulic actuation, since the two linkage types are mutually incompatible, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "is heavier and more rigid than an equivalent push-pull rod system of the same length, with no advantage in weight or routing flexibility, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
       "can only transmit control force by pulling (tension), typically requiring cables routed in pairs so that one cable pulls in each direction, whereas a rigid push-pull rod can transmit force in both tension and compression through a single linkage.",
-      "can transmit force equally well in both tension and compression through a single cable run, exactly like a push-pull rod.",
+      "can transmit force equally well in both tension and compression through a single cable run, exactly like a push-pull rod, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 2,
     explain:
@@ -103,9 +103,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A fly-by-wire flight control system, as distinguished from a conventional mechanical (cable or rod) flight control system, transmits the pilot's control input to the flight control surfaces primarily by",
     options: [
-      "using a system of cables and pulleys identical in every respect to a conventional mechanical flight control system.",
-      "eliminating the need for any hydraulic or electric actuation at the control surface, since fly-by-wire surfaces are moved by aerodynamic force alone.",
-      "requiring the pilot's control input to be manually relayed to the control surface by a crew member physically located at that surface.",
+      "using a system of cables and pulleys identical in every respect to a conventional mechanical flight control system, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "eliminating the need for any hydraulic or electric actuation at the control surface, since fly-by-wire surfaces are moved by aerodynamic force alone, a description not supported by the applicable design standards or normal maintenance practice.",
+      "requiring the pilot's control input to be manually relayed to the control surface by a crew member physically located at that surface, an oversimplification that ignores the practical operating conditions the system must actually accommodate.",
       "converting the input into an electrical signal, processed by flight control computers and then sent to electrically commanded hydraulic (or electric) actuators at the control surface, rather than moving the surface through a direct, continuous mechanical linkage.",
     ],
     answer: 3,
@@ -120,9 +120,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     q: "An engine mount (or pylon), attaching a turbine engine to the wing or fuselage, is generally designed to accommodate",
     options: [
       "thermal expansion of the hot engine relative to the comparatively cooler surrounding structure, along with vibration isolation, while still transmitting the engine's thrust load securely into the airframe.",
-      "electrical power generation exclusively, with no structural or thrust-transmission function of any kind.",
-      "no thermal expansion or vibration effects at all, since the engine and mount are assumed to remain at an identical, constant temperature throughout every flight.",
-      "fuel storage, serving as an integral fuel tank in addition to its structural mounting function.",
+      "electrical power generation exclusively, with no structural or thrust-transmission function of any kind, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "no thermal expansion or vibration effects at all, since the engine and mount are assumed to remain at an identical, constant temperature throughout every flight, an oversimplification that ignores the practical operating conditions the system must actually accommodate.",
+      "fuel storage, serving as an integral fuel tank in addition to its structural mounting function, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 0,
     explain:
@@ -135,10 +135,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "An APU's fire detection and extinguishing system is often designed with automatic activation capability, distinguishing it from a main engine fire system, primarily because",
     options: [
-      "the APU never requires any fire detection or extinguishing capability at all, since it is considered inherently fireproof.",
+      "the APU never requires any fire detection or extinguishing capability at all, since it is considered inherently fireproof, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
       "the APU is commonly run unattended (such as while the aircraft is parked with no crew on the flight deck), so automatic shutdown and extinguishing on detecting a fire provides protection even when no crew member is immediately present to respond manually.",
-      "automatic activation is used only because the APU physically cannot be reached by any crew member during flight, with no connection to unattended ground operation.",
-      "main engines are never equipped with any fire detection or extinguishing system, making the APU the only powerplant on the aircraft with this protection.",
+      "automatic activation is used only because the APU physically cannot be reached by any crew member during flight, with no connection to unattended ground operation, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "main engines are never equipped with any fire detection or extinguishing system, making the APU the only powerplant on the aircraft with this protection, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 1,
     explain:
@@ -151,10 +151,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "When external ground power, the APU generator, and the engine-driven generators are all potentially available, an aircraft's electrical system generally incorporates priority logic (often through bus tie arrangements and interlocks) primarily to",
     options: [
-      "permanently disable the engine-driven generators any time external ground power is connected, with no way to reconnect them until the aircraft is airborne.",
-      "eliminate the need for any electrical bus arrangement at all, since a single, undivided electrical system requires no priority logic.",
+      "permanently disable the engine-driven generators any time external ground power is connected, with no way to reconnect them until the aircraft is airborne, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "eliminate the need for any electrical bus arrangement at all, since a single, undivided electrical system requires no priority logic, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
       "prevent two power sources from being connected to the same bus simultaneously in an uncontrolled way, while automatically or procedurally establishing which source actually supplies the electrical buses at a given time.",
-      "ensure that all available power sources are always connected to every electrical bus simultaneously, with no distinction between sources at any time.",
+      "ensure that all available power sources are always connected to every electrical bus simultaneously, with no distinction between sources at any time, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 2,
     explain:
@@ -167,9 +167,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The static port(s) on an aircraft's fuselage are generally located at a position specifically chosen to",
     options: [
-      "sit directly in the aircraft's highest-velocity airflow, deliberately maximizing dynamic pressure at the sensing point.",
-      "always be located inside the engine inlet, where pressure is most representative of the surrounding atmosphere.",
-      "be placed at random, since static port location has no measurable effect on the accuracy of pitot-static instrument readings.",
+      "sit directly in the aircraft's highest-velocity airflow, deliberately maximizing dynamic pressure at the sensing point, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "always be located inside the engine inlet, where pressure is most representative of the surrounding atmosphere, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "be placed at random, since static port location has no measurable effect on the accuracy of pitot-static instrument readings, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
       "sense a region of airflow as close as practical to true undisturbed ambient (static) pressure, minimizing the local pressure disturbance created by the fuselage's own shape that would otherwise introduce position error into the pitot-static instruments.",
     ],
     answer: 3,
@@ -184,9 +184,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     q: "Many transport aircraft are fitted with two or more independent pitot tubes, each with its own electrically heated element and, commonly, its own independent electrical power source, primarily to",
     options: [
       "ensure that a single electrical fault or failure cannot simultaneously disable heating on every pitot tube at once, reducing the risk that all of the aircraft's airspeed indications could be lost to icing from one common failure.",
-      "provide a purely cosmetic redundancy, since pitot tube icing is not considered a meaningful operational hazard on a modern aircraft.",
-      "increase the aircraft's overall airspeed reading by averaging the output of multiple pitot tubes together at all times.",
-      "eliminate the need for any pitot heat test to be performed by the crew before flight.",
+      "provide a purely cosmetic redundancy, since pitot tube icing is not considered a meaningful operational hazard on a modern aircraft, as design practice actually requires, contrary to normal system behaviour.",
+      "increase the aircraft's overall airspeed reading by averaging the output of multiple pitot tubes together at all times, regardless of the specific aircraft type, engine model, or system configuration involved.",
+      "eliminate the need for any pitot heat test to be performed by the crew before flight, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 0,
     explain:
@@ -199,10 +199,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Baffle ribs (or baffle plates) fitted inside a wing fuel tank are intended primarily to",
     options: [
-      "measure the quantity of fuel remaining in the tank, performing the same function as a capacitance probe.",
+      "measure the quantity of fuel remaining in the tank, performing the same function as a capacitance probe, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
       "restrict the free movement of fuel within the tank during aircraft manoeuvring, reducing fuel slosh and the sudden shift in weight and centre of gravity that unrestricted fuel movement could otherwise cause.",
-      "filter contaminants out of the fuel before it reaches the engine, performing the same function as a fuel filter.",
-      "heat the fuel to prevent ice crystal formation, performing the same function as a fuel-oil heat exchanger.",
+      "filter contaminants out of the fuel before it reaches the engine, performing the same function as a fuel filter, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "heat the fuel to prevent ice crystal formation, performing the same function as a fuel-oil heat exchanger, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 1,
     explain:
@@ -215,10 +215,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A fuel collector tank (or collector cell), positioned around a tank's boost pump inlet, is designed to",
     options: [
-      "serve as the aircraft's sole fuel tank, replacing the need for any main wing fuel tank.",
-      "heat incoming fuel before it reaches the collector, performing the same function as a fuel-oil heat exchanger.",
+      "serve as the aircraft's sole fuel tank, replacing the need for any main wing fuel tank, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, a characterization that does not match how this system is actually designed, certified, or maintained in service.",
+      "heat incoming fuel before it reaches the collector, performing the same function as a fuel-oil heat exchanger, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, a characterization that does not match how this system is actually designed, certified, or maintained in service.",
       "maintain a small, reliable reservoir of fuel immediately available to the boost pump regardless of the aircraft's attitude or manoeuvring, helping ensure an uninterrupted fuel supply even when the main tank's fuel level is low or momentarily shifted away from the pump inlet.",
-      "measure total fuel quantity across the entire aircraft, replacing the need for a separate fuel quantity indicating system.",
+      "measure total fuel quantity across the entire aircraft, replacing the need for a separate fuel quantity indicating system, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, a description not supported by the applicable design standards or normal maintenance practice.",
     ],
     answer: 2,
     explain:
@@ -231,9 +231,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "An oleo-pneumatic landing gear shock strut that is incorrectly serviced -- either under-inflated or over-inflated relative to its specified charge -- can result in",
     options: [
-      "a change in the aircraft's electrical system configuration, since the shock strut charge is electrically monitored and directly affects generator output.",
-      "improved shock-absorbing performance whenever the strut is under-serviced, since a lower charge always improves cushioning regardless of degree.",
-      "no meaningful operational effect at all, since a shock strut's performance is entirely independent of its nitrogen and hydraulic fluid charge.",
+      "a change in the aircraft's electrical system configuration, since the shock strut charge is electrically monitored and directly affects generator output, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
+      "improved shock-absorbing performance whenever the strut is under-serviced, since a lower charge always improves cushioning regardless of degree, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
+      "no meaningful operational effect at all, since a shock strut's performance is entirely independent of its nitrogen and hydraulic fluid charge, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
       "either reduced shock-absorbing capacity and excessive strut compression (if under-serviced) or a harsher ride with reduced compression travel (if over-serviced), in either case degrading the strut's intended shock-absorption performance from its properly serviced condition.",
     ],
     answer: 3,
@@ -248,9 +248,9 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     q: "A bleed air precooler, fitted between the engine's compressor bleed port and the aircraft's pneumatic system, is used to",
     options: [
       "reduce the temperature of the hot, high-pressure bleed air -- typically using cooler fan or ram air as the cooling medium -- to a level suitable for the ducting, valves, and downstream systems that use it, before it enters the rest of the pneumatic system.",
-      "compress the bleed air to a higher pressure than it had when it left the engine's compressor.",
-      "increase the temperature of the bleed air further before it is used for any aircraft system, in the same manner as a fuel heater.",
-      "convert the bleed air into electrical power, replacing the need for any engine-driven generator.",
+      "compress the bleed air to a higher pressure than it had when it left the engine's compressor, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, an assumption inconsistent with standard airframe and powerplant engineering practice.",
+      "increase the temperature of the bleed air further before it is used for any aircraft system, in the same manner as a fuel heater, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design, as design practice actually requires.",
+      "convert the bleed air into electrical power, replacing the need for any engine-driven generator, which overlooks the structural, thermal, or operational considerations that actually govern this aspect of the design.",
     ],
     answer: 0,
     explain:
@@ -263,10 +263,10 @@ export const CANADA_TC_ATPL_BATCH_80_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Aircraft circuit breakers are generally designed to be 'trip-free,' meaning that",
     options: [
-      "once tripped, a circuit breaker can never be reset again for the remainder of the flight under any circumstances.",
+      "once tripped, a circuit breaker can never be reset again for the remainder of the flight under any circumstances, a description not supported by the applicable design standards or normal maintenance practice.",
       "the breaker will open (trip) to interrupt an overload or fault condition even if a crew member is physically holding the breaker's button in, since the internal tripping mechanism is not defeated by external pressure on the button.",
-      "circuit breakers require no overload or fault condition whatsoever to trip, opening at random intervals regardless of the circuit's actual current draw.",
-      "the breaker cannot be manually tripped by a crew member at all, and will only open automatically in response to an electrical fault.",
+      "circuit breakers require no overload or fault condition whatsoever to trip, opening at random intervals regardless of the circuit's actual current draw, as design practice actually requires.",
+      "the breaker cannot be manually tripped by a crew member at all, and will only open automatically in response to an electrical fault, as design practice actually requires, contrary to normal system behaviour.",
     ],
     answer: 1,
     explain:

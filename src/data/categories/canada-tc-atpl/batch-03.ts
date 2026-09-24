@@ -14,9 +14,9 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     q: "If an aircraft's pitot tube becomes completely blocked by ice while the drain hole remains clear, and the aircraft then climbs, the airspeed indicator will",
     options: [
       "behave like an altimeter, showing an increasing indicated airspeed as the aircraft climbs, unrelated to the aircraft's actual speed.",
-      "show a decreasing indicated airspeed as the aircraft climbs.",
-      "continue to read accurately, since the drain hole compensates for the pitot blockage.",
-      "immediately drop to zero and remain there for the rest of the flight.",
+      "show a decreasing indicated airspeed as the aircraft climbs, the reverse of the actual pitot-blockage effect described above.",
+      "continue to read accurately throughout the climb, since the open drain hole is assumed to fully compensate for the blocked pitot line.",
+      "immediately drop to zero and remain there for the rest of the flight, since no pitot pressure at all can reach the diaphragm.",
     ],
     answer: 0,
     explain:
@@ -109,10 +109,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An Instantaneous Vertical Speed Indicator (IVSI) improves on a conventional VSI primarily by",
     options: [
-      "eliminating the need for any connection to the static system at all.",
-      "deriving its reading exclusively from GPS altitude rate, independent of pressure.",
+      "eliminating the need for any connection to the static system at all, relying instead entirely on an independent inertial sensor package.",
+      "deriving its reading exclusively from GPS altitude rate, independent of any pneumatic pressure source or connection.",
       "using an accelerometer-driven pump to reduce the lag that a conventional VSI exhibits at the start of a climb or descent.",
-      "displaying vertical speed as a digital Mach number rather than feet per minute.",
+      "displaying vertical speed as a digital Mach number rather than feet per minute, regardless of actual climb rate.",
     ],
     answer: 2,
     explain:
@@ -125,9 +125,9 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A radio (radar) altimeter differs from a pressure altimeter in that it",
     options: [
-      "measures the aircraft's rate of climb or descent, not its height.",
-      "measures altitude above mean sea level directly, with no need for an altimeter setting.",
-      "is only usable above 18,000 ft, within the Standard Pressure Region.",
+      "measures the aircraft's rate of climb or descent only, not its height above terrain or anything else.",
+      "measures altitude above mean sea level directly, requiring no pilot-set altimeter setting at any time.",
+      "is only usable above 18,000 feet, within what is formally defined as the Standard Pressure Region for altimetry purposes.",
       "measures actual height above the terrain directly beneath the aircraft, rather than altitude above a pressure datum.",
     ],
     answer: 3,
@@ -142,9 +142,9 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     q: "Total Air Temperature (TAT), as sensed by a probe on a fast-moving aircraft, differs from the actual (static) outside air temperature because",
     options: [
       "TAT includes the ram rise caused by compressing and decelerating the air at the probe, which increases with airspeed.",
-      "TAT is unaffected by airspeed and equals static air temperature at all times.",
-      "TAT is measured only on the ground, before ram effects begin.",
-      "TAT is always lower than static air temperature at any airspeed.",
+      "TAT is unaffected by airspeed and equals the static air temperature at all times, regardless of speed.",
+      "TAT is measured only while the aircraft is on the ground, before any ram-air heating effects begin.",
+      "TAT is always lower than the static air temperature, at any airspeed, due to the cooling effect of airflow across the probe.",
     ],
     answer: 0,
     explain:
@@ -173,10 +173,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A turn coordinator differs from a simple turn-and-bank (turn needle) indicator in that the turn coordinator's gyro is",
     options: [
-      "vertically mounted and senses pitch rate rather than yaw rate.",
-      "not a gyroscopic instrument at all, but a purely pendulous device.",
+      "vertically mounted, so it senses pitch rate rather than yaw rate, like an attitude indicator's gyro.",
+      "not a gyroscopic instrument at all, but a purely pendulous device responding only to gravity and inertia.",
       "canted, so it senses both roll rate and yaw rate, giving an earlier indication of a turn being entered.",
-      "mounted flat, sensing yaw rate only, identical to the turn-and-bank indicator.",
+      "mounted flat, sensing yaw rate only, identical in principle to the simple turn-and-bank indicator's gyro.",
     ],
     answer: 2,
     explain:
@@ -189,10 +189,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A gyroscopic heading indicator (directional gyro) is subject to",
     options: [
-      "errors only when the aircraft is stationary on the ground, never in flight.",
-      "no drift of any kind, since a gyroscope is a perfectly stable reference once aligned.",
-      "acceleration and turning errors identical to those of a magnetic compass, since it is slaved directly to the compass.",
-      "apparent and real precession, which cause it to drift from the correct heading over time and require periodic realignment with the magnetic compass.",
+      "errors only when the aircraft is stationary on the ground, and never at any time while the aircraft is actually airborne.",
+      "no drift of any kind whatsoever, since a properly aligned gyroscope is treated as a permanently stable spatial reference.",
+      "acceleration and turning errors identical to those of a magnetic compass, since the heading indicator is mechanically slaved directly to the compass card.",
+      "apparent and real precession, which cause it to drift from the correct heading over time and need periodic realignment with the compass.",
     ],
     answer: 3,
     explain:
@@ -205,10 +205,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An attitude indicator (artificial horizon) displays pitch and bank based on",
     options: [
-      "the gyroscopic rigidity of a gyro spinning about a vertical axis, which tends to remain fixed in space as the aircraft pitches and rolls around it.",
-      "direct sensing of the true horizon by an optical sensor.",
-      "static pressure changes sensed through the pitot-static system.",
-      "GPS-derived vertical speed and track data exclusively.",
+      "the gyroscopic rigidity of a gyro spinning about a vertical axis, staying fixed in space as the aircraft pitches and rolls around it.",
+      "direct sensing of the true horizon by an optical sensor mounted externally on the fuselage or wingtip.",
+      "static pressure changes sensed through the very same pitot-static plumbing already used by the altimeter and airspeed indicator instruments.",
+      "GPS-derived vertical speed and track data exclusively, with no gyroscopic component driving the display.",
     ],
     answer: 0,
     explain:
@@ -221,10 +221,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A flight director differs from an autopilot in that the flight director",
     options: [
-      "moves the flight controls directly to follow the selected mode, exactly as an autopilot does.",
-      "computes and displays pitch/roll command guidance (command bars) for the pilot to follow manually, without itself moving the flight controls.",
-      "can only be used once the autopilot has been engaged, and never independently of it.",
-      "provides lateral guidance only, with no pitch guidance capability.",
+      "moves the flight controls directly to follow the selected mode, exactly as a fully coupled autopilot does, requiring no manual pilot input at all.",
+      "computes and displays pitch/roll command guidance (command bars) for the pilot to follow manually, without moving the controls itself.",
+      "can only be used once the autopilot has actually been engaged, and is never available independently of it.",
+      "provides lateral guidance only, offering no pitch guidance capability at any point during the flight.",
     ],
     answer: 1,
     explain:
@@ -253,10 +253,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An HSI (Horizontal Situation Indicator) improves on a separate heading indicator and course deviation indicator by",
     options: [
-      "displaying only vertical navigation information, with no lateral course information at all.",
-      "replacing the attitude indicator entirely, since it also shows bank angle.",
-      "eliminating the need for the aircraft to have a magnetic compass installed.",
-      "integrating heading, selected course, course deviation, and (for an ILS) glideslope deviation into a single combined display, improving situational awareness.",
+      "displaying only vertical navigation information on its face, with no lateral course information presented.",
+      "replacing the attitude indicator entirely, since the HSI display is sometimes assumed to also show the aircraft's current bank angle.",
+      "eliminating the need for the aircraft to have any magnetic compass installed as standard equipment.",
+      "integrating heading, selected course, course deviation, and (for an ILS) glideslope deviation into one combined display.",
     ],
     answer: 3,
     explain:
@@ -301,10 +301,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A Flight Management System (FMS) is best described as a system that",
     options: [
-      "replaces the need for a paper or electronic flight plan to be filed with ATS.",
-      "monitors engine parameters exclusively and alerts the crew to exceedances.",
-      "manages route/navigation data, performance calculations, and guidance, typically coupled to the autopilot and autothrottle to fly the planned route and profile.",
-      "provides only weather radar data to the flight deck displays.",
+      "replaces the need for a paper or electronic flight plan to ever be filed with air traffic services before any scheduled departure.",
+      "monitors engine parameters exclusively, alerting the crew only to engine-related exceedances.",
+      "manages route/navigation data, performance calculations, and guidance, typically coupled to the autopilot and autothrottle.",
+      "provides only weather radar data to the flight deck displays, with no navigation function at all.",
     ],
     answer: 2,
     explain:
@@ -317,10 +317,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "ECAM and EICAS are both examples of systems that",
     options: [
-      "monitor only cabin pressurization, with engine parameters shown elsewhere.",
-      "are alternate names for the same weather radar display technology.",
-      "provide lateral and vertical navigation guidance to the autopilot.",
-      "centralize engine and aircraft system monitoring and alerting onto electronic displays, replacing a large number of individual gauges and annunciator lights.",
+      "monitor only cabin pressurization parameters, with engine parameters instead shown on an entirely separate dedicated panel.",
+      "are simply alternate manufacturer names for the same underlying weather radar display technology.",
+      "provide lateral and vertical navigation guidance directly to the autopilot, in place of the FMS.",
+      "centralize engine and aircraft system monitoring and alerting onto electronic displays, replacing many individual gauges.",
     ],
     answer: 3,
     explain:
@@ -333,10 +333,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On a twin-spool turbofan engine, N1 and N2 tachometer readings represent",
     options: [
-      "the rotational speed of the low-pressure spool (fan/LP compressor) and the high-pressure spool (HP compressor/core), each expressed as a percentage of a rated maximum.",
-      "fuel flow and oil pressure, respectively, unrelated to rotational speed.",
-      "the aircraft's indicated airspeed and true airspeed, respectively.",
-      "the speed of the left engine and the speed of the right engine, respectively.",
+      "the speed of the low-pressure spool and the high-pressure spool, each as a percent of rated maximum.",
+      "fuel flow and oil pressure, respectively, two parameters unrelated to any rotating spool's actual speed.",
+      "the aircraft's indicated airspeed and true airspeed, respectively, as computed by the air data computer.",
+      "the rotational speed of the left engine and the right engine, respectively, regardless of spool count.",
     ],
     answer: 0,
     explain:
@@ -349,10 +349,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A torquemeter is used mainly on turboprop engines because",
     options: [
-      "turboprop engines have no tachometer, so torque is the only rotational parameter available.",
-      "with a constant-speed propeller holding RPM essentially constant across a wide range of power settings, RPM alone does not indicate how much power the engine is actually delivering -- torque does.",
-      "torquemeters are required only during engine start, and are disregarded thereafter.",
-      "torque directly measures fuel flow, making a separate fuel flow gauge unnecessary.",
+      "turboprop engines have no tachometer at all installed, so torque is the only rotational parameter ever made available.",
+      "since a constant-speed propeller holds RPM near-constant, RPM alone does not indicate the power being delivered.",
+      "torquemeters are required only during engine start, and are disregarded for the remainder of the flight.",
+      "torque directly measures fuel flow, making a separate dedicated fuel flow gauge entirely unnecessary.",
     ],
     answer: 1,
     explain:
@@ -365,10 +365,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Turbine temperature (ITT or TIT) is monitored primarily to",
     options: [
-      "measure the temperature of the fuel entering the combustion chamber.",
-      "indicate cabin temperature, since ITT probes are also used for pressurization control.",
+      "measure the temperature of the fuel entering the combustion chamber prior to ignition.",
+      "indicate cabin temperature, since ITT probes are also sometimes thought to be used for cabin pressurization control.",
       "protect the turbine section from thermal damage by keeping gas temperature within the engine's certified limits.",
-      "indicate the outside air temperature at the engine's operating altitude.",
+      "indicate the outside air temperature at the engine's current operating altitude only.",
     ],
     answer: 2,
     explain:
@@ -381,10 +381,10 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Compass deviation, as recorded on an aircraft's compass correction card, results from",
     options: [
-      "the difference between true north and magnetic north at the aircraft's present position.",
-      "acceleration errors that occur only while the aircraft is turning through north or south.",
-      "the aircraft's true airspeed, which affects how the compass card is read.",
-      "local magnetic interference from the aircraft's own structure, wiring, and equipment, which is compensated for as far as practical during a compass swing.",
+      "the difference between true north and magnetic north at the aircraft's present geographic position on the chart in use.",
+      "acceleration errors that occur only while the aircraft is turning through north or south headings.",
+      "the aircraft's true airspeed, which affects how the compass card itself is read by the pilot.",
+      "local magnetic interference from the aircraft's structure and equipment, compensated for during a compass swing.",
     ],
     answer: 3,
     explain:
@@ -398,9 +398,9 @@ export const CANADA_TC_ATPL_BATCH_03_QUESTIONS: Question[] = [
     q: "In the northern hemisphere, a simple magnetic compass exhibits an acceleration error such that, on an east or west heading,",
     options: [
       "accelerating causes the compass to indicate a turn toward north, and decelerating causes it to indicate a turn toward south.",
-      "accelerating causes the compass to indicate a turn toward south, and decelerating causes it to indicate a turn toward north.",
-      "the error only occurs on north or south headings, never on east or west.",
-      "acceleration and deceleration produce no compass error at all on east or west headings.",
+      "accelerating causes the compass to indicate a turn toward south, and decelerating causes it to indicate a turn toward north, the reverse of the true effect.",
+      "the error only occurs on north or south headings, and is never observed on east or west headings at all.",
+      "acceleration and deceleration produce no compass error whatsoever on east or west headings, in any circumstance.",
     ],
     answer: 0,
     explain:

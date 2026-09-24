@@ -14,8 +14,8 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Hypoxic hypoxia, the type most relevant to unpressurized flight at altitude, results from",
     options: [
-      "poor circulation preventing oxygen-rich blood from reaching the tissues.",
-      "the body's cells being unable to use available oxygen, despite adequate delivery.",
+      "poor circulation preventing oxygen-rich blood from reaching the body's tissues effectively.",
+      "the body's cells being unable to use the oxygen delivered to them, despite an adequate supply.",
       "a reduced ability of the blood to carry oxygen, caused by carbon monoxide or another contaminant.",
       "a reduced partial pressure of oxygen in the inspired air, reducing the oxygen available to the blood.",
     ],
@@ -31,9 +31,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "Hyperventilation and hypoxia can be difficult to distinguish because",
     options: [
       "they produce very similar symptoms (dizziness, tingling, visual disturbance), but hyperventilation is caused by excessive breathing rate rather than insufficient oxygen.",
-      "hyperventilation is resolved only by supplemental oxygen, in exactly the same way as hypoxia.",
-      "they are actually the same physiological condition, just given two different names.",
-      "hyperventilation only occurs above 25,000 ft, exactly the same altitude hypoxia symptoms begin.",
+      "hyperventilation is resolved only by administering supplemental oxygen, in exactly the same way that hypoxia is treated.",
+      "they are actually the same underlying physiological condition, simply given two different clinical names for historical and regulatory reasons across different training curricula.",
+      "hyperventilation only occurs above roughly 25,000 ft cabin altitude, exactly the same altitude at which hypoxia symptoms are said to begin.",
     ],
     answer: 0,
     explain:
@@ -48,8 +48,8 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     options: [
       "the decrease in temperature with altitude, consistent with Charles's Law, unrelated to pressure.",
       "the decrease in ambient pressure with altitude, consistent with Boyle's Law.",
-      "increased humidity at altitude causing the gas to expand.",
-      "an increase in the body's own gas production at altitude.",
+      "increased humidity at higher altitude causing trapped gas volume to expand more than pressure alone would explain.",
+      "an increase in the body's own internal gas production, triggered by the drop in cabin pressure during the climb.",
     ],
     answer: 1,
     explain:
@@ -62,10 +62,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "A pilot who has been scuba diving is generally advised to wait a period of time before flying, primarily because",
     options: [
-      "diving has no physiological interaction with subsequent flight, and the advisory exists purely as a general precaution with no underlying mechanism.",
-      "diving increases blood oxygen levels to an unsafe degree for several days.",
+      "diving has no physiological interaction whatsoever with subsequent flight, and the standard advisory exists purely as an overly cautious general precaution with no real underlying physiological mechanism.",
+      "diving increases blood oxygen levels to an unsafe degree for several days afterward, requiring the same waiting period as a precaution against oxygen toxicity.",
       "dissolved nitrogen remaining in body tissues from the dive can come out of solution as bubbles at reduced ambient pressure, causing decompression sickness.",
-      "diving temporarily reduces lung capacity, unrelated to any effect of altitude.",
+      "diving temporarily reduces lung capacity for several days, an effect said to be unrelated to any effect of subsequent flight to altitude.",
     ],
     answer: 2,
     explain:
@@ -78,9 +78,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "For detecting a faint light or object at night, pilots are generally advised to use an off-centre viewing technique because",
     options: [
-      "the cone cells responsible for colour vision work better at night than rod cells do.",
-      "off-centre viewing is useful only for detecting motion, never for detecting a stationary faint light.",
-      "looking directly at an object always provides the sharpest possible night vision, and off-centre viewing offers no benefit.",
+      "the cone cells responsible for colour vision work substantially better than rod cells do in low-light, night-time conditions.",
+      "off-centre viewing is useful only for detecting motion out of the corner of the eye, never for detecting a faint, stationary light source.",
+      "looking directly at an object always provides the sharpest possible night vision, because the fovea contains the highest concentration of light-sensitive receptors, and off-centre viewing offers no additional benefit in darkness.",
       "the rod cells responsible for low-light vision are concentrated away from the centre of the retina, making peripheral vision more sensitive to dim light than direct, central vision.",
     ],
     answer: 3,
@@ -95,8 +95,8 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "The somatogravic illusion can occur when a strong forward linear acceleration (such as during take-off) is misinterpreted by the vestibular system as",
     options: [
       "a nose-up pitch attitude, potentially leading a disoriented pilot to push the nose down inappropriately.",
-      "an accurate sensation with no illusory component, regardless of visual reference.",
-      "a roll to one side, with no pitch component perceived at all.",
+      "an entirely accurate sensation with no illusory component whatsoever, regardless of the outside visual reference available to the pilot.",
+      "a roll to one side, with no accompanying pitch component perceived by the pilot at all, unlike the sensation associated with forward acceleration.",
       "a nose-down pitch attitude, potentially leading a disoriented pilot to pull the nose up inappropriately.",
     ],
     answer: 0,
@@ -126,10 +126,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Sustained positive G (acceleration toward the pilot's feet, as in a tight turn or pull-up) primarily causes physiological problems by",
     options: [
-      "forcing excess blood toward the head, potentially causing a 'red-out.'",
-      "affecting only the inner ear, with no effect on vision or consciousness.",
+      "forcing excess blood toward the head and upper body, potentially causing a 'red-out' with reddening of the visual field.",
+      "affecting only the inner ear's vestibular balance mechanism, with no effect at all on vision or on the level of consciousness.",
       "pooling blood toward the lower body, reducing blood flow to the brain and eyes, potentially leading to grey-out, blackout, or G-induced loss of consciousness at higher levels.",
-      "having no physiological effect distinct from ordinary 1g flight, regardless of magnitude or duration.",
+      "having no physiological effect distinct from ordinary, straight-and-level 1g flight at all, regardless of the magnitude, direction, or duration of the acceleration experienced by the airframe and occupants.",
     ],
     answer: 2,
     explain:
@@ -142,9 +142,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Adjusting to a new time zone after a long flight is generally more difficult",
     options: [
-      "only when crossing the International Date Line, and is otherwise unaffected by direction of travel.",
-      "in exactly the same way regardless of direction, since only the number of time zones crossed matters.",
-      "flying westward than flying eastward, for the same underlying reason.",
+      "only when crossing the International Date Line itself, and is otherwise essentially unaffected by the direction of travel.",
+      "in exactly the same way regardless of direction of travel, since only the total number of time zones crossed is said to matter.",
+      "flying westward than flying eastward, for the same underlying reason that the body's circadian rhythm reportedly finds a shortened day harder to adapt to than a lengthened one, even though most pilots report no noticeable difference in practice.",
       "flying eastward than flying westward, since the body's natural circadian rhythm runs slightly longer than 24 hours and adapts more easily to a lengthened day than a shortened one.",
     ],
     answer: 3,
@@ -159,9 +159,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "Fatigue's effect on pilot performance is often compared to alcohol impairment because",
     options: [
       "extended wakefulness has been shown to degrade judgment, reaction time, and decision-making in ways comparable to measurable blood alcohol levels.",
-      "fatigue and alcohol impairment are caused by an identical biochemical mechanism in the body.",
-      "fatigue affects only physical reaction time, with no measurable effect on judgment or decision-making.",
-      "the comparison is not supported by evidence, and fatigue is now understood to have no meaningful effect on performance.",
+      "fatigue and alcohol impairment are caused by an identical underlying biochemical mechanism within the nervous system.",
+      "fatigue affects only physical reaction time and coordination, with no measurable effect on judgment or decision-making.",
+      "the comparison is not well supported by evidence, and fatigue is now generally understood to have little meaningful effect on performance.",
     ],
     answer: 0,
     explain:
@@ -174,10 +174,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Combining alcohol consumption with exposure to altitude tends to",
     options: [
-      "only matter above 25,000 ft cabin altitude, and is negligible at lower altitudes.",
+      "only matter meaningfully above roughly 25,000 ft cabin altitude, and is generally considered negligible at the lower cabin altitudes typical of most flights.",
       "worsen the effective impairment from a given amount of alcohol, beyond what that same amount would cause at sea level.",
-      "have no combined effect; alcohol's impairment is identical regardless of cabin altitude.",
-      "reduce the effective impairment from alcohol, since altitude speeds alcohol elimination from the body.",
+      "have no combined effect at all; alcohol's impairment is essentially identical regardless of the cabin altitude reached during flight.",
+      "reduce the effective impairment from a given amount of alcohol, since higher altitude is believed to speed alcohol's elimination from the body.",
     ],
     answer: 1,
     explain:
@@ -190,10 +190,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Carbon monoxide is a particular hazard in piston-engine aircraft with a cabin heating system that draws warm air from around the exhaust because",
     options: [
-      "carbon monoxide has a strong, easily detectable odour that gives ample warning before any physiological effect occurs.",
-      "carbon monoxide primarily affects vision only, with no effect on judgment or coordination.",
+      "carbon monoxide has a strong, easily detectable odour that gives ample, reliable warning to the crew well before any physiological effect can occur.",
+      "carbon monoxide primarily affects visual acuity and colour perception only, with no measurable effect on judgment, cognition, or motor coordination at any concentration encountered in a cabin.",
       "carbon monoxide binds to hemoglobin far more readily than oxygen does, producing hypoxia even though the pilot may show no obvious signs of distress until impairment is already significant.",
-      "carbon monoxide is heavier than air and therefore cannot reach the cockpit through a heating system.",
+      "carbon monoxide is heavier than air and therefore physically cannot reach the cockpit through a warm-air cabin heating system.",
     ],
     answer: 2,
     explain:
@@ -206,9 +206,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "A pilot experiencing a routine emergency should generally follow a structured decision-making process because",
     options: [
-      "structured decision-making replaces the need for the pilot to actually understand the situation before acting.",
+      "structured decision-making entirely replaces the pilot's need to actually understand the situation before acting, no matter how complex the underlying situation is.",
       "structured decision-making models guarantee an objectively correct outcome in every situation, regardless of the information available.",
-      "structured decision-making is required only for non-emergency, routine flight planning, and adds no value under time pressure.",
+      "structured decision-making is required only during non-emergency, routine flight planning phases, and is said to add no real value once time pressure appears.",
       "a structured approach helps ensure relevant information is gathered and options are properly considered, rather than reacting on the first impulse under stress.",
     ],
     answer: 3,
@@ -223,9 +223,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "Situational awareness is generally described as having distinct levels: perceiving relevant elements in the environment, comprehending what they mean, and",
     options: [
       "projecting their likely future status, so the pilot can anticipate how the situation will develop.",
-      "communicating them to ATC, which is treated as the final and only remaining step.",
-      "ignoring elements that seem irrelevant at the current moment, permanently.",
-      "recording them for post-flight reporting purposes only, with no forward-looking component.",
+      "communicating them to air traffic control immediately, which is treated as the final and only remaining step in the process.",
+      "ignoring elements that seem irrelevant at the current moment, permanently discarding them from further consideration.",
+      "recording them for post-flight reporting purposes only, with no forward-looking or predictive component at all.",
     ],
     answer: 0,
     explain:
@@ -254,10 +254,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Standard Operating Procedures (SOPs) improve flight safety primarily by",
     options: [
-      "eliminating the need for crew communication, since each pilot's actions are pre-determined.",
-      "applying only to normal operations, with no relevance to abnormal or emergency situations.",
+      "eliminating the need for crew communication altogether, since each pilot's actions are said to be entirely pre-determined in advance.",
+      "applying only to normal, routine operations, with no relevance at all to abnormal or emergency situations.",
       "standardizing crew actions and expectations, making behaviour more predictable and easier to cross-check between crew members.",
-      "replacing the aircraft's checklists entirely, making printed or electronic checklists unnecessary.",
+      "replacing the aircraft's printed and electronic checklists entirely, making any separate checklist unnecessary during normal, abnormal, or emergency operations.",
     ],
     answer: 2,
     explain:
@@ -270,9 +270,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "A pilot's eye reference position in the cockpit (often established relative to a marked design eye reference point) matters because",
     options: [
-      "eye reference position affects only comfort, with no effect on visual perception of outside references.",
-      "eye reference position is relevant only for aircraft equipped with a head-up display, and not otherwise.",
-      "eye reference position has no established relationship to seat adjustment in transport aircraft.",
+      "eye reference position affects only pilot comfort during long flights, with no measurable effect on the visual perception of outside references at all.",
+      "eye reference position is relevant only for aircraft that happen to be specifically equipped with a head-up display system, and not otherwise relevant.",
+      "eye reference position has no established relationship at all to seat adjustment or seat rails in transport category aircraft cockpits.",
       "an incorrect seat/eye position can distort the pilot's perception of the visual approach path, runway markings, and outside references, as well as instrument parallax.",
     ],
     answer: 3,
@@ -287,9 +287,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "In a modern 'glass cockpit,' a key human factors consideration around information selection is that",
     options: [
       "the crew must actively choose which of many available data pages/formats to display, and an inappropriate selection can leave critical information out of view when needed.",
-      "glass cockpit displays present only one possible layout, removing any need for the crew to select what information is shown.",
-      "glass cockpit displays eliminate the need for the crew to cross-check information between different sources.",
-      "information selection errors are impossible once a display is certified, regardless of how the crew configures it.",
+      "glass cockpit displays present only one single, fixed possible layout, entirely removing any need for the crew to select what information is shown.",
+      "glass cockpit displays are said to eliminate the need for the crew to cross-check information between different sources entirely, since every installed display is simply assumed to always agree with the others.",
+      "information selection errors are considered impossible once a display is certified, regardless of how the crew subsequently configures or navigates it.",
     ],
     answer: 0,
     explain:
@@ -302,10 +302,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Effective Crew Resource Management (CRM) is best described as",
     options: [
-      "a system used only during declared emergencies, with no application during normal operations.",
+      "a system used only during declared in-flight emergencies, with no application or relevance at all during normal, day-to-day operations.",
       "the effective use of all available resources -- crew, aircraft systems, ATC, documentation, and time -- to achieve safe and efficient flight operations.",
-      "a formal hierarchy in which the captain makes every decision without input from other crew members.",
-      "a set of memorized phrases used exclusively for radio communication with ATC.",
+      "a formal, rigid hierarchy in which the captain alone makes every operational decision, without soliciting input from any other crew member.",
+      "a fixed set of memorized phrases used exclusively for routine radio communication with air traffic control, unrelated to broader crew coordination or decision-making.",
     ],
     answer: 1,
     explain:
@@ -318,10 +318,10 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Controlled Flight Into Terrain (CFIT) is defined as an accident or incident in which",
     options: [
-      "an aircraft is deliberately flown into terrain as an act of sabotage.",
-      "an aircraft strikes terrain or an obstacle after the crew has already lost control of the aircraft.",
+      "an aircraft is deliberately and intentionally flown into terrain as a premeditated act of sabotage by someone with access to the flight deck.",
+      "an aircraft strikes terrain or an obstacle only after the crew has already lost control of the aircraft, such as following a stall or structural failure.",
       "an aircraft under the full control of the crew is flown into terrain, water, or an obstacle, with the crew generally unaware of the impending danger.",
-      "an aircraft is damaged by terrain-related debris (such as a rockslide) while parked on the ground.",
+      "an aircraft is damaged by terrain-related debris, such as a rockslide or falling object, while parked and stationary on the ground.",
     ],
     answer: 2,
     explain:
@@ -334,9 +334,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "In the Threat and Error Management (TEM) framework, an 'undesired aircraft state' refers to",
     options: [
-      "a state that, once reached, always results in an accident with no possibility of recovery.",
-      "any mechanical malfunction of the aircraft, regardless of how the crew responds to it.",
-      "a term used only in post-accident investigation, with no application to normal operations or training.",
+      "a state that, once reached, always and inevitably results in an accident, with absolutely no possibility of recognition or recovery by the crew.",
+      "any mechanical malfunction of the aircraft whatsoever, regardless of how promptly or effectively the crew subsequently responds to and manages it.",
+      "a term used only retrospectively in post-accident investigation reports, with no application to normal line operations, training, or proactive safety management.",
       "a safety-reducing condition (such as an unstabilized approach or an unintended deviation from an assigned altitude) that results from unmanaged threats or errors, and needs to be recognized and recovered from.",
     ],
     answer: 3,
@@ -351,9 +351,9 @@ export const CANADA_TC_ATPL_BATCH_07_QUESTIONS: Question[] = [
     q: "A pilot's role within an operator's Safety Management System (SMS) generally includes",
     options: [
       "reporting hazards and safety concerns observed during operations, contributing to the organization's ongoing hazard identification and risk management process.",
-      "reporting hazards only after an accident has already occurred, never proactively.",
+      "reporting hazards and safety concerns only after an accident or serious incident has already occurred, and never doing so proactively beforehand.",
       "being responsible only for their own individual currency and licensing requirements, unrelated to organizational safety processes.",
-      "having no active role, since SMS is described as being managed entirely by the safety department with no pilot input.",
+      "having no active role at all in this view, since SMS is described as being managed entirely and exclusively by a dedicated safety department, with absolutely no pilot input whatsoever expected or required.",
     ],
     answer: 0,
     explain:

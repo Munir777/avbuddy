@@ -21,8 +21,8 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     options: [
       "an aircraft encounters no supercooled water at all, since mixed icing is understood to form exclusively from ice crystals with no liquid water content whatsoever.",
       "the icing occurs only on the ground, since mixed icing is understood to be a term describing ground frost formation rather than any in-flight icing encounter.",
-      "an aircraft encounters a combination of cloud and precipitation conditions (such as varying droplet sizes or a mix of ice crystals and supercooled water) that deposits both clear and rime ice characteristics during the same icing encounter.",
-      "the aircraft is flying above the freezing level, since mixed icing is understood to require air temperatures above 0 degrees Celsius throughout the encounter.",
+      "an aircraft encounters a combination of cloud and precipitation conditions, such as a mix of ice crystals and supercooled water, that deposits both clear and rime ice characteristics during the same encounter.",
+      "the aircraft is flying above the freezing level, since mixed icing is understood to require air temperatures above 0 degrees Celsius throughout the flight, a condition under which no supercooled water or ice crystals could plausibly persist in the surrounding cloud.",
     ],
     answer: 2,
     explain:
@@ -51,10 +51,10 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "In a TAF, the PROB (probability) group, generally followed by a percentage such as PROB30 or PROB40, is used to indicate",
     options: [
-      "a forecast of specific meteorological conditions (such as thunderstorms) that have a stated probability of occurring during the indicated period, distinct from the near-certainty implied by the main forecast.",
+      "a forecast of specific conditions, such as thunderstorms, that have a stated probability of occurring during the indicated period, distinct from the main forecast.",
       "the probability that the entire TAF will later be amended, rather than the probability of any specific weather condition occurring during a given period.",
-      "wind direction variability exclusively, with no application to any other forecast element such as visibility, cloud, or precipitation.",
-      "the exact time at which a forecast condition will occur, functioning as a precise timing indicator rather than a probability-based one.",
+      "wind direction variability exclusively, with no application to any other forecast element such as visibility, cloud, or precipitation, a limitation inconsistent with how the PROB group is actually applied across a TAF.",
+      "the exact time at which a forecast condition will occur, functioning as a precise timing indicator rather than a probability-based one, a framing that overlooks the percentage figure always attached to the group.",
     ],
     answer: 0,
     explain:
@@ -69,8 +69,8 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     options: [
       "they show the current, static pressure value at each point, an application already served by isobars, making isallobars a purely redundant and unnecessary duplicate concept.",
       "rapid pressure change (a tightly packed isallobaric pattern) can indicate significant developing or dissipating weather systems and help anticipate future pressure system movement.",
-      "they are used exclusively for depicting wind direction, with no application whatsoever to any pressure-related forecasting purpose.",
-      "they apply only to temperature analysis, with no actual relationship to atmospheric pressure despite what the term would otherwise suggest.",
+      "they are used exclusively for depicting wind direction, with no application whatsoever to any pressure-related forecasting purpose, despite isallobars being derived directly from sequential pressure observations.",
+      "they apply only to temperature analysis, with no actual relationship to atmospheric pressure despite what the term would otherwise suggest, even though the term itself describes a rate of pressure change.",
     ],
     answer: 1,
     explain:
@@ -99,8 +99,8 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A gust front, associated with a thunderstorm's downdraft and outflow, is best described as",
     options: [
-      "a feature associated exclusively with a thunderstorm's updraft, with the downdraft and outflow contributing nothing to the formation of a gust front.",
-      "a slow, gradual pressure and wind change occurring over many hours, the opposite of the sudden onset actually associated with a gust front.",
+      "a feature associated exclusively with a thunderstorm's updraft, with the downdraft and outflow contributing nothing to the formation of a gust front, a characterization that overlooks the outflow boundary's documented role in it.",
+      "a slow, gradual pressure and wind change occurring over many hours, the opposite of the sudden onset actually associated with a gust front, a description more fitting of a slow-moving frontal passage.",
       "a purely upper-level phenomenon with no surface effect whatsoever, unrelated to any wind shift or gust experienced by aircraft or observers on the ground.",
       "the leading edge of relatively cool, gusty air spreading out along the surface ahead of or around a thunderstorm, which can produce a sudden and significant wind shift and gust.",
     ],
@@ -131,7 +131,7 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A narrowing temperature/dew point spread, observed as evening approaches under clear, calm conditions, is a useful indicator to a forecaster because it",
     options: [
-      "is relevant only to forecasting thunderstorm activity, with no application whatsoever to fog or low stratus cloud formation.",
+      "is relevant only to forecasting thunderstorm activity, with no application whatsoever to fog or low stratus cloud formation, despite the spread's well-established use as a radiation fog indicator.",
       "suggests an increasing likelihood of fog or low cloud forming overnight, since the air is approaching saturation as the temperature cools toward the dew point.",
       "indicates the air is moving further from saturation, the opposite of the actual relationship between a narrowing spread and approaching saturation.",
       "has no forecasting value at all, since temperature/dew point spread is understood to be unrelated to the likelihood of fog or low cloud formation.",
@@ -163,10 +163,10 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Hail forms within a thunderstorm when",
     options: [
-      "hail forms only in stratiform (layered) cloud with no associated convective activity, rather than within the strong vertical currents of a thunderstorm.",
-      "raindrops simply freeze once during a single pass through the freezing level, with no repeated cycling through the storm's updraft required to form hail.",
+      "hail forms only in stratiform (layered) cloud with no associated convective activity, rather than within the strong vertical currents of a thunderstorm, a claim at odds with hail's known association with strong convective updrafts.",
+      "raindrops simply freeze once during a single pass through the freezing level, with no repeated cycling through the storm's updraft required to form hail, though the layered structure inside a hailstone points to multiple such passes.",
       "hail formation has no relationship to a thunderstorm's updraft strength at all, since hail size is understood to depend solely on surface temperature rather than any in-cloud process.",
-      "ice particles are carried repeatedly through the storm's strong updraft, accumulating additional layers of ice as they pass through regions of supercooled water, until they become too heavy for the updraft to support and fall to the ground.",
+      "ice particles are carried repeatedly through the storm's strong updraft, accumulating ice as they pass through supercooled water, until too heavy for the updraft to support and fall.",
     ],
     answer: 3,
     explain:
@@ -197,8 +197,8 @@ export const CANADA_TC_ATPL_BATCH_56_QUESTIONS: Question[] = [
     options: [
       "exclusively by commercial air transport pilots, with private and other pilots understood to be prohibited from submitting a PIREP under any circumstance.",
       "to ATC or a flight information service, using a standardized format covering relevant items such as location, time, and the specific condition observed, so it can be relayed to other users.",
-      "only after landing, with no provision for submitting a PIREP while the observation is actually being made in flight.",
-      "in an entirely unstructured, free-form manner, since PIREPs are understood to have no standardized format or expected content items.",
+      "only after landing, with no provision for submitting a PIREP while the observation is actually being made in flight, even though most PIREPs are in practice relayed while the condition is still current.",
+      "in an entirely unstructured, free-form manner, since PIREPs are understood to have no standardized format or expected content items, a characterization inconsistent with the standardized location, time, and condition items expected.",
     ],
     answer: 1,
     explain:

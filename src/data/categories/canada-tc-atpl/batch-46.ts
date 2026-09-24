@@ -53,7 +53,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
       "a relatively abrupt wind shift, a drop in temperature, a rise in pressure, and often gusty or turbulent conditions with showery precipitation.",
       "a steady rise in temperature over many hours, the opposite of the temperature change actually associated with cold frontal passage.",
       "a sustained drop in pressure that continues well after the front has passed, rather than the pressure rise actually observed.",
-      "a gradual, barely noticeable wind shift with no accompanying change in temperature or pressure at the surface.",
+      "a gradual, barely noticeable wind shift with no accompanying change in temperature, pressure, or cloud cover of any kind at the surface whatsoever.",
     ],
     answer: 0,
     explain:
@@ -85,7 +85,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
       "a region of clear, cloudless skies with no associated precipitation, distinguishing it from all frontal weather features.",
       "a purely tropical phenomenon that does not occur in Canadian latitudes, making the term inapplicable to domestic forecasting.",
       "an occluded frontal system, marking the axis of warm air that has been lifted aloft above the surface occlusion as the cold and cool air masses have merged beneath it.",
-      "the boundary of the jet stream at high altitude, unrelated to surface frontal analysis or occlusion processes.",
+      "the boundary of the jet stream at high altitude, unrelated to surface frontal analysis, occlusion processes, or any associated cloud and precipitation pattern below it.",
     ],
     answer: 2,
     explain:
@@ -116,7 +116,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     options: [
       "covers a substantially smaller horizontal area and typically evolves over a much shorter timeframe, from roughly tens of kilometres and a few hours down to even smaller and shorter scales.",
       "is defined as covering an identical horizontal scale to synoptic systems, with the only difference being the type of precipitation produced.",
-      "always persists longer than a synoptic-scale system, since mesoscale features are defined by their unusually long duration rather than their smaller size.",
+      "always persists significantly longer than any synoptic-scale system it is compared against, since mesoscale features are defined primarily by their unusually long duration rather than by their smaller horizontal extent.",
       "occurs exclusively over open ocean, since mesoscale meteorological classification does not apply to systems developing over land.",
     ],
     answer: 0,
@@ -130,7 +130,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Weather radar reflectivity, commonly displayed to pilots as colour-coded precipitation intensity levels, is used primarily to",
     options: [
-      "detect clear-air turbulence in cloud-free regions, since reflectivity readings are unrelated to the presence of precipitation.",
+      "detect clear-air turbulence in cloud-free regions, since reflectivity readings are treated here as entirely unrelated to the presence or intensity of any precipitation at all.",
       "indicate the intensity of precipitation (and, indirectly, the associated convective activity) within a storm, helping pilots identify areas of heavier weather to avoid.",
       "measure cloud-top temperature directly, a parameter that radar reflectivity cannot detect regardless of precipitation intensity.",
       "determine the exact wind speed within a storm cell, a measurement reflectivity data cannot provide without additional Doppler processing.",
@@ -149,7 +149,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
       "is a hazard limited entirely to ground operations, with no effect whatsoever on an aircraft once it is airborne and clear of the eruption site.",
       "poses no hazard to turbine engines, since modern jet engines are specifically designed to operate normally when ingesting volcanic ash.",
       "can cause severe engine damage (including flameout) and abrade windscreens and airframe surfaces, making avoidance of ash-contaminated airspace essential.",
-      "is detected and avoided using the same onboard weather radar systems used for detecting precipitation, since ash produces an equivalent radar return.",
+      "is detected and avoided using the same onboard weather radar systems used for detecting precipitation, since ash is assumed here to produce an equivalent and reliable radar return in every case.",
     ],
     answer: 2,
     explain:
@@ -164,7 +164,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     options: [
       "exclusively on the ground during engine start, with no possibility of carburetor ice forming once the aircraft is established in cruise flight.",
       "only during descent with the throttle fully open, since carburetor icing is understood to be impossible at any other power setting or flight phase.",
-      "only when the outside air temperature is already at or below freezing, since carburetor icing cannot occur at any ambient temperature above 0 degrees Celsius.",
+      "only when the outside air temperature is already at or below freezing at the time, since carburetor icing is assumed here to be entirely incapable of occurring at any ambient temperature above 0 degrees Celsius regardless of humidity levels present.",
       "even in relatively warm ambient air with sufficiently high humidity, since the sharp temperature drop caused by fuel vaporization and pressure reduction in the carburetor throat can bring the local temperature below freezing.",
     ],
     answer: 3,
@@ -196,7 +196,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     options: [
       "is the standard altimeter setting used throughout Canadian domestic airspace, replacing QNH entirely for both VFR and IFR operations.",
       "causes the altimeter to read zero (or a value referenced to the aerodrome elevation) when the aircraft is on the ground at that aerodrome, rather than reading the aerodrome's elevation above mean sea level as QNH does.",
-      "is set using the current sea-level pressure at a distant reporting station rather than any pressure value local to the aerodrome itself.",
+      "is set using the current sea-level pressure reported at a distant reporting station many kilometres away rather than any pressure value measured locally at the aerodrome itself, regardless of that aerodrome's own field elevation.",
       "represents the same numerical value as QNH at every aerodrome, making the distinction between the two settings purely terminological.",
     ],
     answer: 1,
@@ -213,7 +213,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
       "the aircraft's windows become completely frosted over from internal condensation, an equipment-related rather than a meteorological/visual phenomenon.",
       "falling snow reduces visibility to zero in the same way as dense fog, making whiteout simply another name for a snow-induced visibility restriction.",
       "diffuse light from an overcast sky combines with a uniform, unbroken snow surface to eliminate visible shadows, horizon, and surface definition, severely impairing depth perception and orientation.",
-      "direct sunlight reflecting off snow becomes so intense that pilots experience temporary total blindness, a condition unrelated to sky or surface uniformity.",
+      "direct sunlight reflecting off snow becomes so intense that pilots experience temporary total blindness, a condition unrelated to sky overcast, surface uniformity, or cloud cover of any kind whatsoever.",
     ],
     answer: 2,
     explain:
@@ -226,7 +226,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Blowing snow, as a surface weather phenomenon reported in Canadian aviation weather observations, can significantly reduce visibility primarily because",
     options: [
-      "it has no meaningful effect on visibility at all, since blowing snow is classified as a surface phenomenon distinct from any visibility-restricting weather.",
+      "it has no meaningful effect on visibility at all, since blowing snow is classified purely as a surface phenomenon distinct from any visibility-restricting weather condition whatsoever.",
       "it always occurs only during active snowfall, since blowing snow cannot form from snow that has already accumulated on the ground.",
       "it is limited strictly to altitudes above 10,000 ft, making it irrelevant to takeoff and landing visibility assessments.",
       "wind lifts loose snow from the surface into the air, and depending on wind speed, this suspended snow can reduce horizontal visibility much like blowing dust or sand.",
@@ -245,7 +245,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
       "a permanent or long-lasting change expected to occur gradually over a specified period (BECMG), versus a temporary fluctuation expected to last less than an hour at a time and less than half the forecast period overall (TEMPO).",
       "identical types of change, with BECMG and TEMPO used interchangeably depending only on which forecaster happens to be preparing the TAF.",
       "wind-only changes (BECMG) versus cloud-only changes (TEMPO), with each group restricted to a single weather element category.",
-      "a change that has already occurred by the time of observation (BECMG) versus a change expected only after the TAF's entire validity period has ended (TEMPO).",
+      "a change that has already fully occurred by the time of the observation itself (BECMG) versus a change expected to occur only well after the TAF's entire published validity period has already ended completely and definitively (TEMPO).",
     ],
     answer: 0,
     explain:
@@ -258,7 +258,7 @@ export const CANADA_TC_ATPL_BATCH_46_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A high-level significant weather (SWH) chart, as distinguished from a Graphic Area Forecast (GFA), is intended primarily to depict",
     options: [
-      "airport-specific terminal weather exclusively, with no depiction of en route hazards at any altitude.",
+      "airport-specific terminal weather exclusively, with no depiction whatsoever of en route hazards at any altitude, cruising level, or phase of a typical jet-traffic flight anywhere along its entire planned route.",
       "significant weather phenomena (such as turbulence, icing, and thunderstorms) relevant to flight in the upper airspace typically used by jet traffic, rather than the lower-altitude weather depicted by a GFA.",
       "surface-only observations with no forecast component at all, unlike a GFA, which is understood to be a purely forecast product.",
       "exactly the same information as a GFA, covering the same altitude range and intended for the same low-level general aviation user base.",

@@ -25,9 +25,9 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Convergency between two meridians, expressing the difference in true direction they would indicate at two points along the same great circle, can be approximated as",
     options: [
-      "the change of latitude between the two points, with no reference to longitude at all",
-      "zero at all latitudes except exactly at the poles",
-      "always exactly 90 degrees, regardless of latitude or longitude difference",
+      "the change of latitude between the two points, since convergency is treated in this approximation as purely a north-south quantity independent of longitude",
+      "zero at all latitudes except exactly at the poles, where meridians are considered to converge to a single point on the Earth's surface",
+      "always exactly 90 degrees, regardless of latitude or longitude difference, since meridians are treated as mutually perpendicular great circles",
       "the change of longitude between the two meridians, multiplied by the sine of the mean latitude between the two points",
     ],
     answer: 3,
@@ -41,10 +41,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A GNSS receiver's 'mask angle' (or elevation mask) refers to",
     options: [
-      "a minimum satellite elevation angle above the horizon, below which the receiver excludes that satellite from its position solution, since low-elevation signals are more prone to multipath and atmospheric error",
-      "a fixed value that is identical for every GNSS receiver regardless of manufacturer",
-      "the angle at which the receiver automatically shuts down to conserve power",
-      "the maximum bank angle the aircraft can achieve while still receiving GNSS signals",
+      "a minimum satellite elevation angle above the horizon, below which the receiver excludes that satellite from its position solution",
+      "a fixed value that is identical for every GNSS receiver regardless of manufacturer, since the mask angle is dictated solely by international standards rather than receiver design",
+      "the angle at which the receiver automatically shuts down its tracking channels to conserve battery power during prolonged operation",
+      "the maximum bank angle the aircraft can achieve while still maintaining reliable reception of GNSS satellite signals",
     ],
     answer: 0,
     explain:
@@ -57,10 +57,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "GNSS ephemeris data is distinguished from almanac data in that ephemeris data provides",
     options: [
-      "the receiver's own internal clock correction value exclusively",
-      "precise orbital information for the specific satellites currently being tracked, used directly in the position calculation, whereas almanac data provides coarser orbital data for the entire satellite constellation, used mainly to help the receiver plan which satellites to acquire",
-      "information that is identical in content and precision to almanac data, with only the name differing",
-      "weather information relevant to the receiver's current location",
+      "the receiver's own internal clock correction value exclusively, with no bearing on satellite orbital positions at all",
+      "precise orbital information for the specific satellites currently being tracked, used directly in the position calculation, whereas almanac data provides only coarse constellation-wide data",
+      "information that is identical in content and precision to almanac data in every respect, with only the terminology differing between receiver manufacturers, standards bodies, and regulatory authorities",
+      "weather information relevant to the receiver's current location, such as barometric pressure and temperature",
     ],
     answer: 1,
     explain:
@@ -73,10 +73,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "An Air Defence Identification Zone (ADIZ), depicted on aeronautical charts, generally requires an aircraft intending to operate within it to",
     options: [
-      "fly only at night, never during daylight hours",
-      "avoid the area entirely under all circumstances, since it is functionally identical to prohibited airspace",
+      "fly only at night, never during daylight hours, since ADIZ procedures are understood to apply exclusively to hours of darkness",
+      "avoid the area entirely under all circumstances, since it is treated as functionally and legally identical to permanently prohibited airspace where transit is never authorized under any condition",
       "comply with specific identification, position reporting, or flight plan requirements before or upon entry, to allow the aircraft to be positively identified for national security purposes",
-      "obtain no special authorization or identification of any kind",
+      "obtain no special authorization, identification, or flight plan clearance of any kind before entering",
     ],
     answer: 2,
     explain:
@@ -105,10 +105,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A Satellite-Based Augmentation System (SBAS), relying on geostationary satellites to broadcast correction signals, can experience reduced availability or reliability at very high latitudes primarily because",
     options: [
-      "geostationary satellites appear at a very low elevation angle above the horizon (or may be below the horizon entirely) at high latitudes, weakening or blocking reliable reception of the correction signal",
-      "high latitudes experience no ionospheric delay, eliminating the need for SBAS corrections entirely",
-      "SBAS relies exclusively on ground-based transmitters, which are never installed in polar regions",
-      "GNSS satellites themselves cannot be tracked at high latitudes under any circumstance",
+      "geostationary satellites appear at a very low elevation angle above the horizon (or may be below it entirely) at high latitudes, weakening reception of the correction signal",
+      "high latitudes experience no ionospheric delay whatsoever, eliminating the need for SBAS corrections entirely, since ionospheric activity is understood to be absent poleward of 60 degrees latitude",
+      "SBAS relies exclusively on ground-based transmitters broadcasting on VHF, which are never installed anywhere in polar regions",
+      "GNSS satellites themselves cannot be tracked or acquired at high latitudes under any circumstance whatsoever",
     ],
     answer: 0,
     explain:
@@ -121,10 +121,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Unlike a conventional fix defined by reference to a ground-based NAVAID (such as a VOR radial/DME intersection), many RNAV waypoints are",
     options: [
-      "unable to be named or displayed on any navigation chart",
+      "unable to be named or displayed on any navigation chart, since RNAV waypoints are considered purely internal computer references",
       "purely computer-defined points specified by latitude and longitude coordinates, with no requirement to correspond to any physical ground-based facility",
-      "always required to be co-located with an existing ground-based NAVAID",
-      "usable only by aircraft equipped with an ADF receiver",
+      "always required to be co-located with an existing ground-based NAVAID facility, since RNAV computations are considered incapable of operating independently of a ground-based transmitter",
+      "usable only by aircraft equipped with an ADF receiver capable of tuning the associated non-directional beacon frequency",
     ],
     answer: 1,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A GNSS receiver's 'cold start,' in which no recent almanac or ephemeris data is stored, generally results in",
     options: [
-      "a fix that is more accurate than one obtained from a warm start",
-      "a permanent inability to ever acquire a position fix again",
-      "a longer time to acquire a first position fix compared to a 'warm start,' since the receiver must search more broadly for satellites and download fresh orbital data before it can compute a position",
-      "an immediate position fix with no delay whatsoever, identical to a warm start",
+      "a fix that is more accurate than one obtained from a warm start, since any previously stored almanac or ephemeris data is understood to introduce additional position error into the solution",
+      "a permanent inability to ever acquire a position fix again under any subsequent operating condition",
+      "a longer time to acquire a first position fix compared to a 'warm start,' since the receiver must search more broadly for satellites before it can compute a position",
+      "an immediate position fix with no delay whatsoever, identical in acquisition time to a warm start or even a hot start",
     ],
     answer: 2,
     explain:
@@ -169,10 +169,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "For a basic, unaugmented GNSS position fix, vertical position accuracy is generally poorer than horizontal position accuracy primarily because",
     options: [
-      "all usable satellites are located above the receiver's horizon, limiting the vertical geometric diversity between satellites compared to the fuller geometric spread available horizontally",
-      "vertical accuracy depends entirely on barometric pressure rather than satellite signals",
-      "GNSS satellites are exclusively used for horizontal positioning and provide no vertical information whatsoever",
-      "vertical accuracy is always identical to horizontal accuracy for any GNSS receiver",
+      "all usable satellites are located above the receiver's horizon, limiting vertical geometric diversity compared to the fuller spread available horizontally",
+      "vertical accuracy depends entirely on barometric pressure rather than satellite signals, making GNSS satellite geometry irrelevant to the vertical solution entirely",
+      "GNSS satellites are exclusively used for horizontal positioning and are understood to provide no vertical information whatsoever under any geometry",
+      "vertical accuracy is always identical to horizontal accuracy for any GNSS receiver regardless of satellite geometry",
     ],
     answer: 0,
     explain:
@@ -185,10 +185,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A position fix obtained by plotting two simultaneous ADF relative bearings to two separate NDB stations (an NDB cross-bearing fix), compared to a VOR cross-radial fix, is generally considered",
     options: [
-      "impossible to obtain, since only one NDB bearing can ever be used at a time",
-      "subject to greater potential error, since ADF bearing accuracy is generally lower than VOR radial accuracy and can be further degraded by factors such as terrain, coastal refraction, or atmospheric conditions",
-      "identical in achievable accuracy to a VOR cross-radial fix under all conditions",
-      "inherently more accurate, since NDB signals are never affected by any propagation error",
+      "impossible to obtain, since only one NDB bearing can ever be tracked or plotted by the receiver at any given time",
+      "subject to greater potential error, since ADF bearing accuracy is generally lower than VOR radial accuracy and can be further degraded by terrain or coastal refraction",
+      "identical in achievable accuracy to a VOR cross-radial fix under all conditions and at any range from the stations",
+      "inherently more accurate, since NDB signals are considered never to be affected by any form of propagation error whatsoever, including terrain effect or coastal refraction",
     ],
     answer: 1,
     explain:
@@ -201,10 +201,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Among all the parallels of latitude, the equator is unique in that it",
     options: [
-      "has no defined length, since it forms the basis for the entire coordinate system",
-      "is the only parallel of latitude with a constant magnetic variation of zero everywhere along its length",
+      "has no defined length at all, since it is treated purely as the theoretical basis for the entire latitude coordinate system",
+      "is the only parallel of latitude with a constant magnetic variation of zero everywhere along its length, a property attributed to its unique alignment with the geomagnetic equator",
       "is the only parallel of latitude that is itself a great circle, since every other parallel is a smaller circle whose plane does not pass through the Earth's centre",
-      "is the only parallel of latitude along which a rhumb line and a meridian are identical",
+      "is the only parallel of latitude along which a rhumb line and a meridian are considered geometrically identical in every case",
     ],
     answer: 2,
     explain:
@@ -217,10 +217,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "On an aeronautical chart, Class F airspace, which may be further designated as advisory or restricted, is generally distinguished such that",
     options: [
-      "both advisory and restricted Class F airspace are functionally identical in every respect",
-      "Class F restricted airspace applies only to military aircraft, never affecting civilian traffic",
-      "Class F advisory airspace always prohibits entry entirely, identical to prohibited airspace",
-      "Class F restricted airspace involves activity considered hazardous to aircraft not participating in it, while Class F advisory airspace involves activity requiring pilots to exercise increased vigilance, without necessarily restricting entry",
+      "both advisory and restricted Class F airspace are functionally identical in every respect, including entry requirements and hazard level",
+      "Class F restricted airspace applies only to military aircraft, and is understood to never affect civilian traffic in any way, regardless of the activity being conducted within its published boundaries or altitude limits",
+      "Class F advisory airspace always prohibits entry entirely, making it functionally identical to permanently prohibited airspace",
+      "Class F restricted airspace involves activity hazardous to non-participating aircraft, while advisory airspace involves activity requiring increased pilot vigilance without necessarily restricting entry",
     ],
     answer: 3,
     explain:
@@ -249,10 +249,10 @@ export const CANADA_TC_ATPL_BATCH_91_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "When resolving a wind into its components relative to a planned track, the along-track (headwind or tailwind) component primarily affects",
     options: [
-      "chart scale interpretation",
-      "groundspeed and therefore ETE, while the across-track (crosswind) component primarily affects the wind correction angle (heading offset) required to maintain the planned track",
-      "the wind correction angle required, with no effect on ETE",
-      "magnetic variation along the route",
+      "chart scale interpretation, since wind components are considered relevant only to how a chart's distances are measured",
+      "groundspeed and therefore ETE, while the across-track component primarily affects the wind correction angle needed to maintain the planned track",
+      "the wind correction angle required, and is considered to have no effect whatsoever on groundspeed, time en route, or fuel planning calculations for the flight",
+      "magnetic variation along the route, since wind components are treated as a function of compass error rather than airspeed",
     ],
     answer: 1,
     explain:

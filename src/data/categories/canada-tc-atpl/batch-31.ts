@@ -18,7 +18,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
       "exclusively in equatorial regions, where magnetic variation is most stable and predictable, making grid navigation entirely unnecessary anywhere else.",
       "as a complete replacement for true north on every chart worldwide, eliminating any further need for true or magnetic direction references.",
       "in high-latitude or polar regions, where meridians converge sharply and magnetic direction becomes unreliable, so that a single, constant reference direction can still be used for steering across the route.",
-      "only for VFR flights, with IFR operations specifically prohibited from using any grid navigation reference.",
+      "only for VFR flights, with IFR operations specifically prohibited from using any grid navigation reference, despite grid navigation being tied to high-latitude geometry rather than to VFR versus IFR flight rules.",
     ],
     answer: 2,
     explain:
@@ -50,7 +50,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
       "check the accuracy of an aircraft's VOR receiver against a known, published test signal broadcasting a single, fixed radial in all directions from the facility.",
       "physically recalibrate the aircraft's VOR receiver hardware, replacing the need for any periodic maintenance check.",
       "receive DME distance information only, with no bearing or radial information broadcast by the facility at all.",
-      "test ADF receiver accuracy exclusively, with VOT facilities having no application to VOR equipment.",
+      "test ADF receiver accuracy exclusively, with VOT facilities having no application to VOR equipment, despite a VOT being, by definition, a VOR-specific test facility with no ADF testing function at all.",
     ],
     answer: 0,
     explain:
@@ -79,7 +79,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Receiver Autonomous Integrity Monitoring (RAIM), a function of many GNSS receivers, is designed to",
     options: [
-      "monitor aircraft fuel state rather than navigation signal quality, despite its name suggesting a navigation-related function.",
+      "monitor aircraft fuel state rather than navigation signal quality, despite its name suggesting a navigation-related function -- fuel monitoring being handled by an entirely separate aircraft system unrelated to satellite signal integrity.",
       "physically increase the number of satellites visible to the receiver, guaranteeing a minimum satellite count regardless of actual sky visibility.",
       "cross-check redundant satellite ranging information to detect a faulty or degraded satellite signal and alert the pilot when the system's positional integrity can no longer be assured to the required standard.",
       "replace the need for any ground-based navigation aid entirely, making RAIM a form of augmentation rather than an integrity check.",
@@ -95,7 +95,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "WGS84 (World Geodetic System 1984), referenced by GNSS and most modern aeronautical charts, is best described as",
     options: [
-      "an air traffic control communication protocol, with no relevance to charts, coordinates, or GNSS positioning.",
+      "an air traffic control communication protocol, with no relevance to charts, coordinates, or GNSS positioning, despite WGS84 being fundamentally a geodetic coordinate reference rather than a communication protocol.",
       "a radio navigation aid broadcasting standard time signals, unrelated to positional coordinates or chart datums.",
       "a specific type of aeronautical chart projection, functionally equivalent to the Lambert Conformal Conic projection.",
       "a standardized geodetic reference datum -- a mathematical model of the Earth's shape and a coordinate reference frame -- used so that latitude/longitude coordinates are consistently defined worldwide.",
@@ -114,7 +114,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
       "noting the relative bearing to the point, holding a steady heading until that relative bearing has doubled, and using the distance flown between those two observations as the approximate distance remaining to the point at that moment.",
       "doubling the magnetic variation value at the point to estimate the true bearing to it, a purely directional rather than distance-estimating technique.",
       "taking two simultaneous bearings from two different points to fix the aircraft's own position, unrelated to any single point's distance ahead.",
-      "flying directly at the point and doubling the aircraft's groundspeed to estimate distance, with no bearing observation involved at all.",
+      "flying directly at the point and doubling the aircraft's groundspeed to estimate distance, with no bearing observation involved at all, despite the technique relying entirely on a changing relative bearing rather than on groundspeed in any way.",
     ],
     answer: 0,
     explain:
@@ -161,7 +161,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
     options: [
       "less reliable than a DR position, since DR positions are calculated using precise instrument readings while fixes rely on estimation alone.",
       "obtainable only through celestial observation, with no other method (radio, visual, or satellite) capable of producing a genuine fix.",
-      "identical in method to a DR position, with 'fix' and 'DR position' simply being two names for the same navigational technique.",
+      "identical in method to a DR position, with 'fix' and 'DR position' simply being two names for the same navigational technique, despite a fix relying on external position data while a DR position is calculated forward from heading, speed, and time alone.",
       "more reliable, since it is derived from actual external position-determining information (such as NAVAID bearings, GNSS, or visual reference) rather than being calculated forward from a prior known position using heading, speed, and elapsed time alone.",
     ],
     answer: 3,
@@ -178,7 +178,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
       "between sunset (or sunrise) and a defined point at which the sun is a specified number of degrees below the horizon, during which there is still enough natural light for most outdoor activity without artificial lighting.",
       "unrelated to sunset or sunrise, defined instead purely by a fixed clock time that never varies by location or season.",
       "identical to the period of full darkness, with civil twilight beginning only once the sky has become completely black.",
-      "applicable only at the equator, with civil twilight considered undefined at higher latitudes regardless of season.",
+      "applicable only at the equator, with civil twilight considered undefined at higher latitudes regardless of season, despite its duration actually varying most noticeably at higher latitudes rather than being undefined there.",
     ],
     answer: 0,
     explain:
@@ -191,7 +191,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Coordinated Universal Time (UTC), commonly referred to as 'Zulu' time in aviation, is used in flight planning and record-keeping primarily because",
     options: [
-      "it is identical to the local time at every aerodrome worldwide, making separate local time references entirely unnecessary.",
+      "it is identical to the local time at every aerodrome worldwide, making separate local time references entirely unnecessary, despite UTC being specifically a common reference distinct from the varying local time at each aerodrome.",
       "it provides a single, common time reference unaffected by local time zone or daylight-saving changes, avoiding confusion when a flight crosses multiple time zones or when coordinating with distant stations.",
       "it applies exclusively to military aviation, with civil aviation required to use only local standard time for all planning and records.",
       "it changes value twice yearly at every location to follow daylight-saving time adjustments, precisely because that keeps it aligned with local clock time everywhere.",
@@ -210,7 +210,7 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
       "an error arising from delayed signal propagation through the ionosphere, unrelated to any reflected or indirect signal path.",
       "an error caused by the satellite's clock running at a different rate than the receiver's clock, unrelated to any signal reflection.",
       "a satellite signal reaching the receiver's antenna both directly and after reflecting off a nearby surface (such as terrain, water, or the aircraft structure), causing the reflected signal to interfere with and degrade the direct signal.",
-      "an error caused by poor satellite geometry alone, with no involvement of the signal's actual propagation path.",
+      "an error caused by poor satellite geometry alone, with no involvement of the signal's actual propagation path, despite multipath being specifically about a reflected propagation path rather than about satellite geometry or dilution of precision.",
     ],
     answer: 2,
     explain:
@@ -240,9 +240,9 @@ export const CANADA_TC_ATPL_BATCH_31_QUESTIONS: Question[] = [
     q: "A 'running fix,' a classic dead-reckoning position-fixing technique, is obtained by",
     options: [
       "taking a bearing from a single reference station, then, after a known time/distance interval, taking a second bearing from the same station and advancing (transferring) the first bearing line forward by the distance flown to intersect the second, giving an estimated position.",
-      "relying exclusively on GNSS-derived coordinates, with no radio bearing, visual reference, or dead-reckoning calculation involved at all.",
-      "taking a single bearing from a single station and treating that bearing line alone, without any second observation, as a complete position fix.",
-      "taking two simultaneous bearings from two different stations at the same instant, with no time interval or bearing line advancement involved.",
+      "relying exclusively on GNSS-derived coordinates, with no radio bearing, visual reference, or dead-reckoning calculation involved at all, despite a running fix being, by definition, a classic radio-bearing technique predating GNSS entirely.",
+      "taking a single bearing from a single station and treating that bearing line alone, without any second observation, as a complete position fix, despite a single bearing line only ever giving a line of position rather than a genuine fix.",
+      "taking two simultaneous bearings from two different stations at the same instant, with no time interval or bearing line advancement involved, despite a running fix specifically relying on a single station observed twice with a time interval.",
     ],
     answer: 0,
     explain:

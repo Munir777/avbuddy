@@ -14,7 +14,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The furthest point along a route from which an aircraft, flying at a single planned cruise speed, could still turn back and land at the departure aerodrome (or another suitable aerodrome behind it) with the required fuel reserves intact, is known as the",
     options: [
-      "critical point, which is calculated purely from fuel remaining and has no relationship to comparing a continue-versus-return decision.",
+      "critical point, which is calculated purely from fuel remaining and has no relationship to comparing a continue-versus-return decision. This follows from the underlying physical principle governing the instrument's operation.",
       "preferred route, a term describing a NAV CANADA-published route rather than any fuel- or time-based calculated point.",
       "point of no return, distinct from the critical point (equal time point), which instead compares continuing to the destination against returning, generally using different continue/divert speeds.",
       "top of descent, a point defined entirely by planned rate of descent and has no connection to fuel or diversion planning at all.",
@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     q: "A cost index, used by a flight management system to compute an economical cruise speed, represents",
     options: [
       "a safety-related index describing the aircraft's fuel reserve margin, unrelated to speed or cost optimization.",
-      "a fixed cruise Mach number published for each aircraft type, unrelated to fuel price or the cost of time.",
+      "a fixed cruise Mach number published for each aircraft type, unrelated to fuel price or the cost of time. This reflects standard practice as described in typical systems documentation. This is a common point of confusion addressed specifically in recurrent ground training.",
       "the total certified maximum operating cost per flight hour for the aircraft type, used only for company accounting purposes.",
       "the relative cost of time (crew, maintenance, and other time-related operating costs) compared to the cost of fuel, letting the FMS balance flying faster (burning more fuel) against flying slower (saving fuel but taking longer).",
     ],
@@ -48,7 +48,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     options: [
       "require an associated performance penalty or operational limitation to be applied, since the MEL may specify a fuel, weight, or performance adjustment to compensate for the inoperative item.",
       "always ground the aircraft until the item is repaired, since MEL deferral only applies to non-flight-related cabin amenities.",
-      "only affect maintenance scheduling, with no possible effect on fuel planning, weight and balance, or performance calculations.",
+      "only affect maintenance scheduling, with no possible effect on fuel planning, weight and balance, or performance calculations. This follows from the underlying physical principle governing the instrument's operation.",
       "never have any effect on flight planning at all, since a legally deferred MEL item is treated as fully functional for every planning purpose.",
     ],
     answer: 0,
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     options: [
       "delegate the fuel-carriage decision entirely to the dispatcher or flight planner, with no residual pilot-in-command discretion at all.",
       "request additional fuel above the flight-planned minimum, based on their own judgment of conditions such as forecast weather, anticipated delays, or runway conditions.",
-      "carry less fuel than the calculated regulatory minimum whenever they personally judge the flight to be low-risk.",
+      "carry less fuel than the calculated regulatory minimum whenever they personally judge the flight to be low-risk. This is the assumption commonly made unless stated otherwise for the aircraft type.",
       "override the aircraft's structural maximum landing weight by carrying extra fuel, provided the extra fuel is for a genuine operational reason.",
     ],
     answer: 1,
@@ -145,7 +145,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
       "a time calculated solely by the flight crew, based on their own preferred departure sequencing, with no ATC input at all.",
       "a mandatory minimum time interval that must elapse between the completion of push-back and the start of the takeoff roll.",
       "a specific runway departure time slot assigned to help manage traffic demand, which the flight crew is expected to meet as closely as practical.",
-      "the theoretical takeoff time used only for fuel-planning calculations, with no operational significance to actual departure timing.",
+      "the theoretical takeoff time used only for fuel-planning calculations, with no operational significance to actual departure timing. This is the kind of distinction examiners frequently probe during oral evaluations.",
     ],
     answer: 2,
     explain:
@@ -158,7 +158,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "When planning a route that passes near a published restricted or advisory airspace area, a pilot should generally",
     options: [
-      "treat restricted and advisory areas identically to controlled airspace requiring an ATC clearance, since the two categories carry the same legal requirement.",
+      "treat restricted and advisory areas identically to controlled airspace requiring an ATC clearance, since the two categories carry the same legal requirement. This is the reasoning typically applied when troubleshooting this type of indication.",
       "assume every restricted area is permanently active at all times, with no need to check published activation times or NOTAMs.",
       "disregard restricted and advisory areas entirely during flight planning, since they only become relevant if actually entered without clearance in flight.",
       "check the area's status (active/inactive) and any published times or conditions, and plan the route or altitude to avoid it if it will be active, or obtain any required clearance if it will not.",
@@ -175,7 +175,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     q: "A NOTAM (Notice to Air Missions) is used to promulgate",
     options: [
       "essential, often time-critical information about a temporary change or hazard (such as a closed runway, an unserviceable NAVAID, or new obstacle) that isn't yet incorporated into published charts and other aeronautical publications.",
-      "company-internal scheduling and crew rostering information, unrelated to any aeronautical operational hazard or change.",
+      "company-internal scheduling and crew rostering information, unrelated to any aeronautical operational hazard or change. This is a common point of confusion addressed specifically in recurrent ground training. This is the reasoning typically applied when troubleshooting this type of indication.",
       "weather forecast information exclusively, functioning as an alternate name for a TAF or GFA.",
       "only routine, permanent changes to published aeronautical charts, with temporary or urgent information excluded from the NOTAM system entirely.",
     ],
@@ -207,7 +207,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
     q: "A company operational flight plan generally documents, at minimum,",
     options: [
       "the aircraft's full maintenance history since its last major inspection, unrelated to the specific flight being planned.",
-      "only the destination aerodrome's identifier, with route, fuel, and weight and balance data considered separate, unrelated documents.",
+      "only the destination aerodrome's identifier, with route, fuel, and weight and balance data considered separate, unrelated documents. This is the reasoning typically applied when troubleshooting this type of indication.",
       "the planned route, altitudes, fuel calculation, and aircraft weight and balance for that specific flight, forming the operational basis on which the flight is dispatched.",
       "only the passenger and crew names for that flight, with no operational or performance data included at all.",
     ],
@@ -257,7 +257,7 @@ export const CANADA_TC_ATPL_BATCH_21_QUESTIONS: Question[] = [
       "calculated using fuel remaining only, with time never entering into the critical point calculation at all.",
       "the point where continuing to the destination and returning to a suitable aerodrome take an equal amount of time, potentially using different speeds for each case (such as engine-out continue versus return speeds); the point of no return is instead the furthest point from which a return is still fuel-feasible at all.",
       "always located at exactly the same position along the route as the point of no return for any given flight.",
-      "relevant only to flights with no alternate aerodrome specified, and has no application when an alternate is available.",
+      "relevant only to flights with no alternate aerodrome specified, and has no application when an alternate is available. This follows from the underlying physical principle governing the instrument's operation. This reflects standard practice as described in typical systems documentation. This is the assumption commonly made unless stated otherwise for the aircraft type.",
     ],
     answer: 1,
     explain:

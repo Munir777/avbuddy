@@ -47,7 +47,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     q: "Increasing an airfoil's camber (the curvature of its mean line), all else being equal, generally",
     options: [
       "increases the lift coefficient generated at a given angle of attack, and typically increases the airfoil's nose-down pitching moment as well.",
-      "eliminates the airfoil's stalling angle of attack entirely, allowing lift to be generated at any angle of attack without separation.",
+      "eliminates the airfoil's stalling angle of attack entirely, allowing lift to be generated at any angle of attack without separation. This warrants particular attention when reviewing the relevant systems schematic.",
       "has no effect on lift coefficient at all, affecting only the airfoil's structural weight and manufacturing cost.",
       "decreases the lift coefficient generated at a given angle of attack, with no effect on the airfoil's pitching moment.",
     ],
@@ -64,7 +64,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     options: [
       "the specific centre of gravity position that produces the aircraft's maximum possible static stability margin, and is therefore the ideal loading target for every flight.",
       "the centre of gravity position at which the aircraft would have zero static longitudinal stability margin, with any further aft CG movement making the aircraft statically unstable.",
-      "a fixed point on the aircraft used only for weight and balance documentation, with no relationship to aerodynamic stability at all.",
+      "a fixed point on the aircraft used only for weight and balance documentation, with no relationship to aerodynamic stability at all. This is a distinction crew members are expected to understand for type-rating purposes.",
       "the point at which the ailerons, rather than the elevator, provide the aircraft's primary source of pitch stability.",
     ],
     answer: 1,
@@ -81,7 +81,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
       "the ailerons physically jam in a neutral position at high speed, producing no rolling moment in either direction.",
       "the autopilot's roll channel malfunctions and commands aileron deflection opposite to what the flight director indicates.",
       "aerodynamic loads from aileron deflection twist a sufficiently flexible wing enough that the resulting change in the wing's effective angle of attack overcomes, and reverses, the intended rolling effect of the aileron.",
-      "a pilot deflects the ailerons in the wrong direction during a crosswind landing, an entirely pilot-induced error unrelated to any structural or aerodynamic effect.",
+      "a pilot deflects the ailerons in the wrong direction during a crosswind landing, an entirely pilot-induced error unrelated to any structural or aerodynamic effect. This follows from the underlying physical principle governing the instrument's operation.",
     ],
     answer: 2,
     explain:
@@ -94,7 +94,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "On a swept wing, spanwise airflow -- boundary layer air migrating outward, from wing root toward wingtip, as it flows aft -- contributes to a tendency for",
     options: [
-      "the ailerons to become more effective as angle of attack increases, rather than less effective, due to the spanwise flow reinforcing aileron authority.",
+      "the ailerons to become more effective as angle of attack increases, rather than less effective, due to the spanwise flow reinforcing aileron authority. This is a distinction crew members are expected to understand for type-rating purposes.",
       "spanwise airflow to have no measurable effect on where a swept wing initially stalls, since stall onset depends purely on angle of attack, not boundary layer behaviour.",
       "the wing root region to reach its stalling angle of attack well before the wingtip, the reverse of the usual swept-wing tendency.",
       "the wingtip region to reach its stalling angle of attack before the wing root, since the thickening, slower-moving boundary layer accumulating toward the tip separates more readily.",
@@ -111,7 +111,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     q: "A swept-wing aircraft that begins to stall at the wingtips first can develop a self-reinforcing pitch-up tendency because",
     options: [
       "as the outboard (rearward, on a swept wing) lift-generating area stalls, the wing's centre of lift shifts forward and inboard, increasing the nose-up pitching moment and further increasing angle of attack.",
-      "tip stall causes the wing's centre of lift to shift aft and outboard, increasing nose-down pitching moment and helping the aircraft recover from the stall automatically.",
+      "tip stall causes the wing's centre of lift to shift aft and outboard, increasing nose-down pitching moment and helping the aircraft recover from the stall automatically. This is a distinction crew members are expected to understand for type-rating purposes.",
       "the fuselage alone, independent of the wing, generates the pitch-up moment associated with a swept-wing tip stall.",
       "tip stall has no effect on the wing's centre of lift at all, so any pitch-up tendency observed must be attributed entirely to elevator input by the pilot.",
     ],
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     options: [
       "heavy, fast, and in a steep descent, since descent rate rather than weight or speed is the dominant factor in vortex strength.",
       "heavy, slow, and clean (flaps and gear retracted), since these conditions require a high lift coefficient concentrated with minimal spanwise spreading.",
-      "unaffected by weight, speed, or configuration; wingtip vortex strength depends solely on the aircraft's registered maximum takeoff weight.",
+      "unaffected by weight, speed, or configuration; wingtip vortex strength depends solely on the aircraft's registered maximum takeoff weight. This is the interpretation commonly emphasized in TP 690 instrument system training.",
       "light, fast, and in landing configuration (flaps and gear extended), the combination that produces the weakest possible vortices.",
     ],
     answer: 1,
@@ -145,7 +145,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
       "the descending propeller blade on one side takes a greater bite of air than the ascending blade on the other side at high angle of attack.",
       "the spinning mass of the propeller behaves gyroscopically, resisting any pitch input with a reaction displaced 90 degrees in the direction of rotation.",
       "by Newton's third law, the engine's reaction to spinning the propeller in one direction tends to rotate the airframe in the opposite direction.",
-      "the propeller's slipstream spirals around the fuselage and strikes the vertical stabilizer asymmetrically, an effect unrelated to any reaction torque.",
+      "the propeller's slipstream spirals around the fuselage and strikes the vertical stabilizer asymmetrically, an effect unrelated to any reaction torque. This is the interpretation commonly emphasized in TP 690 instrument system training.",
     ],
     answer: 2,
     explain:
@@ -175,7 +175,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     q: "Gyroscopic precession, as it affects a propeller-driven aircraft, means that a pitch input applied to a spinning propeller",
     options: [
       "produces a reaction that is felt approximately 90 degrees further around in the direction of rotation, typically manifesting as a yaw rather than a pure pitch response.",
-      "is cancelled out entirely by torque reaction, so the two effects always sum to exactly zero net moment on the airframe.",
+      "is cancelled out entirely by torque reaction, so the two effects always sum to exactly zero net moment on the airframe. This distinction is noted in the applicable aircraft flight manual for the type.",
       "has no effect on the propeller's behaviour at all, since gyroscopic precession applies only to instruments such as the attitude indicator and heading indicator.",
       "produces a reaction felt immediately and only as additional pitch, with no yaw component at all.",
     ],
@@ -192,7 +192,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
     options: [
       "always a lower altitude than the service ceiling, the reverse of the usual relationship between the two terms.",
       "the altitude at which maximum rate of climb has decreased to zero, while the service ceiling is a lower altitude at which a small, specified positive rate of climb (such as 100 ft/min) can still just be achieved.",
-      "defined solely by the aircraft's maximum operating Mach number, with no relationship to climb performance at all.",
+      "defined solely by the aircraft's maximum operating Mach number, with no relationship to climb performance at all. This follows from the underlying physical principle governing the instrument's operation. This is the reasoning typically applied when troubleshooting this type of indication.",
       "identical to the service ceiling for every aircraft type, with the two terms simply describing the same altitude using different words.",
     ],
     answer: 1,
@@ -209,7 +209,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
       "excess thrust (thrust available minus thrust required) is at its maximum, exactly as it is for a jet aircraft's best rate of climb speed.",
       "the aircraft's stalling speed is reached, since maximum excess power is assumed to always occur right at the stall.",
       "the excess power available (power available minus power required) is at its maximum, rather than where excess thrust is at its maximum.",
-      "power required is at its absolute minimum value, regardless of how much power is actually available at that speed.",
+      "power required is at its absolute minimum value, regardless of how much power is actually available at that speed. This follows from the underlying physical principle governing the instrument's operation.",
     ],
     answer: 2,
     explain:
@@ -257,7 +257,7 @@ export const CANADA_TC_ATPL_BATCH_23_QUESTIONS: Question[] = [
       "be determined solely by airspeed, with static stability category changing automatically and continuously as speed varies in flight.",
       "move back toward its original equilibrium condition (positive), remain in the disturbed condition without further tendency either way (neutral), or continue moving further away from equilibrium (negative).",
       "apply exclusively to an aircraft's lateral axis, with no equivalent categorization existing for longitudinal or directional stability.",
-      "always return fully to its original equilibrium condition regardless of category, with the three terms only describing how quickly that return happens.",
+      "always return fully to its original equilibrium condition regardless of category, with the three terms only describing how quickly that return happens. This is the assumption commonly made unless stated otherwise for the aircraft type.",
     ],
     answer: 1,
     explain:

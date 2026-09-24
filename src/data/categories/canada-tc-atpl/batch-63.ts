@@ -22,10 +22,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The availability heuristic, a cognitive bias relevant to pilot risk assessment, describes the tendency to",
     options: [
-      "always underestimate risk regardless of how memorable or recent similar events have been.",
-      "assess risk exclusively using formal statistical data, deliberately ignoring any personal experience or memory.",
-      "judge how likely an event is based on how easily similar examples come to mind, so a pilot may overestimate the risk of a vivid, memorable hazard (such as a recent accident widely discussed) while underestimating a statistically more common but less memorable one.",
-      "apply identically to every pilot regardless of recent experience, training, or exposure to relevant events.",
+      "always underestimate risk in every case regardless of how memorable, vivid, or recent similar events have actually been to that individual pilot.",
+      "assess risk exclusively and always using only formal statistical data alone, deliberately ignoring any personal experience, memory, or recent exposure to similar events whatsoever, according to this description.",
+      "judge how likely an event is based on how easily similar examples come to mind, so a pilot may overestimate a vivid, memorable hazard while underestimating a statistically more common but less memorable one.",
+      "apply in an identical, fixed manner to every pilot regardless of that pilot's recent experience, training background, or exposure to relevant events.",
     ],
     answer: 2,
     explain:
@@ -38,10 +38,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The framing effect, as it can influence a pilot's risk-related decision, describes how",
     options: [
-      "a pilot's decision is influenced solely by objective probability data, with the manner of presentation having no effect at all.",
-      "framing applies only to written checklists, with no relevance to verbally presented information or decisions.",
-      "decisions are always made identically regardless of how the available options or information are presented or worded.",
-      "the way a choice is presented (for example, emphasizing the chance of a safe outcome versus emphasizing the chance of a negative one) can shift a decision even when the underlying facts and probabilities are identical.",
+      "a pilot's decision is influenced solely and entirely by objective probability data in every case, with the manner or wording of presentation having no measurable effect on the outcome at all.",
+      "framing effects apply only to written checklists and printed material, with no relevance whatsoever to verbally presented information, briefings, or spoken decisions.",
+      "decisions are always made in an identical manner regardless of how the available options or underlying information happen to be presented, worded, or emphasized.",
+      "the way a choice is presented (emphasizing the chance of a safe outcome versus emphasizing the chance of a negative one) can shift a decision even when the underlying facts are identical.",
     ],
     answer: 3,
     explain:
@@ -55,9 +55,9 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     q: "Fixation error, as a specific troubleshooting or diagnostic failure mode, describes a situation in which a pilot",
     options: [
       "becomes locked onto a single diagnosis or course of action for an abnormal situation and continues pursuing it despite mounting evidence that it is incorrect or incomplete, failing to reconsider or search for alternative explanations.",
-      "describes a purely physical symptom unrelated to diagnostic reasoning or decision-making.",
-      "considers every plausible explanation for an abnormal indication systematically and without bias before selecting a course of action.",
-      "refers exclusively to a visual illusion involving staring at a single point in an otherwise empty sky.",
+      "describes a purely physical symptom experienced by the pilot, entirely unrelated to diagnostic reasoning, judgment, or decision-making of any kind.",
+      "considers every plausible explanation for an abnormal indication in a fully systematic and unbiased manner before ever selecting a course of action.",
+      "refers exclusively to a specific visual illusion involving staring fixedly at a single point in an otherwise empty, featureless sky.",
     ],
     answer: 0,
     explain:
@@ -70,10 +70,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Flight deck warning and alerting systems are generally designed to use multiple sensory channels (such as a visual annunciation combined with an aural tone or a synthesized voice) for critical alerts primarily because",
     options: [
-      "multiple sensory channels are used purely for cosmetic variety, with no measurable effect on the speed or reliability of crew response.",
+      "multiple sensory channels are used purely for cosmetic variety and visual interest, with no measurable effect on the speed or reliability of crew response at all.",
       "presenting the same critical information through more than one sense increases the likelihood the crew will notice and correctly interpret it promptly, particularly if visual attention is momentarily directed elsewhere at the time.",
-      "regulations require every alert to use exactly one sensory channel only, making multi-sensory alerting a design practice that is actually prohibited.",
-      "a visual-only alert is always noticed faster than any combination of visual and aural alerting, making multi-channel alerting unnecessary.",
+      "regulations are said to require every alert to use exactly one sensory channel only, making multi-sensory alerting a design practice that is in fact strictly prohibited.",
+      "a visual-only alert is always noticed faster than any combination of visual and aural alerting could ever achieve, making multi-channel alerting simply unnecessary.",
     ],
     answer: 1,
     explain:
@@ -86,10 +86,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Control-display compatibility, sometimes discussed in terms of 'population stereotypes' in cockpit ergonomic design (such as moving a lever upward to increase something, or turning a knob clockwise to increase a value), is significant because",
     options: [
-      "population stereotypes are purely a matter of aesthetic preference with no measurable effect on pilot performance or error rates.",
-      "control-display compatibility applies only to analog, mechanical instruments and has no relevance to modern glass cockpit displays and controls.",
-      "designs that match users' natural, widely shared expectations about how a control should relate to its effect reduce the likelihood of an incorrect or delayed control input, particularly under high workload or stress.",
-      "every pilot has an entirely unique, unpredictable set of expectations about control-display relationships, making standardization across cockpit designs impossible.",
+      "population stereotypes are purely and entirely a matter of aesthetic or cosmetic preference, with no measurable effect on pilot performance, error rates, or response time.",
+      "control-display compatibility is said to apply only to older analog, mechanical flight instruments, and to have no relevance whatsoever to modern glass cockpit displays and controls.",
+      "designs that match users' natural, widely shared expectations about how a control relates to its effect reduce the likelihood of an incorrect input, particularly under high workload.",
+      "every individual pilot has an entirely unique and unpredictable set of expectations about control-display relationships, making any standardization across cockpit designs effectively impossible.",
     ],
     answer: 2,
     explain:
@@ -104,8 +104,8 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     options: [
       "alarm fatigue applies exclusively to ground-based air traffic controllers, with no equivalent phenomenon relevant to flight crews.",
       "a crew's response to a warning becomes progressively faster and more accurate the more frequently that warning is triggered, with no downside to frequent alerting.",
-      "aircraft warning systems generate a fixed, unchanging number of alerts regardless of the operational situation, making alarm fatigue a purely theoretical concern with no real-world basis.",
-      "frequent, low-priority, or nuisance warnings can lead a crew to become desensitized and slower to respond appropriately, including to a genuinely critical alert, because attention and urgency have been eroded by repeated exposure to less significant alerts.",
+      "aircraft warning systems are said to generate a fixed, unchanging number of alerts regardless of the operational situation encountered, making alarm fatigue in this view a purely theoretical concern with no real-world basis at all.",
+      "frequent, low-priority, or nuisance warnings can lead a crew to become desensitized and slower to respond, including to a genuinely critical alert, as urgency is eroded by repeated exposure to lesser alerts.",
     ],
     answer: 3,
     explain:
@@ -118,10 +118,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Hindsight bias, a recognized concern in accident and incident investigation, describes the tendency for an investigator, looking back after the fact, to",
     options: [
-      "judge that the outcome of an event was more predictable and obvious beforehand than it actually was to the people involved at the time, given only the information they had available in the moment.",
-      "always conclude that an accident was entirely unpredictable and unavoidable, regardless of the information available to those involved beforehand.",
-      "disregard all information about the sequence of events, relying solely on interviews conducted years after the occurrence.",
-      "apply only to mechanical or technical failures, with no relevance to the assessment of human decisions or actions.",
+      "judge that an event's outcome was more predictable and obvious beforehand than it actually was to the people involved, given only the information they had at the time.",
+      "always conclude that an accident was entirely unpredictable and completely unavoidable in every case, regardless of what information, training, or context was actually available to those involved beforehand at the time.",
+      "disregard all available information about the actual sequence of events, relying solely and exclusively on interviews conducted years after the original occurrence.",
+      "apply only to mechanical or technical failures in this description, with no relevance whatsoever to the assessment of human decisions, judgment, or actions.",
     ],
     answer: 0,
     explain:
@@ -134,10 +134,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Locus of control, a personality-related concept sometimes discussed in aviation human factors, describes the degree to which a person believes",
     options: [
-      "the term refers exclusively to the physical location of flight controls within the cockpit, unrelated to personality or attitude.",
-      "outcomes in their life are primarily the result of their own actions and decisions (an internal locus of control) versus primarily the result of external factors such as luck, fate, or other people (an external locus of control), which can influence attitudes toward risk and personal responsibility for safety.",
-      "risk tolerance is fixed and identical for every pilot, regardless of any underlying personality trait.",
-      "an aircraft's automated systems are more reliable than the pilot's own manual control inputs at all times.",
+      "the term refers exclusively and only to the physical location and layout of flight controls within the cockpit itself, entirely unrelated to personality, attitude, risk perception, or decision-making style in any way whatsoever.",
+      "outcomes in life are primarily the result of one's own actions (an internal locus) versus primarily the result of external factors such as luck or fate (an external locus), influencing attitudes toward risk.",
+      "risk tolerance is said to be fixed and identical for every single pilot in existence, regardless of any underlying personality trait, upbringing, or life experience.",
+      "an aircraft's automated systems are said to be more reliable than the pilot's own manual control inputs at all times, in every phase of flight and every condition.",
     ],
     answer: 1,
     explain:
@@ -150,10 +150,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Automation mode confusion (sometimes called an 'automation surprise'), a recognized hazard on highly automated flight decks, occurs when",
     options: [
-      "the autoflight system physically disconnects itself without any indication whatsoever appearing on the flight deck.",
-      "automation surprises occur only during manual (autopilot-off) flight, with no relevance to automated flight modes at all.",
+      "the autoflight system physically and silently disconnects itself without any indication whatsoever appearing anywhere on the flight deck displays.",
+      "automation surprises are said to occur only during manual, autopilot-off flight, with no relevance whatsoever to any automated flight mode at all.",
       "the crew's understanding of which autoflight mode is currently active, or what that mode will do next, diverges from the aircraft's actual behaviour, leading to unexpected aircraft responses that the crew did not anticipate.",
-      "mode confusion refers exclusively to a disagreement between two pilots about which one is designated Pilot Flying.",
+      "mode confusion refers exclusively to a disagreement between the two pilots over which of them is currently designated the Pilot Flying.",
     ],
     answer: 2,
     explain:
@@ -168,8 +168,8 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     options: [
       "subtle incapacitation always presents identically to obvious incapacitation, making the distinction between the two meaningless in practice.",
       "subtle incapacitation is defined as affecting only ground personnel, with no relevance to a pilot at the controls.",
-      "the affected pilot always immediately recognizes and reports their own incapacitation, removing any need for the other crew member to monitor for it.",
-      "the affected pilot may remain conscious and appear outwardly normal while their performance, judgment, or awareness is significantly degraded, making the condition harder for the other crew member to recognize than a clearly obvious collapse or loss of consciousness.",
+      "the affected pilot is said to always immediately recognize and clearly report their own incapacitation without fail every single time, removing any practical need whatsoever for the other crew member to monitor for it at all.",
+      "the affected pilot may remain conscious and appear outwardly normal while performance, judgment, or awareness is significantly degraded, making it harder for the other crew member to recognize than an obvious collapse.",
     ],
     answer: 3,
     explain:
@@ -182,10 +182,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Underload (or boredom), particularly during long periods of low-workload cruise flight with the aircraft on autopilot, is a recognized human factors risk because it can lead to",
     options: [
-      "reduced vigilance and slower reaction to an unexpected event, in a manner conceptually related to (though distinct from) the vigilance decrement seen during monotonous monitoring tasks.",
-      "a condition that affects only ground-based air traffic controllers, with no relevance to flight crew performance during cruise.",
-      "an increase in physical fatigue only, with no measurable effect on cognitive alertness or reaction time.",
-      "consistently improved reaction time and attentiveness, since a low-workload environment is defined as optimal for sustained human performance.",
+      "reduced vigilance and slower reaction to an unexpected event, conceptually related to the vigilance decrement seen during monotonous monitoring tasks.",
+      "underload is said to be a condition that affects only ground-based air traffic controllers exclusively, with no relevance whatsoever to flight crew performance during cruise flight.",
+      "an increase in physical fatigue only, with no measurable effect whatsoever on cognitive alertness, reaction time, or decision-making quality.",
+      "consistently improved reaction time and sustained attentiveness overall, since a low-workload environment is in this view defined as optimal for sustained human performance.",
     ],
     answer: 0,
     explain:
@@ -198,10 +198,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The 'two-challenge rule,' a specific assertiveness technique sometimes taught as part of CRM training, generally means that",
     options: [
-      "a pilot must physically demonstrate a manoeuvre twice before a trainee is permitted to attempt it themselves.",
-      "if a crew member raises a safety concern and does not receive an adequate response after stating it a second time, they are expected (or, on some aircraft, empowered) to take further action, such as taking control, to resolve the concern.",
-      "a crew member is permitted to raise a safety concern only twice during an entire flight, after which further concerns may not be voiced.",
-      "the rule applies exclusively to air traffic controllers issuing repeated clearances, with no application to interaction between flight deck crew members.",
+      "a pilot must physically and personally demonstrate a manoeuvre twice in succession before a trainee is ever permitted to attempt it on their own.",
+      "if a crew member raises a safety concern and does not receive an adequate response after stating it a second time, they are expected, or on some aircraft empowered, to take further action to resolve it.",
+      "a crew member is permitted to raise any given safety concern only twice during an entire flight, after which further concerns on that topic may not be voiced.",
+      "the rule is said to apply exclusively and only to air traffic controllers issuing repeated clearances to aircraft, with no application whatsoever to interaction between flight deck crew members themselves at all.",
     ],
     answer: 1,
     explain:
@@ -215,8 +215,8 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     q: "In addition to the well-known window of circadian low in the early morning hours, many people also experience a secondary, smaller dip in alertness known as the post-lunch (early afternoon) dip, which is significant to fatigue risk management because",
     options: [
       "it occurs only in people who have eaten a large meal, and is therefore purely a digestive effect entirely unrelated to the circadian rhythm.",
-      "it is more severe than the window of circadian low and represents the single greatest fatigue risk period in a 24-hour cycle.",
-      "it represents a second, though generally less severe, natural low point in the circadian alertness cycle, meaning fatigue risk is not confined solely to overnight or early-morning operations.",
+      "it is said to be considerably more severe than the well-known window of circadian low, representing the single greatest fatigue risk period across an entire 24-hour operational cycle.",
+      "it represents a second, generally less severe, natural low point in the circadian alertness cycle, meaning fatigue risk is not confined solely to overnight operations.",
       "it has no relationship whatsoever to the body's circadian rhythm and instead depends entirely on cumulative hours awake.",
     ],
     answer: 2,
@@ -230,9 +230,9 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The bystander effect, as it can apply within a multi-crew flight deck, describes the risk that",
     options: [
-      "additional crew members reliably increase, rather than potentially diffuse, each individual's sense of personal responsibility for catching an error.",
-      "the bystander effect describes a purely individual, single-pilot phenomenon with no relevance to multi-crew operations at all.",
-      "having more than one crew member aware of a problem always guarantees a faster and more effective response than a single crew member acting alone.",
+      "additional crew members reliably and consistently increase, rather than potentially diffuse, each individual's own sense of personal responsibility for catching an error.",
+      "the bystander effect is said to describe a purely individual, single-pilot phenomenon only, with no relevance whatsoever to multi-crew flight deck operations at all.",
+      "having more than one crew member aware of a developing problem always guarantees a faster and more effective response than a single crew member acting entirely alone.",
       "when more than one crew member is aware of a developing problem, each may individually assume that someone else will notice, mention, or address it, resulting in a delayed or absent response overall compared to if only one person were aware.",
     ],
     answer: 3,
@@ -246,10 +246,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Standardized flight deck callouts (such as calling out specific altitudes, speeds, or configuration changes at defined points) serve a human factors purpose primarily by",
     options: [
-      "reducing ambiguity in crew communication, supporting a shared mental model of the aircraft's state between both pilots, and creating natural opportunities for one crew member to catch and correct an error made by the other.",
-      "applying only during the takeoff phase of flight, with no relevance to any other phase.",
-      "existing purely as a formality with no measurable effect on crew coordination, error detection, or situational awareness.",
-      "replacing the need for either pilot to actually monitor the relevant instrument or parameter themselves, since the callout alone is considered sufficient.",
+      "reducing ambiguity in crew communication, supporting a shared mental model of the aircraft's state, and creating opportunities for one crew member to catch an error made by the other.",
+      "applying only during the takeoff phase of flight specifically, with no relevance or applicability to any other phase of flight at all.",
+      "existing purely as a procedural formality with no measurable effect whatsoever on crew coordination, error detection, or overall situational awareness.",
+      "replacing entirely the need for either pilot to actually monitor the relevant instrument or flight parameter themselves, since the callout alone is considered fully sufficient on its own.",
     ],
     answer: 0,
     explain:
@@ -262,10 +262,10 @@ export const CANADA_TC_ATPL_BATCH_63_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Risk homeostasis (or 'target risk' theory), as a concept sometimes discussed in aviation safety, proposes that",
     options: [
-      "the total amount of risk in any activity is fixed and unchangeable by any safety improvement, equipment change, or procedural change whatsoever.",
-      "individuals tend to adjust their behaviour to maintain a personal, relatively stable level of perceived risk, meaning that a safety improvement (such as new equipment or a new procedure) may be partly offset if it leads people to accept more risk elsewhere in their behaviour.",
-      "risk homeostasis describes a purely mechanical, aircraft-systems phenomenon with no relevance to human behaviour or decision-making at all.",
-      "individuals always reduce their risk-taking behaviour by an equal or greater amount than any safety improvement provides, so total risk consistently falls with every improvement.",
+      "the total amount of risk present in any activity is said to be entirely fixed and unchangeable by any safety improvement, equipment change, or procedural change whatsoever, under any circumstances.",
+      "individuals tend to adjust their behaviour to maintain a personal, relatively stable level of perceived risk, so a safety improvement may be partly offset if it leads people to accept more risk elsewhere.",
+      "risk homeostasis is said to describe a purely mechanical, aircraft-systems phenomenon only, with no relevance whatsoever to human behaviour, judgment, or decision-making at all.",
+      "individuals are said to always reduce their risk-taking behaviour by an equal or greater amount than any safety improvement actually provides, so that total risk consistently and reliably falls with every single improvement made.",
     ],
     answer: 1,
     explain:

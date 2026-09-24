@@ -13,10 +13,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under CAR 602.32, an aircraft operating below 10,000 ft ASL is generally limited to a maximum indicated airspeed of",
     options: [
-      "200 knots.",
-      "250 knots.",
-      "230 knots.",
-      "300 knots.",
+      "200 knots indicated airspeed, a figure sometimes mistaken for this restriction in error.",
+      "250 knots indicated airspeed.",
+      "230 knots indicated airspeed, still short of the limit that actually applies here.",
+      "300 knots indicated airspeed, exceeding the limit that actually applies at this altitude.",
     ],
     answer: 1,
     explain:
@@ -29,10 +29,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "CARs Subpart 703 (Air Taxi Operations) generally applies to commercial air operations conducted with",
     options: [
-      "corporate aircraft carrying only the operator's own employees, never members of the public.",
-      "aircraft used exclusively for aerial application (crop spraying), with no passenger-carrying component.",
-      "smaller aircraft, typically with fewer than 10 passenger seats, operated on a for-hire basis without a fixed schedule.",
-      "large turbojet aircraft operated on a scheduled basis with more than 30 passenger seats.",
+      "corporate aircraft carrying only the operator's own employees, never members of the public, regardless of aircraft size.",
+      "aircraft used exclusively for aerial application (crop spraying), with no passenger-carrying component of any kind.",
+      "smaller aircraft, typically with fewer than 10 passenger seats, operated for hire without a fixed schedule.",
+      "large turbojet aircraft operated on a scheduled basis with more than 30 passenger seats and a multi-person flight crew.",
     ],
     answer: 2,
     explain:
@@ -45,10 +45,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Compared to Subpart 703 (Air Taxi), Subpart 704 (Commuter Operations) generally applies to",
     options: [
-      "operations that must always be conducted internationally, never domestically.",
-      "aircraft used only for aerial work, with no commercial passenger-carrying component permitted.",
-      "exactly the same aircraft size and operational scope as Subpart 703, differing only in name.",
-      "larger aircraft and/or a greater number of passenger seats, with correspondingly more extensive regulatory requirements for crew, manuals, and equipment.",
+      "operations that must always be conducted internationally, never domestically, regardless of aircraft type or size.",
+      "aircraft used only for aerial work, such as aerial photography or survey flights, with no commercial passenger-carrying component permitted.",
+      "exactly the same aircraft size and operational scope as Subpart 703, differing only in the name used to describe the subpart.",
+      "larger aircraft and/or a greater number of passenger seats, with more extensive regulatory requirements for crew and equipment.",
     ],
     answer: 3,
     explain:
@@ -61,10 +61,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "CARs Subpart 705 (Airline Operations) -- the subpart most directly relevant to ATPL-level flying -- applies to commercial air operations conducted with",
     options: [
-      "the largest aircraft in the commercial passenger/cargo fleet, generally including turbojet-powered and larger turbopropeller aircraft operated on a scheduled or extensive charter basis.",
-      "aircraft used exclusively for flight training, with no commercial passenger or cargo carriage.",
-      "aerial work operations such as aerial photography and survey flights.",
-      "only single-engine piston aircraft used for private, non-commercial flights.",
+      "the largest aircraft in the fleet, generally turbojet-powered or larger turbopropeller types operated on a scheduled or charter basis.",
+      "aircraft used exclusively for flight training, with no commercial passenger or cargo carriage permitted under this particular subpart.",
+      "aerial work operations such as aerial photography and survey flights, conducted without carrying fare-paying passengers.",
+      "only single-engine piston aircraft used for private, non-commercial flights with no compensation involved.",
     ],
     answer: 0,
     explain:
@@ -77,10 +77,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Private Operator Certificate, issued under CARs Subpart 604, authorizes",
     options: [
-      "the general public to purchase tickets directly from the certificate holder, in the same way as a Subpart 705 airline.",
-      "a company or individual to operate specified aircraft to transport their own employees, guests, or company business passengers, without operating as a commercial air service for hire to the general public.",
-      "unrestricted commercial passenger carriage for hire, identical in scope to a Subpart 703 air taxi operation.",
-      "flight training operations exclusively, with no passenger transportation component at all.",
+      "the general public to purchase tickets directly from the certificate holder, in exactly the same way as a Subpart 705 scheduled commercial airline would allow.",
+      "a company or individual to operate specified aircraft to transport their own employees or guests, without offering service for hire to the public.",
+      "unrestricted commercial passenger carriage for hire to the general public, identical in scope to a Subpart 703 air taxi operation.",
+      "flight training operations exclusively, with no passenger or cargo transportation component permitted at all.",
     ],
     answer: 1,
     explain:
@@ -93,10 +93,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "An aircraft type rating is generally required, in addition to the underlying pilot licence, when the pilot will act as pilot-in-command or second-in-command of an aircraft that is",
     options: [
-      "any aircraft at all, regardless of weight or powerplant, including the smallest single-engine trainers.",
-      "only required for aircraft operated under Subpart 703, and never for Subpart 705 aircraft.",
-      "type-certificated above a specified maximum weight, or is turbojet-powered, or is otherwise specified by the Minister as requiring one.",
-      "only required for aircraft with fixed landing gear, and never for retractable-gear aircraft.",
+      "any aircraft at all, regardless of weight or powerplant, including the smallest single-engine trainers used solely for private flight.",
+      "only required for aircraft operated under Subpart 703, and never required for any aircraft under Subpart 705.",
+      "type-certificated above a specified maximum weight, is turbojet-powered, or is otherwise designated by the Minister.",
+      "only required for aircraft equipped with fixed landing gear, and never required for retractable-gear aircraft types.",
     ],
     answer: 2,
     explain:
@@ -109,10 +109,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Certificate of Airworthiness remains valid for as long as",
     options: [
-      "a fixed period of exactly 12 months from the date of issue, after which it must be entirely reissued regardless of maintenance status.",
-      "the registered owner remains the same individual or company, with any change of ownership automatically invalidating it.",
-      "the aircraft remains within Canadian domestic airspace, becoming invalid the moment it departs Canada.",
-      "the aircraft continues to be maintained in accordance with its approved maintenance schedule and otherwise meets its type design and applicable airworthiness requirements.",
+      "a fixed period of exactly 12 months from the date of issue, after which the certificate must be entirely reissued regardless of maintenance status or airworthiness condition.",
+      "the registered owner remains the same individual or company at all times, with any change of ownership automatically invalidating it.",
+      "the aircraft remains within Canadian domestic airspace at all times, becoming invalid the instant it departs Canadian territory.",
+      "the aircraft continues to be maintained under its approved maintenance schedule and otherwise meets its type design and airworthiness requirements.",
     ],
     answer: 3,
     explain:
@@ -141,10 +141,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "If an aircraft is intercepted by a military aircraft and radio communication cannot be established, the intercepted aircraft should",
     options: [
-      "ignore the intercepting aircraft entirely and continue on the originally filed flight plan unchanged.",
-      "follow the visual signals given by the intercepting aircraft, which are internationally standardized (such as a rocking of the wings to instruct the intercepted aircraft to follow).",
-      "immediately descend to the lowest safe altitude, regardless of any visual signal given by the intercepting aircraft.",
-      "attempt to outrun or evade the intercepting aircraft to avoid being followed.",
+      "ignore the intercepting aircraft entirely and continue on the originally filed flight plan without any deviation whatsoever.",
+      "follow the visual signals given by the intercepting aircraft, internationally standardized, such as rocking of the wings meaning follow.",
+      "immediately descend to the lowest safe altitude available, regardless of any visual signal given by the intercepting aircraft's crew members.",
+      "attempt to outrun or evade the intercepting aircraft using best available speed and maneuvering, in order to avoid being followed.",
     ],
     answer: 1,
     explain:
@@ -173,10 +173,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A designated mountainous region, as referenced in the CARs, primarily affects IFR operations by",
     options: [
-      "having no operational effect at all; the designation is used only for aeronautical chart labelling purposes.",
-      "removing the requirement for an alternate aerodrome on any flight routed through the region.",
-      "prohibiting IFR flight entirely within any designated mountainous region.",
-      "requiring a higher minimum en route obstacle clearance altitude than would apply over less rugged terrain, reflecting the greater and less predictable terrain height involved.",
+      "having no operational effect at all beyond aeronautical chart labelling, with no bearing on any altitude or clearance requirement.",
+      "removing the requirement for an alternate aerodrome on any flight routed through the region, regardless of weather conditions forecast for the route.",
+      "prohibiting IFR flight entirely within any designated mountainous region, regardless of equipment or crew qualification.",
+      "requiring a higher minimum en route obstacle clearance altitude than would apply over less rugged terrain, reflecting greater terrain unpredictability.",
     ],
     answer: 3,
     explain:
@@ -189,10 +189,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "'Major errors of a pressure altimeter,' as a syllabus topic, generally refers to the kind of gross error that would result from",
     options: [
-      "the pilot failing to set the current altimeter setting, or the altimeter being set to the wrong units or reference (for example, confusing inches of mercury with hectopascals).",
-      "the aircraft flying above its maximum certified operating altitude.",
-      "the normal, expected difference between calibrated and indicated airspeed at high altitude.",
-      "the routine and expected difference between true altitude and indicated altitude in the standard atmosphere.",
+      "the pilot failing to set the current altimeter setting, or setting the wrong units, confusing inches of mercury with hectopascals.",
+      "the aircraft flying above its maximum certified operating altitude for an extended period without corrective action.",
+      "the normal, expected difference between calibrated airspeed and indicated airspeed that occurs at high altitude and low airspeed.",
+      "the routine and expected difference between true altitude and indicated altitude that exists within the standard atmosphere model.",
     ],
     answer: 0,
     explain:
@@ -205,10 +205,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Operational and emergency equipment requirements for a commercial flight (such as first aid kits, fire extinguishers, and survival equipment) are generally determined by",
     options: [
-      "a single, fixed equipment list that applies identically to every aircraft and every type of operation.",
-      "the type of operation being conducted (the applicable CARs Part VII subpart), the aircraft's passenger capacity, and the route or area being flown (for example, additional survival equipment for remote/sparsely settled areas).",
-      "the pilot's personal preference alone, with no regulatory minimum specified.",
-      "the aircraft's colour scheme and livery, which determines its required equipment category.",
+      "a single, fixed equipment list that applies identically to every aircraft and every type of operation, without exception.",
+      "the type of operation conducted, the aircraft's passenger capacity, and the route or area flown, such as extra survival gear required for remote areas.",
+      "the pilot's personal preference alone, with no regulatory minimum specified anywhere in the applicable CARs.",
+      "the aircraft's colour scheme and livery, which alone determines its required emergency equipment category under the CARs.",
     ],
     answer: 1,
     explain:
@@ -221,10 +221,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "CARs requirements for aircraft seats, safety belts, and shoulder harnesses generally require that",
     options: [
-      "shoulder harnesses are never required on any Canadian-registered aircraft, regardless of seat position.",
-      "a single safety belt may be shared between two adult occupants seated side by side.",
-      "each occupant of a certain age or older have and use their own seat or berth with an approved safety belt, with a shoulder harness additionally required for required flight crew members during critical phases of flight.",
-      "only the pilot-in-command is required to wear a safety belt; other occupants have no such requirement.",
+      "shoulder harnesses are never required on any Canadian-registered aircraft, regardless of seat position or crew function.",
+      "a single safety belt may be shared between two adult occupants seated side by side, provided both are properly restrained.",
+      "each occupant above a certain age have their own seat and safety belt, with flight crew also requiring a shoulder harness in critical phases.",
+      "only the pilot-in-command is required to wear a safety belt at any time; other occupants have no such requirement at all.",
     ],
     answer: 2,
     explain:
@@ -237,9 +237,9 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The requirement to carry supplemental oxygen equipment (as distinct from the physiological need for oxygen) is set out in the CARs based primarily on",
     options: [
-      "the pilot's personal medical history, rather than any altitude or duration criterion.",
-      "the aircraft's total seating capacity alone, regardless of the altitude flown.",
-      "the outside air temperature, rather than cabin pressure altitude.",
+      "the pilot's personal medical history and certificate class, rather than any altitude or duration criterion.",
+      "the aircraft's total seating capacity alone, regardless of the cruising altitude actually flown.",
+      "the outside air temperature at cruising level, rather than the cabin pressure altitude itself.",
       "the cabin pressure altitude and the duration of flight at or above specified altitude thresholds.",
     ],
     answer: 3,
@@ -253,10 +253,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under Canadian Aviation Regulations, a Flight Data Recorder (FDR) or Cockpit Voice Recorder (CVR) carriage requirement generally applies based on",
     options: [
-      "the type of commercial operation being conducted and characteristics of the aircraft, such as passenger seating configuration or maximum certificated take-off weight.",
-      "whether the flight is conducted during the day or at night, with no requirement for night flights.",
-      "the colour of the aircraft's exterior paint scheme.",
-      "the pilot's total flight time, with more experienced pilots exempted from the requirement.",
+      "the type of commercial operation conducted and characteristics of the aircraft, such as seating configuration or maximum take-off weight.",
+      "whether the flight is conducted during the day or at night, with no equivalent requirement applying to any night flights.",
+      "the colour of the aircraft's exterior paint scheme, as recorded on its certificate of registration.",
+      "the pilot's total flight time and career experience, with more experienced pilots exempted from the requirement entirely.",
     ],
     answer: 0,
     explain:
@@ -269,10 +269,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A commuter or airline operator's requirement to maintain company Operations and Training Manuals exists primarily to",
     options: [
-      "replace the need for individual pilots to hold a valid licence, rating, or medical certificate.",
-      "document the operator's approved procedures, training program, and policies, giving both the operator's personnel and Transport Canada a consistent, auditable reference.",
-      "apply only to maintenance personnel, with no content relevant to flight crew.",
-      "satisfy a purely administrative filing requirement with no operational content or use.",
+      "replace the need for individual pilots to hold a valid licence, rating, or medical certificate of any kind whatsoever, under any circumstance.",
+      "document the operator's approved procedures, training program, and policies, giving personnel and Transport Canada a consistent reference.",
+      "apply only to maintenance personnel, with no content relevant to flight crew members at all.",
+      "satisfy a purely administrative filing requirement with no operational content or practical use.",
     ],
     answer: 1,
     explain:
@@ -285,10 +285,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under CAR 401.03 and related provisions, exercising the privileges of a pilot licence, permit, or rating generally requires that the holder",
     options: [
-      "be accompanied at all times by a second, currently rated pilot, regardless of the licence level held.",
-      "re-write the original licensing examination annually, regardless of recency or medical status.",
-      "have the licence document (or another acceptable form of it) available for inspection while exercising those privileges.",
-      "have memorized the exact text of every applicable CAR section, with no requirement to carry any documentation.",
+      "be accompanied at all times by a second, currently rated pilot, regardless of the licence level or category held.",
+      "re-write the original licensing examination annually, regardless of recency of flying experience or medical status.",
+      "have the licence document, or another acceptable form of it, available for inspection while exercising those privileges.",
+      "have memorized the exact text of every applicable CAR section, with absolutely no requirement to carry any documentation.",
     ],
     answer: 2,
     explain:
@@ -301,10 +301,10 @@ export const CANADA_TC_ATPL_BATCH_11_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Transportation Safety Board (TSB) reportable aviation occurrence generally includes events such as",
     options: [
-      "routine, minor maintenance write-ups with no safety significance, which must all be reported individually to the TSB.",
-      "only occurrences involving aircraft operated under Subpart 705, with smaller operations entirely exempt from TSB reporting.",
-      "only occurrences resulting in a fatality, with any lesser event exempt from any reporting requirement.",
-      "an accident resulting in serious injury or significant aircraft damage, or specified serious incidents even without an actual accident occurring.",
+      "routine, minor maintenance write-ups with no safety significance, which must nonetheless all be reported individually to the TSB.",
+      "only occurrences involving aircraft operated under Subpart 705, with all smaller-scale operations entirely exempt from TSB reporting requirements.",
+      "only occurrences resulting in a fatality, with any lesser event entirely exempt from any TSB reporting requirement.",
+      "an accident resulting in serious injury or significant aircraft damage, or specified serious incidents without an actual accident occurring.",
     ],
     answer: 3,
     explain:

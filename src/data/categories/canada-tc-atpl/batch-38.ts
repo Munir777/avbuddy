@@ -49,7 +49,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     q: "Takeoff performance calculated for a runway contaminated with standing water or slush, compared to a dry runway, generally results in",
     options: [
       "a longer required takeoff distance and, at sufficient contaminant depth, a possible speed penalty (such as a reduced V1) due to both reduced tire friction and the retarding/displacement drag of the contaminant itself.",
-      "a performance penalty that applies only to landing distance calculations, with takeoff distance considered entirely unaffected by any runway contamination.",
+      "a performance penalty that applies only to landing distance calculations, with takeoff distance considered entirely unaffected by any runway contamination, a description inconsistent with the takeoff distance and V1 penalties contamination actually produces.",
       "no meaningful change in required takeoff distance at all, since contaminant type and depth are not considered relevant factors in takeoff performance calculations.",
       "a shorter required takeoff distance, since standing water or slush is generally assumed to improve tire friction compared to a dry runway surface.",
     ],
@@ -67,7 +67,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
       "is identical in every functional respect to a fail-passive system, with the two terms simply describing alternate names for the same underlying design.",
       "retains sufficient redundancy to complete an automatic landing even after a single system failure, whereas a fail-passive system, upon a failure, simply disconnects (reverting to manual control) without an unsafe or uncommanded manoeuvre.",
       "is, by definition, incapable of performing any automatic landing at all, making 'fail-operational' a term describing a system permanently disabled after any failure.",
-      "requires the pilot to manually complete the landing following any autoland engagement, with 'fail-operational' having no meaningful connection to redundancy or automatic landing capability.",
+      "requires the pilot to manually complete the landing following any autoland engagement, with 'fail-operational' having no meaningful connection to redundancy or automatic landing capability, a description inconsistent with fail-operational systems' actual redundancy-based ability to complete an automatic landing after a single failure.",
     ],
     answer: 1,
     explain:
@@ -83,7 +83,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
       "applying maximum braking and reverse thrust while still airborne during the bounce, before the aircraft has actually returned to the runway surface.",
       "continuing to hold the same pitch attitude and control inputs used just before the bounce occurred, without any further correction or reassessment.",
       "recognizing the bounce promptly and, depending on its severity, either smoothly completing the landing with appropriate pitch control or executing a go-around rather than forcing the aircraft back onto the runway.",
-      "immediately applying full nose-down control input to force the aircraft back onto the runway as quickly as possible, regardless of the bounce's severity.",
+      "immediately applying full nose-down control input to force the aircraft back onto the runway as quickly as possible, regardless of the bounce's severity, a reaction inconsistent with the judgment-based, severity-dependent response an actual bounced landing calls for.",
     ],
     answer: 2,
     explain:
@@ -97,7 +97,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     q: "An aircraft that lands at a weight exceeding its maximum certified landing weight (for example, due to a return to land shortly after a heavy-fuel departure) generally requires",
     options: [
       "an immediate replacement of the landing gear assembly as a mandatory, blanket requirement following any and every overweight landing, regardless of severity.",
-      "no special consideration at all, since maximum landing weight is treated as an advisory rather than a structurally meaningful limitation.",
+      "no special consideration at all, since maximum landing weight is treated as an advisory rather than a structurally meaningful limitation, a characterization inconsistent with the structural inspection an overweight landing actually requires.",
       "the aircraft to be permanently withdrawn from service, since any overweight landing is treated as an unrecoverable, career-ending event for the airframe.",
       "an overweight landing inspection, in accordance with the manufacturer's guidance, to check for any structural effects before the aircraft is returned to service.",
     ],
@@ -114,7 +114,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     options: [
       "reduce noise exposure for communities near the aerodrome by specifying a particular climb/thrust-reduction profile for the initial departure, while still meeting required obstacle clearance and safety margins.",
       "apply exclusively to arriving aircraft, with NADP having no application whatsoever to the departure phase of flight despite the name.",
-      "increase the aircraft's takeoff distance required, an operational cost that NADPs accept with no corresponding noise-reduction benefit at all.",
+      "increase the aircraft's takeoff distance required, an operational cost that NADPs accept with no corresponding noise-reduction benefit at all, a description inconsistent with NADP profiles being designed to meet standard obstacle clearance requirements without any added distance penalty.",
       "replace the need for any obstacle clearance calculation during departure, since NADP profiles are assumed to guarantee terrain clearance without a separate check.",
     ],
     answer: 0,
@@ -144,7 +144,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The Global Reporting Format (GRF) for runway surface condition, using a Runway Condition Code (RwyCC) on a defined 0-6 scale, was introduced primarily to",
     options: [
-      "apply exclusively to dry, uncontaminated runways, with the Runway Condition Code system specifically excluding any application to wet or contaminated surfaces.",
+      "apply exclusively to dry, uncontaminated runways, with the Runway Condition Code system specifically excluding any application to wet or contaminated surfaces, a scope inconsistent with the RwyCC's actual design to cover the full range of runway surface conditions.",
       "replace braking action reports entirely, with pilot-reported braking action terminology no longer used anywhere the Global Reporting Format has been adopted.",
       "provide a more standardized, consistent method of assessing and reporting runway surface contamination across different airports and jurisdictions, reducing variability between differing older reporting methods.",
       "eliminate the need for any pilot performance calculation using contaminated runway data, since the RwyCC value alone is treated as a complete substitute for a landing distance calculation.",
@@ -162,8 +162,8 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     options: [
       "a single, universal point identical for every instrument approach at every aerodrome worldwide, regardless of the specific approach procedure being flown.",
       "the point at which the aircraft physically touches down on the runway, making 'missed approach point' simply another name for the runway touchdown zone.",
-      "the point along the approach at which the landing gear must first be extended, an aircraft-configuration rather than a procedural decision point.",
-      "the specific point along the approach (defined by a fix, a DME distance, elapsed time, or, for a precision approach, reaching the DA/DH) beyond which the approach must not be continued without the required visual reference.",
+      "the point along the approach at which the landing gear must first be extended, an aircraft-configuration rather than a procedural decision point, a description inconsistent with the MAP's actual definition as a procedural go-around decision point.",
+      "the specific point along the approach (defined by a fix, timing, or DA/DH) beyond which the approach must not be continued without the required visual reference.",
     ],
     answer: 3,
     explain:
@@ -177,7 +177,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     q: "A visual approach, as distinguished from a contact approach, generally requires",
     options: [
       "the pilot to have the destination aerodrome (or the preceding aircraft, if applicable) in sight and to proceed visually, but subject to standard visibility and cloud clearance requirements that a contact approach can relax.",
-      "the aircraft to remain on an instrument approach procedure throughout, with 'visual' in the name specifically prohibiting any deviation from the published instrument procedure track.",
+      "the aircraft to remain on an instrument approach procedure throughout, with 'visual' in the name specifically prohibiting any deviation from the published instrument procedure track, a restriction inconsistent with how a visual approach actually departs from strict adherence to that published track.",
       "ATC to retain no role at all in either a visual approach or a contact approach, with both procedures conducted entirely outside any ATC clearance or involvement.",
       "the exact same weather minima and requirements as a contact approach, making the two terms functionally interchangeable with no meaningful distinction.",
     ],
@@ -192,7 +192,7 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "An autobrake system, where fitted, allows the crew to",
     options: [
-      "disable wheel braking entirely for the duration of the landing roll, relying exclusively on aerodynamic drag and reverse thrust to bring the aircraft to a stop.",
+      "disable wheel braking entirely for the duration of the landing roll, relying exclusively on aerodynamic drag and reverse thrust to bring the aircraft to a stop, a description inconsistent with autobrake's actual function as a pre-selected wheel-braking deceleration system.",
       "select a pre-determined deceleration rate to be applied automatically after touchdown (or during a rejected takeoff), rather than relying solely on manual brake pedal application for that deceleration.",
       "apply braking only while the aircraft is still airborne, with the system specifically prohibited from functioning at any point after touchdown.",
       "control the aircraft's engine thrust setting during the landing roll, an engine-management rather than a braking-related function despite the name.",
@@ -240,9 +240,9 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Derated takeoff thrust, as distinguished from a reduced (flex, assumed-temperature) thrust takeoff, involves",
     options: [
-      "selecting a lower permanently certified thrust rating for that takeoff, which also generally lowers certain structural and other limits associated with the higher rating, rather than using a temperature-based method applied to the engine's full rated thrust.",
+      "selecting a lower permanently certified thrust rating for that takeoff, rather than using a temperature-based method applied to the engine's full rated thrust.",
       "a technique usable only when actual conditions are colder than standard, with derated thrust considered unusable in any other ambient temperature condition.",
-      "using exactly the same assumed-temperature method as a flex thrust takeoff, making 'derate' simply an alternate name for flex thrust with no meaningful distinction.",
+      "using exactly the same assumed-temperature method as a flex thrust takeoff, making 'derate' simply an alternate name for flex thrust with no meaningful distinction, a claim inconsistent with derate's use of a separately certified thrust rating rather than an assumed-temperature calculation.",
       "increasing available thrust beyond the engine's normal full-rated takeoff thrust, the opposite of what a derated thrust selection actually accomplishes.",
     ],
     answer: 0,
@@ -257,8 +257,8 @@ export const CANADA_TC_ATPL_BATCH_38_QUESTIONS: Question[] = [
     q: "Below V1, a crew's decision to reject a takeoff is generally guided by a broader range of considerations than after V1 is reached, because",
     options: [
       "the specific reasons that can justify stopping the aircraft are identical before and after V1, with V1 itself carrying no practical bearing on the decision-making threshold at all.",
-      "below V1 there is adequate runway remaining to safely stop for a wider range of malfunctions or abnormal indications, whereas beyond V1 the takeoff is generally continued except for a narrower set of very serious situations (such as clear evidence the aircraft is unsafe or unable to fly).",
-      "below V1 a rejected takeoff is prohibited entirely, with any abnormal indication before V1 requiring the takeoff to be continued regardless of its nature or severity.",
+      "below V1 there is adequate runway remaining to safely stop for a wider range of malfunctions or abnormal indications, whereas beyond V1 the takeoff is generally continued except for a narrower set of very serious situations.",
+      "below V1 a rejected takeoff is prohibited entirely, with any abnormal indication before V1 requiring the takeoff to be continued regardless of its nature or severity, a restriction inconsistent with below-V1 being the more permissive regime for rejecting a takeoff, not a prohibited one.",
       "after V1 is reached, rejecting the takeoff becomes the standard, preferred response to any abnormal indication, the reverse of the actual established practice.",
     ],
     answer: 1,

@@ -17,8 +17,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "pilot-in-command or second-in-command of any aeroplane, subject to holding the applicable type rating and meeting any other applicable requirements.",
       "second-in-command only, since command privileges require a separate command endorsement beyond the ATPL itself.",
-      "pilot-in-command of any aeroplane, but never in an operation that requires two pilots.",
-      "pilot-in-command only of aeroplanes operated under CARs Subpart 703 (air taxi operations).",
+      "pilot-in-command of any aeroplane, but never in an operation that requires two pilots, since the ATPL by itself does not extend to multi-crew command duties without further training and authorization.",
+      "pilot-in-command only of aeroplanes operated under CARs Subpart 703 (air taxi operations), since ATPL privileges under other commercial subparts require a separate operational authorization from the Minister.",
     ],
     answer: 0,
     explain:
@@ -31,10 +31,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "To act as pilot-in-command of an aeroplane while carrying passengers, CAR 401.05 requires that, within the preceding",
     options: [
-      "90 days, the pilot has completed at least 3 take-offs and 3 landings in an aeroplane of the same category and class.",
-      "6 months, the pilot has completed at least 5 take-offs and 5 landings in an aeroplane of the same category and class, or of the same type if a type rating is required for that type.",
-      "12 months, the pilot has completed at least 5 take-offs and 5 landings in any aeroplane.",
-      "6 months, the pilot has completed at least 3 take-offs and 3 landings in any category of aircraft.",
+      "90 days, the pilot has completed at least 3 take-offs and 3 landings in an aeroplane of the same category and class, with no further requirement to match the aeroplane's specific type.",
+      "6 months, the pilot has completed at least 5 take-offs and 5 landings in an aeroplane of the same category and class, or of the same type where a type rating is required.",
+      "12 months, the pilot has completed at least 5 take-offs and 5 landings in any aeroplane, without regard to the aeroplane's category, class, or type.",
+      "6 months, the pilot has completed at least 3 take-offs and 3 landings in any category of aircraft, including gliders, balloons, and rotorcraft as well as aeroplanes.",
     ],
     answer: 1,
     explain:
@@ -95,10 +95,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Class F airspace in Canada is airspace",
     options: [
-      "reserved exclusively for military IFR training and closed to all civilian traffic.",
-      "within which activities must be confined because of their nature, or where limitations may be imposed on aircraft not participating in those activities, designated as either advisory or restricted.",
-      "surrounding a control zone within which Special VFR is prohibited outright.",
-      "that is uncontrolled with no altitude restrictions, used mainly for aerobatic practice areas.",
+      "reserved exclusively for military IFR training and closed to all civilian traffic, with entry authorized only through a specific exemption issued by NAV CANADA, without exception for aircraft in distress.",
+      "within which activities must be confined because of their nature, or where limitations may be imposed on non-participating aircraft, designated as advisory or restricted.",
+      "surrounding a control zone within which Special VFR is prohibited outright, regardless of the reported weather conditions at the time.",
+      "that is uncontrolled with no altitude restrictions, used mainly for aerobatic practice areas identified by a dedicated designator and published altitude block in the CFS.",
     ],
     answer: 1,
     explain:
@@ -127,9 +127,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The key difference between VFR and IFR cruising altitude assignment under the hemispheric (odd/even) rule is that",
     options: [
-      "the hemispheric rule reverses direction (000-179° vs 180-359°) between VFR and IFR flight.",
-      "IFR altitudes add 500 ft to the appropriate level, while VFR altitudes do not.",
-      "IFR flights are exempt from the hemispheric rule below 18,000 ft ASL.",
+      "the hemispheric rule reverses direction (000-179° vs 180-359°) between VFR and IFR flight, rather than applying the same track split to both.",
+      "IFR altitudes add 500 ft to the appropriate level, while VFR altitudes do not, reversing the addition compared to how it is actually applied.",
+      "IFR flights are exempt from the hemispheric rule below 18,000 ft ASL, reverting instead to a pilot-selected cruising altitude within that band.",
       "VFR cruising altitudes add 500 ft to the appropriate odd/even thousand-foot level, while IFR cruising altitudes and flight levels do not.",
     ],
     answer: 3,
@@ -159,10 +159,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "An aircraft that does not meet RVSM certification requirements may operate within designated RVSM airspace only if",
     options: [
-      "it operates the flight under VFR instead of IFR.",
+      "it operates the flight under VFR instead of IFR, since RVSM vertical separation requirements apply only to aircraft operating on an IFR flight plan.",
       "it has received specific ATC authorization to operate as a non-RVSM aircraft, in which case standard (non-reduced) vertical separation is applied around it.",
-      "it remains below FL290 at all times while transiting the airspace, regardless of ATC coordination.",
-      "it is accompanied in formation by an RVSM-approved aircraft for the duration of the transit.",
+      "it remains below FL290 at all times while transiting the airspace, regardless of ATC coordination, since RVSM separation only applies at or above that flight level.",
+      "it is accompanied in formation by an RVSM-approved aircraft for the duration of the transit, which is treated as satisfying the RVSM requirement for the non-approved aircraft.",
     ],
     answer: 1,
     explain:
@@ -225,8 +225,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "from a runway that intersects the heavy aircraft's departure runway, regardless of the distance to the intersection.",
       "from the threshold of the same runway used by the preceding heavy aircraft, or from a parallel runway threshold located less than 2,500 ft away.",
-      "from any runway at the same aerodrome, regardless of the separation distance between runways.",
-      "from the threshold of the same runway only, with no provision made for parallel runways.",
+      "from any runway at the same aerodrome, regardless of the separation distance between runways, since the two-minute interval applies aerodrome-wide.",
+      "from the threshold of the same runway only, with no provision made for parallel runways, however close together those parallel runways may be.",
     ],
     answer: 1,
     explain:
@@ -255,9 +255,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A pilot-initiated waiver of wake turbulence separation will NOT be accepted by ATC when",
     options: [
-      "the following aircraft is departing from the same threshold used by the preceding heavy aircraft.",
-      "the preceding heavy aircraft has already been airborne for more than three minutes.",
-      "the wind is calm and there is no crosswind component at the time of departure.",
+      "the following aircraft is departing from the same threshold used by the preceding heavy aircraft, which is in fact one of the situations where the waiver is routinely accepted, provided the runway and wind conditions otherwise allow it.",
+      "the preceding heavy aircraft has already been airborne for more than three minutes, well beyond the interval where wake turbulence is normally still a hazard.",
+      "the wind is calm and there is no crosswind component at the time of departure, conditions that are generally favourable rather than a basis for refusing the waiver.",
       "a light or medium aircraft is taking off behind a heavy aircraft, starting its take-off roll from an intersection or a point further along the runway than the heavy aircraft used.",
     ],
     answer: 3,
@@ -287,10 +287,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The key operational difference between a flight plan and a flight itinerary is that",
     options: [
-      "a flight itinerary must be filed electronically with NAV CANADA and cannot be held privately by an individual.",
-      "a flight plan is filed with an ATS unit, which will automatically initiate search-and-rescue action if the flight becomes overdue, while a flight itinerary is left with a responsible person who must initiate the alert themselves.",
-      "a flight itinerary may only be used for IFR flights, while a flight plan may only be used for VFR flights.",
-      "a flight plan cannot be used for a flight that remains entirely within Canada, only for flights crossing an international boundary.",
+      "a flight itinerary must be filed electronically with NAV CANADA and cannot be held privately by an individual, in contrast to a flight plan, which may be.",
+      "a flight plan is filed with an ATS unit, which initiates search-and-rescue action if the flight becomes overdue, while a flight itinerary is instead left with a responsible person who must initiate the alert.",
+      "a flight itinerary may only be used for IFR flights, while a flight plan may only be used for VFR flights, reversing the roles the two documents actually play.",
+      "a flight plan cannot be used for a flight that remains entirely within Canada, only for flights crossing an international boundary, unlike a flight itinerary, which has no such restriction regardless of how much of the route lies within Canadian airspace.",
     ],
     answer: 1,
     explain:
@@ -303,10 +303,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Except where specifically exempted, CAR 605.38 requires that most Canadian-registered power-driven aircraft carry",
     options: [
-      "a portable locator beacon carried individually by each passenger on board.",
-      "a functioning ELT only when operating more than 100 NM from the nearest aerodrome.",
+      "a portable locator beacon carried individually by each passenger on board, in addition to any fixed ELT installed in the aircraft itself.",
+      "a functioning ELT only when operating more than 100 NM from the nearest aerodrome, with no such requirement on shorter flights.",
       "a functioning emergency locator transmitter (ELT) capable of transmitting on the required emergency frequencies.",
-      "a functioning ELT only when the flight is conducted under IFR.",
+      "a functioning ELT only when the flight is conducted under IFR, with no equivalent requirement for flights conducted under VFR.",
     ],
     answer: 2,
     explain:
@@ -320,8 +320,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     q: "An installed ELT must be functionally tested",
     options: [
       "only after a hard landing, with no routine periodic test otherwise required.",
-      "every 90 days regardless of the type of installation.",
-      "only by the aircraft manufacturer, at 5-year intervals.",
+      "every 90 days regardless of the type of installation, a far shorter interval than what is actually prescribed for a routine functional test.",
+      "only by the aircraft manufacturer, at 5-year intervals, rather than by maintenance personnel at the operator's own facility.",
       "within the preceding 12 months, with the results recorded in the aircraft's technical records.",
     ],
     answer: 3,
@@ -337,8 +337,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "contact the nearest ATS unit or Joint Rescue Co-ordination Centre (JRCC) immediately to report and help cancel the false alert.",
       "ignore it, since ELT signals below 406 MHz are no longer monitored by satellite in Canada.",
-      "wait 24 hours to see whether search and rescue responds before making any report.",
-      "disable the aircraft's transponder, which will also suppress the ELT signal.",
+      "wait 24 hours to see whether search and rescue responds before making any report, on the assumption that the signal will stop on its own.",
+      "disable the aircraft's transponder, which will also suppress the ELT signal, since the two systems share the same antenna and transmission path.",
     ],
     answer: 0,
     explain:
@@ -367,10 +367,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "When a Resolution Advisory (RA) is issued by TCAS/ACAS and it conflicts with a simultaneous ATC instruction, the flight crew should",
     options: [
-      "disregard both and maintain the last assigned altitude until visual separation with the conflicting traffic is established.",
-      "attempt to split the difference between the RA and the ATC instruction.",
+      "disregard both and maintain the last assigned altitude until visual separation with the conflicting traffic is established, regardless of either aircraft's separation from terrain.",
+      "attempt to split the difference between the RA and the ATC instruction, blending the two into a compromise flight path.",
       "follow the RA, and notify ATC as soon as practicable that the aircraft is deviating from its clearance to comply with the RA.",
-      "follow the ATC instruction, since an ATC clearance takes priority over automated onboard equipment.",
+      "follow the ATC instruction, since an ATC clearance takes priority over automated onboard equipment in every phase of flight.",
     ],
     answer: 2,
     explain:
@@ -401,8 +401,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "keep the aircraft within the protected (charted) holding airspace during the turns.",
       "prevent wake turbulence encounters between successive aircraft in the same hold.",
-      "reduce fuel consumption during an extended hold.",
-      "comply with noise abatement requirements near the holding fix.",
+      "reduce fuel consumption during an extended hold, which is treated as the primary reason the speed limitation exists.",
+      "comply with noise abatement requirements near the holding fix, in the same way as a published noise abatement departure procedure.",
     ],
     answer: 0,
     explain:
@@ -431,10 +431,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Above the transition altitude, in the Standard Pressure Region portion of Canadian domestic airspace, pilots set their altimeters to",
     options: [
-      "QFE for the departure aerodrome, maintained for the entire flight.",
-      "the current altimeter setting reported by the nearest reporting station.",
+      "QFE for the departure aerodrome, maintained for the entire flight regardless of how far the aircraft has climbed above it.",
+      "the current altimeter setting reported by the nearest reporting station, updated periodically as the flight progresses along its route.",
       "29.92 in. Hg (1013.2 hPa), and thereafter read altitude as a flight level rather than an altitude in feet.",
-      "the sea-level standard pressure recorded at the departure aerodrome.",
+      "the sea-level standard pressure recorded at the departure aerodrome, rather than a setting obtained from any station along the route.",
     ],
     answer: 2,
     explain:
@@ -447,8 +447,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Remote Altimeter Setting Source (RASS) is used to provide altimeter setting information to pilots",
     options: [
-      "exclusively at major international airports, as a backup to the primary ATIS broadcast.",
-      "only when operating above FL180 within the Standard Pressure Region.",
+      "exclusively at major international airports, as a backup to the primary ATIS broadcast when that broadcast is temporarily out of service.",
+      "only when operating above FL180 within the Standard Pressure Region, where a local station setting would otherwise be required.",
       "as a substitute for pilot weather reports (PIREPs), removing the need for pilots to report weather.",
       "operating in remote areas where no local reporting station, FSS, or AWOS coverage is otherwise available.",
     ],
@@ -464,9 +464,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     q: "When barometric pressure exceeds the maximum value that can be set on an aircraft's altimeter (an abnormally high altimeter setting situation), pilots should",
     options: [
       "follow the special procedures published for the affected region, which may include setting the altimeter to its maximum value and applying a stated correction.",
-      "set the altimeter to the standard pressure setting regardless of the actual reported pressure.",
-      "descend below the affected pressure system until normal altimeter readings resume.",
-      "disregard the altimeter entirely and rely solely on GPS-derived altitude.",
+      "set the altimeter to the standard pressure setting regardless of the actual reported pressure, since that setting is always usable in any pressure condition, however extreme it may be.",
+      "descend below the affected pressure system until normal altimeter readings resume, without seeking any ATC coordination for the descent.",
+      "disregard the altimeter entirely and rely solely on GPS-derived altitude, which provides no barometric reference of its own.",
     ],
     answer: 0,
     explain:
@@ -479,10 +479,10 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The Emergency Security Control of Air Traffic (ESCAT) Plan sets out procedures for",
     options: [
-      "issuing medical certificate waivers during a declared public health emergency.",
+      "issuing medical certificate waivers during a declared public health emergency, on an aerodrome-by-aerodrome basis.",
       "the emergency control of civil air traffic in Canada during a defence emergency or national security threat.",
-      "coordinating wake turbulence separation during periods of peak traffic.",
-      "routine noise abatement procedures at controlled aerodromes.",
+      "coordinating wake turbulence separation during periods of peak traffic, particularly at the busiest hub aerodromes.",
+      "routine noise abatement procedures at controlled aerodromes, as published in the Canada Air Pilot for each affected runway.",
     ],
     answer: 1,
     explain:
@@ -498,7 +498,7 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
       "the pilot's total flight hours logged in that aircraft type, rather than the aircraft's equipment.",
       "fixed, ground-based navaid infrastructure requirements only, to the exclusion of satellite navigation.",
       "the accuracy, integrity, availability, continuity, and functionality needed for the proposed operation, rather than mandating a specific type of navigation equipment.",
-      "the specific brand and model of FMS or GPS receiver approved for a given route.",
+      "the specific brand and model of FMS or GPS receiver approved for a given route, rather than the performance level that equipment must be shown to achieve for the operation.",
     ],
     answer: 2,
     explain:
@@ -511,9 +511,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Canadian Minimum Navigation Performance Specifications (CMNPS) Airspace is designated primarily to",
     options: [
-      "eliminate the requirement for a designated alternate aerodrome on any IFR flight within it.",
-      "mandate visual navigation procedures for flights in remote northern regions.",
-      "restrict all VFR operations above FL180 across Canada.",
+      "eliminate the requirement for a designated alternate aerodrome on any IFR flight within it, regardless of the forecast weather at the destination.",
+      "mandate visual navigation procedures for flights in remote northern regions, in place of any electronic means of navigation.",
+      "restrict all VFR operations above FL180 across Canada, regardless of whether the flight is CMNPS-approved.",
       "permit reduced lateral separation between aircraft in designated high-level airspace, based on demonstrated navigation performance.",
     ],
     answer: 3,
@@ -545,7 +545,7 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "automatically cancel the IFR flight plan, since IFR flight is not permitted in uncontrolled airspace.",
       "report leaving controlled airspace to the appropriate ATS unit, since ATC separation and control service end at that point.",
-      "contact the nearest FSS to request a retroactive Class A clearance.",
+      "contact the nearest FSS to request a retroactive Class A clearance, so that the segment already flown is covered after the fact.",
       "continue exactly as before, since ATC responsibility continues throughout Canadian airspace regardless of classification.",
     ],
     answer: 1,
@@ -560,9 +560,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     q: "Strategic Lateral Offset Procedures (SLOP) allow a suitably equipped aircraft to fly an offset of",
     options: [
       "up to 2 NM left or right of centreline, at the pilot's discretion, with no published increment.",
-      "exactly 5 NM right of centreline at all times when operating in oceanic airspace.",
+      "exactly 5 NM right of centreline at all times when operating in oceanic airspace, with no option to fly centreline or a smaller offset.",
       "up to 2 NM right of the centreline of its cleared route, in specified increments, to reduce collision risk from lateral navigation errors.",
-      "an offset that requires individual ATC clearance for each specific instance.",
+      "an offset that requires individual ATC clearance for each specific instance, rather than being applied at the pilot's discretion within the published increments.",
     ],
     answer: 2,
     explain:
@@ -576,7 +576,7 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     q: "If an aircraft operating in RVSM airspace experiences an equipment failure that degrades its RVSM capability below the required standard, the pilot should",
     options: [
       "descend below FL290 without ATC clearance, on the pilot's own authority, to exit RVSM airspace.",
-      "immediately squawk 7700, regardless of whether an actual emergency exists.",
+      "immediately squawk 7700, regardless of whether an actual emergency exists, to alert ATC to the equipment failure and prompt an immediate priority response.",
       "continue as cleared without notifying ATC, since RVSM equipment failures are not a reportable event.",
       "notify ATC as soon as possible, since standard (non-reduced) vertical separation will need to be applied around the aircraft.",
     ],
@@ -592,9 +592,9 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     q: "An 'approach ban' under CARs Part VII prohibits a commercial IFR flight from continuing an approach past a specified point when",
     options: [
       "the reported visibility or RVR at the aerodrome is below the minimum specified for the approach being flown.",
-      "the flight has exceeded its planned fuel reserve by any margin, however small.",
-      "the destination aerodrome has no operating control tower at the time of arrival.",
-      "the crosswind component exceeds the aircraft's demonstrated crosswind limit.",
+      "the flight has exceeded its planned fuel reserve by any margin, however small, without regard to the actual weather at the destination.",
+      "the destination aerodrome has no operating control tower at the time of arrival, irrespective of the reported visibility or RVR.",
+      "the crosswind component exceeds the aircraft's demonstrated crosswind limit, regardless of the reported visibility or RVR at the time.",
     ],
     answer: 0,
     explain:
@@ -609,8 +609,8 @@ export const CANADA_TC_ATPL_BATCH_01_QUESTIONS: Question[] = [
     options: [
       "restrict the maximum number of passengers a flight crew may carry on a given flight.",
       "mitigate the risk of pilot fatigue, by limiting maximum flight and duty periods and mandating minimum rest periods.",
-      "limit the number of take-offs and landings a pilot may log in a calendar year.",
-      "standardize crew pay calculations across all Canadian air operators.",
+      "limit the number of take-offs and landings a pilot may log in a calendar year, independent of how much time those flights actually take.",
+      "standardize crew pay calculations across all Canadian air operators, regardless of the specific type of operation being conducted.",
     ],
     answer: 1,
     explain:

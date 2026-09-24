@@ -27,7 +27,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
       "prevent ice from forming exclusively on the wing's leading edge, with cowl anti-ice performing an identical function to wing anti-ice and providing no protection to the engine inlet itself.",
       "cool the engine's compressor section, a function unrelated to ice prevention or protection of the engine inlet.",
       "prevent ice from forming on the engine air inlet lip, which could otherwise break off and be ingested into the engine core, potentially causing compressor damage, a flameout, or other engine disruption.",
-      "heat the cabin, a function unrelated to the engine inlet or ice protection of any kind.",
+      "heat the cabin, a function unrelated to the engine inlet or ice protection of any kind, since the bleed air routed to the cowl inlet is defined as being ducted directly into the cabin air distribution system rather than circulated through the inlet lip.",
     ],
     answer: 2,
     explain:
@@ -42,7 +42,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     options: [
       "the fact that electromechanical actuators are incapable of providing sufficient force to retract or extend any landing gear, making hydraulic actuation the only physically possible option.",
       "a strict regulatory requirement mandating hydraulic actuation exclusively for every certified transport-category aircraft, leaving no room for an electromechanical alternative.",
-      "the aircraft's paint scheme and livery, factors entirely unrelated to the choice of landing gear actuation method.",
+      "the aircraft's paint scheme and livery, factors entirely unrelated to the choice of landing gear actuation method, since actuator selection is defined in this context as being driven by cosmetic and marketing considerations rather than by systems architecture.",
       "the aircraft's overall systems architecture and design philosophy, since either approach can provide the necessary force and reliability, though a more electric aircraft design may favour electromechanical actuation to reduce reliance on hydraulic systems.",
     ],
     answer: 3,
@@ -56,10 +56,10 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A brake metering valve, within a hydraulically actuated wheel brake system, generally functions to",
     options: [
-      "convert the pilot's brake pedal input (mechanical or hydraulic) into a proportional hydraulic brake pressure delivered to the brake units, so greater pedal displacement or force results in greater braking pressure applied at the wheels.",
-      "always deliver a single, fixed brake pressure regardless of how much pedal displacement or force the pilot applies.",
-      "regulate cabin pressurization, a function unrelated to wheel braking and instead performed by the pressurization system's outflow valve.",
-      "measure the aircraft's current groundspeed, a function unrelated to brake pressure and instead performed by other aircraft systems.",
+      "converts the pilot's brake pedal input into a proportional hydraulic brake pressure delivered to the brake units, so greater pedal force results in greater braking pressure at the wheels.",
+      "always delivers a single, fixed brake pressure regardless of how much pedal displacement or force the pilot applies, since the metering valve is in this description defined as a simple on/off device rather than one that proportions pressure to pedal input in any way.",
+      "regulates cabin pressurization instead, a function entirely unrelated to wheel braking and instead performed by the pressurization system's outflow valve mechanism.",
+      "measures the aircraft's current groundspeed continuously, a function entirely unrelated to brake pressure and instead performed by other, separate aircraft systems.",
     ],
     answer: 0,
     explain:
@@ -72,7 +72,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Turbine engine starting can be accomplished using either an air-driven (pneumatic) starter or an electric starter (often integrated as a combined starter-generator), a choice that generally reflects",
     options: [
-      "a universal rule that every turbine engine, on every aircraft type, must be started using an air-driven starter exclusively, with no electric starting method ever used.",
+      "a universal rule that every turbine engine, on every aircraft type, must be started using an air-driven starter exclusively, with no electric starting method ever used, since pneumatic starting is defined as the sole certified method regardless of the aircraft's available electrical power or overall systems architecture.",
       "the aircraft's available power sources for starting (such as bleed air from an APU or ground cart for a pneumatic starter, versus sufficient electrical power for an electric starter) and the specific engine's design, since both approaches are used across different aircraft types.",
       "the outside air temperature alone, with starter type otherwise having no relationship to the aircraft's available power sources or engine design.",
       "the fact that an electric starter-generator is incapable of also functioning as a generator once the engine is running, making its use as a starter its only possible function.",
@@ -105,7 +105,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     q: "If an aircraft's anti-skid braking system fails or is switched off, the wheel brakes generally",
     options: [
       "automatically apply full braking force continuously, regardless of any pilot brake pedal input, until the aircraft comes to a complete stop.",
-      "become entirely inoperative, with no braking capability whatsoever available for the remainder of that flight.",
+      "become entirely inoperative, with no braking capability whatsoever available for the remainder of that flight, since anti-skid failure is in this description defined as removing hydraulic pressure from the entire brake system rather than only the skid-protection modulation function alone.",
       "switch automatically to an entirely separate, independent brake system with no relationship to the original hydraulic brake system.",
       "remain available for manual braking, but without the automatic skid-protection modulation the anti-skid system normally provides, meaning the pilot must apply brake pressure more cautiously to avoid a locked-wheel skid, particularly on a wet or contaminated runway.",
     ],
@@ -122,7 +122,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     options: [
       "optimize the angle at which airflow strikes the following rotor blades across a range of engine speeds, helping to maintain efficient compressor operation and reduce the risk of a compressor stall or surge, particularly at lower engine speeds.",
       "control the engine's fuel flow rate directly, a function unrelated to compressor airflow angle and instead performed by the fuel control unit or FADEC.",
-      "regulate cabin pressurization, a function unrelated to the engine's internal compressor airflow.",
+      "regulate cabin pressurization, a function unrelated to the engine's internal compressor airflow, since variable stator vanes are defined as being linked mechanically to the outflow valve rather than to the compressor's own rotor blades.",
       "adjust propeller blade pitch, a function unrelated to a turbine engine's internal compressor airflow and instead performed by the propeller governor.",
     ],
     answer: 0,
@@ -139,7 +139,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
       "convert fuel vapour into liquid fuel, a function unrelated to water removal from the fuel system.",
       "help remove or collect water that has accumulated in the fuel (from condensation or contamination), reducing the risk of that water reaching the engine, freezing at altitude, or supporting microbial growth within the tank.",
       "separate fuel into its different octane or cetane components, a function unrelated to water contamination.",
-      "regulate fuel temperature directly, a function that is actually performed by a fuel heater rather than a fuel/water separator.",
+      "regulate fuel temperature directly, a function that is actually performed by a fuel heater rather than a fuel/water separator, since the two components are defined as sharing an identical location and function within the fuel system despite their different names.",
     ],
     answer: 1,
     explain:
@@ -152,7 +152,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Pneumatic de-ice boots are generally cycled (inflated and deflated) according to a specific timing sequence, rather than being left continuously inflated, primarily to avoid",
     options: [
-      "structural damage to the wing spar, a concern unrelated to how de-ice boots are cycled.",
+      "structural damage to the wing spar, a concern unrelated to how de-ice boots are cycled, since boot inflation pressure is defined as being transmitted directly into the underlying spar structure regardless of the cycling sequence used.",
       "excessive fuel consumption, since boot cycling is understood to have a direct and significant effect on engine fuel burn.",
       "'ice bridging,' a condition in which ice accumulates over and conforms to the shape of a continuously inflated boot, becoming difficult to shed even when the boot is subsequently cycled.",
       "electrical system overload, since pneumatic boots are powered exclusively by the aircraft's electrical system rather than by bleed air or an engine-driven pneumatic pump.",
@@ -185,7 +185,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     q: "Comparing bias-ply and radial-ply aircraft tire construction, a radial tire generally offers",
     options: [
       "improved heat dissipation and a longer tread life compared to a bias-ply tire of similar size and rating, benefits related to its different internal cord/belt construction.",
-      "a significantly lower maximum speed rating than an equivalent bias-ply tire in every case.",
+      "a significantly lower maximum speed rating than an equivalent bias-ply tire in every case, since the belted radial construction is defined as inherently less capable of withstanding the centrifugal and flexing loads generated at higher rotational speeds.",
       "the elimination of any need for a thermal (fuse) plug, a protection that remains necessary regardless of tire construction type.",
       "no meaningful difference whatsoever from a bias-ply tire, the two construction methods being functionally and structurally identical.",
     ],
@@ -200,7 +200,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "An engine fire detection system using dual, independent detection loops (rather than a single loop) is designed so that",
     options: [
-      "either loop alone, regardless of the other loop's state, is always sufficient by itself to trigger a fire warning, with no cross-check between the two loops.",
+      "either loop alone, entirely regardless of the other loop's current state, is always considered fully sufficient by itself to trigger a fire warning, with absolutely no cross-check ever performed between the two independent loops.",
       "both loops generally need to detect a fire condition in agreement before a fire warning is triggered, reducing the risk of a false (nuisance) warning caused by a fault or spurious signal in a single loop alone.",
       "both loops must fail simultaneously before any fire warning of any kind can ever be triggered, regardless of whether an actual fire is present.",
       "the two loops serve entirely unrelated functions, with only one of the two loops actually performing any fire detection function at all.",
@@ -219,7 +219,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
       "loaded only into a single fuel tank, with no ability to distribute fuel to multiple tanks from that one connection point.",
       "supplied exclusively by gravity feed from an elevated fuel truck, with no pressurized pumping involved at any point in the process.",
       "supplied under pressure through a single connection point (commonly beneath the wing), with a panel of controls allowing the operator to direct fuel to each tank as needed, generally allowing for a significantly faster refueling process than gravity refueling through multiple over-wing ports.",
-      "supplied only while the aircraft's engines are running, with no capability to refuel while the aircraft is parked with engines shut down.",
+      "supplied only while the aircraft's engines are actively running, with no capability whatsoever to refuel while the aircraft is parked with engines shut down, since the pressure refueling pumps are defined in this description as drawing their power exclusively from engine-driven generators rather than from ground power or the APU generator.",
     ],
     answer: 2,
     explain:
@@ -233,7 +233,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
     q: "An engine's accessory gearbox, driven by the engine's rotating core, is used primarily to",
     options: [
       "control the engine's fuel-air mixture ratio directly, a function performed by the fuel control unit or FADEC rather than the accessory gearbox.",
-      "regulate cabin pressurization, a function unrelated to the engine's mechanically driven accessories.",
+      "regulate cabin pressurization, a function unrelated to the engine's mechanically driven accessories, since the accessory gearbox is defined as being connected directly to the outflow valve rather than to any engine-mounted generator, pump, or accessory.",
       "adjust the pitch angle of propeller blades, a function relevant only to a turboprop's propeller governor rather than the engine's own accessory gearbox.",
       "mechanically drive engine-mounted accessories such as generators, hydraulic pumps, and fuel pumps, allowing those accessories to be powered directly by the running engine rather than requiring a separate independent power source of their own.",
     ],
@@ -251,7 +251,7 @@ export const CANADA_TC_ATPL_BATCH_70_QUESTIONS: Question[] = [
       "an independent battery power source, separate from the aircraft's main electrical generation system, ensuring the emergency lighting remains available even if the main electrical system fails or is lost.",
       "the aircraft's hydraulic system, a power source unrelated to electrical lighting of any kind.",
       "the main electrical generation system exclusively, with no independent or backup power source of any kind provided for emergency lighting.",
-      "engine bleed air, a power source unrelated to electrical lighting of any kind.",
+      "engine bleed air, a power source unrelated to electrical lighting of any kind, since the emergency lighting system is defined as using small pneumatically driven turbines fed by bleed air rather than any battery or electrical power source.",
     ],
     answer: 0,
     explain:

@@ -41,8 +41,8 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     options: [
       "eliminating the need for any scheduled structural inspection program, since fail-safe structure is defined as inherently crack-proof.",
       "designing structure to fail completely and simultaneously in every member at once, so that damage is always immediately obvious to the crew.",
-      "relying on a single, very strong load path so massively overbuilt that inspection for cracks becomes unnecessary.",
-      "providing multiple redundant load paths (such as several spars or stringers) so that a single crack or failure in one structural member does not immediately lead to catastrophic failure, while the damage remains detectable through inspection before it grows critical.",
+      "relying on a single, very strong load path so massively overbuilt that inspection for cracks becomes unnecessary, an approach that would leave no redundant path to carry load if that single member itself developed an undetected crack, unlike the deliberately redundant structure fail-safe design actually relies on.",
+      "providing multiple redundant load paths, such as several spars or stringers, so a single failure does not immediately cause catastrophic failure, with damage remaining detectable through inspection before it grows critical.",
     ],
     answer: 3,
     explain:
@@ -55,10 +55,10 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A turbofan engine's fan case is designed and certified to include fan blade containment capability, meaning that",
     options: [
-      "if a fan blade fails and separates in flight, the case is designed to contain the resulting debris within the engine nacelle rather than allowing it to penetrate outward into the fuselage, wing, or other critical aircraft structure.",
+      "if a fan blade fails and separates in flight, the case is designed to contain the debris within the nacelle rather than letting it penetrate the fuselage, wing, or other critical structure.",
       "containment capability applies only to the engine's turbine section, with no equivalent requirement for the fan section.",
       "the fan case prevents any fan blade from ever failing in the first place, making in-flight blade separation structurally impossible.",
-      "the fan case is designed to eject failed blade debris forward out of the engine intake, away from the aircraft.",
+      "the fan case is designed to eject failed blade debris forward out of the engine intake, away from the aircraft, a design objective inconsistent with containment testing, which specifically demonstrates that debris stays within the nacelle rather than exiting forward or outward.",
     ],
     answer: 0,
     explain:
@@ -104,9 +104,9 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     q: "Thermal (fuse) plugs, fitted into some aircraft wheel assemblies near the brakes, are designed to",
     options: [
       "automatically reinflate a tire that has lost pressure during a long taxi.",
-      "prevent the wheel brakes from being applied at all once a preset temperature threshold is reached.",
+      "prevent the wheel brakes from being applied at all once a preset temperature threshold is reached, a description that confuses the plug's pressure-release role with an unrelated braking-system lockout function it does not perform on any current wheel and brake assembly design.",
       "regulate normal tire pressure during routine ground operations with no relationship to brake temperature at all.",
-      "melt and deflate the tire in a controlled manner if brake temperature becomes excessive (for example after a high-energy rejected takeoff), preventing an uncontrolled, more violent tire or wheel failure from overheated, over-pressurized air.",
+      "melt and deflate the tire in a controlled manner if brake temperature becomes excessive, for example after a high-energy rejected takeoff, preventing a more violent, uncontrolled tire or wheel failure from overheated, over-pressurized air.",
     ],
     answer: 3,
     explain:
@@ -119,8 +119,8 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A fuel transfer (trim tank) system, fitted to some long-range transport aircraft, is used primarily to",
     options: [
-      "shift fuel between a tail-mounted trim tank and the main wing tanks during cruise, moving the aircraft's centre of gravity aft to reduce trim drag and improve fuel efficiency, within limits monitored by the fuel and flight control systems.",
-      "convert fuel directly into hydraulic fluid for use by the aircraft's hydraulic system.",
+      "shift fuel between a tail-mounted trim tank and the main wing tanks during cruise, moving the aircraft's centre of gravity aft to reduce trim drag, within limits monitored by the fuel and flight control systems.",
+      "convert fuel directly into hydraulic fluid for use by the aircraft's hydraulic system, a chemical conversion no fuel transfer system actually performs, since its sole role is relocating fuel between tanks for centre of gravity control.",
       "provide a completely independent emergency fuel supply usable only after all other tanks are fully exhausted.",
       "cool the engine oil by circulating fuel through the tail structure before returning it to the main tanks unchanged.",
     ],
@@ -151,9 +151,9 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Within a turbine engine's lubrication system, the pressure pump and the scavenge pump(s) serve distinct roles in that",
     options: [
-      "the pressure pump and scavenge pump perform the identical function, existing purely as a redundant backup pair with no functional distinction.",
+      "the pressure pump and scavenge pump perform the identical function, existing purely as a redundant backup pair with no functional distinction, a claim inconsistent with their opposite roles of supplying fresh oil under pressure versus returning used oil to the tank.",
       "neither pump handles oil at all; both are dedicated exclusively to fuel system pressurization.",
-      "the pressure pump delivers filtered oil under pressure to the bearings and gears that need lubrication, while the scavenge pump(s) return the used, often aerated oil from those areas back to the oil tank, typically at a higher flow capacity than the pressure pump to prevent oil accumulation.",
+      "the pressure pump delivers filtered oil under pressure to the bearings and gears needing lubrication, while the scavenge pump(s) return used oil from those areas back to the tank, at a higher flow capacity to prevent accumulation.",
       "the scavenge pump alone supplies all lubrication to the engine, while the pressure pump exists solely to drain used oil overboard.",
     ],
     answer: 2,
@@ -167,10 +167,10 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Transport aircraft primary electrical distribution is generally based on AC power (commonly 115V, 400Hz, three-phase) rather than DC power because AC systems generally",
     options: [
-      "are entirely incompatible with any DC-powered equipment, requiring every piece of aircraft avionics to be redesigned specifically for AC-only operation.",
+      "are entirely incompatible with any DC-powered equipment, requiring every piece of aircraft avionics to be redesigned specifically for AC-only operation, despite transformer-rectifier units routinely converting AC to DC for equipment that specifically requires it.",
       "eliminate the need for any battery or standby power source, since AC systems are defined as never losing power in flight.",
       "always weigh more than an equivalent DC distribution system, making the choice purely a matter of historical convention with no weight advantage.",
-      "allow electrical power to be transmitted at higher voltage for a given current (reducing conductor weight and resistive losses) and to be readily transformed to other voltages, while high-power AC motors and generators are generally lighter than DC equivalents of similar output.",
+      "allow power to be transmitted at higher voltage for a given current, reducing conductor weight and losses, and to be readily transformed to other voltages, with AC motors and generators generally lighter than DC equivalents.",
     ],
     answer: 3,
     explain:
@@ -183,10 +183,10 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A nose wheel shimmy damper, fitted to most nose landing gear assemblies, is designed to",
     options: [
-      "dampen and suppress a self-sustaining, rapid side-to-side oscillation (shimmy) of the nose wheel that can otherwise develop during taxi, takeoff roll, or landing roll, particularly at certain speeds.",
+      "dampen and suppress a self-sustaining, rapid side-to-side oscillation (shimmy) of the nose wheel that can develop during taxi, takeoff roll, or landing roll, particularly at certain speeds.",
       "absorb the vertical shock loads of landing, performing the same function as the main oleo-pneumatic strut.",
       "provide the primary steering input for taxiing, replacing the need for a separate nose wheel steering system.",
-      "prevent the nose gear from retracting until weight is fully off the wheels.",
+      "prevent the nose gear from retracting until weight is fully off the wheels, a weight-on-wheels retraction interlock function unrelated to the lateral oscillation the shimmy damper is actually designed to suppress.",
     ],
     answer: 0,
     explain:
@@ -200,8 +200,8 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     q: "On a retractable landing gear system with gear doors separate from the gear itself, the door sequencing during retraction and extension is generally arranged so that",
     options: [
       "gear doors close before the gear has finished retracting, with the gear designed to simply push through the closed doors.",
-      "the doors open, the gear moves through the wheel well, and the doors then close behind it (with some designs leaving a small door open when the gear is down), coordinated by mechanical linkages or a sequencing valve so doors and gear do not collide.",
-      "the gear doors remain permanently open throughout the entire flight, with no closing sequence at any point.",
+      "the doors open, the gear moves through the wheel well, and the doors close behind it, coordinated by mechanical linkages or a sequencing valve so doors and gear do not collide.",
+      "the gear doors remain permanently open throughout the entire flight, with no closing sequence at any point, a configuration that would add drag and is inconsistent with how gear doors are actually sequenced to close after retraction.",
       "the gear doors and the landing gear itself are mechanically identical and move as a single rigid unit with no separate sequencing required.",
     ],
     answer: 1,
@@ -215,9 +215,9 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A wing leading-edge slat and a Krueger flap both serve to increase the wing's critical angle of attack for high-lift purposes, but they differ in that",
     options: [
-      "a slat reduces the wing's angle of attack capability, while only a Krueger flap increases it.",
+      "a slat reduces the wing's angle of attack capability, while only a Krueger flap increases it, a reversal of their actual shared purpose, since both leading-edge devices are used specifically to raise, not lower, the usable critical angle of attack for high-lift operation.",
       "a Krueger flap is fitted only to the trailing edge of the wing, making it functionally a rear flap rather than a leading-edge device.",
-      "a slat is a separate aerofoil-shaped surface that extends forward and/or down from the wing's leading edge (often creating a slot that reenergizes the boundary layer), while a Krueger flap hinges forward and down from beneath the leading edge, effectively increasing leading-edge camber without necessarily forming the same kind of slot.",
+      "a slat extends forward and/or down from the leading edge as a separate aerofoil, often forming a slot that reenergizes the boundary layer, while a Krueger flap hinges forward and down from beneath the leading edge, increasing camber without necessarily forming that slot.",
       "a slat and a Krueger flap are simply two different names for the identical device, with no design or functional distinction between them.",
     ],
     answer: 2,
@@ -233,8 +233,8 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     options: [
       "applying brakes only while the aircraft is still airborne, releasing them automatically the instant the wheels touch the runway.",
       "disabling all wheel braking automatically once the aircraft touches down, relying entirely on reverse thrust and aerodynamic drag to decelerate.",
-      "controlling only nose wheel steering during the landing roll, with no function related to wheel braking at all.",
-      "automatically applying wheel braking to a pre-selected deceleration rate once the aircraft is on the ground (and, on RTO settings, automatically at maximum braking when the throttles are retarded above a threshold speed), without requiring the pilot to manually modulate the brake pedals.",
+      "controlling only nose wheel steering during the landing roll, with no function related to wheel braking at all, a description that has autobrake's actual purpose backwards, since it is specifically a wheel-braking system with no steering function.",
+      "automatically applying wheel braking to a pre-selected deceleration rate once on the ground, and on RTO settings, at maximum braking when the throttles are retarded above a threshold speed, without manual pedal modulation.",
     ],
     answer: 3,
     explain:
@@ -247,10 +247,10 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A capacitance-type fuel quantity indicating system determines the amount of fuel in a tank by",
     options: [
-      "measuring the change in electrical capacitance of probes mounted in the tank, which varies according to how much fuel (with a different dielectric property than the air above it) surrounds each probe, and converting that signal into an indicated quantity.",
+      "measuring the change in electrical capacitance of probes in the tank, which varies with how much fuel -- having a different dielectric property than the air above it -- surrounds each probe, converted into an indicated quantity.",
       "counting the number of times a mechanical float valve opens and closes as fuel is consumed.",
       "physically weighing the entire fuel tank assembly on a set of load cells mounted beneath the wing.",
-      "measuring fuel flow rate at the engine and subtracting it from a fixed initial tank volume with no reference to the tank itself.",
+      "measuring fuel flow rate at the engine and subtracting it from a fixed initial tank volume with no reference to the tank itself, an indirect method that would accumulate error over time rather than the direct, continuous tank-level measurement capacitance probes actually provide.",
     ],
     answer: 0,
     explain:
@@ -264,8 +264,8 @@ export const CANADA_TC_ATPL_BATCH_60_QUESTIONS: Question[] = [
     q: "Continuous ignition, selected on many turbine-powered aircraft during conditions such as heavy precipitation, icing, or turbulence, provides",
     options: [
       "permanent illumination of the cockpit fire warning lights as a precautionary indication, unrelated to the engine's ignition system.",
-      "an ongoing spark at the igniters (rather than the normal brief burst used only during a start) so that if a flameout or a momentary flame disruption occurs, the engine relights immediately without requiring a separate crew-initiated restart sequence.",
-      "a continuous supply of additional fuel to the engine, unrelated to the ignition or spark system.",
+      "an ongoing spark at the igniters, rather than the normal brief start-only burst, so a flameout or momentary flame disruption relights the engine immediately without a separate crew-initiated restart.",
+      "a continuous supply of additional fuel to the engine, unrelated to the ignition or spark system, a description that confuses continuous ignition with a fuel-scheduling function it does not perform, since it acts only on the igniters.",
       "a reduction in engine thrust output, used specifically to prevent compressor stalls during turbulence.",
     ],
     answer: 1,

@@ -16,7 +16,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     options: [
       "captain authority, first officer support, and cabin crew communication, with no role for external operational factors.",
       "threats (external to the flight crew), errors (made by the flight crew), and undesired aircraft states resulting from mismanaged threats or errors.",
-      "checklist discipline, radio phraseology, and fuel planning, treated as the three pillars of crew performance.",
+      "checklist discipline, radio phraseology, and fuel planning, treated in this simplified model as the three pillars of crew performance, regardless of any external operational threat that might also be present.",
       "weather, mechanical failure, and pilot fatigue, treated as the only three recognized categories of operational threat.",
     ],
     answer: 1,
@@ -33,7 +33,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
       "a newly hired pilot gradually adjusts to a company's standard operating procedures over the course of initial training.",
       "an aircraft's automation is reprogrammed to reflect a revised operating procedure following a safety recommendation.",
       "a practice that deviates from an established standard or procedure, repeated without apparent negative consequence, comes to be seen as normal and acceptable.",
-      "a regulator formally amends a published standard, such as a CAR, to reflect evolving best practice.",
+      "a regulator formally amends a published standard, such as a CAR, following a structured public consultation process, to reflect evolving best practice across the industry.",
     ],
     answer: 2,
     explain:
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
       "seek out, notice, and give more weight to information that supports a belief or decision already made, while discounting information that contradicts it.",
       "confirm every instrument indication with a second, independent source before accepting it as valid.",
       "require confirmation from air traffic control before executing any change to a filed flight plan.",
-      "double-check a checklist item a second time before moving on to the next item.",
+      "double-check a checklist item a second time, in strict accordance with standard operating procedure and company policy, before moving on to the next item on the checklist.",
     ],
     answer: 0,
     explain:
@@ -80,7 +80,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     options: [
       "only affect newly certified pilots; experienced pilots are considered immune to any startle response by definition.",
       "briefly impair a crew member's ability to process information and respond effectively, even when they are otherwise well trained for the specific malfunction encountered.",
-      "have no measurable effect on performance, since modern training specifically eliminates any startle response.",
+      "have no measurable effect on performance, since modern simulator-based training specifically and permanently eliminates any startle response in a fully certified crew member.",
       "improve immediate decision-making by sharply increasing focus and narrowing distraction to the relevant problem.",
     ],
     answer: 1,
@@ -126,8 +126,8 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "A false horizon illusion can occur when a pilot mistakes a visual reference other than the true horizon -- such as a sloping cloud deck or a line of terrain -- for level flight attitude. This illusion is hazardous primarily because it can",
     options: [
-      "induce the pilot to align the aircraft with the misleading reference rather than the true horizon or the attitude indicator, resulting in an unrecognized bank or pitch error.",
-      "be entirely eliminated by cross-checking a single flight instrument, making it a negligible operational risk.",
+      "induce the pilot to align the aircraft with the misleading reference rather than the true horizon, resulting in an unrecognized bank or pitch error.",
+      "be entirely eliminated by cross-checking a single flight instrument such as the attitude indicator, making it a negligible and rarely discussed operational risk in modern cockpits.",
       "affect airspeed perception exclusively, with no effect on the pilot's perceived pitch or bank attitude.",
       "only occur in daylight visual meteorological conditions, and therefore poses no risk during night or instrument flight.",
     ],
@@ -142,7 +142,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Autokinesis is a visual illusion in which",
     options: [
-      "a moving light source, such as another aircraft's beacon, appears completely stationary against a dark sky.",
+      "a moving light source, such as another aircraft's rotating beacon or strobe light, appears completely stationary against a uniformly dark night sky.",
       "a single, stationary point of light viewed in an otherwise dark environment appears to move on its own after being stared at for some time.",
       "a rapidly flashing light appears to be stationary due to the eye's inability to track fast strobe rates.",
       "peripheral vision temporarily fails entirely after prolonged exposure to a single fixed point of light.",
@@ -176,7 +176,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     options: [
       "change in indicated airspeed, with no accompanying sensation related to pitch or vertical motion at all.",
       "change in magnetic heading, unrelated to any vertical acceleration experienced by the aircraft.",
-      "loss of hearing acuity, since the otolith organs are part of the auditory (not vestibular) system.",
+      "loss of hearing acuity, since the otolith organs are considered by some older texts to be part of the auditory rather than the vestibular system.",
       "change in pitch attitude that has not actually occurred, potentially leading to an inappropriate control input in response.",
     ],
     answer: 3,
@@ -240,7 +240,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     options: [
       "no individual is ever held accountable for any action, regardless of how reckless or deliberate that action was.",
       "safety reports are only accepted anonymously, with no distinction drawn between different types of conduct at all.",
-      "every reported error automatically results in disciplinary action, in order to strongly deter future reporting of minor issues.",
+      "every reported error, regardless of intent or severity, automatically results in formal disciplinary action, in order to strongly deter future reporting of even minor issues.",
       "honest errors and good-faith reports are treated supportively rather than punitively, while reserving accountability for reckless or deliberately unsafe conduct.",
     ],
     answer: 3,
@@ -270,7 +270,7 @@ export const CANADA_TC_ATPL_BATCH_15_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Chronic fatigue is generally distinguished from acute fatigue in that chronic fatigue",
     options: [
-      "can only be caused by circadian disruption, such as time-zone travel, and never by workload or sleep restriction alone.",
+      "can only be caused by circadian disruption, such as extended time-zone travel across several zones, and never by workload or sleep restriction acting alone.",
       "results from an accumulated sleep debt or ongoing physical/mental demand over an extended period, and is not fully resolved by a single, ordinary night's sleep.",
       "is fully resolved after a single night of adequate sleep, exactly like acute fatigue, with no meaningful practical distinction between the two.",
       "affects only physical performance, leaving cognitive performance (decision-making, vigilance) entirely unaffected.",

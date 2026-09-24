@@ -25,10 +25,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "For a multi-engine aircraft, minimum control speed (Vmc), as established for takeoff and certification purposes, is best described as the minimum speed, following the sudden failure of the critical engine at takeoff power, at which",
     options: [
-      "the landing gear can still be safely retracted, with no relationship at all to engine failure or directional control.",
-      "the aircraft can still climb at its maximum rate with all engines operating normally, unrelated to any engine failure scenario.",
+      "the landing gear can still be safely retracted during the initial climb, with no relationship at all to engine failure or to maintaining directional control.",
+      "the aircraft can still climb at its best rate-of-climb speed with all engines operating normally, entirely unrelated to any engine failure scenario.",
       "the pilot can still maintain directional control of the aircraft using rudder alone (with a limited bank angle toward the operating engine permitted), without exceeding specified control force limits.",
-      "the stalling speed for the aircraft's current weight and configuration is reached, making Vmc simply another name for the power-off stalling speed.",
+      "the stalling speed for the aircraft's current weight, configuration, and centre of gravity is reached, making Vmc simply another name for the power-off stalling speed.",
     ],
     answer: 2,
     explain:
@@ -41,10 +41,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Aeroelastic (torsional) divergence, as distinguished from flutter, is best described as",
     options: [
-      "a purely thermal effect caused by aerodynamic heating at high Mach numbers, unrelated to any aerodynamic twisting moment.",
-      "a phenomenon that occurs only at very low airspeeds near the stall, with no relationship to high-speed flight at all.",
-      "a dynamic, oscillatory phenomenon in which a structure vibrates at increasing amplitude due to coupling between aerodynamic, elastic, and inertial forces -- making divergence simply another name for flutter.",
-      "a static instability in which the aerodynamic twisting moment on a structure (such as a wing) increases faster than the structure's torsional stiffness can resist as airspeed rises, causing the structure to twist progressively further until it fails, without necessarily involving any oscillation.",
+      "a purely thermal effect caused by aerodynamic heating at high Mach numbers during sustained high-speed cruise, and therefore unrelated to any aerodynamic twisting moment or torsional stiffness consideration at all.",
+      "a phenomenon that occurs only at very low airspeeds near the stall, driven by separated boundary-layer airflow rather than any structural twisting moment, with no relationship to high-speed flight at all.",
+      "a dynamic, oscillatory phenomenon in which a structure vibrates at rapidly increasing amplitude due to coupling between aerodynamic, elastic, and inertial forces acting simultaneously on the structure -- making torsional divergence simply another name for flutter under this description.",
+      "a static instability in which the aerodynamic twisting moment on a structure (such as a wing) increases faster than the structure's torsional stiffness can resist as airspeed rises, causing progressive twisting until failure, without necessarily involving oscillation.",
     ],
     answer: 3,
     explain:
@@ -58,9 +58,9 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     q: "An aircraft's drag divergence Mach number, as distinguished from its critical Mach number, is",
     options: [
       "generally a somewhat higher Mach number than critical Mach, at which the sharp rise in drag caused by developing shock waves and their associated flow separation becomes pronounced enough to be operationally significant.",
-      "always a lower Mach number than critical Mach, occurring before any local airflow has reached the speed of sound anywhere on the airframe.",
-      "unrelated to shock waves or drag at all, and instead refers strictly to the onset of engine compressor stall at high Mach numbers.",
-      "always numerically identical to critical Mach number, with the two terms simply being different names for the same value.",
+      "always a lower Mach number than critical Mach, occurring well before any local airflow over the wing, fuselage, or empennage has actually accelerated enough to reach the speed of sound anywhere at all on the airframe surface.",
+      "unrelated to shock waves or drag rise at all, and instead refers strictly and exclusively to the onset of engine compressor stall occurring at high Mach numbers during cruise.",
+      "always numerically identical to critical Mach number in every flight condition, with the two terms simply being alternative names applied to one and the same underlying value.",
     ],
     answer: 0,
     explain:
@@ -73,10 +73,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Low-speed (pre-stall) airframe buffet, felt by the pilot as the aircraft approaches the stall, results primarily from",
     options: [
-      "resonance between the landing gear and the runway surface, applicable only during the takeoff or landing roll.",
+      "resonance set up between the landing gear structure and the runway surface texture, a mechanical effect applicable only during the takeoff or landing ground roll itself.",
       "turbulent, separated airflow coming off the wing at high angle of attack striking the horizontal tail and/or fuselage, transmitting vibration through the airframe.",
-      "engine vibration alone, entirely unrelated to any wing airflow condition.",
-      "shock waves forming on the wing's upper surface, identical in origin to high-speed Mach buffet.",
+      "engine vibration transmitted through the airframe mounts alone, a mechanical source entirely unrelated to any wing airflow condition or angle of attack.",
+      "shock waves forming on the wing's upper surface at high forward speed, identical in underlying origin and cause to high-speed Mach buffet encountered near critical Mach number.",
     ],
     answer: 1,
     explain:
@@ -90,9 +90,9 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     q: "High-speed (Mach) buffet, encountered as an aircraft approaches or exceeds its critical Mach number, results primarily from",
     options: [
       "the same turbulent separation mechanism as low-speed stall buffet, with angle of attack rather than Mach number as the causative factor in both cases.",
-      "a complete loss of all lift on the wing, making Mach buffet aerodynamically identical to a full stall.",
-      "shock-induced flow separation behind the shock wave(s) forming on the wing, which creates turbulent, disturbed airflow that buffets the airframe, similarly to low-speed buffet but with a shock wave, rather than a high angle of attack, as the underlying cause of the separation.",
-      "vibration transmitted purely from the engines, with no relationship to wing airflow or shock waves at all.",
+      "a complete and simultaneous loss of all lift across the entire wing surface at once and without warning, a drastic condition that would make Mach buffet aerodynamically identical in every practical respect to a full, classic aerodynamic stall.",
+      "shock-induced flow separation behind the shock wave(s) forming on the wing, creating turbulent, disturbed airflow that buffets the airframe -- similar to low-speed buffet, but with a shock wave rather than high angle of attack as the cause.",
+      "vibration transmitted purely and directly from the engines and their mounts, with no relationship whatsoever to wing airflow conditions or shock wave formation at all.",
     ],
     answer: 2,
     explain:
@@ -105,9 +105,9 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Extending trailing edge flaps generally increases a wing's maximum lift coefficient (CLmax), but it also tends to",
     options: [
-      "eliminate the concept of a critical angle of attack entirely, since a flapped wing is defined as incapable of stalling.",
-      "leave the critical angle of attack completely unchanged in every case, regardless of flap type or deflection.",
-      "increase the critical angle of attack to a higher numerical value than the clean wing, in addition to increasing CLmax.",
+      "eliminate the very concept of a critical angle of attack entirely, since a flapped wing in this description is defined as incapable of ever stalling.",
+      "leave the critical angle of attack completely unchanged in every case, regardless of flap type, deflection amount, or aircraft configuration.",
+      "increase the critical angle of attack to a noticeably higher numerical value than the clean wing configuration, in addition to increasing CLmax.",
       "reduce the numerical value of the critical (stalling) angle of attack, so that the wing with flaps extended reaches its (now higher) CLmax, and stalls, at a lower angle of attack than the clean wing does.",
     ],
     answer: 3,
@@ -122,9 +122,9 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     q: "An aircraft's lateral-directional dynamic stability is often described using three characteristic modes -- spiral, dutch roll, and roll (subsidence) -- which differ in that",
     options: [
       "spiral describes a slow, often divergent, combined roll-yaw tendency; dutch roll is a coupled, oscillatory roll-yaw motion; and roll subsidence describes how quickly a roll rate, once established, damps out on its own.",
-      "roll subsidence describes an oscillatory motion, while dutch roll describes a purely non-oscillatory, slowly divergent tendency -- the reverse of their actual characteristics.",
-      "spiral and dutch roll both refer exclusively to longitudinal (pitch) motion, while roll subsidence is the only one of the three related to lateral motion.",
-      "all three terms describe the identical motion, differing only in which axis (roll, pitch, or yaw) is used to measure it.",
+      "roll subsidence describes an oscillatory motion that grows in amplitude over time, while dutch roll describes a purely non-oscillatory, slowly divergent tendency instead -- essentially the reverse of their actual characteristics.",
+      "spiral and dutch roll both refer exclusively to longitudinal (pitch) motion in this description, while roll subsidence is said to be the only one of the three modes related to lateral motion at all.",
+      "all three terms describe the identical underlying motion in this view, differing only in which axis (roll, pitch, or yaw) is conventionally used to measure and describe it.",
     ],
     answer: 0,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Interference drag, one of the components making up an aircraft's total parasite drag, arises specifically from",
     options: [
-      "electromagnetic interference between onboard avionics systems, unrelated to aerodynamic airflow.",
+      "electromagnetic interference occurring between various onboard avionics, radar, and electrical systems, a phenomenon entirely unrelated to aerodynamic airflow or the intersection of physical surfaces.",
       "the disruption and mixing of airflow where two separate surfaces meet (such as where a wing joins the fuselage), which is often reduced through the use of fairings at those junctions.",
-      "friction between the airflow and the aircraft's skin surface alone, unrelated to the intersection of any two surfaces.",
-      "the drag directly associated with generating lift, and therefore varies inversely with airspeed in the same manner as induced drag.",
+      "friction generated between the passing airflow and the aircraft's external skin surface alone, unrelated to the intersection or junction of any two separate surfaces.",
+      "the drag directly and solely associated with generating lift, and therefore one that varies inversely with airspeed in essentially the same manner as ordinary induced drag.",
     ],
     answer: 1,
     explain:
@@ -153,10 +153,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "In addition to geometric dihedral (the wings physically angled upward from root to tip), wing sweep also contributes to an aircraft's dihedral effect because, in a sideslip,",
     options: [
-      "swept wings always cancel out any dihedral effect that geometric dihedral would otherwise produce, regardless of sweep angle.",
-      "wing sweep produces a yawing moment only, with no rolling moment contribution to dihedral effect at all.",
-      "the wing leading into the relative wind presents a shorter effective span and less sweep-reduced lift-producing span, generating relatively more lift than the trailing wing, producing a rolling moment similar to that from geometric dihedral.",
-      "wing sweep has no aerodynamic relationship whatsoever to dihedral effect, which is generated exclusively by geometric dihedral angle.",
+      "swept wings always fully and completely cancel out any dihedral effect that geometric dihedral would otherwise produce on its own, no matter what sweep angle is chosen or what sideslip angle happens to be involved.",
+      "wing sweep produces a yawing moment only during a sideslip, contributing no rolling moment to dihedral effect at all under any circumstances.",
+      "the wing leading into the relative wind presents a shorter, less sweep-reduced lift-producing span, generating relatively more lift than the trailing wing, producing a rolling moment similar to geometric dihedral.",
+      "wing sweep has no aerodynamic relationship whatsoever to dihedral effect, which according to this view is generated exclusively by geometric dihedral angle alone.",
     ],
     answer: 2,
     explain:
@@ -169,10 +169,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Moving an aircraft's centre of gravity forward (toward its approved forward limit), compared to a more aft CG position at the same weight and configuration, generally has the effect of",
     options: [
-      "eliminating the stall entirely, since a sufficiently forward CG is defined as making the aircraft aerodynamically incapable of stalling.",
-      "having no effect whatsoever on stalling speed, which is determined solely by CLmax and wing loading, independent of CG position.",
-      "slightly decreasing the indicated stalling speed, since a forward CG always reduces the total lift the wing must produce.",
-      "slightly increasing the indicated stalling speed, since a forward CG requires the horizontal tail to generate a greater download to balance the aircraft, effectively adding to the wing's required lift and increasing the load it must carry.",
+      "eliminating the stall entirely and in all circumstances, since a sufficiently forward CG position is by this description defined as making the aircraft aerodynamically incapable of ever stalling.",
+      "having no effect whatsoever on stalling speed, which by this description is determined solely by CLmax and wing loading and is entirely independent of CG position.",
+      "slightly decreasing the indicated stalling speed, since a forward CG position is said to always reduce the total lift that the wing itself must produce.",
+      "slightly increasing the indicated stalling speed, since a forward CG requires the horizontal tail to generate a greater download to balance the aircraft, adding to the wing's required lift.",
     ],
     answer: 3,
     explain:
@@ -185,10 +185,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A reversible flight control system (in which aerodynamic hinge moments on the control surface are felt directly by the pilot through the controls), as distinguished from an irreversible (fully powered, hydraulically actuated) system, generally means that",
     options: [
-      "control forces felt by the pilot on a reversible system vary naturally with airspeed and control deflection (giving natural aerodynamic 'feel'), whereas an irreversible system isolates the pilot from those aerodynamic forces and must instead generate artificial feel forces electronically or mechanically.",
-      "an irreversible system always requires greater physical effort from the pilot than a reversible system at any given airspeed.",
-      "the terms describe an identical control architecture, differing only in the name applied by different manufacturers.",
-      "a reversible system uses hydraulic actuators exclusively, while an irreversible system relies entirely on direct cable-and-pulley connections with no hydraulic assistance.",
+      "control forces felt by the pilot on a reversible system vary naturally with airspeed and control deflection (giving natural aerodynamic feel), whereas an irreversible system isolates the pilot from those forces and must instead generate artificial feel electronically or mechanically.",
+      "an irreversible system always requires substantially greater physical effort from the pilot than a comparable reversible system does, at any given airspeed or deflection.",
+      "the terms describe an identical control architecture in every respect, differing only in the particular name applied to it by different manufacturers.",
+      "a reversible system uses hydraulic actuators exclusively in every installation, while an irreversible system relies entirely on direct cable-and-pulley connections with no hydraulic assistance at all.",
     ],
     answer: 0,
     explain:
@@ -201,10 +201,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A trimmable horizontal stabilizer (THS), used for longitudinal trim on many transport aircraft, differs from a simple elevator trim tab in that the THS",
     options: [
-      "provides roll trim rather than pitch trim, making it functionally equivalent to an aileron trim tab.",
-      "achieves trim by adjusting the incidence (angle) of the entire horizontal stabilizer surface itself, rather than merely deflecting a small auxiliary tab on the elevator, which allows it to produce large trim changes with generally less resulting trim drag than an equivalent tab deflection.",
-      "cannot be adjusted in flight at all, and is instead set to a single fixed position only during ground maintenance.",
-      "is a form of trim tab itself, with no meaningful functional or aerodynamic distinction from a conventional elevator trim tab.",
+      "provides roll trim rather than pitch trim entirely in this description, making it functionally equivalent instead to an aileron trim tab mounted out on the wing itself.",
+      "achieves trim by adjusting the incidence angle of the horizontal stabilizer itself, rather than deflecting a small tab on the elevator, producing large trim changes with less resulting drag.",
+      "cannot be adjusted at all once airborne, and is instead set permanently to a single fixed position only during scheduled ground maintenance.",
+      "is simply and essentially a form of trim tab itself, with no meaningful functional or aerodynamic distinction whatsoever from a conventional elevator trim tab mounted directly on the elevator surface.",
     ],
     answer: 1,
     explain:
@@ -217,10 +217,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Dynamic pressure (commonly denoted q), a key term in the lift and drag equations, explains why aerodynamic forces such as lift generally",
     options: [
-      "decrease as airspeed increases, since higher airspeed reduces the aircraft's angle of attack requirement to a proportionally greater degree.",
-      "remain entirely constant regardless of airspeed, varying only with angle of attack.",
-      "increase with the square of true airspeed (doubling airspeed, at a constant angle of attack and air density, roughly quadruples the resulting aerodynamic force), since dynamic pressure itself is proportional to air density multiplied by the square of velocity.",
-      "increase in direct linear proportion to true airspeed, with no dependence on air density at all.",
+      "decrease as airspeed increases, since higher airspeed is in this view said to reduce the aircraft's angle of attack requirement to a proportionally much greater degree than the speed increase itself accounts for.",
+      "remain entirely constant regardless of airspeed under this description, varying only with angle of attack and never with dynamic pressure at all.",
+      "increase with the square of true airspeed (doubling airspeed, at constant angle of attack and density, roughly quadruples the force), since dynamic pressure is proportional to density times velocity squared.",
+      "increase only in direct linear proportion to true airspeed as it rises, with no dependence on air density or the square of velocity at all.",
     ],
     answer: 2,
     explain:
@@ -234,8 +234,8 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     q: "Comparing two aircraft of similar weight but different wing loading (weight divided by wing area), the aircraft with the higher wing loading will generally",
     options: [
       "experience a larger change in load factor for the identical gust, making a higher wing-loaded aircraft always the rougher-riding of the two in turbulence.",
-      "be entirely unaffected by gusts of any magnitude, regardless of wing loading, since gust response depends solely on aircraft mass.",
-      "have no relationship at all between wing loading and gust-induced load factor changes.",
+      "be entirely unaffected by gusts of any magnitude whatsoever, regardless of wing loading, since gust response is said to depend solely on aircraft mass alone.",
+      "have no relationship at all between wing loading and gust-induced load factor changes, since turbulence response in every case is said to depend only on total aircraft mass and nothing else.",
       "experience a smaller change in load factor for a given vertical gust, and therefore generally ride more smoothly through turbulence, than the lower wing-loaded aircraft.",
     ],
     answer: 3,
@@ -249,10 +249,10 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "During a fully developed spin, the self-sustaining rotation (autorotation) is maintained primarily because",
     options: [
-      "the descending wing (moving further into the stalled region of its lift curve, with an increasing effective angle of attack) generates less lift and more drag than the rising wing, producing a continuing rolling and yawing moment that keeps the rotation going.",
-      "autorotation is unrelated to any difference in lift or drag between the two wings, and results solely from engine torque effects.",
-      "the descending wing generates more lift than the rising wing, which would actually tend to stop rather than sustain the rotation.",
-      "both wings remain fully unstalled throughout the spin, with rotation instead driven entirely by rudder input alone.",
+      "the descending wing (moving further into the stalled region of its lift curve, with increasing effective angle of attack) generates less lift and more drag than the rising wing, sustaining the rotation.",
+      "autorotation is said to be entirely and completely unrelated to any difference in lift or drag between the two wings at all, and instead to result solely and exclusively from engine torque effects alone.",
+      "the descending wing generates more lift than the rising wing under this description, an effect that would actually tend to stop rather than sustain the ongoing rotation.",
+      "both wings are said to remain fully unstalled throughout the entire spin, with the rotation instead driven entirely by continuous rudder input alone.",
     ],
     answer: 0,
     explain:
@@ -265,9 +265,9 @@ export const CANADA_TC_ATPL_BATCH_62_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "For a propeller-driven aircraft, the speed for minimum power required (associated with best endurance) differs from the speed for minimum drag (best L/D, associated with best range) in that",
     options: [
-      "minimum power required always occurs at a faster airspeed than minimum drag, the reverse of their actual relationship.",
-      "minimum power required occurs at a slower airspeed than minimum drag, since power is the product of drag and velocity, and that product can still be falling even where drag itself has already begun to rise slightly with increasing speed.",
-      "power required is entirely independent of drag, making any comparison between the two speeds meaningless.",
+      "minimum power required always occurs at a distinctly faster airspeed than minimum drag speed does, which is in fact the reverse of their actual real-world relationship.",
+      "minimum power required occurs at a slower airspeed than minimum drag, since power is the product of drag and velocity, and that product can still be falling even as drag itself begins rising slightly.",
+      "power required is said to be entirely independent of drag in every flight condition, making any direct comparison between the two speeds essentially meaningless.",
       "the two speeds are always numerically identical for any propeller aircraft, since power required and drag are simply proportional to one another at every airspeed.",
     ],
     answer: 1,

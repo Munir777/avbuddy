@@ -34,7 +34,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     options: [
       "occurs only in direct response to a ground radar interrogation, making 'squitter' simply an alternate name for a standard interrogation reply.",
       "is used exclusively for altitude reporting, with no other data (such as identification or position) included in a Mode S squitter transmission.",
-      "has no connection to ADS-B at all, an unrelated Mode S function despite frequently being described in that context.",
+      "has no connection to ADS-B at all, an unrelated Mode S function despite frequently being described in that context by pilots, controllers, avionics manufacturers, and training materials alike.",
       "forms the technical basis for ADS-B Out, automatically broadcasting the aircraft's position and other data without requiring a ground station to first interrogate the transponder.",
     ],
     answer: 3,
@@ -49,7 +49,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     q: "A VOLMET broadcast service provides pilots with",
     options: [
       "a continuous, repeating voice broadcast of routine weather reports for a list of designated aerodromes, useful particularly on longer flights and in areas with limited other means of obtaining current weather.",
-      "a continuous broadcast of NOTAMs only, with no weather-related information included in a VOLMET transmission at all.",
+      "a continuous broadcast of NOTAMs only, with no weather-related information of any kind, including current METARs, TAFs, or forecasts of any sort, included in a VOLMET transmission at all, regardless of region or aerodrome.",
       "two-way voice communication specifically for filing or amending a flight plan, a flight-planning-transaction rather than a weather-information function.",
       "traffic information for nearby aircraft, making VOLMET functionally equivalent to a TIS-B service delivered by voice rather than by data link.",
     ],
@@ -66,7 +66,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     options: [
       "operating only within VHF line-of-sight range, an inherently short-range service despite being intended for long oceanic routes.",
       "transmitting digital data over HF radio frequencies, offering a data communication alternative in areas that may lack SATCOM or VHF data link coverage.",
-      "carrying voice communication only, with no data-message capability despite the word 'Data' in the service's name.",
+      "carrying voice communication only, with no data-message capability whatsoever despite the word 'Data' appearing directly in the service's own official name.",
       "transmitting data exclusively over a satellite relay, making 'HF' in HFDL's name a misnomer unrelated to how the system actually operates.",
     ],
     answer: 1,
@@ -81,7 +81,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     q: "VHF Data Link Mode 2 (VDL Mode 2), a common data link technology supporting services such as CPDLC, operates by",
     options: [
       "providing unlimited range regardless of the aircraft's altitude or distance from a ground station, free of any VHF line-of-sight constraint.",
-      "carrying only voice, not data, communication, despite 'Data Link' appearing directly in the technology's name.",
+      "carrying only voice, not data, communication of any sort, despite the phrase 'Data Link' appearing directly and prominently within the technology's own official designation, documentation, and marketing.",
       "transmitting digital data over VHF frequencies, offering higher data throughput than earlier VHF data link modes, but subject to the same general line-of-sight range limitation as VHF voice.",
       "transmitting data over HF frequencies exclusively, making 'VHF Data Link' a misleading name unrelated to the actual frequency band used.",
     ],
@@ -113,7 +113,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     q: "A designated air-to-air (aircraft-to-aircraft) communication frequency allows pilots to",
     options: [
       "communicate directly with other nearby aircraft, useful for coordinating traffic awareness or exchanging information without involving ATC, particularly in areas with limited ATC coverage.",
-      "transmit data exclusively, with no voice communication capability available on any designated air-to-air frequency.",
+      "transmit data exclusively, with no voice communication capability whatsoever available on any designated air-to-air frequency regardless of aircraft type, equipment fit, or region of operation.",
       "communicate directly with ATC exclusively, making 'air-to-air' a misleading name for what is actually just another ATC working frequency.",
       "control another aircraft's transponder or navigation equipment remotely, a control rather than a communication function.",
     ],
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "VOR and NDB stations both broadcast a Morse code station identifier for the pilot to verify, but the two differ in that",
     options: [
-      "only NDB stations broadcast any Morse code identifier at all, with VOR stations providing no identification signal of any kind.",
+      "only NDB stations broadcast any Morse code identifier at all, with VOR stations providing no identification signal of any kind for a pilot to verify against a current chart before relying on the indicated bearing.",
       "a VOR's identifier is typically three letters, while an NDB's identifier is typically two letters (or, for some, three), a difference reflecting each navaid's own identification convention.",
       "only VOR stations broadcast any Morse code identifier at all, with NDB stations providing no identification signal of any kind.",
       "both VOR and NDB stations use an identical, universal single-letter identifier, with no meaningful difference between the two navaid types' identification conventions.",
@@ -147,7 +147,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
       "ON and ALT are simply two different names for an identical mode, with Standby being the only mode selection that changes the transponder's actual behaviour.",
       "Standby causes the transponder to reply with altitude information, while ALT disables any reply at all, the reverse of the modes' actual functions.",
       "Standby keeps the transponder powered but not replying to interrogations, ON replies with identification (Mode A) but not altitude, and ALT additionally replies with altitude information (Mode C).",
-      "all three selections produce an identical transponder reply, with the mode selector serving no actual functional purpose.",
+      "all three selections produce an identical transponder reply in every respect, with the mode selector serving no actual functional purpose regardless of which specific position is selected by the crew at the time.",
     ],
     answer: 2,
     explain:
@@ -194,7 +194,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     options: [
       "the aircraft's fuel state exclusively, with position, altitude, and time information considered unrelated to what a position report is meant to convey.",
       "the aircraft's identification, current position, time over that position, altitude, and the next position/estimated time, along with any other information specifically requested.",
-      "the aircraft's identification only, with no position, time, or altitude information included in a standard position report.",
+      "the aircraft's identification only, with no position, time, altitude, or next-position/estimate information of any kind included in a standard position report at all, regardless of the airspace being flown.",
       "weather conditions exclusively, with the aircraft's own position, altitude, and time information considered outside the scope of a position report.",
     ],
     answer: 1,
@@ -226,7 +226,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
     options: [
       "a light signal used exclusively to communicate with ground vehicles, with no application to communicating with an aircraft in flight or on the runway/taxiway.",
       "a coded sequence of Morse code light flashes, requiring the pilot to decode a full Morse message rather than recognizing a simple colour/pattern combination.",
-      "a single, universal light signal with only one possible meaning, regardless of colour or whether the light is steady or flashing.",
+      "a single, universal light signal with only one possible meaning, regardless of its colour, intensity, or whether the light itself is being held steady or flashed at the aircraft on the ground or in flight.",
       "a specific colour and light pattern (steady or flashing red, green, or white) directed at the aircraft, with each combination carrying a standardized meaning such as 'cleared to land' or 'hold position.'",
     ],
     answer: 3,
@@ -243,7 +243,7 @@ export const CANADA_TC_ATPL_BATCH_44_QUESTIONS: Question[] = [
       "communication between crew members themselves (flight deck to flight deck, or flight deck to cabin crew), rather than for communicating with an external station such as ATC.",
       "communicating exclusively with external ATC and other ground stations, making the intercom functionally identical in purpose to the VHF communication radios.",
       "transmitting navigation data exclusively, a data rather than a voice-communication function despite being described as an intercom system.",
-      "broadcasting cabin passenger announcements exclusively, with no crew-to-crew communication function available through the intercom.",
+      "broadcasting cabin passenger announcements exclusively, with no crew-to-crew communication function available through the intercom system under any circumstance at all, regardless of aircraft type.",
     ],
     answer: 0,
     explain:

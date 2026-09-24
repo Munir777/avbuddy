@@ -33,7 +33,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     q: "Aircraft hydraulic reservoirs are typically pressurized (rather than left at ambient pressure) primarily to",
     options: [
       "increase the total volume of hydraulic fluid the reservoir can hold, a fluid-capacity rather than a pump-supply-related purpose.",
-      "cool the hydraulic fluid, a thermal-management rather than a pump-supply-related function.",
+      "cool the hydraulic fluid by allowing dissolved air and moisture to separate out of it before recirculation, a thermal-management and de-aeration function rather than one directly tied to pump inlet supply.",
       "eliminate the need for a hydraulic pump entirely, since a sufficiently pressurized reservoir is assumed capable of supplying the system on its own.",
       "help ensure a positive supply of fluid to the hydraulic pump's inlet, reducing the risk of pump cavitation, particularly at altitude or during high-demand conditions.",
     ],
@@ -50,7 +50,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     options: [
       "a smoother touchdown and taxi ride, since the wheel is mounted on an arm that moves rearward and upward on contact, allowing a longer, more gradual stroke to absorb the shock load.",
       "a design used exclusively on very large transport aircraft, with trailing-link gear considered structurally unsuitable for smaller aircraft of any kind.",
-      "no meaningful difference in shock-absorbing characteristics compared to a simple straight oleo strut, since the two designs are functionally identical in that respect.",
+      "no meaningful difference in shock-absorbing characteristics compared to a simple straight oleo strut, since the two designs are considered functionally identical in that respect and are assumed to share the same stroke geometry and mounting arrangement.",
       "the complete elimination of any hydraulic fluid or gas charge, relying entirely on the mechanical trailing-link arm itself to absorb all shock loads.",
     ],
     answer: 0,
@@ -66,7 +66,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     options: [
       "a tank located exclusively in the fuselage, making 'wet wing' a misleading name for a fuel tank that is not actually located within the wing at all.",
       "formed by the wing structure itself (using sealant at the joints to make the structure fuel-tight), rather than being a distinct, separately installed flexible container within the wing.",
-      "identical in construction to a bladder tank, with 'integral' simply describing an alternate name for the same flexible-container design.",
+      "identical in construction to a bladder tank, with 'integral' simply describing an alternate name for the same flexible-container design and installation method used consistently throughout the wing structure.",
       "a fuel tank design used only on piston-engine light aircraft, with integral wet-wing tanks considered structurally unsuitable for any transport-category aircraft.",
     ],
     answer: 1,
@@ -81,8 +81,8 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     q: "A fuel tank venting system is required primarily to",
     options: [
       "prevent any fuel from ever being added to or removed from the tank, functioning as a permanent seal rather than a pressure-equalizing pathway.",
-      "cool the fuel within the tank, a thermal-management rather than a pressure-equalization function.",
-      "allow air to enter or leave the tank as fuel level changes and as altitude/temperature vary, preventing a damaging pressure differential (excess pressure or a partial vacuum) from developing within the tank structure.",
+      "cool the fuel within the tank, treating the venting system as a thermal-management device intended to regulate fuel temperature rather than to perform any pressure-equalization function.",
+      "allow air to enter or leave the tank as fuel level and altitude/temperature vary, preventing a damaging pressure differential from developing within the tank structure.",
       "actively pump fuel out of the tank during normal engine feed, making the venting system functionally identical to the fuel feed/supply system.",
     ],
     answer: 2,
@@ -97,9 +97,9 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     q: "Static dischargers (static wicks), typically mounted at the trailing edges of the wings, tail, and other extremities, are fitted primarily to",
     options: [
       "physically strengthen the trailing edge structure against aerodynamic flutter, a structural rather than an electrical function despite the name.",
-      "generate electrical power for the aircraft's electrical system, functioning as a supplementary power-generation device.",
-      "provide additional aerodynamic lift at the trailing edge, a lift-augmentation rather than an electrical-discharge function.",
-      "provide a controlled path for accumulated static electric charge to dissipate from the airframe into the surrounding air, reducing radio/navigation interference and the risk of a disruptive static discharge.",
+      "generate electrical power for the aircraft's electrical system, acting as a supplementary generation source mounted at trailing-edge extremities.",
+      "provide additional aerodynamic lift at the trailing edge, functioning as a lift-augmentation device similar in principle to a trailing-edge flap rather than as any electrical-discharge component.",
+      "provide a controlled path for accumulated static charge to dissipate into the surrounding air, reducing radio/navigation interference and the risk of a disruptive discharge.",
     ],
     answer: 3,
     explain:
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A servo tab, a small auxiliary surface hinged to the trailing edge of a primary flight control surface, assists control movement by",
     options: [
-      "physically locking the primary control surface in a fixed position, preventing rather than assisting any further movement of that surface.",
+      "physically locking the primary control surface in a fixed position for the remainder of the flight, preventing rather than assisting any further movement of that surface once it has been deflected by the pilot.",
       "being deflected first (directly by the pilot's control input) into the airflow, and the resulting aerodynamic force on the tab then helps move the larger primary control surface itself.",
       "being deflected in the same direction and by the same mechanism as the primary control surface, with no independent aerodynamic role of its own.",
       "functioning exclusively as a trim device, with no role whatsoever in assisting the moment-to-moment aerodynamic movement of the primary control surface.",
@@ -147,7 +147,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
       "progressively increase the maximum available rudder deflection as airspeed increases, the opposite of the travel limiter's actual protective function.",
       "apply only during ground operations, with the rudder travel limiter considered inactive at any point once the aircraft becomes airborne.",
       "progressively reduce the maximum available rudder deflection as airspeed increases, protecting the vertical stabilizer and rudder structure from excessive aerodynamic loads at high speed.",
-      "lock the rudder in a single fixed position for the entire flight, eliminating any rudder movement once the travel limiter is engaged.",
+      "lock the rudder in a single fixed position for the entire duration of the flight, eliminating any further rudder movement once the travel limiter mechanism has been engaged, regardless of subsequent changes in airspeed or configuration.",
     ],
     answer: 2,
     explain:
@@ -162,7 +162,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     options: [
       "provide the primary means of directional control during a normal crosswind landing, replacing the need for any pilot rudder input at all in that situation.",
       "increase, rather than damp, the aircraft's natural yaw oscillation tendency, the opposite of the system's actual intended effect.",
-      "control pitch trim exclusively, with 'yaw damper' being a misleading name for what is actually a pitch-axis trim system.",
+      "control pitch trim exclusively, with 'yaw damper' considered a misleading name for what is, in this view, actually a pitch-axis trim system unrelated to rudder movement or directional stability.",
       "automatically apply small, continuous rudder inputs to counteract Dutch roll and other unwanted yaw oscillations, improving ride comfort and directional stability.",
     ],
     answer: 3,
@@ -177,7 +177,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     q: "Flight spoilers, as distinguished from ground spoilers on the same panels, can be used in flight to",
     options: [
       "augment roll control by deploying asymmetrically (extending more on the down-going wing's side) in coordination with aileron deflection, in addition to their speed-brake/descent function.",
-      "increase lift rather than reduce it, the opposite of a spoiler's actual aerodynamic effect on the wing.",
+      "increase lift rather than reduce it, the opposite of a spoiler's actual aerodynamic effect on the wing, disturbing airflow over the upper surface in a way this option treats as lift-enhancing rather than lift-spoiling.",
       "extend only symmetrically and only after touchdown, making 'flight spoiler' a misleading term for a device that never actually functions in flight.",
       "control engine thrust directly, an engine-management rather than a flight-control-surface function despite the name.",
     ],
@@ -226,8 +226,8 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     options: [
       "steer the nose wheel using the same physical control surface deflection as the rudder's in-flight function, making nose wheel steering and rudder control mechanically identical systems.",
       "control the main landing gear's steering angle exclusively, with the nose wheel itself considered non-steerable on any tricycle-gear aircraft.",
-      "steer the aircraft only while airborne, with nose wheel steering considered inoperative and irrelevant during any ground operation.",
-      "directly steer the nose wheel (typically through a tiller, and/or through rudder pedal input at lower deflection angles) for ground manoeuvring, distinct from the rudder's primary in-flight directional control function.",
+      "steer the aircraft only while airborne, with nose wheel steering treated as inoperative and entirely functionally irrelevant during any ground operation such as taxiing, towing, or pushback maneuvering.",
+      "directly steer the nose wheel (typically through a tiller, and/or rudder pedal input at lower deflection angles) for ground manoeuvring, distinct from the rudder's in-flight control function.",
     ],
     answer: 3,
     explain:
@@ -241,7 +241,7 @@ export const CANADA_TC_ATPL_BATCH_40_QUESTIONS: Question[] = [
     q: "A Transformer Rectifier Unit (TRU), found in many transport aircraft electrical systems, functions by",
     options: [
       "converting the aircraft's AC electrical power into DC power, supplying DC buses and DC-powered equipment (and, often, charging the battery) from the AC generation system.",
-      "generating electrical power independently, without relying on any AC source to convert from, making a TRU a standalone power-generation device rather than a converter.",
+      "generating electrical power independently, without relying on any AC source to convert from, drawing instead on its own internal generation source independent of engine-driven generators, making a TRU a standalone power-generation device rather than a converter.",
       "converting the aircraft's DC electrical power into AC power, the reverse conversion direction from a TRU's actual function.",
       "controlling hydraulic system pressure, an unrelated hydraulic rather than an electrical-conversion function despite the name.",
     ],

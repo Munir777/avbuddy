@@ -32,9 +32,9 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     q: "A wing with significant taper (a narrower chord at the tip than at the root), compared to an untapered (rectangular) wing of the same span and area, generally",
     options: [
       "guarantees a root-first stall onset automatically, with no additional design feature (such as washout) ever needed to help ensure that stall pattern on a tapered wing.",
-      "increases structural weight compared to an untapered wing, the opposite of taper's usual structural benefit.",
+      "increases structural weight compared to an untapered wing, the opposite of taper's usual structural benefit, since taper is treated here as concentrating bending load further outboard rather than inboard toward the root.",
       "has no effect whatsoever on either structural weight or spanwise lift distribution, making taper ratio an aerodynamically and structurally insignificant design choice.",
-      "reduces structural weight (by moving lift-generated bending load inward, closer to the root), but tends to promote a less desirable spanwise lift distribution that can favour tip-first (rather than root-first) stall onset unless corrected.",
+      "reduces structural weight (by moving lift-generated bending load inward, closer to the root), but tends to promote a lift distribution favouring tip-first stall onset unless corrected.",
     ],
     answer: 3,
     explain:
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     options: [
       "remain completely unaffected by proximity to the stall, with adverse yaw severity considered independent of the wing's angle of attack at the moment of aileron input.",
       "become more pronounced, since the down-going aileron's wing is operating closer to its own critical angle of attack, making its increased induced drag (relative to the up-going aileron's wing) comparatively larger.",
-      "become less pronounced, the opposite of the actual relationship between proximity to the stall and adverse yaw severity.",
+      "become less pronounced, the opposite of the actual relationship between proximity to the stall and adverse yaw severity, since this option treats the induced-drag difference between the two wings as shrinking rather than growing near the stall.",
       "disappear entirely, since adverse yaw is understood to occur only at cruise airspeed and is considered entirely absent near the stall.",
     ],
     answer: 1,
@@ -82,7 +82,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
       "identical in every aerodynamic respect to a spiral dive, with 'spin' and 'spiral dive' simply describing the same phenomenon under two different names.",
       "simply a very steep, rapidly rotating descending turn in which neither wing is actually stalled at any point during the manoeuvre.",
       "a state of autorotation, in which one wing remains more deeply stalled than the other, sustaining a rolling, yawing, and descending motion that continues without further pilot-applied roll or yaw input.",
-      "a condition that, once entered, is aerodynamically impossible to exit through any pilot control input, regardless of technique.",
+      "a condition that, once entered, is aerodynamically impossible to exit through any pilot control input, regardless of technique, training, aircraft type, or exactly how promptly the recovery inputs happen to be applied.",
     ],
     answer: 2,
     explain:
@@ -113,7 +113,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     options: [
       "the ground restricts the wing's downwash, reducing the wing's effective induced drag (and altering its pitching moment) for a given angle of attack and lift.",
       "ground effect results from increased skin friction drag caused by proximity to the surface, unrelated to any change in downwash or induced drag.",
-      "the ground increases the wing's downwash, the opposite of the actual mechanism responsible for ground effect.",
+      "the ground increases the wing's downwash, the opposite of the actual mechanism responsible for ground effect, since this option treats proximity to the surface as energizing rather than restricting the wingtip vortex system.",
       "ground effect results entirely from a change in local air temperature near the surface, an unrelated thermal rather than an aerodynamic-flow-based mechanism.",
     ],
     answer: 0,
@@ -129,7 +129,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     options: [
       "the remaining engine produces less thrust than the failed engine would have, regardless of which specific engine fails, making the identity of the failed engine aerodynamically irrelevant.",
       "the remaining (right) engine's own P-factor-driven thrust line is offset further from the aircraft's centreline than the left engine's would have been, producing a larger, more difficult-to-counter yawing moment.",
-      "the remaining engine's propeller stops producing any P-factor asymmetry at all once the opposite engine has failed, eliminating rather than worsening any yaw asymmetry.",
+      "the remaining engine's propeller stops producing any P-factor asymmetry at all once the opposite engine has failed, eliminating rather than worsening any yaw asymmetry regardless of airspeed, power setting, or angle of attack at the time.",
       "the failure of either engine on a same-direction-rotating twin produces exactly identical yawing and controllability consequences, meaning no critical engine can be meaningfully identified.",
     ],
     answer: 1,
@@ -146,7 +146,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
       "is used specifically to reduce engine thrust asymmetry itself, an engine-power-related rather than an aerodynamic-yaw-control-related purpose.",
       "has no aerodynamic effect on controllability whatsoever, making the specific bank angle used an arbitrary, aerodynamically meaningless choice.",
       "helps counter the yawing moment aerodynamically, reducing the rudder deflection (and associated drag) otherwise needed and improving overall controllability, particularly near minimum control speed.",
-      "worsens the yawing moment, requiring even more rudder deflection than wings-level flight would, the opposite of the technique's actual intended effect.",
+      "worsens the yawing moment, requiring even more rudder deflection than wings-level flight would, the opposite of the technique's actual intended effect, since banking is treated here as adding rather than removing a helpful sideways weight component.",
     ],
     answer: 2,
     explain:
@@ -161,7 +161,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     options: [
       "affects the wing's own lift only, with the horizontal stabilizer considered aerodynamically isolated from any wing-generated downwash under any circumstance.",
       "has no effect whatsoever on the tail's effective angle of attack, since the tail is considered to operate in airflow entirely undisturbed by the wing ahead of it.",
-      "affects only the vertical stabilizer/rudder, with the horizontal stabilizer specifically excluded from any downwash-related effect.",
+      "affects only the vertical stabilizer/rudder, with the horizontal stabilizer specifically excluded from any downwash-related effect regardless of flap setting, power change, or angle-of-attack change.",
       "can meaningfully change the tail's effective angle of attack and its resulting contribution to pitch trim and control, even without any direct change in the tail surface's own deflection.",
     ],
     answer: 3,
@@ -178,7 +178,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
       "stalling speed increases as wing loading increases, since a higher wing loading requires a higher dynamic pressure (and thus airspeed) to generate the lift needed to support the aircraft's weight at the same CLmax.",
       "stalling speed is affected by wing loading only when the aircraft is above its maximum certified weight, with no relationship at or below that weight.",
       "stalling speed is entirely unrelated to wing loading, being determined solely by CLmax with no dependence on the weight-to-wing-area ratio at all.",
-      "stalling speed decreases as wing loading increases, the opposite of the actual relationship between wing loading and stalling speed.",
+      "stalling speed decreases as wing loading increases, the opposite of the actual relationship between wing loading and stalling speed, since this option treats a higher weight-to-wing-area ratio as requiring less, rather than more, dynamic pressure to sustain flight at CLmax.",
     ],
     answer: 0,
     explain:
@@ -210,7 +210,7 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
       "function as a form of vortex generator, re-energizing rather than provoking earlier separation of the boundary layer at the point where it's installed.",
       "increase the wingtip's stall margin specifically, with the wing root's own stall behaviour considered unaffected by a stall strip located there.",
       "deliberately provoke earlier local flow separation at the wing root at high angle of attack, helping ensure the wing root stalls before the wingtips do.",
-      "deliberately delay flow separation at the wing root, the opposite of a stall strip's actual intended aerodynamic effect.",
+      "deliberately delay flow separation at the wing root, the opposite of a stall strip's actual intended aerodynamic effect, since this option treats the device as re-energizing rather than disrupting the boundary layer there.",
     ],
     answer: 2,
     explain:
@@ -239,8 +239,8 @@ export const CANADA_TC_ATPL_BATCH_42_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Trim drag refers to the additional drag generated because",
     options: [
-      "the horizontal tail, to keep the aircraft in longitudinal trim, typically must produce a small download (or an adjusted lift force) that the wing must in turn generate additional lift (and therefore additional induced drag) to support.",
-      "trim drag applies only to aircraft with a fixed horizontal stabilizer, with any aircraft using a stabilator considered entirely free of trim drag.",
+      "the horizontal tail, to keep the aircraft in trim, typically produces a small download that the wing must in turn generate additional lift (and induced drag) to support.",
+      "trim drag applies only to aircraft with a fixed horizontal stabilizer, with any aircraft using a stabilator considered entirely free of trim drag regardless of how its trimmed position is set for a given flight condition.",
       "trimming the aircraft always reduces the total drag being generated, making 'trim drag' a misleading name for what is, in fact, a drag-reducing effect.",
       "trim drag arises exclusively from control surface friction in the trim mechanism itself, unrelated to any aerodynamic lift or download produced by the tail.",
     ],

@@ -16,7 +16,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A 406 MHz Emergency Locator Transmitter (ELT), compared to an older 121.5 MHz analog-only ELT, offers the operational advantage of",
     options: [
-      "operating only when the aircraft is on the ground, with no capability to transmit an emergency signal while the aircraft is actually in flight.",
+      "operating only when the aircraft is on the ground, with no capability to transmit an emergency signal while the aircraft is actually in flight, a limitation inconsistent with the unit's design for activation during in-flight impact events.",
       "requiring no battery or power source of its own, drawing power exclusively and continuously from the aircraft's main electrical system.",
       "transmitting a digitally encoded signal, including a unique aircraft identification, to the COSPAS-SARSAT satellite system, along with generally more precise location capability than 121.5 MHz alone provides.",
       "being incapable of transmitting on 121.5 MHz at all, meaning a 406 MHz ELT provides no signal that a nearby aircraft's ADF or a search aircraft could home in on locally.",
@@ -66,7 +66,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     options: [
       "continuous radar-equivalent surveillance identical in method and update rate to secondary surveillance radar, using ground-based radar antennas.",
       "periodic aircraft position (and other flight data) reports, automatically transmitted via a data link at agreed intervals or events, without requiring a separate voice position report.",
-      "no position information at all, providing only aircraft identification with no positional data included in any ADS-C report.",
+      "no position information at all, providing only aircraft identification with no positional data included in any ADS-C report, an omission that would defeat the surveillance purpose ADS-C is specifically contracted to provide.",
       "a broadcast-only service, in which the aircraft transmits position data to all aircraft and ground stations in range without any specific data 'contract' agreement involved.",
     ],
     answer: 1,
@@ -81,9 +81,9 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     q: "Satellite communication (SATCOM) voice, available on some aircraft for oceanic and remote-area operations, offers an advantage over HF voice communication in that SATCOM",
     options: [
       "is usable only over land areas, making it entirely unsuitable for the oceanic and remote-area communication role that HF traditionally serves.",
-      "relies on the same ionospheric skywave propagation mechanism as HF, making it equally susceptible to the same atmospheric and solar disturbances.",
+      "relies on the same ionospheric skywave propagation mechanism as HF, making it equally susceptible to the same atmospheric and solar disturbances, a claim at odds with SATCOM's actual reliance on satellite relay rather than skywave propagation.",
       "generally provides clearer voice quality less affected by atmospheric and solar activity, since it relies on satellite relay rather than ionospheric skywave propagation.",
-      "requires no aircraft equipment of any kind, with the ground station alone responsible for establishing and maintaining the entire communication link.",
+      "requires no aircraft equipment of any kind, with the ground station alone responsible for establishing and maintaining the entire communication link, a claim inconsistent with the dedicated antenna and avionics a SATCOM-equipped aircraft actually carries.",
     ],
     answer: 2,
     explain:
@@ -130,7 +130,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     options: [
       "the aircraft transmits on one frequency while continuously receiving on an entirely different, independent frequency at the same time, by definition.",
       "only one party (either the pilot or the controller) can transmit on a given frequency at a time, with simultaneous transmissions from both sides resulting in a garbled or blocked signal.",
-      "the terms 'simplex' and 'duplex' describe signal encoding methods only, with no bearing on whether simultaneous two-way transmission is possible.",
+      "the terms 'simplex' and 'duplex' describe signal encoding methods only, with no bearing on whether simultaneous two-way transmission is possible, a characterization inconsistent with how the terms are actually used to describe channel capability.",
       "both the pilot and the controller can transmit and receive simultaneously on the same frequency without any risk of one transmission blocking or interfering with the other.",
     ],
     answer: 1,
@@ -147,7 +147,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
       "determine the aircraft's altitude precisely, functioning as a ground-based altitude verification service rather than a bearing-finding one.",
       "remotely control the aircraft's own VHF radio frequency selection from the ground, without any pilot action required.",
       "determine the aircraft's bearing from the ground station based on the aircraft's own VHF transmission, and relay that bearing (or a suggested heading) back to help a pilot who may be lost or disoriented.",
-      "operate only during a declared emergency, with no application to routine navigational assistance for an uncertain-position pilot.",
+      "operate only during a declared emergency, with no application to routine navigational assistance for an uncertain-position pilot, a restriction narrower than how VDF assistance is actually made available to a pilot who becomes uncertain of position.",
     ],
     answer: 2,
     explain:
@@ -177,7 +177,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     q: "Standardized ATC phraseology, as opposed to informal or conversational radio communication, is emphasized primarily because it",
     options: [
       "reduces ambiguity and the chance of misunderstanding by using a consistent, well-defined set of terms and formats that both pilots and controllers are trained to expect.",
-      "is required only in a pilot's native language, with any use of English phraseology exempt from any standardization requirement.",
+      "is required only in a pilot's native language, with any use of English phraseology exempt from any standardization requirement, a distinction not reflected in how standardized phraseology is actually applied across languages.",
       "applies only to emergency communication, with routine, non-emergency ATC exchanges free to use any wording the pilot or controller prefers.",
       "is intended primarily to sound more professional, with reducing ambiguity or miscommunication being an incidental rather than a primary purpose.",
     ],
@@ -193,8 +193,8 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
     q: "Traffic Information Service-Broadcast (TIS-B) is a ground-based service intended to",
     options: [
       "transmit information only to ATC ground facilities, with no data broadcast to, or usable by, an aircraft in flight.",
-      "supplement ADS-B In by rebroadcasting traffic information (derived from radar or other surveillance sources) for nearby aircraft that are not themselves transmitting ADS-B Out, giving an ADS-B In-equipped aircraft a more complete traffic picture.",
-      "provide weather information exclusively, with no traffic-related data included in a TIS-B broadcast at all.",
+      "supplement ADS-B In by rebroadcasting traffic information for nearby aircraft that are not themselves transmitting ADS-B Out, giving an ADS-B In-equipped aircraft a more complete traffic picture.",
+      "provide weather information exclusively, with no traffic-related data included in a TIS-B broadcast at all, a scope that would leave the service unable to fill any radar-derived traffic coverage gap for ADS-B In users.",
       "replace ADS-B entirely, making both ADS-B Out and ADS-B In equipment unnecessary once TIS-B coverage is available.",
     ],
     answer: 1,
@@ -243,7 +243,7 @@ export const CANADA_TC_ATPL_BATCH_34_QUESTIONS: Question[] = [
       "a ground-based message-switching network used to distribute aeronautical fixed-service messages, such as flight plans and NOTAMs, between aviation authorities, ATC units, and other authorized addressees.",
       "an air-to-ground voice communication frequency reserved exclusively for use during a declared in-flight emergency.",
       "a radar surveillance network used by ATC to detect and track aircraft position, unrelated to any message distribution function.",
-      "a satellite-based aircraft tracking system, functionally equivalent to ADS-C, intended specifically for oceanic surveillance.",
+      "a satellite-based aircraft tracking system, functionally equivalent to ADS-C, intended specifically for oceanic surveillance, a description that overlooks AFTN's actual role as a ground-to-ground message-switching network rather than a surveillance system.",
     ],
     answer: 0,
     explain:

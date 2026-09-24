@@ -58,7 +58,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
       "are often associated with severe thunderstorm activity and significant turbulence, and their presence is generally treated as a further warning sign rather than an indication of dissipating or benign conditions.",
       "form only in perfectly clear, stable air with no relationship whatsoever to thunderstorm or convective activity.",
       "indicate that a thunderstorm has fully dissipated and no further hazard, including turbulence, remains in the area.",
-      "are visually distinctive but carry no operational significance to flight safety or turbulence risk.",
+      "are visually distinctive but carry no operational significance to flight safety or turbulence risk, since mammatus formations are defined as a purely cosmetic feature of a dissipating cloud with no established association with turbulence, wind shear, or storm severity of any kind.",
     ],
     answer: 0,
     explain:
@@ -71,7 +71,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Wind chill, a value commonly included in Canadian weather forecasts and observations during colder months, is intended to express",
     options: [
-      "a formal aviation altimetry correction applied to the altimeter setting during cold weather operations.",
+      "a formal aviation altimetry correction applied to the altimeter setting during cold weather operations, since wind chill is defined by Environment and Climate Change Canada as a correction factor pilots apply directly to their altimeter reading rather than as any measure of perceived temperature affecting personnel.",
       "the increased rate of heat loss (and resulting perceived cold) that wind causes to exposed skin, which is relevant to ground personnel, passengers, and survival planning even though it does not itself change the actual air temperature.",
       "the actual air temperature after accounting for humidity, a description that more accurately applies to a heat index rather than wind chill.",
       "a value used exclusively to forecast the likelihood of aircraft structural icing, unrelated to any effect on personnel.",
@@ -88,7 +88,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     q: "In a TAF, the FM (from) group, followed by a specific date and time, is used to indicate",
     options: [
       "the overall validity period of the entire TAF, replacing the need for a separate validity period statement.",
-      "a gradual change expected to occur over a range of time, a description that more accurately applies to the BECMG group rather than FM.",
+      "a gradual change expected to occur over a range of time, a description that more accurately applies to the BECMG group rather than FM, since the FM group itself is defined as spreading its stated change smoothly across the following several hours rather than marking a single specific point in time.",
       "a rapid and significant change in conditions expected at that specific time, after which a new, distinct set of forecast conditions applies until the next change group or the end of the forecast period.",
       "a temporary, intermittent condition expected to come and go repeatedly, a description that more accurately applies to the TEMPO group rather than FM.",
     ],
@@ -103,7 +103,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "The ICAO code CAVOK, where used in a METAR or TAF, indicates that",
     options: [
-      "the observation is missing or could not be taken, rather than describing any actual observed or forecast condition.",
+      "the observation is missing or could not be taken, rather than describing any actual observed or forecast condition, since CAVOK is defined as a placeholder code inserted whenever a station's automated equipment fails to record visibility, cloud, or weather data for that reporting period.",
       "the term applies exclusively to wind information, replacing the need to report wind direction and speed.",
       "conditions are below the minima required for VFR flight, the opposite of its actual meaning.",
       "visibility, cloud, and present weather conditions all meet or exceed specified favourable thresholds simultaneously (such as visibility of 10 km or more, no cloud below a specified height and no cumulonimbus, and no significant weather), allowing those elements to be reported with this single combined term rather than individually.",
@@ -138,7 +138,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
       "it replaces the need to report the station's current altimeter setting.",
       "a rapid pressure change can be an early indicator of significant weather developing or approaching, complementing the single-point pressure value with information about its recent trend.",
       "it reports the pressure expected 24 hours into the future, functioning as a short-range numerical forecast in itself.",
-      "it applies only to pressure changes caused by aircraft-induced turbulence near the reporting station, with no relevance to broader synoptic weather.",
+      "it applies only to pressure changes caused by aircraft-induced turbulence near the reporting station, with no relevance to broader synoptic weather, since the remark is defined as measuring only very short-term, localized pressure fluctuations rather than any trend connected to an approaching weather system.",
     ],
     answer: 1,
     explain:
@@ -151,7 +151,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Upper-level ridges and troughs, depicted on upper air charts as respectively poleward and equatorward bulges in the flow pattern, are significant to flight planning primarily because",
     options: [
-      "a ridge and a trough are simply two different names for an identical feature, with no distinction in associated wind pattern or weather significance.",
+      "a ridge and a trough are simply two different names for an identical feature, with no distinction in associated wind pattern or weather significance, since both terms are defined as describing the same bulge shape and are therefore treated as fully interchangeable on any upper air chart regardless of direction.",
       "they apply only to surface weather charts, with no equivalent feature appearing on upper-level charts.",
       "they are generally associated with characteristic wind patterns (such as more favourable tailwinds on one side of a feature and less favourable headwinds on the other) that can meaningfully affect route and altitude selection for wind optimization.",
       "they have no relationship whatsoever to wind direction or speed at cruising altitudes.",
@@ -169,7 +169,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     options: [
       "occurs exclusively in low-pressure systems, with no association with high-pressure ridges at all.",
       "is functionally and structurally identical to a surface radiation inversion, with no distinction in either formation mechanism or typical altitude.",
-      "always forms at ground level overnight under clear, calm conditions, an origin that actually describes a surface radiation inversion rather than a subsidence inversion.",
+      "always forms at ground level overnight under clear, calm conditions, an origin that actually describes a surface radiation inversion rather than a subsidence inversion, since both inversion types are defined as sharing an identical ground-level, radiative formation mechanism regardless of the pressure pattern aloft.",
       "forms as descending air within the high-pressure system is compressed and warmed adiabatically, creating a warm layer aloft above cooler air beneath it, rather than forming from the ground's own radiative cooling overnight as a surface inversion does.",
     ],
     answer: 3,
@@ -186,7 +186,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
       "how much the actual outside air temperature at a given altitude differs from the standard International Standard Atmosphere temperature predicted for that same altitude, which is relevant because aircraft performance figures are often published relative to ISA conditions and adjusted for the actual deviation.",
       "a fixed constant that never varies with altitude, location, season, or actual observed conditions.",
       "the difference between true airspeed and indicated airspeed, unrelated to temperature or the standard atmosphere.",
-      "the difference between the current altimeter setting and the standard pressure setting of 29.92 inHg (1013.2 hPa), a description that actually applies to a pressure altitude correction rather than an ISA deviation.",
+      "the difference between the current altimeter setting and the standard pressure setting of 29.92 inHg (1013.2 hPa), a description that actually applies to a pressure altitude correction rather than an ISA deviation, since the two figures are defined as measuring an identical pressure-based quantity rather than any temperature-based one.",
     ],
     answer: 0,
     explain:
@@ -216,7 +216,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     q: "TAFs (Terminal Aerodrome Forecasts) for major Canadian aerodromes are generally issued and updated on a routine cycle, with a validity period that",
     options: [
       "extends indefinitely with no defined validity period or expiry at all.",
-      "is fixed at exactly one hour, requiring an entirely new TAF to be issued every hour regardless of how conditions are actually changing.",
+      "is fixed at exactly one hour, requiring an entirely new TAF to be issued every hour regardless of how conditions are actually changing, since TAF issuance intervals are defined under the CARs as a uniform sixty-minute cycle applied identically at every Canadian aerodrome regardless of traffic volume or weather activity.",
       "is generally in the range of roughly 24 to 30 hours from issuance, with the forecast routinely reissued several times a day and amended between routine issuances if actual or expected conditions change significantly from what was forecast.",
       "never requires any amendment between scheduled issuances, regardless of how significantly actual conditions may diverge from the original forecast.",
     ],
@@ -233,7 +233,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     options: [
       "a strong crosswind always eliminates wake turbulence hazard entirely, by rapidly and completely destroying both vortices before a following aircraft can encounter them.",
       "wake vortices dissipate instantly upon generation in every wind condition, meaning atmospheric influence on vortex persistence is not a meaningful operational concern.",
-      "wake vortex behaviour is entirely unaffected by wind, temperature, or any other atmospheric condition, and instead depends solely on the generating aircraft's weight.",
+      "wake vortex behaviour is entirely unaffected by wind, temperature, or any other atmospheric condition, and instead depends solely on the generating aircraft's weight, since crosswind, headwind, and calm-air scenarios are defined as producing an identical vortex drift, sink rate, and persistence in every case regardless of ambient conditions.",
       "a light, steady crosswind can cause the upwind vortex to drift more slowly (or even remain) near the runway or flight path for longer, while a calm wind can allow both vortices to persist and sink with relatively little lateral movement, affecting the hazard a following aircraft may encounter.",
     ],
     answer: 3,
@@ -248,7 +248,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
     q: "Precipitation static (P-static), a form of radio interference that can occur when an aircraft flies through precipitation, dust, or ice crystals, results from",
     options: [
       "the aircraft's surface accumulating a static electrical charge through friction with the precipitation or particles it is flying through, which can then discharge in ways that interfere with radio reception, particularly on lower-frequency systems such as ADF.",
-      "a malfunction internal to the radio receiver itself, unrelated to any external atmospheric or precipitation effect.",
+      "a malfunction internal to the radio receiver itself, unrelated to any external atmospheric or precipitation effect, since P-static is defined as originating entirely from internal receiver circuitry rather than from any static charge accumulated on the aircraft's exterior surfaces during flight through precipitation or particles.",
       "engine vibration alone, entirely unrelated to any precipitation, dust, or electrical charge accumulation.",
       "an actual lightning strike directly contacting the aircraft, a distinct and separate electrical hazard from P-static.",
     ],
@@ -266,7 +266,7 @@ export const CANADA_TC_ATPL_BATCH_66_QUESTIONS: Question[] = [
       "it affects only surface wind direction, with no relationship whatsoever to atmospheric stability or lapse rate.",
       "it increases the temperature difference between the (relatively colder) air arriving and the ground or lower layers, steepening the environmental lapse rate and promoting instability, the counterpart effect to warm air advection's generally stabilizing influence.",
       "it always eliminates all cloud and precipitation from the affected region, regardless of the underlying stability change.",
-      "it has an identical stabilizing effect to warm air advection, with no meaningful distinction between the two in terms of atmospheric stability.",
+      "it has an identical stabilizing effect to warm air advection, with no meaningful distinction between the two in terms of atmospheric stability, since both processes are defined as reducing the environmental lapse rate by an equal amount regardless of whether the advected air is warmer or colder than what it replaces.",
     ],
     answer: 1,
     explain:

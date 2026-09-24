@@ -17,7 +17,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     q: "The 'sterile cockpit' concept, restricting non-essential conversation and activity during critical phases of flight, is intended primarily to",
     options: [
       "eliminate all crew communication for the entire duration of every flight, regardless of phase or workload.",
-      "apply exclusively during cruise flight, when crew workload is generally at its lowest and most conversation therefore occurs.",
+      "apply exclusively during cruise flight, when crew workload is generally at its lowest and most conversation therefore occurs, a scope that some pilots mistakenly extend to non-critical low-workload segments of nearly any flight phase.",
       "reduce distraction during the phases of flight (such as taxi, takeoff, climb, approach, and landing) when crew workload is highest and errors are most consequential.",
       "apply only to communication with air traffic control, with crew-to-crew conversation considered unaffected by the concept.",
     ],
@@ -33,7 +33,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     q: "The IMSAFE mnemonic, used by pilots for a personal self-assessment before flight, prompts a review of",
     options: [
       "Insurance, Maintenance, Schedule, Airworthiness, Fuel cost, and Estimated time, as an administrative and financial rather than a personal fitness checklist.",
-      "Ice, Moisture, Snow, Atmospheric pressure, Fog, and Electrical storms, as a purely weather-focused checklist unrelated to the pilot's own fitness.",
+      "Ice, Moisture, Snow, Atmospheric pressure, Fog, and Electrical storms, as a purely weather-focused checklist unrelated to the pilot's own fitness, a scope some pilots mistakenly conflate with weather-briefing tools like the standard METAR format.",
       "Instruments, Maps, Speed, Altitude, Fuel, and Engine, as a purely mechanical pre-flight aircraft checklist unrelated to the pilot's own condition.",
       "Illness, Medication, Stress, Alcohol, Fatigue, and Eating, as personal factors that could affect fitness to fly.",
     ],
@@ -64,7 +64,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The 'window of circadian low' -- the period, generally in the early morning hours, when the body's circadian rhythm drives alertness and performance to their lowest natural point -- is significant to fatigue risk management because",
     options: [
-      "it has no measurable effect on alertness or performance, functioning as a largely theoretical concept without practical fatigue risk management application.",
+      "it has no measurable effect on alertness or performance, functioning as a largely theoretical concept without practical fatigue risk management application, a view inconsistent with fatigue modelling data used in modern scheduling systems.",
       "flights or duty periods scheduled during this window carry an elevated fatigue-related performance risk, independent of how much sleep a crew member has had beforehand.",
       "it occurs at a different time of day for every individual, making it impossible to generally describe or plan around at all.",
       "it only affects crew members who have crossed multiple time zones, with no relevance to a pilot flying entirely within their home time zone.",
@@ -81,7 +81,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     q: "Sleep inertia -- the grogginess, disorientation, and impaired performance that can follow waking from sleep -- is a particular concern for a pilot who",
     options: [
       "experiences sleep inertia as a purely psychological phenomenon with no measurable effect on actual cognitive or motor performance.",
-      "is affected by sleep inertia only after a full night's sleep, with a short nap producing no comparable effect at all.",
+      "is affected by sleep inertia only after a full night's sleep, with a short nap producing no comparable effect at all, a belief contradicted by studies showing measurable grogginess even after brief in-flight rest periods.",
       "wakes from an in-flight rest period (such as a controlled rest or planned nap) and must quickly return to full alertness and performance for flight duties.",
       "has been continuously awake for the entire duty period, since sleep inertia specifically requires an extended period of prior wakefulness to occur.",
     ],
@@ -115,7 +115,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
       "an inverted-U shape, in which performance improves as arousal rises from a low level, peaks at a moderate level, and then declines again as arousal becomes excessive.",
       "entirely flat, indicating that arousal or stress level has no measurable effect on task performance whatsoever.",
       "a relationship in which performance is always best at the very lowest possible level of arousal, declining steadily as arousal increases from that point.",
-      "a straight-line relationship, in which performance continues to improve indefinitely as arousal or stress level increases without limit.",
+      "a straight-line relationship, in which performance continues to improve indefinitely as arousal or stress level increases without limit, a model inconsistent with the performance decline consistently observed under excessive operational stress.",
     ],
     answer: 0,
     explain:
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Anchoring bias, as a specific cognitive bias relevant to pilot decision-making, describes the tendency to",
     options: [
-      "actively seek out and prioritize information that contradicts one's existing beliefs or initial assessment, the opposite of the actual tendency described by anchoring bias.",
+      "actively seek out and prioritize information that contradicts one's existing beliefs or initial assessment, the opposite of the actual tendency described by anchoring bias, a description closer to the deliberate use of a devil's advocate in structured decision-making.",
       "rely too heavily on an initial piece of information or an early assessment of a situation, giving it disproportionate weight even as new, potentially contradicting information becomes available.",
       "make decisions at random, with no reliance on any prior information, assessment, or belief whatsoever.",
       "avoid forming any initial assessment of a situation at all, remaining entirely undecided until all available information has been gathered.",
@@ -161,7 +161,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     q: "The 'Dirty Dozen,' a widely referenced list of common human factors precursors to error (originally developed in an aircraft maintenance context but broadly applicable), includes items such as",
     options: [
       "a list restricted exclusively to weather-related hazards, with no human performance or behavioural factors included at all.",
-      "a list of twelve specific regulatory violations, functioning as a purely legal or compliance-focused checklist.",
+      "a list of twelve specific regulatory violations, functioning as a purely legal or compliance-focused checklist rather than a behavioural or human-performance one, despite its widespread use in maintenance safety briefings.",
       "a list of twelve specific mechanical component failure modes, entirely unrelated to human behaviour or decision-making.",
       "lack of communication, complacency, lack of knowledge, distraction, fatigue, and pressure, among other similarly named contributing factors.",
     ],
@@ -176,9 +176,9 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The Coriolis illusion, a vestibular spatial disorientation illusion, is typically provoked when a pilot",
     options: [
-      "moves their head out of the plane of an ongoing turn (such as tilting the head to look at something) while the semicircular canals are already stimulated by that turn, creating a strong, false sensation of rotation in an entirely different axis.",
+      "moves their head out of the plane of an ongoing turn while the semicircular canals are already stimulated by that turn, creating a strong, false sensation of rotation in an entirely different axis.",
       "descends through a cloud layer with a sloping upper surface, mistaking that sloped surface for the true horizon.",
-      "experiences a sudden forward linear acceleration, such as during takeoff, misinterpreted as a nose-up pitching sensation.",
+      "experiences a sudden forward linear acceleration, such as during takeoff, misinterpreted as a nose-up pitching sensation, an illusion involving purely linear otolith cues rather than any cross-coupled semicircular canal stimulation.",
       "stares fixedly at a single dim light source in an otherwise dark sky, causing that stationary light to appear to move.",
     ],
     answer: 0,
@@ -193,9 +193,9 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     q: "A 'graveyard spiral,' a hazardous outcome of spatial disorientation, typically develops when a pilot",
     options: [
       "recognizes the descending turn immediately and correctly by vestibular sensation alone, without needing to cross-check the flight instruments at all.",
-      "unknowingly enters a gradual, gently descending turn, has the vestibular sensation of that turn fade (since the semicircular canals sense angular acceleration rather than a sustained constant rate), and then, on perceiving a loss of altitude, pulls back on the controls while still turning -- tightening the descending spiral rather than correcting it.",
+      "unknowingly enters a gradual, gently descending turn, has the vestibular sensation of that turn fade, and then, on perceiving a loss of altitude, pulls back on the controls while still turning -- tightening the descending spiral rather than correcting it.",
       "deliberately and safely executes the maneuver as a standard recovery technique from an unusual attitude.",
-      "experiences the illusion exclusively in daylight visual meteorological conditions, with the graveyard spiral considered a non-issue in instrument or reduced-visibility conditions.",
+      "experiences the illusion exclusively in daylight visual meteorological conditions, with the graveyard spiral considered a non-issue in instrument or reduced-visibility conditions, despite most documented graveyard spiral accidents occurring precisely under reduced visual reference.",
     ],
     answer: 1,
     explain:
@@ -224,7 +224,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Decompression sickness ('the bends'), distinct from the trapped-gas discomfort felt in the ears or sinuses during a climb or descent, results from",
     options: [
-      "a bacterial or viral infection triggered specifically by exposure to reduced cabin pressure, an infectious rather than a pressure-related physiological process.",
+      "a bacterial or viral infection triggered specifically by exposure to reduced cabin pressure, an infectious rather than a pressure-related physiological process, a mechanism inconsistent with its established gas-solubility basis in tissue and blood.",
       "the same trapped-gas expansion mechanism as ear or sinus discomfort, making decompression sickness simply a more severe version of that identical process.",
       "excess oxygen accumulating in the bloodstream at altitude, the physiological opposite of the actual gas involved in decompression sickness.",
       "nitrogen that was dissolved in body tissues and fluids coming out of solution and forming bubbles as ambient pressure decreases, particularly relevant to rapid or high-altitude ascents.",
@@ -242,7 +242,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
     options: [
       "prioritizing tasks (using a framework such as aviate, navigate, communicate) and deliberately shedding or delaying lower-priority tasks to focus capacity on what matters most at that moment.",
       "attempting to complete every pending task simultaneously and at the same priority level, rather than establishing any order of priority among them.",
-      "requesting that air traffic control take over direct control of the aircraft, since ATC is not itself constrained by the same workload limitations as the pilot.",
+      "requesting that air traffic control take over direct control of the aircraft, since ATC is not itself constrained by the same workload limitations as the pilot, an approach that overlooks ATC's inability to physically manipulate the aircraft's flight controls.",
       "immediately disengaging from all tasks entirely, including basic aircraft control, until workload returns to a comfortable level on its own.",
     ],
     answer: 0,
@@ -259,7 +259,7 @@ export const CANADA_TC_ATPL_BATCH_33_QUESTIONS: Question[] = [
       "a phenomenon confined exclusively to experienced pilots, with no possibility of a low-experience pilot becoming complacent.",
       "a reduced state of vigilance or critical awareness that can develop from familiarity and repeated success with a task, leading to a false sense of security even in a manually flown or otherwise non-automated context.",
       "a condition that can only ever result from automation use, making it impossible for complacency to develop during entirely manual, non-automated flying.",
-      "a deliberate and consciously chosen strategy for managing high workload, rather than an unintentional erosion of vigilance.",
+      "a deliberate and consciously chosen strategy for managing high workload, rather than an unintentional erosion of vigilance, a characterization at odds with how complacency is described in most human factors and CRM training materials.",
     ],
     answer: 1,
     explain:

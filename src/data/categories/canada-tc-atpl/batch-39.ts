@@ -35,7 +35,7 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     options: [
       "determine the aircraft's assigned squawk code, a surveillance-identification function unrelated to elapsed time estimates along the route.",
       "calculate the aircraft's expected fuel burn precisely, a fuel-planning function considered entirely separate from ATC's own use of EET.",
-      "apply only to flights remaining within a single ATC unit's area of responsibility, with EET considered irrelevant to any flight crossing between units.",
+      "apply only to flights remaining entirely within a single ATC unit's area of responsibility, with EET considered irrelevant to any flight that will cross between two or more separate ATC units along its route.",
       "anticipate when the flight is expected to reach specific points, supporting coordination between ATC units and, if the flight becomes overdue relative to those estimates, search-and-rescue alerting.",
     ],
     answer: 3,
@@ -50,7 +50,7 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     q: "North Atlantic High Level Airspace (NAT-HLA), historically associated with Minimum Navigation Performance Specifications (MNPS) requirements, mandates that an operating aircraft",
     options: [
       "carry navigation equipment meeting a specified lateral navigation accuracy standard, reflecting the reduced lateral separation used in that airspace given the lack of direct radar surveillance over much of the ocean.",
-      "apply only to aircraft remaining below the airspace's defined vertical limits, with any aircraft above those limits automatically exempt from any navigation performance requirement.",
+      "apply only to aircraft remaining below the airspace's defined vertical limits, with any aircraft operating above those specific limits automatically and permanently exempt from any lateral navigation performance requirement whatsoever.",
       "carry no long-range navigation equipment at all, since NAT-HLA specifically prohibits the use of any dedicated oceanic navigation system.",
       "operate exclusively under VFR, with IFR flight considered categorically unauthorized anywhere within North Atlantic High Level Airspace.",
     ],
@@ -66,9 +66,9 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     q: "A weight-and-balance index (or 'balance index') system, used by some operators as an alternative to expressing centre of gravity directly as a percentage of mean aerodynamic chord (%MAC), works by",
     options: [
       "eliminating the need for any centre of gravity limit at all, since an index-based system is considered to remove any possibility of an out-of-limits loading condition.",
-      "assigning simplified index numbers to represent the moment effect of standard weight items (such as fuel, cargo, or passenger loading), which are then combined to arrive at a load-and-trim result without requiring a separate moment-arm calculation for each item.",
+      "assigning simplified index numbers to represent the moment effect of standard weight items, which are then combined to arrive at a load-and-trim result without a separate per-item moment-arm calculation.",
       "applying only to aircraft too small to have a defined centre of gravity envelope, with larger transport aircraft specifically excluded from ever using an index-based system.",
-      "measuring centre of gravity using an entirely different physical quantity from %MAC, one that has no mathematical relationship to the aircraft's actual moment or balance condition at all.",
+      "measuring centre of gravity using an entirely different physical quantity from %MAC, one that has no mathematical relationship whatsoever to the aircraft's actual moment, trim, or balance condition under any loading scenario.",
     ],
     answer: 1,
     explain:
@@ -98,7 +98,7 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     q: "Declaring 'minimum fuel' to ATC, as distinguished from declaring a fuel emergency (MAYDAY FUEL), generally indicates that",
     options: [
       "the flight already has less fuel remaining than final reserve fuel, making 'minimum fuel' and a declared fuel emergency functionally identical notifications.",
-      "no actual change in fuel state has occurred, with 'minimum fuel' functioning purely as a routine, informational-only phrase carrying no operational significance to ATC.",
+      "no actual change in fuel state has occurred at all, with 'minimum fuel' functioning purely as a routine, informational-only phrase carrying no operational significance to ATC whatsoever, regardless of the flight's actual remaining fuel quantity.",
       "the flight has more fuel remaining than originally planned, an excess-fuel notification rather than a reduced-fuel-margin one.",
       "the flight's remaining fuel does not yet require a declared emergency, but any additional delay could result in landing with less than final reserve fuel remaining, alerting ATC to the reduced margin.",
     ],
@@ -113,9 +113,9 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Redispatch (or a 'decision point') procedure, used by some operators on certain long-haul routes, allows a flight to be dispatched",
     options: [
-      "to an intermediate redispatch point using one set of alternate/fuel requirements, and then, upon meeting specified conditions at that point, redispatched onward to the final destination under a separate flight plan, potentially reducing overall required fuel and alternate carriage.",
-      "with no flight plan or dispatch release of any kind for the first portion of the flight, an entirely undocumented segment until the redispatch point is reached.",
-      "only when the aircraft is carrying no passengers at all, with redispatch procedures specifically prohibited on any flight carrying revenue passengers.",
+      "to an intermediate redispatch point using one set of alternate/fuel requirements, and then, upon meeting specified conditions there, redispatched onward to the final destination under a separate flight plan.",
+      "with no flight plan or dispatch release of any kind for the first portion of the flight, an entirely undocumented segment contrary to standard dispatch documentation requirements until the redispatch point is reached.",
+      "only when the aircraft is carrying no passengers at all, with redispatch procedures specifically and permanently prohibited on any flight carrying revenue passengers of any kind.",
       "using a single, unchanging flight plan for the entire route, with 'redispatch' referring only to renaming that same unmodified flight plan partway through the flight.",
     ],
     answer: 0,
@@ -161,7 +161,7 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A Minimum Equipment List (MEL) and a Configuration Deviation List (CDL) are both dispatch-relief documents, but they are distinguished in that",
     options: [
-      "the CDL addresses installed avionics and systems equipment exclusively, while the MEL addresses only external airframe components, the reverse of their actual respective scopes.",
+      "the CDL addresses installed avionics and systems equipment exclusively, while the MEL addresses only external airframe and structural components, which is the reverse of their actual respective regulatory scopes under the applicable requirements.",
       "the MEL and CDL cover exactly the same scope of items, with the two documents simply being duplicate versions of an identical list.",
       "neither document has any connection to aircraft performance, with both the MEL and CDL addressing only cosmetic or non-functional aspects of the aircraft's configuration.",
       "the MEL addresses installed equipment/systems permitted to be inoperative, while the CDL addresses certain external, generally minor airframe/structural components (such as small access panels or fairings) permitted to be missing.",
@@ -179,7 +179,7 @@ export const CANADA_TC_ATPL_BATCH_39_QUESTIONS: Question[] = [
     options: [
       "contingency fuel, since both are intended to cover unforeseen factors affecting fuel consumption, though the specific calculation method and terminology can differ between the CARs and ICAO frameworks.",
       "taxi fuel, since both address only the ground fuel burn before takeoff, with no relevance to any airborne portion of the flight.",
-      "final reserve fuel, since both are intended strictly as a fixed emergency-only quantity never to be used under normal operating conditions.",
+      "final reserve fuel, since both are intended strictly as a fixed, non-discretionary emergency-only quantity that is never to be used or planned against under normal, non-emergency operating conditions of any kind.",
       "holding fuel, since both are calculated exclusively based on a specific, pre-planned holding pattern the flight intends to fly.",
     ],
     answer: 0,

@@ -38,7 +38,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     options: [
       "a TA appearing only in text form with no graphical symbol, while an RA is the only alert type shown as a symbol on the traffic display.",
       "colour alone, with both TA and RA traffic depicted using the same shape and differing only in a barely perceptible shade of the same colour.",
-      "identical symbology for both, since TCAS displays are not designed to visually differentiate between an advisory and a resolution-level alert.",
+      "identical symbology for both, since TCAS displays are, in this view, not designed to visually differentiate between an advisory-level alert and a resolution-level alert at all.",
       "symbol colour and shape, with a TA generally shown as a solid amber circle and an RA as a solid red square, reflecting the RA's greater urgency and its associated vertical guidance.",
     ],
     answer: 3,
@@ -87,7 +87,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
       "DME distance is entirely independent of the aircraft's position relative to the station, since the equipment measures elapsed time rather than any form of distance.",
       "DME always reads exactly the horizontal ground distance to the station, with altitude having no effect on the displayed value under any circumstance.",
       "at close range and high altitude, the DME reading can noticeably exceed the actual horizontal (ground) distance to the station, since slant range includes the aircraft's altitude component.",
-      "slant range and ground distance differ only when the aircraft is flying away from the station, never when directly overhead or approaching it.",
+      "slant range and ground distance differ only when the aircraft is flying directly away from the station, never when the aircraft is overhead or actively approaching that same station.",
     ],
     answer: 2,
     explain:
@@ -102,7 +102,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     options: [
       "display outside air temperature at altitude, a parameter unrelated to engine mechanical condition or vibration levels.",
       "indicate fuel flow rate to each engine, a parameter that vibration monitoring equipment is not designed to measure.",
-      "measure engine oil pressure, a function otherwise performed exclusively by a completely unrelated oil pressure gauge with no vibration-sensing capability.",
+      "measure engine oil pressure, a function otherwise performed exclusively by a completely unrelated, independently calibrated oil pressure gauge that has no vibration-sensing capability whatsoever.",
       "alert the crew to abnormal mechanical vibration levels that may indicate developing engine or component damage, such as a bird strike, fan blade damage, or bearing wear.",
     ],
     answer: 3,
@@ -116,10 +116,10 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Oil pressure and oil temperature gauges on a piston or turbine engine are monitored by the pilot primarily to",
     options: [
-      "confirm that the engine's lubrication system is functioning within normal limits, since abnormal readings can indicate developing mechanical problems such as pump failure, oil leaks, or blockages.",
+      "confirm that the engine's lubrication system is functioning within normal limits, since abnormal readings can indicate developing mechanical problems such as pump failure or leaks.",
       "indicate the position of the landing gear, a function performed by an entirely separate indicating system unrelated to engine lubrication.",
       "determine the aircraft's current fuel quantity, since oil pressure and fuel quantity are measured using the same sensing system on most aircraft.",
-      "measure cabin pressurization status, a parameter unrelated to the engine's internal lubrication system.",
+      "measure cabin pressurization status, a parameter that is entirely unrelated to the engine's internal lubrication system and is instead displayed on its own separate, dedicated cockpit gauge elsewhere on the panel.",
     ],
     answer: 0,
     explain:
@@ -132,7 +132,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A brake temperature indicating system, found on many transport aircraft, is primarily intended to help the crew",
     options: [
-      "monitor engine exhaust gas temperature, a parameter unrelated to the wheel brakes and instead displayed on a separate dedicated gauge.",
+      "monitor engine exhaust gas temperature during climb and cruise power settings, a parameter entirely unrelated to the wheel brakes and instead displayed on its own separate, dedicated cockpit gauge located elsewhere on the instrument panel.",
       "avoid excessively hot brakes before a subsequent takeoff (or in the event a rejected takeoff or heavy landing has generated significant brake heat), reducing the risk of brake fire or fuse plug tire deflation.",
       "measure cabin temperature for passenger comfort, a parameter unrelated to brake system heat generated during ground operations.",
       "determine outside air temperature at the current cruising altitude, a function entirely unrelated to the aircraft's wheel brakes.",
@@ -149,7 +149,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     q: "GPS (GNSS)-derived altitude, as distinguished from barometric altitude displayed on the primary altimeter, is generally",
     options: [
       "unavailable on any aircraft equipped with a GNSS receiver, since altitude information cannot be derived from satellite navigation signals under any circumstance.",
-      "always more accurate than barometric altitude for terrain clearance, which is why regulatory separation standards are based entirely on GPS altitude rather than barometric altitude.",
+      "always more accurate than barometric altitude for terrain clearance in every case, which is why regulatory vertical separation standards are, in this view, based entirely on GPS altitude rather than on barometric altitude.",
       "not used for terrain and obstacle vertical separation, since GPS altitude is referenced to an ellipsoid or geoid model rather than the local barometric pressure datum that separation standards are built around.",
       "identical in every respect to barometric altitude, making the two values fully interchangeable for all separation and terrain clearance purposes.",
     ],
@@ -166,7 +166,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     options: [
       "display the aircraft's current groundspeed rather than any speed limit or margin, a value unrelated to stall or low-speed awareness.",
       "indicate an overspeed condition, functioning identically to the barber pole marking the high-speed Vmo/Mmo limit.",
-      "replace the need for any aural stall warning system entirely, since the visual band alone is considered sufficient without any accompanying audible alert.",
+      "replace the need for any aural stall warning system entirely, since the visual band alone is considered fully sufficient on its own without any accompanying audible alert being necessary.",
       "give the pilot a continuous visual cue of proximity to a low-speed limit (such as stall speed or minimum maneuvering speed) well before an aural stall warning would activate.",
     ],
     answer: 3,
@@ -181,7 +181,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     q: "An altitude alerter (altitude preselect system) provides the flight crew with",
     options: [
       "an aural and/or visual alert as the aircraft approaches a preselected target altitude, and again if the aircraft subsequently deviates from that altitude by a specified margin.",
-      "no alerting capability whatsoever, since altitude alerters are purely mechanical selector knobs with no associated aural or visual warning function.",
+      "no alerting capability whatsoever, since altitude alerters are treated here as purely mechanical selector knobs with no associated aural or visual warning function of any kind whatsoever.",
       "guidance restricted to lateral navigation, since altitude alerters are, despite their name, unrelated to vertical flight path monitoring.",
       "a warning that activates only during takeoff and landing, with no function once the aircraft has reached its assigned cruising altitude.",
     ],
@@ -196,7 +196,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "True airspeed (TAS) is derived from calibrated airspeed (CAS) by applying a correction for",
     options: [
-      "runway slope, a factor relevant to takeoff and landing performance calculations rather than to the derivation of true airspeed in flight.",
+      "runway slope, a factor relevant only to takeoff and landing performance calculations on the ground, rather than to the derivation of true airspeed from calibrated airspeed while the aircraft is airborne in flight.",
       "air density, which is determined from pressure altitude and outside air temperature, since CAS reads increasingly low relative to true airspeed as air density decreases with altitude.",
       "magnetic variation, since TAS is fundamentally a heading-related correction rather than a speed correction based on air density.",
       "compass deviation, a correction that applies to heading indication rather than to the relationship between airspeed values.",
@@ -212,7 +212,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On a multi-screen EFIS suite, a reversionary (or composite) display mode is designed so that, following the failure of one display unit,",
     options: [
-      "only engine instrument data remains available, with all primary flight information such as attitude and airspeed becoming permanently unavailable.",
+      "only engine instrument data remains available in that scenario, with all primary flight information such as attitude and airspeed becoming permanently and completely unavailable.",
       "all remaining displays go blank as well, since EFIS systems are designed to fail as a single unit rather than degrade individually.",
       "critical flight information from the failed display can be reconfigured onto a remaining, still-functioning screen, preserving the crew's access to essential flight data.",
       "the aircraft's autopilot is automatically and permanently disconnected, with no possibility of re-engagement for the remainder of the flight.",
@@ -230,7 +230,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     options: [
       "cabin airflow information for the environmental control system, a parameter unrelated to outside wind conditions.",
       "engine bleed air flow direction, a parameter measured and displayed by an entirely different system unrelated to navigation.",
-      "a forecast of wind conditions at the destination airport only, with no indication of the wind actually being experienced by the aircraft at its current position.",
+      "a forecast of wind conditions at the destination airport only, with no indication whatsoever of the wind actually being experienced by the aircraft at its current position or altitude.",
       "the current wind direction and speed relative to the aircraft's position, derived from the difference between the aircraft's true airspeed/heading and its actual groundspeed/track.",
     ],
     answer: 3,
@@ -247,7 +247,7 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
       "local magnetic influences from the aircraft's own structure, electrical systems, and equipment change over time, so deviation values must be periodically re-verified and the correction card updated accordingly.",
       "compass deviation is entirely random and unpredictable, making periodic swings pointless since no consistent correction can ever be derived.",
       "the Earth's magnetic field is considered to change too rapidly for any correction card to remain useful for more than a single flight.",
-      "a compass swing is required only once, at the time of aircraft manufacture, with no need for any subsequent re-verification throughout the aircraft's service life.",
+      "a compass swing is required only once, at the time of the aircraft's original manufacture, with no need for any subsequent re-verification at any point throughout the aircraft's entire service life, regardless of later equipment changes.",
     ],
     answer: 0,
     explain:
@@ -261,8 +261,8 @@ export const CANADA_TC_ATPL_BATCH_47_QUESTIONS: Question[] = [
     q: "A fuel imbalance caution indication, found on aircraft with independently monitored left and right fuel tank quantities, alerts the crew when",
     options: [
       "the fuel temperature approaches the freezing point of the fuel being carried, a thermal condition unrelated to any quantity comparison between tanks.",
-      "the quantity difference between corresponding tanks (such as left and right main tanks) exceeds a specified threshold, since a significant imbalance can affect controllability and may require crossfeed or other corrective action.",
-      "the total fuel quantity on board falls below the amount required to reach the destination, a distinct alert unrelated to any left/right quantity comparison.",
+      "the quantity difference between corresponding tanks (such as left and right main tanks) exceeds a specified threshold, since a significant imbalance can affect controllability and may require crossfeed action.",
+      "the total fuel quantity remaining on board falls below the amount actually required to reach the destination safely, a distinct alert that is entirely unrelated to any left/right tank quantity comparison at any point during the flight.",
       "an engine fails, since fuel imbalance indications are triggered exclusively by engine failure rather than by any actual difference in tank quantities.",
     ],
     answer: 1,

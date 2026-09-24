@@ -14,9 +14,9 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "If a pitot tube becomes blocked but its drain hole remains clear, the airspeed indicator will subsequently tend to behave like",
     options: [
-      "a vertical speed indicator, displaying a rate of change rather than any absolute value at all.",
+      "a vertical speed indicator, displaying a rate of change rather than any absolute value at all, despite the ASI's underlying mechanism having no relationship whatsoever to rate-of-change sensing.",
       "a perfectly accurate airspeed indicator, since a clear drain hole is sufficient to maintain fully normal ASI function despite the blockage.",
-      "an altimeter, since the trapped pitot pressure stays roughly constant while static pressure (still connected through the drain hole path) continues to vary with altitude, so the ASI reads higher climbing and lower descending.",
+      "an altimeter, since trapped pitot pressure stays roughly constant while static pressure continues to vary with altitude, so the ASI reads higher climbing and lower descending.",
       "a completely frozen, unmoving instrument, exactly as it would if the drain hole were also blocked.",
     ],
     answer: 2,
@@ -32,7 +32,7 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     options: [
       "a mechanical gyroscope, whose rigidity in space inherently introduces a delay before the indication catches up to actual vertical speed.",
       "an electric accelerometer with a built-in signal-processing delay, identical in mechanism to the accelerometer used in an IVSI.",
-      "GNSS-derived altitude data, which updates only once every several seconds due to satellite signal processing time.",
+      "GNSS-derived altitude data, which updates only once every several seconds due to satellite signal processing time, rather than any pressure-based delay mechanism internal to the instrument.",
       "a calibrated leak, which lets static pressure inside the instrument's diaphragm equalize with outside static pressure at a controlled, gradual rate rather than instantly.",
     ],
     answer: 3,
@@ -62,9 +62,9 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On a Horizontal Situation Indicator (HSI), the course deviation bar and the heading bug together provide",
     options: [
-      "vertical speed and altitude information exclusively, duplicating the function of the VSI and altimeter.",
+      "vertical speed and altitude information exclusively, duplicating the function of the VSI and altimeter, with no lateral course or heading data shown on the HSI at all.",
       "lateral deviation from a selected course (via the deviation bar) and a pilot- or autopilot-selected target heading (via the heading bug), combined with the compass card showing present heading.",
-      "engine parameter information exclusively, with no navigation or heading-related function on the HSI at all.",
+      "engine parameter information exclusively, with no navigation or heading-related function on the HSI at all -- a display purpose unrelated to what the deviation bar and heading bug actually show.",
       "a direct digital readout of groundspeed and estimated time en route, with no bearing or course information shown.",
     ],
     answer: 1,
@@ -94,7 +94,7 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "The command bars (or cue) displayed by a flight director on the attitude indicator represent",
     options: [
-      "engine thrust setting information, unrelated to pitch, roll, or any guidance mode.",
+      "engine thrust setting information, unrelated to pitch, roll, or any lateral or vertical guidance mode, despite command bars having no connection to power or thrust management at all.",
       "raw, unprocessed lateral and vertical deviation from the selected course and glidepath, identical in function to a course deviation bar.",
       "the aircraft's actual, current pitch and roll attitude, duplicating the function of the underlying attitude indicator symbology.",
       "the pitch and roll attitude the pilot should fly to satisfy the currently selected lateral and vertical guidance modes, rather than raw deviation from a course or glidepath.",
@@ -111,7 +111,7 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     q: "On an EICAS or ECAM alerting display, messages are typically colour-coded so that",
     options: [
       "red generally indicates a warning requiring immediate crew action, while amber (or yellow) generally indicates a caution requiring crew awareness and timely, but not necessarily immediate, action.",
-      "amber always indicates a more urgent condition than red, the reverse of the conventional colour-coding scheme.",
+      "amber always indicates a more urgent condition than red, the reverse of the conventional colour-coding scheme found on the flight decks of nearly all modern transport-category aircraft in service today.",
       "red and amber are used interchangeably with no distinction in urgency, and the specific colour chosen is purely a matter of display aesthetics.",
       "colour coding is applied only to engine parameters, with no colour distinction used for any system-related caution or warning message.",
     ],
@@ -159,7 +159,7 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     q: "An autothrottle (or autothrust) system is functionally distinct from the autopilot in that the autothrottle",
     options: [
       "controls the flight control surfaces to maintain pitch and roll, while the autopilot controls engine thrust, the reverse of the usual division of responsibility.",
-      "and the autopilot are simply two names for the exact same system, with no functional distinction between them.",
+      "and the autopilot are simply two names for the exact same system, with no functional distinction between them, even though the two are separately certified and wired through entirely different control paths.",
       "can only be used when the autopilot is disengaged, since the two systems are mutually exclusive and cannot operate simultaneously.",
       "controls engine thrust/power setting to maintain a target airspeed, Mach number, or thrust value, while the autopilot controls the flight control surfaces to maintain pitch, roll, and heading/track.",
     ],
@@ -175,9 +175,9 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     q: "Compared to a basic Ground Proximity Warning System (GPWS), a Terrain Awareness and Warning System (TAWS) adds",
     options: [
       "a forward-looking terrain display and predictive alerting, using a stored terrain database and the aircraft's position to warn of a potential conflict with terrain ahead of the aircraft's current flight path.",
-      "no meaningful additional capability at all; TAWS and GPWS are simply two different names for identical functionality.",
+      "no meaningful additional capability at all; TAWS and GPWS are simply two different names for identical functionality, despite the two systems relying on fundamentally different underlying terrain-sensing and alerting logic.",
       "a requirement that the system be manually armed by the crew before every flight, unlike GPWS which operates automatically without any crew action.",
-      "the ability to detect wind shear only, with terrain-related alerting entirely removed compared to a basic GPWS.",
+      "the ability to detect wind shear only, with terrain-related alerting entirely removed compared to a basic GPWS, despite TAWS being a terrain-focused enhancement by design.",
     ],
     answer: 0,
     explain:
@@ -190,9 +190,9 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A standby altimeter, compared to a primary altimeter driven through the aircraft's air data computer, is typically",
     options: [
-      "driven exclusively by GNSS-derived geometric altitude, with no static pressure connection at all.",
+      "driven exclusively by GNSS-derived geometric altitude, with no static pressure connection at all, unlike the pressure-based primary altimeter it is meant to back up.",
       "a self-contained, direct-reading mechanical (or independently powered) instrument, connected straight to a static source rather than depending on the air data computer to function.",
-      "entirely dependent on the same air data computer as the primary altimeter, offering no redundancy if that computer fails.",
+      "entirely dependent on the same air data computer as the primary altimeter, offering no redundancy if that computer fails, which would defeat the purpose of a separate standby instrument.",
       "not required to display altitude at all, since 'standby altimeter' is a misnomer for an instrument that actually displays only airspeed.",
     ],
     answer: 1,
@@ -241,7 +241,7 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
       "a smaller angular (and, close to the runway, physical) displacement from the localizer course produces full-scale needle deflection, compared to the wider angular displacement needed for full-scale deflection from a VOR radial.",
       "the CDI needle is actually less sensitive to localizer signals than to VOR radials, the reverse of the usual relationship between the two modes.",
       "CDI sensitivity is determined solely by the aircraft's groundspeed, and has no relationship to whether a VOR or localizer signal is being received.",
-      "the CDI needle displays identical sensitivity whether receiving a localizer or a VOR signal, with no difference in scaling between the two.",
+      "the CDI needle displays identical sensitivity whether receiving a localizer or a VOR signal, with no difference in scaling between the two, even though precise lateral guidance matters far more on a narrow final approach than along a wide en route radial.",
     ],
     answer: 0,
     explain:
@@ -254,10 +254,10 @@ export const CANADA_TC_ATPL_BATCH_27_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Before an Inertial Reference System (IRS) can be used for navigation, it typically requires",
     options: [
-      "the aircraft to already be airborne and in stabilized cruise flight before alignment can begin, making ground alignment impossible.",
+      "the aircraft to already be airborne and in stabilized cruise flight before alignment can begin, making ground alignment impossible despite the process being specifically designed to occur while stationary before push-back.",
       "a stationary alignment period, during which the system determines its initial position and orientation (including true north) before it can begin accurately integrating acceleration into position.",
       "no alignment or initialization period at all; an IRS can begin accurate navigation the instant it is powered on, while the aircraft is still moving.",
-      "manual entry of the destination airport only, with no reference to the aircraft's actual starting position needed at all.",
+      "manual entry of the destination airport only, with no reference to the aircraft's actual starting position or orientation needed at all before departure.",
     ],
     answer: 1,
     explain:

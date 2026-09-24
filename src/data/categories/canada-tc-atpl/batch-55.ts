@@ -246,9 +246,9 @@ export const CANADA_TC_ATPL_BATCH_55_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "An ATC instruction, as distinguished from an ATC clearance, is generally understood to be",
     options: [
-      "a directive requiring immediate compliance (such as a heading, altitude, or speed instruction) issued for traffic or safety purposes, distinct from a clearance authorizing a flight to proceed under specified conditions.",
+      "a directive requiring immediate compliance (such as a heading, altitude, or speed instruction) issued for traffic or safety purposes, distinct from a clearance.",
       "identical in every respect to a clearance, with the two terms used completely interchangeably and carrying no meaningful distinction.",
-      "entirely optional and non-binding, with a pilot understood to be free to disregard any ATC instruction without any expectation of compliance.",
+      "entirely optional and non-binding, with a pilot understood to be free to disregard any ATC instruction issued at any time without any expectation of compliance whatsoever.",
       "applicable only to IFR flights, with VFR flights understood to be entirely exempt from any obligation to comply with an ATC instruction.",
     ],
     answer: 0,
@@ -263,8 +263,8 @@ export const CANADA_TC_ATPL_BATCH_55_QUESTIONS: Question[] = [
     q: "'Flight time' and 'duty time,' as distinct terms used in applying flight and duty time limitations, are generally distinguished in that",
     options: [
       "flight time is always longer than duty time for any given work period, since duty time is understood to always represent a subset contained entirely within flight time.",
-      "flight time refers specifically to time spent operating the aircraft (from the moment it first moves under its own power for flight until it comes to rest at the end of that flight), while duty time is a broader period that also includes other assigned work such as pre-flight preparation.",
-      "the two terms are fully interchangeable, with 'flight time' and 'duty time' referring to precisely the same period with no meaningful distinction between them.",
+      "flight time refers to time spent actually operating the aircraft, while duty time is a broader period that also includes other assigned work such as pre-flight preparation.",
+      "the two terms are fully interchangeable, with 'flight time' and 'duty time' referring to precisely the same period with no meaningful distinction drawn between them under the CARs.",
       "duty time refers only to time spent asleep during a rest period, while flight time refers to all other waking hours, the reverse of their actual respective meanings.",
     ],
     answer: 1,

@@ -23,7 +23,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A VFR flight plan or flight itinerary is generally not required to be filed for a flight conducted",
     options: [
-      "only above 3,000 ft AGL, with no exemption applying to any VFR flight conducted below that altitude.",
+      "only above 3,000 ft AGL, with no exemption applying to any VFR flight conducted below that altitude, since the exemption is defined by altitude above ground rather than by distance from the departure aerodrome under any circumstances.",
       "only when the pilot holds a commercial pilot licence, with no exemption applying to a recreational or private pilot's flight.",
       "within a specified distance of the departure aerodrome, provided the flight does not proceed beyond that limited local area, reflecting the reduced search-and-rescue risk of a flight that stays close to its point of departure.",
       "at any distance whatsoever, since a VFR flight plan or itinerary is never required under any circumstances for a VFR flight.",
@@ -40,7 +40,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     q: "For a single-engine aircraft conducting an over-water flight, fuel planning differs from the twin-engine over-water case in that",
     options: [
       "fuel reserve requirements are reduced for a single-engine aircraft compared to an equivalent twin-engine aircraft on the same route.",
-      "a single-engine aircraft is required to calculate an engine-out critical point in exactly the same way as a twin-engine aircraft, with no difference between the two cases.",
+      "a single-engine aircraft is required to calculate an engine-out critical point in exactly the same way as a twin-engine aircraft, with no difference between the two cases, since the equal time point calculation is defined as comparing diversion times using the aircraft's own single-engine cruise performance figures either way.",
       "single-engine aircraft are categorically prohibited from any over-water flight, making fuel planning for such a flight entirely moot.",
       "there is no meaningful engine-out critical point (equal time point) to calculate, since the loss of the aircraft's only engine would generally require a ditching regardless of position along the route, shifting the planning emphasis toward survival equipment and route selection minimizing overall time over water.",
     ],
@@ -57,7 +57,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     options: [
       "a specified percentage of the planned trip fuel (such as 5 percent), subject to a defined minimum floor (such as a set number of minutes' worth of fuel at a specified holding burn rate), whichever method the operator's approved fuel policy specifies.",
       "a fixed, universal figure identical for every flight regardless of trip fuel, route, or aircraft type.",
-      "a value that is always identical in magnitude to the aircraft's required final reserve fuel.",
+      "a value that is always identical in magnitude to the aircraft's required final reserve fuel, since contingency fuel is defined under this scheme as simply a second, duplicate allowance calculated using the exact same final reserve fuel formula regardless of route or trip fuel.",
       "a calculation based exclusively on the destination's forecast weather, with no relationship to trip fuel or flight time at all.",
     ],
     answer: 0,
@@ -74,7 +74,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
       "the pilot-in-command's personal preference on the day of the flight, with no underlying regulatory criteria involved at all.",
       "regulatory criteria such as the size of the aircraft, the number of passengers typically carried, and demonstrated statistical validity of the standard weight figures for that operator's specific passenger population, rather than being left to unrestricted operator discretion.",
       "the colour of the aircraft's livery, a factor with no relationship to weight and balance methodology.",
-      "the calendar date of the flight, with standard weights permitted only during specific months of the year.",
+      "the calendar date of the flight, with standard weights permitted only during specific months of the year, since the regulatory criteria governing standard weight use are defined as a purely seasonal calendar restriction rather than one based on aircraft size, passenger capacity, or population statistics.",
     ],
     answer: 1,
     explain:
@@ -103,7 +103,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The 'entry point' into EDTO/ETOPS-applicable airspace along a given route is generally understood as",
     options: [
-      "the point at which the aircraft physically crosses an international boundary, regardless of its distance from any suitable alternate aerodrome.",
+      "the point at which the aircraft physically crosses an international boundary, regardless of its distance from any suitable alternate aerodrome, since the entry point is defined under this scheme as tied strictly to national airspace boundaries rather than to diversion time from a suitable alternate.",
       "the point at which the aircraft reaches its planned cruise altitude, unrelated to its distance from any suitable alternate aerodrome.",
       "a fixed geographic point identical for every route and every aircraft type, regardless of cruise speed or the location of suitable alternates.",
       "the point along the route at which the aircraft first becomes more than the applicable single-engine (or otherwise degraded) diversion time from a suitable en route alternate aerodrome, triggering the specific EDTO/ETOPS fuel, equipment, and operational requirements.",
@@ -120,7 +120,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     q: "Fuel consumed by an aircraft's Auxiliary Power Unit (APU), both on the ground before engine start and, on some flights, during flight, is generally",
     options: [
       "accounted for as a distinct component within the total fuel load calculation, since APU operation (for ground electrical/air conditioning power, or as an in-flight backup power source) consumes fuel in addition to the fuel burned by the main engines.",
-      "never included in any fuel planning calculation, since the APU is defined as consuming no fuel under any circumstances.",
+      "never included in any fuel planning calculation, since the APU is defined as consuming no fuel under any circumstances, drawing all of its electrical and pneumatic output instead from a source that requires no combustion of any kind whatsoever, either on the ground or in flight.",
       "always identical in magnitude to taxi fuel, making a separate APU fuel figure unnecessary in any flight plan.",
       "relevant only to fuel planning for helicopters, with no application to fixed-wing aircraft fitted with an APU.",
     ],
@@ -137,7 +137,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     options: [
       "information that applies only to VFR flights, with no relevance to IFR flight planning.",
       "relatively permanent or long-term aeronautical information (such as standing procedures, facility descriptions, and airspace structure), whereas a NOTAM conveys more time-sensitive, temporary, or urgent information not yet reflected in the AIP.",
-      "exclusively temporary and time-sensitive information, a description that actually applies to a NOTAM rather than the AIP.",
+      "exclusively temporary and time-sensitive information, a description that actually applies to a NOTAM rather than the AIP, since the AIP itself is defined as being reissued in full every time any single item of information changes anywhere in the country.",
       "no information relevant to flight planning whatsoever, existing purely as an administrative or historical record.",
     ],
     answer: 1,
@@ -186,7 +186,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
       "reassessing remaining fuel against the anticipated additional holding time, beyond the fuel already carried for standard holding, contingency, and reserve purposes, and considering whether a request for a more direct routing, an early decision to divert, or another option is warranted.",
       "descending immediately to the destination's minimum sector altitude, regardless of ATC instructions or the aircraft's current position.",
       "immediately declaring a fuel emergency regardless of the actual fuel state or the length of holding anticipated.",
-      "ignoring the advisory entirely, since standard holding fuel already carried is defined as covering any amount of additional holding ATC might subsequently require.",
+      "ignoring the advisory entirely, since standard holding fuel already carried is defined as covering any amount of additional holding ATC might subsequently require, regardless of how long that holding turns out to last, how far in advance the advisory was given, or how much fuel was actually planned for that particular flight.",
     ],
     answer: 0,
     explain:
@@ -199,7 +199,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "For a VFR cross-country flight, the concept of a 'lowest safe altitude' generally refers to",
     options: [
-      "the altitude at which the aircraft's stalling speed is lowest, a performance characteristic unrelated to terrain or obstacle clearance.",
+      "the altitude at which the aircraft's stalling speed is lowest, a performance characteristic unrelated to terrain or obstacle clearance, since lowest safe altitude is defined in this context as an aerodynamic performance figure rather than as any terrain-clearance buffer above surrounding obstacles.",
       "an altitude providing an adequate vertical buffer (commonly expressed as a set height, such as 1,000 ft, above the highest obstacle within a specified radius of the intended track) to ensure terrain and obstacle clearance throughout the flight.",
       "the lowest altitude at which the aircraft's engine can still develop rated power, a performance limit unrelated to terrain or obstacle clearance.",
       "a fixed altitude of 500 ft AGL that applies identically to every VFR flight regardless of the terrain being overflown.",
@@ -232,7 +232,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     q: "If a Minimum Equipment List (MEL) item permits dispatch with a specific system inoperative, but that system's absence is known to increase the aircraft's fuel consumption (for example, due to an increase in aerodynamic drag or a reduction in engine efficiency), fuel planning for that flight generally",
     options: [
       "is entirely unaffected by the inoperative system, since MEL dispatch relief is defined as never having any effect on fuel consumption.",
-      "requires the flight to carry exactly double its normal total fuel load, regardless of the actual magnitude of the fuel penalty associated with that specific item.",
+      "requires the flight to carry exactly double its normal total fuel load, regardless of the actual magnitude of the fuel penalty associated with that specific item, since MEL-related fuel penalties are defined under this scheme as always doubling total trip fuel rather than as a penalty figure specific to each individual deferred item.",
       "is handled by simply removing the item from the MEL rather than by any adjustment to the flight's fuel planning.",
       "must account for the resulting increase in fuel burn, typically by applying a specified fuel penalty figure associated with that MEL item, rather than simply using the standard, unaffected fuel figures for that route and aircraft type.",
     ],
@@ -249,7 +249,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
     options: [
       "before the flight is commenced, in addition to the requirement to consider forecast conditions along the route and at the destination, since a flight cannot legally depart VFR from an aerodrome where conditions do not meet the applicable minima at the time of departure.",
       "only if the departure aerodrome is a certified airport, with no equivalent requirement applying to departure from an uncertified aerodrome.",
-      "only when the flight is planned to operate under an IFR flight plan, with no equivalent requirement applicable to a purely VFR flight.",
+      "only when the flight is planned to operate under an IFR flight plan, with no equivalent requirement applicable to a purely VFR flight, since departure weather minima are defined as applying exclusively to flights filed on an IFR flight plan regardless of how the flight is actually conducted.",
       "only for the destination and alternate aerodromes, with the departure aerodrome's own weather considered entirely irrelevant to a VFR departure.",
     ],
     answer: 0,
@@ -266,7 +266,7 @@ export const CANADA_TC_ATPL_BATCH_69_QUESTIONS: Question[] = [
       "used exclusively for VFR flights, with no application to IFR flight planning of any kind.",
       "confirmed, refined, or amended closer to departure once final weight and balance figures and current weather and NOTAM information are available, rather than being relied upon as the final basis for the flight without that later confirmation.",
       "prepared only after the flight has already departed, rather than in advance of departure.",
-      "always treated as the final, unchangeable basis for the flight, with no further review or amendment permitted regardless of any later change in load or weather.",
+      "always treated as the final, unchangeable basis for the flight, with no further review or amendment permitted regardless of any later change in load or weather, since a provisional flight plan is defined as becoming legally binding and fixed the moment it is first prepared, well before actual departure.",
     ],
     answer: 1,
     explain:

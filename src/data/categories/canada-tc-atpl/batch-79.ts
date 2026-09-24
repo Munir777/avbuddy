@@ -21,7 +21,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A Notification to Captain (NOTOC), prepared before departure on a flight carrying dangerous goods, is best described as a document that",
     options: [
-      "replaces the need for any dangerous goods to be properly packaged, marked, or labelled, since the NOTOC alone satisfies all dangerous goods handling requirements.",
+      "replaces the need for any dangerous goods to be properly packaged, marked, or labelled, since the NOTOC alone satisfies all dangerous goods handling requirements, a claim that inverts the NOTOC's actual purpose, since proper packaging, marking, and labelling remain separate, mandatory requirements and the NOTOC instead exists to inform the crew of what dangerous goods are already on board and where.",
       "records only the total fuel load and is unrelated to any cargo carried on board.",
       "lists the dangerous goods loaded on board, including their location, quantity, and classification, so the pilot-in-command has the information needed to make informed decisions in the event of an in-flight emergency involving that cargo.",
       "is required only for passenger-carrying flights, with no application to all-cargo operations.",
@@ -37,7 +37,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A SNOWTAM, a specialized NOTAM format used to report runway surface conditions during winter operations, is used to communicate information such as",
     options: [
-      "scheduled airspace closures for military exercises, unrelated to winter weather or runway condition.",
+      "scheduled airspace closures for military exercises, unrelated to winter weather or runway condition, a subject that belongs to a different type of notice entirely, since runway surface condition reports instead describe contamination such as snow, ice, or slush together with a runway condition code for performance assessment.",
       "only the aerodrome's current fuel prices, with no connection to runway surface condition.",
       "the aerodrome's noise abatement procedures, with no application to runway surface condition.",
       "the type and depth of contamination (such as snow, ice, or slush) present on the runway, along with a runway condition code, allowing crews to assess takeoff and landing performance accordingly.",
@@ -56,7 +56,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "produce a lateral (left/right) shift in the aircraft's overall centre of gravity, potentially requiring roll control input to maintain wings-level flight and, if excessive, exceeding a structural or handling limit specific to lateral imbalance.",
       "only affect engine performance, with no relationship to the aircraft's centre of gravity or handling characteristics.",
       "always be corrected automatically by the aircraft's fuel system, meaning no crew monitoring or crossfeed action is ever required.",
-      "have no effect at all on the aircraft's handling or structural limits, since lateral balance is never a consideration distinct from longitudinal (fore-aft) centre of gravity.",
+      "have no effect at all on the aircraft's handling or structural limits, since lateral balance is never a consideration distinct from longitudinal (fore-aft) centre of gravity, a claim that treats lateral balance as if it were identical to fore-aft balance, when in fact an excessive lateral fuel imbalance can require its own roll control input and can exceed a structural or handling limit specific to that lateral condition.",
     ],
     answer: 0,
     explain:
@@ -88,7 +88,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "carrying exactly the regulatory minimum fuel on every flight, since a company policy can never require more than the CARs specify.",
       "carrying less fuel than the regulatory minimum whenever operationally convenient, since company policy is permitted to override the CARs requirement downward.",
       "carrying more fuel than the bare regulatory minimum for at least some routes or conditions, reflecting the operator's own risk tolerance, operational experience, or route-specific factors, even though this exceeds what the CARs alone would require.",
-      "no fuel planning process at all beyond what individual pilots personally decide to carry on each flight.",
+      "no fuel planning process at all beyond what individual pilots personally decide to carry on each flight, a description that overlooks how fuel policy actually functions at most operators, where a structured company process, rather than individual pilot discretion alone, typically determines how much fuel beyond the bare regulatory minimum is carried.",
     ],
     answer: 2,
     explain:
@@ -102,7 +102,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     q: "On an aircraft with a trim tank or a fuel management system designed to transfer fuel during cruise, the planned sequence of fuel burn (or fuel transfer) is significant to flight planning primarily because",
     options: [
       "it must always burn fuel from the tank closest to the aircraft's centre of gravity first, regardless of any other consideration.",
-      "it has no effect on centre of gravity at any point during the flight, since fuel burn sequence is relevant only to engine performance.",
+      "it has no effect on centre of gravity at any point during the flight, since fuel burn sequence is relevant only to engine performance, a description that misses the actual design intent, since a fuel burn sequence is often deliberately chosen specifically to help keep the aircraft's centre of gravity within an efficient or required range as fuel is consumed, not merely to serve engine performance considerations.",
       "it is used solely to balance left and right wing tanks, with no role in managing the aircraft's fore-aft centre of gravity.",
       "it is deliberately designed to help keep the aircraft's centre of gravity within an efficient or required range as fuel is consumed over the course of the flight, rather than allowing the CG to drift outside acceptable limits as weight decreases.",
     ],
@@ -120,7 +120,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "an aircraft that departs at a weight close to MTOW may need to burn enough trip fuel to be at or below MLW by the time it reaches the destination, and if it cannot, an early return or a fuel jettison/burn-off may be required before landing is possible.",
       "MLW is always numerically higher than MTOW, meaning it never constrains flight planning in any practical way.",
       "MLW applies only to the departure aerodrome and has no bearing on the aircraft's condition at the destination.",
-      "MLW and MTOW are simply two different names for the exact same structural limit, with no distinction relevant to flight planning.",
+      "MLW and MTOW are simply two different names for the exact same structural limit, with no distinction relevant to flight planning, a claim that overlooks why the two limits are tracked separately, since an aircraft departing near MTOW may still need to burn enough trip fuel to be at or below the separate, generally lower MLW limit by the time it reaches the destination.",
     ],
     answer: 0,
     explain:
@@ -149,7 +149,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Minimum VFR fuel reserve requirements for a helicopter, under the CARs, are generally",
     options: [
-      "always numerically identical to the aeroplane VFR fuel reserve requirement, with the CARs making no distinction between the two aircraft categories.",
+      "always numerically identical to the aeroplane VFR fuel reserve requirement, with the CARs making no distinction between the two aircraft categories, an assumption the regulation does not actually make, since the CARs instead specify a helicopter VFR fuel reserve requirement separately from the aeroplane figure, reflecting genuine operational differences between the two aircraft categories.",
       "based exclusively on the helicopter's maximum range capability, with no reference to a specified time reserve at all.",
       "specified separately from the fixed-wing (aeroplane) VFR fuel reserve requirement, reflecting operational differences between the two types of aircraft, rather than being automatically identical to the aeroplane figures.",
       "entirely unregulated, with helicopters exempt from any minimum VFR fuel reserve requirement under the CARs.",
@@ -165,7 +165,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A TREND forecast, appended to some METAR reports, provides",
     options: [
-      "a forecast that applies only to conditions at a different, specified alternate aerodrome, rather than the aerodrome where the METAR was observed.",
+      "a forecast that applies only to conditions at a different, specified alternate aerodrome, rather than the aerodrome where the METAR was observed, a description that applies to a different aviation product entirely, since this type of short-term amendment instead concerns significant expected changes at the same aerodrome over the next couple of hours rather than conditions somewhere else.",
       "historical climatological data averaged over many years, rather than any forecast tied to the current observation.",
       "a forecast of conditions valid for the following 24 to 30 hours, making it a longer-range product than a standard TAF.",
       "a short-term forecast of significant expected changes in conditions at the aerodrome over the next couple of hours, useful for planning an imminent arrival without needing to separately consult a full TAF.",
@@ -184,7 +184,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "shared between the pilot-in-command and a company flight dispatcher operating under an approved system, in contrast to smaller commercial operations where this responsibility rests solely with the pilot-in-command.",
       "resting solely and exclusively with the company dispatcher, removing any operational control responsibility from the pilot-in-command.",
       "resting entirely with air traffic control, with neither the pilot-in-command nor any company dispatcher holding operational control responsibility.",
-      "resting solely and exclusively with the pilot-in-command, with no role for any company dispatcher under Subpart 705.",
+      "resting solely and exclusively with the pilot-in-command, with no role for any company dispatcher under Subpart 705, a description that overstates the pilot-in-command's sole authority under a Subpart 705 operation, where operational control is instead shared with an approved company flight dispatcher rather than resting with the pilot-in-command alone.",
     ],
     answer: 0,
     explain:
@@ -216,7 +216,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "special aerodrome qualification applies only to VFR operations, with no application to IFR flights into a similarly demanding aerodrome.",
       "no special qualification of any kind is ever required, since any crew holding a valid type rating for the aircraft is automatically qualified for every aerodrome that type can operate into.",
       "the specific crew members assigned to that flight hold the required route or aerodrome qualification, typically established through specific training, briefing materials, or a minimum number of supervised visits, before the aerodrome may be used.",
-      "only the aircraft itself, rather than the crew, requires any special qualification or certification for such an aerodrome.",
+      "only the aircraft itself, rather than the crew, requires any special qualification or certification for such an aerodrome, a description that misplaces the requirement, since it is specifically the individual crew members assigned to the flight, through training, briefing, or a minimum number of supervised visits, who must hold the qualification rather than the aircraft alone.",
     ],
     answer: 2,
     explain:
@@ -231,7 +231,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
     options: [
       "refers only to time spent in cruise flight, excluding the climb and descent portions of the flight that block time does include.",
       "is simply another name for block time, with the two terms used interchangeably and no distinction between them.",
-      "includes taxi-out and taxi-in time, while block time covers only the airborne portion of the flight.",
+      "includes taxi-out and taxi-in time, while block time covers only the airborne portion of the flight, a description that reverses the actual definitions, since it is block time that includes taxi-out and taxi-in, while the airborne-only measurement instead covers just the portion of the flight from takeoff to landing.",
       "covers only the airborne portion of the flight, from takeoff to landing, whereas block time also includes the taxi-out time before takeoff and the taxi-in time after landing.",
     ],
     answer: 3,
@@ -248,7 +248,7 @@ export const CANADA_TC_ATPL_BATCH_79_QUESTIONS: Question[] = [
       "the flight release be reviewed and, if the changed conditions fall outside what the original release accounted for, a new or amended release be issued before the flight may proceed, rather than allowing the original release to remain valid indefinitely regardless of how conditions have changed.",
       "the pilot-in-command alone, without any involvement from dispatch, decides whether the original release remains adequate.",
       "the original dispatch release remains valid and unchanged for the flight no matter how significantly conditions have since changed.",
-      "a new release is required only if the destination aerodrome itself changes, with no other type of significant change ever requiring one.",
+      "a new release is required only if the destination aerodrome itself changes, with no other type of significant change ever requiring one, an overly narrow trigger that leaves out other significant changes -- such as weather, aircraft status, or routing -- that can equally require the flight release to be reviewed and, if necessary, reissued before the flight may proceed.",
     ],
     answer: 0,
     explain:

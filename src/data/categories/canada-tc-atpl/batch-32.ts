@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Parasite drag, as distinct from induced drag, is generally broken down into components including",
     options: [
-      "only induced drag itself, since parasite drag and induced drag are simply two names describing the identical physical phenomenon.",
+      "only induced drag itself, since parasite drag and induced drag are simply two names used somewhat loosely and interchangeably in older training texts to describe the identical physical phenomenon.",
       "wave drag alone, with form drag, skin friction drag, and interference drag all properly classified as forms of induced drag instead.",
       "a single, undifferentiated component, since parasite drag is not considered separable into distinct contributing sources.",
       "form (pressure) drag, skin friction drag, and interference drag, all of which arise regardless of whether the aircraft is producing lift.",
@@ -48,7 +48,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     q: "Reynolds number, a dimensionless ratio of inertial to viscous forces in the airflow over a surface, is significant to boundary layer behaviour because",
     options: [
       "it strongly influences whether the boundary layer over a given surface location remains laminar or transitions to turbulent flow, with transition tending to occur at a characteristic Reynolds number.",
-      "it applies exclusively to airflow inside jet engines, with no relevance to external airflow over a wing or fuselage.",
+      "it applies exclusively to airflow inside jet engines, with no relevance to external airflow over a wing or fuselage, a scope some maintenance manuals mistakenly extend to propeller slipstream calculations as well.",
       "it determines the aircraft's true airspeed directly, with no connection to boundary layer flow characteristics at all.",
       "it is a fixed, unchanging constant for a given aircraft type, independent of airspeed, altitude, or surface length.",
     ],
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     options: [
       "stalling speed increases in direct, one-to-one proportion with weight, so doubling weight exactly doubles stalling speed.",
       "stalling speed increases with the square root of weight, so a given percentage increase in weight produces a smaller percentage increase in stalling speed.",
-      "stalling speed is entirely independent of aircraft weight, remaining identical regardless of how heavily the aircraft is loaded.",
+      "stalling speed is entirely independent of aircraft weight, remaining identical regardless of how heavily the aircraft is loaded, a simplification occasionally taught informally despite not matching the actual lift-equals-weight relationship at the stall.",
       "stalling speed decreases as weight increases, the opposite of the actual relationship between the two.",
     ],
     answer: 1,
@@ -82,7 +82,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
       "eliminating adverse yaw during a roll, a function otherwise performed by the ailerons and rudder rather than the horizontal stabilizer.",
       "increasing the aircraft's maximum lift coefficient at the stall, a role otherwise performed exclusively by wing-mounted high-lift devices.",
       "generating a restoring pitching moment when the aircraft is disturbed in pitch (for example, by a gust), tending to return the aircraft toward its original angle of attack.",
-      "generating thrust, which the wing alone is otherwise unable to produce, making longitudinal stability dependent on the stabilizer's own thrust output.",
+      "generating thrust, which the wing alone is otherwise unable to produce, making longitudinal stability dependent on the stabilizer's own thrust output rather than on any pitching-moment interaction with the wing or centre of gravity.",
     ],
     answer: 2,
     explain:
@@ -112,7 +112,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     q: "Comparing common trailing edge flap types, a Fowler flap is distinguished from a simple plain flap in that a Fowler flap",
     options: [
       "extends aft (and typically down) on tracks, increasing both wing camber and effective wing area, rather than only increasing camber by hinging downward in place.",
-      "reduces wing area as it deploys, the opposite of a plain flap's effect on wing area.",
+      "reduces wing area as it deploys, the opposite of a plain flap's effect on wing area, a geometric change that some simplified training diagrams incorrectly depict as characteristic of Fowler-type trailing edge devices generally.",
       "operates exclusively on the wing's leading edge, making it functionally equivalent to a slat rather than a trailing edge device.",
       "increases wing camber by an identical mechanism to a plain flap, with the only difference between the two being the material used in construction.",
     ],
@@ -129,7 +129,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     options: [
       "airspeed drops below a fixed value unique to the aircraft type, with angle of attack and airflow behaviour playing no role in the stall at all.",
       "the airflow separates from the wing's upper surface, disrupting the smooth pressure distribution that had been generating lift, rather than because airspeed itself has dropped below some fixed value.",
-      "engine thrust becomes insufficient to maintain altitude, a power-related rather than an aerodynamic-flow-related phenomenon.",
+      "engine thrust becomes insufficient to maintain altitude, a power-related rather than an aerodynamic-flow-related phenomenon, though this description is sometimes loosely and incorrectly applied to a power-off stall in gliding flight as well.",
       "the wing's structure physically deforms beyond a safe limit, with aerodynamic airflow behaviour being unrelated to the stall event.",
     ],
     answer: 1,
@@ -146,7 +146,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
       "physically blocking airflow over a portion of the wing, deliberately inducing earlier separation and an earlier stall in that region.",
       "reducing the wing's overall surface area exposed to the airflow, lowering both lift and drag simultaneously.",
       "creating small vortices that mix high-energy airflow from outside the boundary layer into the boundary layer itself, helping it resist separation to a higher angle of attack.",
-      "generating additional engine thrust, an effect entirely unrelated to boundary layer or airflow behaviour over the wing.",
+      "generating additional engine thrust, an effect entirely unrelated to boundary layer or airflow behaviour over the wing, a misconception occasionally reinforced by their small, blade-like appearance on the wing's upper surface.",
     ],
     answer: 2,
     explain:
@@ -159,7 +159,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A supercritical airfoil, used on many modern transport aircraft wings, is specifically shaped to",
     options: [
-      "reduce induced drag specifically, with no particular relationship to transonic or compressibility effects at all.",
+      "reduce induced drag specifically, with no particular relationship to transonic or compressibility effects at all, a description that overlooks the airfoil's actual role in managing high-speed shock formation and drag rise.",
       "increase the wing's stall speed deliberately, trading off low-speed performance for a structural benefit unrelated to high-speed flight.",
       "eliminate the possibility of any shock wave forming on the wing at any speed, making critical Mach number an irrelevant concept for such a wing.",
       "delay and soften the onset of the drag rise associated with local supersonic flow and shock formation, allowing efficient flight closer to (or at) a higher critical Mach number.",
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     options: [
       "identical in mechanism to a simple wind gust response, with no self-sustaining or potentially divergent oscillatory behaviour involved.",
       "a potentially destructive, self-excited oscillation arising from the interaction of aerodynamic, inertial, and elastic (structural) forces on a lifting or control surface.",
-      "a purely aerodynamic phenomenon with no structural or inertial component involved, unrelated to the surface's own physical flexibility.",
+      "a purely aerodynamic phenomenon with no structural or inertial component involved, unrelated to the surface's own physical flexibility, despite flutter investigations routinely examining structural stiffness and mass balance as well.",
       "a routine, harmless vibration present on every aircraft at every airspeed, requiring no design consideration or operating limitation at all.",
     ],
     answer: 1,
@@ -210,7 +210,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
       "decreases as angle of attack increases throughout the entire range, the opposite of the actual lift curve's shape.",
       "increases in direct proportion to airspeed rather than angle of attack, with angle of attack playing no role in determining CL at all.",
       "increases in an approximately linear (straight-line) relationship with angle of attack over most of the normal flight range, before that relationship curves and CL reaches a maximum near the stall.",
-      "remains completely constant regardless of angle of attack, with CL entirely independent of angle of attack across the flight envelope.",
+      "remains completely constant regardless of angle of attack, with CL entirely independent of angle of attack across the flight envelope, a claim inconsistent with the shape of the lift curve published in most aircraft flight manuals.",
     ],
     answer: 2,
     explain:
@@ -223,7 +223,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Although extending trailing edge flaps increases a wing's maximum lift coefficient (CLmax) and therefore generally lowers stalling speed, flap extension typically also",
     options: [
-      "has no effect whatsoever on the angle of attack at which the wing stalls, with only CLmax itself being altered by flap extension.",
+      "has no effect whatsoever on the angle of attack at which the wing stalls, with only CLmax itself being altered by flap extension, an assumption that overlooks the added camber's influence on where flow separation actually begins along the chord.",
       "eliminates the concept of a stalling angle of attack entirely, since a flapped wing is incapable of stalling under any flight condition.",
       "increases the absolute angle of attack at which the wing stalls, an effect in addition to, rather than instead of, the CLmax increase.",
       "reduces the absolute angle of attack at which the wing stalls, since the added camber changes the airflow such that separation begins at a lower geometric angle of attack than the clean-wing critical angle of attack.",
@@ -240,7 +240,7 @@ export const CANADA_TC_ATPL_BATCH_32_QUESTIONS: Question[] = [
     q: "Differential aileron deflection, and the frise aileron design specifically, are both intended to reduce adverse yaw by",
     options: [
       "increasing drag on the wing with the upward-deflected (up-going) aileron relative to the wing with the downward-deflected aileron, helping offset the yawing moment that would otherwise result from differing induced drag between the two wings.",
-      "eliminating aileron-generated roll entirely, making differential deflection and frise ailerons unsuitable for any aircraft still intended to roll via aileron input.",
+      "eliminating aileron-generated roll entirely, making differential deflection and frise ailerons unsuitable for any aircraft still intended to roll via aileron input, a limitation that would defeat the very purpose these aileron designs are meant to serve in normal lateral control.",
       "increasing lift on the wing with the upward-deflected aileron beyond that of the downward-deflected aileron's wing, a lift-based rather than drag-based correction.",
       "reducing total drag on both wings equally and symmetrically, an effect that would do nothing to correct any yawing asymmetry between them.",
     ],

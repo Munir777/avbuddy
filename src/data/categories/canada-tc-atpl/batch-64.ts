@@ -23,7 +23,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     q: "A conventional VOR ground station encodes the radial information a receiver uses by transmitting",
     options: [
       "a signal whose amplitude, rather than phase, varies with azimuth, with no phase comparison involved at all.",
-      "a single, unchanging signal identical in every direction, with the aircraft determining its bearing purely from the station's Morse code identifier.",
+      "a single, unchanging signal identical in every direction, broadcast continuously on the station's assigned VHF frequency and carrying only its Morse code and voice identification, with the aircraft's receiver determining its bearing purely from the timing of that identifier rather than from any comparison between a reference and a variable signal.",
       "a reference phase signal (omnidirectional, the same in every direction) and a variable phase signal (rotating, so its phase varies with azimuth), with the aircraft's receiver comparing the phase difference between the two to determine its bearing from the station.",
       "two separate signals on two entirely different frequencies, one used for distance and one used for bearing.",
     ],
@@ -38,7 +38,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A Ground-Based Augmentation System (GBAS), providing a GNSS Landing System (GLS) precision approach service at some aerodromes, differs from a Satellite-Based Augmentation System (SBAS) in that GBAS",
     options: [
-      "relies entirely on ground-based radar rather than any satellite signal, making it unrelated to GNSS altogether.",
+      "relies entirely on ground-based primary and secondary surveillance radar returns rather than on any satellite signal whatsoever, making it a wholly separate ground-based surveillance system unrelated to GNSS augmentation or satellite navigation in any respect.",
       "is simply another name for SBAS, with the two terms describing an identical architecture and coverage area.",
       "provides no vertical guidance whatsoever, unlike SBAS, which is defined as providing vertical guidance exclusively.",
       "uses correction and integrity data broadcast from a local ground station covering a single aerodrome (or a small area around it), rather than correction data broadcast from a geostationary satellite covering a wide region.",
@@ -73,7 +73,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
       "entirely unaffected by whether clearances are delivered by voice or by CPDLC, since both methods are defined as providing identical shared awareness to other aircraft.",
       "substantially reduced when routine clearances are instead delivered via Controller-Pilot Data Link Communications (CPDLC), since a data link message is generally only visible to the aircraft it was sent to, not broadcast for other aircraft on frequency to overhear.",
       "irrelevant to flight safety, since pilots are not expected to attend to radio traffic directed at other aircraft under any circumstances.",
-      "increased, rather than reduced, when CPDLC is used instead of voice, since data link messages are broadcast to every aircraft on the relevant frequency.",
+      "increased, rather than reduced, when CPDLC is used instead of voice, since data link messages sent through the aircraft communications addressing and reporting system are defined as being simultaneously broadcast in readable form to the cockpit displays of every other aircraft on the relevant frequency, not merely delivered point-to-point to the addressed aircraft alone.",
     ],
     answer: 1,
     explain:
@@ -87,7 +87,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     q: "Airborne weather radar antennas are generally gyro-stabilized primarily so that",
     options: [
       "the antenna can physically rotate to track a single storm cell automatically without any pilot tilt adjustment ever being required.",
-      "the radar's transmitted power output is increased, which is otherwise unrelated to antenna stabilization.",
+      "the radar's transmitted power output is increased well beyond what an unstabilized antenna could produce, since gyro-stabilization is defined purely as a means of boosting transmitter output and is otherwise entirely unrelated to keeping the beam oriented relative to the horizon.",
       "the radar beam remains oriented relative to the horizon (rather than to the aircraft's own pitch and roll axes), preventing normal aircraft manoeuvring from causing the beam to scan the ground or sky rather than the weather ahead.",
       "stabilization eliminates the need for any beam tilt control, since a stabilized antenna is defined as having a fixed tilt angle at all times.",
     ],
@@ -104,7 +104,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     options: [
       "no meaningful weather information at all, since ground-based radar mosaics are defined as covering only oceanic areas with no coverage over land.",
       "an identical, real-time picture in every respect, making the two systems fully interchangeable for both strategic and tactical weather avoidance.",
-      "greater accuracy for immediate, close-in cell avoidance than the aircraft's own airborne radar, in every operational situation.",
+      "greater accuracy for immediate, close-in cell avoidance than the aircraft's own airborne radar in every operational situation, because a ground-based mosaic is compiled from a denser network of fixed radar sites and is therefore defined as being both more current and more precise than any onboard system regardless of the time elapsed since the mosaic was compiled and transmitted.",
       "a much broader-area strategic picture useful for overall route and diversion planning, but with the picture typically time-delayed by several minutes and therefore less suitable than the aircraft's own real-time airborne radar for immediate, close-in tactical avoidance of individual cells.",
     ],
     answer: 3,
@@ -134,7 +134,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A Mode A transponder reply, providing a four-digit octal identity ('squawk') code as assigned by ATC, is used primarily to",
     options: [
-      "transmit the aircraft's registered Flight ID (callsign) automatically, a function specifically associated with Mode S rather than basic Mode A.",
+      "transmit the aircraft's registered Flight ID (callsign) automatically to ATC's ground display, a function specifically associated with the extended squitter capability of a Mode S transponder rather than with a basic Mode A/C reply, which carries only the assigned four-digit code.",
       "allow ATC's radar display to associate a specific radar return with a particular aircraft and its filed flight plan, distinguishing that aircraft's track from others on the same display.",
       "broadcast the aircraft's GNSS-derived position, a function unrelated to a basic Mode A/C transponder reply.",
       "provide ATC with the aircraft's current pressure altitude, a function performed by Mode C rather than Mode A.",
@@ -153,7 +153,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
       "406 MHz signals cannot be received by any satellite whatsoever, making 121.5 MHz the sole means of satellite-based distress alerting.",
       "regulations prohibit any ELT from transmitting exclusively on 406 MHz, without regard to homing capability at all.",
       "121.5 MHz remains useful for close-range homing, allowing search aircraft and rescue personnel equipped with a simple ADF or direction-finding receiver to pinpoint the exact location of a downed aircraft once the general search area has already been identified via the 406 MHz satellite alert.",
-      "121.5 MHz provides a more accurate initial satellite-based position fix than 406 MHz in every case.",
+      "121.5 MHz provides a more accurate initial satellite-based position fix than 406 MHz in every case, since the older analog signal is defined as being more precisely locatable by the COSPAS-SARSAT satellite constellation than the newer digital 406 MHz signal, which carries no encoded position information of any kind and requires Doppler processing alone.",
     ],
     answer: 2,
     explain:
@@ -167,7 +167,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     q: "When a MAYDAY distress message is transmitted on a frequency, standard radiotelephony practice generally expects that",
     options: [
       "other stations on the frequency continue routine, unrelated transmissions without any change in priority or behaviour.",
-      "the distress call must be repeated continuously without pause until acknowledged, with no other stations permitted to transmit on any frequency anywhere in the world.",
+      "the distress call must be repeated continuously without pause until acknowledged, with no other stations anywhere in the world permitted to transmit on any frequency at all, including on frequencies entirely unrelated to the one on which the distress message was originally sent, until the emergency is formally resolved.",
       "distress traffic is treated with lower priority than routine ATC instructions already in progress at the time the distress call is made.",
       "the distress traffic is given absolute priority, with other stations imposing radio silence on that frequency (except when necessary to assist the aircraft in distress) until the emergency is resolved or silence is lifted by the appropriate authority.",
     ],
@@ -200,7 +200,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     options: [
       "polarization has no effect whatsoever on signal reception, making the distinction between vertical and horizontal polarization purely academic with no practical consequence.",
       "a receiving antenna generally provides its best reception when its own polarization is matched (or reasonably close) to the polarization of the transmitted signal, so aircraft communication and localizer antennas are designed and oriented accordingly for their respective signals.",
-      "vertical and horizontal polarization refer only to the direction of aircraft flight relative to the signal source, unrelated to the physical orientation of the transmitting or receiving antenna.",
+      "vertical and horizontal polarization refer only to the direction of aircraft flight relative to the signal source at the moment of reception, a purely geometric relationship between aircraft track and station bearing that is entirely unrelated to the physical orientation of the transmitting or receiving antenna's elements.",
       "a horizontally polarized signal cannot be transmitted or received by any aircraft antenna under any circumstances, making the ILS localizer incompatible with all aircraft receivers.",
     ],
     answer: 1,
@@ -215,7 +215,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     q: "ADS-B Out, as generally implemented using the 1090ES or UAT ground-based network, differs from a purely satellite-relayed surveillance system in that",
     options: [
       "ADS-B Out is entirely independent of any ground infrastructure and provides full worldwide coverage identical to a dedicated satellite relay network in every location.",
-      "ADS-B Out and satellite-relayed surveillance are simply two different names describing an identical system architecture with no distinction between them.",
+      "ADS-B Out and satellite-relayed surveillance are simply two different names describing an identical system architecture with no distinction between them, since both are defined as depending on exactly the same infrastructure, coverage area, and message format regardless of whether a ground station or an orbiting satellite happens to receive the broadcast.",
       "ADS-B Out broadcasts depend on being received by a suitably positioned ground station (or another appropriately equipped aircraft) within range, meaning surveillance coverage in a given area depends on ground station infrastructure rather than on universal satellite coverage.",
       "ADS-B Out transmissions cannot be received by any ground station under any circumstances, and are instead relayed exclusively between aircraft.",
     ],
@@ -248,7 +248,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
     options: [
       "AFFIRM and NEGATIVE mean 'yes' and 'no' respectively; ROGER means only that a transmission has been received and understood, without confirming that the instruction will be complied with; and WILCO means the message has been received, understood, and will be complied with.",
       "all four pro-words are fully interchangeable, each meaning simply 'yes' with no distinction in usage between them.",
-      "ROGER specifically means the same as WILCO, confirming that the instruction will be complied with, while AFFIRM and NEGATIVE are reserved exclusively for weather-related questions.",
+      "ROGER specifically means the same as WILCO, confirming both that the instruction was understood and that it will be complied with, while AFFIRM and NEGATIVE are reserved exclusively for weather-related questions and are considered inappropriate for use in any other type of yes-or-no exchange with ATC.",
       "WILCO means only that a transmission was received, without any implication of understanding or intent to comply, the reverse of its actual meaning.",
     ],
     answer: 0,
@@ -265,7 +265,7 @@ export const CANADA_TC_ATPL_BATCH_64_QUESTIONS: Question[] = [
       "coverage limited exclusively to polar regions, with no capability to detect a distress signal at any other latitude.",
       "substantially faster distress alert detection and location, since multiple MEOSAR satellites can typically detect a 406 MHz ELT distress signal almost immediately, rather than requiring a satellite to pass overhead as with the older LEOSAR system.",
       "no improvement whatsoever in alert detection speed or location accuracy compared to the older LEOSAR and GEOSAR satellites.",
-      "detection capability for 121.5 MHz analog signals only, with no ability to detect a 406 MHz digital ELT signal at all.",
+      "detection capability for 121.5 MHz analog signals only, with no ability to detect a 406 MHz digital ELT signal at all, since the MEOSAR satellites are defined as carrying receivers tuned exclusively to the older analog frequency and lacking the digital demodulation equipment needed to process a 406 MHz transmission.",
     ],
     answer: 1,
     explain:

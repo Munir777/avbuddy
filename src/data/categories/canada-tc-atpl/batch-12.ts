@@ -15,10 +15,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Under CAR 602.78, an arrival report closing a flight plan or flight itinerary must include all of the following EXCEPT",
     options: [
-      "the aircraft's fuel remaining on landing, reported to the nearest quarter-hour of endurance.",
-      "the departure aerodrome and the arrival aerodrome.",
-      "the date and time of arrival.",
-      "the aircraft registration mark, flight number, or radio call sign.",
+      "the aircraft's fuel remaining on landing, reported to the nearest quarter-hour.",
+      "the departure aerodrome and the arrival aerodrome, as originally filed on the flight plan.",
+      "the date and time of arrival at the destination aerodrome, stated in local or UTC time.",
+      "the aircraft registration mark, flight number, or radio call sign used throughout the flight.",
     ],
     answer: 0,
     explain:
@@ -48,8 +48,8 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     q: "A pilot flying IFR cancels IFR with ATC ('Cancelling IFR') while continuing toward the destination. With respect to the flight plan or flight itinerary on file, this phrase",
     options: [
       "converts the flight plan into a VFR flight plan without any further action required by the pilot.",
-      "has no defined effect at all under the CARs or the TC AIM and should not be used.",
-      "discontinues IFR separation service only; it does not by itself close the flight plan or itinerary or end SAR alerting.",
+      "has no defined effect at all under the CARs or the TC AIM and should therefore not be used in this context.",
+      "discontinues IFR separation service only; it does not itself close the flight plan or end SAR alerting.",
       "automatically closes the flight plan or itinerary and ends SAR alerting, exactly as landing would.",
     ],
     answer: 2,
@@ -65,8 +65,8 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     options: [
       "immediately upon the scheduled ETA passing, with no grace period allowed under any circumstances.",
       "never, since flight plans and itineraries have no built-in overdue-notification mechanism in Canada.",
-      "only if a third party, such as a family member, separately reports the aircraft overdue to authorities.",
-      "at the SAR time specified in the flight itinerary, or, if none was specified, 24 hours after the last reported ETA.",
+      "only if a third party, such as a family member or employer, separately reports the aircraft overdue to authorities.",
+      "at the SAR time specified in the itinerary, or, if none was specified, 24 hours after the last reported ETA.",
     ],
     answer: 3,
     explain:
@@ -95,10 +95,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "An IFR flight plan specifies an alternate aerodrome. For a propeller-driven aeroplane, the minimum fuel required is enough to fly to the destination, execute an approach and a missed approach, fly to and land at the alternate, and then fly for a further",
     options: [
-      "30 minutes.",
-      "45 minutes.",
-      "60 minutes.",
-      "15 minutes.",
+      "30 minutes, the reserve figure that instead applies to turbojet aeroplanes and helicopters in this same scenario.",
+      "45 minutes at normal cruising speed, flown after landing at the alternate aerodrome.",
+      "60 minutes at normal cruising speed, flown after landing at the alternate aerodrome.",
+      "15 minutes at normal cruising speed, flown after landing at the alternate aerodrome.",
     ],
     answer: 1,
     explain:
@@ -127,10 +127,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "An IFR flight plan is filed with no alternate aerodrome specified. Compared to the alternate-specified case, the fuel requirement",
     options: [
-      "is eliminated entirely; an IFR flight plan with no alternate specified has no fuel reserve requirement under the CARs.",
-      "is reduced, since not carrying fuel to reach an alternate is assumed to free up a corresponding fuel margin elsewhere.",
-      "applies only to turbojet aeroplanes; propeller aeroplanes with no alternate specified have no separate fuel rule.",
-      "still requires the same 45-minute (propeller) or 30-minute (turbojet/helicopter) reserve, but flown after the approach and missed approach at the destination itself, rather than after a diversion to and landing at an alternate.",
+      "is eliminated entirely; an IFR flight plan with no alternate aerodrome specified carries no fuel reserve requirement whatsoever under the CARs or the TC AIM guidance material.",
+      "is reduced, since not carrying fuel to reach an alternate aerodrome is assumed to free up a corresponding fuel margin elsewhere in the flight.",
+      "applies only to turbojet aeroplanes operating under Subpart 705; propeller aeroplanes with no alternate specified have no separate fuel rule.",
+      "still requires the same 45-minute (propeller) or 30-minute (turbojet/helicopter) reserve, flown at the destination rather than after diverting to an alternate.",
     ],
     answer: 3,
     explain:
@@ -143,10 +143,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Beyond the basic VFR or IFR reserve figures, CAR 602.88 requires that fuel planning also account for factors such as",
     options: [
-      "taxiing and foreseeable pre-takeoff delays, expected meteorological conditions, foreseeable air traffic routing and delays, and landing at a suitable aerodrome following an engine failure (multi-engine) or a pressurization loss at the most critical point of the flight.",
-      "the aircraft's insured hull value, which determines how much reserve fuel the operator's insurer requires it to carry.",
-      "crew duty time remaining, substituted for a fuel calculation entirely on flights under 2 hours in duration.",
-      "only the direct trip fuel between departure and destination, calculated at maximum-range cruise power with no other adjustment.",
+      "taxi and pre-takeoff delays, expected weather, ATC routing delays, and reaching a suitable aerodrome after an engine failure or pressurization loss en route.",
+      "the aircraft's insured hull value, which supposedly determines how much reserve fuel the operator's insurer requires it to carry.",
+      "crew duty time remaining, which is substituted for any fuel calculation entirely on flights under 2 hours in scheduled duration.",
+      "only the direct trip fuel between departure and destination, calculated at maximum-range cruise power with no other adjustment made.",
     ],
     answer: 0,
     explain:
@@ -255,10 +255,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The 'other authorized minima' table, which permits a reduced ceiling in exchange for an increased visibility requirement (or vice versa) at some alternate aerodromes, applies",
     options: [
-      "only when no TAF, GFA, or aerodrome advisory forecast is available at the alternate aerodrome at all.",
-      "automatically at every aerodrome, entirely independent of whether standard alternate minima can be met there.",
-      "only to turbojet-powered aeroplanes; propeller aeroplanes and helicopters must always use standard minima.",
-      "only where the standard alternate minima requirement is also met at that aerodrome; it is an additional option, not a replacement for the standard minima assessment.",
+      "only when no TAF, GFA, or aerodrome advisory forecast of any kind is available at the alternate aerodrome at all.",
+      "automatically at every aerodrome without exception, entirely independent of whether standard alternate minima can be met there.",
+      "only to turbojet-powered aeroplanes operating under Subpart 705 exclusively; propeller aeroplanes and helicopters must always use standard minima instead.",
+      "only where the standard alternate minima requirement is met there; it is an additional option, not a replacement for the standard assessment.",
     ],
     answer: 3,
     explain:
@@ -271,10 +271,10 @@ export const CANADA_TC_ATPL_BATCH_12_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The underlying purpose of the IFR alternate aerodrome requirement is best described as",
     options: [
-      "building a fuel and routing margin against the possibility that forecast weather at the destination does not hold, or that the approach there cannot be completed for another reason.",
-      "a requirement that exists only for aircraft operating under Subpart 705, with no application to smaller operations.",
-      "a substitute for carrying VFR fuel reserves, applicable only when VFR flight is not possible for the entire route.",
-      "a purely administrative filing requirement with no operational fuel-planning consequence attached to it.",
+      "building a fuel and routing margin against the chance that forecast weather at the destination does not hold, or the approach cannot be completed.",
+      "a requirement that exists only for aircraft operating under Subpart 705 scheduled airline operations, with no application to any smaller commercial operations.",
+      "a substitute for carrying VFR fuel reserves, applicable only when VFR flight is not possible for any portion of the entire route.",
+      "a purely administrative filing requirement with no operational fuel-planning consequence attached to it whatsoever.",
     ],
     answer: 0,
     explain:

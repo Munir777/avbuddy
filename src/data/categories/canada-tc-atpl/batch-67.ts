@@ -40,7 +40,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Equivalent airspeed (EAS), as an intermediate airspeed value between calibrated airspeed (CAS) and true airspeed (TAS), accounts for",
     options: [
-      "magnetic variation, a correction that has no relevance to airspeed and instead applies only to compass headings.",
+      "magnetic variation, a correction that has no relevance to airspeed and instead applies only to compass headings, since EAS is defined under this scheme as a heading correction term rather than as any airspeed value derived from pitot-static pressure.",
       "instrument and position error only, making EAS simply another name for calibrated airspeed with no additional correction applied.",
       "the difference between indicated altitude and true altitude, a correction that applies to altimetry rather than to airspeed.",
       "compressibility error (the effect of air compressing ahead of the pitot tube at higher speeds and altitudes), with true airspeed then obtained from EAS by further correcting for the actual air density at the aircraft's altitude.",
@@ -74,7 +74,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     options: [
       "the magnetic compass itself requires no realignment or cross-checking of any kind, having been established as perfectly accurate at all times.",
       "the heading indicator is subject to precession (both mechanical and apparent) over time and will gradually drift from an accurate heading reference unless periodically reset against the magnetic compass, which, while subject to its own errors, remains the primary heading reference.",
-      "realigning the heading indicator against the compass is required only once, at the start of the aircraft's service life, with no need for any further cross-check afterward.",
+      "realigning the heading indicator against the compass is required only once, at the start of the aircraft's service life, with no need for any further cross-check afterward, since the gyro is defined as being permanently calibrated at manufacture and immune to any subsequent mechanical or apparent precession thereafter.",
       "the heading indicator is defined as immune to any form of drift, making periodic realignment an unnecessary precaution with no operational basis.",
     ],
     answer: 1,
@@ -89,7 +89,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     q: "An ECAM or EICAS 'Memo' page, as distinguished from the system's STATUS page, is generally used to",
     options: [
       "record a permanent, unerasable history of every fault that has occurred since the aircraft was manufactured.",
-      "replace the primary warning/caution display entirely, with no distinct function of its own beyond duplicating that display.",
+      "replace the primary warning/caution display entirely, with no distinct function of its own beyond duplicating that display, since the Memo page is defined as showing identical content to the warning and caution display rather than any separate configuration reminder.",
       "remind the crew of the current configuration or armed state of certain systems during normal operation (such as seatbelt signs on, or an armed autobrake setting), rather than summarizing the operational status of systems following a fault.",
       "display only fault messages generated after an abnormal event, a function that actually describes the STATUS page rather than the Memo page.",
     ],
@@ -106,7 +106,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     options: [
       "colour coding is applied only to the own aircraft's symbol, with every intruder displayed exclusively in monochrome regardless of threat level.",
       "shape and colour on the TCAS display indicate only the intruder's altitude, with no relationship whatsoever to its collision threat level.",
-      "every intruder aircraft, regardless of threat level, is displayed using an identical shape and colour, with no visual distinction of any kind between an RA, a TA, and other traffic.",
+      "every intruder aircraft, regardless of threat level, is displayed using an identical shape and colour, with no visual distinction of any kind between an RA, a TA, and other traffic, since the display standard is defined as relying solely on a text data tag alongside each target rather than on any shape or colour coding.",
       "a resolution advisory (RA) intruder is typically shown as a solid red square, a traffic advisory (TA) intruder as a solid amber/yellow circle, and other traffic as a hollow (or white/cyan) diamond, with the own aircraft generally shown using a distinct symbol such as an aircraft outline.",
     ],
     answer: 3,
@@ -139,7 +139,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
       "indicates the aircraft's current airspeed, a function unrelated to trim position and instead performed by the airspeed indicator.",
       "allows the crew to verify that the trim setting is appropriate for the current phase of flight (such as confirming a takeoff trim setting within the approved range before departure), and helps them recognize an unexpected or runaway trim condition.",
       "displays the aircraft's current centre of gravity position directly, replacing the need for any separate weight and balance calculation.",
-      "is used exclusively during cruise flight, with no relevance to the takeoff or landing phases.",
+      "is used exclusively during cruise flight, with no relevance to the takeoff or landing phases, since the indicator is defined as being disabled below a set altitude and therefore provides the crew with no usable trim reference during either the takeoff or landing phase.",
     ],
     answer: 1,
     explain:
@@ -155,7 +155,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
       "indicates the current landing gear position, a function unrelated to speedbrake or spoiler deployment.",
       "is relevant only during the cruise phase of flight, with no application to landing or a rejected takeoff.",
       "allows the crew to confirm that the speedbrakes have actually deployed as commanded (for example, after landing or during a rejected takeoff), and helps them notice if the panels have been left extended or have failed to fully retract when they should be stowed.",
-      "displays the current flap setting, a function that is actually performed by a separate flap position indicator rather than the speedbrake/spoiler indicator.",
+      "displays the current flap setting, a function that is actually performed by a separate flap position indicator rather than the speedbrake/spoiler indicator, since the two indicators are defined as sharing an identical display scale despite showing entirely different flight control surfaces.",
     ],
     answer: 2,
     explain:
@@ -185,7 +185,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     q: "Some turbine engines use N1 (fan/low-pressure spool speed) as their primary thrust-setting reference, while others use Engine Pressure Ratio (EPR), a choice that generally reflects",
     options: [
       "which parameter that particular engine's manufacturer has determined correlates most reliably with actual thrust output across the engine's operating range, since both N1 and EPR are used, on their respective engine types, as indirect indications of thrust rather than a direct thrust measurement.",
-      "the fact that N1 measures fuel flow directly, while EPR measures rotational speed directly, the reverse of what each parameter actually represents.",
+      "the fact that N1 measures fuel flow directly, while EPR measures rotational speed directly, the reverse of what each parameter actually represents, since N1 is in fact defined by convention as a fuel-flow-derived quantity computed downstream of the fuel metering unit, while EPR is instead defined as a direct mechanical measurement of low-pressure spool rotational speed at the fan.",
       "a purely arbitrary manufacturer preference with no relationship to how reliably either parameter reflects actual thrust output on that engine.",
       "a regulatory requirement mandating one specific parameter (N1 or EPR) uniformly across all turbine engine types, leaving no room for manufacturer choice.",
     ],
@@ -200,7 +200,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A fuel temperature indicator, where fitted, is monitored by the crew primarily because",
     options: [
-      "fuel that becomes too warm poses the only monitored risk, with cold fuel temperature considered operationally irrelevant on any flight.",
+      "fuel that becomes too warm poses the only monitored risk, with cold fuel temperature considered operationally irrelevant on any flight, since the indicator is defined as being calibrated solely to detect overheating from ground refuelling error rather than any risk of the fuel approaching its freezing point at the low outside air temperatures typically encountered at cruise altitude.",
       "fuel that becomes too cold (particularly at high altitude and low outside air temperature on long flights) risks approaching its freezing point, potentially forming wax crystals that can restrict fuel flow, so the crew may need to take action such as descending to a warmer altitude or adjusting speed.",
       "the fuel temperature indicator functions identically to, and simply duplicates, the engine oil temperature gauge.",
       "fuel temperature is used exclusively to calculate the aircraft's centre of gravity, with no relationship to fuel flow or freezing risk.",
@@ -219,7 +219,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
       "the outside (ambient) rate of climb of the aircraft itself, rather than any parameter related to the cabin.",
       "the same information as the cabin altitude indicator, the two instruments being functionally identical and interchangeable.",
       "how quickly the cabin altitude is currently changing (its rate of climb or descent), rather than the cabin's current altitude value itself (shown by the cabin altitude indicator) or the pressure difference between the cabin and the outside atmosphere (shown by the differential pressure gauge).",
-      "the pressure differential between the cabin and the outside atmosphere, a function that actually belongs to the differential pressure gauge rather than the rate indicator.",
+      "the pressure differential between the cabin and the outside atmosphere, a function that actually belongs to the differential pressure gauge rather than the rate indicator, since the two gauges are defined as sharing an identical needle scale and indicating the same underlying pressure value at all times.",
     ],
     answer: 2,
     explain:
@@ -234,7 +234,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     options: [
       "automatically adjusts the antenna's tilt angle, a function that is actually controlled by the tilt control rather than the gain control.",
       "increases the radar's maximum detection range, a function that is actually controlled by the range selector rather than the gain control.",
-      "has no effect whatsoever on the displayed radar picture, regardless of how far the gain is adjusted.",
+      "has no effect whatsoever on the displayed radar picture, regardless of how far the gain is adjusted, since the gain control is defined on this system as affecting only the audio alert volume associated with a detected storm cell rather than the intensity or appearance of any return shown on the visual weather display itself.",
       "reduces the displayed intensity of returns, which can help a pilot distinguish the most intense, most hazardous portions of a storm cell from its surrounding lighter precipitation, but should generally be returned to the calibrated (automatic) setting for routine weather avoidance decisions.",
     ],
     answer: 3,
@@ -249,7 +249,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     q: "An ammeter and a voltmeter, as electrical system gauges on the flight deck, together allow the crew to",
     options: [
       "monitor the electrical load being drawn from (or supplied by) a generator or battery, and the voltage that source is producing, helping the crew recognize an overload, an undercharging condition, or a failing generator or battery before it leads to an electrical system problem.",
-      "monitor hydraulic system pressure and fluid quantity, a function that is actually performed by separate hydraulic gauges rather than an ammeter or voltmeter.",
+      "monitor hydraulic system pressure and fluid quantity, a function that is actually performed by separate hydraulic gauges rather than an ammeter or voltmeter, since the ammeter and voltmeter are defined on this aircraft type as sharing a common sensor with the hydraulic system indications.",
       "display engine oil pressure and temperature, a function that is actually performed by dedicated oil gauges rather than an ammeter or voltmeter.",
       "monitor cabin pressurization, a function that is actually performed by the cabin altitude indicator and differential pressure gauge rather than electrical gauges.",
     ],
@@ -264,7 +264,7 @@ export const CANADA_TC_ATPL_BATCH_67_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Hydraulic system pressure and quantity gauges on the flight deck allow the crew to",
     options: [
-      "display the aircraft's current airspeed and altitude, functions that are actually performed by the airspeed indicator and altimeter rather than hydraulic gauges.",
+      "display the aircraft's current airspeed and altitude, functions that are actually performed by the airspeed indicator and altimeter rather than hydraulic gauges, since hydraulic pressure and quantity gauges are defined as being driven from the same pitot-static system that feeds the airspeed indicator and altimeter.",
       "confirm that each hydraulic system is operating within its normal pressure range and has adequate fluid remaining, helping them detect a developing leak, a failing pump, or a system that has lost pressure before it affects flight controls, landing gear, or brakes that depend on that system.",
       "monitor cabin pressurization exclusively, with no relationship to flight controls, landing gear, or brakes.",
       "monitor engine thrust output directly, a function that is actually performed by N1, N2, or EPR gauges rather than hydraulic gauges.",

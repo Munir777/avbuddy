@@ -37,10 +37,10 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On a Terrain Awareness and Warning System (TAWS) display, terrain is typically colour-coded so that",
     options: [
-      "red is used to indicate terrain that is safely below the aircraft, the reverse of the threat-level colour convention actually used on a TAWS display.",
+      "red is used to indicate terrain that is safely below the aircraft, the reverse of the threat-level colour convention actually used on a TAWS display, a reversal that would defeat the display's purpose of drawing attention to genuine hazards.",
       "all terrain is displayed in a single uniform colour regardless of its height relative to the aircraft, providing no way to visually distinguish threat level.",
       "colour-coding is applied only to water features on the display, with all terrain elevation data shown using text labels rather than any colour convention.",
-      "terrain posing an immediate threat is shown in red, terrain posing a caution-level threat is shown in yellow, and terrain well below the aircraft's flight path is shown in green or left unshaded.",
+      "terrain posing an immediate threat is shown in red, caution-level terrain in yellow, and terrain well below the flight path in green or left unshaded.",
     ],
     answer: 3,
     explain:
@@ -71,8 +71,8 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     options: [
       "no guidance information at all during an RA, since TCAS Resolution Advisories are understood to provide no vertical speed display cues of any kind.",
       "a target vertical speed range to fly toward (green) and a range to avoid (red), helping achieve the vertical separation commanded by the Resolution Advisory.",
-      "the aircraft's current groundspeed rather than any vertical speed guidance, despite being displayed on a vertical speed indicator.",
-      "a fixed, unchanging vertical speed target that never adjusts once initially displayed at the start of the Resolution Advisory.",
+      "the aircraft's current groundspeed rather than any vertical speed guidance, despite being displayed on a vertical speed indicator, a reading that would leave the crew without the vertical guidance an RA depends on.",
+      "a fixed, unchanging vertical speed target that never adjusts once initially displayed at the start of the Resolution Advisory, even though an RA's guidance is commonly revised as the traffic conflict geometry evolves.",
     ],
     answer: 1,
     explain:
@@ -117,10 +117,10 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A pressure altimeter's Kollsman window can typically be set to display the altimeter setting in either inches of mercury (inHg) or hectopascals (hPa), which is significant because",
     options: [
-      "different regions or authorities commonly use different pressure units for the altimeter setting, so the ability to select the correct unit helps the pilot set the altimeter correctly wherever the flight is conducted.",
+      "different regions commonly use different pressure units for the altimeter setting, so selecting the correct unit helps the pilot set the altimeter correctly for the flight.",
       "inches of mercury are understood to be obsolete and no longer used by any aviation authority worldwide, making the inHg setting option unnecessary.",
       "the choice of unit has no effect on the altimeter's actual indicated altitude, making the ability to select a unit purely a cosmetic display preference.",
-      "hectopascals are used exclusively for temperature reporting, meaning an altimeter set in hPa would be measuring temperature rather than pressure.",
+      "hectopascals are used exclusively for temperature reporting, meaning an altimeter set in hPa would be measuring temperature rather than pressure, a confusion the shared instrument scale used for both units would not actually support.",
     ],
     answer: 0,
     explain:
@@ -166,9 +166,9 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     q: "An EICAS or ECAM STATUS page, as distinguished from the system's primary warning/caution display, is generally used to",
     options: [
       "replace the primary warning/caution display entirely during any abnormal situation, leaving the crew with no separate, dedicated warning/caution presentation.",
-      "duplicate exactly the same information already shown on the primary warning/caution display, with no distinct content or purpose of its own.",
-      "display only normal, fully operative systems, with no indication whatsoever of any inoperative or degraded equipment shown on the STATUS page.",
-      "show ongoing aircraft status information relevant to dispatch or continued operation, such as an inoperative but not immediately warning-level item, rather than an active, time-critical alert.",
+      "duplicate exactly the same information already shown on the primary warning/caution display, with no distinct content or purpose of its own, a redundancy that would make a separate STATUS page pointless to include.",
+      "display only normal, fully operative systems, with no indication whatsoever of any inoperative or degraded equipment shown on the STATUS page, the opposite of the degraded-equipment summary the page is actually designed to provide.",
+      "show ongoing status information relevant to dispatch or continued operation, such as an inoperative but not immediately warning-level item, rather than an active alert.",
     ],
     answer: 3,
     explain:
@@ -181,10 +181,10 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A vertical speed indicator's mechanical zero-adjustment knob, where fitted, allows the pilot or maintenance personnel to",
     options: [
-      "correct a small needle indication error observed while the aircraft is stationary on the ground (where the true vertical speed is known to be zero), improving the instrument's displayed accuracy.",
+      "correct a small needle indication error observed on the ground, where the true vertical speed is known to be zero, improving the instrument's accuracy.",
       "adjust the aircraft's actual rate of climb or descent directly, since the zero-adjustment knob is understood to control aircraft performance rather than instrument indication.",
-      "change the units in which vertical speed is displayed, a function unrelated to correcting any needle position error.",
-      "reset the altimeter to a new altimeter setting, a function performed by the Kollsman window rather than by any control on the vertical speed indicator.",
+      "change the units in which vertical speed is displayed, a function unrelated to correcting any needle position error, though no such unit-selection function exists on a typical mechanical VSI.",
+      "reset the altimeter to a new altimeter setting, a function performed by the Kollsman window rather than by any control on the vertical speed indicator, making the VSI knob an unrelated control entirely.",
     ],
     answer: 0,
     explain:
@@ -198,9 +198,9 @@ export const CANADA_TC_ATPL_BATCH_57_QUESTIONS: Question[] = [
     q: "An engine fire warning light, paired with a guarded fire handle on the flight deck, is designed so that",
     options: [
       "the fire handle is used only to silence the fire warning light's audible alert, with no relationship to shutting off fuel or hydraulic supply to the affected engine.",
-      "the light alerts the crew to a detected engine fire, and pulling the guarded handle (protected against inadvertent activation) initiates the associated engine fire response, such as shutting off fuel and hydraulic supply to that engine.",
+      "the light alerts the crew to a detected engine fire, and pulling the guarded handle initiates the fire response, such as shutting off fuel and hydraulic supply to that engine.",
       "the fire warning light illuminates continuously during normal engine operation, providing no distinct indication specific to an actual detected fire condition.",
-      "the guard covering the handle is purely decorative, providing no actual protection against inadvertent activation of the fire handle.",
+      "the guard covering the handle is purely decorative, providing no actual protection against inadvertent activation of the fire handle, despite guards of this kind being specifically designed to prevent an unintended pull.",
     ],
     answer: 1,
     explain:

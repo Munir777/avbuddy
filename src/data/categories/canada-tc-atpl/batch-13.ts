@@ -14,10 +14,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "True heading is corrected for variation to obtain magnetic heading, and magnetic heading is then corrected for deviation to obtain compass heading. Variation and deviation are best distinguished as",
     options: [
-      "variation and deviation both refer to the same angle, and the two terms are simply used interchangeably depending on the chart in use.",
-      "variation is the angle between true and magnetic north, caused by the earth's magnetic field; deviation is the angle between magnetic and compass indications, caused by the aircraft's own magnetic influences.",
-      "variation applies only to compass headings, and deviation applies only to true headings; neither is used to correct the other.",
-      "variation is caused by the aircraft's own instruments, while deviation is caused by the earth's magnetic field and varies by geographic location.",
+      "variation and deviation both refer to the same angle, and the two terms are simply used interchangeably depending on which chart or compass card is in use.",
+      "variation is the angle between true and magnetic north, from the earth's field; deviation is the angle between magnetic and compass, from the aircraft's own magnetism.",
+      "variation applies only to compass headings, and deviation applies only to true headings; neither is ever used to correct the other.",
+      "variation is caused by the aircraft's own instruments and equipment on board, while deviation is instead caused by the earth's magnetic field and varies by geographic location around the world.",
     ],
     answer: 1,
     explain:
@@ -46,10 +46,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "One minute of latitude is used as the standard basis for measuring distance (one nautical mile) on a chart, rather than one minute of longitude, because",
     options: [
-      "it is purely a historical naming convention with no geometric basis; either scale would work equally well.",
-      "longitude cannot be measured on a chart at all; only latitude scales are printed on aeronautical charts.",
-      "one minute of longitude is always exactly twice the length of one minute of latitude, making latitude the more convenient round number.",
-      "meridians of longitude converge toward the poles, so the distance represented by one minute of longitude shrinks with increasing latitude, while meridians of latitude remain a constant distance apart everywhere.",
+      "it is purely a historical naming convention with no geometric basis at all; either scale would work equally well in practice.",
+      "longitude cannot be measured on a chart at all; only latitude scales are ever printed on aeronautical charts of any kind.",
+      "one minute of longitude is always exactly twice the length of one minute of latitude, which makes latitude the more convenient round number to use.",
+      "meridians of longitude converge toward the poles, so one minute of longitude shrinks with latitude, while latitude stays constant everywhere.",
     ],
     answer: 3,
     explain:
@@ -78,10 +78,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Drift angle, as distinct from wind correction angle, is best defined as",
     options: [
-      "the angular difference between true north and magnetic north at the aircraft's present position.",
-      "the angular difference between the aircraft's heading and its actual track over the ground, resulting from the wind's effect.",
-      "the difference between indicated airspeed and true airspeed at the aircraft's cruising altitude.",
-      "the angle between the aircraft's heading and the runway centreline during a crosswind takeoff roll.",
+      "the angular difference between true north and magnetic north at the aircraft's present geographic position.",
+      "the angular difference between the aircraft's heading and its actual track over the ground, resulting from the wind's effect during flight.",
+      "the difference between indicated airspeed and true airspeed at the aircraft's current cruising altitude.",
+      "the angle between the aircraft's heading and the runway centreline maintained during a crosswind takeoff roll.",
     ],
     answer: 1,
     explain:
@@ -94,10 +94,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The 1-in-60 rule is a rule of thumb used in air navigation to",
     options: [
-      "convert a magnetic heading to a compass heading whenever deviation exceeds 1 degree for every 60 nautical miles flown.",
-      "determine the minimum fuel reserve required for a flight of a given duration, expressed as a fraction of total trip fuel.",
-      "relate track error in nautical miles, distance travelled, and the angular correction needed to regain the intended track, using the approximation that 1 degree of angular error corresponds to roughly 1 NM of displacement per 60 NM travelled.",
-      "calculate true airspeed from indicated airspeed by adding 1% for every 60 ft of altitude above sea level.",
+      "convert a magnetic heading to a compass heading whenever deviation exceeds 1 degree for every 60 nautical miles of flight time.",
+      "determine the minimum fuel reserve required for a flight of a given planned duration and aircraft type, expressed as a fixed fraction of total planned trip fuel carried.",
+      "relate track error, distance travelled, and the angular correction needed to regain track, using the approximation that 1 degree of error corresponds to roughly 1 NM of displacement per 60 NM travelled.",
+      "calculate true airspeed from indicated airspeed by adding roughly 1% for every 60 ft of altitude above mean sea level.",
     ],
     answer: 2,
     explain:
@@ -110,10 +110,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "On a Mercator projection, a rhumb line (a line of constant true track) is represented as",
     options: [
-      "a curved line that bends toward the nearer pole, the same as it would on a Lambert Conformal projection.",
-      "not representable at all; Mercator charts can only be used to plot great circle tracks.",
+      "a curved line that bends toward the nearer pole, the same way it would on a Lambert Conformal projection chart.",
+      "not representable at all; Mercator charts can only ever be used to plot great circle tracks directly.",
       "a straight line only near the equator, becoming increasingly curved as latitude increases toward either pole.",
-      "a straight line, which is precisely why the projection was historically favoured for plotting a constant-heading course.",
+      "a straight line, which is why the projection was historically favoured for plotting a constant-heading course at sea and in the air.",
     ],
     answer: 3,
     explain:
@@ -126,10 +126,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "On a Lambert Conformal Conic chart constructed with two standard parallels, a great circle track between two points",
     options: [
-      "appears very close to a straight line, with only slight curvature, which is a major reason the projection is favoured for en route navigation charts.",
-      "appears as a pronounced curve bulging strongly toward the equator, making it impractical to plot directly on the chart.",
-      "cannot be plotted on a Lambert Conformal chart at all; only rhumb lines can be represented.",
-      "appears identical in every respect to how it would be plotted on a Mercator projection.",
+      "appears very close to a straight line, with only slight curvature, a major reason the projection suits en route navigation charts generally.",
+      "appears as a pronounced curve bulging strongly toward the equator, making it impractical to plot directly on any chart.",
+      "cannot be plotted on a Lambert Conformal chart at all under any circumstance; only rhumb lines can be represented there.",
+      "appears identical in every meaningful respect to how it would be plotted on a standard Mercator projection chart.",
     ],
     answer: 0,
     explain:
@@ -142,10 +142,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "For navigation charts covering polar regions, a polar stereographic projection is generally preferred over a Lambert Conformal or Mercator projection because",
     options: [
-      "polar stereographic charts eliminate the need for grid navigation, which is otherwise required near the magnetic poles.",
-      "meridians converge sharply and rapidly near the poles, which the Lambert Conformal and Mercator projections handle poorly (Mercator becomes unusable at the pole itself), while polar stereographic charts remain workable and reasonably accurate there.",
-      "polar stereographic charts are the only projection on which a rhumb line can be plotted as a straight line, anywhere on earth.",
-      "magnetic variation does not exist in polar regions, removing the need for any specialized polar projection.",
+      "polar stereographic charts eliminate the need for grid navigation entirely, which is otherwise required near the magnetic poles.",
+      "meridians converge sharply near the poles, which Lambert Conformal and Mercator handle poorly, while polar stereographic charts remain workable and accurate there.",
+      "polar stereographic charts are supposedly the only map projection on which a rhumb line can ever be plotted as a perfectly straight line, anywhere on the earth's entire surface, according to this claim.",
+      "magnetic variation does not meaningfully exist in polar regions, removing the need for any specialized polar projection at all.",
     ],
     answer: 1,
     explain:
@@ -158,10 +158,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Comparing the great circle track and the rhumb line track between the same two points (excluding points on the equator or on the same meridian, where the two coincide), the great circle distance is",
     options: [
-      "unpredictably longer or shorter depending on which hemisphere the flight is conducted in.",
-      "identical to the rhumb line distance in all cases; only the plotted shape on the chart differs, not the distance flown.",
-      "always the shorter (or, in the excluded cases, equal) of the two, since a great circle is by definition the shortest path between two points on a sphere.",
-      "always the longer of the two, since a great circle constantly changes track and therefore covers more ground.",
+      "unpredictably longer or shorter depending on which hemisphere and season the flight happens to be conducted in.",
+      "identical to the rhumb line distance in all cases without exception; only the plotted shape on the chart differs, never the actual distance flown.",
+      "always the shorter, or in the excluded cases equal, since a great circle is the shortest path between two points on a sphere's surface.",
+      "always the longer of the two, since a great circle continuously changes track and therefore covers more total ground.",
     ],
     answer: 2,
     explain:
@@ -174,10 +174,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The conversion angle at a given point along a route is the angle between the great circle track and the rhumb line track connecting the same two points, and is used to",
     options: [
-      "convert a VOR radial into the equivalent NDB relative bearing for cross-checking purposes.",
-      "convert indicated airspeed into true airspeed for high-altitude cruise segments.",
-      "convert true track into magnetic track, serving the same function as magnetic variation.",
-      "convert a great circle initial track (as measured off a chart or computed) into the equivalent constant rhumb line track that can be flown, or vice versa.",
+      "convert a VOR radial into the equivalent NDB relative bearing for cross-checking purposes during an instrument approach.",
+      "convert indicated airspeed into true airspeed for high-altitude cruise segments above the transition altitude.",
+      "convert true track into magnetic track, serving essentially the same function as magnetic variation itself.",
+      "convert a great circle track into the equivalent constant rhumb line track that can be flown, or vice versa.",
     ],
     answer: 3,
     explain:
@@ -190,10 +190,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A DME-DME (RHO-RHO) area navigation system determines aircraft position by",
     options: [
-      "measuring distance from two or more DME ground stations whose locations are held in the system's database, and computing a positional fix from the intersection of those distance measurements.",
-      "receiving timing signals from GNSS satellites and computing position by trilateration of those signals alone.",
-      "measuring the bearing to a single VOR station and combining it with a separately measured distance from the same station.",
-      "relying entirely on gyroscopic dead reckoning from a known starting position, with no external radio signal used at all.",
+      "measuring distance from two or more DME stations whose locations are in the database, and fixing position where those distances intersect.",
+      "receiving timing signals from GNSS satellites alone and computing aircraft position purely by trilateration of those satellite signals, with nothing else involved.",
+      "measuring the bearing to a single VOR station and combining it with a separately measured DME distance from that very same station.",
+      "relying entirely on gyroscopic dead reckoning from a known starting position, with no external radio signal used at any point.",
     ],
     answer: 0,
     explain:
@@ -206,10 +206,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A VOR radial, as displayed to and used by a pilot, is defined as",
     options: [
-      "a magnetic bearing measured from the aircraft's present position TO the VOR station.",
-      "a magnetic bearing measured outward FROM the VOR station, regardless of the aircraft's position relative to that bearing line.",
+      "a magnetic bearing measured from the aircraft's present position TO the VOR station itself, regardless of track.",
+      "a magnetic bearing measured outward FROM the VOR station, regardless of the aircraft's position relative to that line.",
       "whichever of the two reciprocal bearings the pilot has most recently selected on the OBS, with no fixed convention either way.",
-      "a true (not magnetic) bearing measured outward from the VOR station.",
+      "a true, not magnetic, bearing measured outward from the VOR station under all conditions.",
     ],
     answer: 1,
     explain:
@@ -238,10 +238,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Under the performance-based navigation (PBN) concept, the key functional difference between a basic RNAV system and an RNP (required navigation performance) system is that",
     options: [
-      "RNP is a purely lateral guidance specification, while RNAV additionally provides vertical guidance that RNP cannot.",
-      "RNP systems use only satellite-based positioning, while RNAV systems use only ground-based NAVAIDs, with no overlap between the two.",
-      "there is no functional difference; RNP and RNAV are two names for exactly the same avionics capability.",
-      "an RNP system adds on-board monitoring and alerting of its own achieved navigation performance, so the flight crew is warned if the required accuracy cannot be met; basic RNAV has no such self-monitoring function.",
+      "RNP is purely a lateral guidance specification, while RNAV additionally provides vertical guidance that RNP by definition cannot.",
+      "RNP systems reportedly use only satellite-based positioning, while RNAV systems use only ground-based NAVAIDs, with absolutely no overlap between the two techniques.",
+      "there is no functional difference whatsoever; RNP and RNAV are simply two names for exactly the same underlying avionics capability.",
+      "an RNP system adds on-board monitoring of its own navigation performance, warning the crew if required accuracy cannot be met; basic RNAV has no such function.",
     ],
     answer: 3,
     explain:
@@ -254,10 +254,10 @@ export const CANADA_TC_ATPL_BATCH_13_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "During a dead-reckoning leg, the actual groundspeed achieved (from a fix) turns out to be noticeably different from the flight-planned groundspeed. The appropriate response is to",
     options: [
-      "revise the estimated time of arrival and remaining fuel calculations for the rest of the flight using the newly observed actual groundspeed, rather than continuing to rely on the original flight-planned figure.",
-      "continue using the original flight-planned groundspeed for the rest of the flight, since a single fix is not considered reliable enough to justify a revision.",
-      "ignore the discrepancy entirely provided the aircraft remains on its planned track, since groundspeed has no bearing on fuel or time calculations.",
-      "reduce power to force the aircraft back to the flight-planned groundspeed, regardless of what that does to the planned fuel flow.",
+      "revise the estimated time of arrival and remaining fuel calculations for the rest of the flight using the newly observed groundspeed, not the original planned figure.",
+      "continue using the original flight-planned groundspeed for the rest of the flight, since a single fix is not considered statistically reliable enough to justify any revision.",
+      "ignore the discrepancy entirely provided the aircraft remains on its planned track, since groundspeed alone has no bearing on fuel or time calculations.",
+      "reduce power deliberately to force the aircraft back to the flight-planned groundspeed, regardless of what that does to the planned fuel flow.",
     ],
     answer: 0,
     explain:

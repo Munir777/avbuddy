@@ -36,7 +36,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Roll damping, an aerodynamic effect that opposes a developing roll rate once ailerons are applied, arises because",
     options: [
-      "roll damping has no aerodynamic basis at all, since roll rate is understood to increase indefinitely and without limit for as long as aileron deflection is held.",
+      "roll damping has no aerodynamic basis at all, since roll rate is understood to increase indefinitely and without limit for as long as aileron deflection is held, regardless of aircraft type or speed.",
       "the ailerons themselves physically lock in place once a certain roll rate is reached, mechanically preventing any further increase in roll rate.",
       "roll damping applies only to yaw rate, not roll rate, despite what its name would otherwise suggest about the axis it actually affects.",
       "the downgoing wing experiences an increased effective angle of attack (and the upgoing wing a decreased one) due to the roll rate itself, generating a moment that opposes further roll acceleration.",
@@ -71,7 +71,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
       "both induced drag and parasite drag increase identically with airspeed, meaning the two drag components cannot be meaningfully distinguished on a total drag curve.",
       "induced drag is greatest at low airspeed (where a high angle of attack is needed to generate the required lift) and decreases as speed increases, while parasite drag increases with the square of airspeed.",
       "neither drag component varies with airspeed at all, since total drag is understood to remain constant across the entire speed range of an aircraft.",
-      "induced drag increases with the square of airspeed while parasite drag decreases as speed increases, the reverse of their actual respective relationships to airspeed.",
+      "induced drag increases with the square of airspeed while parasite drag decreases as speed increases, the exact reverse of their actual respective relationships to airspeed throughout the whole flight envelope.",
     ],
     answer: 1,
     explain:
@@ -85,8 +85,8 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     q: "For a given aircraft weight and configuration, the indicated stalling speed",
     options: [
       "is undefined above a certain altitude, since the concept of an indicated stalling speed is understood to apply only near sea level.",
-      "increases substantially with altitude, since higher altitude is understood to always require a correspondingly higher indicated stalling speed for the same weight and configuration.",
-      "remains essentially constant regardless of altitude, since indicated airspeed is itself a measure of dynamic pressure, and the same dynamic pressure is required to generate the same lift at the stall regardless of true airspeed or air density.",
+      "increases substantially with altitude, since higher altitude is understood to always require a correspondingly higher indicated stalling speed for the same weight, configuration, and bank angle at every phase of flight.",
+      "remains essentially constant regardless of altitude, since indicated airspeed is itself a measure of dynamic pressure, and the same dynamic pressure is required to generate the same lift at the stall.",
       "decreases substantially with altitude, since higher altitude is understood to always require a correspondingly lower indicated stalling speed for the same weight and configuration.",
     ],
     answer: 2,
@@ -101,7 +101,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     q: "For a propeller-driven aircraft, power-on stalling speed is generally somewhat lower than power-off stalling speed for the same weight and configuration, primarily because",
     options: [
       "power-on stalling speed is always higher, not lower, than power-off stalling speed, the reverse of the actual relationship typically observed.",
-      "engine power has no aerodynamic effect on stalling speed whatsoever, making power-on and power-off stalling speeds identical for any propeller-driven aircraft.",
+      "engine power has no aerodynamic effect on stalling speed whatsoever, making power-on and power-off stalling speeds identical for any propeller-driven aircraft type or configuration.",
       "the effect applies only to jet aircraft, since propeller slipstream is understood to have no influence on stalling speed for any propeller-driven type.",
       "propeller slipstream over the wing root and inboard sections, along with a favourable thrust vector component, can delay the stall and reduce the airspeed at which it occurs.",
     ],
@@ -165,7 +165,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     q: "Maneuvering speed (Va), the speed at or below which full, abrupt control deflection should not overstress the airframe, is generally",
     options: [
       "higher at a lower weight than at a higher weight, the reverse of the actual relationship between maneuvering speed and aircraft weight.",
-      "unrelated to load factor limits entirely, since maneuvering speed is understood to be determined solely by airspeed indicator markings rather than any structural or aerodynamic consideration.",
+      "unrelated to load factor limits entirely, since maneuvering speed is understood to be determined solely by airspeed indicator markings rather than any structural, aerodynamic, or weight-based consideration whatsoever.",
       "identical at every weight, since maneuvering speed is understood to be a fixed value entirely independent of the aircraft's actual weight at the time.",
       "lower at a lower aircraft weight than at a higher weight, since a lighter aircraft reaches its aerodynamic (stall) load factor limit -- rather than exceeding the structural limit -- at a correspondingly lower speed.",
     ],
@@ -181,7 +181,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     q: "An aircraft's never-exceed speed (Vne) is generally established with a structural or aeroelastic margin primarily to protect against",
     options: [
       "phenomena such as aeroelastic flutter, control surface reversal, or other high-speed structural risks that become more likely as airspeed increases toward and beyond the aircraft's design limits.",
-      "running out of usable runway length, a takeoff/landing performance concern unrelated to an airspeed limit applicable throughout the flight envelope.",
+      "running out of usable runway length during takeoff or landing, a ground-roll performance concern entirely unrelated to any airspeed limit applicable throughout the rest of the aircraft's flight envelope.",
       "excessive fuel consumption at high speed, a purely economic consideration rather than a structural or aeroelastic safety concern.",
       "passenger discomfort from noise at high speed, a cabin comfort consideration unrelated to any structural or aeroelastic risk.",
     ],
@@ -199,7 +199,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
       "the lowest possible fuel burn during the climb segment, a purely economic criterion unrelated to altitude gained per unit of horizontal distance or time.",
       "the greatest altitude gain for a given horizontal distance travelled, generally a lower speed than best rate of climb, making it useful for clearing an obstacle close to the departure end of a runway.",
       "the greatest altitude gain for a given amount of time, an outcome that is, by definition, identical to best rate of climb speed rather than a distinct concept.",
-      "the highest possible true airspeed the aircraft can sustain in a climb, a speed value that has no relationship to the aircraft's rate or angle of altitude gain.",
+      "the highest possible true airspeed the aircraft can sustain in a climb, a speed value that has no meaningful relationship whatsoever to the aircraft's actual rate or angle of altitude gain at any weight.",
     ],
     answer: 1,
     explain:
@@ -212,7 +212,7 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "For a propeller-driven aircraft, best rate of climb is fundamentally determined by the speed at which",
     options: [
-      "the aircraft is flown at its absolute maximum permissible airspeed, since higher speed alone is understood to always produce the greatest climb rate for a propeller aircraft.",
+      "the aircraft is flown at its absolute maximum permissible airspeed, since higher speed alone is understood to always produce the greatest climb rate for any propeller-driven aircraft type at any weight or altitude.",
       "power required exceeds power available by the greatest margin, the reverse of the condition that actually maximizes climb rate.",
       "the excess power available (power available from the engine/propeller combination minus power required for level flight) is at its maximum, since climb rate depends on excess power rather than excess thrust alone.",
       "excess thrust, rather than excess power, is at its maximum, making thrust the determining factor for a propeller aircraft's climb performance rather than power.",
@@ -244,10 +244,10 @@ export const CANADA_TC_ATPL_BATCH_52_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A spin is distinguished from a spiral dive primarily in that, during a spin, the aircraft is",
     options: [
-      "in an aerodynamically stalled condition on at least one wing throughout the rotation, whereas a spiral dive is an unstalled, steep, continuously tightening descending turn with rapidly increasing airspeed.",
+      "in an aerodynamically stalled condition on at least one wing throughout the rotation, whereas a spiral dive is an unstalled, steep descending turn with rapidly increasing airspeed.",
       "never stalled at any point, making a spin functionally identical to a spiral dive in terms of the wing's aerodynamic state throughout the maneuver.",
       "gaining, rather than losing, altitude throughout the maneuver, the opposite of the altitude loss actually associated with both a spin and a spiral dive.",
-      "always recovered using the exact same control inputs used to recover from a spiral dive, since the two maneuvers require an identical recovery technique.",
+      "always recovered using the exact same control inputs used to recover from a spiral dive, since the two maneuvers are understood to require an identical recovery technique regardless of aircraft type.",
     ],
     answer: 0,
     explain:

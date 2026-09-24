@@ -15,10 +15,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A DME (distance measuring equipment) system determines slant range by",
     options: [
-      "the ground station continuously broadcasting a signal whose strength the aircraft measures, converting signal strength directly into a distance value.",
-      "comparing the phase difference between two VOR radial signals received simultaneously from the same ground facility.",
-      "the aircraft's interrogator transmitting a paired pulse to the ground station, which replies after a fixed known delay, and the airborne equipment measuring the round-trip time to compute distance.",
-      "receiving timing signals from a satellite constellation and computing distance by trilateration, entirely independent of any ground-based transmission.",
+      "the ground station continuously broadcasting a signal whose strength the aircraft measures, converting signal strength directly into a distance value, a method vulnerable to power and atmospheric variation.",
+      "comparing the phase difference between two VOR radial signals received simultaneously from the same ground facility, a bearing-determination technique rather than a distance-measuring one.",
+      "the aircraft's interrogator transmitting a paired pulse to the ground station, which replies after a fixed delay, and the airborne equipment measuring round-trip time to compute distance.",
+      "receiving timing signals from a satellite constellation and computing distance by trilateration, entirely independent of any ground-based VHF or UHF transmission at all.",
     ],
     answer: 2,
     explain:
@@ -31,9 +31,9 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "NDB signal reception can be distorted by 'mountain effect,' in which",
     options: [
-      "mountainous terrain increases NDB signal range well beyond its normal published service volume, improving reception at long range.",
-      "mountain effect refers exclusively to VOR reception, and has no application to NDB or ADF operation at all.",
-      "high terrain physically blocks the NDB's low/medium frequency signal entirely, producing no reception at all rather than an erroneous indication.",
+      "mountainous terrain increases NDB signal range well beyond its normal published service volume, improving reception at long range rather than degrading it in any way.",
+      "mountain effect refers exclusively to VOR reception, and has no application to NDB or ADF operation at all, despite the two systems sharing the same terrain.",
+      "high terrain physically blocks the NDB's low/medium frequency signal entirely, producing no reception at all rather than any erroneous or fluctuating indication.",
       "the NDB signal reflects off nearby high terrain, arriving at the aircraft from more than one direction and causing the ADF needle to give an erroneous or fluctuating indication.",
     ],
     answer: 3,
@@ -47,10 +47,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Coastal refraction, an NDB/ADF error, occurs because",
     options: [
-      "the NDB signal bends as it crosses a coastline, since it travels at different speeds over land and over water, distorting the indicated bearing for a signal crossing the coast at an oblique angle.",
-      "coastal refraction affects only VOR signals, since NDB signals are entirely unaffected by any change from land to water beneath their path.",
-      "NDB signals cannot cross a coastline at all, so any bearing indication received while over water must always be discarded as unreliable.",
-      "the NDB ground station itself must be relocated inland whenever it is found to be affected by coastal refraction, eliminating the error at its source.",
+      "the NDB signal bends as it crosses a coastline, travelling at different speeds over land and water, distorting the indicated bearing at an oblique crossing angle.",
+      "coastal refraction affects only VOR signals, since NDB signals are entirely unaffected by any change from land to water beneath their path, unlike VHF-band equipment.",
+      "NDB signals cannot cross a coastline at all, so any bearing indication received while over water must always be discarded as entirely unreliable and unusable.",
+      "the NDB ground station itself must be relocated inland whenever it is found to be affected by coastal refraction, eliminating the error at its source entirely.",
     ],
     answer: 0,
     explain:
@@ -63,10 +63,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "VOR 'scalloping' or site error, an error in the received radial, is generally caused by",
     options: [
-      "the aircraft's own transponder interfering with its VOR receiver, an entirely airborne-equipment-based source of error.",
-      "reflections of the VOR signal off nearby terrain, buildings, or other obstructions near the ground antenna, distorting the transmitted signal.",
-      "magnetic variation changing faster than the VOR ground station's published alignment can be updated.",
-      "excessive distance from the VOR station alone, an error that occurs even over perfectly flat, obstruction-free terrain.",
+      "the aircraft's own transponder interfering with its VOR receiver, an entirely airborne-equipment-based source of error unrelated to the ground station.",
+      "reflections of the VOR signal off nearby terrain, buildings, or obstructions near the ground antenna, distorting the signal transmitted.",
+      "magnetic variation changing faster than the VOR ground station's published alignment can be updated, an alignment rather than a site-reflection problem.",
+      "excessive distance from the VOR station alone, an error that occurs even over perfectly flat, obstruction-free terrain with no reflections present.",
     ],
     answer: 1,
     explain:
@@ -79,10 +79,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Comparing ADS-B Out and ADS-B In, ADS-B Out",
     options: [
-      "receives traffic and weather information broadcast from ground stations, while ADS-B In transmits the aircraft's own position data outward.",
-      "is required only for VFR aircraft, while ADS-B In is required only for IFR aircraft, with no aircraft ever requiring both.",
-      "transmits the aircraft's own position and other data for reception by ATC ground stations and other suitably equipped aircraft, while ADS-B In is the capability to receive that same kind of broadcast data from other sources.",
-      "and ADS-B In are simply two different names for the exact same equipment and function, with no meaningful distinction between them.",
+      "receives traffic and weather information broadcast from ground stations, while ADS-B In transmits the aircraft's own position data outward, the reverse of their actual roles.",
+      "is required only for VFR aircraft, while ADS-B In is required only for IFR aircraft, with no aircraft ever mandated to carry both capabilities.",
+      "transmits the aircraft's own position for reception by ATC and other equipped aircraft, while ADS-B In receives that same kind of broadcast data.",
+      "and ADS-B In are simply two different names for the exact same equipment and function, with no meaningful distinction between them at all.",
     ],
     answer: 2,
     explain:
@@ -95,10 +95,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "An ILS localizer's course is calibrated to provide full-scale CDI deflection at a specific angular width either side of the runway centreline, meaning that",
     options: [
-      "the localizer's angular width has no relationship to distance from the threshold at all, remaining a fixed lateral distance in feet or metres regardless of range.",
-      "the physical distance the aircraft can be laterally displaced before reaching full-scale deflection narrows with increasing distance from the runway threshold, the reverse of the usual relationship.",
-      "full-scale deflection occurs only within the final 500 ft before touchdown, with no full-scale deflection indication possible at any greater distance.",
-      "the physical distance the aircraft can be laterally displaced before reaching full-scale deflection widens with increasing distance from the runway threshold, since it is defined by angle rather than a fixed lateral distance.",
+      "the localizer's angular width has no relationship to distance from the threshold at all, remaining a fixed lateral distance in feet or metres regardless of range flown.",
+      "the physical distance the aircraft can be laterally displaced before reaching full-scale deflection narrows with increasing distance from the runway threshold, the reverse of the actual relationship.",
+      "full-scale deflection occurs only within the final 500 ft before touchdown, with no full-scale deflection indication possible at any greater distance from the threshold.",
+      "the physical distance the aircraft can be laterally displaced before reaching full-scale deflection widens with distance from the threshold, since it is angle-defined.",
     ],
     answer: 3,
     explain:
@@ -127,10 +127,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Comparing GNSS approach types, an LPV approach differs from a basic LNAV approach mainly in that LPV",
     options: [
-      "is flown using only a magnetic compass and DME, entirely independent of any GNSS signal, unlike LNAV which is GNSS-based.",
-      "provides SBAS-augmented lateral and vertical guidance similar in precision to an ILS, while LNAV provides lateral guidance only, flown to a minimum descent altitude rather than a decision altitude/height.",
-      "provides lateral guidance only, while LNAV provides both lateral and vertical guidance, the reverse of the usual relationship between the two approach types.",
-      "requires no SBAS augmentation at all, while LNAV specifically requires SBAS augmentation to be flown.",
+      "is flown using only a magnetic compass and DME, entirely independent of any GNSS signal at all, unlike LNAV which is itself GNSS-based.",
+      "provides SBAS-augmented lateral and vertical guidance similar in precision to an ILS, while LNAV provides lateral guidance only, flown to a minimum descent altitude.",
+      "provides lateral guidance only, while LNAV provides both lateral and vertical guidance, the reverse of the actual relationship between the two approach types.",
+      "requires no SBAS augmentation at all, while LNAV specifically requires SBAS augmentation before it can be flown as a published approach.",
     ],
     answer: 1,
     explain:
@@ -143,10 +143,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Because VHF communication and navigation signals are generally limited to line-of-sight propagation, the maximum reliable reception range between an aircraft and a ground station",
     options: [
-      "decreases as the aircraft's altitude increases, the reverse of the usual relationship between altitude and VHF range.",
-      "is entirely unaffected by the aircraft's altitude, and depends only on the ground station's transmitter power.",
-      "increases as the aircraft's altitude increases, since a higher aircraft can maintain line of sight to the ground station over a greater distance before the earth's curvature blocks the signal.",
-      "is fixed at exactly the same value for every VHF facility regardless of aircraft altitude, ground station location, or terrain.",
+      "decreases as the aircraft's altitude increases, the reverse of the usual relationship between altitude and VHF line-of-sight propagation range.",
+      "is entirely unaffected by the aircraft's altitude, and depends only on the ground station's transmitter power and antenna gain above ground, regardless of aircraft height.",
+      "increases as the aircraft's altitude increases, since a higher aircraft maintains line of sight over a greater distance before earth's curvature blocks it.",
+      "is fixed at exactly the same value for every VHF facility regardless of aircraft altitude, ground station location, power, or surrounding terrain.",
     ],
     answer: 2,
     explain:
@@ -159,10 +159,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "The transponder IDENT function, activated when requested by ATC, causes",
     options: [
-      "the aircraft's assigned squawk code to be changed automatically to a new, randomly generated code.",
-      "the transponder to automatically switch from Mode C to Mode S, without changing anything about how the return appears on the display.",
+      "the aircraft's assigned squawk code to be changed automatically to a new, randomly generated code, without any pilot input required.",
+      "the transponder to automatically switch from Mode C to Mode S, without changing anything about how the return appears on the controller's display.",
       "the transponder to transmit the pilot's voice callsign directly, functioning as an alternate communication channel to ATC.",
-      "the aircraft's return to be specially highlighted on the controller's radar display, helping the controller positively identify that specific aircraft among the traffic being displayed.",
+      "the aircraft's return to be specially highlighted on the controller's radar display, helping identify that specific aircraft among other traffic.",
     ],
     answer: 3,
     explain:
@@ -175,10 +175,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Compared to the 25 kHz VHF communication channel spacing standard historically used throughout North American airspace, 8.33 kHz channel spacing",
     options: [
-      "packs a greater number of distinct channels into the same VHF communication band, addressing frequency congestion, and is used in regions (such as much of Europe) with denser channel demand.",
-      "is used throughout Canadian domestic airspace as the sole standard, having fully replaced 25 kHz spacing.",
-      "provides fewer available channels than 25 kHz spacing within the same VHF band, the opposite of its actual purpose.",
-      "applies exclusively to navigation frequencies such as VOR and ILS, with no application to any voice communication frequency.",
+      "packs a greater number of distinct channels into the same VHF band, addressing frequency congestion, and is used where channel demand is denser.",
+      "is used throughout Canadian domestic airspace as the sole standard, having fully and permanently replaced 25 kHz spacing everywhere.",
+      "provides fewer available channels than 25 kHz spacing within the same VHF band, the opposite of its actual purpose in congested airspace.",
+      "applies exclusively to navigation frequencies such as VOR and ILS, with no application to any voice communication frequency whatsoever.",
     ],
     answer: 0,
     explain:
@@ -191,10 +191,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "An ATIS (Automatic Terminal Information Service) broadcast is intended primarily to",
     options: [
-      "provide individually tailored ATC clearances to each pilot who tunes in, replacing the need for any direct voice clearance from a controller.",
-      "provide routine, recorded arrival and departure information (weather, active runway, and similar details) to reduce repetitive individual communication between pilots and ATC.",
-      "serve exclusively as a backup emergency frequency, monitored only when a pilot's primary and secondary ATC frequencies have both failed.",
-      "provide only NOTAM information, with weather and runway-in-use information excluded from an ATIS broadcast entirely.",
+      "provide individually tailored ATC clearances to each pilot who tunes in, replacing the need for any direct voice clearance from a controller at all.",
+      "provide routine, recorded arrival and departure information to reduce repetitive individual communication between pilots and ATC.",
+      "serve exclusively as a backup emergency frequency, monitored only when a pilot's primary and secondary ATC frequencies have both already failed.",
+      "provide only NOTAM information, with weather and runway-in-use information excluded from an ATIS broadcast entirely and without exception.",
     ],
     answer: 1,
     explain:
@@ -207,9 +207,9 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Within a designated Mandatory Frequency (MF) area, an aircraft operating on the ground or in the air is required to",
     options: [
-      "obtain a full ATC clearance before any movement, exactly as would be required within controlled (Class C or D) airspace.",
-      "use only a designated emergency frequency, with normal MF-area communication considered optional rather than mandatory.",
-      "be equipped with a functioning radio capable of two-way communication and to follow the specific reporting procedures set out in the CARs for that area.",
+      "obtain a full ATC clearance before any movement, exactly as would be required within controlled Class C or D airspace at a towered aerodrome.",
+      "use only a designated emergency frequency, with normal MF-area communication and reporting procedures considered optional rather than mandatory.",
+      "be equipped with a functioning radio for two-way communication and follow the specific reporting procedures set out in the CARs for that area.",
       "maintain radio silence at all times, since 'mandatory frequency' specifically refers to a frequency that must never be transmitted on.",
     ],
     answer: 2,
@@ -223,10 +223,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "For a pilot not operating within airspace where the flight is being tracked by ATC surveillance (identified by ATC), standard practice for altitude reporting is generally to",
     options: [
-      "report altitude exclusively when specifically requested by ATC, with no proactive reporting expected under any other circumstance.",
+      "report altitude exclusively when specifically requested by ATC, with no proactive reporting expected under any other circumstance at all.",
       "report altitude only once per flight, immediately after departure, with no further altitude reports expected for the remainder of the flight.",
-      "never report altitude information at all, since altitude reports are considered entirely unnecessary outside surveillance airspace.",
-      "report reaching the initially cleared altitude, and when climbing or descending en route, report leaving a previously assigned altitude and reaching the newly assigned altitude.",
+      "never report altitude information at all, since altitude reports are considered entirely unnecessary outside surveillance airspace under any condition.",
+      "report reaching the initially cleared altitude, and when climbing or descending, report leaving the previous altitude and reaching the new one.",
     ],
     answer: 3,
     explain:
@@ -239,10 +239,10 @@ export const CANADA_TC_ATPL_BATCH_25_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A peripheral station (PAL), as a type of remote communication facility, is used to",
     options: [
-      "extend an FSS's or ATC unit's communication coverage into areas beyond the reach of its main site, with some PAL locations also relaying a pilot's broadcast to another PAL frequency via a radio re-transmit unit.",
-      "automatically translate a pilot's voice transmission into a data link message for onward transmission, a purely data-based function.",
-      "serve exclusively as a backup power source for a primary ATC facility, unrelated to any radio communication function.",
-      "provide only navigation guidance (such as distance and bearing information), with no communication function at all.",
+      "extend an FSS's or ATC unit's communication coverage into areas beyond the reach of its main site, with some locations relaying broadcasts.",
+      "automatically translate a pilot's voice transmission into a data link message for onward transmission, a purely data-based function unrelated to voice relay.",
+      "serve exclusively as a backup power source for a primary ATC facility, unrelated to any radio communication function whatsoever.",
+      "provide only navigation guidance, such as distance and bearing information, with no radio communication function of any kind.",
     ],
     answer: 0,
     explain:

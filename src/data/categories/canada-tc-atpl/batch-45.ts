@@ -36,7 +36,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     q: "An Airworthiness Directive (AD) issued against a particular aircraft type or component",
     options: [
       "becomes mandatory only after the operator's next scheduled periodic inspection, regardless of the compliance time actually specified in the directive.",
-      "is a purely advisory recommendation that operators may choose to disregard without affecting the aircraft's certificate of airworthiness.",
+      "is a purely advisory recommendation that operators may choose to disregard entirely without affecting the aircraft's certificate of airworthiness or its continued eligibility to fly.",
       "applies only to aircraft manufactured after the AD is issued, since retroactive application to aircraft already in service is not permitted.",
       "identifies an unsafe condition and imposes a mandatory compliance requirement, which the operator must address within the AD's specified timeframe to keep the aircraft airworthy.",
     ],
@@ -84,7 +84,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     q: "Under CAR 602.11, an aircraft with frost, ice, or snow adhering to its critical surfaces",
     options: [
       "must simply reduce takeoff weight to compensate, since weight reduction alone is deemed to offset any aerodynamic effect of surface contamination.",
-      "is permitted to depart provided the accumulation is limited to the wing upper surface, since only fuselage icing is regulated.",
+      "is permitted to depart provided the accumulation is limited to the wing upper surface only, since in this view only fuselage icing is treated as a regulated critical surface.",
       "is generally prohibited from taking off unless that contamination has been removed or the aircraft has otherwise been demonstrated to be safe for flight.",
       "may take off without restriction, since ground icing contamination affects only ground handling and has no bearing on takeoff safety.",
     ],
@@ -117,7 +117,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     options: [
       "operate a commercial air service, subject to the conditions specified on the certificate, after Transport Canada has verified the operator's ability to conduct such operations safely.",
       "manufacture and certify new aircraft types, a function that is otherwise handled entirely by individual aircraft type certificates.",
-      "issue pilot licences directly to its own employees, bypassing the normal Transport Canada licensing process.",
+      "issue pilot licences directly to its own employees, bypassing the normal Transport Canada licensing and examination process entirely for those individuals regardless of experience level.",
       "operate any aircraft for any purpose whatsoever, including private, non-commercial flying, without any further regulatory distinction.",
     ],
     answer: 0,
@@ -131,7 +131,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The requirement for an aircraft to be equipped with a transponder capable of Mode C (altitude-encoding) operation applies primarily to",
     options: [
-      "aircraft with more than 19 passenger seats only, since smaller aircraft are exempt from transponder requirements in all airspace.",
+      "aircraft with more than 19 passenger seats only, since smaller privately operated aircraft are treated as exempt from any transponder requirement in all classes of airspace across the country.",
       "flight within designated transponder airspace, such as certain controlled airspace and around major aerodromes, as specified in the CARs regardless of whether the flight is VFR or IFR.",
       "IFR flights only, since VFR flights are categorically exempt from any transponder equipment requirement regardless of the airspace entered.",
       "aircraft operating above 60,000 ft ASL exclusively, since transponder carriage below that altitude is entirely at the pilot's discretion.",
@@ -164,7 +164,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     q: "A foreign-registered aircraft operating within Canadian airspace generally does so",
     options: [
       "under the exclusive authority of the aircraft's country of registration, with Canadian aviation regulations having no application to it while within Canadian airspace.",
-      "without any need for authorization whatsoever, since ICAO membership alone is deemed sufficient for any foreign aircraft to operate anywhere in Canada.",
+      "without any need for authorization whatsoever, since ICAO membership alone is deemed entirely sufficient for any foreign aircraft to operate anywhere within Canadian airspace at will.",
       "only if it is first re-registered on the Canadian civil aircraft register, since dual or foreign registration is never recognized for operations in Canada.",
       "under the terms of applicable bilateral agreements or a specific permit or authorization, since foreign registration alone does not grant unrestricted access to Canadian airspace.",
     ],
@@ -198,7 +198,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
       "the physical manipulation of the aircraft's flight controls, a function that belongs exclusively to whichever pilot is designated as pilot flying at a given moment.",
       "the authority and responsibility for initiating, conducting, and terminating a flight, which under CARs Part VII is generally exercised jointly, in defined ways, by the air operator and the pilot-in-command.",
       "the maintenance organization's authority over whether an aircraft is released for a particular flight, a decision made independently of both the operator and the pilot-in-command.",
-      "air traffic control's authority to issue clearances, a function entirely separate from and unrelated to the air operator's own responsibilities.",
+      "air traffic control's authority to issue clearances, a function entirely separate from and unrelated to both the air operator's own responsibilities and the pilot-in-command's role in conducting the flight itself.",
     ],
     answer: 1,
     explain:
@@ -244,7 +244,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     q: "For a commercial flight conducted under CARs Part VII, weight and balance documentation showing the aircraft is loaded within approved limits is generally",
     options: [
       "required to be prepared and available before the flight, confirming the loaded aircraft remains within its approved weight and centre of gravity limits.",
-      "the sole responsibility of the aircraft manufacturer, with no requirement for the operator or crew to verify compliance before each flight.",
+      "the sole responsibility of the aircraft manufacturer, with no requirement whatsoever for the operator or flight crew to verify compliance before each individual flight.",
       "optional, since weight and balance compliance can instead be verified informally by the pilot's visual assessment of the cabin and cargo compartment.",
       "required only for flights exceeding a fixed stage length, since shorter sectors are exempt from any weight and balance documentation requirement.",
     ],
@@ -259,7 +259,7 @@ export const CANADA_TC_ATPL_BATCH_45_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under CAR 602.19, when one aircraft is overtaking another,",
     options: [
-      "right-of-way is determined solely by which aircraft is larger, regardless of which one is overtaking the other.",
+      "right-of-way is determined solely by which aircraft happens to be larger or heavier in gross weight, regardless of which one is actually doing the overtaking or the circumstances of the encounter.",
       "the aircraft being overtaken has the right-of-way, and the overtaking aircraft must alter course (typically to the right) to keep clear until well past and clear of the other aircraft.",
       "both aircraft are equally obligated to alter course simultaneously toward each other's original heading, splitting the separation burden evenly.",
       "the overtaking aircraft has the right-of-way, since the slower aircraft ahead is expected to yield by descending or altering its own course.",

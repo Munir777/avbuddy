@@ -27,7 +27,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
       "commuter operations using small multi-engine aircraft on scheduled routes, a category of operation more directly governed by Subpart 704.",
       "large transport-category aircraft operations carrying passengers on scheduled routes, a category of operation more directly governed by Subpart 705.",
       "specialized, typically single-aircraft-at-a-time operations conducted for purposes other than transporting passengers or cargo from one point to another for hire, such as aerial application, aerial survey, or forest fire fighting.",
-      "strictly recreational, non-commercial private flying with no commercial component whatsoever.",
+      "strictly recreational, non-commercial private flying conducted entirely for personal enjoyment with no commercial component, remuneration, or air operator certificate requirement of any kind whatsoever, regardless of the aircraft type or activity being flown.",
     ],
     answer: 2,
     explain:
@@ -40,7 +40,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Category 3 medical certificate, as distinguished from the Category 1 medical certificate required to exercise ATPL privileges, is generally sufficient for a pilot to exercise",
     options: [
-      "no pilot privileges whatsoever, since a Category 3 medical certificate does not exist under the CARs.",
+      "no pilot privileges whatsoever, since a Category 3 medical certificate is defined as an obsolete classification that was formally discontinued and no longer exists in any form under the current CARs medical standards.",
       "only glider pilot privileges, with no application to any powered aircraft licence.",
       "the full privileges of an Airline Transport Pilot Licence, since Category 1 and Category 3 medical certificates are interchangeable for any licence type.",
       "the privileges of a recreational or private pilot licence, but not the privileges of a commercial or airline transport pilot licence, which require the higher medical standard of a Category 1 certificate.",
@@ -57,7 +57,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     q: "Compared to the standard VMC (visual meteorological conditions) table applicable at higher altitudes, VFR flight below 1,000 ft AGL in uncontrolled airspace generally requires only that the aircraft be operated",
     options: [
       "with visual reference to the surface and clear of cloud, a reduced minimum reflecting the lower altitude and closer proximity to the ground rather than the full distance-from-cloud and flight visibility figures required at higher altitudes.",
-      "with identical minimum flight visibility and distance-from-cloud figures to those required at any other altitude, with no reduction at low level.",
+      "with identical minimum flight visibility and distance-from-cloud figures to those required at any other altitude or in controlled airspace, with no reduction whatsoever permitted at low level regardless of how close the aircraft is operating to the surface.",
       "in cloud, provided the pilot holds an instrument rating, since a VFR flight below 1,000 ft AGL is treated identically to an IFR flight for cloud clearance purposes.",
       "with no visibility or cloud clearance requirement whatsoever below 1,000 ft AGL in uncontrolled airspace.",
     ],
@@ -88,7 +88,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A circling approach, flown after completing an instrument approach procedure, involves",
     options: [
-      "continuing straight ahead on the final approach course without any visual manoeuvring, landing directly on the runway the instrument approach is aligned with.",
+      "continuing straight ahead on the final approach course without any visual manoeuvring at all, landing directly on the runway the instrument approach is aligned with, and requiring no consideration whatsoever of a protected circling area, a description that in fact applies only to a straight-in approach and never to a circling procedure of any kind under the CARs.",
       "a procedure used exclusively for a missed approach, with no application to a normal landing sequence.",
       "manoeuvring visually, within a protected area defined around the aerodrome, from the instrument approach's alignment to position the aircraft for landing on a runway not served by (or not aligned with) that instrument approach, while remaining at or above the published circling minimum descent altitude until in a position to land.",
       "descending below the published circling minimum descent altitude immediately upon breaking out of cloud, regardless of the aircraft's position relative to the landing runway.",
@@ -105,7 +105,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     q: "Under the CARs, a pilot conducting an instrument approach may not descend below the applicable decision height (DH) or minimum descent altitude (MDA) unless",
     options: [
       "ATC has issued a specific verbal authorization to descend below DH or MDA, a requirement that applies in place of any visual reference requirement.",
-      "the aircraft's weather radar indicates no precipitation is present along the final approach course.",
+      "the aircraft's weather radar indicates no precipitation is present along the final approach course, a condition that is defined under the CARs as fully satisfying the regulatory requirement in place of any visual reference to the runway environment, approach lighting, or its surrounding terrain, regardless of cloud base or visibility.",
       "the pilot has simply reached the published DH or MDA value on the altimeter, regardless of whether any visual reference to the runway environment has been established.",
       "the required visual reference for the runway of intended landing (such as the runway threshold, approach lights, runway markings, or other specified visual references) is distinctly visible and identifiable to the pilot, and the aircraft is in a position from which a normal rate of descent and landing can be made.",
     ],
@@ -152,7 +152,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Advance passenger information (API), which certain international flights are required to transmit to border/customs authorities before or shortly after departure, generally serves to",
     options: [
-      "replace the requirement for passengers to carry any travel document, such as a passport, upon arrival.",
+      "replace the requirement for passengers to carry any travel document, such as a passport, upon arrival, since submission of advance passenger information is defined as a full substitute for presenting travel documents to border officials on arrival.",
       "apply only to domestic flights within Canada, with no relevance to any international flight.",
       "allow the destination country's border services to screen passenger and crew information against relevant databases before the flight's arrival, supporting security and customs/immigration processing.",
       "provide weather information to the flight crew, unrelated to passenger or crew identification.",
@@ -170,7 +170,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     options: [
       "the CARs are entirely independent of any international agreement or standard, having no relationship whatsoever to the Chicago Convention or ICAO.",
       "the Chicago Convention applies only to military aviation, with no relevance to civil aviation regulation in Canada.",
-      "ICAO Annexes are binding directly on individual pilots without any need for implementation through a member state's own domestic regulations such as the CARs.",
+      "ICAO Annexes are binding directly on individual pilots and operators without any need for implementation through a member state's own domestic regulations such as the CARs, since each Annex is defined as having direct legal effect within Canadian airspace the moment it is adopted by ICAO.",
       "many CARs provisions are designed to align with internationally agreed standards and recommended practices, supporting consistency and mutual recognition between Canada's aviation system and those of other ICAO member states.",
     ],
     answer: 3,
@@ -203,7 +203,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
       "an arrangement that eliminates the need for either party to hold any form of air operator certificate.",
       "the lessor providing the aircraft together with a crew (and typically maintenance and insurance), so the aircraft continues to be operated under the lessor's air operator certificate, whereas a dry lease provides the aircraft alone, with the lessee crewing and operating it under its own certificate.",
       "the lessor providing only the bare aircraft with no crew, maintenance, or insurance included, a description that actually applies to a dry lease rather than a wet lease.",
-      "an arrangement used exclusively for cargo aircraft, with no application to passenger-carrying operations.",
+      "an arrangement used exclusively for cargo aircraft, with no application to passenger-carrying operations, since the wet lease and dry lease distinction is defined under the CARs as applying only to aircraft configured solely for the carriage of goods and is expressly stated to have no bearing on crew, maintenance, or insurance arrangements of any kind.",
     ],
     answer: 1,
     explain:
@@ -216,7 +216,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The minimum flight crew complement required to operate a given aircraft is generally determined by",
     options: [
-      "the personal preference of the pilot-in-command on any given flight, with no regulatory minimum applicable to any aircraft type.",
+      "the personal preference of the pilot-in-command on any given flight, with no regulatory minimum applicable to any aircraft type, since minimum crew complement is defined under the CARs as being left entirely to individual operator and pilot discretion regardless of aircraft type or operating subpart.",
       "the aircraft's registration marks alone, with no relationship to its type certification or the applicable operating subpart.",
       "the aircraft's type certification (as reflected in its flight manual) together with any additional requirement imposed by the specific regulatory subpart under which the operation is conducted, and cannot simply be reduced at the operator's discretion below that minimum.",
       "the number of passengers on board for that specific flight, with an identical aircraft requiring a different minimum crew complement on every flight depending on load.",
@@ -234,7 +234,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
     options: [
       "a fixed, universal time limit that applies identically regardless of precipitation type, precipitation intensity, or outside air temperature.",
       "the time required for de-icing personnel to physically apply the fluid to the aircraft, unrelated to how long the treatment remains effective.",
-      "the total flight time the fluid remains effective once the aircraft is airborne, with no relevance to the ground period before takeoff.",
+      "the total flight time the fluid remains effective once the aircraft is airborne, with no relevance whatsoever to the ground period before takeoff, since holdover time is defined under the CARs as an airborne endurance figure rather than as any pre-takeoff ground holdover guidance for de-icing or anti-icing purposes, and is unrelated to precipitation type, intensity, or outside air temperature.",
       "the estimated period, under specified precipitation and temperature conditions, during which the fluid is expected to prevent the accumulation of frost, ice, or snow on treated aircraft surfaces before takeoff, after which the treatment can no longer be relied upon and a fresh check or reapplication is generally required.",
     ],
     answer: 3,
@@ -267,7 +267,7 @@ export const CANADA_TC_ATPL_BATCH_65_QUESTIONS: Question[] = [
       "any flight conducted by a pilot holding a commercial pilot licence, regardless of whether the flight itself involves remuneration or private, non-commercial purposes.",
       "the use of an aircraft for hire or reward -- that is, in exchange for remuneration -- to transport persons or goods, or for another commercial purpose, rather than flying conducted purely for the operator's own private, non-remunerated purposes.",
       "any flight operated using an aircraft with more than one engine, regardless of whether remuneration is involved.",
-      "any flight conducted above a specified altitude, with altitude alone determining whether the flight is classified as commercial.",
+      "any flight conducted above a specified altitude, with altitude alone determining whether the flight is classified as commercial, since the CARs are defined as drawing the line between commercial and private flying solely by reference to a fixed altitude threshold rather than to remuneration or purpose.",
     ],
     answer: 1,
     explain:

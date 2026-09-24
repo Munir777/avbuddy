@@ -25,7 +25,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
       "automatically apply speed brakes and reduce thrust without any crew action being required.",
       "replace the need for a visual airspeed indication entirely once it activates.",
       "positively draw the crew's attention to an exceedance of Vmo/Mmo through an unmistakable sound, rather than relying solely on a crew member visually noticing the airspeed indication approaching or crossing the limit.",
-      "silently log the exceedance for post-flight maintenance review, without alerting the crew in real time.",
+      "silently log the exceedance for post-flight maintenance review, without alerting the crew in real time, a passive recording function that does not match the overspeed warning's actual purpose, which is specifically designed to alert the crew immediately, in real time, rather than merely documenting the event for later review.",
     ],
     answer: 2,
     explain:
@@ -38,7 +38,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A takeoff configuration warning system, found on many transport aircraft, is designed to alert the crew, typically through an aural horn, when",
     options: [
-      "the landing gear has been retracted before the aircraft has reached a safe minimum airspeed.",
+      "the landing gear has been retracted before the aircraft has reached a safe minimum airspeed, a condition the takeoff configuration warning is not designed to detect, since it instead checks that flaps, trim, spoilers, and other critical items are correctly set before the throttles are advanced for takeoff.",
       "the aircraft has climbed above its service ceiling during the initial climb after takeoff.",
       "the cabin has not been fully pressurized before the aircraft reaches its cruising altitude.",
       "the throttles are advanced for takeoff while one or more critical items -- such as flaps, trim, spoilers, or parking brake -- are not set within the range required for a safe takeoff.",
@@ -55,7 +55,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     q: "A stick pusher, as distinguished from a stick shaker, is a stall protection device that",
     options: [
       "automatically applies a forward (nose-down) force to the control column as the aircraft approaches a more advanced stage of the stall, actively helping to reduce angle of attack, rather than simply vibrating the controls to alert the pilot as a stick shaker does.",
-      "permanently disables further aft control column movement for the remainder of the flight once activated a single time.",
+      "permanently disables further aft control column movement for the remainder of the flight once activated a single time, a description that misstates how a stick pusher actually behaves, since it applies a forward force only as the aircraft approaches a more advanced stage of a stall and does not permanently lock out aft column movement for the rest of the flight.",
       "is simply another name for the stick shaker, with no functional or design difference between the two.",
       "only illuminates a warning light, with no tactile or force-based feedback of any kind.",
     ],
@@ -89,7 +89,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
       "the aircraft's pitch attitude as displayed on the attitude indicator, with no altitude reference used at all.",
       "barometric altitude alone, in the same manner as a standard non-precision approach's minimum descent altitude.",
       "radio (radar) altimeter height above the actual terrain or runway surface, rather than barometric altitude, since the precision required at these very low decision heights demands a more accurate, terrain-referenced measurement than a pressure altimeter can reliably provide.",
-      "GNSS-derived altitude exclusively, with no involvement of the radio altimeter at all.",
+      "GNSS-derived altitude exclusively, with no involvement of the radio altimeter at all, which describes the wrong sensor entirely, since the very low decision heights used for these approaches specifically rely on a terrain-referenced radio altimeter reading rather than on satellite-derived altitude alone.",
     ],
     answer: 2,
     explain:
@@ -104,7 +104,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     options: [
       "the crew can silence all further aural alerts on the flight deck for the remainder of the flight.",
       "the autopilot automatically re-engages itself a few seconds after any disconnect, without requiring crew input.",
-      "it applies only when the autopilot is disconnected manually by the crew, remaining silent for any automatic, uncommanded disconnect.",
+      "it applies only when the autopilot is disconnected manually by the crew, remaining silent for any automatic, uncommanded disconnect, which gets the priority backwards, since the aural warning is arguably most important for an unexpected, automatic disconnect that the crew has not commanded and might otherwise fail to notice promptly.",
       "the crew is immediately and unambiguously alerted whenever the autopilot disconnects, whether through deliberate crew action or an unexpected automatic disconnect, preventing the aircraft from being left temporarily unflown if the disconnect goes unnoticed.",
     ],
     answer: 3,
@@ -121,7 +121,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
       "give the crew an immediate, prominent, and general attention-getting cue that a new warning or caution condition exists, prompting them to look at the EICAS/ECAM display for the specific message, rather than requiring the crew to be already looking directly at that display to notice a new alert.",
       "automatically silence the aircraft's aural warning tones once it illuminates.",
       "display the full text of the fault message itself, making the EICAS or ECAM display unnecessary once the master warning light illuminates.",
-      "indicate only routine, non-safety-related maintenance reminders, with no connection to any warning or caution condition.",
+      "indicate only routine, non-safety-related maintenance reminders, with no connection to any warning or caution condition, a description that misidentifies the light's function entirely, since a master warning or caution light exists specifically to draw immediate attention to an actual warning or caution condition on the EICAS or ECAM display, not to flag routine maintenance reminders unrelated to flight safety.",
     ],
     answer: 0,
     explain:
@@ -134,7 +134,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "V-speed bugs (or digital markers) set by the crew on a PFD's airspeed tape, such as for V1, VR, V2, or Vref, are used primarily to",
     options: [
-      "automatically command the autothrottle to hold that exact speed for the remainder of the flight, with no further crew input required.",
+      "automatically command the autothrottle to hold that exact speed for the remainder of the flight, with no further crew input required, a level of automation this reference speed display does not actually provide, since its role is limited to giving the crew a visible reference for monitoring rather than to commanding the autothrottle on its own.",
       "provide a clear, continuously visible reference for critical takeoff or landing speeds directly alongside the current airspeed indication, helping the crew monitor speed progression through a critical phase of flight at a glance.",
       "replace the need for the crew to brief or otherwise know the takeoff or landing speeds before the flight.",
       "indicate the aircraft's maximum operating speed (Vmo), which is fixed and cannot be set or adjusted by the crew.",
@@ -168,7 +168,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     options: [
       "an independent, dedicated radar altimeter built into the TCAS unit itself, entirely separate from any transponder data.",
       "the ownship aircraft's own barometric altimeter alone, with no data received from the intruder aircraft at all.",
-      "the intruder aircraft's GNSS-derived altitude, transmitted via a dedicated satellite data link independent of any transponder.",
+      "the intruder aircraft's GNSS-derived altitude, transmitted via a dedicated satellite data link independent of any transponder, a data path TCAS does not actually use, since it derives intruder altitude from the Mode C or Mode S altitude the intruder's own transponder broadcasts rather than from any satellite-based data link.",
       "the altitude information broadcast by each intruder aircraft's own transponder (Mode C or Mode S), rather than by directly measuring the intruder's altitude with its own independent sensor.",
     ],
     answer: 3,
@@ -201,7 +201,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
       "is simply another name for the cabin altitude indicator, with no functional difference between the two.",
       "sounds an aural alert specifically when cabin altitude climbs above a defined threshold, prompting the crew to don oxygen masks and begin an emergency descent, rather than simply displaying a continuous numeric reading for the crew to monitor.",
       "replaces the need for any passenger oxygen mask deployment system, since the horn alone is considered sufficient protection.",
-      "activates only when the aircraft descends below a minimum cabin altitude, with no function related to excessive cabin altitude.",
+      "activates only when the aircraft descends below a minimum cabin altitude, with no function related to excessive cabin altitude, which describes the opposite condition entirely, since the horn is specifically triggered by cabin altitude climbing above a defined threshold rather than by the aircraft descending below one.",
     ],
     answer: 1,
     explain:
@@ -217,7 +217,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
       "fuel density never changes under any operating conditions, making density compensation an entirely unnecessary feature.",
       "density compensation is required only to correct for changes in outside air temperature, with no relationship to the fuel itself.",
       "the system's underlying measurement is affected by the fuel's dielectric properties, which vary with fuel density and temperature, so without compensation the displayed quantity could be inaccurate as fuel density changes rather than truly reflecting the fuel's mass.",
-      "the system otherwise has no way at all to display any fuel quantity reading, with density compensation providing the sole source of the indication.",
+      "the system otherwise has no way at all to display any fuel quantity reading, with density compensation providing the sole source of the indication, an overstatement of density compensation's role, since the underlying measurement can still produce a reading without it -- that reading would simply be less accurate as fuel density and temperature vary from the values the system assumes.",
     ],
     answer: 2,
     explain:
@@ -232,7 +232,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     options: [
       "the main electrical system's batteries can be entirely omitted from the aircraft, since the standby instruments' battery serves that role instead.",
       "the standby instruments can be used as the aircraft's sole flight reference during every normal flight, with the primary instruments serving only as a backup.",
-      "the standby instruments require no electrical power of any kind under any circumstance.",
+      "the standby instruments require no electrical power of any kind under any circumstance, a claim that does not match how most standby instrumentation is actually designed, since many standby instruments still draw on a battery or a separate emergency power source rather than operating with no electrical power at all.",
       "essential flight instrumentation remains available to the crew even in the event of a complete failure of the aircraft's normal electrical generation, rather than being lost along with every other electrically powered display at the same time as the primary instruments.",
     ],
     answer: 3,
@@ -248,7 +248,7 @@ export const CANADA_TC_ATPL_BATCH_77_QUESTIONS: Question[] = [
     options: [
       "manually suppress certain terrain-related alerts for a specific, known operational situation -- such as a circling approach to a short runway surrounded by higher terrain -- where the system might otherwise generate a nuisance warning despite the flight being conducted safely and intentionally.",
       "permanently and irreversibly disable all TAWS/GPWS functionality for the remainder of the aircraft's service life.",
-      "increase the system's alerting sensitivity beyond its normal, certified level.",
+      "increase the system's alerting sensitivity beyond its normal, certified level, a function unrelated to what this control actually does, which is instead used to manually suppress certain terrain-related alerts for a specific, known operational situation rather than to make the system more sensitive.",
       "replace the need for the crew to maintain any visual or instrument-based terrain awareness once the switch is selected.",
     ],
     answer: 0,

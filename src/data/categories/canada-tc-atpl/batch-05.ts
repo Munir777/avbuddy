@@ -14,10 +14,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The ICAO Standard Atmosphere defines sea-level conditions of",
     options: [
-      "0°C and 29.92 in. Hg, with a constant lapse rate all the way to 60,000 ft.",
-      "15°C and 30.00 in. Hg exactly, with no defined lapse rate.",
-      "15°C and 29.92 in. Hg (1013.25 hPa), with a lapse rate of approximately 2°C per 1,000 ft up to the tropopause.",
-      "59°F and 1000 hPa, with a lapse rate of 1°C per 1,000 ft.",
+      "0°C and 29.92 in. Hg exactly, with a constant lapse rate assumed all the way up to 60,000 ft.",
+      "15°C and 30.00 in. Hg exactly, with no defined lapse rate specified at all.",
+      "15°C and 29.92 in. Hg (1013.25 hPa), with a lapse rate of about 2°C per 1,000 ft to the tropopause.",
+      "59°F and 1000 hPa exactly, with a lapse rate of 1°C per 1,000 ft assumed constant throughout the entire atmosphere.",
     ],
     answer: 2,
     explain:
@@ -30,10 +30,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Density altitude is best described as",
     options: [
-      "the altitude at which the aircraft's cabin is pressurized to match ambient conditions.",
+      "the altitude at which the aircraft's cabin is automatically pressurized to match the current ambient conditions.",
       "the altitude read directly off the altimeter with the current altimeter setting applied, with no temperature correction.",
-      "true altitude above mean sea level, unrelated to air density.",
-      "pressure altitude corrected for non-standard temperature, representing the altitude in the standard atmosphere that has the same air density as the actual conditions.",
+      "true altitude above mean sea level only, generally considered unrelated to actual air density in this simplified view.",
+      "pressure altitude corrected for non-standard temperature, representing the altitude in the standard atmosphere with the same air density as actual conditions.",
     ],
     answer: 3,
     explain:
@@ -47,9 +47,9 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     q: "Compared to dry air at the same temperature and pressure, humid air is",
     options: [
       "less dense, because water vapour molecules are lighter than the nitrogen and oxygen molecules they displace.",
-      "identical in density, since humidity has no measurable effect on air density.",
-      "more dense, because water vapour adds extra mass to the air.",
-      "less dense only at temperatures below freezing, and more dense above freezing.",
+      "identical in density to dry air, since humidity is assumed to have no measurable effect on air density at all.",
+      "more dense than dry air, because the added water vapour is assumed to add extra mass to the overall air mixture.",
+      "less dense only at temperatures below freezing, and supposedly more dense above the freezing point.",
     ],
     answer: 0,
     explain:
@@ -62,10 +62,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Cold temperature altimeter corrections are applied on approach because, in air significantly colder than standard, the aircraft's",
     options: [
-      "groundspeed is reduced, requiring an increase in the published minimum descent altitude.",
-      "true altitude is lower than the altimeter indicates, reducing actual obstacle clearance below published minimums unless a correction is added.",
-      "indicated airspeed reads artificially low, requiring a higher approach speed to compensate.",
-      "true altitude is higher than the altimeter indicates, increasing obstacle clearance beyond published minimums.",
+      "groundspeed is significantly reduced in cold air, requiring an increase in the published minimum descent altitude for the approach.",
+      "true altitude is lower than the altimeter indicates, reducing actual obstacle clearance below published minimums unless corrected.",
+      "indicated airspeed reads artificially low in cold air, requiring a noticeably higher approach speed to compensate for the error.",
+      "true altitude is actually higher than the altimeter indicates, increasing obstacle clearance beyond the published minimums in this case.",
     ],
     answer: 1,
     explain:
@@ -78,10 +78,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "For a given weight, configuration, and load factor, an aircraft's true stalling speed (in TAS)",
     options: [
-      "decreases with altitude, since less lift is required as air density decreases.",
-      "is unrelated to air density, and depends only on the aircraft's weight.",
-      "increases with altitude, since the same indicated/calibrated stalling speed corresponds to a higher true airspeed as air density decreases.",
-      "remains exactly the same at any altitude, whether expressed as indicated, calibrated, or true airspeed.",
+      "decreases quite noticeably with altitude, since less lift is assumed to be required as the surrounding air density steadily decreases.",
+      "is entirely unrelated to air density, and is assumed to depend only on the aircraft's current weight.",
+      "increases with altitude, since the same indicated stalling speed corresponds to a higher true airspeed as air density falls.",
+      "remains exactly the same at any altitude whatsoever, whether expressed as indicated, calibrated, or true airspeed.",
     ],
     answer: 2,
     explain:
@@ -94,10 +94,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The relationship between airspeed and angle of attack, for a given weight and load factor, is such that",
     options: [
-      "increasing airspeed always increases angle of attack, for a constant altitude and weight.",
-      "angle of attack is fixed by the aircraft's pitch attitude alone, and is unrelated to airspeed.",
-      "the aircraft always stalls at the same indicated airspeed, regardless of angle of attack or load factor.",
-      "a lower airspeed requires a higher angle of attack to generate the same lift, and the aircraft stalls when the critical angle of attack is exceeded, regardless of airspeed.",
+      "increasing airspeed always increases the wing's angle of attack, assuming a constant altitude and constant weight throughout.",
+      "angle of attack is determined by the aircraft's pitch attitude alone, and is considered entirely unrelated to airspeed.",
+      "the aircraft is assumed to always stall at the same indicated airspeed, regardless of angle of attack or load factor present.",
+      "a lower airspeed requires a higher angle of attack to generate the same lift, and the aircraft stalls once critical angle of attack is exceeded, regardless of speed.",
     ],
     answer: 3,
     explain:
@@ -110,10 +110,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "For a jet transport aircraft, the speed that gives maximum range in still air is generally",
     options: [
-      "somewhat higher than the speed for minimum drag, because a jet's specific fuel consumption characteristics make it more fuel-efficient, per nautical mile, to cruise slightly faster than the minimum-drag speed.",
-      "the same as the speed for maximum endurance, since both maximize how long the aircraft can stay airborne on a given amount of fuel.",
-      "always the aircraft's maximum operating speed (VMO/MMO), since faster is always more efficient for a jet.",
-      "exactly equal to the speed for minimum drag, since range and drag are directly interchangeable concepts for any aircraft type.",
+      "somewhat higher than the speed for minimum drag, because a jet's fuel consumption characteristics make cruising slightly faster more efficient per mile.",
+      "the same as the speed for maximum endurance, since both are commonly assumed to maximize how long the aircraft can remain airborne on a given amount of fuel available.",
+      "always equal to the aircraft's maximum operating speed (VMO/MMO), since faster is assumed to always be more fuel-efficient for a jet.",
+      "exactly equal to the speed for minimum drag, since range and drag are treated as directly interchangeable concepts for any aircraft type.",
     ],
     answer: 0,
     explain:
@@ -126,10 +126,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "V1, as used in transport-category take-off performance, is defined as",
     options: [
-      "the minimum control speed with the critical engine inoperative.",
-      "the maximum speed at which the take-off can be rejected and the aircraft stopped within the accelerate-stop distance available, and the minimum speed at which the take-off can continue safely after an engine failure.",
-      "the speed at which the aircraft is rotated to its take-off pitch attitude.",
-      "the aircraft's maximum tire-rated ground speed for take-off or landing.",
+      "the minimum control speed achievable in flight with the critical engine inoperative and the remaining engine set to take-off power throughout the manoeuvre.",
+      "the maximum speed for rejecting take-off within accelerate-stop distance, and the minimum speed to continue safely after engine failure.",
+      "the speed at which the aircraft is rotated smoothly to its planned take-off pitch attitude during the take-off roll.",
+      "the aircraft's maximum tire-rated ground speed permitted for either take-off or landing operations.",
     ],
     answer: 1,
     explain:
@@ -175,8 +175,8 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     q: "Dynamic hydroplaning on a wet runway becomes possible above a minimum speed that depends primarily on",
     options: [
       "tire pressure, with minimum hydroplaning speed increasing as tire pressure increases.",
-      "aircraft weight alone, independent of tire pressure.",
-      "runway length alone, independent of speed or tire pressure.",
+      "aircraft weight alone, considered entirely independent of tire pressure, surface type, or speed.",
+      "runway length alone, considered independent of both approach speed and tire pressure.",
       "outside air temperature alone, independent of tire pressure or ground speed.",
     ],
     answer: 0,
@@ -190,10 +190,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The recommended technique for an inadvertent encounter with significant wind shear during take-off or approach is generally to",
     options: [
-      "reduce thrust and lower the nose to regain the planned airspeed as quickly as possible.",
-      "apply maximum thrust and fly a target pitch attitude (or to the stick shaker margin) to prioritize energy and terrain/obstacle clearance, accepting deviations from the intended flight path.",
-      "continue following the flight director command bars exactly, even if doing so conflicts with maintaining a safe pitch attitude.",
-      "disconnect all automation immediately and hand-fly using only outside visual references.",
+      "reduce thrust and lower the nose promptly, in order to regain the originally planned airspeed as quickly as possible.",
+      "apply maximum available thrust and fly a target pitch attitude, prioritizing energy and terrain clearance over the planned flight path.",
+      "continue following the flight director command bars precisely as displayed, even where doing so directly conflicts with maintaining a safe pitch attitude.",
+      "disconnect all automation immediately and hand-fly the aircraft using only outside visual references available.",
     ],
     answer: 1,
     explain:
@@ -206,10 +206,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A buffet boundary chart is used to determine",
     options: [
-      "the maximum allowable crosswind component for landing.",
-      "the runway distance required for take-off at a given weight and temperature.",
-      "the margin between low-speed (stall) buffet and high-speed (Mach) buffet at a given weight, altitude, and load factor -- the manoeuvring margin available at altitude.",
-      "fuel flow at a given cruise altitude and weight.",
+      "the maximum allowable crosswind component permitted for landing in current conditions.",
+      "the runway distance required for take-off at a given aircraft weight, outside air temperature, and pressure altitude, among other variable factors.",
+      "the margin between low-speed (stall) buffet and high-speed (Mach) buffet at a given weight and altitude -- the manoeuvring margin available.",
+      "the expected fuel flow rate at a given cruise altitude and aircraft weight.",
     ],
     answer: 2,
     explain:
@@ -222,10 +222,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A Weight-Altitude-Temperature (WAT) chart or limit is used to determine",
     options: [
-      "the maximum permissible crosswind component at a given weight.",
-      "the weight and balance index for a given loading configuration.",
-      "the minimum crew complement required for a given aircraft weight.",
-      "the maximum take-off or landing weight permitted by climb performance requirements at a given pressure altitude and temperature, which may be more restrictive than the structural maximum weight.",
+      "the maximum permissible crosswind component allowed at a given aircraft weight.",
+      "the weight and balance index applicable to a given aircraft loading configuration.",
+      "the minimum flight crew complement legally required for operating a given aircraft weight and category combination safely.",
+      "the maximum take-off or landing weight permitted by climb performance at a given pressure altitude and temperature.",
     ],
     answer: 3,
     explain:
@@ -239,9 +239,9 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     q: "A Canadian Runway Friction Index (CRFI) report is used, together with a crosswind/CRFI chart, primarily to",
     options: [
       "determine a reduced maximum crosswind component appropriate to the reported runway friction condition.",
-      "determine the minimum fuel reserve required for the flight.",
-      "determine the aircraft's maximum operating altitude for a given temperature.",
-      "determine the required take-off distance on a dry runway at a given weight.",
+      "determine the minimum fuel reserve legally required for the planned flight.",
+      "determine the aircraft's maximum permitted operating altitude for a given outside air temperature and pressure setting.",
+      "determine the required take-off distance on a dry runway surface at a given aircraft weight.",
     ],
     answer: 0,
     explain:
@@ -254,10 +254,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The 'clean aircraft concept' requires that, before take-off,",
     options: [
-      "the requirement applies only to aircraft operating under Part VII (commercial) rules, never to any other operation.",
+      "the requirement applies only to aircraft operating under Part VII (commercial) rules, and never to any other type of operation.",
       "an aircraft's critical surfaces be free of frost, ice, or snow that could adversely affect the aircraft's performance or flight characteristics.",
-      "the aircraft be entirely free of dirt or staining, for cosmetic reasons only.",
-      "de-icing fluid be applied regardless of whether any contamination is actually present.",
+      "the aircraft be entirely free of dirt or staining across its entire exterior, purely for cosmetic reasons.",
+      "de-icing fluid be applied regardless of whether any actual contamination is present on the surfaces.",
     ],
     answer: 1,
     explain:
@@ -270,10 +270,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Cold-soaked fuel in an aircraft's wing tanks can cause frost to form on the wing's upper surface",
     options: [
-      "only while the aircraft is airborne, never while parked on the ground.",
-      "only after the aircraft has been de-iced, as a reaction with the de-icing fluid.",
-      "even when the ambient air temperature is above freezing, if the wing skin is chilled by the cold fuel below the local dew point (or frost point).",
-      "only when the ambient air temperature is itself below freezing.",
+      "only while the aircraft is actually airborne in flight, never while parked on the ground.",
+      "only after the aircraft has already been de-iced, as a supposed chemical reaction occurring with the de-icing fluid that was previously applied.",
+      "even when ambient air temperature is above freezing, if the wing skin is chilled below the local dew or frost point by the cold fuel.",
+      "only when the surrounding ambient air temperature is itself already below freezing.",
     ],
     answer: 2,
     explain:
@@ -286,10 +286,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Hoar frost forming on an aircraft in clear conditions (with no precipitation falling) is caused by",
     options: [
-      "condensation of engine exhaust moisture on the airframe.",
-      "de-icing fluid residue reacting with humidity in the air.",
-      "rain that has frozen after landing on the aircraft's surface.",
-      "sublimation of water vapour directly onto a surface that is colder than the frost point of the surrounding air, typically overnight under clear, calm conditions.",
+      "condensation of residual engine exhaust moisture settling on the airframe surfaces.",
+      "de-icing fluid residue left on the surface reacting chemically with ambient humidity in the surrounding air over time.",
+      "rain that has fallen and subsequently frozen after landing on the aircraft's surface.",
+      "sublimation of water vapour directly onto a surface colder than the surrounding air's frost point, typically overnight under clear skies.",
     ],
     answer: 3,
     explain:
@@ -302,10 +302,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The distinction between a Type I and a Type IV de-icing/anti-icing fluid is that Type IV fluid is",
     options: [
-      "thickened, giving it a longer holdover time by remaining on the surface, while Type I is a low-viscosity fluid used mainly to remove existing contamination rather than provide extended protection.",
-      "always heated before application, while Type I is always applied cold.",
-      "used only for removing contamination, with no anti-icing protective capability at all.",
-      "interchangeable with Type I in every respect, differing only in colour for identification purposes.",
+      "thickened, giving a longer holdover time by remaining on the surface, while Type I is a low-viscosity fluid mainly used to remove existing contamination.",
+      "always heated before application to the surface, while Type I fluid is always applied cold instead.",
+      "used only for removing existing contamination, with no meaningful anti-icing protective capability at all.",
+      "interchangeable with Type I fluid in every practical respect, differing only in the colour dye used for identification purposes during winter ramp operations.",
     ],
     answer: 0,
     explain:
@@ -318,10 +318,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Holdover time (HOT), as published in de-icing guideline tables, represents",
     options: [
-      "a fixed time limit, identical regardless of precipitation type or intensity.",
-      "an estimated range of time during which anti-icing fluid is expected to prevent ice, frost, or snow from adhering to and accumulating on treated surfaces, under specified weather conditions.",
-      "the maximum time an aircraft may legally remain on the ground before departure, regardless of weather.",
-      "the time required for the fluid itself to fully dry after application.",
+      "a single fixed time limit that stays identical regardless of precipitation type or intensity.",
+      "an estimated range of time during which anti-icing fluid is expected to prevent ice, frost, or snow from adhering to treated surfaces, under specified weather.",
+      "the maximum time an aircraft may legally remain on the ground awaiting departure clearance, regardless of the prevailing weather conditions at the time.",
+      "the total time required for the anti-icing fluid itself to fully dry after being applied.",
     ],
     answer: 1,
     explain:
@@ -334,10 +334,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A pre-take-off contamination inspection (or 'pre-take-off check') is performed",
     options: [
-      "only when the crew visually suspects contamination; otherwise it may be omitted entirely.",
+      "only when the crew visually suspects contamination is present; otherwise the check may be omitted entirely.",
       "only on aircraft without an anti-icing fluid application, since anti-iced aircraft are assumed to remain clean.",
-      "as close as practical to the time of take-off, to confirm the aircraft's critical surfaces are still free of contamination before the take-off roll begins.",
-      "only once, immediately after de-icing fluid is applied, with no further check required before departure.",
+      "as close as practical to the time of take-off, confirming the aircraft's critical surfaces are still free of contamination.",
+      "only once, immediately after de-icing fluid has been applied, with absolutely no further check required before the actual departure.",
     ],
     answer: 2,
     explain:
@@ -350,10 +350,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Within an aircraft's Flight Manual, the data and limitations that have been specifically approved by the certifying authority",
     options: [
-      "apply only to the manufacturer's own test pilots, not to line operations.",
-      "carry no more weight than any other operating advice printed in the manual.",
-      "are limited to the weight and balance section, with all other sections being purely advisory.",
-      "carry regulatory weight and must be complied with, distinct from other advisory or informational material the manual may also contain.",
+      "apply only to the manufacturer's own test pilots, and never to normal line operations.",
+      "carry no more legal weight than any other item of operating advice printed in the manual.",
+      "are limited strictly to the weight and balance section alone, with every other section of the manual considered purely advisory in nature.",
+      "carry regulatory weight and must be complied with, distinct from other advisory material the manual may also contain.",
     ],
     answer: 3,
     explain:
@@ -367,9 +367,9 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     q: "Volcanic ash presents a particular hazard to jet aircraft because it",
     options: [
       "can cause engine damage or flameout, abrade the windscreen and airframe, and is not reliably detected by onboard weather radar.",
-      "dissipates immediately after an eruption and is not a hazard to aircraft flying more than a few hours later.",
-      "is easily detected and displayed by standard onboard weather radar, in the same way precipitation is.",
-      "poses a hazard only to piston-engine aircraft, not to turbine engines.",
+      "dissipates immediately after an eruption and is assumed not to be a hazard to aircraft flying hours later.",
+      "is easily detected and clearly displayed by standard onboard weather radar in the cockpit, in exactly the same way ordinary precipitation is.",
+      "poses a hazard only to older piston-engine aircraft, and not to modern turbine engines at all.",
     ],
     answer: 0,
     explain:
@@ -382,10 +382,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A commonly used rule of thumb for a 3-degree descent path is that the required rate of descent, in feet per minute, is approximately",
     options: [
-      "half the groundspeed in knots.",
-      "five times the groundspeed in knots.",
-      "unrelated to groundspeed, and depends only on altitude to lose.",
-      "the groundspeed in knots divided by three.",
+      "roughly half the groundspeed value, expressed in knots.",
+      "approximately five times the groundspeed, expressed in knots.",
+      "unrelated to groundspeed, and dependent only on the altitude remaining to lose.",
+      "the groundspeed value, expressed in knots, divided by three.",
     ],
     answer: 1,
     explain:
@@ -414,10 +414,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The recommended lateral avoidance distance from a significant thunderstorm cell is generally at least",
     options: [
-      "2 NM.",
-      "there is no recommended distance; avoidance is left entirely to pilot judgment with no guideline.",
-      "50 NM, regardless of cell intensity.",
-      "20 NM.",
+      "about 2 nautical miles laterally clear of the storm cell at all times.",
+      "there is no recommended distance; it is left entirely to pilot judgment.",
+      "at least 50 nautical miles, regardless of the cell's intensity.",
+      "at least 20 nautical miles laterally clear of the cell.",
     ],
     answer: 3,
     explain:
@@ -430,10 +430,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A tailplane stall caused by ice contamination on the horizontal stabilizer differs from a normal wing stall in that a tailplane stall",
     options: [
-      "typically produces an uncommanded nose-down pitching moment, and the correct recovery (retracting flaps, easing back pressure rather than pushing forward) is essentially the reverse of a normal wing-stall recovery.",
-      "is entirely unrelated to ice contamination, and is instead caused only by excessive aft centre of gravity.",
-      "can only occur with the flaps fully retracted, and never with flaps extended.",
-      "produces exactly the same symptoms and requires exactly the same recovery technique as a normal wing stall.",
+      "typically produces an uncommanded nose-down pitching moment, and the correct recovery is essentially the reverse of a normal wing-stall recovery.",
+      "is entirely unrelated to ice contamination, and is instead assumed to be caused only by an excessively aft centre of gravity.",
+      "can supposedly only occur with the flaps fully retracted, and never at all with flaps extended.",
+      "produces exactly the same symptoms and is commonly assumed to require exactly the same recovery technique as an ordinary normal wing stall would.",
     ],
     answer: 0,
     explain:
@@ -446,10 +446,10 @@ export const CANADA_TC_ATPL_BATCH_05_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "Standard turbulence reporting criteria (light, moderate, severe, extreme) are defined primarily by",
     options: [
-      "the type of cloud associated with the turbulence, regardless of its actual effect on the aircraft.",
-      "the observed effect on the aircraft and its occupants -- such as difficulty walking, objects being dislodged, or momentary loss of control -- rather than by a specific numerical value alone.",
-      "the pilot's total flight time, since more experienced pilots report the same turbulence in a lower category.",
-      "the exact vertical acceleration recorded by the aircraft's flight data recorder, with no reference to any observed effect.",
+      "the type of cloud associated with the turbulence encountered, regardless of its actual measured effect on the aircraft.",
+      "the observed effect on the aircraft and occupants -- difficulty walking, objects dislodged, momentary loss of control -- rather than a single numerical value.",
+      "the pilot's total flight time and experience level, since more experienced pilots are assumed to report identical turbulence in a lower category.",
+      "the exact vertical acceleration value recorded by the aircraft's flight data recorder, with no reference to any observed effect at all.",
     ],
     answer: 1,
     explain:

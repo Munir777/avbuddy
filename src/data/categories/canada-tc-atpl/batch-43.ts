@@ -32,7 +32,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     q: "G-induced Loss Of Consciousness (G-LOC), an extreme physiological response to sustained positive G, results when",
     options: [
       "a pilot voluntarily and safely reduces G loading in anticipation of greyout symptoms, a deliberate protective action rather than an involuntary physiological event.",
-      "cabin pressure suddenly and completely fails, making G-LOC simply an alternate name for the effects of a rapid decompression.",
+      "cabin pressure suddenly and completely fails, making G-LOC simply an alternate name for the effects of a rapid decompression rather than a genuinely distinct, sustained positive-G physiological response of its own.",
       "the aircraft itself loses electrical power, with 'G-LOC' describing an aircraft systems failure rather than a physiological event affecting the pilot.",
       "blood is pooled away from the brain for long enough (and to a great enough degree) that cerebral blood flow becomes critically insufficient, leading to a sudden and complete loss of consciousness.",
     ],
@@ -50,7 +50,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
       "timed and structured (including sufficient recovery time afterward before resuming duties) to gain alertness benefit while managing the sleep inertia that follows waking.",
       "avoided entirely, since any napping during a duty period is considered universally counterproductive to alertness and performance.",
       "extended for as long as possible, since a longer nap is assumed to always produce a greater alertness benefit with no corresponding downside.",
-      "taken at a completely random, unplanned time with no consideration given to its length or to any recovery period afterward.",
+      "taken at a completely random, unplanned time with no consideration given to its length, timing relative to the coming duty period, or to any recovery period afterward once the pilot wakes.",
     ],
     answer: 0,
     explain:
@@ -63,7 +63,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The five 'hazardous attitudes' commonly referenced in aeronautical decision-making training -- anti-authority, impulsivity, invulnerability, machismo, and resignation -- are significant because",
     options: [
-      "they describe five entirely harmless personality traits with no meaningful connection to aviation safety or decision-making at all.",
+      "they describe five entirely harmless personality traits with no meaningful connection to aviation safety, crew coordination, or pilot decision-making of any kind, regardless of the flight phase or operating environment involved.",
       "each attitude, left unrecognized, can bias a pilot's judgment toward an unsafe course of action, and pilots are trained to recognize and consciously counter each with an appropriate corrective thought.",
       "only one of the five (invulnerability) is considered relevant to actual pilot decision-making, with the other four having no genuine safety implication.",
       "they apply exclusively to student pilots, with the five hazardous attitudes considered no longer relevant once a pilot has gained significant flight experience.",
@@ -82,7 +82,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
       "assess likelihood only, with the severity of potential consequences considered irrelevant to how a risk assessment matrix is actually structured.",
       "apply exclusively to the maintenance and engineering side of an operation, with flight operations risk considered outside the matrix's intended scope.",
       "provide a structured, consistent way to prioritize which identified risks most urgently require mitigation, rather than relying purely on unstructured intuition.",
-      "eliminate all risk from an operation entirely, since a properly used risk assessment matrix is assumed capable of reducing risk to zero.",
+      "eliminate all risk from an operation entirely, since a properly used risk assessment matrix is assumed capable of reducing every identified hazard's risk to zero regardless of how it is actually mitigated.",
     ],
     answer: 2,
     explain:
@@ -113,7 +113,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     options: [
       "giving the crew (and, more broadly, the operator) an opportunity to identify lessons and areas for improvement while the details are still fresh, supporting ongoing learning rather than repeating the same avoidable issues.",
       "applying only after an actual incident or accident, with a debrief following an otherwise uneventful, routine flight considered to serve no useful purpose.",
-      "assigning individual blame for any error identified during the flight, a punitive rather than a learning-oriented purpose.",
+      "assigning individual blame for any error identified during the flight, treating the debrief as a purely punitive exercise rather than a learning-oriented conversation about how the crew and operator can improve going forward.",
       "having no genuine safety benefit at all, functioning purely as an administrative formality with no real bearing on future performance.",
     ],
     answer: 0,
@@ -160,7 +160,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     q: "The primacy and recency effects, as they relate to memory and information retention, generally describe a tendency to",
     options: [
       "recall only the middle items of a presented sequence, with the first and last items considered the least likely to be retained.",
-      "recall every item in a sequence with exactly equal reliability, regardless of its position within that sequence.",
+      "recall every item in a sequence with exactly equal reliability, regardless of its position within that sequence or of whether it was delivered verbally or in writing.",
       "apply exclusively to written information, with the primacy and recency effects considered entirely absent for spoken or verbally delivered information.",
       "recall the first and last items presented in a sequence (such as a briefing or checklist) more readily than items presented in the middle of that sequence.",
     ],
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     options: [
       "hypoxia's effect on night vision applies only above the altitude at which supplemental oxygen is regulatorily required, with no measurable effect below that altitude.",
       "a pilot's ability to see well at night can measurably degrade at a cabin altitude below the point at which more obvious hypoxia symptoms (such as impaired judgment) become apparent.",
-      "night vision is entirely unaffected by hypoxia at any altitude, making it the one visual function considered fully immune to reduced oxygen availability.",
+      "night vision is entirely unaffected by hypoxia at any altitude, making it the one visual function considered fully immune to reduced oxygen availability regardless of cabin altitude or duration of exposure.",
       "night vision degrades only once severe, advanced-stage hypoxia symptoms are already present, making it one of the last functions affected rather than one of the earliest.",
     ],
     answer: 1,
@@ -224,7 +224,7 @@ export const CANADA_TC_ATPL_BATCH_43_QUESTIONS: Question[] = [
     q: "Beyond the Valsalva maneuver, other techniques commonly used to help equalize pressure in the middle ear during descent include",
     options: [
       "holding one's breath for the entire duration of the descent, a technique with no actual connection to Eustachian tube function or ear pressure equalization.",
-      "no technique other than the Valsalva maneuver exists or is commonly used for middle-ear pressure equalization during descent.",
+      "no technique other than the Valsalva maneuver exists or is commonly used for middle-ear pressure equalization during descent, regardless of an individual's own experience or physiology.",
       "deliberately increasing cabin altitude during descent, which would actually work against, rather than assist, middle-ear pressure equalization.",
       "swallowing, yawning, and the Toynbee maneuver (swallowing while pinching the nose closed), each working through a somewhat different mechanism to open the Eustachian tube.",
     ],

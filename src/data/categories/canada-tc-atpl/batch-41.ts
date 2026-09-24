@@ -82,7 +82,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
       "directly along the desired track from the very first moment, with no interception angle or converging heading ever actually flown.",
       "at a fixed altitude offset from the desired track, with 'interception angle' referring to a vertical rather than a lateral navigation concept.",
       "on a heading offset from the desired track by a chosen angle, converging toward that track until reaching it, at which point the aircraft turns onto the track itself.",
-      "on a heading diverging away from the desired track, the opposite of what an interception angle is intended to achieve.",
+      "on a heading diverging away from the desired track, the opposite of what an interception angle is intended to achieve, since divergence increases rather than decreases the lateral distance to that track over time.",
     ],
     answer: 2,
     explain:
@@ -114,7 +114,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
       "the obstacle's height, commonly given both above ground level (AGL) and above mean sea level (MSL), letting a pilot assess actual vertical clearance regardless of local terrain elevation.",
       "the obstacle's height, but expressed only in metres, with feet considered inapplicable to any Canadian aeronautical chart obstacle labelling.",
       "the obstacle's distance from the nearest aerodrome, a lateral rather than a vertical measurement despite being labelled as a 'height.'",
-      "the obstacle's height above ground level (AGL) only, with mean sea level (MSL) height never provided for any charted obstacle.",
+      "the obstacle's height above ground level (AGL) only, with mean sea level (MSL) height treated as never provided for any charted obstacle regardless of the chart's publication source or currency.",
     ],
     answer: 0,
     explain:
@@ -127,7 +127,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The Minimum En-route Altitude (MEA) published for an airway segment is the lowest altitude that generally ensures",
     options: [
-      "the highest possible cruising efficiency for that segment, an efficiency-based rather than a safety-based altitude standard.",
+      "the highest possible cruising efficiency and fuel economy for that segment, an efficiency-based rather than a safety-based altitude standard established mainly for planning purposes.",
       "both adequate obstacle clearance and reliable reception of the navigation signals needed to remain on the airway for that segment.",
       "adequate obstacle clearance only, with navigation signal reception considered entirely unrelated to how MEA is established.",
       "reliable navigation signal reception only, with obstacle clearance considered entirely unrelated to how MEA is established.",
@@ -160,7 +160,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
     q: "A Minimum Off-Route Altitude (MORA), published on some en route charts, provides",
     options: [
       "the single lowest altitude at which an aircraft may legally be flown anywhere in Canadian airspace, applicable universally rather than to a specific charted area.",
-      "a guarantee of navigation signal reception only, with obstacle clearance considered entirely unrelated to how MORA values are established.",
+      "a guarantee of navigation signal reception only, with obstacle clearance considered entirely unrelated to how MORA values are established or charted for a given grid or route-corridor area on the en route chart.",
       "an altitude value applicable exclusively to flight precisely along the centreline of a published airway, with any off-airway flight considered outside MORA's intended coverage.",
       "obstacle clearance for flight off the established airway structure within a defined grid or route-corridor area, without any guarantee of navigation signal reception at that altitude.",
     ],
@@ -194,7 +194,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
       "make no calendar date adjustment of any kind, since crossing the International Date Line is understood to affect only time-of-day, not calendar date.",
       "adjust the calendar date by one full day (forward when crossing westbound, backward when crossing eastbound) at the point of crossing, in addition to any time zone adjustment otherwise being tracked.",
       "adjust the calendar date by exactly one week, rather than by one day, at the point of crossing the International Date Line.",
-      "adjust the calendar date only when crossing eastbound, with a westbound crossing requiring no date adjustment at all.",
+      "adjust the calendar date only when crossing eastbound, with a westbound crossing requiring no date adjustment at all regardless of how many time zones are crossed during that particular portion of the flight itself.",
     ],
     answer: 1,
     explain:
@@ -225,7 +225,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
     options: [
       "a VOR's service volume increases as the aircraft descends to a lower altitude, the opposite of the actual relationship between altitude and VOR reception range.",
       "a VOR's service volume is identical and unlimited in every direction and at every altitude, making the concept of a 'standard service volume' essentially meaningless.",
-      "service volume applies only to DME, not to VOR, despite VOR being the specific navigation aid the term is most commonly associated with.",
+      "service volume applies only to DME, not to VOR, despite VOR being the specific navigation aid the term is most commonly associated with in typical enroute, terminal, and low-altitude chart publications and briefings.",
       "reliable VOR reception cannot be assumed indefinitely at any distance and altitude, so navigation planning should account for the facility's actual defined service volume rather than assuming unlimited range.",
     ],
     answer: 3,
@@ -240,7 +240,7 @@ export const CANADA_TC_ATPL_BATCH_41_QUESTIONS: Question[] = [
     q: "An NDB's usable signal range is generally influenced by factors including",
     options: [
       "the station's transmitter power, its operating frequency, and atmospheric/propagation conditions (including time of day), all of which can meaningfully affect how far and how reliably the signal can be received.",
-      "the phase of the moon, an astronomical rather than a radio-propagation-based factor governing NDB signal range.",
+      "the phase of the moon, an astronomical rather than a radio-propagation-based factor considered by this particular option to meaningfully govern NDB signal range, reception distance, and overall usable coverage each night.",
       "the receiving aircraft's airspeed alone, with transmitter power, frequency, and atmospheric conditions having no meaningful effect on NDB range at all.",
       "the receiving aircraft's registration number, an identification-based rather than a signal-propagation-based factor.",
     ],

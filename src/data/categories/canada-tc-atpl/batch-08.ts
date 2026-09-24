@@ -12,10 +12,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Station pressure differs from mean sea level (MSL) pressure in that station pressure is",
     options: [
-      "measured only at coastal stations, since inland stations cannot report station pressure.",
+      "measured only at coastal stations, since inland stations are said to be physically unable to report station pressure at all.",
       "the actual, unadjusted atmospheric pressure measured at the station's own elevation, while MSL pressure has been mathematically reduced to what the pressure would be at sea level.",
-      "the same value as MSL pressure at every station, since pressure does not vary meaningfully with elevation over short distances.",
-      "always higher than MSL pressure, regardless of the station's elevation.",
+      "the same value as MSL pressure at every station, since pressure is not thought to vary meaningfully with elevation over short distances.",
+      "always higher than MSL pressure at every station, regardless of the station's actual elevation above sea level.",
     ],
     answer: 1,
     explain:
@@ -28,8 +28,8 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A temperature inversion is a layer of the atmosphere in which",
     options: [
-      "pressure increases with height, unrelated to any temperature behaviour.",
-      "temperature remains completely constant with height, neither increasing nor decreasing.",
+      "pressure increases with height at every single level, entirely unrelated to any temperature behaviour occurring within that layer.",
+      "temperature remains completely constant with height throughout the layer, neither increasing nor decreasing at any point.",
       "temperature increases with height, the opposite of the normal decrease expected in the troposphere.",
       "temperature decreases with height at a rate exactly matching the ICAO Standard Atmosphere lapse rate.",
     ],
@@ -44,7 +44,7 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "The Dry Adiabatic Lapse Rate (DALR) applies to a parcel of rising air that is",
     options: [
-      "saturated, cooling at a faster rate per 1,000 ft than an unsaturated parcel would.",
+      "saturated, cooling at a faster rate per 1,000 ft of ascent than an unsaturated parcel of the same air would.",
       "identical in cooling rate to a saturated parcel, since latent heat release has no effect on lapse rate.",
       "not actually cooling at all as it rises, since adiabatic processes involve no temperature change.",
       "unsaturated, cooling at a faster rate per 1,000 ft than a saturated parcel would.",
@@ -61,9 +61,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     q: "The atmosphere is considered unstable when the environmental (actual) lapse rate is",
     options: [
       "steeper than the appropriate adiabatic lapse rate, so a displaced parcel of air continues to rise (or sink) on its own once disturbed.",
-      "shallower than the appropriate adiabatic lapse rate, so a displaced parcel always returns to its original level.",
-      "exactly equal to the adiabatic lapse rate at every level, which is the definition of an unstable atmosphere.",
-      "unrelated to stability, which instead depends only on relative humidity.",
+      "shallower than the appropriate adiabatic lapse rate, so a displaced parcel of air always returns fully to its original level.",
+      "exactly equal to the adiabatic lapse rate at every single level, which is taken here as the definition of an unstable atmosphere.",
+      "unrelated to atmospheric stability altogether, which in this view depends only on relative humidity at the surface, not on lapse rates.",
     ],
     answer: 0,
     explain:
@@ -76,10 +76,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Compared to stable air, unstable air is generally associated with",
     options: [
-      "stratiform cloud development, poor visibility, and generally smooth flying conditions.",
+      "stratiform cloud development, generally poor visibility, and typically smooth, if sometimes persistent, flying conditions.",
       "cumuliform cloud development, good visibility (away from any showers), and convective turbulence.",
       "fog formation as the dominant characteristic, rather than any form of vertical cloud development.",
-      "no cloud development of any kind, regardless of moisture content.",
+      "no cloud development of any kind whatsoever, regardless of the amount of moisture content present in the air mass.",
     ],
     answer: 1,
     explain:
@@ -92,10 +92,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Orographic turbulence is caused by",
     options: [
-      "the release of latent heat within a growing cumulonimbus cloud.",
-      "friction between two air masses of different temperature along a frontal boundary.",
+      "the release of latent heat within a rapidly growing, vigorous cumulonimbus cloud during active convection over a broad area.",
+      "friction between two air masses of noticeably different temperature and density along a sharp frontal boundary.",
       "airflow being mechanically disturbed as it passes over or around terrain features such as hills, mountains, or ridges.",
-      "solar heating of the ground, producing rising thermals unrelated to terrain shape.",
+      "solar heating of the ground surface, producing rising thermals that are unrelated to the shape of the terrain.",
     ],
     answer: 2,
     explain:
@@ -108,9 +108,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Clear Air Turbulence (CAT) is turbulence that occurs",
     options: [
-      "only within the core of a thunderstorm, never outside of visible cloud.",
-      "only at low altitude, within the atmospheric boundary layer near the surface.",
-      "exclusively over mountainous terrain, and is therefore synonymous with orographic turbulence.",
+      "only within the active core of a mature thunderstorm cell, and never outside of visible cloud at any altitude.",
+      "only at low altitude, confined strictly within the atmospheric boundary layer nearest the surface.",
+      "exclusively over mountainous terrain, and is therefore considered entirely synonymous with orographic turbulence.",
       "in cloud-free air, often associated with the wind shear found near jet streams or strong frontal boundaries.",
     ],
     answer: 3,
@@ -125,9 +125,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     q: "The wind at the surface tends to blow at an angle across the isobars, toward lower pressure, primarily because of",
     options: [
       "surface friction, which reduces wind speed and disrupts the balance between the pressure gradient force and the Coriolis force that holds the geostrophic wind parallel to the isobars aloft.",
-      "the Coriolis force acting alone, with no influence from friction at all.",
-      "the presence of clouds, which physically block the wind from flowing parallel to the isobars.",
-      "temperature alone, with pressure gradient having no role in surface wind direction.",
+      "the Coriolis force acting entirely alone at the surface, with absolutely no influence whatsoever from surface friction or terrain roughness.",
+      "the presence of low-level cloud and precipitation, which are said to physically block the wind from ever flowing parallel to the isobars.",
+      "temperature differences alone, with the pressure gradient force said to have no role at all in determining surface wind direction.",
     ],
     answer: 0,
     explain:
@@ -140,10 +140,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A land breeze and a sea breeze are both examples of local wind circulations driven by",
     options: [
-      "orographic lifting over coastal terrain, unrelated to any land-water temperature contrast.",
+      "orographic lifting over coastal terrain features, entirely unrelated to any land-water temperature contrast.",
       "differential heating and cooling rates between land and adjacent water, reversing the direction of the local pressure gradient between day and night.",
-      "frontal passage, and are unrelated to any diurnal (day/night) cycle.",
-      "the jet stream's position shifting seasonally between summer and winter.",
+      "frontal passage exclusively, and are said to be entirely unrelated to any diurnal, day-to-night heating cycle at any coastal, lakeside, or inland location.",
+      "the jet stream's position shifting seasonally between the summer and winter months each year.",
     ],
     answer: 1,
     explain:
@@ -156,10 +156,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A jet stream is best described as",
     options: [
-      "a permanent, unchanging feature that does not shift in location or strength with the seasons.",
-      "a phenomenon unrelated to temperature gradients, driven instead purely by surface friction.",
+      "a permanent, entirely unchanging feature that does not shift in location, altitude, or strength with the seasons.",
+      "a phenomenon entirely unrelated to temperature gradients, driven instead purely by surface friction alone.",
       "a relatively narrow band of very strong winds concentrated near the tropopause, typically associated with strong horizontal temperature gradients.",
-      "a band of strong low-level winds found only within the first few thousand feet above the surface.",
+      "a band of strong low-level winds found only within the first few thousand feet above the surface, confined entirely within the frictional boundary layer near the ground.",
     ],
     answer: 2,
     explain:
@@ -172,8 +172,8 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "An air mass is classified (for example, as continental polar or maritime tropical) primarily according to",
     options: [
-      "the type of cloud currently observed within the air mass.",
-      "the air mass's current altitude above the surface.",
+      "the type of cloud currently observed forming within the air mass at the time of classification.",
+      "the air mass's current altitude above the surface at the moment of observation.",
       "the current geographic location of the air mass, regardless of where it originally formed.",
       "the temperature and moisture characteristics of the source region over which it formed.",
     ],
@@ -190,8 +190,8 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     options: [
       "a steeper frontal slope and typically more abrupt, intense weather concentrated in a narrower band along and just ahead of the surface front.",
       "a shallower frontal slope and typically more gradual, widespread weather spread over a broad area ahead of the surface front.",
-      "the complete absence of any associated cloud or precipitation.",
-      "identical frontal slope and identical weather characteristics in every respect.",
+      "the complete absence of any associated cloud, precipitation, or any other significant weather whatsoever along its entire length and passage through the region.",
+      "identical frontal slope and identical weather characteristics in absolutely every respect and location.",
     ],
     answer: 0,
     explain:
@@ -204,10 +204,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "An occluded front forms when",
     options: [
-      "a stationary front begins moving for the first time, immediately becoming an occluded front.",
+      "a stationary front begins moving for the first time, and is said to immediately become a fully occluded front.",
       "a faster-moving cold front catches up to and overtakes a slower-moving warm front, lifting the warm air mass between them off the surface.",
-      "two air masses of identical temperature and moisture characteristics meet, with neither displacing the other.",
-      "a warm front and a cold front move apart from each other, increasing the distance between them.",
+      "two air masses of identical temperature and moisture characteristics meet head-on directly, with neither one ever displacing the other at all.",
+      "a warm front and a cold front move apart from each other entirely, steadily increasing the distance separating them.",
     ],
     answer: 1,
     explain:
@@ -220,10 +220,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Clear ice (as opposed to rime ice) tends to form on an airframe when the aircraft encounters",
     options: [
-      "dry snow, which does not adhere to the airframe under any circumstances.",
-      "small supercooled droplets that freeze instantly on contact, trapping air and producing a rough, opaque, brittle deposit.",
+      "dry snow, which is generally understood to not adhere to the airframe under normal circumstances or temperatures.",
+      "small supercooled droplets that freeze almost instantly on contact, trapping air and producing a rough, opaque, and brittle ice deposit.",
       "large supercooled water droplets that spread out and freeze relatively slowly, such as in freezing rain or cumuliform cloud, forming a smooth, dense, and strongly adhering layer.",
-      "conditions with no liquid water present at all, since clear ice requires only sub-zero temperature with no moisture.",
+      "conditions with no liquid water present at all, since clear ice is said to require only a sub-zero temperature with no moisture.",
     ],
     answer: 2,
     explain:
@@ -236,9 +236,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Freezing rain reaching the surface indicates that, somewhere above, the precipitation passed through",
     options: [
-      "no cloud at all, since freezing rain forms exclusively through direct sublimation.",
-      "an entirely dry atmospheric column, unrelated to any liquid precipitation process.",
-      "a column of air that was below freezing at every level from cloud base to the surface, with no warm layer involved at all.",
+      "no cloud at all, since freezing rain is said in this view to form exclusively through a process of direct sublimation of ice crystals.",
+      "an entirely dry atmospheric column throughout its depth, unrelated to any liquid precipitation process occurring at any level.",
+      "a column of air that was below freezing at every level from cloud base all the way to the surface, with no warm layer involved anywhere in the profile.",
       "a warm layer aloft (above freezing) that melted the precipitation into rain, followed by a shallow sub-freezing layer near the surface that supercools the rain without refreezing it before impact.",
     ],
     answer: 3,
@@ -253,9 +253,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     q: "The three conditions generally required for thunderstorm development are",
     options: [
       "sufficient low-level moisture, an unstable (conditionally unstable) atmosphere, and a lifting mechanism to initiate the upward motion.",
-      "high pressure, dry air, and a stable atmosphere throughout the troposphere.",
-      "cold surface temperatures, low humidity, and strong subsidence.",
-      "a jet stream directly overhead, with no requirement for moisture or instability.",
+      "high pressure, persistently dry air, and a stable atmosphere throughout the entire depth of the troposphere.",
+      "cold surface temperatures, persistently low humidity, and strong large-scale atmospheric subsidence that suppresses any vertical development entirely.",
+      "a jet stream positioned directly overhead, with no requirement at all for moisture or atmospheric instability.",
     ],
     answer: 0,
     explain:
@@ -268,10 +268,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "The three stages of a typical single-cell thunderstorm's life cycle, in order, are",
     options: [
-      "a single, undifferentiated stage with no distinct phases.",
+      "a single, entirely undifferentiated stage with no distinct phases or transitions at all.",
       "the cumulus (developing) stage, the mature stage, and the dissipating stage.",
-      "the dissipating stage, the cumulus stage, and the mature stage.",
-      "the mature stage, the cumulus stage, and the dissipating stage.",
+      "the dissipating stage, then the cumulus stage, and finally the mature stage, in that specific order.",
+      "the mature stage, then the cumulus stage, and finally the dissipating stage, in that specific order.",
     ],
     answer: 1,
     explain:
@@ -284,10 +284,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A microburst associated with a thunderstorm is best described as",
     options: [
-      "a small, weak updraft that dissipates before reaching the surface, posing no operational hazard.",
-      "a phenomenon that occurs only in winter, associated exclusively with snow rather than convective storms.",
+      "a small, weak updraft that dissipates well before ever reaching the surface, posing no operational hazard at all.",
+      "a phenomenon that occurs only during the winter months, associated exclusively with snow rather than convective storms.",
       "a small-scale, intense downdraft that spreads out rapidly upon reaching the surface, producing severe and rapidly changing wind shear.",
-      "a large-scale, gentle downdraft covering an area of many tens of miles, with only gradual wind changes.",
+      "a large-scale, gentle downdraft covering an area of many tens of miles, with only gradual wind changes over an extended period of time.",
     ],
     answer: 2,
     explain:
@@ -300,9 +300,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Radiation fog typically forms",
     options: [
-      "on windy, overcast nights, as strong low-level winds mix moist air down to the surface.",
-      "only over open water, and never over land.",
-      "only during daylight hours, as the sun heats moist air to saturation.",
+      "on windy, overcast nights, as strong low-level winds actively mix moist air down toward the surface layer.",
+      "only over open water at night, and is said to never form over land under any circumstances, season, or moisture condition.",
+      "only during daylight hours, as the sun's heating raises moist air to its saturation point rapidly.",
       "on clear, calm nights, as the ground cools rapidly by radiating heat, cooling the air just above it to its dew point.",
     ],
     answer: 3,
@@ -317,9 +317,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     q: "A METAR's remarks section reporting 'SLP' refers to",
     options: [
       "sea-level pressure, reported to help distinguish it from the separately reported altimeter setting group.",
-      "the station's runway surface condition report.",
-      "the sunlight period remaining before sunset at that station.",
-      "a required remark used only when the station is temporarily unstaffed.",
+      "the station's runway surface condition report, detailing contamination type and depth for the active runway.",
+      "the sunlight period remaining before sunset at that particular reporting station.",
+      "a required remark used only when the reporting station is temporarily unstaffed or automated.",
     ],
     answer: 0,
     explain:
@@ -332,10 +332,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A SPECI report is issued",
     options: [
-      "at the same fixed, scheduled interval as a routine METAR, never outside that schedule.",
+      "at the same fixed, scheduled interval as a routine METAR report, and never issued outside that schedule.",
       "when a significant change in weather conditions occurs between scheduled METAR observations.",
-      "only for forecast (rather than observed) weather conditions.",
-      "only once per day, regardless of how conditions change.",
+      "only for forecast, rather than actually observed, current weather conditions.",
+      "only once per day at a fixed scheduled time, regardless of how significantly conditions subsequently change.",
     ],
     answer: 1,
     explain:
@@ -348,10 +348,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A PIREP (or AIREP), a pilot report of observed weather conditions, is particularly valuable because it",
     options: [
-      "replaces the need for any ground-based weather observation at the reporting station.",
-      "can only report the absence of significant weather, never the presence of a hazard.",
+      "replaces the need for any ground-based weather observation entirely at the reporting station or nearby stations.",
+      "can only report the absence of significant weather, and can never report the presence of an actual hazard.",
       "provides an actual, in-flight observation (such as turbulence, icing, or cloud tops) that ground-based sensors and forecasts may not otherwise capture.",
-      "is used only for post-flight record-keeping, with no distribution to other pilots or forecasters.",
+      "is used only for post-flight record-keeping purposes, with no distribution at all to other pilots, dispatchers, or forecasters at any other facility or agency.",
     ],
     answer: 2,
     explain:
@@ -364,9 +364,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A Graphic Area Forecast (GFA) is intended to depict",
     options: [
-      "historical weather that has already occurred, rather than a forecast of future conditions.",
-      "only upper-level wind and temperature data, with no cloud or weather information.",
-      "a single point-forecast for one specific aerodrome, in the same text format as a TAF.",
+      "historical weather that has already occurred in the past, rather than an actual forecast of future conditions.",
+      "only upper-level wind and temperature data at typical cruise altitudes, with no cloud or surface weather information included at all.",
+      "a single point-forecast for one specific aerodrome only, in the same text format as a routine TAF.",
       "expected cloud, weather, and icing/turbulence conditions over a region, as a series of graphical charts valid at specified times.",
     ],
     answer: 3,
@@ -381,9 +381,9 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     q: "A SIGMET (Significant Meteorological Information) message is issued to warn of",
     options: [
       "weather phenomena that are potentially hazardous to all aircraft, such as severe turbulence, severe icing, thunderstorms, or volcanic ash.",
-      "conditions relevant only to aircraft operating under VFR, with no application to IFR flights.",
-      "scheduled runway closures and other purely administrative aerodrome information.",
-      "routine, non-hazardous changes in wind direction only.",
+      "conditions relevant only to aircraft operating under VFR at low altitude, with no application at all to IFR flights.",
+      "scheduled runway closures and other purely administrative aerodrome information of no meteorological relevance.",
+      "routine, non-hazardous changes in wind direction only, of the kind expected during any normal, everyday frontal passage or diurnal cycle.",
     ],
     answer: 0,
     explain:
@@ -396,10 +396,10 @@ export const CANADA_TC_ATPL_BATCH_08_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "An upper-level analysis (ANAL) chart differs from an upper-level prognostic (PROG) chart in that the ANAL chart shows",
     options: [
-      "no meaningful difference at all; the two chart types display identical information.",
+      "no meaningful difference at all; the two chart types are said to display entirely identical information.",
       "observed conditions at a specific past time, while the PROG chart shows forecast conditions for a specific future time.",
-      "surface-level data only, while PROG charts are used exclusively for upper-level data.",
-      "forecast conditions for a future time, while the PROG chart shows only observed, historical data.",
+      "surface-level data only, while PROG charts are said to be used exclusively for upper-level data instead.",
+      "forecast conditions for a future time, while the PROG chart shows only observed, historical data collected from surface and upper-air stations.",
     ],
     answer: 1,
     explain:

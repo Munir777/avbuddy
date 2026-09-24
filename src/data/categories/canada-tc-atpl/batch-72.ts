@@ -25,7 +25,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     q: "Winglets and other wingtip devices reduce induced drag primarily by",
     options: [
       "deflecting engine exhaust outward and away from the fuselage to reduce interference drag.",
-      "smoothing the boundary layer near the wingtip so that it remains laminar rather than turbulent across the entire wing.",
+      "smoothing the boundary layer near the wingtip so that it remains laminar rather than turbulent across the entire wing, a mechanism that does not match how these devices actually reduce drag in practice.",
       "weakening and altering the shape of the wingtip vortex, reducing the amount of energy the wing loses to generating it, which acts similarly to increasing the wing's effective aspect ratio.",
       "increasing the wing's total surface area enough to lower wing loading and therefore lower stalling speed.",
     ],
@@ -41,7 +41,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     q: "On the total drag curve, the 'region of reverse command' (sometimes called the back side of the power curve) refers to the speed range, below the speed for minimum drag, in which",
     options: [
       "the aircraft can no longer be flown below its stalling speed under any circumstances, regardless of power applied.",
-      "elevator and rudder controls become fully reversed in sense, so that pulling back on the control column causes the nose to pitch down.",
+      "elevator and rudder controls become fully reversed in sense, so that pulling back on the control column causes the nose to pitch down, a mechanical failure mode unrelated to the aerodynamic drag-versus-speed relationship the term actually describes.",
       "engine power output physically decreases as throttle is advanced, requiring the pilot to reduce throttle to gain speed.",
       "total drag increases as airspeed decreases, so maintaining slower flight requires progressively more thrust or power rather than less, reversing the normal relationship between speed and power required.",
     ],
@@ -74,7 +74,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     options: [
       "it reduces the total weight of the propeller by removing material near the tip.",
       "rotational velocity increases with distance from the hub, so twisting the blade helps maintain a more uniform, efficient angle of attack along the entire blade span rather than the tip stalling while the root remains inefficiently loaded.",
-      "it prevents the propeller from producing any thrust at low rotational speeds, protecting the engine from overload on startup.",
+      "it prevents the propeller from producing any thrust at low rotational speeds, protecting the engine from overload on startup, a protective function that is instead handled by starter limiting systems and has nothing to do with the blade's geometric twist along its span.",
       "it is required purely for manufacturing convenience and has no aerodynamic purpose.",
     ],
     answer: 1,
@@ -91,7 +91,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
       "physically changing the number of blades in flight to match the required thrust.",
       "changing the direction of blade rotation to counteract changes in airspeed.",
       "varying the blade (pitch) angle -- coarser as airspeed or power increases, finer as airspeed or power decreases -- so that blade angle of attack, and therefore the aerodynamic load the blades present to the engine, stays matched to the selected rpm.",
-      "relying entirely on changes in engine manifold pressure, with the blade angle fixed and unable to move.",
+      "relying entirely on changes in engine manifold pressure, with the blade angle fixed and unable to move, which in fact describes a fixed-pitch propeller installation rather than the constant-speed, variable-pitch mechanism that a governor actually uses to hold rpm steady.",
     ],
     answer: 2,
     explain:
@@ -104,7 +104,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Some high-wing aircraft designs, which already possess substantial inherent dihedral effect from the wing-fuselage arrangement, are given a small amount of anhedral (a slight downward angle from root to tip) specifically to",
     options: [
-      "raise the aircraft's never-exceed speed by strengthening the wing structure.",
+      "raise the aircraft's never-exceed speed by strengthening the wing structure, a structural benefit that has no bearing on the lateral stability characteristics that anhedral is actually intended to adjust on an otherwise strongly dihedral-effect high-wing design.",
       "eliminate adverse yaw entirely during aileron-induced rolls.",
       "increase the aircraft's maximum lift coefficient at high angles of attack.",
       "reduce the otherwise excessive lateral (roll) stability that strong inherent dihedral effect would produce, keeping roll response crisp and preventing an unpleasant 'overly stable,' sluggish-feeling roll handling.",
@@ -136,7 +136,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "At the same temperature and pressure, humid air is less dense than dry air, which means that, all else being equal, high humidity",
     options: [
-      "has no measurable effect on aircraft performance, since water vapour has essentially the same molecular weight as the nitrogen and oxygen it displaces.",
+      "has no measurable effect on aircraft performance, since water vapour has essentially the same molecular weight as the nitrogen and oxygen it displaces, meaning humid and dry air of the same temperature and pressure would show identical densities in practice.",
       "slightly reduces both aerodynamic lift available at a given airspeed and engine power output, working in the same direction as high temperature or high altitude to degrade aircraft performance.",
       "affects only piston-engine aircraft and has no effect on turbine-engine performance.",
       "increases air density and therefore improves both lift and engine performance.",
@@ -169,7 +169,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     q: "Spoilers, when deployed symmetrically in flight (as opposed to their differential use for roll control on some aircraft), primarily act aerodynamically to",
     options: [
       "increase the wing's maximum lift coefficient in the same manner as trailing edge flaps.",
-      "smooth the boundary layer over the wing, delaying separation and stall to a higher angle of attack.",
+      "smooth the boundary layer over the wing, delaying separation and stall to a higher angle of attack, an effect associated instead with vortex generators or leading-edge devices rather than with a surface deployed to spoil lift and add drag.",
       "reduce induced drag by weakening the wingtip vortex during descent.",
       "disrupt airflow over the upper wing surface, sharply increasing drag and reducing lift, which is used to increase the rate of descent or shorten the landing roll without necessarily changing airspeed.",
     ],
@@ -187,7 +187,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
       "the adverse pressure gradient over the aft portion of the upper surface grows strong enough that the boundary layer can no longer remain attached, and the separation point progressively migrates forward until the flow over most of the upper surface has separated and lift collapses.",
       "the wing's structure physically flexes enough at high angle of attack to reduce its effective camber to zero.",
       "dynamic pressure drops to zero at the stalling angle of attack, regardless of airspeed.",
-      "the air simply runs out of room to flow around the wing once a fixed angle is reached, unrelated to boundary layer behaviour.",
+      "the air simply runs out of room to flow around the wing once a fixed angle is reached, unrelated to boundary layer behaviour, a simplified description that does not reflect the progressive forward migration of the separation point that actually governs how and where a wing stalls in practice.",
     ],
     answer: 0,
     explain:
@@ -202,7 +202,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     options: [
       "greater than brake horsepower whenever the propeller is operated at a fine pitch setting.",
       "brake horsepower multiplied by propeller efficiency, since some of the engine's shaft power is inevitably lost to factors such as slipstream rotation and blade profile drag rather than being converted into useful thrust.",
-      "always numerically equal to brake horsepower, since the propeller converts shaft power to thrust with no losses.",
+      "always numerically equal to brake horsepower, since the propeller converts shaft power to thrust with no losses, an assumption that ignores the slipstream rotation and blade profile drag losses that keep propeller efficiency below one hundred percent in every real installation.",
       "unrelated to brake horsepower and determined solely by airspeed.",
     ],
     answer: 1,
@@ -216,7 +216,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "For an aircraft climbing at a constant indicated airspeed (IAS) into the higher flight levels, both true airspeed (TAS) and Mach number tend to increase, primarily because",
     options: [
-      "the speed of sound increases with altitude at the same rate that TAS increases, so Mach number actually remains constant at a constant IAS.",
+      "the speed of sound increases with altitude at the same rate that TAS increases, so Mach number actually remains constant at a constant IAS, which reverses the actual relationship, since falling temperature with altitude lowers rather than raises the local speed of sound at higher levels.",
       "air density increases with altitude, requiring a lower true airspeed to maintain the same IAS.",
       "decreasing air density at altitude means a higher true airspeed is needed to generate the same dynamic pressure (and therefore the same IAS), while decreasing air temperature simultaneously lowers the local speed of sound, so a given TAS represents a progressively higher Mach number.",
       "IAS and TAS are simply two different units for the same measured quantity and are always numerically identical at any altitude.",
@@ -251,7 +251,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
       "deflect automatically, opposite to the main surface, whenever the pilot moves the control, generating an aerodynamic force that helps move the main surface and reduces the control force the pilot must apply.",
       "provide structural reinforcement to the main control surface with no aerodynamic function of its own.",
       "increase the maximum lift coefficient of the wing during landing, serving the same purpose as a flap.",
-      "hold the main control surface in a fixed position to relieve a steady control force, only moving when the pilot separately adjusts a trim wheel.",
+      "hold the main control surface in a fixed position to relieve a steady control force, only moving when the pilot separately adjusts a trim wheel, which describes a simple trim tab's independent operation rather than a servo tab's automatic, linked deflection on every control input.",
     ],
     answer: 0,
     explain:
@@ -267,7 +267,7 @@ export const CANADA_TC_ATPL_BATCH_72_QUESTIONS: Question[] = [
       "both airfoil types produce an identical, constant centre of pressure location regardless of angle of attack or camber.",
       "a symmetrical airfoil generates essentially zero pitching moment about its aerodynamic centre and its centre of pressure stays fixed near the aerodynamic centre across the normal angle-of-attack range, whereas a cambered airfoil produces a nose-down pitching moment about its aerodynamic centre even at zero lift, and its centre of pressure shifts with angle of attack.",
       "camber has no effect on pitching moment, and only angle of attack determines centre of pressure location for any airfoil shape.",
-      "a symmetrical airfoil's centre of pressure moves dramatically with angle of attack, while a cambered airfoil's centre of pressure never moves at all.",
+      "a symmetrical airfoil's centre of pressure moves dramatically with angle of attack, while a cambered airfoil's centre of pressure never moves at all, reversing the actual behaviour, since it is the symmetrical section whose centre of pressure stays comparatively fixed near the aerodynamic centre and the cambered section whose centre of pressure shifts with changing lift.",
     ],
     answer: 1,
     explain:

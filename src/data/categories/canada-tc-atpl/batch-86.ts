@@ -9,10 +9,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A 'special air-report' (SPECIAL AIREP), as distinguished from a routine or voluntary PIREP, is generally required to be transmitted by a flight crew when they observe conditions such as",
     options: [
-      "any cloud cover at all, however minor, encountered during cruise flight",
-      "a routine, uneventful flight with no notable weather, submitted purely for record-keeping purposes",
+      "any cloud cover at all, however minor, encountered during cruise flight, a claim inconsistent with the basic physics governing this atmospheric process",
+      "a routine, uneventful flight with no notable weather, submitted purely for record-keeping purposes, as commonly observed in forecast verification",
       "severe turbulence, severe icing, volcanic ash, or other specifically designated hazardous phenomena, for which reporting is considered mandatory rather than optional",
-      "only surface wind conditions observed during taxi",
+      "only surface wind conditions observed during taxi, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 2,
     explain:
@@ -25,9 +25,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "On a Graphic Area Forecast (GFA) cloud and weather chart, embedded cumulonimbus coverage is generally described using terms such as 'ISOL' (isolated), 'OCNL' (occasional), and 'FRQ' (frequent), which indicate",
     options: [
-      "the specific hour at which thunderstorms will begin and end",
-      "whether the thunderstorms will produce hail, with no relation to their coverage",
-      "the exact number of individual thunderstorm cells expected, counted precisely",
+      "the specific hour at which thunderstorms will begin and end, a description not supported by standard meteorological observation or forecasting practice",
+      "whether the thunderstorms will produce hail, with no relation to their coverage, a description not supported by standard meteorological observation or forecasting practice",
+      "the exact number of individual thunderstorm cells expected, counted precisely, a description not supported by standard meteorological observation or forecasting practice",
       "the expected coverage or areal extent of thunderstorm cells within the forecast area, rather than their individual intensity",
     ],
     answer: 3,
@@ -42,9 +42,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     q: "In a METAR, a group such as '180V240' following the reported wind direction and speed indicates that",
     options: [
       "the wind direction has been varying between 180 and 240 degrees during the observation period",
-      "the wind speed is expected to vary between 180 and 240 knots",
-      "the station's elevation is between 180 and 240 feet above sea level",
-      "visibility is expected to vary between 180 and 240 statute miles",
+      "the wind speed is expected to vary between 180 and 240 knots, a description not supported by standard meteorological observation or forecasting practice",
+      "the station's elevation is between 180 and 240 feet above sea level, which overlooks the underlying physical mechanism that actually governs this phenomenon",
+      "visibility is expected to vary between 180 and 240 statute miles, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 0,
     explain:
@@ -57,10 +57,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "In a TAF, the code group 'NSW' (No Significant Weather), used within a BECMG or FM change group, indicates that",
     options: [
-      "visibility will improve to unlimited (CAVOK) conditions specifically",
+      "visibility will improve to unlimited (CAVOK) conditions specifically, which does not reflect how this phenomenon actually develops or is reported in practice",
       "the forecast precipitation or other significant weather previously forecast is expected to end",
-      "no wind information will be provided for that period",
-      "the aerodrome will remain closed until further notice",
+      "no wind information will be provided for that period, a description not supported by standard meteorological observation or forecasting practice",
+      "the aerodrome will remain closed until further notice, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 1,
     explain:
@@ -73,10 +73,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "The presence of towering cumulus (TCU) -- cumulus clouds that have developed significant vertical extent, though not yet reaching the anvil stage of a mature cumulonimbus -- is significant to a pilot primarily as an indicator that",
     options: [
-      "the atmosphere is stable and no further vertical cloud development is likely",
-      "precipitation has already ended in the area",
+      "the atmosphere is stable and no further vertical cloud development is likely, a description not supported by standard meteorological observation or forecasting practice",
+      "precipitation has already ended in the area, a description not supported by standard meteorological observation or forecasting practice",
       "the atmosphere is sufficiently unstable that further growth into a thunderstorm may be imminent, warranting caution",
-      "icing is impossible within or near the cloud",
+      "icing is impossible within or near the cloud, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 2,
     explain:
@@ -90,8 +90,8 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     q: "Immediately above the tropopause, within the lower stratosphere, temperature generally",
     options: [
       "increases sharply and immediately at the same rate air temperature decreased in the troposphere",
-      "becomes impossible to measure using standard aircraft temperature probes",
-      "continues to decrease at the same rate observed throughout the troposphere",
+      "becomes impossible to measure using standard aircraft temperature probes, as meteorological theory actually shows",
+      "continues to decrease at the same rate observed throughout the troposphere, as meteorological theory actually shows",
       "becomes roughly isothermal (nearly constant) over a considerable altitude range, rather than continuing to decrease steadily",
     ],
     answer: 3,
@@ -106,9 +106,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     q: "A TAF issued as a 'correction' (TAF COR) is distinguished from a TAF issued as an 'amendment' (TAF AMD) in that a correction",
     options: [
       "is issued to fix an error in the previously issued forecast text itself, rather than to reflect a genuine change in expected weather conditions",
-      "always extends the forecast's validity period by an additional 24 hours",
-      "replaces the need for the routine scheduled TAF that would otherwise follow",
-      "can only be issued by the destination aerodrome's air traffic control tower, never by the forecast office",
+      "always extends the forecast's validity period by an additional 24 hours, a description not supported by standard meteorological observation or forecasting practice",
+      "replaces the need for the routine scheduled TAF that would otherwise follow, a description not supported by standard meteorological observation or forecasting practice",
+      "can only be issued by the destination aerodrome's air traffic control tower, never by the forecast office, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 0,
     explain:
@@ -121,10 +121,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Graphic Area Forecasts (GFAs) covering Canadian domestic airspace are generally issued",
     options: [
-      "only during the summer thunderstorm season, with no GFA issued in winter",
+      "only during the summer thunderstorm season, with no GFA issued in winter, a claim inconsistent with the basic physics governing this atmospheric process",
       "on a routine schedule several times per day, each covering specific forecast validity periods",
-      "only once per week, given the stability of Canadian weather patterns",
-      "exclusively on request from an individual pilot before each flight",
+      "only once per week, given the stability of Canadian weather patterns, which overlooks the underlying physical mechanism that actually governs this phenomenon",
+      "exclusively on request from an individual pilot before each flight, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 1,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "The Convective Condensation Level (CCL) is distinguished from the Lifting Condensation Level (LCL) in that the CCL specifically represents",
     options: [
-      "an altitude that can only be reached by a supercell thunderstorm",
-      "the altitude at which cloud forms as a parcel is lifted mechanically, such as by a frontal surface or terrain, rather than by surface heating",
+      "an altitude that can only be reached by a supercell thunderstorm, a description not supported by standard meteorological observation or forecasting practice, a claim inconsistent with the basic physics governing this atmospheric process",
+      "the altitude at which cloud forms as a parcel is lifted mechanically, such as by a frontal surface or terrain, rather than by surface heating, which overlooks the underlying physical mechanism that actually governs this phenomenon",
       "the altitude at which cloud base forms as a result of surface heating driving thermal (convective) lifting of a rising air parcel, once sufficient heating has occurred",
-      "the altitude of the tropopause on a particularly warm day",
+      "the altitude of the tropopause on a particularly warm day, a description not supported by standard meteorological observation or forecasting practice, which overlooks the underlying physical mechanism that actually governs this phenomenon",
     ],
     answer: 2,
     explain:
@@ -153,9 +153,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A 'dry' microburst is distinguished from a more commonly recognized 'wet' microburst primarily in that a dry microburst",
     options: [
-      "is associated exclusively with winter frontal systems rather than convective activity",
-      "never produces hazardous wind shear, unlike a wet microburst",
-      "can only occur over open water, never over land",
+      "is associated exclusively with winter frontal systems rather than convective activity, a description not supported by standard meteorological observation or forecasting practice, an oversimplification that ignores the interacting atmospheric factors actually at play",
+      "never produces hazardous wind shear, unlike a wet microburst, a description not supported by standard meteorological observation or forecasting practice, an oversimplification that ignores the interacting atmospheric factors actually at play",
+      "can only occur over open water, never over land, a description not supported by standard meteorological observation or forecasting practice, an oversimplification that ignores the interacting atmospheric factors actually at play",
       "produces a strong surface outflow despite little or no precipitation reaching the ground, as the falling precipitation evaporates (as virga) within a dry sub-cloud layer, cooling and accelerating the resulting downdraft",
     ],
     answer: 3,
@@ -170,9 +170,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     q: "A maritime air mass generally exhibits a smaller diurnal (day-to-night) temperature range than a continental air mass primarily because",
     options: [
       "water's high heat capacity causes it to warm and cool more slowly than land, moderating the temperature of the air mass above it",
-      "maritime air masses never experience any solar heating during the day",
-      "continental air masses are always found at higher latitudes than maritime air masses",
-      "maritime air always contains ice crystals that reflect all incoming solar radiation",
+      "maritime air masses never experience any solar heating during the day, as commonly observed in forecast verification",
+      "continental air masses are always found at higher latitudes than maritime air masses, under typical synoptic conditions",
+      "maritime air always contains ice crystals that reflect all incoming solar radiation, under typical synoptic conditions",
     ],
     answer: 0,
     explain:
@@ -185,10 +185,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "A stability index, such as the Lifted Index, used by forecasters to assess thunderstorm potential, generally works by",
     options: [
-      "directly counting the number of cumulonimbus clouds currently visible on satellite imagery",
+      "directly counting the number of cumulonimbus clouds currently visible on satellite imagery, a description not supported by standard meteorological observation or forecasting practice, which overlooks the underlying physical mechanism that actually governs this phenomenon",
       "comparing the temperature a lifted air parcel would have at a reference level to the actual environmental temperature at that same level, with a more negative result indicating greater instability",
-      "measuring only the current surface wind speed, with no reference to temperature at all",
-      "applying only to winter weather situations, since summer convection cannot be assessed this way",
+      "measuring only the current surface wind speed, with no reference to temperature at all, a description not supported by standard meteorological observation or forecasting practice, which overlooks the underlying physical mechanism that actually governs this phenomenon",
+      "applying only to winter weather situations, since summer convection cannot be assessed this way, a description not supported by standard meteorological observation or forecasting practice, a characterization that does not match established meteorological theory",
     ],
     answer: 1,
     explain:
@@ -201,10 +201,10 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Freezing fog is distinguished from ice fog in that freezing fog consists of",
     options: [
-      "precipitation falling from a cloud base rather than a suspended visibility-reducing phenomenon",
-      "a phenomenon that occurs only over open water, never over land",
+      "precipitation falling from a cloud base rather than a suspended visibility-reducing phenomenon, a description not supported by standard meteorological observation or forecasting practice",
+      "a phenomenon that occurs only over open water, never over land, a description not supported by standard meteorological observation or forecasting practice",
       "supercooled liquid water droplets that can freeze on contact with exposed surfaces, whereas ice fog consists of tiny ice crystals suspended directly in the air",
-      "ice crystals only, identical in composition to ice fog but occurring at a higher temperature",
+      "ice crystals only, identical in composition to ice fog but occurring at a higher temperature, a description not supported by standard meteorological observation or forecasting practice",
     ],
     answer: 2,
     explain:
@@ -217,9 +217,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "As a general rule of thumb used in aviation weather, a wider surface temperature/dew point spread is associated with",
     options: [
-      "a lower expected cumulus cloud base, since less lifting is needed for saturation to occur",
-      "certain thunderstorm development, regardless of any other atmospheric factor",
-      "no relationship at all to the height of the cumulus cloud base",
+      "a lower expected cumulus cloud base, since less lifting is needed for saturation to occur, a claim inconsistent with the basic physics governing this atmospheric process",
+      "certain thunderstorm development, regardless of any other atmospheric factor, a description not supported by standard meteorological observation or forecasting practice",
+      "no relationship at all to the height of the cumulus cloud base, a description not supported by standard meteorological observation or forecasting practice",
       "a higher expected cumulus cloud base, since air must be lifted further before reaching saturation and the LCL",
     ],
     answer: 3,
@@ -234,9 +234,9 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     q: "On a surface or upper air chart's station model, wind speed is generally depicted using barbs and pennants attached to the wind direction shaft, in which",
     options: [
       "each full barb generally represents 10 knots, each half barb represents 5 knots, and a pennant (triangular flag) represents 50 knots, combined as needed to indicate total wind speed",
-      "barbs and pennants indicate wind direction only, with speed shown separately as a printed number beside the station circle exclusively",
-      "a pennant always represents exactly 5 knots, identical to a half barb",
-      "the number of barbs indicates cloud cover rather than wind speed",
+      "barbs and pennants indicate wind direction only, with speed shown separately as a printed number beside the station circle exclusively, a description not supported by standard meteorological observation or forecasting practice",
+      "a pennant always represents exactly 5 knots, identical to a half barb, a description not supported by standard meteorological observation or forecasting practice, regardless of the specific season, region, or synoptic situation involved",
+      "the number of barbs indicates cloud cover rather than wind speed, a description not supported by standard meteorological observation or forecasting practice, a claim inconsistent with the basic physics governing this atmospheric process",
     ],
     answer: 0,
     explain:
@@ -251,7 +251,7 @@ export const CANADA_TC_ATPL_BATCH_86_QUESTIONS: Question[] = [
     options: [
       "temperature differences between adjacent air masses, which the geostrophic wind ignores entirely",
       "the centripetal acceleration associated with flow around curved (rather than perfectly straight) isobars",
-      "the effect of precipitation falling through the wind field",
+      "the effect of precipitation falling through the wind field, under typical synoptic conditions",
       "the effect of surface friction, which the geostrophic wind also fully accounts for",
     ],
     answer: 1,

@@ -24,7 +24,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "An 'improved climb' takeoff technique, used when a takeoff is limited by obstacle clearance rather than by runway length, generally involves",
     options: [
-      "delaying rotation well beyond VR in every case, regardless of whether excess runway length is actually available.",
+      "delaying rotation well beyond VR in every case, regardless of whether excess runway length is actually available, since the improved climb technique is defined as depending solely on a later rotation point deliberately chosen by the crew, rather than on any increase in the V1, VR, or V2 speed margin achieved through extra runway.",
       "reducing takeoff thrust below the certified minimum in order to shorten the takeoff roll, the opposite of the technique's actual purpose.",
       "using the extra runway length available (beyond the minimum required) to accelerate to a higher V1/VR/V2 speed than the runway-limited minimum, which improves the resulting climb gradient and obstacle clearance margin, at the cost of using more of the available runway.",
       "applying full flap deflection in every case, regardless of the aircraft type's normal takeoff flap setting or the specific obstacle environment.",
@@ -58,7 +58,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     options: [
       "first applying a heated de-icing fluid (often Type I) to remove existing frost, ice, or snow contamination, followed by a separate application of a colder, unheated anti-icing fluid (such as Type II or IV) to provide ongoing protection until takeoff, whereas a one-step procedure uses a single fluid application to accomplish both functions.",
       "a procedure used exclusively when no contamination is present on the aircraft at all, with de-icing fluid never actually applied in either step.",
-      "applying the identical fluid twice in immediate succession with no change in fluid type between the two applications, and no distinction in purpose between them.",
+      "applying the identical fluid twice in immediate succession with no change in fluid type between the two applications, and no distinction in purpose between them, since a two-step procedure is defined under this scheme as simply repeating the same de-icing fluid application a second time for additional assurance, with holdover time then calculated from the moment the second, identical application is completed rather than the first.",
       "applying anti-icing fluid first, followed by de-icing fluid second, the reverse of the actual sequence used in a two-step procedure.",
     ],
     answer: 0,
@@ -89,7 +89,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     q: "Delaying rotation well beyond the scheduled VR during a takeoff roll, as the counterpart risk to over-rotation, generally results in",
     options: [
       "an increased risk of a tail strike, a risk that is actually associated with over-rotation (rotating too aggressively) rather than under-rotation.",
-      "an automatic reduction in the aircraft's takeoff weight, compensating for the delayed rotation.",
+      "an automatic reduction in the aircraft's takeoff weight, compensating for the delayed rotation, since the flight management computer is defined as recalculating and reducing the certified takeoff weight in real time whenever rotation is delayed beyond the scheduled VR.",
       "the aircraft accelerating further along the runway before becoming airborne, unnecessarily consuming additional runway length and, if carried far enough, potentially eroding the margin remaining to a runway-limited stop point or obstacle clearance requirement.",
       "no effect whatsoever on the distance required to become airborne, since rotation timing is considered unrelated to takeoff distance.",
     ],
@@ -104,7 +104,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "For a twin-engine aircraft, a takeoff alternate aerodrome is generally required to be selected such that it can be reached",
     options: [
-      "only when the takeoff alternate is located in a different country from the departure aerodrome.",
+      "only when the takeoff alternate is located in a different country from the departure aerodrome, since the one-engine-inoperative flying-time requirement is defined as applying exclusively to international diversions rather than to any domestic takeoff alternate.",
       "within a specified flying time based on the aircraft's normal, all-engines-operating cruise performance, with no relationship to one-engine-inoperative performance.",
       "at any distance whatsoever, since no performance-based limit applies to takeoff alternate selection under any circumstances.",
       "within a specified flying time (or distance) from the departure aerodrome based on the aircraft's one-engine-inoperative cruise performance, reflecting the scenario of an engine failure shortly after takeoff that requires a prompt return or diversion.",
@@ -138,7 +138,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     options: [
       "climb straight ahead indefinitely on runway heading in every case, regardless of what the published missed approach procedure actually specifies.",
       "follow the published missed approach procedure's lateral and vertical path (course, altitudes, and turns) precisely, unless ATC issues a specific alternate instruction, since the procedure is designed to ensure terrain and obstacle clearance along that specific path.",
-      "descend back toward the missed approach point in every case, rather than climbing away from it.",
+      "descend back toward the missed approach point in every case, rather than climbing away from it, since the published missed approach procedure is defined as always requiring a descent back toward the runway threshold rather than a climb to a safe altitude and obstacle clearance surface.",
       "select any convenient heading and altitude at the crew's discretion, since the published missed approach procedure is considered purely advisory rather than a path to be flown.",
     ],
     answer: 1,
@@ -153,7 +153,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     q: "A runway is generally considered 'wet' (rather than contaminated by standing water) for performance purposes when",
     options: [
       "any amount of precipitation whatsoever has fallen in the preceding 24 hours, regardless of how much water, if any, remains on the surface at the time of the takeoff or landing.",
-      "the runway surface temperature is below freezing, regardless of whether any liquid water is actually present on the surface.",
+      "the runway surface temperature is below freezing, regardless of whether any liquid water is actually present on the surface, since a wet runway classification is defined by surface temperature alone rather than by the presence or depth of any actual moisture.",
       "the surface is covered by visible moisture or a depth of water up to a specified small threshold (commonly around 3 mm), beyond which the runway is instead considered contaminated by standing water and subject to more conservative performance data.",
       "the runway has been recently cleared of snow, regardless of whether any residual moisture remains on the surface.",
     ],
@@ -170,7 +170,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     options: [
       "reducing engine thrust below the certified takeoff thrust setting, a description that actually applies to a reduced/flex thrust takeoff rather than a reduced flap takeoff.",
       "increasing flap deflection beyond the normal takeoff setting in every case, the opposite of what a reduced flap setting actually means.",
-      "eliminating the use of flaps entirely on every takeoff, regardless of aircraft type, runway length, or obstacle environment.",
+      "eliminating the use of flaps entirely on every takeoff, regardless of aircraft type, runway length, or obstacle environment, since a reduced flap takeoff is defined as using no flap deflection at all rather than a smaller deflection than the normal takeoff setting, and is therefore expected to always shorten rather than lengthen the resulting takeoff roll.",
       "selecting a smaller flap deflection than the normally used takeoff setting (where performance permits), which can improve climb gradient (useful where obstacles are a limiting factor) or reduce airframe noise, at the cost of requiring a longer takeoff roll than the standard flap setting would.",
     ],
     answer: 3,
@@ -187,7 +187,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
       "reduced from its dry-runway value when the runway is wet or contaminated, reflecting the reduced directional control margin available with degraded braking and cornering friction under those conditions.",
       "a value that applies only to landing, with no equivalent crosswind limitation applicable to takeoff.",
       "increased from its dry-runway value when the runway is wet or contaminated, the opposite of the actual relationship.",
-      "entirely unaffected by runway surface condition, applying identically whether the runway is dry, wet, or contaminated.",
+      "entirely unaffected by runway surface condition, applying identically whether the runway is dry, wet, or contaminated, since the demonstrated crosswind component is defined as a fixed aerodynamic limit rather than one tied in any way to available tire friction.",
     ],
     answer: 0,
     explain:
@@ -203,7 +203,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
       "it has no operational benefit whatsoever and is recommended purely as an arbitrary company preference with no safety rationale.",
       "it allows the crew to confirm engine parameters are normal and symmetric before the takeoff roll begins, and avoids the aircraft surging forward asymmetrically or unpredictably while thrust is still increasing and directional control authority may be more limited.",
       "it is required specifically to reduce engine wear, with no relationship to directional control or engine parameter verification.",
-      "it eliminates the need for the crew to monitor engine instruments at any point during the subsequent takeoff roll.",
+      "it eliminates the need for the crew to monitor engine instruments at any point during the subsequent takeoff roll, since a stabilized start is defined as a full substitute for continued engine parameter monitoring for the remainder of the takeoff roll and initial climb once brakes have been released.",
     ],
     answer: 1,
     explain:
@@ -217,7 +217,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     q: "A flap (or slat) load relief system, fitted to some aircraft, is designed to",
     options: [
       "automatically extend the flaps fully whenever airspeed drops below the aircraft's stalling speed, regardless of the flap lever's selected position.",
-      "control landing gear retraction based on flap position, a function unrelated to flap structural load protection.",
+      "control landing gear retraction based on flap position, a function unrelated to flap structural load protection, since a load relief system is defined as being wired into the landing gear retraction logic rather than into the flap or slat drive system itself.",
       "automatically and partially retract the flaps (or slats) if airspeed increases beyond a specified limit with flaps extended, protecting the flap structure from aerodynamic loads that could otherwise exceed its design limits.",
       "lock the flaps in a fixed position immediately after takeoff, preventing any further flap movement for the remainder of the flight.",
     ],
@@ -232,7 +232,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "As part of the pre-takeoff sequence, cross-checking the aircraft's heading indication (or compass) against the runway's published magnetic heading before commencing the takeoff roll is intended primarily to",
     options: [
-      "confirm that ATC has issued a takeoff clearance, a function unrelated to heading or runway verification.",
+      "confirm that ATC has issued a takeoff clearance, a function unrelated to heading or runway verification, since the heading cross-check is defined as an electronic clearance confirmation step performed independently of any comparison against the runway's published heading.",
       "calculate the aircraft's takeoff weight, a function unrelated to heading or runway alignment.",
       "verify the aircraft's current fuel quantity, a function unrelated to heading or runway alignment.",
       "help detect and prevent a takeoff being commenced from the wrong runway, or from the correct runway but with a significant heading indicator error, either of which could otherwise go unnoticed until well into the takeoff roll or after becoming airborne.",
@@ -267,7 +267,7 @@ export const CANADA_TC_ATPL_BATCH_68_QUESTIONS: Question[] = [
       "a tailwind and a headwind of equal magnitude always have precisely equal and opposite effects on landing distance, with no disproportionate relationship between the two.",
       "landing distance is strongly related to the square of the aircraft's groundspeed at touchdown, so a given tailwind component (which increases groundspeed relative to a no-wind case) increases the required distance by a larger margin than the same headwind component (which decreases groundspeed) reduces it.",
       "landing distance depends solely on indicated airspeed at touchdown, making groundspeed, and therefore wind component, entirely irrelevant to the required distance.",
-      "landing distance actually decreases with a tailwind component and increases with a headwind component, the reverse of the true relationship.",
+      "landing distance actually decreases with a tailwind component and increases with a headwind component, the reverse of the true relationship, since groundspeed at touchdown is defined in this context as varying inversely with the wind component rather than directly with it in the way kinetic energy considerations would actually predict.",
     ],
     answer: 1,
     explain:

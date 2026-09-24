@@ -29,9 +29,9 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "An aircraft's Zero Fuel Weight (ZFW) is best described as",
     options: [
-      "the same value as maximum take-off weight, simply calculated without fuel included in either case.",
-      "the aircraft's weight after landing with all fuel reserves burned to zero.",
-      "a performance-limited weight that varies with pressure altitude and temperature, unrelated to structural limits.",
+      "the same value as maximum take-off weight, simply calculated without any usable fuel included in either case at all.",
+      "the aircraft's weight immediately after landing with all fuel reserves fully burned down to zero indicated quantity on the fuel gauges.",
+      "a performance-limited weight that varies with pressure altitude, temperature, and runway length, unrelated to any structural limits.",
       "the maximum weight of the aircraft, its payload, and all its equipment, excluding usable fuel -- a structural limit distinct from maximum take-off weight.",
     ],
     answer: 3,
@@ -45,10 +45,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A Critical Point (CP), or Equal Time Point (ETP), along a route is the point at which",
     options: [
-      "the time required to continue to the destination (or a suitable aerodrome ahead) equals the time required to turn back to a suitable aerodrome behind, based on the relevant groundspeeds.",
-      "the aircraft reaches its planned top of descent, regardless of any consideration of a diversion.",
-      "fuel on board first drops below the planned final reserve fuel quantity.",
-      "the aircraft is exactly halfway along the route by distance, regardless of wind or groundspeed.",
+      "the time required to continue to the destination equals the time required to turn back to a suitable aerodrome behind, based on the relevant groundspeeds.",
+      "the aircraft reaches its planned top of descent point, regardless of any consideration of a possible diversion or turn-back option.",
+      "fuel remaining on board first drops below the planned final reserve fuel quantity required for the flight.",
+      "the aircraft is exactly halfway along the route by track distance only, regardless of the wind encountered aloft or the actual groundspeed achieved en route.",
     ],
     answer: 0,
     explain:
@@ -61,10 +61,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "For a two-engine aircraft used in overwater or remote-area operational planning, the engine-out critical point differs from the all-engines-operating critical point because",
     options: [
-      "the two critical points are always identical, since engine status has no effect on a critical point calculation.",
-      "the aircraft's cruise speed (and therefore its groundspeed toward each direction) is different with an engine inoperative, shifting the point where continuing and turning back take equal time.",
-      "the engine-out critical point applies only to single-engine aircraft, and has no meaning for two-engine aircraft.",
-      "the engine-out critical point is always located at the aircraft's departure aerodrome, regardless of route.",
+      "the two critical points are always exactly identical, since engine status is said to have absolutely no effect on the calculation at all.",
+      "the aircraft's cruise speed differs with an engine inoperative, shifting the point where continuing on and turning back take equal time.",
+      "the engine-out critical point applies only to single-engine aircraft, and is said to have no meaning at all for two-engine aircraft.",
+      "the engine-out critical point is always located exactly at the aircraft's departure aerodrome, regardless of the route flown.",
     ],
     answer: 1,
     explain:
@@ -77,10 +77,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "NOTAMs (Notices to Airmen) are used to distribute information that",
     options: [
-      "applies only to military aerodromes, and never to civilian airports or airspace.",
-      "is permanent in nature and is never later incorporated into a published chart or the Canada Flight Supplement.",
+      "applies only to military aerodromes and airspace, and never to civilian airports of any kind.",
+      "is permanent in nature and is said to never later be incorporated into a published chart or the Canada Flight Supplement.",
       "is time-critical and would not be adequately conveyed through the normal aeronautical publication cycle before it becomes relevant.",
-      "concerns only routine, non-safety-related administrative matters.",
+      "concerns only routine, non-safety-related administrative matters of no operational significance whatsoever to a flight crew.",
     ],
     answer: 2,
     explain:
@@ -93,9 +93,9 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The Canada Flight Supplement (CFS) is best described as",
     options: [
-      "a graphical chart product used for plotting a great-circle route across a chart projection.",
-      "a publication containing only IFR approach procedures, with no VFR-relevant content.",
-      "a real-time, in-flight weather reporting service equivalent to ATIS.",
+      "a graphical chart product used mainly for plotting a great-circle route across a chart projection.",
+      "a publication containing only IFR approach procedures, with no VFR-relevant content at all included.",
+      "a real-time, in-flight weather reporting service functionally equivalent to ATIS at every towered aerodrome across the country.",
       "a directory-style publication listing detailed aerodrome, communication, and navigation aid information for Canadian aerodromes.",
     ],
     answer: 3,
@@ -110,9 +110,9 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     q: "In a computerized flight plan, the abbreviation 'ZFW' in a fuel summary table refers to",
     options: [
       "Zero Fuel Weight, the same structural weight figure used in aircraft loading, cross-referenced here for fuel planning purposes.",
-      "an abbreviation unrelated to weight, standing instead for 'zone flight weather.'",
-      "the fuel remaining once the aircraft reaches its filed alternate.",
-      "the total zone fuel burned on the flight's final leg only.",
+      "an abbreviation entirely unrelated to weight, standing instead for the informal term 'zone flight weather.'",
+      "the fuel remaining on board once the aircraft actually reaches its filed alternate aerodrome, after landing.",
+      "the total zone fuel burned on the flight's very final leg only, excluding all previous legs of the journey entirely from the total.",
     ],
     answer: 0,
     explain:
@@ -127,8 +127,8 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     options: [
       "the flight plan already provides an exact value for every possible condition, making interpolation unnecessary in all cases.",
       "the actual planned condition falls between two values given in the source data, and a reasonably accurate intermediate value is needed.",
-      "only whole-number altitudes are ever used in flight planning, eliminating any need to interpolate.",
-      "interpolation is never an acceptable technique in flight planning, regardless of the data available.",
+      "only whole-number altitudes are ever used in flight planning, entirely eliminating any need to interpolate at all.",
+      "interpolation is never an acceptable technique in flight planning at all, regardless of the data available from the operator or manufacturer.",
     ],
     answer: 1,
     explain:
@@ -141,10 +141,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The use of preferred routes within the Canadian domestic route structure is intended primarily to",
     options: [
-      "apply only to VFR flights, with IFR flights unaffected by preferred routing.",
-      "prohibit any pilot-requested routing that differs from the preferred route, with no exceptions permitted.",
+      "apply only to VFR flights operating below controlled airspace, with IFR flights entirely unaffected by any preferred routing considerations at all times.",
+      "prohibit any pilot-requested routing that differs from the preferred route, with absolutely no exceptions permitted at all.",
       "help manage traffic flow efficiently between high-density city pairs, by publishing routings ATC expects to be used absent a specific reason to deviate.",
-      "replace the need for a flight plan to be filed at all, for flights using a preferred route.",
+      "replace the need for a flight plan to be filed at all, for any flight using a published preferred route.",
     ],
     answer: 2,
     explain:
@@ -157,10 +157,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "The North Atlantic (NAT) Organized Track System publishes a set of tracks that",
     options: [
-      "apply only to eastbound flights, with westbound flights using an entirely unpublished, ad hoc routing system.",
-      "are used exclusively by military aircraft, with civilian traffic following a separate, unrelated system.",
-      "are permanently fixed and never change from day to day, regardless of wind conditions.",
-      "are determined daily based on the forecast winds aloft, to give aircraft crossing the North Atlantic an efficient routing while ATC maintains required separation.",
+      "apply only to eastbound flights across the ocean, with westbound flights instead using an entirely unpublished, ad hoc routing system.",
+      "are used exclusively by military aircraft on training missions, with all civilian traffic following a completely separate, unrelated system.",
+      "are permanently fixed tracks that never change from day to day at all, regardless of the prevailing wind conditions found aloft on any given day of any calendar year.",
+      "are determined daily from the forecast winds aloft, giving aircraft crossing the North Atlantic an efficient routing while ATC maintains required separation.",
     ],
     answer: 3,
     explain:
@@ -173,10 +173,10 @@ export const CANADA_TC_ATPL_BATCH_09_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Operating in oceanic or polar airspace with little or no radar or ADS-B surveillance coverage generally requires",
     options: [
-      "stricter adherence to navigation performance standards and specific contingency procedures, since ATC has reduced ability to independently monitor and correct the aircraft's position.",
-      "no special procedures at all, since oceanic airspace is treated identically to a radar-served domestic en route sector.",
-      "relying exclusively on VHF communication, since HF and satellite communication are not used in oceanic airspace.",
-      "abandoning IFR separation standards entirely in favour of unrestricted, uncontrolled flight.",
+      "stricter adherence to navigation performance standards and contingency procedures, since ATC has less ability to directly monitor the aircraft's position.",
+      "no special procedures at all, since oceanic airspace is treated in this view as being identical to a radar-served domestic en route sector in every respect.",
+      "relying exclusively on VHF communication, since HF and satellite communication are said to never be used in oceanic airspace.",
+      "abandoning IFR separation standards entirely in favour of completely unrestricted, fully uncontrolled flight operations at any altitude.",
     ],
     answer: 0,
     explain:

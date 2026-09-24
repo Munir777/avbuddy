@@ -23,8 +23,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     options: [
       "a large increase in fuel burn for no change in cruise speed at all, since LRC and MRC always correspond to the identical Mach number for a given weight and altitude.",
       "a reduction in fuel burn below true MRC for a slower cruise speed, since LRC is defined as the speed that burns the least possible fuel regardless of trip time.",
-      "a small increase in fuel burn (typically on the order of one percent above true MRC) for a somewhat higher cruise speed and shorter flight time, since MRC sits at the very peak of the specific-range curve where speed is highly sensitive to small errors.",
-      "no difference whatsoever from MRC, since the two terms describe the same cruise schedule under different names.",
+      "a small increase in fuel burn, about one percent above true MRC, for a somewhat higher cruise speed and shorter flight time, since MRC sits at the peak of the specific-range curve where speed is highly sensitive to small errors.",
+      "no difference whatsoever from MRC, since the two terms describe the same cruise schedule under different names, despite the two schedules actually being defined by distinct specific-range targets along the cruise performance curve for a given weight and altitude.",
     ],
     answer: 2,
     explain:
@@ -53,8 +53,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "In flight-plan distance and time calculations, 'air distance' (the distance flown relative to the air mass) differs from 'ground distance' (the distance flown relative to the ground) because",
     options: [
-      "wind causes the two to diverge: a tailwind makes ground distance covered, for a given air distance flown, greater than the air distance, while a headwind makes it less, since ground distance reflects the effect of wind on the aircraft's progress over the earth's surface.",
-      "air distance is always greater than ground distance regardless of wind direction or strength.",
+      "wind causes the two to diverge: a tailwind makes ground distance greater than air distance flown, and a headwind makes it less, since ground distance reflects wind's effect on progress over the earth's surface.",
+      "air distance is always greater than ground distance regardless of wind direction or strength, a claim that ignores how a tailwind covering more ground per unit of airspeed flown can just as easily make ground distance the larger of the two figures.",
       "the two terms are simply different names for the identical quantity and never diverge under any wind condition.",
       "ground distance is calculated only for VFR flights, while air distance applies only to IFR flights, making the two inapplicable to the same flight.",
     ],
@@ -85,10 +85,10 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Estimated Off-Block Time (EOBT), a field entered on a filed flight plan, refers to",
     options: [
-      "the estimated time the aircraft will land at the destination aerodrome.",
-      "the estimated time fuel loading will be completed prior to passenger boarding.",
-      "the time at which the aircraft is estimated to begin moving under its own power for the purpose of departure (commencing taxi from its parking position), which ATS uses in flight plan processing and, if significantly exceeded without an update, may treat as a trigger to query or cancel the plan.",
-      "the estimated time the flight plan is filed with the flight service station.",
+      "the estimated time the aircraft will land at the destination aerodrome, a separate figure normally derived from the estimated elapsed time rather than the off-block time itself.",
+      "the estimated time fuel loading will be completed prior to passenger boarding, a scheduling detail not captured in any dedicated field within the standard flight plan format itself, unlike EOBT, which does have such a field.",
+      "the time the aircraft is estimated to begin taxiing from its parking position for departure, used by ATS in flight plan processing and, if significantly exceeded, as a trigger to query the plan.",
+      "the estimated time the flight plan is filed with the flight service station, which is recorded separately from the aircraft's actual movement for departure.",
     ],
     answer: 2,
     explain:
@@ -101,10 +101,10 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "For an Extended Diversion Time Operation (EDTO/ETOPS), the 'critical fuel scenario' used in fuel planning generally assumes",
     options: [
-      "only a single, isolated system failure with no combination of simultaneous failures considered at any point.",
-      "no failure at all -- EDTO critical fuel is calculated purely from normal all-engines-operating cruise fuel flow.",
-      "a failure occurring only at the departure aerodrome, since en route failures are not part of EDTO fuel planning.",
-      "a combined failure case at the most critical point along the route -- typically an engine failure together with a cabin depressurization -- requiring a diversion to the nearest suitable alternate at the resulting reduced altitude and speed, with the required fuel reserves intact on arrival.",
+      "only a single, isolated system failure with no combination of simultaneous failures considered at any point, a simplification that would understate the fuel burn of the more demanding combined-failure diversion case actually used.",
+      "no failure at all -- EDTO critical fuel is calculated purely from normal all-engines-operating cruise fuel flow, which would leave no fuel margin for the reduced-altitude diversion an actual failure would require.",
+      "a failure occurring only at the departure aerodrome, since en route failures are not part of EDTO fuel planning, even though the whole purpose of EDTO planning is to cover the en route segments farthest from a suitable diversion aerodrome.",
+      "a combined failure case at the most critical route point -- typically an engine failure with a cabin depressurization -- requiring diversion to the nearest alternate at reduced altitude, with required reserves intact on arrival.",
     ],
     answer: 3,
     explain:
@@ -117,10 +117,10 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Compared to the IFR alternate aerodrome weather minima table generally applicable to aeroplanes, IFR alternate minima published or authorized specifically for helicopter operations",
     options: [
-      "may reflect lower achievable ceiling and visibility values, consistent with the lower approach minima and different obstacle/approach-procedure design criteria that can apply to helicopter-specific instrument procedures.",
+      "may reflect lower ceiling and visibility values, consistent with the lower approach minima and different obstacle/procedure design criteria that can apply to helicopter-specific instrument procedures.",
       "apply only to VFR helicopter operations and have no bearing on IFR flight planning at all.",
       "are always numerically identical to the aeroplane table, since no separate helicopter-specific minima exist under the CARs.",
-      "are always higher (more restrictive) than the aeroplane table in every case, with no exceptions.",
+      "are always higher (more restrictive) than the aeroplane table in every case, with no exceptions, a blanket claim inconsistent with how helicopter-specific approach design criteria can in fact permit lower published minima than the aeroplane table allows.",
     ],
     answer: 0,
     explain:
@@ -134,8 +134,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     q: "A cargo loading sequence (or loading schedule), prepared as part of weight and balance planning for a cargo flight, is used primarily to",
     options: [
       "replace the load manifest entirely, since a loading sequence and a load manifest serve the identical regulatory purpose.",
-      "specify the order and compartment placement in which cargo items are loaded and secured so that the aircraft's centre of gravity remains within limits throughout the loading process and for the resulting final load, not only once loading is complete.",
-      "record only the total cargo weight carried, with no reference to compartment location or loading order.",
+      "specify the order and compartment placement in which cargo items are loaded and secured so that centre of gravity remains within limits throughout loading, not only once it is complete.",
+      "record only the total cargo weight carried, with no reference to compartment location or loading order, an omission that would leave the aircraft's intermediate centre of gravity positions during the loading process entirely unchecked and unverified.",
       "apply exclusively to passenger baggage, with no application to freighter or belly cargo operations.",
     ],
     answer: 1,
@@ -165,10 +165,10 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "In search-and-rescue planning for an overdue aircraft, the 'circle of uncertainty' drawn around a computed datum point generally reflects",
     options: [
-      "a fixed, unchanging radius applied identically regardless of elapsed time or aircraft type.",
+      "a fixed, unchanging radius applied identically regardless of elapsed time or aircraft type, a simplification inconsistent with how the circle is actually sized around accumulated drift and elapsed time since the last position.",
       "the range of the aircraft's onboard weather radar, used to identify areas of poor visibility for the search.",
       "the distance between the departure and destination aerodromes, unrelated to the aircraft's actual reported position.",
-      "the possible navigational error and drift accumulated over the elapsed time since the aircraft's last known position or reported estimate, used to size the initial search area around the most probable location.",
+      "the possible navigational error and drift accumulated since the aircraft's last known position or reported estimate, used to size the initial search area around the most probable location.",
     ],
     answer: 3,
     explain:
@@ -197,8 +197,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Compared to a domestic Canadian flight plan, an ICAO-format international flight plan generally",
     options: [
-      "is only ever filed verbally by radio, never in written or electronic form.",
-      "requires additional standardized fields and coding (such as equipment and capability indicators, and specific item numbering) to ensure the plan is intelligible and usable by air traffic services units in other countries along or at the destination of the route.",
+      "is only ever filed verbally by radio, never in written or electronic form, despite written and electronic filing being the routine, and generally preferred, method used for an ICAO-format international flight plan in practice.",
+      "requires additional standardized fields and coding, such as equipment and capability indicators, to ensure the plan is intelligible and usable by air traffic services units in other countries along the route.",
       "requires strictly less information than a domestic flight plan, since international flights are assumed to carry all necessary equipment by default.",
       "is identical in every field and format to a domestic Canadian flight plan, with no additional requirements at all.",
     ],
@@ -214,8 +214,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     q: "An aircraft's Maximum Zero Fuel Weight (MZFW), as a certificated structural limit, represents",
     options: [
       "a purely advisory figure with no certificated structural basis, left entirely to each operator's discretion.",
-      "the maximum weight at which the aircraft may land, regardless of how much fuel remains on board.",
-      "the greatest weight the aircraft's structure is approved to carry excluding usable fuel, set to limit the bending loads on the wing that would otherwise result from a heavy fuselage payload with insufficient fuel weight in the wings to relieve them.",
+      "the maximum weight at which the aircraft may land, regardless of how much fuel remains on board, a description that actually applies to Maximum Landing Weight, a separate certificated limit distinct from the zero-fuel structural limit.",
+      "the greatest weight the aircraft's structure is approved to carry excluding usable fuel, set to limit wing bending loads that a heavy fuselage payload would cause without enough fuel weight in the wings to relieve them.",
       "the maximum weight at which the aircraft may take off, including all fuel loaded for the flight.",
     ],
     answer: 2,
@@ -230,9 +230,9 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     q: "Periodic reweighing of an aircraft (or an equivalent method of updating its recorded empty weight and centre of gravity data) is required primarily because",
     options: [
       "aircraft weight never changes after original certification, making reweighing a purely optional administrative exercise.",
-      "the fuel quantity indicating system requires reweighing to remain calibrated.",
+      "the fuel quantity indicating system requires reweighing to remain calibrated, a claim that confuses fuel gauge calibration, a separate maintenance task entirely, with the empty-weight and CG documentation that reweighing is actually meant to keep current.",
       "reweighing is required only after every single flight, regardless of any modification or repair history.",
-      "an aircraft's actual empty weight and CG can drift over time from accumulated repairs, modifications, paint, cleaning, and general wear, and load calculations based on stale figures could otherwise understate the true weight or misplace the true CG.",
+      "an aircraft's actual empty weight and CG can drift over time from accumulated repairs, modifications, paint, and general wear, and load calculations based on stale figures could otherwise understate weight or misplace CG.",
     ],
     answer: 3,
     explain:
@@ -262,8 +262,8 @@ export const CANADA_TC_ATPL_BATCH_59_QUESTIONS: Question[] = [
     q: "'Block fuel,' as a total figure appearing in a flight plan's fuel summary, refers to",
     options: [
       "a single component of the fuel load distinct from and carried in addition to taxi, trip, and reserve fuel.",
-      "the total quantity of fuel on board at engine start or pushback, representing the sum of all individual fuel components (taxi, trip, contingency, alternate, final reserve, and any additional or discretionary fuel).",
-      "only the fuel remaining on board at engine shutdown after landing.",
+      "the total quantity of fuel on board at engine start or pushback, representing the sum of every individual component -- taxi, trip, contingency, alternate, final reserve, and any discretionary fuel.",
+      "only the fuel remaining on board at engine shutdown after landing, a leftover figure unrelated to the total quantity loaded at the start of the flight that block fuel is actually meant to represent.",
       "a term used exclusively for VFR flights, with no equivalent concept for IFR flight planning.",
     ],
     answer: 1,

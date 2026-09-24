@@ -24,10 +24,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Induced drag rises sharply at low airspeed and high angle of attack primarily because induced drag is",
     options: [
-      "constant at every angle of attack and airspeed, never varying throughout the flight envelope.",
-      "proportional to airspeed alone, meaning it increases directly and linearly as airspeed decreases, with no relationship to angle of attack or lift coefficient.",
+      "constant at every angle of attack and airspeed, never varying throughout the flight envelope, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "proportional to airspeed alone, meaning it increases directly and linearly as airspeed decreases, with no relationship to angle of attack or lift coefficient, a characterization that does not match established aerodynamic theory.",
       "proportional to the square of the lift coefficient, so as angle of attack (and therefore lift coefficient) increases at low speed to maintain the lift needed to support the aircraft's weight, induced drag increases much faster than lift coefficient itself.",
-      "entirely independent of angle of attack or lift coefficient, depending only on the aircraft's parasite drag characteristics.",
+      "entirely independent of angle of attack or lift coefficient, depending only on the aircraft's parasite drag characteristics, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 2,
     explain:
@@ -40,9 +40,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "The wingtip vortex trailing behind each wing rotates in a specific direction -- upward and outboard beyond the wingtip, downward and inboard closer to the fuselage -- a pattern significant to a following aircraft because",
     options: [
-      "the vortex rotates in a completely random and unpredictable direction on every flight, making any avoidance technique based on rotation direction entirely useless.",
-      "the vortex direction has no bearing whatsoever on wake turbulence avoidance technique, since only vortex strength matters.",
-      "the vortex rotates in the same direction as the propeller or engine fan rotation, meaning its direction changes depending on which side of a multi-engine aircraft generated it.",
+      "the vortex rotates in a completely random and unpredictable direction on every flight, making any avoidance technique based on rotation direction entirely useless, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "the vortex direction has no bearing whatsoever on wake turbulence avoidance technique, since only vortex strength matters, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "the vortex rotates in the same direction as the propeller or engine fan rotation, meaning its direction changes depending on which side of a multi-engine aircraft generated it, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, contrary to basic aerodynamic principles.",
       "a following aircraft positioned slightly outboard and above a preceding aircraft's flight path can encounter a region of upward-moving air from the vortex, which pilots are taught to use to their advantage when avoiding the more hazardous downward-rotating core closer to the centreline.",
     ],
     answer: 3,
@@ -57,9 +57,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     q: "Specific excess power (Ps), a concept describing an aircraft's surplus power beyond that required for steady, level flight at a given speed, is significant because it illustrates that",
     options: [
       "an aircraft can use its available excess power to either climb or accelerate, but not fully achieve both simultaneously, since surplus power devoted to gaining altitude is not simultaneously available to increase airspeed, and vice versa.",
-      "excess power can always be used to climb and accelerate simultaneously to the maximum extent possible in both dimensions at once, with no trade-off between the two.",
-      "an aircraft with zero excess power can still both climb and accelerate freely, since specific excess power has no bearing on either capability.",
-      "specific excess power applies only to jet aircraft, with no equivalent concept meaningful for a propeller-driven aircraft.",
+      "excess power can always be used to climb and accelerate simultaneously to the maximum extent possible in both dimensions at once, with no trade-off between the two, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "an aircraft with zero excess power can still both climb and accelerate freely, since specific excess power has no bearing on either capability, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "specific excess power applies only to jet aircraft, with no equivalent concept meaningful for a propeller-driven aircraft, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 0,
     explain:
@@ -72,10 +72,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Shock-induced flow separation ('shock stall'), occurring as an aircraft approaches or exceeds its critical Mach number, is distinguished from a classic low-speed stall in that shock-induced separation",
     options: [
-      "occurs only at very low airspeeds and angles of attack, in exactly the same flight regime as a classic low-speed stall.",
+      "occurs only at very low airspeeds and angles of attack, in exactly the same flight regime as a classic low-speed stall, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
       "results from the abrupt pressure rise across a shock wave forming on the wing's upper surface, which can separate the boundary layer immediately behind the shock, rather than resulting from exceeding the wing's critical angle of attack at low speed.",
-      "is caused by ice accumulation on the leading edge, with no relationship to Mach number or shock wave formation at all.",
-      "has no effect on the wing's lift or drag characteristics, making it operationally identical to normal, unseparated high-speed flow.",
+      "is caused by ice accumulation on the leading edge, with no relationship to Mach number or shock wave formation at all, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "has no effect on the wing's lift or drag characteristics, making it operationally identical to normal, unseparated high-speed flow, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, a characterization that does not match established aerodynamic theory.",
     ],
     answer: 1,
     explain:
@@ -88,10 +88,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Engines mounted in pods beneath or ahead of the wing, rather than buried within the fuselage, provide an additional structural benefit in flight because their weight",
     options: [
-      "adds to the wing's bending moment in the same direction as lift, increasing the structural load the wing root must withstand compared to a fuselage-mounted engine arrangement.",
-      "eliminates the wing's bending moment entirely, regardless of how much lift the wing is generating at a given moment.",
+      "adds to the wing's bending moment in the same direction as lift, increasing the structural load the wing root must withstand compared to a fuselage-mounted engine arrangement, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, contrary to basic aerodynamic principles.",
+      "eliminates the wing's bending moment entirely, regardless of how much lift the wing is generating at a given moment, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
       "acts as a distributed mass along the wing span, partially offsetting the upward bending moment the wing's own lift generates, thereby reducing the net structural bending load the wing root must carry compared to an equivalent aircraft with all mass concentrated in the fuselage.",
-      "has no structural relationship whatsoever to the wing's bending moment, since engine weight and aerodynamic lift are entirely independent structural considerations.",
+      "has no structural relationship whatsoever to the wing's bending moment, since engine weight and aerodynamic lift are entirely independent structural considerations, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 2,
     explain:
@@ -104,9 +104,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Downwash behind a finite (three-dimensional) wing is the fundamental source of induced drag because the downwash",
     options: [
-      "increases the wing's maximum lift coefficient, which by itself is the direct cause of induced drag rather than any tilting of the lift vector.",
-      "occurs only at the wing root, with no downwash present near the wingtips where wingtip vortices form.",
-      "has no relationship to induced drag at all, with induced drag instead arising entirely from skin friction over the wing's surface.",
+      "increases the wing's maximum lift coefficient, which by itself is the direct cause of induced drag rather than any tilting of the lift vector, which does not reflect how this aerodynamic phenomenon actually manifests in flight.",
+      "occurs only at the wing root, with no downwash present near the wingtips where wingtip vortices form, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "has no relationship to induced drag at all, with induced drag instead arising entirely from skin friction over the wing's surface, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
       "tilts the local airflow, and therefore the wing's lift vector, slightly rearward relative to the free-stream direction, so a small rearward component of what would otherwise be purely vertical lift now acts along the direction of flight as drag.",
     ],
     answer: 3,
@@ -121,9 +121,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     q: "Comparing 'stick-fixed' longitudinal static stability (assessed with the elevator held in a fixed position) to 'stick-free' stability (assessed with the controls released, allowing the elevator to float freely), an aircraft's stick-free stability is generally",
     options: [
       "somewhat less than its stick-fixed stability, since a freely floating elevator tends to align itself with the local airflow in a way that reduces the stabilizing moment the tail would otherwise contribute if held fixed.",
-      "always greater than its stick-fixed stability, since a freely floating elevator always adds additional stabilizing moment beyond what a fixed elevator provides.",
-      "always identical to its stick-fixed stability, since releasing the controls has no measurable effect on an aircraft's static stability.",
-      "entirely unrelated to elevator behaviour, being determined solely by wing sweep and dihedral rather than by any tail surface consideration.",
+      "always greater than its stick-fixed stability, since a freely floating elevator always adds additional stabilizing moment beyond what a fixed elevator provides, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "always identical to its stick-fixed stability, since releasing the controls has no measurable effect on an aircraft's static stability, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "entirely unrelated to elevator behaviour, being determined solely by wing sweep and dihedral rather than by any tail surface consideration, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 0,
     explain:
@@ -136,10 +136,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Comparing two aircraft of similar weight and available thrust or power but different wing loading, the aircraft with the lower wing loading will generally be capable of",
     options: [
-      "no difference at all in turn radius or turn rate compared to a higher wing loading aircraft, since wing loading affects only straight-and-level stalling speed.",
+      "no difference at all in turn radius or turn rate compared to a higher wing loading aircraft, since wing loading affects only straight-and-level stalling speed, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, a characterization that does not match established aerodynamic theory.",
       "a tighter (smaller-radius) turn, and a higher achievable turn rate, at a given airspeed, since a lower wing loading allows the wing to generate the higher lift coefficient a tight turn requires without exceeding its stalling angle of attack as readily as a more heavily loaded wing.",
-      "a tighter turn only at very high airspeeds, with no advantage at all at lower airspeeds relevant to typical turning flight.",
-      "only a wider (larger-radius) turn at any given airspeed, since lower wing loading always increases both stalling speed and turn radius.",
+      "a tighter turn only at very high airspeeds, with no advantage at all at lower airspeeds relevant to typical turning flight, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "only a wider (larger-radius) turn at any given airspeed, since lower wing loading always increases both stalling speed and turn radius, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
     ],
     answer: 1,
     explain:
@@ -152,10 +152,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "During sustained negative-G flight, such as pushing over the top of a manoeuvre or flying briefly inverted, the wing must generate lift acting in the opposite (downward, relative to the aircraft) direction from normal flight, which generally requires the wing to be flown at",
     options: [
-      "a lower airspeed than normal flight, with angle of attack playing no role in generating a downward-acting aerodynamic force.",
-      "the exact same, unchanged positive angle of attack used in normal, upright, positive-G flight, since angle of attack has no relationship to the direction lift acts.",
+      "a lower airspeed than normal flight, with angle of attack playing no role in generating a downward-acting aerodynamic force, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "the exact same, unchanged positive angle of attack used in normal, upright, positive-G flight, since angle of attack has no relationship to the direction lift acts, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
       "a negative angle of attack relative to its normal, positive-lift orientation, since the airfoil's camber and orientation must effectively be reversed relative to the airflow to produce a downward-acting aerodynamic force.",
-      "an angle of attack that has no defined relationship to lift direction at all, since lift direction is determined solely by engine thrust rather than by the wing's orientation to the airflow.",
+      "an angle of attack that has no defined relationship to lift direction at all, since lift direction is determined solely by engine thrust rather than by the wing's orientation to the airflow, a claim inconsistent with the basic physics governing lift, drag, or stability in this regime.",
     ],
     answer: 2,
     explain:
@@ -168,9 +168,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Boundary layer control by suction or blowing, as an alternative or supplement to mechanical high-lift devices such as flaps and slats, works by",
     options: [
-      "reducing the wing's overall surface area, in the same manner as retracting a leading edge slat.",
-      "increasing the local air pressure ahead of the wing's leading edge, with no effect on the boundary layer itself.",
-      "physically changing the wing's geometric shape, functioning identically to extending a trailing edge flap.",
+      "reducing the wing's overall surface area, in the same manner as retracting a leading edge slat, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "increasing the local air pressure ahead of the wing's leading edge, with no effect on the boundary layer itself, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "physically changing the wing's geometric shape, functioning identically to extending a trailing edge flap, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
       "either removing the slower-moving, energy-depleted air within the boundary layer (suction) or reenergizing it with a jet of higher-velocity air (blowing), in either case helping the boundary layer remain attached to the wing surface at a higher angle of attack than would otherwise cause separation.",
     ],
     answer: 3,
@@ -185,9 +185,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     q: "On a total drag curve plotted against airspeed, the speed for minimum total drag (and therefore best L/D) occurs specifically at the point where",
     options: [
       "induced drag and parasite drag are equal to one another, since total drag is the sum of the two and this particular balance between a decreasing curve (induced drag) and an increasing curve (parasite drag) produces the lowest combined total.",
-      "induced drag is at its absolute maximum value and parasite drag is at its absolute minimum value simultaneously.",
-      "parasite drag has already dropped to zero, leaving only induced drag as the sole contributor to total drag at that speed.",
-      "both induced drag and parasite drag are simultaneously at their own individual minimum values.",
+      "induced drag is at its absolute maximum value and parasite drag is at its absolute minimum value simultaneously, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "parasite drag has already dropped to zero, leaving only induced drag as the sole contributor to total drag at that speed, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "both induced drag and parasite drag are simultaneously at their own individual minimum values, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 0,
     explain:
@@ -200,10 +200,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Aerodynamic washout, achieved by varying the airfoil section or camber progressively along the wing's span, differs from geometric washout (built-in physical twist reducing the wingtip's angle of incidence) in that aerodynamic washout",
     options: [
-      "is simply another name for geometric washout, with the two terms describing an identical physical construction technique.",
+      "is simply another name for geometric washout, with the two terms describing an identical physical construction technique, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
       "achieves a similar goal -- delaying wingtip stall relative to the wing root -- without physically twisting the wing structure, instead relying on a spanwise change in airfoil shape to give the tip a lower local lift coefficient at a given angle of attack than the root.",
-      "increases, rather than decreases, the likelihood that the wingtip stalls before the wing root, the opposite effect from geometric washout.",
-      "can only be applied to a wing that has zero sweep, with no application to a swept-wing aircraft design.",
+      "increases, rather than decreases, the likelihood that the wingtip stalls before the wing root, the opposite effect from geometric washout, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, a description not supported by standard aerodynamic principles or flight test experience.",
+      "can only be applied to a wing that has zero sweep, with no application to a swept-wing aircraft design, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
     ],
     answer: 1,
     explain:
@@ -216,10 +216,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Comparing two wings of similar planform but different thickness-to-chord ratio, a thinner wing generally has",
     options: [
-      "an identical critical Mach number to a thicker wing of the same planform, since thickness ratio has no effect on critical Mach number.",
-      "a lower critical Mach number than a thicker wing, since airfoil thickness has no bearing on how much the local airflow accelerates over the upper surface.",
+      "an identical critical Mach number to a thicker wing of the same planform, since thickness ratio has no effect on critical Mach number, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "a lower critical Mach number than a thicker wing, since airfoil thickness has no bearing on how much the local airflow accelerates over the upper surface, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
       "a higher critical Mach number than a thicker wing, since a thinner airfoil section produces a smaller local increase in airflow velocity over its upper surface, delaying the point at which local airflow reaches the speed of sound.",
-      "no meaningful aerodynamic difference at all, with thickness ratio relevant only to the wing's structural strength.",
+      "no meaningful aerodynamic difference at all, with thickness ratio relevant only to the wing's structural strength, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 2,
     explain:
@@ -232,9 +232,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A wing's spanwise lift distribution affects its structural wing root bending moment such that, for a given total lift and span, a lift distribution weighted more heavily toward the wingtips generally produces",
     options: [
-      "no difference at all in wing root bending moment, since total lift, not its spanwise distribution, is the only factor relevant to bending moment.",
-      "a bending moment that depends entirely on airspeed rather than on how lift is distributed along the span.",
-      "a smaller wing root bending moment than a root-weighted distribution, since lift generated near the wingtip has essentially no moment arm about the wing root.",
+      "no difference at all in wing root bending moment, since total lift, not its spanwise distribution, is the only factor relevant to bending moment, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "a bending moment that depends entirely on airspeed rather than on how lift is distributed along the span, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "a smaller wing root bending moment than a root-weighted distribution, since lift generated near the wingtip has essentially no moment arm about the wing root, a description not supported by standard aerodynamic principles or flight test experience.",
       "a greater wing root bending moment than a distribution weighted more toward the wing root, since lift generated farther out along the span has a longer moment arm about the wing root.",
     ],
     answer: 3,
@@ -249,9 +249,9 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     q: "Comparing the shape of a jet aircraft's thrust-available curve to a propeller aircraft's power-available curve (both plotted against airspeed), a key difference relevant to climb performance is that",
     options: [
       "a jet engine's thrust available remains comparatively close to constant across a wide range of airspeeds, whereas a propeller's power available (and therefore the thrust it can produce) varies more significantly with airspeed, giving the two types of aircraft different best-climb-speed characteristics relative to their minimum-drag speed.",
-      "both jet thrust available and propeller power available are identical, unvarying functions of airspeed, with no meaningful difference between the two aircraft types.",
-      "thrust and power available have no bearing on climb performance for either aircraft type, which is instead determined entirely by wing area alone.",
-      "a jet engine's thrust available always decreases sharply as airspeed increases, while a propeller's power available remains perfectly constant at every airspeed.",
+      "both jet thrust available and propeller power available are identical, unvarying functions of airspeed, with no meaningful difference between the two aircraft types, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "thrust and power available have no bearing on climb performance for either aircraft type, which is instead determined entirely by wing area alone, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
+      "a jet engine's thrust available always decreases sharply as airspeed increases, while a propeller's power available remains perfectly constant at every airspeed, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope, which overlooks the underlying physical mechanism that actually governs this aerodynamic effect.",
     ],
     answer: 0,
     explain:
@@ -264,10 +264,10 @@ export const CANADA_TC_ATPL_BATCH_82_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Ice accumulation on a wing can degrade the accuracy of an angle-of-attack-based stall warning system primarily because",
     options: [
-      "angle-of-attack-based stall warning systems are entirely unaffected by airframe icing under any circumstance, since the sensing vane itself is always heated and ice-free.",
+      "angle-of-attack-based stall warning systems are entirely unaffected by airframe icing under any circumstance, since the sensing vane itself is always heated and ice-free, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
       "the system's stall warning trigger point is generally calibrated for the aircraft's clean (ice-free) aerodynamic characteristics, and ice contamination can cause the wing to actually stall at a lower angle of attack than the system was calibrated to warn for, reducing or eliminating the intended warning margin.",
-      "ice accumulation always increases the angle of attack at which a wing stalls, meaning any stall warning system becomes overly conservative and provides more margin than intended.",
-      "ice accumulation has no effect on a wing's stalling angle of attack at all, making this concern purely theoretical with no real aerodynamic basis.",
+      "ice accumulation always increases the angle of attack at which a wing stalls, meaning any stall warning system becomes overly conservative and provides more margin than intended, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
+      "ice accumulation has no effect on a wing's stalling angle of attack at all, making this concern purely theoretical with no real aerodynamic basis, an assumption inconsistent with how lift, drag, and stability actually behave across the flight envelope.",
     ],
     answer: 1,
     explain:

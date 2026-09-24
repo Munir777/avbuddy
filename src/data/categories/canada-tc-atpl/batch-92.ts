@@ -9,10 +9,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Dutch roll, a combined yawing and rolling oscillation, tends to be more pronounced on swept-wing aircraft, particularly at high altitude, primarily because",
     options: [
-      "Dutch roll only occurs on unswept, low-altitude aircraft, and swept wings actually eliminate the tendency",
-      "high altitude has no relationship whatsoever to any dynamic stability mode",
-      "wing sweep contributes additional dihedral effect (a strong roll response to sideslip), and this effect, combined with reduced aerodynamic damping at high altitude's lower air density, can result in a weakly damped oscillation",
-      "swept wings eliminate directional stability entirely, making the aircraft impossible to control",
+      "Dutch roll only occurs on unswept, low-altitude aircraft, and swept wings actually eliminate the tendency entirely regardless of altitude, airspeed, weight, or aircraft configuration flown at any time",
+      "high altitude has no relationship whatsoever to any dynamic stability mode, including Dutch roll, spiral, or phugoid oscillations",
+      "wing sweep contributes additional dihedral effect (a strong roll response to sideslip) that, combined with reduced aerodynamic damping at high altitude, can result in a weakly damped oscillation",
+      "swept wings eliminate directional stability entirely, making the aircraft impossible to control under any flight condition whatsoever",
     ],
     answer: 2,
     explain:
@@ -25,10 +25,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "For a given vertical gust encountered in flight, an aircraft with higher wing loading (weight divided by wing area) generally experiences",
     options: [
-      "an identical load factor increase regardless of wing loading, since wing loading has no relationship to gust response",
-      "a much larger increase in load factor than a lower-wing-loading aircraft under identical conditions",
-      "no change in load factor at all, since gusts only affect aircraft below a certain wing loading threshold",
-      "a smaller increase in load factor than an aircraft with lower wing loading encountering the same gust, since the gust-induced change in angle of attack produces a smaller proportional lift change relative to the aircraft's weight",
+      "an identical load factor increase regardless of wing loading, since wing loading is considered irrelevant to how an aircraft structurally responds to any vertical gust encountered in flight",
+      "a much larger increase in load factor than a lower-wing-loading aircraft under identical gust, airspeed, and altitude conditions",
+      "no change in load factor at all, since gusts are understood to only affect aircraft operating below a specific, formally defined wing loading threshold",
+      "a smaller increase in load factor than a lower-wing-loading aircraft in the same gust, since the angle-of-attack change yields a smaller proportional lift change relative to weight",
     ],
     answer: 3,
     explain:
@@ -57,10 +57,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A wing's boundary layer transition point -- where the boundary layer changes from laminar to turbulent flow -- generally moves forward (occurs earlier along the chord) when",
     options: [
-      "the wing surface becomes smoother, or angle of attack is reduced",
+      "the wing surface becomes smoother, or angle of attack is reduced, since both factors are understood to consistently and reliably delay the onset of transition further along the chord",
       "the wing surface becomes rougher or contaminated (such as by ice, frost, or insect residue), or angle of attack is increased, since both promote earlier transition",
-      "the wing is flown at a lower Reynolds number than any other flight condition, without exception",
-      "airspeed decreases to zero, since transition only occurs with the aircraft stationary",
+      "the wing is flown at a lower Reynolds number than any other flight condition ever encountered in normal operation, without exception",
+      "airspeed decreases to zero, since boundary layer transition is understood to only occur with the aircraft stationary on the ground",
     ],
     answer: 1,
     explain:
@@ -73,10 +73,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A propeller's efficiency (the ratio of useful thrust power produced to the shaft power delivered by the engine) generally",
     options: [
-      "has no relationship to airspeed, depending only on engine horsepower",
-      "is always highest at zero airspeed (static conditions), declining continuously as airspeed increases",
+      "has no relationship to airspeed at all, depending only on the engine's rated horsepower output regardless of propeller design",
+      "is always highest at zero airspeed (static conditions), declining continuously and without exception as airspeed increases toward the aircraft's maximum design and structural limit speed",
       "varies across the speed range, typically peaking at a specific combination of airspeed and rotational speed (advance ratio), and declining at speeds well above or below that point",
-      "remains completely constant across the entire range of airspeeds and rpm at which the propeller might operate",
+      "remains completely constant across the entire range of airspeeds and rpm at which the propeller might ever operate in service",
     ],
     answer: 2,
     explain:
@@ -89,10 +89,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A fixed-pitch propeller, compared to a constant-speed propeller, generally represents a performance compromise because its single, unchangeable blade angle",
     options: [
-      "is only usable for takeoff, with a separate propeller required for all other phases of flight",
-      "can be adjusted in flight by the pilot to suit the current flight condition, just like a constant-speed propeller",
-      "provides identical efficiency to a constant-speed propeller under every possible flight condition",
-      "can be optimized for only one flight condition (such as climb or cruise), providing somewhat reduced efficiency in other flight regimes, whereas a constant-speed propeller can adjust its blade angle to remain closer to optimal across a wider range of conditions",
+      "is only usable for takeoff, with an entirely separate and distinct propeller required for all other phases of flight",
+      "can be adjusted in flight by the pilot to suit the current flight condition, just like a constant-speed propeller, with no efficiency penalty whatsoever in climb, cruise, or descent at any power setting or flight altitude",
+      "provides identical efficiency to a constant-speed propeller under every possible flight condition and power setting",
+      "can be optimized for only one flight condition, such as climb or cruise, providing reduced efficiency elsewhere, whereas a constant-speed propeller can adjust blade angle to stay closer to optimal across a wider range",
     ],
     answer: 3,
     explain:
@@ -121,10 +121,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Sweeping a wing back helps delay the onset of compressibility effects primarily because, for a swept wing, the airflow's effect on the wing's pressure distribution and boundary layer depends mainly on",
     options: [
-      "the full free-stream velocity, identical to an unswept wing, with sweep providing no aerodynamic benefit",
+      "the full free-stream velocity, identical in every single respect to an unswept wing, with sweep providing no aerodynamic benefit whatsoever to the wing's pressure distribution or compressibility behavior at all times",
       "only the velocity component perpendicular to the wing's leading edge, which is lower than the aircraft's full flight speed, effectively reducing the wing's local (normal) Mach number for a given flight Mach number",
-      "only the velocity component parallel to the leading edge, ignoring the perpendicular component entirely",
-      "the aircraft's altitude alone, independent of any velocity component",
+      "only the velocity component parallel to the leading edge, ignoring the perpendicular component entirely in every calculation performed",
+      "the aircraft's altitude alone, independent of any velocity component or the aircraft's flight Mach number",
     ],
     answer: 1,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A wing alone, without a horizontal stabilizer, generally contributes a destabilizing effect to an aircraft's longitudinal static stability because, as angle of attack increases, a cambered wing's centre of pressure tends to move forward, producing an additional nose-up pitching moment; the horizontal stabilizer is generally sized and positioned so that",
     options: [
-      "it reinforces this destabilizing tendency, making the aircraft even less stable",
-      "it eliminates the need for the wing to produce any lift at all",
+      "it reinforces this destabilizing tendency at every angle of attack throughout the flight envelope, making the complete aircraft even less longitudinally stable than the wing alone would be",
+      "it eliminates the need for the wing to produce any lift at all during any phase of flight",
       "its own stabilizing contribution is sufficient to overcome the wing's destabilizing tendency, giving the complete aircraft an overall positive (stable) pitching moment response",
-      "it has no effect whatsoever on the aircraft's overall longitudinal stability",
+      "it has no effect whatsoever on the aircraft's overall longitudinal stability or trimmed flight condition",
     ],
     answer: 2,
     explain:
@@ -153,10 +153,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "'Longitudinal dihedral,' referring to the horizontal stabilizer being set at a lower angle of incidence than the wing, contributes to an aircraft's longitudinal static stability because",
     options: [
-      "it is required only for aircraft with a T-tail configuration",
-      "it eliminates the need for any horizontal stabilizer trim adjustment",
-      "it has no aerodynamic significance and is purely a manufacturing convenience",
-      "as the aircraft's angle of attack changes, this incidence difference helps ensure the tail experiences a stabilizing change in its own angle of attack and lift, tending to restore the aircraft toward its trimmed condition",
+      "it is required only for aircraft with a T-tail configuration and no other tail arrangement",
+      "it eliminates the need for any horizontal stabilizer trim adjustment throughout the entire flight envelope",
+      "it has no aerodynamic significance whatsoever and is understood to be purely a manufacturing and assembly convenience with no bearing on the aircraft's stability or trim characteristics at all",
+      "as the aircraft's angle of attack changes, this incidence difference helps ensure the tail experiences a stabilizing lift change, restoring the aircraft toward its trimmed condition",
     ],
     answer: 3,
     explain:
@@ -170,9 +170,9 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     q: "Rudder deflection can produce a secondary rolling moment, distinct from the yaw-induced adverse roll caused by aileron deflection, primarily because",
     options: [
       "rudder-induced yaw produces a sideslip, and the aircraft's dihedral effect then generates a rolling moment in response to that sideslip",
-      "the rudder is mechanically linked directly to the ailerons on all aircraft",
-      "rudder deflection has no aerodynamic effect on roll under any circumstance",
-      "the rudder is located on the wing rather than the vertical fin",
+      "the rudder is mechanically linked directly to the ailerons on all aircraft types regardless of manufacturer, design philosophy, or control system architecture",
+      "rudder deflection has no aerodynamic effect on roll under any circumstance or at any airspeed",
+      "the rudder is located on the wing rather than the vertical fin on all transport category aircraft",
     ],
     answer: 0,
     explain:
@@ -201,10 +201,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A cambered airfoil, unlike a symmetric airfoil, generally produces lift at an angle of attack of zero degrees, meaning that a cambered airfoil's",
     options: [
-      "lift is entirely independent of angle of attack under all conditions",
-      "zero-lift angle of attack is always a large positive value, identical for every cambered airfoil regardless of camber",
+      "lift is entirely independent of angle of attack under all conditions for any airfoil shape",
+      "zero-lift angle of attack is always a large positive value, identical for every cambered airfoil regardless of the amount of camber or airfoil thickness distribution used",
       "zero-lift angle of attack is a small negative value, whereas a symmetric airfoil's zero-lift angle of attack is exactly zero",
-      "critical angle of attack is always exactly zero degrees",
+      "critical angle of attack is always exactly zero degrees for any cambered airfoil",
     ],
     answer: 2,
     explain:
@@ -217,10 +217,10 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Angle of attack is distinguished from pitch attitude in that angle of attack is measured relative to",
     options: [
-      "magnetic north, with no reference to either the airflow or the horizon",
-      "the true horizon, identical to how pitch attitude is measured",
-      "the aircraft's landing gear position, with no aerodynamic significance",
-      "the relative airflow (the direction of the oncoming air relative to the wing chord), which can differ significantly from pitch attitude (measured relative to the true horizon), such as during a steep climb at a relatively low angle of attack or a descent at a comparatively high angle of attack",
+      "magnetic north, which has no defined relationship whatsoever to either the direction of the oncoming airflow over the wing or the aircraft's pitch attitude relative to the true horizon in any flight condition or phase of flight at all times",
+      "the true horizon, identical in every respect to how pitch attitude itself is measured by the attitude indicator",
+      "the aircraft's landing gear position, which has no aerodynamic significance to the wing's actual angle relative to the oncoming airflow or the pilot's control inputs",
+      "the relative airflow (the oncoming air's direction relative to the wing chord), which can differ from pitch attitude (measured relative to the horizon), such as a steep climb at low angle of attack or a descent at high angle of attack",
     ],
     answer: 3,
     explain:
@@ -234,9 +234,9 @@ export const CANADA_TC_ATPL_BATCH_92_QUESTIONS: Question[] = [
     q: "Induced drag, unlike parasite drag, is fundamentally a consequence of a wing producing lift, meaning that",
     options: [
       "induced drag theoretically approaches zero as lift approaches zero (such as in a zero-lift dive), whereas parasite drag remains present even when the wing produces no lift at all",
-      "induced drag remains constant regardless of how much lift the wing is producing",
-      "parasite drag is also zero whenever lift is zero, just like induced drag",
-      "induced drag and parasite drag are always numerically equal to one another at every airspeed",
+      "induced drag remains constant regardless of how much lift the wing is producing, at any airspeed, altitude, weight, or angle of attack flown throughout the entire flight envelope encountered",
+      "parasite drag is also zero whenever lift is zero, just like induced drag, at any airspeed or altitude flown",
+      "induced drag and parasite drag are always numerically equal to one another at every airspeed and altitude combination flown",
     ],
     answer: 0,
     explain:

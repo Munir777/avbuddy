@@ -13,8 +13,8 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "An aircraft's 'air position' at a given time is",
     options: [
-      "a position fixed by radio navigation aids or GPS, independent of any dead reckoning calculation.",
-      "the position at which the aircraft would land if all engines failed at that instant.",
+      "a position fixed by radio navigation aids or GPS, independent of any dead reckoning calculation or wind assumption.",
+      "the position at which the aircraft would land if all engines failed at that instant, assuming best glide speed and no wind drift.",
       "the position obtained by applying only heading and true airspeed from the last known position, with no allowance made for wind.",
       "the position obtained by applying heading, true airspeed, and forecast or estimated wind from the last known position.",
     ],
@@ -29,9 +29,9 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A great circle route between two points on the Earth is significant in navigation because it represents",
     options: [
-      "a track of constant true course throughout its length.",
-      "the shortest distance only when the two points share the same latitude.",
-      "a track that crosses every meridian at the same angle.",
+      "a track of constant true course maintained along its entire length.",
+      "the shortest distance between the two points only when they happen to share the same latitude.",
+      "a track that crosses every meridian it encounters at the same angle.",
       "the shortest distance between the two points, along the surface of the Earth.",
     ],
     answer: 3,
@@ -45,10 +45,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A rhumb line differs from a great circle in that a rhumb line",
     options: [
-      "crosses every meridian at the same angle, giving a constant true course, but is generally a longer route than the corresponding great circle.",
-      "crosses meridians at continuously changing angles, exactly like a great circle does.",
-      "always represents the shortest distance between two points, unlike the great circle.",
-      "can only be flown at or near the equator, and is undefined elsewhere.",
+      "crosses every meridian at the same angle, giving a constant true course, but is a longer route than the great circle.",
+      "crosses meridians at continuously changing angles throughout its entire length, exactly like a great circle track supposedly does.",
+      "always represents the shortest distance between any two points on the Earth, unlike the great circle track.",
+      "can only be flown at or very near the equator, and is considered undefined at all other latitudes.",
     ],
     answer: 0,
     explain:
@@ -61,10 +61,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The Lambert Conformal Conic projection is widely used for aeronautical en route charts primarily because",
     options: [
-      "it is used exclusively for charts covering polar regions, where other projections fail entirely.",
-      "it is conformal (preserving shape and angle locally) and a great circle route approximates a straight line over the chart's normal range of use.",
-      "it preserves distance exactly everywhere on the chart, with no scale variation at any latitude.",
-      "it is the only projection in which a rhumb line appears as a straight line.",
+      "it is used exclusively for charts covering polar regions near the poles, where all other common map projections are said to fail entirely and become unusable.",
+      "it is conformal (preserving shape and angle locally), and a great circle route approximates a straight line over the chart's usual range of use.",
+      "it preserves distance exactly everywhere on the chart, with absolutely no scale variation at any latitude or longitude.",
+      "it is the only map projection in which a rhumb line of constant true course appears as a perfectly straight line.",
     ],
     answer: 1,
     explain:
@@ -77,10 +77,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A Transverse Mercator projection differs from a standard (equatorial) Mercator projection in that the Transverse Mercator's projection cylinder is",
     options: [
-      "not a cylindrical projection at all, but a conic projection tangent to a chosen parallel.",
-      "tangent along the equator, identical to a standard Mercator projection in every respect.",
-      "tangent along a chosen meridian rather than along the equator, giving better scale accuracy near that meridian, including at higher latitudes.",
-      "used only for charts of equatorial regions, and is unusable at higher latitudes.",
+      "not a cylindrical projection at all, but instead a conic projection that is tangent to a single chosen parallel of latitude rather than a meridian.",
+      "tangent along the equator only, making it identical to a standard Mercator projection in every respect and every use.",
+      "tangent along a chosen meridian rather than the equator, giving better scale accuracy near that meridian, even at higher latitudes.",
+      "used only for charts depicting equatorial regions, and considered unusable at any higher latitude at all.",
     ],
     answer: 2,
     explain:
@@ -93,10 +93,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Compared to an en route low altitude chart, an en route high altitude chart is generally",
     options: [
-      "identical in content, differing only in its printed colour scheme.",
-      "used exclusively for VFR navigation above 18,000 ft.",
-      "more detailed than a low altitude chart, showing every ground feature visible from high altitude.",
-      "less cluttered with ground detail and depicts jet routes/high-level airways for IFR operations in the higher-altitude structure, at a different chart scale.",
+      "identical in content to a low altitude chart in every respect, differing only in its printed colour scheme and cover page layout.",
+      "used exclusively for VFR navigation above 18,000 feet, with no application to IFR flight planning at all.",
+      "more detailed than a low altitude chart, showing every ground feature that would be visible from high altitude.",
+      "less cluttered with ground detail, depicting jet routes and high-level airways for IFR use, at a different chart scale.",
     ],
     answer: 3,
     explain:
@@ -110,9 +110,9 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     q: "Navigation databases loaded into an FMS or GPS, containing waypoints, airways, and procedures, are updated",
     options: [
       "on a fixed cycle (the AIRAC cycle, currently every 28 days) so the data used for navigation reflects current published information.",
-      "continuously in real time over an internet connection while the aircraft is in flight.",
-      "only once, at the time of aircraft delivery, and are never revised afterward.",
-      "only when the aircraft manufacturer issues a service bulletin, with no fixed schedule.",
+      "continuously in real time over an onboard satellite data connection while the aircraft is in flight.",
+      "only once, at the time of aircraft delivery, and are never revised or updated at any point afterward.",
+      "only when the aircraft manufacturer chooses to issue a service bulletin, with no fixed schedule at all.",
     ],
     answer: 0,
     explain:
@@ -125,10 +125,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Time zones are related to longitude such that, moving from one time zone to the next, each 15 degrees of longitude generally corresponds to",
     options: [
-      "a fifteen-minute difference in local mean time.",
-      "a one-hour difference in local mean time.",
-      "no fixed relationship at all, since time zones are set purely by political boundary rather than longitude.",
-      "a four-hour difference in local mean time.",
+      "a fifteen-minute difference in local mean time between one zone and the next.",
+      "a one-hour difference in local mean time between one time zone and the next.",
+      "no fixed relationship at all, since time zones follow political boundaries, not longitude.",
+      "a four-hour difference in local mean time between adjacent time zones.",
     ],
     answer: 1,
     explain:
@@ -141,10 +141,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "When calculating true heading from a planned true course, the wind correction angle is applied",
     options: [
-      "after groundspeed has already been calculated, and has no effect on groundspeed itself.",
-      "away from the wind, offsetting the nose in the same direction the wind is blowing toward.",
-      "into the wind, offsetting the nose toward the direction the wind is coming from, so the resulting ground track matches the intended course.",
-      "only when the wind is a direct headwind or tailwind component; crosswinds require no heading correction.",
+      "after groundspeed has already been calculated and finalized, and has no effect on groundspeed itself once applied.",
+      "away from the wind, offsetting the nose in the same direction that the wind happens to be blowing toward at the time.",
+      "into the wind, offsetting the nose toward the direction the wind is coming from, so the ground track matches the intended course.",
+      "only when the wind is a direct headwind or tailwind component, since crosswinds are commonly assumed to require no heading correction whatsoever.",
     ],
     answer: 2,
     explain:
@@ -157,10 +157,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Estimated Time En route (ETE) for a given leg is calculated as",
     options: [
-      "a fixed value that does not change regardless of the wind encountered.",
-      "the leg distance divided by true airspeed, regardless of wind.",
-      "the leg distance multiplied by groundspeed.",
-      "the leg distance divided by the groundspeed for that leg.",
+      "a fixed value that does not change at all, regardless of the wind actually encountered en route.",
+      "the leg distance divided by true airspeed alone, regardless of any wind encountered en route.",
+      "the leg distance multiplied directly by the groundspeed calculated for that particular leg.",
+      "the leg distance divided by the groundspeed actually achieved for that particular leg.",
     ],
     answer: 3,
     explain:
@@ -173,10 +173,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Wind velocity (direction and speed) can be determined in flight by",
     options: [
-      "comparing the aircraft's planned heading and true airspeed vector against its actual observed track and groundspeed, and solving for the wind vector that accounts for the difference.",
-      "reference to the altimeter setting alone, since pressure and wind are directly and simply related at any one point.",
-      "reading the outside air temperature and applying a fixed conversion table to derive wind speed.",
-      "measuring engine fuel flow, since fuel flow varies directly and predictably with headwind or tailwind component.",
+      "comparing the planned heading/TAS vector to the actual observed track and groundspeed, then solving for the wind vector accounting for the difference.",
+      "reference to the altimeter setting alone, since pressure and wind are assumed to be directly and simply related at any single point.",
+      "reading the outside air temperature and applying a fixed, published conversion table to derive an equivalent wind speed.",
+      "measuring engine fuel flow rate in cruise, since fuel flow is assumed to vary directly and predictably with the headwind or tailwind component being encountered.",
     ],
     answer: 0,
     explain:
@@ -189,10 +189,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A position fix using two VOR radials (a 'VOR cross-radial fix') is obtained by",
     options: [
-      "using the difference in signal strength between the two stations to compute a position.",
-      "plotting the radial from each of two VOR stations and taking the aircraft's position as the point where the two radial lines intersect.",
-      "averaging the two stations' geographic coordinates directly, without reference to any radial.",
-      "using the DME distance from a single VOR station alone, with no radial information required.",
+      "using the difference in received signal strength between the two ground stations, rather than their radials, to compute an estimated position.",
+      "plotting the radial from each of two VOR stations and taking the aircraft's position as their point of intersection.",
+      "averaging the two stations' published geographic coordinates directly, without any reference to either station's radial.",
+      "using only the DME distance from a single VOR station, with no radial information required from either station.",
     ],
     answer: 1,
     explain:
@@ -205,10 +205,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A single VOR radial combined with a DME distance from the same (or a co-located) station gives",
     options: [
-      "altitude information only, with no lateral position information at all.",
-      "a fix that is valid only while the aircraft is directly overhead the station.",
-      "a direct two-dimensional position fix, since the radial defines a line and the DME distance defines a specific point along that line.",
-      "only a rough position estimate, requiring at least three separate stations to produce a usable fix.",
+      "altitude information only, providing no lateral or horizontal position information of any kind.",
+      "a fix that is only considered valid while the aircraft is directly overhead the station itself.",
+      "a direct two-dimensional position fix, since the radial defines a line and the DME distance pinpoints a point along it.",
+      "only a rough position estimate at best, typically requiring at least three separate ground stations for a usable fix.",
     ],
     answer: 2,
     explain:
@@ -222,8 +222,8 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     q: "RNAV (area navigation) waypoints allow a route to be flown that",
     options: [
       "must pass directly over a VOR, NDB, or other ground-based navaid at every waypoint, exactly like a conventional airway.",
-      "cannot be entered into or displayed by an FMS, and must be flown by dead reckoning alone.",
-      "is usable only within radar coverage, and becomes invalid the moment radar contact is lost.",
+      "cannot be entered into or displayed by a flight management system or GPS receiver at all, and must instead be flown by dead reckoning alone.",
+      "is usable only within active radar coverage, and becomes entirely invalid the moment radar contact is lost.",
       "connects defined geographic points, which need not be located at, or overflown directly above, a ground-based navigation aid.",
     ],
     answer: 3,
@@ -238,9 +238,9 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     q: "In areas where a magnetic compass becomes unreliable due to weak or erratic magnetic dip (such as near the magnetic poles), pilots typically navigate instead by",
     options: [
       "using a free (unslaved) directional gyro referenced periodically to true or grid north, rather than relying on magnetic heading.",
-      "relying exclusively on ADF bearings, since ADF becomes more accurate as magnetic dip increases.",
-      "increasing reliance on the magnetic compass, since its errors become smaller, not larger, near the magnetic poles.",
-      "disregarding all heading references entirely and navigating by dead reckoning distance alone.",
+      "relying exclusively on ADF bearings for heading guidance, since ADF accuracy is assumed to improve as magnetic dip increases.",
+      "increasing reliance on the magnetic compass instead, since its errors are assumed to become smaller, not larger, near the magnetic poles.",
+      "disregarding all heading references entirely and navigating only by dead reckoning distance, with no directional reference at all.",
     ],
     answer: 0,
     explain:
@@ -253,10 +253,10 @@ export const CANADA_TC_ATPL_BATCH_04_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Maintaining an accurate en route flight log during a flight primarily supports",
     options: [
-      "compliance with a requirement that applies only to VFR flights, never to IFR flights.",
-      "ongoing situational awareness of position, fuel status, and progress against plan, and provides a record useful for search and rescue if the flight becomes overdue.",
-      "a purely historical record with no operational use during the flight itself.",
-      "the aircraft's weight and balance calculation, which must be recalculated at every waypoint.",
+      "compliance with a regulatory requirement that applies only to VFR flights, never to any IFR flight.",
+      "ongoing situational awareness of position, fuel status, and progress against plan, plus a record useful for search and rescue if overdue.",
+      "keeping a purely historical record with no operational use of any kind during the flight itself.",
+      "the aircraft's weight and balance calculation, which must be recalculated at every single waypoint passed.",
     ],
     answer: 1,
     explain:

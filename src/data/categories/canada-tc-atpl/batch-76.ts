@@ -38,7 +38,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     q: "A nocturnal low-level jet -- a band of relatively strong wind forming a few hundred to a couple thousand feet above the surface on a clear, calm night -- develops primarily because",
     options: [
       "it forms only in association with an approaching cold front, with no connection to the diurnal heating and cooling cycle.",
-      "it results from convective thunderstorm outflow and therefore only occurs on nights with active thunderstorm activity nearby.",
+      "it results from convective thunderstorm outflow and therefore only occurs on nights with active thunderstorm activity nearby, a mechanism that does not describe the low-level nocturnal jet at all, since the jet forms from frictional decoupling after sunset rather than from thunderstorm outflow, and it commonly occurs on undisturbed, thunderstorm-free nights.",
       "daytime surface heating continues to intensify after sunset, accelerating surface winds to their maximum speed overnight.",
       "after sunset, surface cooling creates a stable layer that frictionally decouples the air just above it from the surface, allowing that layer to accelerate toward the pressure-gradient-driven wind speed it would have without surface friction, while the air right at the surface remains light and calm.",
     ],
@@ -56,7 +56,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
       "can persist through the day and does not reliably dissipate with daytime solar heating alone, since it depends on the characteristics of the moving air mass rather than the overnight radiational cooling cycle that radiation fog depends on.",
       "is entirely unaffected by wind, in contrast to radiation fog, which requires strong, gusty wind to form.",
       "can only form and exist at night, disappearing automatically the moment the sun rises regardless of any change in the air mass.",
-      "always dissipates within an hour of sunrise, in exactly the same manner as radiation fog.",
+      "always dissipates within an hour of sunrise, in exactly the same manner as radiation fog, a generalization that does not hold for advection fog, which depends on the characteristics of the moving air mass rather than on the overnight radiational cooling process that governs how quickly radiation fog burns off.",
     ],
     answer: 0,
     explain:
@@ -72,7 +72,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
       "clear air with no precipitation at all, distinguishing it from every other cloud type in the stratiform family.",
       "widespread, continuous, often moderate-to-steady precipitation, extensive low ceilings, and, when temperatures are near or below freezing, a prolonged icing hazard as an aircraft climbs or descends through its considerable vertical extent.",
       "isolated, brief, heavy showers, with clear skies typically returning within a few minutes.",
-      "severe turbulence and hail, in the same manner as a mature cumulonimbus cell.",
+      "severe turbulence and hail, in the same manner as a mature cumulonimbus cell, a description that belongs to convective storm cells rather than to the broad, stable stratiform cloud layer that instead produces widespread, steady precipitation and prolonged icing risk over a large vertical extent.",
     ],
     answer: 1,
     explain:
@@ -88,7 +88,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
       "it has no lifting effect at all and is significant only as a source of surface wind direction change, unrelated to cloud or thunderstorm development.",
       "the sea breeze front always suppresses convection entirely, since the cooler marine air permanently stabilizes the atmosphere for the rest of the day.",
       "the front acts as a lifting mechanism, forcing the warmer inland air upward along the boundary, which can initiate or intensify cumulus and, given sufficient instability and moisture, thunderstorm development along or near the front.",
-      "it forms exclusively at night, when no convective activity of any kind is possible regardless of instability.",
+      "it forms exclusively at night, when no convective activity of any kind is possible regardless of instability, a description that has the timing backwards, since a sea breeze front is a daytime phenomenon driven by differential heating between land and water, and it is precisely this daytime lifting that can initiate convection.",
     ],
     answer: 2,
     explain:
@@ -102,7 +102,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     q: "An aircraft flying at a constant indicated altitude, using an altimeter setting obtained before departure, that flies into a region of lower actual atmospheric pressure without updating the altimeter setting will",
     options: [
       "actually be flying at a true altitude higher than indicated, with the altimeter under-reading the aircraft's true height.",
-      "experience no discrepancy at all between indicated and true altitude, since pressure changes en route have no effect on a properly functioning altimeter.",
+      "experience no discrepancy at all between indicated and true altitude, since pressure changes en route have no effect on a properly functioning altimeter, which overlooks how a barometric altimeter actually works, since it remains referenced to the pressure setting last entered and will therefore read inaccurately once the aircraft flies into a region of different actual pressure.",
       "have the discrepancy automatically corrected by the aircraft's transponder, eliminating any risk to terrain clearance.",
       "actually be flying at a true altitude lower than indicated, since the altimeter, still referenced to the higher pressure setting, will over-read compared to the aircraft's true height above mean sea level.",
     ],
@@ -119,7 +119,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     options: [
       "true altitude to be lower than indicated altitude, because colder, denser air compresses the same pressure difference into a shorter vertical distance than the standard atmosphere assumes, an effect of particular concern for terrain and obstacle clearance in cold weather.",
       "no effect on true altitude at all, since temperature has no bearing on the relationship between pressure and altitude once the correct altimeter setting has been entered.",
-      "true altitude to be higher than indicated altitude, since colder air always causes the altimeter to under-read regardless of density effects.",
+      "true altitude to be higher than indicated altitude, since colder air always causes the altimeter to under-read regardless of density effects, which gets the direction of the error backwards, since colder, denser air compresses the same pressure difference into a shorter vertical distance, causing the altimeter to over-read and true altitude to actually be lower than indicated.",
       "the altimeter to become completely unreliable and unusable, rather than simply reading with a predictable cold-temperature error.",
     ],
     answer: 0,
@@ -150,7 +150,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     q: "The frost point, as distinguished from the dew point, is defined as",
     options: [
       "a value used only in marine meteorology, with no application to aviation weather reporting.",
-      "simply another name for the dew point, with no meaningful distinction between the two terms.",
+      "simply another name for the dew point, with no meaningful distinction between the two terms, a simplification that misses the actual distinction, since dew point describes condensation into liquid water while frost point specifically describes the temperature at which vapour deposits directly into ice below freezing.",
       "the temperature to which air must be cooled, at constant pressure and moisture content, for water vapour to change directly into ice (deposition) rather than condensing into liquid water, applicable only when the air is already below freezing.",
       "the temperature at which frost will form regardless of how much moisture is present in the air.",
     ],
@@ -166,7 +166,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     q: "Lake-effect snow, a phenomenon well known downwind of the Great Lakes and other large bodies of water in Canada during the colder months, develops when",
     options: [
       "warm, moist air moves across a frozen lake surface, losing all of its moisture instantly and producing clear skies downwind.",
-      "it occurs only in summer, when lake water temperatures are at their warmest relative to the surrounding land.",
+      "it occurs only in summer, when lake water temperatures are at their warmest relative to the surrounding land, which describes the opposite season, since lake-effect snow actually requires cold air moving across relatively warmer open water, a contrast that is most pronounced in late autumn and early winter before the lake surface freezes.",
       "it is unrelated to the temperature difference between the lake water and the air passing over it, depending instead entirely on the lake's size.",
       "cold, dry air moves across relatively warm open water, picking up heat and moisture from the lake surface, which destabilizes the air and, once it moves back over land, can produce locally heavy and persistent snow showers downwind of the lake.",
     ],
@@ -182,7 +182,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     q: "A blizzard, as a specifically defined severe winter weather warning in Canadian meteorological terminology, generally requires the combination of",
     options: [
       "sustained strong winds (or frequent gusts) of at least a specified minimum speed, falling and/or blowing snow reducing visibility below a specified threshold, and these conditions persisting for a minimum duration, rather than simply any snowfall accompanied by some wind.",
-      "heavy snowfall accumulation exceeding a specified total, with wind and visibility playing no role in the definition.",
+      "heavy snowfall accumulation exceeding a specified total, with wind and visibility playing no role in the definition, a description that omits the criteria the definition is actually built around, which instead specify sustained wind speed, reduced visibility from blowing or falling snow, and a minimum duration rather than any particular snowfall total.",
       "extremely cold temperatures alone, with no requirement for wind or reduced visibility of any kind.",
       "any snowfall at all, regardless of wind speed, visibility, or how briefly the conditions last.",
     ],
@@ -216,7 +216,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
       "affect only the aircraft's radio communication equipment, with no possible effect on any other system.",
       "have no operational significance whatsoever, since only wing and tail icing affects aircraft performance.",
       "degrade or block a specific system's function -- for example, distorting an antenna's radiated pattern or blocking a static port and corrupting airspeed and altitude indications -- even in icing conditions too light to meaningfully affect the aircraft's overall aerodynamic performance.",
-      "always accumulate at a slower rate than wing icing, meaning unprotected surfaces are never at risk before the wings are.",
+      "always accumulate at a slower rate than wing icing, meaning unprotected surfaces are never at risk before the wings are, a generalization that does not hold for small, sensitive components such as antennas and static ports, which can suffer functional icing effects well before the accumulation is significant enough to meaningfully degrade overall wing aerodynamic performance.",
     ],
     answer: 2,
     explain:
@@ -231,7 +231,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     options: [
       "a single, isolated cumulus cell repeatedly splits into identical copies of itself as it drifts downwind.",
       "they form only directly beneath the jet stream core and cannot occur at lower altitudes or in weaker upper winds.",
-      "stratiform cloud is mechanically torn into narrow bands by strong upper-level wind shear, unrelated to any convective process.",
+      "stratiform cloud is mechanically torn into narrow bands by strong upper-level wind shear, unrelated to any convective process, a mechanical description that leaves out the actual convective organization involved, in which rising and sinking thermal bands, aligned by the prevailing low-level wind, produce cloud streets rather than shear alone tearing apart an existing stratiform layer.",
       "convective thermals organize into parallel bands of rising and sinking air, aligned by the prevailing low-level wind, with cloud forming atop the rising bands and clear air persisting over the sinking bands in between.",
     ],
     answer: 3,
@@ -247,7 +247,7 @@ export const CANADA_TC_ATPL_BATCH_76_QUESTIONS: Question[] = [
     options: [
       "the water within such a cloud has already frozen into solid ice crystals, which do not adhere to and accrete on an airframe surface in the same way that supercooled liquid droplets, which freeze only on impact, do.",
       "ice crystals are always warmer than supercooled liquid droplets, preventing any icing risk regardless of cloud composition.",
-      "ice crystal clouds never contain any water at all, in either liquid or solid form.",
+      "ice crystal clouds never contain any water at all, in either liquid or solid form, a description that misstates the cloud's composition entirely, since an ice crystal cloud is by definition composed of frozen water in solid form, which is precisely why it behaves so differently from a supercooled liquid cloud for icing purposes.",
       "aircraft never fly at the altitudes where ice crystal clouds such as cirrus are found, making the distinction operationally irrelevant.",
     ],
     answer: 0,

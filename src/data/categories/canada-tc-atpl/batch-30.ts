@@ -16,7 +16,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Reduced Vertical Separation Minima (RVSM) airspace requires that an operating aircraft",
     options: [
-      "carry no altimeter at all, since RVSM airspace relies exclusively on GNSS-derived altitude rather than barometric altimetry.",
+      "carry no altimeter at all, since RVSM airspace relies exclusively on GNSS-derived altitude rather than barometric altimetry, despite RVSM height-keeping being fundamentally a barometric altimetry standard rather than a satellite-based one.",
       "be limited to VFR operations only, since RVSM applies solely to visual flight rules traffic and has no application to IFR flights.",
       "hold specific altimetry system performance certification and equipment approval, since RVSM relies on tighter vertical separation than standard airspace and therefore demands greater height-keeping accuracy.",
       "maintain wider vertical separation than standard airspace, which is the opposite of what RVSM is actually designed to achieve.",
@@ -34,7 +34,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     options: [
       "ensure every aircraft flies at exactly the same altitude regardless of direction of flight, simplifying air traffic control to a single universal cruising level.",
       "apply solely to aircraft operating under VFR, with IFR traffic specifically exempted from any direction-based cruising altitude assignment.",
-      "assign cruising altitude based on aircraft type rather than direction of flight, with magnetic track playing no role in the rule at all.",
+      "assign cruising altitude based on aircraft type rather than direction of flight, with magnetic track playing no role in the rule at all, despite the rule being entirely built around magnetic track rather than aircraft type.",
       "reduce the likelihood of head-on or converging traffic conflicts between aircraft travelling in roughly opposite directions along the same route, by separating them into different altitude bands by direction of flight.",
     ],
     answer: 3,
@@ -64,7 +64,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A VFR flight itinerary, as distinct from a VFR flight plan, is generally",
     options: [
-      "a document that, once filed, removes any requirement to notify anyone of the flight's completion or cancellation.",
+      "a document that, once filed, removes any requirement to notify anyone of the flight's completion or cancellation, despite an itinerary still requiring the same closure notification a flight plan requires once the flight is complete.",
       "filed with a responsible person (such as an operator's flight following office) rather than with an air traffic services unit, though it serves a broadly similar search-and-rescue alerting purpose.",
       "usable only for IFR flights, with VFR operations specifically prohibited from using a flight itinerary under any circumstances.",
       "identical in every respect to a VFR flight plan, with the two terms being purely interchangeable names for the same document filed with the same recipient.",
@@ -96,7 +96,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "In ICAO fuel planning terminology, 'contingency fuel' is best described as",
     options: [
-      "fuel carried exclusively to cover the taxi and engine start phase, with no relevance to the en route or arrival phase of flight.",
+      "fuel carried exclusively to cover the taxi and engine start phase, with no relevance to the en route or arrival phase of flight, despite contingency fuel being specifically calculated to cover en route wind and routing variability instead of ground operations.",
       "fuel that is functionally identical to final reserve fuel, with the two terms simply describing the same fuel quantity under different names.",
       "an amount that may be planned as zero on every flight regardless of route, weather, or operating conditions, since it is entirely discretionary and never operationally significant.",
       "an amount carried to cover unforeseen factors that could affect fuel consumption to the destination, such as deviations from forecast wind or minor routing changes, distinct from the fixed final reserve fuel carried for use only in a genuine emergency.",
@@ -115,7 +115,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "provide a fixed minimum quantity of fuel remaining on landing at the destination or alternate, reserved for a genuine in-flight fuel emergency rather than for routine operational use.",
       "cover the entire fuel burn from departure to destination, functioning as a synonym for trip fuel rather than as a reserve.",
       "apply only to piston-engine aircraft, with turbine-powered aircraft exempt from any final reserve fuel requirement.",
-      "be used routinely to cover minor headwind variability on every flight, in the same way contingency fuel is used.",
+      "be used routinely to cover minor headwind variability on every flight, in the same way contingency fuel is used, despite final reserve fuel being reserved strictly for a genuine emergency and never routine consumption.",
     ],
     answer: 0,
     explain:
@@ -131,7 +131,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "fuel intended to power ground-based auxiliary equipment after landing, unrelated to any part of the flight itself.",
       "the fuel burned while holding for a planned or anticipated period at a fix or over the destination, calculated separately from trip fuel, contingency fuel, and alternate/diversion fuel.",
       "the same fuel already accounted for in the final reserve fuel figure, making a separate holding fuel entry entirely redundant.",
-      "fuel used exclusively during ground taxi and engine start, unrelated to any airborne holding pattern.",
+      "fuel used exclusively during ground taxi and engine start, unrelated to any airborne holding pattern, despite holding fuel being specifically calculated to cover airborne holding rather than any ground-based fuel burn.",
     ],
     answer: 1,
     explain:
@@ -147,7 +147,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "the point at which the aircraft reaches its cruising altitude, regardless of how far that point is from the destination or missed approach point.",
       "the alternate aerodrome back to the destination aerodrome, effectively reversing the actual direction the diversion fuel is meant to cover.",
       "the missed approach point at the destination (or an equivalent specified point) to the alternate aerodrome, rather than from the destination's parking gate or from the flight's original departure point.",
-      "the aircraft's original departure aerodrome directly to the alternate aerodrome, ignoring the destination entirely.",
+      "the aircraft's original departure aerodrome directly to the alternate aerodrome, ignoring the destination entirely, despite diversion fuel specifically being calculated from the missed approach point at the destination instead.",
     ],
     answer: 2,
     explain:
@@ -177,7 +177,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     q: "A step climb procedure, used during the cruise phase of many long-range flights, involves",
     options: [
       "periodically climbing to a higher cruising altitude as the aircraft burns off fuel and its optimum altitude increases, rather than remaining at a single fixed cruise altitude for the entire flight.",
-      "a procedure used only during the descent phase of flight, with no application to the cruise phase at all.",
+      "a procedure used only during the descent phase of flight, with no application to the cruise phase at all, despite a step climb being, by definition, a cruise-phase technique with no application to the descent phase.",
       "a single, continuous climb from top of climb directly to the flight's final cruising altitude, with no intermediate level-offs of any kind.",
       "descending in stages throughout the cruise phase, rather than climbing, as the flight progresses toward its destination.",
     ],
@@ -194,7 +194,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
     options: [
       "a TAF has no defined validity period at all, remaining valid indefinitely from the moment it is issued until it is manually withdrawn.",
       "the forecast's stated conditions and confidence are only intended to apply within that specific issued time window, so a flight arriving outside it should not rely on that TAF without checking for a more current one.",
-      "a TAF's validity period applies only to the alternate aerodrome forecast, with the destination TAF considered valid indefinitely.",
+      "a TAF's validity period applies only to the alternate aerodrome forecast, with the destination TAF considered valid indefinitely, despite the validity period applying identically to both the destination and alternate forecasts.",
       "a TAF's validity period determines the destination's minimum fuel requirement directly, replacing any other fuel-planning calculation entirely.",
     ],
     answer: 1,
@@ -211,7 +211,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "fuel tankering is prohibited under all circumstances by international regulation, making the practice purely theoretical with no real operational trade-off to consider.",
       "the extra fuel weight improves fuel efficiency on the outbound sector, meaning tankering carries no downside at all.",
       "the extra fuel weight increases the aircraft's burn on the outbound sector, so the potential cost savings must be weighed against that additional fuel consumption (and, potentially, against payload or performance limitations).",
-      "carrying additional fuel has no effect whatsoever on the aircraft's fuel consumption on any sector of the flight.",
+      "carrying additional fuel has no effect whatsoever on the aircraft's fuel consumption on any sector of the flight, despite additional fuel weight being precisely what increases burn and drives the entire tankering trade-off in the first place.",
     ],
     answer: 2,
     explain:
@@ -243,7 +243,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "the accuracy, integrity, and functional capability an aircraft's navigation system must demonstrate and monitor, rather than in terms of which specific ground-based NAVAID equipment must be carried or overflown.",
       "the aircraft's maximum certified altitude alone, with navigation accuracy considered entirely unrelated to PBN route eligibility.",
       "the specific brand and model of ground-based NAVAID equipment that must physically exist along the route, with aircraft equipment playing no role in the requirement.",
-      "the number of passengers carried, with PBN requirements varying by passenger count rather than by navigation system performance.",
+      "the number of passengers carried, with PBN requirements varying by passenger count rather than by navigation system performance, despite PBN being defined entirely around navigation accuracy and monitoring rather than passenger count.",
     ],
     answer: 0,
     explain:
@@ -259,7 +259,7 @@ export const CANADA_TC_ATPL_BATCH_30_QUESTIONS: Question[] = [
       "the fact that only the low-level airway structure permits IFR flight, with the high-level structure restricted exclusively to VFR traffic.",
       "the range of altitudes (vertical airspace) each structure serves, with the high-level structure serving upper cruising altitudes and the low-level structure serving lower altitudes beneath it.",
       "having no meaningful distinction at all, since 'high-level' and 'low-level' are purely alternate names for the identical airspace and altitude range.",
-      "geographic region alone, with altitude playing no role whatsoever in distinguishing the two airway structures.",
+      "geographic region alone, with altitude playing no role whatsoever in distinguishing the two airway structures, despite altitude being precisely the defining characteristic separating the high-level structure from the low-level one.",
     ],
     answer: 1,
     explain:

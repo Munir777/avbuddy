@@ -55,7 +55,7 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
       "the lateral distance between the aircraft's actual position and the intended (defined) track between two waypoints, helping the pilot assess and correct for any lateral deviation.",
       "the difference between true and magnetic track, a heading-reference correction unrelated to the aircraft's actual position relative to its intended route.",
       "the vertical distance between the aircraft's actual altitude and its planned vertical profile, unrelated to any lateral or horizontal navigation consideration.",
-      "the difference between the aircraft's planned and actual arrival time at the next waypoint, a purely temporal rather than lateral-distance measurement.",
+      "the difference between the aircraft's planned and actual arrival time at the next waypoint, a purely temporal rather than lateral-distance measurement of any kind, magnitude, or direction.",
     ],
     answer: 0,
     explain:
@@ -69,9 +69,9 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     q: "A 'fly-by' waypoint, used in RNAV route and procedure design, is distinguished from a 'fly-over' waypoint in that a fly-by waypoint",
     options: [
       "is used exclusively for straight, non-turning route segments, since fly-by waypoints are understood to never be followed by a course change of any kind.",
-      "allows the aircraft to begin a turn before reaching the waypoint, anticipating the turn onto the next leg so as to smoothly intercept the subsequent course, whereas a fly-over waypoint requires the aircraft to fly directly over it before turning.",
+      "allows the aircraft to begin a turn before reaching the waypoint, anticipating the turn onto the next leg, whereas a fly-over waypoint requires the aircraft to fly directly over it before turning.",
       "has no functional difference from a fly-over waypoint, with the two terms used interchangeably in RNAV procedure design regardless of turn anticipation.",
-      "requires the aircraft to fly directly over the waypoint before any turn is initiated, the reverse of the actual fly-by/fly-over distinction.",
+      "requires the aircraft to fly directly over the waypoint before any turn is initiated, the reverse of the actual fly-by/fly-over distinction used consistently throughout RNAV route and procedure design worldwide.",
     ],
     answer: 1,
     explain:
@@ -135,7 +135,7 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
       "relative bearing rate can only be used to determine aircraft heading, with no application to estimating time or distance to the station.",
       "a slowly changing relative bearing generally indicates a longer time remaining to reach the station's abeam position, while a rapidly changing relative bearing indicates less time remaining.",
       "a rapidly changing relative bearing always indicates the aircraft is flying directly away from the station, rather than approaching or passing near it.",
-      "the rate of change of relative bearing has no relationship whatsoever to time remaining, since bearing rate is understood to depend only on aircraft altitude.",
+      "the rate of change of relative bearing has no relationship whatsoever to time remaining, since bearing rate is understood to depend only on aircraft altitude rather than proximity or geometry.",
     ],
     answer: 1,
     explain:
@@ -164,10 +164,10 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "An RNP AR (Authorization Required) approach procedure, as distinguished from a standard RNP approach, generally requires",
     options: [
-      "no additional authorization or equipment whatsoever beyond that needed for any other RNP approach, making the 'Authorization Required' name effectively meaningless.",
+      "no additional authorization or equipment whatsoever beyond that needed for any other RNP approach, making the 'Authorization Required' name effectively meaningless in everyday practice.",
       "the use of ground-based NAVAIDs exclusively, since RNP AR procedures are understood to prohibit satellite-based navigation entirely.",
       "the complete removal of any RNP performance requirement, since RNP AR procedures are, despite their name, understood to have no defined navigation performance standard.",
-      "specific aircraft equipment, crew training, and operator authorization beyond what is needed for a standard RNP approach, reflecting its typically tighter performance requirements and, often, curved path segments.",
+      "specific aircraft equipment, crew training, and operator authorization beyond what is needed for a standard RNP approach, reflecting its typically tighter performance requirements.",
     ],
     answer: 3,
     explain:
@@ -182,7 +182,7 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     options: [
       "some separation is often practically unavoidable, and a defined maximum limit keeps the resulting position error small enough to remain within acceptable navigation accuracy.",
       "the VOR and DME antennas are always mounted at exactly the same physical point with zero separation permitted under any circumstance.",
-      "antenna separation has no effect whatsoever on the accuracy of a combined VOR/DME position fix, making any separation limit an arbitrary, unnecessary restriction.",
+      "antenna separation has no effect whatsoever on the accuracy of a combined VOR/DME position fix, making any published separation limit an arbitrary and unnecessary restriction.",
       "the DME antenna is always located at a different aerodrome entirely from the VOR antenna, rather than being co-located at or near the same site.",
     ],
     answer: 0,
@@ -196,7 +196,7 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "An NDB compass locator, such as a Locator Outer Marker (LOM) or Locator Middle Marker (LMM), is best described as",
     options: [
-      "a purely visual ground marking with no radio transmission capability at all, despite the term 'locator' suggesting a radio navigation function.",
+      "a purely visual ground marking with no radio transmission capability at all, despite the term 'locator' strongly suggesting an actual, functioning radio navigation capability of some kind.",
       "a low-power NDB installed at or near an ILS outer or middle marker position, providing an additional navigation reference to help pilots establish and track the approach course.",
       "a high-power NDB used exclusively for long-range en route navigation, with no association to any specific ILS approach or marker position.",
       "a GNSS-based waypoint rather than an NDB, making the term 'NDB compass locator' a misnomer for what is actually a satellite navigation fix.",
@@ -212,7 +212,7 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "In navigation terminology, 'track,' 'heading,' and 'course' are distinguished in that",
     options: [
-      "heading refers exclusively to the aircraft's path over the ground, while track refers exclusively to the direction the nose is pointed, the reverse of their actual definitions.",
+      "heading refers exclusively to the aircraft's path over the ground, while track refers exclusively to the direction the nose is pointed, the reverse of their actual definitions in aeronautical use.",
       "the three terms are fully interchangeable in every context, with no meaningful distinction drawn between them in aeronautical navigation.",
       "track is the actual path of the aircraft over the ground, heading is the direction the aircraft's nose is pointed, and course generally refers to the intended or planned direction of travel.",
       "course refers only to a vertical flight path, while track and heading refer only to lateral (horizontal) direction, making course a fundamentally different type of measurement.",
@@ -229,9 +229,9 @@ export const CANADA_TC_ATPL_BATCH_51_QUESTIONS: Question[] = [
     q: "Among the GNSS approach service levels used in Performance-Based Navigation, LNAV, LNAV/VNAV, and LPV are distinguished primarily by",
     options: [
       "the type of lateral guidance provided exclusively, since none of the three service levels is understood to involve any vertical guidance component whatsoever.",
-      "the specific ground-based NAVAID used to generate the approach, since all three are understood to rely on VOR or NDB signals rather than satellite-based guidance.",
+      "the specific ground-based NAVAID used to generate the approach, since all three are understood to rely on VOR or NDB signals rather than any satellite-based guidance whatsoever.",
       "the aircraft's cruising altitude during the en route portion of the flight, a parameter unrelated to the design of the actual approach procedure being flown.",
-      "the type and precision of vertical guidance provided (none, barometric VNAV-based, or SBAS-based, respectively), with each offering progressively lower minima where the supporting equipment and infrastructure are available.",
+      "the type and precision of vertical guidance provided (none, barometric VNAV-based, or SBAS-based, respectively), with each offering progressively lower minima.",
     ],
     answer: 3,
     explain:

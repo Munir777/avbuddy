@@ -13,10 +13,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Load factor, expressed in 'g', is defined as",
     options: [
-      "the ratio of thrust to drag at a given moment.",
+      "the ratio of thrust to drag at any given moment in flight.",
       "the aircraft's actual weight, expressed in units of gravitational acceleration.",
-      "the ratio of the total lift being generated to the aircraft's weight.",
-      "the ratio of indicated airspeed to true airspeed.",
+      "the ratio of the total lift being generated to the aircraft's current weight.",
+      "the ratio of indicated airspeed to true airspeed at that moment.",
     ],
     answer: 2,
     explain:
@@ -32,7 +32,7 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
       "stays exactly the same, since stalling speed depends only on weight, not load factor.",
       "decreases, since a higher load factor implies more lift being generated at any speed.",
       "increases in direct proportion to load factor, without any square-root relationship.",
-      "increases, in proportion to the square root of the load factor.",
+      "increases, in proportion to the square root of the applied load factor.",
     ],
     answer: 3,
     explain:
@@ -45,10 +45,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A sudden vertical gust encountered in flight increases load factor primarily because it",
     options: [
-      "momentarily changes the wing's effective angle of attack, increasing lift (and therefore load factor) until the disturbance is damped out.",
-      "directly changes the aircraft's weight for the duration of the gust.",
-      "has no effect on load factor, only on indicated airspeed.",
-      "always reduces load factor, regardless of the gust's direction.",
+      "momentarily changes the wing's effective angle of attack, increasing lift and load factor until the disturbance damps out.",
+      "directly changes the aircraft's actual weight for the brief duration of the gust encounter.",
+      "has no effect on load factor at all, and is assumed to affect only indicated airspeed.",
+      "always reduces load factor, regardless of the gust's actual direction or intensity.",
     ],
     answer: 0,
     explain:
@@ -61,8 +61,8 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Positive static stability means that, following a disturbance from equilibrium, an aircraft",
     options: [
-      "shows no tendency to move in either direction after being disturbed.",
-      "has an initial tendency to return toward its original equilibrium condition.",
+      "shows no tendency to move in either direction at all after being disturbed.",
+      "has an initial tendency to return toward its original equilibrium condition after being disturbed.",
       "has an initial tendency to continue moving further away from its original equilibrium condition.",
       "will oscillate indefinitely around the disturbed condition, never returning to equilibrium.",
     ],
@@ -77,10 +77,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "In steady, straight-and-level, unaccelerated flight, the four forces of lift, weight, thrust, and drag are related such that",
     options: [
-      "lift equals drag and thrust equals weight.",
-      "the four forces need not be in any particular balance for steady flight to be maintained.",
-      "lift equals weight and thrust equals drag.",
-      "lift always exceeds weight, and thrust always exceeds drag.",
+      "lift equals drag, and thrust equals weight, in this view of steady flight.",
+      "the four forces need not be in any particular balance for steady flight to be maintained at all.",
+      "lift equals weight, and thrust equals drag, throughout steady flight.",
+      "lift always exceeds weight, and thrust always exceeds drag, in steady flight.",
     ],
     answer: 2,
     explain:
@@ -93,10 +93,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "The overall pitching moment about an aircraft's centre of gravity in trimmed, steady flight is",
     options: [
-      "always nose-down, requiring continuous forward control pressure to remain level.",
-      "unrelated to the aircraft's centre of gravity position.",
-      "always nose-up, requiring continuous aft control pressure to remain level.",
-      "zero, since the nose-up and nose-down moments from all sources (wing, tailplane, thrust line, etc.) are balanced.",
+      "always nose-down in trimmed and level flight, requiring continuous forward control pressure indefinitely just to remain level.",
+      "considered entirely unrelated to the aircraft's centre of gravity position at any time.",
+      "always nose-up in trimmed flight, requiring continuous aft control pressure just to remain level.",
+      "zero, since the nose-up and nose-down moments from all sources are balanced in trimmed flight.",
     ],
     answer: 3,
     explain:
@@ -109,10 +109,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A turbulent boundary layer, compared to a laminar boundary layer at the same location on a wing, generally",
     options: [
-      "has more skin friction drag, but is more resistant to flow separation.",
-      "is identical to a laminar boundary layer in every practical respect.",
-      "has less skin friction drag, and is also more resistant to flow separation.",
-      "cannot exist on an aircraft wing under any circumstances.",
+      "has more skin friction drag than a laminar layer, but is more resistant to flow separation.",
+      "is considered identical to a laminar boundary layer in every practical respect.",
+      "has less skin friction drag than a laminar layer, and is also more resistant to flow separation.",
+      "cannot exist on a practical aircraft wing under any normal circumstances.",
     ],
     answer: 0,
     explain:
@@ -125,10 +125,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Downwash behind a lifting wing is best understood as",
     options: [
-      "a phenomenon unrelated to lift production, caused instead by engine exhaust.",
-      "a direct consequence of Newton's third law -- the wing deflects air downward to produce lift, and the air's downward deflection is the reaction to the upward lift force.",
-      "airflow that only occurs on swept wings, never on a straight (unswept) wing.",
-      "the same thing as the wingtip vortex, just described using different terminology.",
+      "a phenomenon entirely unrelated to lift production, caused instead by hot engine exhaust gases.",
+      "a direct consequence of Newton's third law -- the wing deflects air downward to produce lift, and the deflection is the reaction to that lift force.",
+      "airflow that is assumed to only occur on swept wings, and never on a straight, unswept wing.",
+      "essentially the same thing as the wingtip vortex, just described using slightly different terminology.",
     ],
     answer: 1,
     explain:
@@ -141,10 +141,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "The wingtip vortex, a three-dimensional airflow effect, is caused by",
     options: [
-      "compressibility effects that only occur at transonic or supersonic speeds.",
-      "engine exhaust gases interacting with the wing's trailing edge.",
-      "higher-pressure air beneath the wing spilling around the wingtip toward the lower-pressure air above it.",
-      "the wing's leading-edge stagnation point, unrelated to spanwise pressure differences.",
+      "compressibility effects that are assumed to only occur at transonic or supersonic flight speeds.",
+      "engine exhaust gases interacting directly with the wing's trailing edge surface.",
+      "higher-pressure air beneath the wing spilling around the tip toward the lower-pressure air above it.",
+      "the wing's leading-edge stagnation point alone, considered unrelated to any spanwise pressure differences.",
     ],
     answer: 2,
     explain:
@@ -157,10 +157,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Ground effect, encountered when a wing operates close to the surface, generally results in",
     options: [
-      "no measurable change in the wing's aerodynamic characteristics at any height above the surface.",
-      "increased induced drag and increased downwash, compared to flight well clear of the ground.",
-      "an effect that is significant only above roughly one wingspan of altitude, and negligible closer to the ground.",
-      "reduced induced drag and reduced downwash, for a given angle of attack, compared to flight well clear of the ground.",
+      "no measurable change at all in the wing's aerodynamic characteristics at any height above the surface.",
+      "increased induced drag and increased downwash, assumed to occur compared to flight well clear of the ground.",
+      "an effect that is assumed significant only above roughly one wingspan of altitude, and negligible any closer to the ground.",
+      "reduced induced drag and reduced downwash, for a given angle of attack, compared to flight clear of ground effect.",
     ],
     answer: 3,
     explain:
@@ -173,10 +173,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "The local speed of sound in the air surrounding an aircraft depends primarily on",
     options: [
-      "the outside air temperature.",
-      "the aircraft's altitude directly, independent of temperature.",
-      "the aircraft's true airspeed.",
-      "the ambient air pressure, independent of temperature.",
+      "the outside air temperature surrounding the aircraft at that point.",
+      "the aircraft's altitude directly, considered independent of temperature entirely.",
+      "the aircraft's own true airspeed through the surrounding air.",
+      "the ambient air pressure alone, considered independent of temperature entirely.",
     ],
     answer: 0,
     explain:
@@ -189,10 +189,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "An aircraft's critical Mach number is defined as the free-stream Mach number at which",
     options: [
-      "the autopilot automatically disengages for safety reasons.",
-      "airflow over some part of the airframe (typically the wing's upper surface) first reaches the local speed of sound, even though the aircraft itself is still flying below Mach 1.",
-      "the aircraft's entire airframe first reaches supersonic speed simultaneously.",
-      "engine thrust output first begins to decline with increasing altitude.",
+      "the point at which the autopilot is assumed to automatically disengage for safety reasons.",
+      "airflow over part of the airframe (typically the wing's upper surface) first reaches the local speed of sound, while the aircraft itself remains subsonic.",
+      "the point at which the aircraft's entire airframe first reaches supersonic speed all at once.",
+      "the point at which engine thrust output is assumed to first begin declining noticeably with increasing altitude, airspeed, and ambient temperature.",
     ],
     answer: 1,
     explain:
@@ -205,10 +205,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "A shock wave forming on a wing as critical Mach is exceeded typically causes",
     options: [
-      "no change in pitching moment, since shock waves affect only drag, never pitch.",
-      "an immediate and total loss of all lift from the affected wing.",
-      "a sudden pressure rise, airflow separation aft of the shock, increased drag (wave drag), and often a nose-down pitching moment (Mach tuck).",
-      "a reduction in drag, since supersonic flow is inherently more efficient than subsonic flow.",
+      "no change in pitching moment at all, since shock waves are assumed to affect only drag, never pitch.",
+      "an immediate and total loss of all lift from the entire affected wing surface.",
+      "a sudden pressure rise, airflow separation aft of the shock, increased wave drag, and often a nose-down pitching moment (Mach tuck).",
+      "a reduction in overall drag, since supersonic flow over the surface is assumed to be inherently more efficient than ordinary subsonic flow.",
     ],
     answer: 2,
     explain:
@@ -221,10 +221,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Sweeping a wing back is done primarily to",
     options: [
-      "reduce the wing's structural weight, which is the sole reason sweepback is used.",
-      "eliminate the need for any leading-edge high-lift devices.",
-      "increase the wing's stall angle of attack at low speed, improving slow-speed handling.",
-      "delay the onset of compressibility effects by reducing the component of airflow velocity perpendicular to the leading edge, raising the effective critical Mach number.",
+      "reduce the wing's overall structural weight, which is assumed to be the sole reason sweepback is used.",
+      "eliminate the need for any leading-edge high-lift devices whatsoever on the wing.",
+      "increase the wing's stall angle of attack noticeably at low speed, improving overall slow-speed handling qualities and general low-speed manoeuvrability.",
+      "delay the onset of compressibility effects by reducing airflow velocity perpendicular to the leading edge, raising the effective critical Mach number.",
     ],
     answer: 3,
     explain:
@@ -237,10 +237,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Trailing edge flaps increase an aircraft's maximum lift coefficient (CLmax) primarily by",
     options: [
-      "increasing the wing's effective camber (and, on some flap designs, its effective area), allowing more lift to be produced at a given angle of attack and speed.",
-      "increasing the wing's aspect ratio.",
-      "delaying the onset of compressibility effects at high speed.",
-      "reducing the wing's total surface area exposed to the airflow.",
+      "increasing the wing's effective camber, and on some flap designs its effective area, allowing more lift at a given angle of attack.",
+      "increasing the wing's aspect ratio significantly, without changing its camber, planform area, or stalling characteristics in any meaningful way.",
+      "delaying the onset of compressibility effects at high cruise speed, similar to wing sweep.",
+      "reducing the wing's total surface area exposed to the oncoming airflow during flight.",
     ],
     answer: 0,
     explain:
@@ -253,10 +253,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Leading edge devices, such as slats or slots, primarily improve high-angle-of-attack performance by",
     options: [
-      "increasing the wing's camber at the trailing edge, exactly as trailing edge flaps do.",
-      "re-energizing the upper-surface boundary layer (or maintaining smooth airflow over the leading edge), delaying flow separation to a higher angle of attack before stall.",
-      "reducing the wing's total lift at any given angle of attack.",
-      "reducing drag at high speed cruise, with no effect on stall characteristics.",
+      "increasing the wing's camber specifically at the trailing edge, exactly the same way trailing edge flaps do.",
+      "re-energizing the upper-surface boundary layer near the leading edge, delaying flow separation to a higher angle of attack before stall.",
+      "reducing the wing's total lift produced at any given angle of attack across the flight envelope.",
+      "reducing drag only at high speed cruise conditions, with no meaningful effect at all on the wing's stall characteristics or behaviour.",
     ],
     answer: 1,
     explain:
@@ -270,8 +270,8 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     q: "A canard configuration, in which a smaller lifting surface is mounted ahead of the main wing, is sometimes deliberately designed so that",
     options: [
       "the canard and the main wing always stall at exactly the same instant, with no design preference either way.",
-      "canards are used only for yaw control, and have no role in pitch or stall behaviour.",
-      "the canard reaches its stalling angle of attack before the main wing does, pitching the nose down and preventing the main wing from stalling.",
+      "canards are assumed to be used only for yaw control, with no role at all in pitch or stall behaviour.",
+      "the canard reaches its stalling angle of attack before the main wing, pitching the nose down and preventing a main wing stall.",
       "the main wing is designed to stall first, to provide an early warning through the canard's control feel.",
     ],
     answer: 2,
@@ -285,10 +285,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Wing fences on a swept wing are intended primarily to",
     options: [
-      "reduce induced drag in exactly the same way a winglet does.",
-      "serve purely as a lightning-strike diverter, with no aerodynamic function.",
-      "increase the wing's critical Mach number, in the same way sweepback does.",
-      "impede the spanwise (outward) flow of boundary layer air along a swept wing, reducing the tendency for the wingtip to stall before the wing root.",
+      "reduce induced drag in exactly the same way that a wingtip winglet is designed to.",
+      "serve purely as a lightning-strike diverter strip, with no aerodynamic function whatsoever.",
+      "increase the wing's critical Mach number, in exactly the same way that sweepback does.",
+      "impede the spanwise, outward flow of boundary layer air along a swept wing, reducing the tendency for the tip to stall before the root.",
     ],
     answer: 3,
     explain:
@@ -301,10 +301,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Ice accumulation on a wing's leading edge generally affects lift and drag by",
     options: [
-      "disrupting smooth airflow over the airfoil, reducing maximum lift coefficient and the angle of attack at which the wing stalls, while significantly increasing drag.",
-      "increasing maximum lift coefficient, since the rough ice surface energizes the boundary layer in a beneficial way.",
-      "reducing drag, since ice smooths out minor surface imperfections on the wing.",
-      "having no measurable effect on lift or drag until the ice thickness exceeds several inches.",
+      "disrupting smooth airflow over the airfoil, reducing maximum lift coefficient and stall angle of attack, while increasing drag significantly.",
+      "increasing maximum lift coefficient quite noticeably, since the rough ice surface is commonly assumed to energize the boundary layer in a beneficial way.",
+      "reducing overall drag, since the ice layer is assumed to smooth out minor surface imperfections already present on the wing.",
+      "having no measurable effect on lift or drag at all, until the ice thickness eventually exceeds several inches.",
     ],
     answer: 0,
     explain:
@@ -317,10 +317,10 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Ice accumulation on engine inlets or propeller blades primarily degrades performance by",
     options: [
-      "having no effect on either engines or propellers, since only aerodynamic (wing/tail) surfaces are affected by icing.",
-      "disrupting smooth airflow into the engine or over the propeller airfoil, reducing efficiency, and potentially causing imbalance or ice-shedding damage.",
-      "increasing engine thrust and propeller efficiency, since ice adds mass to the rotating assembly.",
-      "affecting fuel quality directly, by contaminating the fuel system.",
+      "having no effect at all on either engines or propellers, since only aerodynamic wing and tail surfaces are ever assumed to be affected by icing in this simplified view.",
+      "disrupting smooth airflow into the engine or over the propeller blade, reducing efficiency and risking imbalance or ice-shedding damage.",
+      "increasing engine thrust and propeller efficiency, since the added ice is assumed to add beneficial mass to the rotating assembly.",
+      "affecting fuel quality directly, by contaminating the fuel system with ice particles.",
     ],
     answer: 1,
     explain:
@@ -333,9 +333,9 @@ export const CANADA_TC_ATPL_BATCH_06_QUESTIONS: Question[] = [
     system: "Theory of Flight",
     q: "Because ice accumulation reduces the critical angle of attack at which a surface stalls, an iced tailplane is at particular risk of stalling when",
     options: [
-      "the aircraft is flown at a higher airspeed than normal, since tailplane stall risk increases with speed.",
-      "the landing gear is retracted, since gear position is what primarily determines tailplane loading.",
-      "flaps are extended, since flap extension increases the downwash angle the tailplane must counter, increasing the tailplane's effective angle of attack.",
+      "the aircraft is flown at a noticeably higher airspeed than normal, since tailplane stall risk is assumed to increase with speed.",
+      "the landing gear is retracted, since gear position is assumed to be what primarily determines tailplane loading in flight.",
+      "flaps are extended, since flap extension increases downwash angle, raising the tailplane's effective angle of attack it must counter.",
       "flaps are retracted, since flap retraction always increases tailplane angle of attack regardless of downwash.",
     ],
     answer: 2,

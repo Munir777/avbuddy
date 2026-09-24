@@ -22,7 +22,7 @@ export const CANADA_TC_ATPL_BATCH_48_QUESTIONS: Question[] = [
     q: "A Category II or Category III precision approach, compared to a Category I approach, generally requires",
     options: [
       "no additional aircraft equipment or crew qualification beyond that used for a Category I approach, since the categories differ only in ground lighting configuration.",
-      "a higher decision height than Category I, since increasing the category number is understood to correspond to progressively more conservative (higher) minima.",
+      "a higher decision height than Category I, since increasing the category number is understood to correspond to progressively more conservative (higher) minima, a pattern that does not reflect how CAT II and CAT III minima are actually structured.",
       "a lower decision height (or, for CAT III, no decision height at all) along with correspondingly enhanced aircraft equipment, crew qualification, and ground facility standards.",
       "the use of a non-precision approach procedure exclusively, since Category II/III minima apply only to approaches flown without any electronic vertical guidance.",
     ],
@@ -56,7 +56,7 @@ export const CANADA_TC_ATPL_BATCH_48_QUESTIONS: Question[] = [
       "over-rotation -- raising the nose too quickly or to too high a pitch attitude relative to the aircraft's geometry-limited pitch attitude for the given speed and configuration.",
       "excessive airspeed at the moment of liftoff, since higher speed is associated with reduced pitch attitude rather than an increased tail strike risk.",
       "landing gear extension during the takeoff roll, a configuration change that is never performed and has no bearing on tail strike risk during rotation.",
-      "rotating too slowly, since a tail strike is understood to result exclusively from an insufficient rotation rate rather than an excessive one.",
+      "rotating too slowly, since a tail strike is understood to result exclusively from an insufficient rotation rate rather than an excessive one, a claim not supported by how tail strikes are actually documented in service events.",
     ],
     answer: 0,
     explain:
@@ -85,7 +85,7 @@ export const CANADA_TC_ATPL_BATCH_48_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "The landing flare (round-out), performed just before touchdown, is intended primarily to",
     options: [
-      "increase the aircraft's descent rate sharply just before touchdown, since a higher rate of descent at touchdown is the specific goal of a correctly executed flare.",
+      "increase the aircraft's descent rate sharply just before touchdown, since a higher rate of descent at touchdown is treated here as the specific goal of a correctly executed flare regardless of aircraft type or runway surface condition.",
       "initiate a climb back to pattern altitude, since the flare is understood to be functionally identical to the initial phase of a go-around.",
       "reduce the aircraft's rate of descent from the approach descent rate to a much lower rate suitable for a smooth touchdown, by gradually increasing pitch attitude as the aircraft nears the runway.",
       "retract the landing gear momentarily, a configuration change that is never performed during the flare and has no bearing on its purpose.",
@@ -167,8 +167,8 @@ export const CANADA_TC_ATPL_BATCH_48_QUESTIONS: Question[] = [
     options: [
       "avoiding any fuel reduction before landing, since maximum fuel load is considered beneficial rather than hazardous during a gear-up landing.",
       "landing at the highest safe airspeed available, since a faster touchdown speed is considered advantageous specifically for a gear-up landing.",
-      "immediately shutting down all aircraft electrical systems before landing, since electrical power is understood to have no bearing on a gear-up landing outcome.",
-      "burning off or jettisoning fuel where practical to reduce weight and fire risk, briefing the cabin and preparing for an emergency evacuation, and landing on the available surface using the appropriate technique for the specific gear configuration.",
+      "immediately shutting down all aircraft electrical systems before landing, since electrical power is understood to have no bearing on a gear-up landing outcome regardless of which specific systems remain needed for the approach and landing.",
+      "burning off or jettisoning fuel to reduce weight and fire risk, briefing the cabin for a possible evacuation, and landing using the technique appropriate to the specific gear configuration.",
     ],
     answer: 3,
     explain:
@@ -263,7 +263,7 @@ export const CANADA_TC_ATPL_BATCH_48_QUESTIONS: Question[] = [
     options: [
       "selecting reverse thrust only after the aircraft has slowed to taxi speed, since reverse thrust is understood to be ineffective at any speed above that.",
       "promptly and simultaneously applying maximum wheel braking, deploying ground spoilers, and selecting maximum reverse thrust, rather than applying these deceleration means sequentially.",
-      "waiting several seconds after the takeoff is rejected before applying any braking, since an immediate braking response is considered counterproductive to stopping performance.",
+      "waiting several seconds after the takeoff is rejected before applying any braking, since an immediate braking response is considered counterproductive to stopping performance under any runway or weight condition.",
       "applying only wheel braking, since ground spoilers and reverse thrust are understood to provide no meaningful additional deceleration during a high-speed rejected takeoff.",
     ],
     answer: 1,

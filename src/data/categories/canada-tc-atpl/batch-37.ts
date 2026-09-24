@@ -15,7 +15,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A pressure altimeter's Kollsman window, in which the pilot sets the current altimeter setting, functions by",
     options: [
-      "physically changing the altitude of the aircraft itself, with the Kollsman window setting having a direct effect on true altitude rather than on the instrument's displayed reading.",
+      "physically changing the altitude of the aircraft itself, with the Kollsman window setting having a direct effect on true altitude rather than on the instrument's displayed reading, a claim inconsistent with the altimeter's actual reference-shifting mechanism.",
       "adjusting the airspeed indicator's calibration simultaneously, since the Kollsman window setting is mechanically linked to both instruments at once.",
       "mechanically adjusting the reference point against which the aneroid capsule's expansion or contraction is measured, so the displayed altitude reflects height above the selected pressure datum.",
       "having no functional effect on the altimeter's displayed reading at all, serving purely as a reference display with no mechanical connection to the instrument.",
@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "Indicated airspeed (IAS) is corrected for instrument and position error to obtain calibrated airspeed (CAS) primarily because",
     options: [
-      "CAS is a value used only for engine performance calculations, with no relevance to airspeed indication or aircraft handling at all.",
+      "CAS is a value used only for engine performance calculations, with no relevance to airspeed indication or aircraft handling at all, a claim inconsistent with CAS's actual role as a corrected airspeed value used directly in airspeed indication and handling.",
       "IAS and CAS are, in practice, always numerically identical, making any correction between them a purely theoretical exercise with no real operational significance.",
       "position error correction accounts exclusively for changes in outside air temperature, with airframe installation effects playing no role in the IAS-to-CAS correction at all.",
       "the pitot-static system's actual installation on the airframe introduces small errors (varying with airspeed and configuration) that differ from the theoretically ideal pitot-static measurement.",
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     options: [
       "indicates the aircraft's true airspeed, with 'suction gauge' simply being an alternate historical name for the airspeed indicator.",
       "indicates the vacuum system's suction pressure, letting the pilot verify the system is operating within its proper range to reliably drive the connected gyro instruments.",
-      "has no diagnostic function at all, serving as a purely decorative gauge with no meaningful reading for the pilot to monitor.",
+      "has no diagnostic function at all, serving as a purely decorative gauge with no meaningful reading for the pilot to monitor, a description inconsistent with the suction gauge's actual role in confirming vacuum system health.",
       "measures engine oil pressure, an engine health parameter unrelated to the vacuum system driving the gyroscopic instruments at all.",
     ],
     answer: 1,
@@ -80,7 +80,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     q: "A G-meter (accelerometer), when installed, indicates",
     options: [
       "the aircraft's current groundspeed, expressed in nautical miles per hour rather than in units of gravitational acceleration.",
-      "the aircraft's current outside air temperature, a thermodynamic rather than an acceleration-related quantity.",
+      "the aircraft's current outside air temperature, a thermodynamic rather than an acceleration-related quantity, a description inconsistent with the load-factor reading a G-meter actually displays.",
       "the load factor currently being experienced by the aircraft, expressed in multiples of standard gravitational acceleration (g).",
       "the rate of fuel consumption, an engine performance parameter unrelated to any acceleration or load factor measurement.",
     ],
@@ -96,7 +96,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     q: "On a piston engine, Exhaust Gas Temperature (EGT) and Cylinder Head Temperature (CHT) gauges are commonly used by a pilot primarily to",
     options: [
       "replace the need for a tachometer entirely, since EGT and CHT are considered equivalent substitutes for monitoring engine RPM.",
-      "measure the aircraft's outside air temperature at cruising altitude, a purely meteorological rather than an engine-management function.",
+      "measure the aircraft's outside air temperature at cruising altitude, a purely meteorological rather than an engine-management function, a description inconsistent with EGT and CHT's actual role in mixture leaning and cylinder temperature monitoring.",
       "indicate the temperature of the aircraft's hydraulic fluid, an unrelated system with no connection to piston engine mixture or cylinder condition.",
       "help set and monitor mixture (leaning) and engine operating temperature, guarding against operating conditions that could cause detonation or other engine damage.",
     ],
@@ -111,8 +111,8 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A fuel flow indicator (and, where fitted, a fuel totalizer that integrates that flow over time) provides information distinct from a fuel quantity gauge in that fuel flow/totalizer instrumentation",
     options: [
-      "shows the current rate of fuel consumption (and a running calculation of fuel used or remaining based on that rate), rather than directly measuring the physical quantity of fuel actually present in each tank.",
-      "measures oil quantity rather than fuel, with 'fuel flow indicator' being a misleading name for what is actually an oil system instrument.",
+      "shows the current rate of fuel consumption, rather than directly measuring the physical quantity of fuel actually present in each tank.",
+      "measures oil quantity rather than fuel, with 'fuel flow indicator' being a misleading name for what is actually an oil system instrument, a description inconsistent with how fuel flow instrumentation is actually installed and used in flight.",
       "directly measures the physical amount of fuel remaining in each tank, making it functionally identical to, rather than distinct from, a fuel quantity gauge.",
       "is used exclusively on the ground during refuelling, with no function or display available to the pilot at any point during flight.",
     ],
@@ -145,8 +145,8 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     options: [
       "operating only during the cruise phase of flight, with autopilot pitch and roll control considered unavailable at any other phase of flight.",
       "permanently disconnecting the pilot's own flight controls from the control surfaces, requiring the autopilot to be physically reconnected before manual flight is possible again.",
-      "continuously comparing the aircraft's current attitude/flight path against a selected reference (such as a selected altitude, heading, or vertical speed) and driving the flight controls to reduce the difference between them.",
-      "controlling engine thrust exclusively, with pitch and roll axis (flight control surface) management considered outside the scope of any autopilot function.",
+      "continuously comparing the aircraft's current attitude/flight path against a selected reference and driving the flight controls to reduce the difference between them.",
+      "controlling engine thrust exclusively, with pitch and roll axis (flight control surface) management considered outside the scope of any autopilot function, a scope inconsistent with how basic autopilots actually drive control surfaces via attitude feedback.",
     ],
     answer: 2,
     explain:
@@ -161,8 +161,8 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     options: [
       "cannot determine the aircraft's altitude at all using a three-pointer altimeter, since the instrument is fundamentally incapable of displaying altitude in feet.",
       "will always read an altitude that is too low, in every case and regardless of the needles' actual positions, a fixed and entirely predictable error.",
-      "must apply a mental correction for magnetic variation before the three-pointer altimeter's reading can be considered valid, a correction unrelated to any needle-misreading risk.",
-      "can misread the displayed altitude by a factor of 1,000 or 10,000 feet if the needles are not interpreted carefully and in the correct order, a risk that more modern drum-pointer or digital altimeter displays are specifically designed to reduce.",
+      "must apply a mental correction for magnetic variation before the three-pointer altimeter's reading can be considered valid, a correction unrelated to any needle-misreading risk, and inconsistent with how altimeter settings are actually referenced to pressure rather than magnetic variation.",
+      "can misread the displayed altitude by a factor of 1,000 or 10,000 feet if misread, a risk that more modern drum-pointer or digital altimeter displays are specifically designed to reduce.",
     ],
     answer: 3,
     explain:
@@ -175,9 +175,9 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A Baro-VNAV (barometric vertical navigation) approach provides vertical guidance to the pilot by",
     options: [
-      "computing a descent path electronically from barometric altitude information (temperature-compensated) referenced to a specified vertical angle, rather than by receiving a transmitted ILS glideslope or SBAS-derived vertical signal.",
+      "computing a descent path electronically from barometric altitude information referenced to a specified vertical angle, rather than by receiving a transmitted ILS glideslope or SBAS-derived vertical signal.",
       "receiving the same transmitted ground-based glideslope signal used for an ILS approach, making Baro-VNAV functionally identical to an ILS in terms of its vertical guidance source.",
-      "providing lateral guidance only, with 'vertical navigation' in its name being a misnomer that has no bearing on the approach's actual function.",
+      "providing lateral guidance only, with 'vertical navigation' in its name being a misnomer that has no bearing on the approach's actual function, a description inconsistent with Baro-VNAV's actual role in computing a vertical descent path from barometric altitude.",
       "relying entirely on GNSS-derived satellite altitude information, with barometric altitude information playing no role in Baro-VNAV vertical guidance despite the name.",
     ],
     answer: 0,
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     options: [
       "requiring no moving parts of any kind, in contrast to a capacitance-type probe, which the float-type design is specifically intended to avoid.",
       "using a float that rises and falls with the fuel level, mechanically (or via a linked variable resistor) translating that physical float position into a fuel quantity reading.",
-      "measuring the electrical capacitance between two probes immersed in the fuel, making a float-type sender simply an alternate name for a capacitance-type probe.",
+      "measuring the electrical capacitance between two probes immersed in the fuel, making a float-type sender simply an alternate name for a capacitance-type probe, a description inconsistent with the float-type sender's distinct mechanical sensing principle.",
       "measuring the rate of fuel flow leaving the tank, making a float-type sender functionally identical to a fuel flow indicator rather than a quantity-measuring device.",
     ],
     answer: 1,
@@ -239,10 +239,10 @@ export const CANADA_TC_ATPL_BATCH_37_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A flap position indicator, showing the current deployment of the trailing edge flaps, is particularly useful because it",
     options: [
-      "confirms the actual, physically achieved flap position, which is useful for cross-checking against the flap selector/handle position, especially given that flap systems can experience an asymmetric deployment or a mechanical fault.",
+      "confirms the actual, physically achieved flap position, which is useful for cross-checking against the flap selector/handle position, given possible asymmetric deployment or mechanical fault.",
       "measures airspeed rather than flap position, with 'flap position indicator' being a misleading name for what is functionally an airspeed indicator.",
       "is mechanically incapable of displaying an intermediate flap setting, only ever showing either the fully retracted or the fully extended position.",
-      "is required only on aircraft with fixed (non-retractable) flaps, with retractable flap systems specifically exempted from any flap position indication requirement.",
+      "is required only on aircraft with fixed (non-retractable) flaps, with retractable flap systems specifically exempted from any flap position indication requirement, a scope inconsistent with how flap position indication is actually applied to retractable flap systems.",
     ],
     answer: 0,
     explain:

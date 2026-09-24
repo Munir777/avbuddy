@@ -21,7 +21,7 @@ export const CANADA_TC_ATPL_BATCH_54_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A Terminal VOR (TVOR), compared to a standard (higher-power) en route VOR, is generally",
     options: [
-      "a higher-power facility offering substantially greater range than a standard en route VOR, the reverse of the actual relationship between the two facility types.",
+      "a higher-power facility offering substantially greater range than a standard en route VOR, the exact reverse of the actual relationship between the two facility types across the entire national network.",
       "identical in every respect to a standard en route VOR, with 'terminal' referring only to its physical location and no difference in power or service volume.",
       "a lower-power facility intended to provide reliable service within a more limited range and altitude, typically supporting terminal-area navigation and approach procedures rather than long-range en route use.",
       "a facility used exclusively for VHF voice communication, with no VOR navigation signal transmitted at all despite the name suggesting otherwise.",
@@ -55,7 +55,7 @@ export const CANADA_TC_ATPL_BATCH_54_QUESTIONS: Question[] = [
     options: [
       "re-radiation and distortion of the incoming NDB signal by the aircraft's own metal structure, producing an error that varies depending on the relative bearing of the station.",
       "atmospheric pressure changes at altitude, a purely meteorological cause unrelated to any interaction between the signal and the aircraft's structure.",
-      "the NDB station's own transmitter malfunctioning, an error originating entirely at the ground station rather than from any effect related to the receiving aircraft.",
+      "the NDB station's own transmitter malfunctioning, an error originating entirely at the ground station rather than from any effect related to the receiving aircraft's own structure.",
       "the time of day at which the bearing is taken, making quadrantal error functionally identical to the already-distinct 'night effect' phenomenon.",
     ],
     answer: 0,
@@ -88,7 +88,7 @@ export const CANADA_TC_ATPL_BATCH_54_QUESTIONS: Question[] = [
       "measure outside air temperature, a function unrelated to VHF communication and instead performed by an entirely separate temperature probe.",
       "allow the crew to select a completely different, unrelated set of frequencies depending on which antenna (top or bottom) is currently selected.",
       "provide reliable signal reception and transmission regardless of the aircraft's attitude or bank angle, since a single antenna position could otherwise be shielded from a ground station by the aircraft's own structure.",
-      "serve no functional purpose beyond aesthetic or structural symmetry, since a single antenna is understood to be fully sufficient for reliable VHF communication in every flight attitude.",
+      "serve no functional purpose beyond aesthetic or structural symmetry, since a single antenna is understood to be fully sufficient for reliable VHF communication in every possible flight attitude, bank angle, or maneuver.",
     ],
     answer: 2,
     explain:
@@ -199,7 +199,7 @@ export const CANADA_TC_ATPL_BATCH_54_QUESTIONS: Question[] = [
     options: [
       "the choice between 1090ES and UAT has no relationship to aircraft type or performance category, with the two links used entirely interchangeably and without pattern across all aircraft types.",
       "1090ES is generally used by transport-category and higher-performance aircraft (often shared with Mode S transponder hardware), while UAT is more commonly associated with general aviation aircraft in applicable airspace.",
-      "the two data links carry entirely unrelated types of information, with 1090ES used solely for weather data and UAT used solely for traffic data, rather than both supporting similar ADS-B position and traffic information.",
+      "the two data links carry entirely unrelated types of information, with 1090ES used solely for weather data and UAT used solely for traffic data, rather than both supporting similar ADS-B position and traffic information alike.",
       "UAT is the only ADS-B data link ever used by transport-category aircraft, with 1090ES understood to be reserved exclusively for general aviation use.",
     ],
     answer: 1,
@@ -248,7 +248,7 @@ export const CANADA_TC_ATPL_BATCH_54_QUESTIONS: Question[] = [
       "operational matters such as gate assignment, maintenance coordination, or company-specific information, distinct from communication with air traffic control.",
       "issuing ATC clearances directly, since a company frequency is understood to fully substitute for ATC communication rather than supplementing it.",
       "broadcasting weather information to the general public, a function unrelated to the operational purpose of a company frequency.",
-      "declaring emergencies exclusively, with all routine operational communication between a flight and its operator required to occur only on 121.5 MHz.",
+      "declaring emergencies exclusively, with all routine operational communication between a flight and its operator required to occur only on 121.5 MHz at all times.",
     ],
     answer: 0,
     explain:

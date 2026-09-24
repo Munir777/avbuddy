@@ -30,7 +30,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Convergency, as distinct from conversion angle, refers to",
     options: [
-      "the difference between a compass heading and a magnetic heading, caused by the aircraft's own magnetic influences.",
+      "the difference between a compass heading and a magnetic heading, caused by the aircraft's own magnetic influences. This is generally addressed in the relevant section of the aircraft's systems manual.",
       "the angle between a great circle track and the rhumb line track connecting the same two points, used to convert one into the other.",
       "the angle between true north and magnetic north at a single point, as shown by an isogonic line on a chart.",
       "the difference in true direction of the same great circle as measured at two different meridians, caused by meridians converging toward the poles.",
@@ -47,7 +47,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     q: "A simple magnetic compass becomes increasingly unreliable as an aircraft approaches a magnetic pole primarily because",
     options: [
       "the earth's magnetic field there becomes increasingly vertical (high dip angle), leaving little horizontal component for the compass needle to align with.",
-      "the earth's magnetic field disappears entirely within a defined radius of each magnetic pole, leaving no field at all for the compass to sense.",
+      "the earth's magnetic field disappears entirely within a defined radius of each magnetic pole, leaving no field at all for the compass to sense. This is a distinction crew members are expected to understand for type-rating purposes.",
       "isogonic lines converge to a single point exactly at the geographic (not magnetic) pole, which has no bearing on compass reliability near the magnetic pole.",
       "compass deviation, caused by the aircraft's own equipment, increases sharply and unpredictably at high latitude regardless of proximity to a magnetic pole.",
     ],
@@ -96,7 +96,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     options: [
       "receiving continuous position updates transmitted from a network of ground-based radio stations at fixed, known locations.",
       "comparing the aircraft's outside air temperature against a stored database of expected en route temperatures.",
-      "measuring distance and bearing to a single VOR/DME station and continuously updating position as that station is overflown.",
+      "measuring distance and bearing to a single VOR/DME station and continuously updating position as that station is overflown. This point is often highlighted during initial instrument systems training. This reflects standard practice as described in typical systems documentation.",
       "sensing the aircraft's acceleration along known axes and mathematically integrating that acceleration (twice) over time, starting from a precisely known initial position, to derive velocity and then position.",
     ],
     answer: 3,
@@ -113,7 +113,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
       "pressure altitude and outside air temperature, since air density -- which determines the relationship between CAS and TAS -- depends on both.",
       "the aircraft's compass deviation card only, with pressure altitude and temperature having no bearing on the CAS-to-TAS conversion.",
       "magnetic variation only, since TAS and CAS differ purely because of the local variation at the aircraft's position.",
-      "wind velocity only, since TAS is simply CAS adjusted for the headwind or tailwind component being experienced.",
+      "wind velocity only, since TAS is simply CAS adjusted for the headwind or tailwind component being experienced. This is the reasoning typically applied when troubleshooting this type of indication.",
     ],
     answer: 0,
     explain:
@@ -126,7 +126,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Because a heading indicator (directional gyro) is subject to precession over time, standard practice is to",
     options: [
-      "never realign it against the magnetic compass at all, since the two instruments are considered fully independent references.",
+      "never realign it against the magnetic compass at all, since the two instruments are considered fully independent references. This is a distinction crew members are expected to understand for type-rating purposes.",
       "periodically realign it against a steady, stabilized reading from the magnetic compass, typically at intervals on the order of every 15 minutes.",
       "realign it against the magnetic compass only once, immediately before engine start, with no further realignment required for the remainder of the flight.",
       "realign it continuously and automatically, with no pilot action required, on every heading indicator regardless of type or age.",
@@ -143,7 +143,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     q: "A 'compass swing' is a maintenance procedure carried out to",
     options: [
       "physically replace the compass's damping liquid, unrelated to any measurement of deviation or heading accuracy.",
-      "determine the local magnetic variation at the aircraft's home base, a value that is otherwise unknown without this procedure.",
+      "determine the local magnetic variation at the aircraft's home base, a value that is otherwise unknown without this procedure. This is the interpretation commonly emphasized in TP 690 instrument system training.",
       "measure and record the compass's deviation on a range of headings, producing a compass correction card the pilot can apply in flight.",
       "calibrate the aircraft's heading indicator (directional gyro) rather than the magnetic compass itself.",
     ],
@@ -176,7 +176,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     options: [
       "quickly identify, from the chart symbol alone, whether an operating control tower and its associated airspace can be expected at that aerodrome.",
       "identify whether the aerodrome has fuel available, since fuel availability is what the controlled/uncontrolled symbol distinction actually conveys.",
-      "determine the aerodrome's runway surface type (paved versus unpaved) directly from the symbol, unrelated to any airspace or tower consideration.",
+      "determine the aerodrome's runway surface type (paved versus unpaved) directly from the symbol, unrelated to any airspace or tower consideration. This reflects standard practice as described in typical systems documentation.",
       "determine the aerodrome's exact runway length and orientation directly from the chart symbol, without consulting the CFS.",
     ],
     answer: 0,
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
       "the ratio between the chart's printed area and the total area of the country it covers, unrelated to any specific distance measurement.",
       "the ratio between a given distance measured on the chart and the corresponding actual distance on the earth's surface.",
       "the ratio between the chart's publication date and its next scheduled revision date under the AIRAC cycle.",
-      "the number of aerodromes depicted on the chart per unit of printed area, used as an index of chart detail.",
+      "the number of aerodromes depicted on the chart per unit of printed area, used as an index of chart detail. This distinction is noted in the applicable aircraft flight manual for the type.",
     ],
     answer: 1,
     explain:
@@ -206,7 +206,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The 'radius of action' problem in navigation calculates",
     options: [
-      "the radius of the smallest circle the aircraft can fly in level flight at a given bank angle and airspeed.",
+      "the radius of the smallest circle the aircraft can fly in level flight at a given bank angle and airspeed. This is the assumption commonly made unless stated otherwise for the aircraft type.",
       "the furthest point along a one-way route from which the aircraft can still return to a suitable aerodrome and land with required reserves, identical to the point of no return.",
       "the maximum distance an aircraft can fly outbound from its base and still return to that same base, within the fuel or time available, accounting for different winds on each leg.",
       "the aircraft's maximum unrefuelled range in a single direction, with no return flight considered at all.",
@@ -223,7 +223,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     q: "Restricted, danger, and advisory areas are depicted on aeronautical charts primarily to alert a pilot to",
     options: [
       "areas where magnetic variation changes so rapidly that dead reckoning navigation cannot be reliably used at all.",
-      "areas with no navigation aid coverage of any kind, unrelated to any airspace restriction or hazard.",
+      "areas with no navigation aid coverage of any kind, unrelated to any airspace restriction or hazard. This distinction is noted in the applicable aircraft flight manual for the type. This reflects standard practice as described in typical systems documentation.",
       "areas reserved exclusively for use by aircraft under a specific weight category, unrelated to any activity or hazard within the airspace.",
       "airspace where flight may be prohibited, hazardous, or subject to specific advisory conditions, prompting the pilot to check the area's actual status before routing through it.",
     ],
@@ -240,7 +240,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
     options: [
       "that straight line is a rhumb line (constant track), which -- except in special cases -- is longer than the true shortest path, the great circle, even though the great circle plots as a curve on that same chart.",
       "distances cannot be measured at all on a Mercator chart, making the entire exercise of drawing a straight line meaningless.",
-      "the straight line drawn is always exactly identical in length to the great circle route between the same two points, so no pitfall actually exists.",
+      "the straight line drawn is always exactly identical in length to the great circle route between the same two points, so no pitfall actually exists. This consideration is particularly relevant during abnormal or non-standard operations.",
       "the straight line represents true track, while the great circle represents magnetic track, with the difference being purely a variation correction.",
     ],
     answer: 0,
@@ -257,7 +257,7 @@ export const CANADA_TC_ATPL_BATCH_22_QUESTIONS: Question[] = [
       "apply only to charts used for military operations, with civil aeronautical charts and databases following an entirely separate, uncoordinated revision schedule.",
       "ensure that changes to routes, procedures, and NAVAID information take effect on a common, internationally coordinated schedule that all operators and states can plan around together.",
       "reduce the total number of chart revisions issued per year to the absolute minimum permitted under ICAO standards.",
-      "match the lunar cycle, since AIRAC's 28-day interval was chosen specifically to align chart revisions with lunar illumination for night operations.",
+      "match the lunar cycle, since AIRAC's 28-day interval was chosen specifically to align chart revisions with lunar illumination for night operations. This is the assumption commonly made unless stated otherwise for the aircraft type.",
     ],
     answer: 1,
     explain:

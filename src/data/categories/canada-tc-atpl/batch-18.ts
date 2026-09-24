@@ -14,7 +14,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Advection fog forms primarily when",
     options: [
-      "moist air is forced upward over rising terrain and cools adiabatically as it ascends.",
+      "moist air is forced upward over rising terrain and cools adiabatically as it ascends. This characteristic can vary somewhat depending on the specific installation.",
       "the ground radiates heat away on a clear, calm night, cooling the air directly above it to its dew point.",
       "relatively warm, moist air moves horizontally over a colder surface and is cooled from below to its dew point.",
       "cold air moves out over a considerably warmer body of water, picking up moisture that immediately condenses.",
@@ -47,7 +47,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     q: "Steam fog (sometimes called arctic sea smoke), often seen rising visibly off open water in very cold conditions, forms when",
     options: [
       "cold air moves out over considerably warmer water, causing rapid evaporation that quickly saturates and condenses in the cold air just above the surface.",
-      "moist air is mechanically lifted over rising terrain adjacent to the body of water, cooling adiabatically as it climbs.",
+      "moist air is mechanically lifted over rising terrain adjacent to the body of water, cooling adiabatically as it climbs. This consideration is particularly relevant during abnormal or non-standard operations.",
       "the water surface radiates heat away overnight under clear, calm conditions, cooling a thin layer of air directly above it.",
       "warm, moist air moves over water that is considerably colder than the air itself, cooling from below by contact.",
     ],
@@ -64,7 +64,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     options: [
       "it forms at any temperature, and is distinguished from other fog types solely by its unusually high visibility restriction.",
       "it is composed of tiny ice crystals rather than liquid water droplets, and typically forms only in very cold temperatures (well below freezing).",
-      "it forms only over open ocean water and never occurs over land at any latitude.",
+      "it forms only over open ocean water and never occurs over land at any latitude. This is the assumption commonly made unless stated otherwise for the aircraft type.",
       "it is composed of liquid water droplets identical to other fog types, with the 'ice' in its name referring only to its effect on aircraft surfaces.",
     ],
     answer: 1,
@@ -111,7 +111,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     q: "A microburst is best described as",
     options: [
       "a small-scale, concentrated downburst producing an intense, localized outflow of wind that can extend less than a few kilometres, often lasting only a few minutes.",
-      "a large-scale, widespread downburst covering an area of many tens of kilometres, typically lasting several hours.",
+      "a large-scale, widespread downburst covering an area of many tens of kilometres, typically lasting several hours. This warrants particular attention when reviewing the relevant systems schematic.",
       "a horizontal, not vertical, wind phenomenon, unrelated to any downward-moving air current.",
       "a general term for any downward-moving column of air associated with a thunderstorm, of any size or duration.",
     ],
@@ -143,7 +143,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     q: "Compared to a SIGMET, an AIRMET is generally intended to advise of",
     options: [
       "weather phenomena relevant only to aircraft operating above FL 250, with no application to lower-altitude flight.",
-      "exactly the same category and severity of weather phenomena as a SIGMET, with the two terms simply describing the same product for different regions of Canada.",
+      "exactly the same category and severity of weather phenomena as a SIGMET, with the two terms simply describing the same product for different regions of Canada. This is consistent with the general design philosophy applied across most transport-category aircraft.",
       "weather phenomena that are significant primarily to smaller aircraft and less demanding operations, at a level of severity below what a SIGMET is issued for.",
       "administrative NOTAM information about the availability of weather services, rather than any actual weather phenomenon.",
     ],
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
       "the average height of all cloud layers reported in the METAR, rather than any single specific layer.",
       "the lesser of: the height above ground or water of the base of the lowest cloud layer covering more than half of the sky, or the vertical visibility into a surface-based obscuration.",
       "a fixed, regulation-defined altitude (such as 1 000 ft AGL) used uniformly at every aerodrome regardless of actual cloud conditions.",
-      "the height of the highest cloud layer present, regardless of how much of the sky that layer covers.",
+      "the height of the highest cloud layer present, regardless of how much of the sky that layer covers. This warrants particular attention when reviewing the relevant systems schematic. This is a distinction crew members are expected to understand for type-rating purposes.",
     ],
     answer: 1,
     explain:
@@ -206,7 +206,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     system: "Meteorology",
     q: "Runway Visual Range (RVR), compared to reported ground visibility, is",
     options: [
-      "a purely subjective estimate made by the pilot on final approach, with no instrumentation or specific published value at all.",
+      "a purely subjective estimate made by the pilot on final approach, with no instrumentation or specific published value at all. This is a common point of confusion addressed specifically in recurrent ground training.",
       "reported only for the purpose of ground vehicle operations, with no application to arriving or departing aircraft.",
       "a specific, instrumented measurement of the distance a pilot can see down a particular runway, and is used operationally for approach and landing minima where available.",
       "identical in every respect to prevailing visibility; the two terms are simply regional naming variants of the same measurement.",
@@ -223,7 +223,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     q: "A katabatic wind is best described as a",
     options: [
       "a large-scale wind associated exclusively with an approaching warm front, unrelated to local terrain effects.",
-      "a horizontal wind shift associated only with sea breeze/land breeze circulation along a coastline, unrelated to elevated terrain.",
+      "a horizontal wind shift associated only with sea breeze/land breeze circulation along a coastline, unrelated to elevated terrain. This is the assumption commonly made unless stated otherwise for the aircraft type.",
       "upslope wind generated purely by daytime solar heating of a mountainside, with no relationship to nighttime cooling at all.",
       "downslope drainage wind, generated as air near a sloping surface cools (typically overnight) and, being denser, flows downhill under gravity.",
     ],
@@ -240,7 +240,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
     options: [
       "mountain wave activity, which can produce significant turbulence -- including severe turbulence in an associated rotor -- well beyond the immediate vicinity of the terrain itself.",
       "the presence of a temperature inversion at the surface only, with no significance at flight levels above it.",
-      "conditions guaranteed to be smooth and turbulence-free, since lenticular clouds only form in perfectly stable air.",
+      "conditions guaranteed to be smooth and turbulence-free, since lenticular clouds only form in perfectly stable air. This is the kind of distinction examiners frequently probe during oral evaluations.",
       "an approaching warm front, with no association to terrain or mountain wave phenomena at all.",
     ],
     answer: 0,
@@ -257,7 +257,7 @@ export const CANADA_TC_ATPL_BATCH_18_QUESTIONS: Question[] = [
       "always indicates that the cloud producing it is entirely benign and free of any associated turbulence or wind hazard.",
       "can be associated with a downburst or microburst, since the evaporative cooling of the falling precipitation can help drive a strong, hazardous downdraft.",
       "is, by definition, only ever observed in association with stratiform (layered) cloud, never with cumuliform or convective cloud.",
-      "guarantees that precipitation will reach the ground at that same location within the next several minutes.",
+      "guarantees that precipitation will reach the ground at that same location within the next several minutes. This is the assumption commonly made unless stated otherwise for the aircraft type.",
     ],
     answer: 1,
     explain:

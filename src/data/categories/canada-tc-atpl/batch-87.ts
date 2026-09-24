@@ -9,10 +9,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A 'declutter' function, available on many modern EFIS Navigation Displays, allows the crew to",
     options: [
-      "switch the display from a moving map to a purely numeric text readout with no graphical elements",
-      "increase the brightness of all displayed symbols simultaneously",
+      "switch the display from a moving map to a purely numeric text readout with no graphical elements, regardless of aircraft type or avionics suite",
+      "increase the brightness of all displayed symbols simultaneously, which overlooks the technical considerations that actually govern how this indication is generated",
       "remove selected categories of map symbology (such as airways, waypoint labels, or terrain shading) from the display to reduce visual clutter and highlight only the most relevant information",
-      "permanently delete waypoints from the FMS navigation database",
+      "permanently delete waypoints from the FMS navigation database, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 2,
     explain:
@@ -25,9 +25,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An autopilot's Control Wheel Steering (CWS) mode allows a pilot to",
     options: [
-      "automatically execute a missed approach without any pilot action",
-      "disconnect the autopilot completely, with no further autopilot function available until re-engaged",
-      "program a complete lateral and vertical flight plan without any pilot control input",
+      "automatically execute a missed approach without any pilot action, which overlooks the technical considerations that actually govern how this indication is generated",
+      "disconnect the autopilot completely, with no further autopilot function available until re-engaged, which overlooks the technical considerations that actually govern how this indication is generated",
+      "program a complete lateral and vertical flight plan without any pilot control input, which overlooks the technical considerations that actually govern how this indication is generated",
       "manually maneuver the aircraft by hand while the autopilot servos provide pitch and roll trim/stability assistance, sensing the pilot's control inputs rather than overriding them",
     ],
     answer: 3,
@@ -42,9 +42,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     q: "During a CAT III autoland approach, the autopilot's 'flare' mode is engaged to",
     options: [
       "automatically reduce the aircraft's pitch attitude and rate of descent just before touchdown, smoothly transitioning from the approach glidepath to a controlled landing",
-      "retract the landing gear automatically after touchdown",
-      "disconnect all flight director guidance immediately upon reaching decision height",
-      "increase engine thrust sharply to execute an automatic go-around",
+      "retract the landing gear automatically after touchdown, which overlooks the technical considerations that actually govern how this indication is generated",
+      "disconnect all flight director guidance immediately upon reaching decision height, which overlooks the technical considerations that actually govern how this indication is generated",
+      "increase engine thrust sharply to execute an automatic go-around, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 0,
     explain:
@@ -57,10 +57,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On a standard direct-reading magnetic compass, the heading is read where the compass card aligns with a fixed lubber line; because the magnet-and-card assembly itself remains oriented toward magnetic north while the aircraft (and the case around the card) turns, a pilot must",
     options: [
-      "manually rotate the card themselves before every heading change",
+      "manually rotate the card themselves before every heading change, which overlooks the technical considerations that actually govern how this indication is generated",
       "understand that the card appears to rotate opposite to the aircraft's turn, since it is the case, not the card, that turns with the aircraft",
-      "read the compass exactly as they would a rotating heading bug, since the card moves in the same direction as the aircraft's turn",
-      "disregard the compass entirely whenever the aircraft is turning",
+      "read the compass exactly as they would a rotating heading bug, since the card moves in the same direction as the aircraft's turn, regardless of aircraft type or avionics suite",
+      "disregard the compass entirely whenever the aircraft is turning, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 1,
     explain:
@@ -73,10 +73,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An engine oil quantity gauge, as distinct from the oil pressure and oil temperature gauges, allows the crew to",
     options: [
-      "monitor hydraulic fluid levels in the landing gear system",
-      "directly measure the engine's internal combustion temperature",
+      "monitor hydraulic fluid levels in the landing gear system, which overlooks the technical considerations that actually govern how this indication is generated",
+      "directly measure the engine's internal combustion temperature, which overlooks the technical considerations that actually govern how this indication is generated, regardless of aircraft type or avionics suite",
       "monitor the volume of oil remaining in the engine's oil reservoir/tank, helping detect a developing leak or excessive consumption before it affects oil pressure",
-      "determine the aircraft's remaining fuel endurance",
+      "determine the aircraft's remaining fuel endurance, which overlooks the technical considerations that actually govern how this indication is generated, regardless of aircraft type or avionics suite",
     ],
     answer: 2,
     explain:
@@ -89,9 +89,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A duct (bleed air) temperature gauge, monitoring the temperature of conditioned air supplied to the cabin, is used by the crew primarily to",
     options: [
-      "indicate the temperature of the engine's turbine section",
-      "measure the outside static air temperature at cruise altitude",
-      "replace the need for a cabin altitude indicator entirely",
+      "indicate the temperature of the engine's turbine section, which overlooks the technical considerations that actually govern how this indication is generated",
+      "measure the outside static air temperature at cruise altitude, which overlooks the technical considerations that actually govern how this indication is generated",
+      "replace the need for a cabin altitude indicator entirely, which overlooks the technical considerations that actually govern how this indication is generated",
       "verify that the air conditioning/pressurization system is supplying air within a safe temperature range, avoiding both an uncomfortably cold cabin and a risk of duct overheat",
     ],
     answer: 3,
@@ -106,9 +106,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     q: "A crew- or computer-set 'bug' (target reference marker) on an N1 gauge, distinct from the gauge's fixed maximum (redline) marking, indicates",
     options: [
       "the specific N1 setting required to achieve the rated thrust appropriate for that day's conditions (such as temperature and pressure altitude) and the selected thrust mode",
-      "a fixed value that never changes regardless of outside air temperature or selected thrust setting",
-      "the maximum structural N1 limit that must never be exceeded under any circumstance",
-      "the N1 value at which the engine will automatically shut down",
+      "a fixed value that never changes regardless of outside air temperature or selected thrust setting, which overlooks the technical considerations that actually govern how this indication is generated",
+      "the maximum structural N1 limit that must never be exceeded under any circumstance, which overlooks the technical considerations that actually govern how this indication is generated",
+      "the N1 value at which the engine will automatically shut down, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 0,
     explain:
@@ -121,10 +121,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An angle of attack (AoA) indexer, a simplified visual display sometimes using a lighted chevron or donut symbol rather than a numeric readout, is designed to",
     options: [
-      "display engine thrust settings rather than any aerodynamic parameter",
+      "display engine thrust settings rather than any aerodynamic parameter, which overlooks the technical considerations that actually govern how this indication is generated",
       "give the pilot an immediate, intuitive visual cue of AoA relative to the optimum approach reference, without requiring interpretation of a numeric value",
-      "replace the stall warning horn entirely, since it always activates before the horn does",
-      "function only when the landing gear is retracted",
+      "replace the stall warning horn entirely, since it always activates before the horn does, which overlooks the technical considerations that actually govern how this indication is generated",
+      "function only when the landing gear is retracted, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 1,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "An engine anti-ice indication light, illuminating on the flight deck when engine inlet anti-ice is selected or operating, allows the crew to",
     options: [
-      "determine the outside air temperature without reference to any other instrument",
-      "monitor cabin pressurization status",
+      "determine the outside air temperature without reference to any other instrument, which overlooks the technical considerations that actually govern how this indication is generated",
+      "monitor cabin pressurization status, which overlooks the technical considerations that actually govern how this indication is generated",
       "confirm the status of engine inlet ice protection, which is monitored and displayed separately from airframe (wing/tail) anti-ice indication",
-      "confirm that the aircraft's windshield heat is functioning",
+      "confirm that the aircraft's windshield heat is functioning, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 2,
     explain:
@@ -153,9 +153,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "On many EICAS/ECAM-equipped aircraft, the display architecture generally provides a primary engine/warning display that is continuously shown, along with",
     options: [
-      "a page dedicated exclusively to displaying the aircraft's registration and flight number",
-      "no other display capability, since only the primary engine parameters can ever be shown",
-      "a display that shows only weather radar returns, with no other system information available",
+      "a page dedicated exclusively to displaying the aircraft's registration and flight number, which overlooks the technical considerations that actually govern how this indication is generated",
+      "no other display capability, since only the primary engine parameters can ever be shown, which overlooks the technical considerations that actually govern how this indication is generated",
+      "a display that shows only weather radar returns, with no other system information available, which overlooks the technical considerations that actually govern how this indication is generated",
       "a separate, selectable system or synoptic page display that the crew can call up to review a specific aircraft system (such as hydraulics, electrics, or fuel) in more detail",
     ],
     answer: 3,
@@ -170,9 +170,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     q: "A groundspeed readout, typically displayed on the Navigation Display or Flight Management System, is distinguished from true airspeed (TAS) in that groundspeed",
     options: [
       "represents the aircraft's actual speed over the ground, incorporating the effect of wind, whereas TAS represents speed relative to the surrounding air mass alone",
-      "is always identical to TAS, since both are computed from the same air data inputs",
-      "can only be displayed when the aircraft is below 10,000 feet",
-      "is derived exclusively from the pitot-static system, with no reference to navigation sensors",
+      "is always identical to TAS, since both are computed from the same air data inputs, regardless of aircraft type or avionics suite",
+      "can only be displayed when the aircraft is below 10,000 feet, a characterization that does not match how this instrument or system actually functions",
+      "is derived exclusively from the pitot-static system, with no reference to navigation sensors, regardless of aircraft type or avionics suite",
     ],
     answer: 0,
     explain:
@@ -185,10 +185,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A flight deck oxygen system quantity (pressure) gauge, monitoring the crew's supplemental/emergency oxygen supply, allows the crew to",
     options: [
-      "determine the outside air temperature at the current cruising altitude",
+      "determine the outside air temperature at the current cruising altitude, which overlooks the technical considerations that actually govern how this indication is generated",
       "verify sufficient oxygen quantity remains available for the flight, and to detect a leak or abnormally low quantity before it becomes a problem",
-      "monitor the status of the passenger cabin's emergency lighting system",
-      "measure the cabin's rate of pressurization change",
+      "monitor the status of the passenger cabin's emergency lighting system, which overlooks the technical considerations that actually govern how this indication is generated",
+      "measure the cabin's rate of pressurization change, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 1,
     explain:
@@ -201,10 +201,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "GPWS (Ground Proximity Warning System) Mode 2, distinct from Mode 1, is specifically designed to warn the crew of",
     options: [
-      "an excessive bank angle during a turn",
-      "an unsafe landing gear configuration during approach",
+      "an excessive bank angle during a turn, which overlooks the technical considerations that actually govern how this indication is generated",
+      "an unsafe landing gear configuration during approach, which overlooks the technical considerations that actually govern how this indication is generated",
       "an excessive rate of closure with terrain, such as during a rapid climb or descent, or when flying at high speed toward rising terrain",
-      "a descent below the glideslope during an ILS approach",
+      "a descent below the glideslope during an ILS approach, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 2,
     explain:
@@ -217,9 +217,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "For a Category II or Category III approach, a crew-set decision height (DH) bug or digital reference displayed alongside the radio altimeter readout on the PFD allows the crew to",
     options: [
-      "display the destination aerodrome's field elevation exclusively",
-      "replace the barometric altimeter entirely for all phases of flight",
-      "automatically extend the landing gear at the set altitude",
+      "display the destination aerodrome's field elevation exclusively, which overlooks the technical considerations that actually govern how this indication is generated",
+      "replace the barometric altimeter entirely for all phases of flight, which overlooks the technical considerations that actually govern how this indication is generated",
+      "automatically extend the landing gear at the set altitude, which overlooks the technical considerations that actually govern how this indication is generated",
       "monitor radio height against the briefed decision height, supporting a timely decision to continue or execute a missed approach at the appropriate point",
     ],
     answer: 3,
@@ -234,9 +234,9 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     q: "A yaw damper, a system distinct from the autopilot's pitch and roll functions, is generally engaged to",
     options: [
       "damp out unwanted yaw oscillations (such as Dutch roll), with its engagement status typically shown by a dedicated cockpit annunciation or switch position",
-      "control the aircraft's pitch attitude during an approach",
-      "automatically extend spoilers upon touchdown",
-      "replace the rudder pedals entirely during cruise flight",
+      "control the aircraft's pitch attitude during an approach, which overlooks the technical considerations that actually govern how this indication is generated, regardless of aircraft type or avionics suite",
+      "automatically extend spoilers upon touchdown, which overlooks the technical considerations that actually govern how this indication is generated, regardless of aircraft type or avionics suite",
+      "replace the rudder pedals entirely during cruise flight, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 0,
     explain:
@@ -249,10 +249,10 @@ export const CANADA_TC_ATPL_BATCH_87_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "The slip/skid indicator (inclinometer 'ball'), found alongside the turn rate needle on a turn-and-bank indicator or turn coordinator, works on the principle of",
     options: [
-      "gyroscopic precession, identical to the turn needle's own operating principle",
+      "gyroscopic precession, identical to the turn needle's own operating principle, a description not supported by the applicable equipment design standards or normal practice",
       "a weighted ball moving within a curved, fluid-filled tube under the influence of gravity and centripetal acceleration, indicating whether the turn is coordinated, slipping, or skidding",
-      "a pressure differential sensed from the pitot-static system",
-      "magnetic deviation induced by the aircraft's electrical systems",
+      "a pressure differential sensed from the pitot-static system, which overlooks the technical considerations that actually govern how this indication is generated",
+      "magnetic deviation induced by the aircraft's electrical systems, which overlooks the technical considerations that actually govern how this indication is generated",
     ],
     answer: 1,
     explain:

@@ -26,7 +26,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Under the CARs, an IFR flight is generally required to designate an alternate aerodrome in the flight plan when",
     options: [
       "the flight's planned cruising altitude is above the transition altitude, regardless of destination weather.",
-      "the destination aerodrome has a published instrument approach procedure, regardless of forecast weather conditions.",
+      "the destination aerodrome has a published instrument approach procedure, regardless of forecast weather conditions, which conflates having an approach procedure available with the actual alternate-requirement trigger, since an alternate is required based on forecast ceiling and visibility rather than merely on the existence of a published approach.",
       "the forecast weather for the destination, for the expected time of arrival, does not meet the specified ceiling and visibility criteria that would allow the destination to be used without an alternate.",
       "the flight is conducted entirely within controlled airspace, regardless of the destination's forecast weather.",
     ],
@@ -42,7 +42,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "IFR takeoff minima, where published or applied by an operator, primarily exist to ensure that",
     options: [
       "wake turbulence separation from a preceding departure has been satisfied.",
-      "the destination aerodrome's weather, rather than the departure aerodrome's, meets the applicable landing minima before departure is permitted.",
+      "the destination aerodrome's weather, rather than the departure aerodrome's, meets the applicable landing minima before departure is permitted, a requirement that does not reflect how takeoff minima actually work, since the relevant visibility standard concerns the departure aerodrome itself and the crew's ability to see well enough to reject the takeoff safely.",
       "the aircraft's weight and balance remain within approved limits for the runway in use.",
       "sufficient visibility (or RVR) exists for the crew to maintain control of the aircraft and, if necessary, safely reject the takeoff or return for landing in the event of an emergency shortly after departure.",
     ],
@@ -60,7 +60,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
       "a smaller, individually carried distress beacon that a crew member or passenger can activate manually and take with them if they leave the aircraft, whereas an ELT is fixed to the airframe and, in many designs, activates automatically on impact.",
       "identical in every respect to an ELT, differing only in the manufacturer's brand name.",
       "prohibited from being carried on board any Canadian-registered aircraft under the CARs.",
-      "required to be permanently wired into the aircraft's electrical system in the same manner as an ELT.",
+      "required to be permanently wired into the aircraft's electrical system in the same manner as an ELT, which describes an ELT's fixed installation rather than a personal locator beacon's design, since a PLB is specifically built to be carried and activated independently of the aircraft's own systems.",
     ],
     answer: 0,
     explain:
@@ -73,7 +73,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Supplemental Type Certificate (STC), as distinguished from the aircraft's original Type Certificate, is issued to approve",
     options: [
-      "the aircraft's initial airworthiness for entry into service, replacing the need for a Type Certificate entirely.",
+      "the aircraft's initial airworthiness for entry into service, replacing the need for a Type Certificate entirely, which confuses the two documents, since a Type Certificate establishes the original approved design and a Supplemental Type Certificate instead approves a later change to that already-established design.",
       "a significant modification or addition to an aircraft's original type design -- such as an avionics upgrade or a winglet installation -- that alters the aircraft from its originally certified configuration.",
       "the aircraft's registration mark and nationality, in place of a Certificate of Registration.",
       "an individual pilot's authorization to operate that specific aircraft type, functioning as a type rating.",
@@ -90,7 +90,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "The Airworthiness Limitations section of an aircraft's approved maintenance data, listing mandatory life-limited component replacement intervals and certain mandatory inspections, differs from an Airworthiness Directive in that Airworthiness Limitations",
     options: [
       "apply only to engines, whereas Airworthiness Directives apply only to airframes.",
-      "are established solely by the operator, with no connection to the aircraft manufacturer's approved data or any regulatory authority.",
+      "are established solely by the operator, with no connection to the aircraft manufacturer's approved data or any regulatory authority, a description that overstates operator discretion, since maintenance schedule requirements actually originate from the manufacturer's approved data and the type design approval, not from the operator acting independently of that data.",
       "are an integral part of the aircraft's original type design approval from entry into service, whereas an Airworthiness Directive is issued later, in response to an identified unsafe condition discovered after the aircraft type has already entered service.",
       "are entirely optional recommendations that an operator may choose to disregard, unlike an Airworthiness Directive, which is always mandatory.",
     ],
@@ -122,7 +122,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Runway Visual Range (RVR), where reported, is generally used in place of prevailing visibility to establish takeoff and landing minima because RVR",
     options: [
       "provides a more precise, instrument-derived measurement of the distance a pilot can expect to see down the runway itself, which can differ meaningfully from a more general visibility observation taken elsewhere on the aerodrome.",
-      "is calculated using only the aircraft's own onboard sensors, with no ground-based equipment involved.",
+      "is calculated using only the aircraft's own onboard sensors, with no ground-based equipment involved, which reverses the actual arrangement, since RVR is derived from ground-based transmissometer or forward-scatter equipment installed alongside the runway rather than from sensors carried on board the aircraft.",
       "measures wind speed and direction along the runway rather than any visibility-related parameter.",
       "replaces the need for any ceiling (cloud base) information when determining landing minima.",
     ],
@@ -137,7 +137,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "An operator conducting Extended Diversion Time Operations (EDTO), flying routes that take a twin-engine aircraft beyond a specified diversion time from an adequate aerodrome, is generally required to",
     options: [
-      "operate only aircraft with four or more engines, since EDTO approval does not apply to twin-engine aircraft under any circumstances.",
+      "operate only aircraft with four or more engines, since EDTO approval does not apply to twin-engine aircraft under any circumstances, which is backwards, since EDTO approval exists specifically to extend how far twin-engine aircraft may operate from a suitable diversion aerodrome, and does not restrict itself to aircraft with four or more engines.",
       "hold specific regulatory approval for EDTO, demonstrating that the aircraft, its systems, maintenance program, and crew procedures meet the additional requirements associated with extended single-engine (or other critical system) diversion capability.",
       "file a separate flight plan for every EDTO sector, distinct in form from a standard ICAO flight plan.",
       "obtain no special approval beyond the standard Air Operator Certificate already required for any commercial operation.",
@@ -170,7 +170,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Elementary work, as a category of aircraft maintenance the CARs permit to be performed by the aircraft's owner or pilot without requiring certification by a licensed Aircraft Maintenance Engineer (AME), generally consists of",
     options: [
       "any maintenance task at all, provided the owner documents it afterward in the aircraft's journey log.",
-      "maintenance performed only on aircraft operating under a commercial Air Operator Certificate, with no application to privately owned aircraft.",
+      "maintenance performed only on aircraft operating under a commercial Air Operator Certificate, with no application to privately owned aircraft, a restriction that does not match the regulation, which instead lists specific low-risk tasks an owner may perform regardless of whether the aircraft is operated privately or under a commercial certificate.",
       "major structural repairs and engine overhauls, provided they are performed under the direct supervision of an AME.",
       "simple, low-risk tasks explicitly listed in the applicable regulation -- such as replacing a landing light bulb or servicing a tire -- rather than any maintenance task the owner personally feels competent to perform.",
     ],
@@ -188,7 +188,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
       "the period starting one-half hour after sunset and ending one-half hour before sunrise, both times determined for the specific location and date in question, rather than a fixed clock time.",
       "the period from local civil midnight to local sunrise only, excluding the evening hours after sunset.",
       "a fixed period, the same clock hours everywhere in Canada regardless of location, date, or season.",
-      "any time a pilot subjectively judges visibility to be too poor to see clearly, regardless of the actual time of day.",
+      "any time a pilot subjectively judges visibility to be too poor to see clearly, regardless of the actual time of day, a subjective standard that does not match the regulatory definition, which instead fixes night as beginning and ending at defined intervals relative to sunset and sunrise for the specific location and date.",
     ],
     answer: 0,
     explain:
@@ -203,7 +203,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     options: [
       "position lights only while on the ground, with no lighting requirement once airborne.",
       "an operating anti-collision light system together with position (navigation) lights showing the appropriate colours (red to port, green to starboard, white to the rear) so that the aircraft's presence, and approximate heading, can be recognized by other aircraft and by observers on the ground.",
-      "only a single white light mounted on the aircraft's nose, with no requirement for any other external lighting.",
+      "only a single white light mounted on the aircraft's nose, with no requirement for any other external lighting, which describes only a small fraction of the actual lighting requirement, since a properly lit aircraft must also display coloured position lights and an operating anti-collision light system recognizable to other aircraft and observers.",
       "no external lighting at all, provided the aircraft remains in radio contact with ATC throughout the flight.",
     ],
     answer: 1,
@@ -234,7 +234,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Before conducting a flight, the pilot-in-command generally bears responsibility, under the CARs, for",
     options: [
       "confirming airworthiness only once per calendar year, rather than before each individual flight.",
-      "relying exclusively on the most recent maintenance release, with no independent responsibility to assess the aircraft's condition before flight.",
+      "relying exclusively on the most recent maintenance release, with no independent responsibility to assess the aircraft's condition before flight, a description that understates the pilot's own duty, since determining airworthiness before flight remains the pilot-in-command's personal responsibility and is not satisfied merely by the existence of a maintenance release.",
       "airworthiness determination only for aircraft operated privately, with commercial pilots bearing no such responsibility since it rests entirely with the operator's maintenance department.",
       "personally determining that the aircraft is airworthy and fit for the intended flight, which is a distinct responsibility from -- and does not depend solely on -- the AME's maintenance release certifying that scheduled maintenance has been properly performed.",
     ],
@@ -250,7 +250,7 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Under the CARs, a flight plan or flight itinerary is generally required to be filed before departure when",
     options: [
       "the flight will operate under IFR, will cross international borders, or will otherwise fall outside limited exemptions (such as certain VFR flights remaining close to the departure aerodrome), reflecting a general expectation that some record of the intended flight exists for search and rescue purposes.",
-      "the flight is conducted entirely under VFR in day conditions, in which case no flight plan or itinerary of any kind is ever required.",
+      "the flight is conducted entirely under VFR in day conditions, in which case no flight plan or itinerary of any kind is ever required, which overstates the day VFR exemption, since even a local day VFR flight departing from and remaining near the departure aerodrome is only one narrow example of the limited exemptions that actually exist, and most day VFR cross-country flights still require a flight plan or itinerary.",
       "the flight will be conducted below 1,000 ft AGL, regardless of flight rules or route.",
       "the aircraft is a single-engine aircraft, with multi-engine aircraft exempted from any flight plan or itinerary requirement.",
     ],

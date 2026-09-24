@@ -39,7 +39,7 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     options: [
       "no meaningful backup capability at all, since an electric motor-driven pump is understood to be incapable of producing usable hydraulic pressure under any circumstance.",
       "the complete elimination of engine-driven hydraulic pumps from the aircraft's design, since electric pumps are understood to replace them entirely on modern aircraft.",
-      "hydraulic fluid to be converted directly into electrical power, reversing the usual relationship between the electrical and hydraulic systems.",
+      "hydraulic fluid to be converted directly into electrical power, reversing the usual relationship between the electrical and hydraulic systems on essentially every transport-category aircraft design.",
       "hydraulic pressure to be generated using electrical power alone, providing continued hydraulic system function in situations where the associated engine-driven pump is unavailable.",
     ],
     answer: 3,
@@ -70,9 +70,9 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     q: "A pressurized aircraft's positive and negative pressure relief valves, fitted in addition to the primary outflow valve, exist primarily to",
     options: [
       "operate only while the aircraft is on the ground, since relief valves are understood to be mechanically disabled once the aircraft becomes airborne.",
-      "protect the fuselage structure from being over-pressurized (positive relief) or from experiencing a damaging external-greater-than-internal pressure differential (negative relief) if the normal pressurization control fails.",
+      "protect the fuselage structure from over-pressurization (positive relief) or a damaging external-greater-than-internal pressure differential (negative relief) if normal pressurization control fails.",
       "serve as the aircraft's sole means of controlling cabin altitude during normal flight, entirely replacing the function of the primary outflow valve.",
-      "regulate engine bleed air temperature, a function unrelated to cabin pressurization safety and instead performed by a dedicated temperature control system.",
+      "regulate engine bleed air temperature, a function unrelated to cabin pressurization safety and instead performed by an entirely separate, dedicated temperature control system regardless of cabin altitude.",
     ],
     answer: 1,
     explain:
@@ -86,7 +86,7 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     q: "An electrically heated windshield, fitted to many transport-category aircraft, serves to",
     options: [
       "provide no anti-icing or anti-fog benefit whatsoever, since windshield heating is understood to serve only a cosmetic, non-functional purpose.",
-      "cool the windshield surface during high-speed flight, reversing the actual heating function that electrically heated windshields are designed to perform.",
+      "cool the windshield surface during high-speed flight, reversing the actual heating function that electrically heated windshields are designed to perform on the great majority of aircraft types.",
       "prevent ice and fog formation on the windshield and, on some designs, add a degree of impact resistance, by warming the glass or acrylic panel using embedded electrical heating elements.",
       "replace the need for windshield wipers entirely, since a heated windshield is understood to eliminate the need for any mechanical rain removal system.",
     ],
@@ -101,7 +101,7 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A fuel tank inerting system (nitrogen generation system), fitted to some modern transport aircraft, is designed to",
     options: [
-      "serve exclusively as a fuel quantity measurement device, with no relationship to fuel tank flammability or tank ullage composition.",
+      "serve exclusively as a fuel quantity measurement device, with no relationship whatsoever to fuel tank flammability, ullage composition, oxygen concentration, or explosion risk of any kind.",
       "increase fuel tank oxygen concentration deliberately, since inerting systems are understood to add oxygen rather than remove it from the tank ullage.",
       "physically remove fuel vapour from the tank entirely, leaving the ullage completely empty of any gas whatsoever.",
       "reduce the flammability of the fuel tank ullage (vapour space) by introducing nitrogen-enriched air, displacing oxygen and lowering the risk of a fuel tank explosion.",
@@ -182,7 +182,7 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     q: "Thrust reverser systems on turbofan-powered aircraft typically include an interlock that",
     options: [
       "prevents reverser deployment while the aircraft is airborne, generally permitting deployment only once the aircraft has weight on wheels (or an equivalent ground-sensed condition) after landing.",
-      "has no relationship to whether the aircraft is airborne or on the ground, since reverser deployment is understood to be permitted at any time regardless of flight phase.",
+      "has no relationship to whether the aircraft is airborne or on the ground, since reverser deployment is understood to be permitted at any time regardless of flight phase or weight-on-wheels status.",
       "prevents reverser deployment at any time, including after landing, making the interlock a permanent lockout rather than a conditional one.",
       "actively commands reverser deployment automatically during cruise flight, rather than restricting when deployment is permitted.",
     ],
@@ -198,8 +198,8 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     q: "A surge tank, found within some aircraft fuel tank designs (often near the wingtip), serves primarily to",
     options: [
       "generate additional lift, functioning as a purely aerodynamic structure with no relationship whatsoever to the fuel system.",
-      "provide expansion and overflow space for fuel that moves within the tank during maneuvering, temperature changes, or refuelling, helping to prevent fuel from being forced out through the tank venting system.",
-      "measure fuel temperature exclusively, serving the same role as a dedicated fuel temperature probe rather than any fuel-containment function.",
+      "provide expansion and overflow space for fuel that moves within the tank during maneuvering, temperature changes, or refuelling, helping prevent fuel loss through the tank venting system.",
+      "measure fuel temperature exclusively, serving the same role as a dedicated fuel temperature probe rather than performing any fuel-containment, expansion, or overflow function whatsoever during maneuvering.",
       "store an entirely separate reserve fuel supply that is never used to feed the engines under any circumstance.",
     ],
     answer: 1,
@@ -214,7 +214,7 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     q: "A permanent magnet generator (PMG), sometimes included in an aircraft's electrical generating system, is significant because it",
     options: [
       "generates hydraulic, rather than electrical, power, despite what its name would otherwise suggest about its actual function.",
-      "requires external electrical excitation current to function at all, making it functionally identical to, rather than independent of, the main generator's excitation system.",
+      "requires external electrical excitation current to function at all, making it functionally identical to, rather than meaningfully independent of, the main generator's own regulation and excitation circuitry in every respect.",
       "can continue to provide a source of electrical power independent of the main generator's normal excitation circuit, supporting essential functions even if the main generator's regulation or excitation fails.",
       "operates only while the aircraft is on the ground connected to external power, providing no function once the aircraft's engines are running.",
     ],
@@ -245,9 +245,9 @@ export const CANADA_TC_ATPL_BATCH_50_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A balance tab, fitted to a primary flight control surface, is distinguished from an anti-balance tab in that",
     options: [
-      "a balance tab moves in the opposite direction to the primary control surface to reduce the pilot's control force, while an anti-balance tab moves in the same direction, increasing control force (typically to add feel at high speed).",
+      "a balance tab moves opposite to the primary control surface to reduce the pilot's control force, while an anti-balance tab moves the same direction, increasing control force.",
       "the two terms describe an identical mechanism, with 'balance tab' and 'anti-balance tab' used interchangeably regardless of the direction in which the tab actually moves.",
-      "a balance tab increases control force required, while an anti-balance tab decreases it, the reverse of their actual respective functions.",
+      "a balance tab increases control force required, while an anti-balance tab decreases it, the exact reverse of their actual respective aerodynamic functions.",
       "a balance tab is used exclusively on the rudder, while an anti-balance tab is used exclusively on the elevator, making the distinction one of installation location rather than function.",
     ],
     answer: 0,

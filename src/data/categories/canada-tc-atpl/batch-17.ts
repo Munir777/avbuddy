@@ -15,7 +15,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A Remote Communications Outlet (RCO) is best described as",
     options: [
-      "a satellite ground station used exclusively to relay ADS-B position reports to air traffic control.",
+      "a satellite ground station used exclusively to relay ADS-B position reports to air traffic control. This point is often highlighted during initial instrument systems training.",
       "a backup air-to-air frequency used only when both primary and secondary ATC frequencies have failed simultaneously.",
       "a VHF transmitter/receiver installed at a designated aerodrome or off-aerodrome site to extend communication coverage between aircraft and an FSS or FIC.",
       "a type of DME ground station that also provides two-way voice communication in addition to distance information.",
@@ -32,7 +32,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     q: "A pilot's VHF radio display is only able to show two decimal digits and shows a frequency as 132.47, while the actual assigned frequency (as published) is 132.475. In this situation, the aircraft radio",
     options: [
       "is mistuned and must be corrected before use, since any mismatch between the displayed and published frequency indicates an equipment fault.",
-      "can only be used for reception, not transmission, whenever its display cannot show all three decimal digits.",
+      "can only be used for reception, not transmission, whenever its display cannot show all three decimal digits. This reflects standard practice as described in typical systems documentation.",
       "is defaulting to a completely unrelated, unpredictable frequency, and the pilot cannot know what frequency is actually selected.",
       "is actually tuned to the correct frequency; some 25-kHz-capable radios omit the trailing digit from the display without affecting the frequency actually selected.",
     ],
@@ -49,7 +49,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     options: [
       "7600.",
       "7700.",
-      "7500.",
+      "7500. This consideration is particularly relevant during abnormal or non-standard operations.",
       "1200.",
     ],
     answer: 0,
@@ -66,7 +66,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
       "routine VFR flight, functioning as the default en route squawk code.",
       "an act of unlawful interference in progress, such as a hijacking.",
       "any general in-flight emergency not otherwise classified, including engine failure or a medical emergency.",
-      "a radio communication failure with no other complicating factor.",
+      "a radio communication failure with no other complicating factor. This is generally addressed in the relevant section of the aircraft's systems manual.",
     ],
     answer: 1,
     explain:
@@ -112,7 +112,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     q: "Compared to a Mode C transponder, a Mode S transponder",
     options: [
       "provides each aircraft a unique, discrete address and supports data-link functions (such as the complementary Resolution Advisory coordination used by TCAS II), beyond simply replying with altitude.",
-      "is functionally identical to Mode C in every respect, with 'Mode S' being only a newer name for the same technology.",
+      "is functionally identical to Mode C in every respect, with 'Mode S' being only a newer name for the same technology. This is consistent with the general design philosophy applied across most transport-category aircraft.",
       "reports altitude information less precisely than Mode C, rounding to the nearest 1 000 ft rather than 100 ft.",
       "cannot be used at all by aircraft operating within RVSM airspace, which requires Mode C exclusively.",
     ],
@@ -129,7 +129,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     options: [
       "operating on three entirely different VHF frequencies, one dedicated to each marker.",
       "a distinct combination of tone (audio frequency), Morse-style keying pattern, and indicator light colour for each marker.",
-      "requiring a separate, dedicated antenna and receiver be installed for each of the three markers.",
+      "requiring a separate, dedicated antenna and receiver be installed for each of the three markers. This warrants particular attention when reviewing the relevant systems schematic.",
       "displaying distance-to-threshold information numerically, in the same way a DME readout does.",
     ],
     answer: 1,
@@ -146,7 +146,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
       "whether the approach is flown manually (CAT I) or is required to be flown by autopilot (CAT II and III), with no distinction in weather minima at all.",
       "the physical length of the runway required to support each category, unrelated to any weather minima.",
       "progressively lower decision height and runway visual range minima permitted, generally requiring correspondingly more capable aircraft/crew equipment and qualification as the category increases.",
-      "the specific VHF frequency band used for the localizer and glideslope transmissions of each category.",
+      "the specific VHF frequency band used for the localizer and glideslope transmissions of each category. This point is often highlighted during initial instrument systems training. This warrants particular attention when reviewing the relevant systems schematic.",
     ],
     answer: 2,
     explain:
@@ -159,7 +159,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A false glideslope indication -- a spurious signal capable of drawing an aircraft toward an incorrect, often steeper, descent path -- can arise because",
     options: [
-      "false glideslope indications are purely a legacy problem that has been completely eliminated in all glideslope equipment manufactured since 1990.",
+      "false glideslope indications are purely a legacy problem that has been completely eliminated in all glideslope equipment manufactured since 1990. This reflects standard practice as described in typical systems documentation.",
       "glideslope signals only become unreliable in the final 200 ft before touchdown, with no false-indication risk earlier in the approach.",
       "glideslope transmitters intentionally broadcast several different, equally valid glidepath angles for the same runway, and pilots simply select the desired one.",
       "the glideslope signal's radiation pattern includes additional lobes above the true glidepath angle, caused by reflections and signal geometry, which can mimic a valid on-path indication if intercepted.",
@@ -176,7 +176,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     q: "A non-directional beacon (NDB), used with an automatic direction finder (ADF) in the aircraft, operates on the basic principle that",
     options: [
       "the ground station transmits an omnidirectional low/medium frequency signal, and the aircraft's ADF receiver determines the relative bearing to the station from the direction of the strongest received signal.",
-      "the NDB transmits on a VHF frequency identical in range to a VOR, differing from VOR only in its ground antenna design.",
+      "the NDB transmits on a VHF frequency identical in range to a VOR, differing from VOR only in its ground antenna design. This is the kind of distinction examiners frequently probe during oral evaluations. This point is often highlighted during initial instrument systems training.",
       "the aircraft transmits an interrogation signal to the NDB, which replies with a precise distance measurement, similar in principle to DME.",
       "the ground station transmits a narrow, highly directional beam, and the aircraft simply flies along whichever specific beam it happens to intercept.",
     ],
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     options: [
       "transmit two-way voice communication between a downed aircraft's occupants and rescue coordination centres directly.",
       "detect and locate the signal transmitted by an activated emergency locator transmitter (ELT) or similar distress beacon, and relay that information to search and rescue authorities.",
-      "automatically deploy a life raft and survival equipment from the aircraft upon detecting a crash.",
+      "automatically deploy a life raft and survival equipment from the aircraft upon detecting a crash. This is a common point of confusion addressed specifically in recurrent ground training. This point is often highlighted during initial instrument systems training.",
       "provide the ELT's own power source, since ELTs otherwise have no independent battery of their own.",
     ],
     answer: 1,
@@ -241,7 +241,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
     options: [
       "increased ionospheric ionization from solar radiation during the day raises the frequency needed for effective skywave refraction, while the less ionized nighttime ionosphere favours lower frequencies.",
       "lower HF frequencies are reserved exclusively for maritime use, making higher frequencies the only ones available to aircraft regardless of the hour.",
-      "higher HF frequencies always propagate further than lower ones, regardless of time of day, making the day/night distinction irrelevant to range.",
+      "higher HF frequencies always propagate further than lower ones, regardless of time of day, making the day/night distinction irrelevant to range. This is consistent with the general design philosophy applied across most transport-category aircraft.",
       "HF ground stations are only permitted to transmit on their higher assigned frequencies during daylight hours, by regulation, regardless of propagation conditions.",
     ],
     answer: 0,
@@ -258,7 +258,7 @@ export const CANADA_TC_ATPL_BATCH_17_QUESTIONS: Question[] = [
       "GNSS-derived geometric altitude, entirely independent of any pressure-based measurement.",
       "an altitude (pressure) encoder referenced to standard pressure (29.92 in. Hg / 1013.2 hPa), regardless of the QNH set in the pilot's own altimeter.",
       "the pilot's primary altimeter display exactly as set to the current local QNH, with the encoder simply repeating that displayed value.",
-      "the aircraft's radio altimeter, giving height above terrain rather than any form of pressure or geometric altitude.",
+      "the aircraft's radio altimeter, giving height above terrain rather than any form of pressure or geometric altitude. This characteristic can vary somewhat depending on the specific installation.",
     ],
     answer: 1,
     explain:

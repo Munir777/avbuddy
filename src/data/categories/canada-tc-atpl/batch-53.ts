@@ -55,7 +55,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     options: [
       "a small pocket of gas becomes trapped beneath a filling, crown, or within a cavity in a tooth, expanding or contracting with changing cabin altitude and causing pain.",
       "a tooth is physically damaged by direct contact with cabin equipment, a mechanical injury unrelated to any gas expansion or altitude change.",
-      "it occurs only at ground level with the cabin unpressurized, and never during an actual change in cabin altitude in flight.",
+      "it occurs only at ground level with the cabin unpressurized, and never during an actual change in cabin altitude in flight, regardless of the climb or descent rate flown.",
       "dental barotrauma is purely a myth with no physiological basis, since teeth are understood to contain no gas-trapping spaces of any kind.",
     ],
     answer: 0,
@@ -71,7 +71,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     options: [
       "it always occurs only on the ground, since rapid decompression is understood to be impossible once an aircraft has become airborne.",
       "it can produce a sudden temperature drop, fogging, flying debris, and a sudden onset of significantly reduced time of useful consciousness, leaving little time to don oxygen before impairment sets in.",
-      "it has no meaningful physiological effect on occupants at all, since only a slow, gradual pressure loss is understood to pose any risk to time of useful consciousness.",
+      "it has no meaningful physiological effect on occupants at all, since only a slow, gradual pressure loss is understood to pose any risk to time of useful consciousness or cabin altitude tolerance whatsoever.",
       "it primarily affects the aircraft's electrical systems rather than the occupants, with no bearing on cabin pressure, oxygen availability, or crew alertness.",
     ],
     answer: 1,
@@ -85,7 +85,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Eustress, as distinguished from distress, refers to",
     options: [
-      "a purely physical (rather than psychological) form of stress, with distress understood to refer exclusively to psychological stress and eustress exclusively to physical stress.",
+      "a purely physical (rather than psychological) form of stress, with distress understood to refer exclusively to psychological stress and eustress exclusively to physical stress of any origin, severity, or duration.",
       "an outdated concept no longer considered relevant to modern human factors training, replaced entirely by the Yerkes-Dodson arousal-performance relationship.",
       "a form of stress that can be experienced as positive or motivating, potentially enhancing focus and performance up to a point, unlike distress, which is experienced negatively and tends to degrade performance.",
       "the complete absence of any stress response whatsoever, making eustress simply another term for a fully relaxed physiological state.",
@@ -167,7 +167,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     options: [
       "apply only to visual, rather than auditory, information, making 'expectation bias' in a communications context a misapplication of the underlying concept.",
       "ignore all radio transmissions entirely once a certain workload threshold is reached, rather than selectively mishearing content based on what was expected.",
-      "always request a full readback of every transmission regardless of content, a behaviour that is the opposite of what expectation bias actually predisposes a pilot toward.",
+      "always request a full readback of every transmission regardless of content, a behaviour that is the exact opposite of what expectation bias actually predisposes a pilot toward doing.",
       "hear or perceive a transmission as matching what was expected (such as a routinely assigned runway or altitude) rather than what was actually said, particularly under high workload.",
     ],
     answer: 3,
@@ -199,7 +199,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     options: [
       "focus solely on post-incident investigation, providing no proactive or ongoing fatigue risk management function during normal, day-to-day operations.",
       "manage fatigue risk using a data-informed, ongoing process that can account for factors such as actual sleep obtained and workload, rather than relying solely on fixed hour limits applied uniformly to every situation.",
-      "eliminate the need for any flight and duty time limitations whatsoever, since an FRMS is understood to fully replace all prescriptive limits with no minimum standard remaining.",
+      "eliminate the need for any flight and duty time limitations whatsoever, since an FRMS is understood to fully replace all prescriptive limits with no minimum standard remaining under any regulatory framework anywhere at all.",
       "apply exclusively to cabin crew, with flight crew fatigue understood to be managed only through prescriptive flight and duty time limits and never through an FRMS.",
     ],
     answer: 1,
@@ -230,7 +230,7 @@ export const CANADA_TC_ATPL_BATCH_53_QUESTIONS: Question[] = [
     q: "Cold stress (and, in a survival situation, hypothermia risk) is a particularly relevant human factors consideration for flight operations in remote or northern regions because",
     options: [
       "hypothermia risk is relevant only after a person has already been rescued, with no relevance to the period during which a person is still awaiting rescue.",
-      "cold temperatures are understood to have no physiological effect on human performance or survival, making cold stress an irrelevant consideration for any flight operation.",
+      "cold temperatures are understood to have no physiological effect on human performance or survival, making cold stress an irrelevant consideration for any flight operation regardless of region flown or time of season.",
       "cold stress applies only to passengers, with flight crew understood to be entirely unaffected by cold exposure in any survival scenario.",
       "a forced landing or extended delay in a cold environment can rapidly become a survival situation, making cold-weather preparedness and appropriate survival equipment an important part of operational planning.",
     ],

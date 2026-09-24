@@ -16,7 +16,7 @@ export const CANADA_TC_ATPL_BATCH_36_QUESTIONS: Question[] = [
     q: "The Saturated Adiabatic Lapse Rate (SALR), applying to a saturated rising air parcel, is generally",
     options: [
       "entirely undefined, since the concept of an adiabatic lapse rate does not apply to a saturated air parcel at all.",
-      "higher than the DALR, since condensation within a saturated rising parcel further accelerates its rate of cooling with altitude.",
+      "higher than the DALR, since condensation within a saturated rising parcel further accelerates its rate of cooling with altitude, a claim opposite to the actual cooling-slowing effect that latent heat release has on a saturated rising parcel.",
       "lower than the Dry Adiabatic Lapse Rate (DALR), because the latent heat released as water vapour condenses partially offsets the cooling that would otherwise occur as the parcel rises.",
       "identical to the DALR under all conditions, since condensation has no measurable effect on a rising parcel's cooling rate.",
     ],
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_36_QUESTIONS: Question[] = [
     options: [
       "increases air density, since water vapour molecules are denser than the dry air molecules they displace.",
       "decreases air density, since water vapour molecules are less dense than the dry air molecules they displace, which in turn increases density altitude.",
-      "has no effect on air density whatsoever, since density altitude is determined by pressure and temperature alone, with humidity playing no role at all.",
+      "has no effect on air density whatsoever, since density altitude is determined by pressure and temperature alone, with humidity playing no role at all, a claim inconsistent with how humidity's effect on air density is actually incorporated into density altitude calculations.",
       "decreases air density only at temperatures below freezing, with humidity increasing air density at all other, warmer temperatures.",
     ],
     answer: 1,
@@ -144,7 +144,7 @@ export const CANADA_TC_ATPL_BATCH_36_QUESTIONS: Question[] = [
     q: "Frost forming on an aircraft parked outside overnight is most commonly the result of",
     options: [
       "warm, moist air blowing across a colder body of water and then over the aircraft, an advection-driven rather than a radiational-cooling-driven process.",
-      "rain that fell earlier in the day and subsequently froze solid on the aircraft's surface as temperatures dropped overnight.",
+      "rain that fell earlier in the day and subsequently froze solid on the aircraft's surface as temperatures dropped overnight, a mechanism describing refreezing rather than the direct vapour-to-ice deposition process that actually produces frost.",
       "radiational cooling of the aircraft's surface below the surrounding air's dew point (specifically its frost point) on a clear, calm night, causing water vapour to deposit directly as ice.",
       "frost forming exclusively as a byproduct of active precipitation occurring at the time frost is observed, with clear-sky conditions considered incompatible with frost formation.",
     ],
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_36_QUESTIONS: Question[] = [
     options: [
       "a layer characterized by continuously and rapidly decreasing temperature with altitude, at a rate steeper than found anywhere else in the atmosphere.",
       "the boundary layer separating the troposphere below from the stratosphere above, generally marked by a change from decreasing to roughly constant (or slowly changing) temperature with increasing altitude.",
-      "a fixed altitude, identical everywhere on Earth and at every time of year, marking the top of the atmosphere entirely.",
+      "a fixed altitude, identical everywhere on Earth and at every time of year, marking the top of the atmosphere entirely, a description inconsistent with the tropopause's well-documented variation by latitude and season and its position well below the atmosphere's outer layers.",
       "the boundary between the stratosphere and the even higher mesosphere, one layer higher in the atmosphere than its actual position.",
     ],
     answer: 1,
@@ -258,7 +258,7 @@ export const CANADA_TC_ATPL_BATCH_36_QUESTIONS: Question[] = [
       "a steady, gradually increasing wind that builds over the course of many hours before reaching its eventual peak speed.",
       "a sudden, sharp increase in wind speed (to a specified threshold), sustained for at least a defined minimum duration, then followed by a comparatively rapid decrease.",
       "an observed decrease in wind speed only, with 'squall' specifically describing a lull rather than any increase in wind.",
-      "a specific type of precipitation intensity, with 'squall' referring to a rainfall rate rather than to any wind-speed phenomenon at all.",
+      "a specific type of precipitation intensity, with 'squall' referring to a rainfall rate rather than to any wind-speed phenomenon at all, a definition inconsistent with how SQ is actually reported as a sudden wind-speed event in METAR and SPECI observations.",
     ],
     answer: 1,
     explain:

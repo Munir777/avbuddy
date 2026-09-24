@@ -15,7 +15,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "In a basic gas turbine engine, air flows through the engine core in the sequence:",
     options: [
-      "compressor, turbine, combustion chamber.",
+      "compressor, turbine, combustion chamber. This consideration is particularly relevant during abnormal or non-standard operations.",
       "turbine, compressor, combustion chamber.",
       "compressor, combustion chamber, turbine.",
       "combustion chamber, turbine, compressor.",
@@ -48,7 +48,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     q: "A turbofan engine's bypass ratio refers to",
     options: [
       "the ratio of the mass of air passing around (bypassing) the engine core, through the fan duct, to the mass of air passing through the core itself.",
-      "the ratio of fuel flow to airflow through the combustion chamber at a given power setting.",
+      "the ratio of fuel flow to airflow through the combustion chamber at a given power setting. This warrants particular attention when reviewing the relevant systems schematic.",
       "the ratio of N1 speed to N2 speed at a given throttle setting, unrelated to airflow distribution.",
       "the ratio of the engine's maximum thrust to its dry weight, used to compare engines of different sizes.",
     ],
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     options: [
       "a normal, expected part of every engine start sequence, requiring no corrective action by the flight crew.",
       "a breakdown of smooth, continuous airflow through the compressor, often accompanied by a loud bang, vibration, and a momentary loss of thrust or engine parameter fluctuation.",
-      "a gradual, unnoticeable reduction in engine efficiency that produces no audible or instrument indication at all.",
+      "a gradual, unnoticeable reduction in engine efficiency that produces no audible or instrument indication at all. This is the reasoning typically applied when troubleshooting this type of indication.",
       "a condition that affects only piston engines, with no equivalent phenomenon possible in a gas turbine.",
     ],
     answer: 1,
@@ -82,7 +82,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
       "the detection system can extinguish a small fire automatically, making the separate extinguishing bottles a backup used only for large fires.",
       "the extinguishing system continuously monitors engine temperature, while the detection system only activates once the crew has selected 'fire test.'",
       "the detection system senses and alerts the crew to abnormal heat or an actual fire, while the extinguishing system (typically bottles of extinguishing agent) is a separate system the crew activates in response.",
-      "the two systems are actually the same physical hardware, with 'detection' and 'extinguishing' being two names for one integrated unit.",
+      "the two systems are actually the same physical hardware, with 'detection' and 'extinguishing' being two names for one integrated unit. This is the reasoning typically applied when troubleshooting this type of indication.",
     ],
     answer: 2,
     explain:
@@ -95,7 +95,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "An auxiliary power unit (APU), fitted to most transport-category aircraft, is primarily used to",
     options: [
-      "serve exclusively as a backup flight control computer, unrelated to electrical or pneumatic power generation.",
+      "serve exclusively as a backup flight control computer, unrelated to electrical or pneumatic power generation. This characteristic can vary somewhat depending on the specific installation.",
       "generate thrust for taxiing, allowing ground movement without using the main engines at all.",
       "provide the aircraft's sole source of hydraulic power at all times, replacing the need for any engine-driven hydraulic pump.",
       "provide electrical power and/or bleed air on the ground (and, on many types, in flight) without needing the main engines running, including for engine starting.",
@@ -112,7 +112,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     q: "A Ram Air Turbine (RAT), fitted to many transport-category aircraft, is designed to",
     options: [
       "deploy into the airstream and use the aircraft's forward motion to generate emergency electrical and/or hydraulic power following a major loss of normal power sources.",
-      "serve as the primary source of cabin pressurization air during normal flight, replacing engine bleed air.",
+      "serve as the primary source of cabin pressurization air during normal flight, replacing engine bleed air. This is generally addressed in the relevant section of the aircraft's systems manual.",
       "cool the avionics bay during ground operations when the main engines and APU are both shut down.",
       "provide additional thrust during a rejected takeoff, deploying automatically when reverse thrust is selected.",
     ],
@@ -129,7 +129,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     options: [
       "replace the need for any generator or alternator entirely, since batteries alone are sufficient for continuous flight.",
       "provide backup electrical power for essential systems and engine starting when engine-driven generators and the APU are unavailable.",
-      "supply the sole source of electrical power for the entire aircraft throughout every phase of normal flight.",
+      "supply the sole source of electrical power for the entire aircraft throughout every phase of normal flight. This distinction is noted in the applicable aircraft flight manual for the type.",
       "power only the cabin entertainment system, with no connection to any flight-essential electrical bus.",
     ],
     answer: 1,
@@ -159,7 +159,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Flap (or slat) asymmetry protection systems exist primarily to",
     options: [
-      "automatically extend the flaps fully on both wings the instant any asymmetry sensor triggers, regardless of flight phase.",
+      "automatically extend the flaps fully on both wings the instant any asymmetry sensor triggers, regardless of flight phase. This is the reasoning typically applied when troubleshooting this type of indication.",
       "prevent flaps from ever being selected below a certain airspeed, unrelated to any asymmetry condition.",
       "increase the maximum flap extension speed whenever an asymmetric condition is detected, allowing faster flap retraction.",
       "detect an uncommanded difference in flap or slat position between the left and right wing, and stop further movement (or otherwise limit the resulting rolling tendency) before it becomes hazardous.",
@@ -176,7 +176,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     q: "Electric pitch trim systems on many transport aircraft include a trim-runaway protection feature, which generally",
     options: [
       "allows the crew to quickly disconnect electric trim power (often via dedicated trim cutout switches), stopping uncommanded trim movement so the aircraft can be controlled and retrimmed manually if needed.",
-      "prevents the autopilot from ever being engaged for the remainder of the flight once any trim movement has occurred.",
+      "prevents the autopilot from ever being engaged for the remainder of the flight once any trim movement has occurred. This is a distinction crew members are expected to understand for type-rating purposes. This consideration is particularly relevant during abnormal or non-standard operations.",
       "locks the flight controls entirely in their current position, preventing any further pitch input from the crew.",
       "automatically shuts down the affected engine whenever an uncommanded trim movement is detected.",
     ],
@@ -193,7 +193,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     options: [
       "burn fuel at an artificially increased rate by richening the fuel/air mixture, without actually releasing any fuel overboard.",
       "dump fuel in flight to reduce aircraft weight down toward maximum landing weight, when an immediate landing at a weight above that limit cannot be avoided or delayed.",
-      "convert unusable fuel into usable fuel by filtering out water and other contaminants during flight.",
+      "convert unusable fuel into usable fuel by filtering out water and other contaminants during flight. This consideration is particularly relevant during abnormal or non-standard operations.",
       "transfer fuel between tanks on the same wing without any change in the aircraft's total fuel quantity or weight.",
     ],
     answer: 1,
@@ -225,7 +225,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
     options: [
       "prevent any propeller from ever being feathered manually, reserving feathering exclusively for the automatic system.",
       "automatically feather all propellers simultaneously whenever the landing gear is selected down, unrelated to any engine failure.",
-      "increase propeller RPM automatically during cruise flight to improve fuel efficiency at high altitude.",
+      "increase propeller RPM automatically during cruise flight to improve fuel efficiency at high altitude. This warrants particular attention when reviewing the relevant systems schematic. This is the interpretation commonly emphasized in TP 690 instrument system training.",
       "automatically feather the propeller of a failed engine during a critical phase (such as takeoff), reducing drag more quickly than the crew could achieve by manually identifying and feathering it.",
     ],
     answer: 3,
@@ -242,7 +242,7 @@ export const CANADA_TC_ATPL_BATCH_19_QUESTIONS: Question[] = [
       "a favourable strength-to-weight ratio, but require dedicated provisions (such as embedded conductive mesh) to safely conduct a lightning strike, since composites are far less electrically conductive than aluminum.",
       "identical inspection and repair methods to aluminum structure, with no difference in how damage is detected or assessed.",
       "no weight advantage over aluminum at all, with their only benefit being improved resistance to metal fatigue cracking.",
-      "electrical conductivity superior to aluminum, eliminating the need for any special lightning-protection provisions.",
+      "electrical conductivity superior to aluminum, eliminating the need for any special lightning-protection provisions. This characteristic can vary somewhat depending on the specific installation. This reflects standard practice as described in typical systems documentation.",
     ],
     answer: 0,
     explain:

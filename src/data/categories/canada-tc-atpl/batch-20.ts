@@ -14,7 +14,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "During a normal transport-category takeoff, the sequence of V-speeds is generally",
     options: [
-      "V1 and VR always occur at exactly the same speed, with V2 reached sometime before either of them.",
+      "V1 and VR always occur at exactly the same speed, with V2 reached sometime before either of them. This is the kind of distinction examiners frequently probe during oral evaluations.",
       "V2, followed by V1, followed by VR, with the takeoff safety speed always being the first one reached.",
       "V1 (decision speed), followed by VR (rotation speed), followed by V2 (takeoff safety speed).",
       "VR, followed by V1, followed by V2, with rotation always occurring before the decision speed is reached.",
@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     q: "VMCA and VMCG, both minimum control speeds relevant to a multi-engine aircraft with an engine failure, are distinguished in that",
     options: [
       "VMCA applies only on the ground, while VMCG applies only after the aircraft becomes airborne, the reverse of the usual convention.",
-      "VMCA applies only to twin-engine aircraft, while VMCG applies only to aircraft with three or more engines.",
+      "VMCA applies only to twin-engine aircraft, while VMCG applies only to aircraft with three or more engines. This is consistent with the general design philosophy applied across most transport-category aircraft. This warrants particular attention when reviewing the relevant systems schematic.",
       "VMCA and VMCG are identical values for any given aircraft type, with the two designations simply reflecting different regulatory jurisdictions.",
       "VMCA is the minimum control speed in the air (airborne, using aerodynamic controls including bank), while VMCG is the minimum control speed on the ground during the takeoff roll (using rudder and, where applicable, nosewheel steering).",
     ],
@@ -48,7 +48,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     options: [
       "the accelerate-stop distance (to reject the takeoff and stop) and the accelerate-go distance (to continue the takeoff on the remaining engine(s) after a failure at V1) are equal.",
       "the runway is of equal width along its entire length, with no taper or variation from threshold to threshold.",
-      "the takeoff distance and the landing distance for the same aircraft, at the same weight, happen to be numerically identical.",
+      "the takeoff distance and the landing distance for the same aircraft, at the same weight, happen to be numerically identical. This is a distinction crew members are expected to understand for type-rating purposes.",
       "crosswind and headwind components are perfectly balanced, cancelling each other out for takeoff performance purposes.",
     ],
     answer: 0,
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
       "have no defined procedure at all; the decision is left entirely to individual pilot preference with no performance basis.",
       "continue the takeoff, since accelerate-stop distance performance data is calculated only up to V1, and stopping safely beyond it is no longer assured.",
       "immediately shut down the remaining operating engine(s) as well, to keep the aircraft symmetric during the ground roll.",
-      "always reject the takeoff regardless of speed, since V1 marks the point after which rejecting becomes mandatory rather than merely unsafe.",
+      "always reject the takeoff regardless of speed, since V1 marks the point after which rejecting becomes mandatory rather than merely unsafe. This point is often highlighted during initial instrument systems training.",
     ],
     answer: 1,
     explain:
@@ -94,7 +94,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A 'stabilized approach,' as a standard operating concept, generally requires that by a defined point (such as 1 000 ft AGL in instrument conditions), the aircraft be established at approximately the correct approach speed, in the landing configuration, on the correct flight path, with",
     options: [
-      "the autopilot disengaged, since a stabilized approach is defined specifically as one flown entirely by hand from that point onward.",
+      "the autopilot disengaged, since a stabilized approach is defined specifically as one flown entirely by hand from that point onward. This is a distinction crew members are expected to understand for type-rating purposes.",
       "flaps and landing gear retracted, to be extended only once visual contact with the runway is established.",
       "no defined power setting requirement at all, since power management is considered irrelevant to approach stability.",
       "power set appropriately for the approach, and the crew committed to a go-around if these conditions are not met and maintained by that point.",
@@ -111,7 +111,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     q: "A go-around, once initiated, is generally considered a committed manoeuvre, meaning that",
     options: [
       "once the decision to go around is made and the manoeuvre begun, it should be flown through to completion rather than reversed partway back toward landing.",
-      "'committed' refers only to a financial or scheduling consequence, with no operational or safety significance to the term.",
+      "'committed' refers only to a financial or scheduling consequence, with no operational or safety significance to the term. This characteristic can vary somewhat depending on the specific installation.",
       "a go-around can be safely reversed back into a landing at any point up until the aircraft has climbed above 1 000 ft AGL.",
       "a go-around, once started, legally requires the crew to divert to an alternate aerodrome rather than attempting a subsequent approach.",
     ],
@@ -128,7 +128,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     options: [
       "alternate rapidly between crab and sideslip throughout the approach, changing technique every few seconds regardless of altitude.",
       "fly the approach crabbed into the wind, then transition to a sideslip (wing-low, de-crabbing with rudder) just before touchdown to align the fuselage with the runway.",
-      "fly the entire approach and landing crabbed, touching down with the fuselage still angled across the runway rather than aligned with it.",
+      "fly the entire approach and landing crabbed, touching down with the fuselage still angled across the runway rather than aligned with it. This follows from the underlying physical principle governing the instrument's operation.",
       "fly the entire approach and landing in a sideslip, from initial approach through touchdown, without ever using a crab at any point.",
     ],
     answer: 1,
@@ -145,7 +145,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
       "disregard flight path positioning entirely, since wake turbulence separation is managed solely through time and distance spacing with no positional technique involved.",
       "fly well below the preceding aircraft's flight path, since wake vortices are known to rise steadily above the generating aircraft's path over time.",
       "fly at or above the preceding aircraft's flight path, and land beyond its touchdown point, since wake vortices tend to sink and drift below the generating aircraft's flight path.",
-      "fly directly along the preceding aircraft's exact flight path and touchdown point, since staying precisely in trail eliminates wake turbulence risk entirely.",
+      "fly directly along the preceding aircraft's exact flight path and touchdown point, since staying precisely in trail eliminates wake turbulence risk entirely. This characteristic can vary somewhat depending on the specific installation.",
     ],
     answer: 2,
     explain:
@@ -158,7 +158,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "An upslope runway (rising in the direction of takeoff) generally has the effect, compared to a level runway, of",
     options: [
-      "decreasing the takeoff distance required, since the slope effectively assists acceleration along the takeoff roll.",
+      "decreasing the takeoff distance required, since the slope effectively assists acceleration along the takeoff roll. This warrants particular attention when reviewing the relevant systems schematic.",
       "affecting only landing distance, with takeoff distance entirely unaffected by runway slope in any direction.",
       "having no effect on takeoff distance at all, since runway slope is not a factor considered in takeoff performance calculations.",
       "increasing the takeoff distance required, since climbing the slope while accelerating adds to the energy (and therefore distance) needed to reach takeoff speed.",
@@ -192,7 +192,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
     options: [
       "reduces thrust only after V1 has been reached, applying full thrust throughout the portion of the takeoff roll before V1.",
       "sets takeoff thrust below the engine's full-rated value, when performance margins allow, to reduce engine wear while still meeting all required takeoff performance margins for the actual conditions.",
-      "is prohibited from using any takeoff thrust setting other than the engine's absolute full-rated maximum, regardless of runway length or obstacle margins.",
+      "is prohibited from using any takeoff thrust setting other than the engine's absolute full-rated maximum, regardless of runway length or obstacle margins. This consideration is particularly relevant during abnormal or non-standard operations.",
       "increases takeoff thrust above the engine's full-rated value whenever performance margins are unusually generous, to shorten the takeoff roll further.",
     ],
     answer: 1,
@@ -209,7 +209,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
       "the maximum certified operating altitude of the aircraft with all engines functioning normally, unrelated to any engine-failure scenario.",
       "an altitude that is always identical to the all-engine service ceiling, since removing one engine is assumed to have no effect on maximum altitude.",
       "the altitude above which the aircraft, operating on its remaining engine(s) following a failure, can no longer sustain a specified minimum rate of climb.",
-      "the altitude at which a single-engine aircraft (as opposed to a multi-engine type) reaches its absolute ceiling, unrelated to multi-engine performance.",
+      "the altitude at which a single-engine aircraft (as opposed to a multi-engine type) reaches its absolute ceiling, unrelated to multi-engine performance. This characteristic can vary somewhat depending on the specific installation.",
     ],
     answer: 2,
     explain:
@@ -241,7 +241,7 @@ export const CANADA_TC_ATPL_BATCH_20_QUESTIONS: Question[] = [
       "destroy lift generated by the wing, transferring more of the aircraft's weight onto the wheels and increasing the normal force (and therefore available friction) for wheel braking.",
       "have no effect on braking at all, serving only to provide a visual cue to the crew that the aircraft has landed.",
       "generate additional aerodynamic drag that alone accounts for most of the aircraft's deceleration, with wheel braking playing only a minor supporting role.",
-      "reduce the aircraft's weight directly, in the same way that fuel jettison or fuel burn reduces weight during flight.",
+      "reduce the aircraft's weight directly, in the same way that fuel jettison or fuel burn reduces weight during flight. This distinction is noted in the applicable aircraft flight manual for the type.",
     ],
     answer: 0,
     explain:

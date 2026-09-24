@@ -55,7 +55,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     options: [
       "Maximum Zero Fuel Weight (MZFW), Maximum Takeoff Weight (MTOW) once planned fuel is added, and Maximum Landing Weight (MLW) once fuel burned off en route is subtracted -- whichever produces the lowest available payload.",
       "Maximum Zero Fuel Weight alone, since MTOW and MLW are understood to have no bearing whatsoever on the maximum payload that can be carried.",
-      "a single fixed payload figure that never varies with route length or fuel load, since payload capacity is considered independent of trip distance.",
+      "a single fixed payload figure that never varies with route length or fuel load, since payload capacity is considered independent of trip distance, planned fuel uplift, or which of the three weight limits actually governs.",
       "Maximum Takeoff Weight alone, since MZFW and MLW are understood to be irrelevant to payload once the aircraft has been fuelled for departure.",
     ],
     answer: 0,
@@ -86,7 +86,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     q: "An air operator's company-imposed operating minimums, as distinguished from the minimum regulatory standards set out in the CARs, may generally",
     options: [
       "be less restrictive than the regulatory minimums, allowing operations in conditions below what the CARs would otherwise permit.",
-      "apply only to cargo operations, since passenger-carrying flights are understood to be exempt from any operator-specific minimums beyond the regulatory baseline.",
+      "apply only to cargo operations, since passenger-carrying flights are understood to be exempt from any operator-specific minimums beyond the regulatory baseline, a distinction with no basis in how such minimums are actually structured.",
       "be more restrictive than the regulatory minimums (for example, requiring a higher ceiling or greater visibility than the CARs alone would require), reflecting the operator's own risk management decisions.",
       "never differ from the regulatory minimums in any respect, since an operator is prohibited from imposing any standard beyond what the CARs specify.",
     ],
@@ -101,7 +101,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "A NOTAM Pre-flight Information Bulletin (PIB), obtained as part of preflight planning, is best described as",
     options: [
-      "a single NOTAM covering only the departure aerodrome, with all other route and destination NOTAMs requiring a completely separate, unrelated lookup process.",
+      "a single NOTAM covering only the departure aerodrome, with all other route and destination NOTAMs requiring a completely separate, unrelated lookup process regardless of how the flight is actually planned or briefed.",
       "a document required only for international flights, with no equivalent product available or relevant for a purely domestic Canadian flight.",
       "a weather-only product containing no NOTAM information whatsoever, despite what its name would suggest.",
       "a compiled summary of relevant NOTAMs for a specified route and time period, gathered together to support the pilot's preflight review rather than requiring each NOTAM to be checked individually.",
@@ -150,7 +150,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     q: "Standard (average) passenger and baggage weights, used by some operators in place of actual weighed values for weight and balance calculations, are generally",
     options: [
       "relevant only to cargo operations, since passenger and baggage weight standards are understood to have no application to a flight carrying passengers.",
-      "prohibited outright under all circumstances, since every passenger and item of baggage must always be individually weighed before every flight regardless of operator or aircraft type.",
+      "prohibited outright under all circumstances, since every passenger and item of baggage must always be individually weighed before every single flight regardless of operator, aircraft type, or route flown.",
       "established values intended to provide a reasonably accurate and administratively practical estimate of the actual load, subject to conditions and limitations on when their use is appropriate.",
       "applied without any restriction or oversight, since standard weights are understood to be usable in any situation with no regard for passenger demographics or load characteristics.",
     ],
@@ -165,7 +165,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Monitoring actual fuel burn against the flight plan at defined en route checkpoints is a practice intended primarily to",
     options: [
-      "satisfy a purely administrative record-keeping requirement with no operational safety purpose, since fuel burn is understood to always match the flight plan exactly in practice.",
+      "satisfy a purely administrative record-keeping requirement with no operational safety purpose, since fuel burn is understood to always match the flight plan exactly in practice regardless of actual winds or routing flown.",
       "replace the need for any fuel reserve at all, since ongoing fuel monitoring is considered a full substitute for carrying contingency or final reserve fuel.",
       "apply only after the aircraft has passed its destination, since en route fuel checks are understood to be irrelevant before that point in the flight.",
       "detect, as early as possible, a meaningful deviation from planned fuel consumption (for example due to stronger-than-forecast headwinds), so corrective action such as a diversion decision can be made with adequate margin.",
@@ -199,7 +199,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     options: [
       "relevant only to the aircraft's maximum takeoff weight, with no defined CG limits applicable at any lower operating weight.",
       "not a single fixed range across all weights, but rather a range that can narrow or shift somewhat as gross weight changes, reflecting structural and handling considerations at different weights.",
-      "identical at every gross weight, meaning the same forward and aft CG limits apply without exception regardless of how heavy or light the aircraft currently is.",
+      "identical at every gross weight, meaning the same forward and aft CG limits apply without exception regardless of how heavy or light the aircraft currently is or how its structural loading varies.",
       "determined solely by fuel quantity, with payload distribution having no bearing whatsoever on where the CG envelope's limits fall.",
     ],
     answer: 1,
@@ -230,7 +230,7 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     q: "Anticipated ATC or airport ground delays (such as an expected extended taxi time or ground stop) are generally accounted for in flight planning by",
     options: [
       "reducing the planned trip fuel to compensate, since anticipated ground delays are understood to reduce, rather than increase, the fuel required overall.",
-      "cancelling the flight automatically whenever any ground delay is anticipated, since flight planning is understood to have no mechanism for accommodating an expected delay.",
+      "cancelling the flight automatically whenever any ground delay is anticipated, since flight planning is understood to have no mechanism whatsoever for accommodating an expected ground delay of any length.",
       "disregarding any anticipated delay entirely, since ground delays are understood to have no bearing on the fuel actually required for a flight.",
       "including additional fuel in the planning figures to cover the expected delay, beyond the fuel that would otherwise be planned for a normal, undelayed departure and taxi sequence.",
     ],
@@ -245,10 +245,10 @@ export const CANADA_TC_ATPL_BATCH_49_QUESTIONS: Question[] = [
     system: "Flight Planning",
     q: "Before departure, the pilot-in-command's review and acceptance of the load manifest (load sheet) is intended to confirm that",
     options: [
-      "the aircraft's actual loaded weight and balance fall within the approved limits for the flight, since the pilot-in-command retains responsibility for this confirmation even where the load sheet is prepared by other personnel.",
+      "the aircraft's actual loaded weight and balance fall within the approved limits for the flight, with that confirmation remaining the pilot-in-command's responsibility regardless of who prepared the load sheet.",
       "cabin crew staffing levels meet the minimum requirement, a matter unrelated to the load sheet's actual purpose of confirming weight and balance.",
       "the aircraft's fuel quantity has been correctly uplifted, a distinct check unrelated to the load sheet's confirmation of weight and balance within limits.",
-      "the load sheet is entirely the responsibility of ground handling staff, with the pilot-in-command having no role in reviewing or accepting it before departure.",
+      "the load sheet is entirely the responsibility of ground handling staff, with the pilot-in-command having no role at all in reviewing, questioning, or accepting it before departure regardless of company procedure.",
     ],
     answer: 0,
     explain:

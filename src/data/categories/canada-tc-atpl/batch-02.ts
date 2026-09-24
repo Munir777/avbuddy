@@ -12,10 +12,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Full Authority Digital Engine Control (FADEC) manages engine operation using",
     options: [
-      "control of fuel scheduling only, with every other engine parameter still set manually by the crew.",
-      "a digital system that always reverts automatically to a hydromechanical backup control if the primary channel fails.",
+      "control of fuel scheduling only, leaving every other engine parameter, such as bleed air, ignition timing, and anti-ice scheduling, to be set, monitored, and adjusted manually by the flight crew using conventional analogue gauges.",
+      "a digital system that always reverts automatically to a hydromechanical backup control unit the instant the primary digital control channel experiences any kind of internal fault or malfunction.",
       "a digital electronic control system with no separate hydromechanical backup, so a failure of that control typically means the loss of control of that engine's fuel scheduling rather than reversion to a manual mode.",
-      "a purely mechanical and hydraulic governor system, with digital instrumentation used only for cockpit display.",
+      "a purely mechanical and hydraulic governor system, with any digital instrumentation fitted only for cockpit display purposes and playing no role in scheduling fuel.",
     ],
     answer: 2,
     explain:
@@ -28,9 +28,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A constant-speed propeller maintains a selected RPM primarily by",
     options: [
-      "varying the number of blades exposed to the airflow during flight.",
-      "holding a fixed blade angle and relying entirely on the engine's own RPM limiter.",
-      "varying engine fuel flow directly, independent of the propeller itself.",
+      "varying the number of blades physically exposed to the oncoming airflow during different phases of flight.",
+      "holding a fixed blade angle at all times under every operating condition and relying entirely on the engine's own internal RPM limiter circuitry to prevent any overspeed.",
+      "varying engine fuel flow directly on a continuous basis, independent of the propeller or its blade angle.",
       "varying the propeller's blade pitch angle in response to changes in power or airspeed, through the action of the propeller governor.",
     ],
     answer: 3,
@@ -45,9 +45,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "Feathering a propeller after an engine failure is done primarily to",
     options: [
       "minimize drag, by turning the blades close to parallel with the airflow -- a windmilling propeller left at a normal pitch angle produces significant drag.",
-      "increase drag deliberately, to help slow the aircraft during an emergency descent.",
-      "prevent the propeller from producing any thrust at all in the direction opposite to flight.",
-      "allow the engine to be restarted more quickly using the propeller's rotational momentum.",
+      "increase the propeller's drag deliberately and substantially, to help slow the aircraft more rapidly during an emergency descent profile.",
+      "prevent the propeller from producing any thrust at all in the direction opposite to the aircraft's direction of flight, which would otherwise work against the descent profile being flown.",
+      "allow the failed engine to be restarted more quickly afterward by using the propeller's remaining rotational momentum and inertia.",
     ],
     answer: 0,
     explain:
@@ -60,10 +60,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Reversing a propeller for use after landing is achieved by",
     options: [
-      "physically reversing the direction the propeller and engine rotate.",
+      "physically reversing the direction in which the propeller and the engine itself rotate on the ground after touchdown.",
       "rotating the blades to a negative pitch angle, so the propeller generates thrust opposite to the aircraft's direction of travel.",
-      "increasing blade pitch to its maximum, coarsest angle.",
-      "disconnecting the propeller governor and allowing the blades to feather.",
+      "increasing blade pitch to its maximum, coarsest angle available, well beyond the normal governing range.",
+      "disconnecting the propeller governor entirely and allowing the blades to move freely toward the fully feathered position without further crew input.",
     ],
     answer: 1,
     explain:
@@ -76,10 +76,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Asymmetric propeller thrust ('P-factor') is most pronounced when the aircraft is operating at",
     options: [
-      "idle power only, regardless of the aircraft's angle of attack.",
+      "idle power settings only, regardless of the aircraft's angle of attack or airspeed at the time.",
       "low power, low angle of attack, and high airspeed, such as during a high-speed cruise descent.",
       "high power, high angle of attack, and relatively low airspeed, such as during take-off or a go-around.",
-      "any power setting, provided the aircraft is above its manoeuvring speed.",
+      "any power setting at all, provided the aircraft remains above its designated manoeuvring speed.",
     ],
     answer: 2,
     explain:
@@ -109,9 +109,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "Vortex generators fitted to a wing or tail surface work by",
     options: [
       "energizing the boundary layer, which delays airflow separation at higher angles of attack or lower speeds.",
-      "increasing the wing's total surface area to generate additional lift.",
-      "acting as a mechanical stall warning device that vibrates at high angle of attack.",
-      "reducing the wingtip vortex that is responsible for induced drag.",
+      "increasing the wing's total surface area in order to generate meaningfully additional lift at low speed.",
+      "acting as a purely mechanical stall warning device that vibrates noticeably at a high angle of attack, similar in principle to a stick shaker.",
+      "reducing the wingtip vortex that is primarily responsible for producing induced drag at the wingtip.",
     ],
     answer: 0,
     explain:
@@ -124,10 +124,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Mass balancing of a flight control surface is primarily intended to prevent",
     options: [
-      "control surface icing, by shifting weight away from the leading edge.",
+      "control surface icing, by shifting balance weight away from the leading edge and toward the trailing edge.",
       "flutter, an uncontrolled and potentially destructive oscillation arising from the coupling of aerodynamic, inertial, and elastic forces.",
-      "excessive control forces at high airspeed.",
-      "asymmetric deployment of the surface during normal operation.",
+      "excessive control forces being felt by the pilot at high airspeed, independent of any structural coupling.",
+      "asymmetric deployment of the control surface during otherwise normal, routine flight operation, without any associated aerodynamic or elastic coupling.",
     ],
     answer: 1,
     explain:
@@ -140,8 +140,8 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The distinction commonly drawn between 'speed brakes' and 'spoilers' on a transport aircraft is that",
     options: [
-      "spoilers reduce drag, while speed brakes increase lift.",
-      "speed brakes are used only on the ground, while spoilers are used only in flight.",
+      "spoilers reduce drag on the wing, while speed brakes act separately to increase overall lift during descent.",
+      "speed brakes are used only on the ground during rollout, while spoilers are used only in flight to assist descent.",
       "speed brakes are deployed symmetrically to increase drag, while some or all of the same panels can also deploy asymmetrically as roll spoilers to supplement the ailerons.",
       "speed brakes are hydraulically actuated while spoilers are electrically actuated, with no other functional difference.",
     ],
@@ -173,9 +173,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "Compared to a turbojet or turbofan, a turbo-prop engine generally provides",
     options: [
       "more rapid thrust response to throttle movement, since propeller thrust changes quickly as blade angle and RPM respond to power lever inputs.",
-      "identical throttle response characteristics, since both use the same core gas-generator principles.",
-      "slower thrust response than a turbojet, due to the added rotational inertia of the propeller and reduction gearbox.",
-      "no usable thrust below a minimum RPM, unlike a turbojet, which produces thrust at any RPM above idle.",
+      "identical throttle response characteristics, since both use the same core gas-generator principles and spool arrangement.",
+      "slower thrust response than a turbojet, due to the added rotational inertia of the propeller, reduction gearbox, and the blade-pitch-change mechanism working together.",
+      "no usable thrust at all below a certain minimum RPM, unlike a turbojet, which continues producing usable thrust at any RPM above idle.",
     ],
     answer: 0,
     explain:
@@ -188,10 +188,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "'Spool-up lag' in a turbojet or turbofan engine refers to",
     options: [
-      "the delay in oil pressure rising after engine start.",
+      "the delay in oil pressure rising to its normal operating value in the minutes immediately following engine start, before the oil has had time to fully warm and thin out.",
       "the delay between advancing the throttle and the engine reaching the corresponding thrust, caused by the rotational inertia of the compressor/turbine spool(s).",
-      "the lag between selecting reverse thrust and the thrust reversers physically deploying.",
-      "the time required for the FADEC's software to initialize after engine start.",
+      "the lag between the crew selecting reverse thrust on landing and the thrust reversers physically deploying and unlocking.",
+      "the time required for the FADEC's software and associated channels to fully initialize after engine start is commanded.",
     ],
     answer: 1,
     explain:
@@ -204,10 +204,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Engine Pressure Ratio (EPR) is a measure of",
     options: [
-      "the ratio of fuel flow to airflow through the engine core.",
-      "the ratio of oil pressure to oil temperature.",
+      "the ratio of fuel flow to total airflow passing through the engine core at a given power setting.",
+      "the ratio of oil pressure to oil temperature within the engine's lubrication system.",
       "the ratio of turbine discharge (exhaust) pressure to compressor inlet pressure, used as an indication of thrust being produced.",
-      "the ratio of N1 to N2 rotational speeds.",
+      "the ratio of N1 to N2 rotational speeds as displayed on the engine instruments.",
     ],
     answer: 2,
     explain:
@@ -220,9 +220,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "In a turbine engine's oil system, the oil's primary purposes are to",
     options: [
-      "act as the sole medium for fuel-air mixing before combustion.",
-      "provide hydraulic power for the aircraft's flight controls.",
-      "provide the primary source of cooling for the combustion chamber itself.",
+      "act as the sole medium responsible for fuel-air mixing inside the combustion chamber before ignition.",
+      "provide the hydraulic power used to operate the aircraft's primary flight control surfaces, independent of the separate aircraft hydraulic system entirely.",
+      "provide the primary source of cooling for the combustion chamber itself during high-power operation.",
       "lubricate and cool the bearings and gears, and in some installations also actuate components such as the propeller pitch-change mechanism.",
     ],
     answer: 3,
@@ -237,9 +237,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "A fuel crossfeed system on a multi-engine aircraft is used to",
     options: [
       "allow fuel normally feeding one engine to be supplied to another engine instead, useful for managing a fuel imbalance or after a tank- or engine-related failure.",
-      "transfer fuel between the main tanks and the APU only.",
-      "automatically dump excess fuel overboard during an emergency descent.",
-      "prevent fuel from any one tank from ever being used by more than one engine, as a safety interlock.",
+      "transfer fuel between the main wing tanks and the APU only, with no connection to either engine's feed system.",
+      "automatically dump excess fuel overboard whenever an emergency descent is initiated by the crew, without requiring any separate, dedicated fuel-jettison switch to first be selected.",
+      "prevent fuel from any one tank from ever being used by more than one engine at a time, acting as a permanent safety interlock.",
     ],
     answer: 0,
     explain:
@@ -252,10 +252,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The 'essential' (or emergency) electrical bus on a transport aircraft is designed to",
     options: [
-      "supply power exclusively to the autopilot, with every other system on a separate bus.",
+      "supply power exclusively to the autopilot and flight director, with every other cockpit system, including essential flight instruments and communication radios, wired to a completely separate electrical bus.",
       "remain powered by a limited, high-priority set of sources (such as a battery or a dedicated generator), so flight-critical equipment stays available after a major generation failure.",
-      "replace the need for a battery entirely during normal operations.",
-      "supply power only to cabin lighting and passenger entertainment systems.",
+      "replace the need for the aircraft to carry a battery at all during normal day-to-day operations.",
+      "supply power only to cabin lighting and the passenger entertainment system, with no role in flight-critical equipment.",
     ],
     answer: 1,
     explain:
@@ -268,10 +268,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Transport aircraft typically use multiple independent hydraulic systems primarily to",
     options: [
-      "reduce the total weight of hydraulic fluid carried compared with a single larger system.",
-      "let each system operate at a different pressure for entirely unrelated purposes.",
+      "reduce the total weight of hydraulic fluid the aircraft has to carry compared with one single larger system.",
+      "let each independent system operate at a different working pressure for entirely unrelated purposes, none of which involve redundancy of any kind whatsoever.",
       "provide redundancy, so a single hydraulic system failure does not cause the loss of flight control or other critical hydraulically powered functions.",
-      "allow a single, larger hydraulic pump to be shared across all engines.",
+      "allow a single, much larger hydraulic pump to be shared and driven across all of the aircraft's engines.",
     ],
     answer: 2,
     explain:
@@ -284,9 +284,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Bleed air tapped from a turbine engine's compressor is typically used for",
     options: [
-      "cooling the engine's combustion chamber only.",
-      "pressurizing the hydraulic reservoirs only.",
-      "powering the primary flight control surfaces directly.",
+      "cooling the engine's combustion chamber only, with no other consumer anywhere on the aircraft.",
+      "pressurizing the aircraft's hydraulic reservoirs only, unrelated to any other pneumatic function.",
+      "powering the aircraft's primary flight control surfaces directly, without any hydraulic assistance.",
       "cabin pressurization and air conditioning, engine and airframe anti-ice/de-ice systems, and engine starting.",
     ],
     answer: 3,
@@ -301,9 +301,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "An engine fire extinguishing system on a transport aircraft is typically designed to allow",
     options: [
       "discharge of a limited number of extinguisher bottles (often two) into a selected engine, giving the crew more than one attempt if the fire persists after the first discharge.",
-      "discharge only into the APU compartment, since engine fires are handled by shutting off fuel alone.",
-      "continuous, unlimited discharge of extinguishing agent into all engines simultaneously.",
-      "fully automatic discharge with no crew action required, in every case.",
+      "discharge only into the APU compartment, since engine fires are assumed to be handled entirely by shutting off the fuel supply alone.",
+      "provide continuous, unlimited discharge of extinguishing agent into all engines simultaneously for as long as needed.",
+      "provide fully automatic discharge with no crew action required whatsoever, in every possible case, regardless of which engine, APU, or protected zone is actually affected by the fire.",
     ],
     answer: 0,
     explain:
@@ -316,10 +316,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The distinction between an 'anti-ice' system and a 'de-ice' system is that",
     options: [
-      "anti-ice systems are used only on the ground, while de-ice systems are used only in flight.",
-      "anti-ice systems prevent ice from forming in the first place (e.g. continuously heated surfaces), while de-ice systems allow a limited amount of ice to accumulate before removing it (e.g. cyclically inflated pneumatic boots).",
-      "de-ice systems prevent ice formation, while anti-ice systems remove ice after it has formed.",
-      "there is no meaningful operational difference; the two terms are interchangeable.",
+      "anti-ice systems are used only while the aircraft is stationary on the ground before departure, while de-ice systems are used only once the aircraft is airborne and in flight.",
+      "anti-ice systems prevent ice from forming in the first place, using continuously heated surfaces, while de-ice systems allow a limited amount of ice to accumulate before removing it, using cyclically inflated pneumatic boots.",
+      "de-ice systems are specifically designed to prevent ice from forming on a protected surface in the very first place, while anti-ice systems are instead used only to remove ice after it has already formed and visibly accumulated there.",
+      "there is no meaningful operational difference at all between the two; the terms are simply interchangeable depending on which manufacturer or textbook is being used.",
     ],
     answer: 1,
     explain:
@@ -332,10 +332,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "Supplemental oxygen requirements for flight crew in a pressurized aeroplane are generally more stringent than for passengers because",
     options: [
-      "there is actually no meaningful difference between crew and passenger oxygen requirements.",
-      "passengers are assumed to be met by a ground-based emergency service on landing, making in-flight oxygen unnecessary for them.",
+      "there is actually no meaningful regulatory or practical difference between crew and passenger oxygen requirements at all.",
+      "passengers are assumed in every case to be met by a ground-based emergency service upon landing, making in-flight supplemental oxygen unnecessary for them.",
       "crew members must remain capable of performing critical duties throughout a depressurization event, including at higher cabin altitudes and for longer durations than passengers typically require.",
-      "crew oxygen systems are inherently less reliable than passenger drop-down systems, requiring more redundancy.",
+      "crew oxygen systems are considered inherently far less reliable than the passenger drop-down masks, which is why noticeably more redundancy and backup capacity is deliberately built in just for the crew.",
     ],
     answer: 2,
     explain:
@@ -348,9 +348,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The 'cabin altitude' of a pressurized aircraft in cruise refers to",
     options: [
-      "the actual flight altitude of the aircraft, expressed in feet.",
+      "the actual flight altitude of the aircraft at that moment, expressed directly in feet above sea level.",
       "the maximum certified altitude for the aircraft type, regardless of the altitude actually being flown.",
-      "the altitude at which the cabin was pressurized on the ground before departure.",
+      "the fixed altitude at which the cabin was originally pressurized on the ground before departure, unchanging thereafter.",
       "the equivalent pressure altitude inside the cabin, which is normally maintained well below the aircraft's actual flight altitude.",
     ],
     answer: 3,
@@ -365,8 +365,8 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "An anti-skid (anti-lock) braking system on a transport aircraft functions primarily to",
     options: [
       "modulate brake pressure to prevent a wheel from locking up and skidding, maximizing effective braking friction, especially on a contaminated runway.",
-      "equalize hydraulic pressure between the main gear and the nose gear brakes only.",
-      "prevent the landing gear from retracting while weight is still on the wheels.",
+      "equalize hydraulic pressure between the main gear brakes and the nose gear brakes only, with no reference at all to wheel speed, deceleration, or runway surface condition.",
+      "prevent the landing gear from retracting while weight is still sensed on the wheels during the landing roll.",
       "automatically apply maximum braking as soon as the wheels spin up after touchdown, regardless of runway condition.",
     ],
     answer: 0,
@@ -380,10 +380,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "An autothrottle (or autothrust) system is primarily used to",
     options: [
-      "automatically select the appropriate engine for single-engine operation after a failure.",
+      "automatically select and reconfigure the appropriate remaining engine for continued single-engine operation once an actual in-flight failure has occurred and been confirmed.",
       "automatically adjust engine thrust to maintain a selected speed, thrust setting, or other target, reducing crew workload across various phases of flight.",
-      "replace the need for the autopilot to control pitch and roll.",
-      "automatically set the parking brake after landing.",
+      "replace the need for the autopilot to control pitch and roll at all, taking over those axes itself.",
+      "automatically set and hold the parking brake once the aircraft has come to a stop after landing.",
     ],
     answer: 1,
     explain:
@@ -396,10 +396,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "The Cockpit Voice Recorder (CVR) and Flight Data Recorder (FDR) are required to be powered such that they",
     options: [
-      "operate only when specifically activated by the crew during an emergency.",
-      "are automatically erased at the end of each flight to protect crew privacy.",
+      "operate only when specifically activated by the crew in response to a declared in-flight emergency.",
+      "are automatically and permanently erased at the end of each flight, specifically to protect crew privacy.",
       "continue recording throughout the period of flight required by regulation, capturing data leading up to and immediately following an abnormal event.",
-      "record only engine parameters, with cockpit audio and flight control data captured by separate, unrelated systems.",
+      "record only engine parameters, with cockpit audio and flight control surface position data instead captured by separate, entirely unrelated recording systems.",
     ],
     answer: 2,
     explain:
@@ -412,9 +412,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A master warning (or master caution) system on a modern flight deck is designed to",
     options: [
-      "automatically correct the underlying fault without any crew intervention.",
-      "function only while the aircraft is on the ground.",
-      "replace the need for individual system annunciator lights or messages.",
+      "automatically correct the underlying fault itself, without requiring any crew intervention at all.",
+      "function only while the aircraft is stationary on the ground, being disabled automatically in flight.",
+      "replace the need for individual system annunciator lights or messages elsewhere on the flight deck.",
       "draw the crew's attention to the presence of a warning or caution condition, directing them to the relevant system display for further detail.",
     ],
     answer: 3,
@@ -429,9 +429,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     q: "The distinction between a stick shaker and a stick pusher is that",
     options: [
       "a stick shaker provides a stall warning by vibrating the control column, while a stick pusher actively moves the control column forward to help prevent or recover from an actual stall.",
-      "both perform the same function; the terms just reflect different manufacturers' naming conventions.",
-      "a stick pusher provides a warning only, while a stick shaker actively changes the aircraft's pitch attitude.",
-      "a stick shaker is used only during pre-flight checks on the ground, while a stick pusher is used only in flight.",
+      "both perform exactly the same function in every case; the terms just reflect different manufacturers' naming conventions.",
+      "a stick pusher provides only an audible and tactile warning to the pilot, while it is actually the stick shaker device itself that actively and directly changes the aircraft's pitch attitude.",
+      "a stick shaker is used only during pre-flight checks on the ground, while a stick pusher is used only in flight at higher altitudes.",
     ],
     answer: 0,
     explain:
@@ -444,10 +444,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A Terrain Awareness and Warning System (TAWS), also known by its earlier name Ground Proximity Warning System (GPWS), provides alerts based on factors that include",
     options: [
-      "the aircraft's weight and balance being outside certified limits.",
+      "the aircraft's weight and balance being outside its certified limits for the current flight.",
       "excessive rate of descent, excessive terrain closure rate, and descent below the glideslope, among other modes.",
-      "cabin altitude exceeding a safe threshold.",
-      "engine parameters exceeding their certified operating limits.",
+      "the cabin altitude exceeding a safe pressurization threshold during cruise flight.",
+      "one or more engine parameters exceeding their certified operating limits for the phase of flight.",
     ],
     answer: 1,
     explain:
@@ -460,10 +460,10 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A take-off configuration warning system alerts the crew when",
     options: [
-      "the outside air temperature exceeds the engine's flat-rated temperature limit.",
-      "the aircraft's weight exceeds its maximum certified take-off weight.",
+      "the outside air temperature recorded at the moment of departure exceeds the engine's flat-rated temperature limit that was established specifically for take-off power.",
+      "the aircraft's actual weight exceeds its maximum certified structural take-off weight for the day.",
       "the throttles are advanced for take-off while one or more required systems (such as flaps, trim, or spoilers) are not in the correct take-off configuration.",
-      "the runway remaining is insufficient for the calculated take-off distance.",
+      "the runway remaining ahead of the aircraft is insufficient for the calculated take-off distance required.",
     ],
     answer: 2,
     explain:
@@ -476,9 +476,9 @@ export const CANADA_TC_ATPL_BATCH_02_QUESTIONS: Question[] = [
     system: "Airframes, Power Plants, Propellers and Aircraft Systems",
     q: "A Minimum Equipment List (MEL) is used to",
     options: [
-      "list the equipment required to be installed on every flight, with no exceptions permitted.",
+      "list the equipment required to be installed and fully serviceable on every single flight, with no exceptions ever permitted.",
       "specify equipment that must be carried in addition to the aircraft's type-certificate requirements, for marketing purposes.",
-      "record routine maintenance completed on the aircraft, independent of any dispatch decision.",
+      "record routine maintenance work completed on the aircraft, entirely independent of any dispatch decision made by the crew.",
       "identify equipment that may be inoperative for dispatch, subject to specified conditions or limitations, without compromising an acceptable level of safety.",
     ],
     answer: 3,

@@ -15,7 +15,7 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "For a radio wave, wavelength and frequency are related such that",
     options: [
-      "wavelength and frequency are entirely unrelated properties of a radio wave.",
+      "wavelength and frequency are entirely unrelated properties of a radio wave, regardless of the medium or propagation speed involved.",
       "wavelength and frequency are inversely related -- as frequency increases, wavelength decreases, for a constant propagation speed.",
       "wavelength depends only on the transmitting antenna's length, with no relationship to frequency at all.",
       "wavelength and frequency are directly proportional -- as frequency increases, wavelength also increases.",
@@ -32,7 +32,7 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "VHF radio (used for most air-ground voice communication, VOR, and the ILS localizer) propagates primarily as a",
     options: [
       "sky wave, refracted back to Earth by the ionosphere over very long distances.",
-      "wave that is entirely unaffected by terrain, curvature, or distance from the transmitter.",
+      "wave that is entirely unaffected by terrain, curvature of the Earth, or distance from the transmitting station at any time.",
       "direct, line-of-sight (space) wave, limited in range by the curvature of the Earth and by terrain obstructions.",
       "ground wave, following the curvature of the Earth well beyond the visual horizon.",
     ],
@@ -48,9 +48,9 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "HF radio is used for long-range oceanic and remote-area voice communication primarily because",
     options: [
       "HF signals travel in a perfectly straight line, giving them dramatically longer line-of-sight range than VHF.",
-      "HF requires no ground station infrastructure at all, unlike VHF.",
+      "HF requires no ground station infrastructure of any kind at all to function properly, unlike VHF communication systems in general use today.",
       "HF is entirely unaffected by atmospheric static or interference, unlike VHF.",
-      "its sky wave can be refracted back to Earth by the ionosphere, allowing communication far beyond the line-of-sight range that VHF is limited to.",
+      "its sky wave can be refracted back to Earth by the ionosphere, allowing communication far beyond VHF's line-of-sight range.",
     ],
     answer: 3,
     explain:
@@ -96,8 +96,8 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "ACARS (Aircraft Communications Addressing and Reporting System) is best described as a system that",
     options: [
       "is used exclusively for voice communication between the crew and company dispatch.",
-      "functions only while the aircraft is on the ground, with no in-flight capability.",
-      "transmits and receives digital data messages (such as company operational messages, weather, and some ATC clearances) rather than voice.",
+      "functions only while the aircraft is on the ground, with absolutely no in-flight capability whatsoever provided.",
+      "transmits digital data messages (operational messages, weather, some ATC clearances) rather than voice.",
       "replaces the aircraft's transponder, providing position data to ATC in place of secondary radar.",
     ],
     answer: 2,
@@ -127,8 +127,8 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "The key operational difference between primary and secondary surveillance radar (PSR and SSR) is that SSR",
     options: [
-      "relies on a reply from the aircraft's own transponder, which can also provide identity and altitude information, unlike a primary radar skin-paint return.",
-      "is used only for weather detection, while primary radar is used only for aircraft detection.",
+      "relies on a reply from the transponder, which can provide identity and altitude data, unlike a primary radar return.",
+      "is used only for weather detection purposes, while primary radar is said to be used only for aircraft detection purposes in general.",
       "cannot provide any altitude information under any circumstances, unlike primary radar.",
       "requires no equipment on board the aircraft at all, in the same way primary radar does.",
     ],
@@ -144,8 +144,8 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "ADS-B (Automatic Dependent Surveillance-Broadcast) differs from secondary radar surveillance in that ADS-B",
     options: [
       "can only be received by other aircraft, and is never used by ground-based ATC systems.",
-      "has the aircraft broadcast its own GPS-derived position and other data automatically, without needing to be interrogated by a ground radar site.",
-      "provides no position information at all, only altitude and identity.",
+      "has the aircraft broadcast its own GPS-derived position and other data automatically, without ground interrogation.",
+      "provides no position information at all, only altitude and identity data, according to this description of the system.",
       "requires the aircraft to be interrogated by a ground-based radar antenna, exactly as SSR does.",
     ],
     answer: 1,
@@ -159,9 +159,9 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Multilateration (MLAT) determines an aircraft's position by",
     options: [
-      "using a single ground-based radar antenna to measure both range and bearing directly.",
+      "using a single ground-based radar antenna to measure both range and bearing directly, without any additional receiver sites needed at all.",
       "requiring the aircraft to be equipped with GNSS and broadcast its own computed position, exactly as ADS-B does.",
-      "measuring the small differences in arrival time of the aircraft's transponder signal at multiple, precisely surveyed ground receiver sites.",
+      "measuring small differences in arrival time of the transponder signal at multiple, precisely surveyed ground receiver sites.",
       "relying entirely on the aircraft's onboard inertial reference system, with no ground infrastructure involved.",
     ],
     answer: 2,
@@ -175,10 +175,10 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Airborne weather radar primarily detects",
     options: [
-      "turbulence directly, by measuring air density fluctuations along the radar beam.",
+      "turbulence directly, by measuring air density fluctuations continuously along the entire length of the radar beam path itself.",
       "dry hail and dry snow with the same strong reflectivity as heavy rain.",
       "clear air turbulence with the same reliability it detects precipitation.",
-      "reflectivity from precipitation-sized water droplets or ice particles, which can be used to infer, but does not directly measure, turbulence.",
+      "reflectivity from precipitation-sized droplets or ice particles, used to infer, but not directly measure, turbulence.",
     ],
     answer: 3,
     explain:
@@ -191,8 +191,8 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Weather radar 'attenuation' behind a heavy precipitation cell refers to the situation where",
     options: [
-      "the radar beam is significantly absorbed or scattered by an intense cell in the foreground, weakening or masking the return from any cells located further along the same beam path.",
-      "attenuation is a phenomenon that affects ground-based ATC radar only, and never airborne weather radar.",
+      "the radar beam is significantly absorbed or scattered by an intense cell ahead, masking cells further along the beam path.",
+      "attenuation is said to be a phenomenon that affects ground-based ATC radar only, and never airborne weather radar systems at all.",
       "the radar automatically increases its transmitted power once heavy precipitation is detected, improving the return from cells behind it.",
       "the radar display always shows every cell along the beam path with equal, undiminished intensity, regardless of what lies in front.",
     ],
@@ -223,9 +223,9 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Compared to an NDB/ADF system, a VOR generally provides",
     options: [
-      "identical accuracy and identical susceptibility to weather-related errors as ADF.",
+      "identical accuracy and identical susceptibility to weather-related errors as ADF, according to this particular comparison.",
       "a less accurate bearing, since VOR operates at a lower, more error-prone frequency than NDB.",
-      "a more accurate and more weather-resistant bearing indication, since VOR is largely unaffected by the thunderstorm-related and night-effect errors that commonly disturb ADF.",
+      "a more accurate, weather-resistant bearing, since VOR resists the thunderstorm and night-effect errors common to ADF.",
       "distance information as its primary function, with bearing being only a secondary capability.",
     ],
     answer: 2,
@@ -240,9 +240,9 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "DME (Distance Measuring Equipment) provides the aircraft's",
     options: [
       "horizontal ground distance to the station exactly, with no error introduced by the aircraft's altitude.",
-      "bearing to the station, with distance being only a secondary, less accurate capability.",
+      "bearing to the station only, with distance information being merely a secondary, less accurate capability provided in this system.",
       "groundspeed directly, without needing successive distance readings over time.",
-      "slant range distance to the station, which can differ noticeably from the horizontal ground distance when the aircraft is close to, and well above, the station.",
+      "slant range distance to the station, which differs from horizontal ground distance when close to and above the station.",
     ],
     answer: 3,
     explain:
@@ -255,10 +255,10 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A VORTAC facility combines a civil VOR with a military TACAN, allowing civil aircraft to use",
     options: [
-      "the VOR component for bearing information and the TACAN component's distance-measuring function (equivalent to DME) for range, from a single co-located facility.",
+      "the VOR component for bearing and the TACAN component's distance function (equivalent to DME) for range, from one co-located facility.",
       "the full military TACAN bearing function, with the VOR component providing distance only.",
       "neither component, since VORTAC facilities are restricted to military aircraft exclusively.",
-      "the TACAN bearing function only, with no distance capability available to civil aircraft at all.",
+      "the TACAN bearing function only, with no distance-measuring capability made available to civil aircraft at all under any circumstance whatsoever.",
     ],
     answer: 0,
     explain:
@@ -303,10 +303,10 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "On an ILS, the localizer and glideslope transmissions operate in",
     options: [
-      "the HF band exclusively, for both the localizer and the glideslope.",
+      "the HF band exclusively, for both the localizer and glideslope transmissions at every ILS-equipped aerodrome across the network.",
       "the same frequency band, with the pilot selecting localizer or glideslope reception manually on the same tuned frequency.",
       "the same exact frequency, with localizer and glideslope information carried as different modulation depths of a single signal.",
-      "different frequency bands -- the localizer in VHF, the glideslope in UHF -- that are paired together for each specific ILS installation.",
+      "different frequency bands -- localizer in VHF, glideslope in UHF -- paired together for each specific ILS installation.",
     ],
     answer: 3,
     explain:
@@ -319,10 +319,10 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A GNSS approach with vertical guidance (such as LPV) provides its vertical path primarily through",
     options: [
-      "satellite-based positioning (often augmented for improved accuracy), rather than a ground-based glideslope transmitter as used by an ILS.",
+      "satellite-based positioning, often augmented for accuracy, rather than a ground-based glideslope transmitter as used by an ILS.",
       "the exact same ground-based UHF glideslope transmitter equipment used by an ILS.",
       "the aircraft's barometric altimeter exclusively, with no satellite input used at all.",
-      "a radar altimeter reading, referenced continuously from the final approach fix to the runway threshold.",
+      "a radar altimeter reading, referenced continuously from the final approach fix all the way to the runway threshold itself, throughout the final segment.",
     ],
     answer: 0,
     explain:
@@ -336,9 +336,9 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     q: "A Precision Approach Radar (PAR) approach is flown by",
     options: [
       "reference to VASIS/PAPI lights exclusively, with no radar or radio guidance involved at all.",
-      "a ground controller watching the aircraft's position on radar and issuing verbal heading and altitude/glidepath corrections to the pilot throughout the approach.",
+      "a ground controller watching the aircraft's radar position and issuing verbal heading and glidepath corrections throughout.",
       "the aircraft's onboard weather radar, repurposed to provide approach guidance.",
-      "the pilot following cockpit displayed lateral and vertical guidance, with no controller verbal input required.",
+      "the pilot following cockpit displayed lateral and vertical guidance only, with no controller verbal input required at all throughout the entire approach.",
     ],
     answer: 1,
     explain:
@@ -367,10 +367,10 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "The operational difference between a TCAS/ACAS Traffic Advisory (TA) and a Resolution Advisory (RA) is that",
     options: [
-      "a TA commands a specific manoeuvre, while an RA is informational only, with no manoeuvre commanded.",
+      "a TA commands a specific avoidance manoeuvre directly, while an RA is purely informational, with no manoeuvre ever commanded at all.",
       "a TA and an RA are two names for exactly the same alert, issued under different circumstances.",
       "only an RA is displayed to the crew; a TA is logged silently for post-flight review only.",
-      "a TA alerts the crew to nearby traffic without commanding a specific manoeuvre, while an RA commands a specific vertical avoidance manoeuvre.",
+      "a TA alerts the crew to nearby traffic without commanding a manoeuvre; an RA commands a specific vertical avoidance manoeuvre.",
     ],
     answer: 3,
     explain:
@@ -383,8 +383,8 @@ export const CANADA_TC_ATPL_BATCH_10_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "When responding to a TCAS/ACAS Resolution Advisory, the expected pilot/controller radio interchange includes the pilot",
     options: [
-      "advising ATC of the RA and the resulting deviation as soon as practicable, and later reporting 'clear of conflict' as the aircraft returns to its assigned clearance.",
-      "remaining silent throughout the event, since ATC is assumed to already be aware of every RA as it happens.",
+      "advising ATC of the RA and deviation as soon as practicable, then reporting clear of conflict on returning to the clearance.",
+      "remaining completely silent throughout the entire event, since ATC is assumed here to already be fully aware of every RA as it happens.",
       "requesting the controller's permission before responding to the RA in any way.",
       "cancelling the RA verbally with ATC before the onboard system itself indicates the conflict is resolved.",
     ],

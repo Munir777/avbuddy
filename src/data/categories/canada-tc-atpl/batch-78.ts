@@ -27,7 +27,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
       "make no adjustment at all to approach speed, since flap setting has no effect on the speed required to remain safely above the stall.",
       "reduce the approach speed below the normal reference speed, since less flap always reduces the stalling speed for a given weight.",
       "add a specified speed increment above the normal reference landing speed to compensate for the reduced lift coefficient available at the non-normal flap setting, accepting the resulting increase in landing distance required.",
-      "always execute a go-around rather than attempt to land in any non-normal flap configuration, regardless of the specific failure or the runway available.",
+      "always execute a go-around rather than attempt to land in any non-normal flap configuration, regardless of the specific failure or the runway available, a blanket rule that does not reflect actual procedure, which instead calls for adding a speed increment to compensate for reduced lift and accepting a longer landing distance rather than mandating a go-around in every non-normal flap case.",
     ],
     answer: 2,
     explain:
@@ -40,7 +40,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A long landing, in which the aircraft touches down significantly beyond the normal touchdown zone, is commonly caused by",
     options: [
-      "touching down at exactly the reference landing speed with a normal flare, which by definition always produces a long landing.",
+      "touching down at exactly the reference landing speed with a normal flare, which by definition always produces a long landing, a description that misstates the actual cause, since touching down at the correct reference speed with a normal flare is precisely what a stabilized approach and landing are meant to achieve, not a factor that produces a long landing.",
       "a stabilized approach flown precisely on the correct glide path and airspeed all the way to the runway.",
       "applying maximum braking immediately upon crossing the runway threshold, before the aircraft has actually touched down.",
       "excess airspeed, a shallow or extended flare, or floating in ground effect before touchdown, all of which consume runway distance before the aircraft actually settles onto the surface.",
@@ -58,7 +58,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     options: [
       "clear evidence that the aircraft is unsafe or unable to fly, such as a severe structural failure, a fire warning that persists, or a clear indication the aircraft will not become airborne, rather than routine malfunctions that do not prevent a safe takeoff and climb-out.",
       "the crew's subjective discomfort with continuing, even absent any specific indication that the aircraft cannot safely fly.",
-      "a routine engine failure alone, with no other complicating factor, since this is considered sufficient justification on its own to reject after V1.",
+      "a routine engine failure alone, with no other complicating factor, since this is considered sufficient justification on its own to reject after V1, a description that overstates the threshold, since a routine engine failure without additional complicating factors is generally regarded as something the aircraft can safely continue to fly with and climb away from after V1 rather than an automatic justification to reject.",
       "any illumination of a caution light on the EICAS or ECAM display, regardless of its nature or severity.",
     ],
     answer: 0,
@@ -74,7 +74,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     options: [
       "banking steeply into the inoperative engine throughout the entire landing rollout, in the same manner as used during an OEI approach.",
       "rudder and, as the aircraft decelerates and rudder authority diminishes, differential braking and nosewheel steering, since the asymmetric thrust that existed in flight is no longer a factor once the operating engine(s) are brought to idle or reverse.",
-      "aileron input alone, with no role for rudder, differential braking, or nosewheel steering during the landing rollout.",
+      "aileron input alone, with no role for rudder, differential braking, or nosewheel steering during the landing rollout, a description that leaves out the controls actually used, since directional control during the landing rollout instead relies primarily on rudder and, as speed decreases, on differential braking and nosewheel steering rather than aileron alone.",
       "immediately applying maximum reverse thrust on the operating engine only, which is the sole technique used to maintain the centreline.",
     ],
     answer: 1,
@@ -91,7 +91,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
       "descend below the published circling minimum descent altitude in an attempt to regain visual contact more quickly.",
       "continue circling indefinitely at the current altitude until visual contact is regained, regardless of how much time or fuel this requires.",
       "execute the missed approach procedure specified for a circling approach, which typically involves turning toward the airport (or a specified direction) and climbing, rather than automatically following the straight-ahead missed approach track published for a straight-in approach to that runway.",
-      "immediately follow the straight-in missed approach track published for the runway originally intended to be used, even though the aircraft is no longer aligned with that runway.",
+      "immediately follow the straight-in missed approach track published for the runway originally intended to be used, even though the aircraft is no longer aligned with that runway, a track that does not correspond to the aircraft's actual position during a circling manoeuvre, since the appropriate procedure is instead the specific circling missed approach, which typically turns toward the airport and climbs rather than following the straight-in track meant for an aircraft already aligned on final.",
     ],
     answer: 2,
     explain:
@@ -122,7 +122,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     options: [
       "not be reduced below the aircraft's minimum reference approach speed for the current weight and configuration, since that speed already provides the required margin above the stall regardless of how much the headwind reduces the resulting groundspeed.",
       "always be reduced by an amount equal to the full headwind component, regardless of how close this brings the aircraft to its stalling speed.",
-      "have no defined minimum at all, since a sufficiently strong headwind component is considered to eliminate any stall margin concern.",
+      "have no defined minimum at all, since a sufficiently strong headwind component is considered to eliminate any stall margin concern, a claim that ignores the stall margin approach speed exists to protect, since that minimum reference speed continues to apply regardless of how much a headwind happens to reduce the resulting groundspeed.",
       "be increased by the full headwind component, in the same manner as a gust additive, rather than being based on weight and configuration.",
     ],
     answer: 0,
@@ -136,7 +136,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "On an aircraft without an anti-skid braking system, effective manual braking technique on a runway with reduced friction generally involves",
     options: [
-      "applying maximum, continuous, unbroken brake pressure from the moment of touchdown, since this always produces the shortest possible landing roll regardless of runway condition.",
+      "applying maximum, continuous, unbroken brake pressure from the moment of touchdown, since this always produces the shortest possible landing roll regardless of runway condition, a technique that risks the opposite of its intended effect on a slippery surface, since a continuously locked wheel loses both braking effectiveness and directional steering capability compared with a cadence technique that periodically releases pressure to let the wheel regain rotation.",
       "applying brakes in a cadence (a rhythmic, pumping application and release) rather than continuous, steady, firm pressure, since a locked wheel loses braking effectiveness and steering control, and releasing periodically allows the wheel to regain rotation before the next application.",
       "applying brakes only on one main gear at a time, alternating sides throughout the entire landing roll regardless of any need for directional correction.",
       "avoiding the use of brakes entirely on any runway with reduced friction, relying solely on aerodynamic drag to decelerate the aircraft.",
@@ -153,7 +153,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     q: "The initial actions upon commencing a go-around generally include, in sequence,",
     options: [
       "maintaining the current descent rate and configuration while awaiting a specific ATC clearance before taking any go-around action.",
-      "retracting the landing gear and flaps immediately and simultaneously with the thrust application, before any positive rate of climb has been established.",
+      "retracting the landing gear and flaps immediately and simultaneously with the thrust application, before any positive rate of climb has been established, a sequence that risks retracting lift-producing devices before the aircraft has actually begun to climb, rather than waiting for a confirmed positive rate of climb before progressively retracting gear and flaps according to the appropriate schedule.",
       "applying go-around thrust, establishing a positive pitch attitude to arrest the descent and begin a climb, and then, as a positive rate of climb is confirmed, retracting the landing gear and progressively retracting flaps according to the appropriate schedule.",
       "reducing thrust to idle first, to avoid an abrupt pitch change, and only then establishing a climb attitude.",
     ],
@@ -187,7 +187,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
       "brakes that remain excessively hot risk further degraded performance if braking is needed again soon, and in some cases risk a fuse plug releasing tire pressure or, in extreme cases, a brake fire, particularly if the next takeoff is then rejected as well.",
       "hot brakes improve subsequent braking performance, meaning a shorter cooling period is always preferable to a longer one.",
       "brake temperature has no bearing on braking performance or tire integrity, making cooling time an unnecessary precaution.",
-      "brake cooling is required only to satisfy a maintenance logbook entry, with no actual safety implication for a subsequent takeoff.",
+      "brake cooling is required only to satisfy a maintenance logbook entry, with no actual safety implication for a subsequent takeoff, a paperwork-only framing that overlooks the genuine safety concern, since excessively hot brakes can degrade further braking performance and, in some cases, risk a fuse plug release or brake fire if another rejected takeoff or landing follows too soon.",
     ],
     answer: 0,
     explain:
@@ -203,7 +203,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
       "require less runway to land than at a low-elevation aerodrome, since reduced air density also reduces the aircraft's momentum during the landing roll.",
       "have a true airspeed and groundspeed higher than at the same indicated speed at a low-elevation aerodrome, meaning the aircraft covers more distance over the ground per unit of time and requires more runway to land, even though the indicated approach speed itself is unchanged.",
       "require a lower indicated approach speed than at a low-elevation aerodrome, in order to compensate for the reduced air density.",
-      "have a true airspeed and groundspeed identical to those at a low-elevation aerodrome, since indicated airspeed alone determines groundspeed regardless of air density.",
+      "have a true airspeed and groundspeed identical to those at a low-elevation aerodrome, since indicated airspeed alone determines groundspeed regardless of air density, a claim that leaves out air density's role entirely, since the same indicated airspeed actually corresponds to a higher true airspeed at a high-elevation, lower-density aerodrome, and therefore to a higher groundspeed as well.",
     ],
     answer: 1,
     explain:
@@ -234,7 +234,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
     options: [
       "descending as steeply as possible to reach the ground in the shortest possible time, without regard to maximizing glide distance.",
       "maintaining maximum airspeed throughout the glide, since higher speed always maximizes glide distance regardless of the aircraft's specific best-glide speed.",
-      "immediately extending full flap and landing gear at the earliest possible moment after the thrust loss, regardless of altitude or distance from a suitable landing area.",
+      "immediately extending full flap and landing gear at the earliest possible moment after the thrust loss, regardless of altitude or distance from a suitable landing area, a premature configuration change that would increase drag and reduce the achievable glide distance well before it is actually needed, rather than being deferred until a suitable landing site is assured within gliding range.",
       "establishing and maintaining the aircraft's published best-glide speed to maximize the distance the aircraft can cover for the altitude available, while assessing restart options and identifying a suitable landing site within gliding range.",
     ],
     answer: 3,
@@ -251,7 +251,7 @@ export const CANADA_TC_ATPL_BATCH_78_QUESTIONS: Question[] = [
       "may be used for takeoff and for landing rollout (after crossing the displaced threshold) but is not available for touchdown before the threshold, meaning it does not count toward landing distance available but may still contribute to takeoff distance available.",
       "counts fully toward both landing distance available and takeoff distance available, with no restriction on its use.",
       "is reserved exclusively for aircraft taxiing to and from the runway, with no application to either takeoff or landing distance calculations.",
-      "may not be used for any purpose at all, including takeoff, and is functionally identical to a stopway.",
+      "may not be used for any purpose at all, including takeoff, and is functionally identical to a stopway, a description that overstates the restriction and conflates two different surfaces, since a displaced threshold area remains usable for takeoff and for landing rollout after the threshold, unlike a stopway, which is not available for takeoff run at all.",
     ],
     answer: 0,
     explain:

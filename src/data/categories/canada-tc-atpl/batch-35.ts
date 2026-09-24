@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_35_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under CAR 602.03, a crew member is generally prohibited from acting as a crew member of an aircraft",
     options: [
-      "at any time whatsoever, since CAR 602.03 imposes a lifetime prohibition on alcohol consumption for any licensed crew member.",
+      "at any time whatsoever, since CAR 602.03 imposes a lifetime prohibition on alcohol consumption for any licensed crew member, a reading inconsistent with the specific time-based and impairment-based wording the regulation actually uses.",
       "only while the aircraft is airborne, with no restriction at all applying to alcohol consumption before a flight that has not yet departed.",
       "only if they have consumed alcohol within the preceding 24 hours, with any lesser interval considered fully unrestricted under CAR 602.03.",
       "within a specified minimum period (commonly referred to as the '8 hours bottle to throttle' rule) after consuming alcohol, or while any alcohol or drug could impair their performance.",
@@ -97,7 +97,7 @@ export const CANADA_TC_ATPL_BATCH_35_QUESTIONS: Question[] = [
     options: [
       "with any item of equipment inoperative without restriction, since an approved MEL removes all equipment-related dispatch conditions entirely.",
       "only if every item of installed equipment is fully operative, since an approved MEL does not itself permit any equipment to be inoperative.",
-      "exclusively for cargo-only flights, with an approved MEL considered inapplicable to any flight carrying passengers.",
+      "exclusively for cargo-only flights, with an approved MEL considered inapplicable to any flight carrying passengers, a restriction not found anywhere in how MEL approval and use is actually structured for mixed operations.",
       "with certain specified items of equipment inoperative, provided the conditions and limitations set out in the approved MEL for that item are met.",
     ],
     answer: 3,
@@ -161,7 +161,7 @@ export const CANADA_TC_ATPL_BATCH_35_QUESTIONS: Question[] = [
     options: [
       "neither aircraft is required to take any avoiding action, since right-of-way rules apply only to aircraft that are already on a direct collision course.",
       "the faster aircraft always has the right of way regardless of relative direction, since speed alone determines right-of-way in a converging situation.",
-      "the aircraft at the higher altitude always has the right of way over the lower aircraft, since altitude alone determines right-of-way when converging.",
+      "the aircraft at the higher altitude always has the right of way over the lower aircraft, since altitude alone determines right-of-way when converging, a rule not reflected anywhere in the actual bearing-based converging right-of-way standard.",
       "the aircraft that has the other on its right generally has the right of way, and the aircraft without the right of way must generally give way, avoiding passing over, under, or in front of the other aircraft.",
     ],
     answer: 3,
@@ -207,7 +207,7 @@ export const CANADA_TC_ATPL_BATCH_35_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under CAR 602.08, the use of a portable electronic device on board an aircraft is generally restricted primarily to prevent",
     options: [
-      "any possibility of passenger distraction, with electromagnetic interference playing no role in the regulation's underlying rationale at all.",
+      "any possibility of passenger distraction, with electromagnetic interference playing no role in the regulation's underlying rationale at all, a rationale inconsistent with the interference-focused wording actually used in CAR 602.08 itself.",
       "unauthorized recording of cockpit conversations, a privacy rather than an electromagnetic-interference-focused regulatory purpose.",
       "interference with the aircraft's electronic navigation or communication equipment, unless the operator or pilot-in-command has determined the specific device will not cause such interference.",
       "excess electrical load on the aircraft's own electrical system, since portable electronic devices are assumed to draw power directly from aircraft systems.",

@@ -30,10 +30,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Histotoxic hypoxia is distinguished from hypoxic hypoxia in that histotoxic hypoxia occurs when",
     options: [
-      "poor circulation reduces the delivery of oxygenated blood to the tissues, as can occur under sustained high-G loading.",
-      "the blood's oxygen-carrying capacity is reduced, as with carbon monoxide binding preferentially to hemoglobin.",
-      "the ambient partial pressure of oxygen in the air being breathed is reduced, as it is at higher altitude.",
-      "the body's tissues are unable to properly use the oxygen actually delivered to them, even though oxygen delivery itself may be adequate -- as with alcohol or certain toxins impairing cellular oxygen utilization.",
+      "poor circulation reduces the delivery of oxygenated blood to the tissues, as can occur under sustained high-G loading or in extreme cold -- the distinct circulatory mechanism classified separately as stagnant hypoxia.",
+      "the blood's oxygen-carrying capacity itself is reduced, as with carbon monoxide binding preferentially to hemoglobin in place of oxygen -- the mechanism classified separately as anemic hypoxia.",
+      "the ambient partial pressure of oxygen in the air actually being breathed is reduced, as it is at higher altitude -- the mechanism classified separately as ordinary hypoxic hypoxia.",
+      "the body's tissues are unable to properly use the oxygen delivered to them, even though delivery itself may be adequate -- as with alcohol or certain toxins impairing cellular oxygen utilization.",
     ],
     answer: 3,
     explain:
@@ -46,10 +46,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Stagnant hypoxia results from",
     options: [
-      "poor or interrupted circulation of oxygenated blood to the tissues, which can occur under sustained high-G loading or in extreme cold, even when oxygen delivery to the lungs and its uptake into the blood are both adequate.",
-      "a reduced ambient partial pressure of oxygen in the air being breathed, exactly as in ordinary hypoxic hypoxia.",
-      "the tissues being physically unable to use available oxygen, exactly as in histotoxic hypoxia.",
-      "a reduced oxygen-carrying capacity of the blood itself, exactly as in anemic hypoxia caused by carbon monoxide exposure.",
+      "poor or interrupted circulation of oxygenated blood to the tissues, which can occur under sustained high-G loading or extreme cold, even when oxygen uptake in the lungs is adequate.",
+      "a reduced ambient partial pressure of oxygen in the air being breathed, exactly as in ordinary hypoxic hypoxia experienced at higher altitude, rather than any circulatory problem.",
+      "the tissues being physically unable to use the oxygen actually delivered to them, exactly as in histotoxic hypoxia caused by alcohol or certain other toxins.",
+      "a reduced oxygen-carrying capacity of the blood itself, exactly as in anemic hypoxia caused by carbon monoxide binding preferentially to hemoglobin.",
     ],
     answer: 0,
     explain:
@@ -78,10 +78,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Trapped gas discomfort in the sinuses or middle ear, encountered particularly during descent, occurs because",
     options: [
-      "trapped gas problems occur only during climb, and are never encountered during descent under any circumstances.",
-      "as ambient pressure decreases during climb, gas trapped in an enclosed cavity expands faster than it can escape, creating painful overpressure.",
-      "as ambient pressure increases during descent, gas trapped in an enclosed cavity (behind a blocked sinus opening or eustachian tube) cannot expand to equalize, creating a relative vacuum and associated pain.",
-      "trapped gas problems are unrelated to Boyle's Law or to any change in ambient pressure, and instead result purely from cabin humidity changes.",
+      "trapped gas problems occur only during climb, and are never encountered during descent under any circumstances, since Boyle's Law is assumed to apply solely to the climb phase of flight.",
+      "as ambient pressure decreases during climb, gas trapped in an enclosed cavity expands faster than the blocked passage can vent it, creating painful overpressure inside the cavity.",
+      "as ambient pressure increases during descent, gas trapped behind a blocked sinus opening or eustachian tube cannot expand to equalize, creating a relative vacuum and associated pain.",
+      "trapped gas problems are unrelated to Boyle's Law or to any change in ambient pressure, and instead result purely from cabin humidity and temperature changes during the flight.",
     ],
     answer: 2,
     explain:
@@ -94,10 +94,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The Valsalva maneuver, commonly used to help clear (equalize) the ears during descent, works by",
     options: [
-      "holding the breath entirely, without any exhalation effort, for as long as possible during the descent.",
-      "rapidly and forcefully inhaling through the nose, which draws air out of the middle ear rather than pushing air into it.",
-      "swallowing repeatedly with the mouth held wide open and the nose left completely unobstructed, with no pressure applied at all.",
-      "gently increasing pressure in the throat and nasal passages (such as by pinching the nose and exhaling gently against it) to help force air up through the eustachian tube into the middle ear.",
+      "holding the breath entirely, without any exhalation effort, for as long as possible during the descent, until the ears clear on their own.",
+      "rapidly and forcefully inhaling through the nose, which draws air out of the middle ear rather than pushing air into it, worsening rather than relieving the pressure differential.",
+      "swallowing repeatedly with the mouth held wide open and the nose left completely unobstructed, with no pressure applied at all, relying purely on passive muscular action.",
+      "gently increasing pressure in the throat and nasal passages, such as by pinching the nose and exhaling gently against it, to force air up through the eustachian tube.",
     ],
     answer: 3,
     explain:
@@ -110,10 +110,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Positional alcohol nystagmus -- involuntary eye movement induced by alcohol affecting the vestibular system -- is significant to a pilot because it",
     options: [
-      "can persist for many hours after drinking, well after a person otherwise feels sober, and can contribute to spatial disorientation and impaired vision even after obvious cognitive impairment has faded.",
-      "occurs only while a person is actively intoxicated, and disappears entirely and immediately as soon as blood alcohol level returns to zero.",
-      "affects only a person's sense of hearing, with no relationship to vision, eye movement, or spatial orientation at all.",
-      "is a beneficial adaptation that improves visual tracking ability, rather than a form of impairment.",
+      "can persist for many hours after drinking, well after a person feels sober, and can contribute to spatial disorientation and impaired vision after cognitive impairment has faded.",
+      "occurs only while a person is actively intoxicated, and disappears entirely and immediately as soon as blood alcohol level returns to zero, leaving no lingering vestibular effect.",
+      "affects only a person's sense of hearing, with no relationship to vision, eye movement, or spatial orientation at all, despite its name referencing eye movement.",
+      "is a beneficial adaptation that improves visual tracking ability under alcohol's influence, rather than a form of impairment affecting vestibular and visual function.",
     ],
     answer: 0,
     explain:
@@ -142,10 +142,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Active monitoring, as distinct from passive monitoring, of automated flight systems generally involves",
     options: [
-      "disabling all automated systems and reverting to fully manual control, since active monitoring is defined as the opposite of using automation at all.",
-      "delegating the monitoring task entirely to the other pilot, freeing the monitoring pilot to focus exclusively on non-monitoring duties.",
-      "deliberately cross-checking what the automation is actually doing against what it's expected to be doing, rather than simply watching the displays without a specific expectation to verify against.",
-      "watching the flight displays passively, without any specific expectation or comparison, since passive observation is what defines active monitoring.",
+      "disabling all automated systems and reverting to fully manual control, since active monitoring is defined in this context as the opposite of using automation at all during any phase of flight.",
+      "delegating the monitoring task entirely to the other pilot, freeing the monitoring pilot to focus exclusively on non-monitoring duties unrelated to the automation's behaviour.",
+      "deliberately cross-checking what the automation is actually doing against what it's expected to be doing, rather than watching displays without an expectation to verify.",
+      "watching the flight displays passively, without any specific expectation or comparison in mind, since passive observation is what defines active monitoring in this context.",
     ],
     answer: 2,
     explain:
@@ -158,10 +158,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Effective followership, as a CRM concept complementing leadership, generally involves a crew member",
     options: [
-      "applying only to cabin crew, with the concept having no relevance to a first officer's role in the flight deck.",
-      "assuming leadership responsibilities themselves whenever they personally disagree with a decision made by the pilot-in-command.",
-      "deferring entirely and silently to the pilot-in-command's decisions at all times, without ever voicing an observation or a concern.",
-      "actively contributing observations, questions, and concerns to support the flight's safe conduct, rather than simply and silently complying with the leader's instructions without engagement.",
+      "applying only to cabin crew, with the concept having no relevance to a first officer's or other flight deck crew member's role at all.",
+      "assuming leadership responsibilities themselves whenever they personally disagree with a decision made by the pilot-in-command, regardless of the circumstances involved.",
+      "deferring entirely and silently to the pilot-in-command's decisions at all times, without ever voicing an observation, a concern, or a clarifying question.",
+      "actively contributing observations, questions, and concerns to support the flight's safe conduct, rather than simply complying without engagement.",
     ],
     answer: 3,
     explain:
@@ -190,10 +190,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "The 'Swiss cheese' model of accident causation illustrates the idea that",
     options: [
-      "an organization's defences against an accident are entirely useless once even a single layer has any weakness at all.",
-      "an accident typically results from a rare alignment of multiple, otherwise-independent layered defences each having a gap, rather than from a single isolated cause.",
-      "accidents occur completely randomly, with no underlying pattern or contributing organizational and human factors involved at all.",
-      "accidents are always caused by a single, easily identifiable failure, with no meaningful role played by any other contributing factor.",
+      "an organization's defences against an accident are entirely useless once even a single layer has any weakness at all, regardless of the other layers behind it.",
+      "an accident typically results from a rare alignment of multiple, independent layered defences each having a gap, rather than a single isolated cause.",
+      "accidents occur completely randomly, with no underlying pattern or contributing organizational and human factors involved in their occurrence at all.",
+      "accidents are always caused by a single, easily identifiable failure, with no meaningful role played by any other contributing organizational factor.",
     ],
     answer: 1,
     explain:
@@ -206,10 +206,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "A 'reporting culture,' as one of several components often described as underpinning a strong overall safety culture, refers to an environment in which",
     options: [
-      "reporting is entirely optional and actively discouraged, since a strong safety culture is assumed to require no reporting activity at all.",
-      "reports are collected but never acted upon, since a reporting culture is defined purely by the volume of reports generated.",
-      "people are willing and encouraged to report their own errors, near-misses, and safety concerns, because they trust the information will be used constructively rather than used against them.",
-      "only formal accident investigators are permitted to submit safety reports, with front-line personnel excluded from the reporting process entirely.",
+      "reporting is entirely optional and actively discouraged, since a strong safety culture is assumed to require no reporting activity from front-line personnel at all.",
+      "reports are collected but never acted upon, since a reporting culture is defined purely by the volume of reports generated rather than by how they are used.",
+      "people are willing to report their own errors, near-misses, and safety concerns, trusting the information will be used constructively rather than against them.",
+      "only formal accident investigators are permitted to submit safety reports, with front-line operational personnel excluded from the reporting process entirely.",
     ],
     answer: 2,
     explain:
@@ -222,10 +222,10 @@ export const CANADA_TC_ATPL_BATCH_24_QUESTIONS: Question[] = [
     system: "Human Factors",
     q: "Individual differences in risk tolerance -- how much perceived risk a person is comfortable accepting before adjusting their behaviour -- are significant in aviation human factors because",
     options: [
-      "risk tolerance has no bearing on real-world decision-making in aviation, and is considered relevant only to ground-based, non-flying occupations.",
+      "risk tolerance has no bearing on real-world decision-making in aviation, and is considered relevant only to ground-based, non-flying occupations and roles.",
       "risk tolerance is identical for every certificated pilot, meaning objective conditions alone (rather than any individual difference) determine every pilot's go/no-go decision.",
       "a pilot's risk tolerance is fixed permanently at the point of initial licensing and cannot meaningfully change with experience, training, or personal circumstances afterward.",
-      "a pilot with a higher personal risk tolerance may press on in marginal conditions that a more risk-averse pilot, given the exact same objective information, would choose to avoid or divert from.",
+      "a pilot with higher personal risk tolerance may press on in marginal conditions that a more risk-averse pilot, given the same objective information, would avoid.",
     ],
     answer: 3,
     explain:

@@ -14,7 +14,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A static port becomes completely blocked in flight, while the pitot tube remains clear. As the aircraft subsequently climbs and descends, the altimeter and vertical speed indicator will",
     options: [
-      "be unaffected in level flight but fail completely the moment any pitch change is made.",
+      "be unaffected in level flight but fail completely the moment any pitch change is made. This is the reasoning typically applied when troubleshooting this type of indication.",
       "continue to read accurately, since the altimeter and VSI are driven by pitot pressure, not static pressure.",
       "freeze at the readings held at the moment of blockage, since both instruments depend on static pressure alone.",
       "read progressively lower in altitude and higher in rate of climb the longer the blockage persists.",
@@ -31,7 +31,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     q: "In an unpressurized aircraft, selecting the alternate static source (typically vented inside the cabin) after a primary static port blockage will generally cause the altimeter and airspeed indicator to read",
     options: [
       "exactly the same values as the primary static source, with no measurable difference between the two.",
-      "an unpredictable, randomly fluctuating value with no consistent relationship to true outside static pressure.",
+      "an unpredictable, randomly fluctuating value with no consistent relationship to true outside static pressure. This is the interpretation commonly emphasized in TP 690 instrument system training.",
       "a slightly lower altitude and a slightly lower airspeed than actual, because cabin static pressure is usually somewhat higher than true outside static pressure.",
       "a slightly higher altitude and a slightly higher airspeed than actual, because cabin static pressure is usually somewhat lower than true outside static pressure.",
     ],
@@ -48,7 +48,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     options: [
       "prevent ice from forming in or blocking the pitot tube, which would otherwise cause unreliable or lost airspeed indications.",
       "prevent condensation from forming on the outside of the windscreen during descent into warmer, more humid air.",
-      "warm the cabin air supplied to passengers during cold-weather operations, unrelated to any flight instrument.",
+      "warm the cabin air supplied to passengers during cold-weather operations, unrelated to any flight instrument. This point is often highlighted during initial instrument systems training.",
       "de-ice the leading edge of the wing immediately adjacent to where the pitot tube is mounted.",
     ],
     answer: 0,
@@ -65,7 +65,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
       "replacing the calibrated leak entirely with a fully electronic pressure transducer that requires no static pressure input at all.",
       "incorporating an accelerometer that supplies an immediate response to a change in vertical speed, compensating for the inherent lag of the standard VSI's calibrated leak mechanism.",
       "displaying vertical speed in feet per minute rather than metres per minute, with no change to its internal mechanism.",
-      "eliminating the need for any static pressure connection, relying instead entirely on GPS-derived altitude data.",
+      "eliminating the need for any static pressure connection, relying instead entirely on GPS-derived altitude data. This consideration is particularly relevant during abnormal or non-standard operations.",
     ],
     answer: 1,
     explain:
@@ -94,7 +94,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "QNH, QFE, and QNE are altimeter setting conventions distinguished as follows:",
     options: [
-      "QNH and QFE both apply only above the transition level, while QNE applies only below it.",
+      "QNH and QFE both apply only above the transition level, while QNE applies only below it. This is generally addressed in the relevant section of the aircraft's systems manual. This is the kind of distinction examiners frequently probe during oral evaluations.",
       "QNH gives height above the aerodrome, QFE gives altitude above mean sea level, and QNE is used only below the transition altitude.",
       "QNH, QFE, and QNE all give exactly the same reading; they are simply three regional naming conventions for the same altimeter setting.",
       "QNH gives altitude above mean sea level, QFE gives height above the specific aerodrome, and QNE (standard pressure, 29.92 in. Hg / 1013.2 hPa) gives pressure altitude.",
@@ -111,7 +111,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     q: "The fundamental gyroscopic property of 'rigidity in space,' relied upon by instruments such as the attitude indicator and heading indicator, refers to a spinning gyroscope's tendency to",
     options: [
       "maintain the orientation of its spin axis in space unless acted upon by an external force, providing a stable attitude or heading reference.",
-      "reverse the direction of its spin axis automatically whenever the aircraft changes heading by more than 90 degrees.",
+      "reverse the direction of its spin axis automatically whenever the aircraft changes heading by more than 90 degrees. This warrants particular attention when reviewing the relevant systems schematic.",
       "spin at a constantly increasing rate unless deliberately slowed by an external mechanism.",
       "gradually align its spin axis with the earth's true north pole over time, with no external force required.",
     ],
@@ -145,7 +145,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
       "using a conventional spinning mechanical rotor, identical in principle to a classic attitude gyro but constructed from lighter materials.",
       "by directly measuring changes in the earth's magnetic field strength as the aircraft's heading changes.",
       "by measuring the difference in travel time between two laser beams sent in opposite directions around a closed loop, without any spinning mechanical rotor at all.",
-      "using a pendulum suspended in a laser-illuminated chamber, whose swing angle indicates the rate of rotation.",
+      "using a pendulum suspended in a laser-illuminated chamber, whose swing angle indicates the rate of rotation. This consideration is particularly relevant during abnormal or non-standard operations.",
     ],
     answer: 2,
     explain:
@@ -158,7 +158,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     system: "Instruments",
     q: "A cabin differential pressure gauge, found in pressurized aircraft, indicates",
     options: [
-      "the difference between cabin temperature and outside air temperature, used to set the cabin's environmental control system.",
+      "the difference between cabin temperature and outside air temperature, used to set the cabin's environmental control system. This is consistent with the general design philosophy applied across most transport-category aircraft.",
       "the aircraft's true altitude above mean sea level, independent of any cabin pressurization system.",
       "the rate of cabin altitude change only, with no indication of the absolute pressure differential at any given moment.",
       "the difference between cabin pressure and outside ambient (static) pressure, which is monitored to stay within the airframe's structural pressurization limits.",
@@ -175,7 +175,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     q: "Many transport aircraft fuel quantity indicating systems measure the fuel remaining in each tank using",
     options: [
       "capacitance-type probes, whose electrical capacitance changes with the level (and dielectric properties) of the fuel surrounding them, converted electronically into a quantity reading.",
-      "direct visual sight-glass tubes mounted on the exterior of each tank, read by the flight crew during preflight only.",
+      "direct visual sight-glass tubes mounted on the exterior of each tank, read by the flight crew during preflight only. This point is often highlighted during initial instrument systems training. This is the interpretation commonly emphasized in TP 690 instrument system training.",
       "a simple mechanical float and lever arrangement identical to that used in most small automobile fuel gauges, with no electronic component.",
       "the aircraft's weight and balance computer alone, which infers remaining fuel purely from the aircraft's current gross weight.",
     ],
@@ -207,7 +207,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     q: "On a modern electronic flight instrument system (EFIS), the Primary Flight Display (PFD) and Navigation Display (ND) are distinguished in that",
     options: [
       "the PFD and ND display identical information; the distinction is purely a labelling convention with no functional difference between the two screens.",
-      "the ND replaces the need for any attitude or airspeed indication, which is instead shown solely on the PFD's smaller, secondary sub-display.",
+      "the ND replaces the need for any attitude or airspeed indication, which is instead shown solely on the PFD's smaller, secondary sub-display. This distinction is noted in the applicable aircraft flight manual for the type. This is generally addressed in the relevant section of the aircraft's systems manual.",
       "the PFD presents attitude, airspeed, altitude, and vertical speed for immediate aircraft control, while the ND presents the aircraft's position, route, and surrounding navigation information such as waypoints and weather.",
       "the PFD is used only during cruise flight, while the ND is used only during approach and landing, with no overlap in when each is referenced.",
     ],
@@ -224,7 +224,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
     options: [
       "the range used exclusively during engine start, with no application once the engine has stabilized at any other power setting.",
       "a range in which the indicated parameter should be entirely disregarded by the flight crew, since it carries no operational meaning.",
-      "the normal, unrestricted operating range for continuous use at any power setting, with green reserved for takeoff power only.",
+      "the normal, unrestricted operating range for continuous use at any power setting, with green reserved for takeoff power only. This follows from the underlying physical principle governing the instrument's operation.",
       "a caution range, in which operation is permitted only for a limited time or under specific conditions, distinct from the normal green operating range and the red maximum limit line.",
     ],
     answer: 3,
@@ -257,7 +257,7 @@ export const CANADA_TC_ATPL_BATCH_16_QUESTIONS: Question[] = [
       "electrically dampen deviation caused by the aircraft's own magnetic fields, replacing the need for a compass correction card.",
       "damp out oscillation and vibration of the compass card, and to lubricate and support its pivot, improving the steadiness and longevity of the reading.",
       "provide thermal insulation so the compass reading is unaffected by outside air temperature at any altitude.",
-      "prevent the compass from being affected by variation, so that it reads true heading directly with no correction required.",
+      "prevent the compass from being affected by variation, so that it reads true heading directly with no correction required. This is consistent with the general design philosophy applied across most transport-category aircraft.",
     ],
     answer: 1,
     explain:

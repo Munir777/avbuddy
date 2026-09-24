@@ -40,10 +40,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "For area navigation based on a VOR/DME (RHO-THETA) station, the resulting computed position generally becomes",
     options: [
-      "more accurate with increasing distance from the station, the reverse of the actual relationship between bearing error and distance.",
-      "dependent solely on DME distance accuracy, with the VOR bearing component contributing no error to the computed position at any range.",
-      "entirely unaffected by distance from the station, with positional accuracy remaining constant regardless of range.",
-      "less accurate with increasing distance from the station, since a given small angular bearing error corresponds to a progressively larger lateral position error the further the aircraft is from the station.",
+      "more accurate with increasing distance from the station in every case, the exact reverse of the actual relationship that exists between angular bearing error and distance from the station.",
+      "dependent solely and entirely on DME distance accuracy alone, with the VOR bearing component said to contribute no error whatsoever to the computed position at any range.",
+      "entirely unaffected by distance from the station in any case, with positional accuracy said to remain constant and unchanged regardless of range.",
+      "less accurate with increasing distance from the station, since a given small angular bearing error corresponds to a progressively larger lateral position error further out.",
     ],
     answer: 3,
     explain:
@@ -56,10 +56,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A Transverse Mercator projection, using a cylinder oriented along a meridian rather than along the equator, is particularly well suited to charting",
     options: [
-      "a region with a predominantly north-south orientation, since the line of minimal distortion (the central meridian) runs north-south, keeping distortion low across such a region in a way a standard equatorial Mercator projection would not.",
-      "no particular region more effectively than a standard equatorial Mercator projection, the two being functionally identical in every respect.",
-      "a region straddling the equator exclusively, with no advantage over a standard Mercator projection for a north-south-oriented region.",
-      "polar regions exclusively, a role that is instead generally better served by a polar stereographic projection.",
+      "a region with a predominantly north-south orientation, since the line of minimal distortion runs north-south, keeping distortion low across such a region unlike a standard equatorial Mercator.",
+      "no particular region any more effectively than a standard equatorial Mercator projection would, the two being said to be functionally and mathematically identical in every meaningful respect at any latitude.",
+      "a region straddling the equator exclusively, with no particular advantage claimed over a standard Mercator projection for any north-south-oriented region.",
+      "polar regions exclusively in this description, a charting role that is instead generally and more appropriately served by a polar stereographic projection.",
     ],
     answer: 0,
     explain:
@@ -72,10 +72,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "'Homing' to an NDB station using an ADF, as distinguished from 'tracking' a specific bearing to or from that station, generally involves",
     options: [
-      "a technique usable only when no crosswind is present, with homing considered impossible in any wind condition other than a calm wind.",
-      "continuously turning the aircraft to keep the ADF needle pointing directly to the nose (zero relative bearing), which results in a curved flight path over the ground whenever a crosswind is present, rather than maintaining a specific, constant magnetic track.",
-      "flying directly away from the station at all times, with the needle pointing to the tail rather than the nose.",
-      "maintaining a specific, constant magnetic bearing to or from the station by applying a wind correction angle, a description that actually applies to tracking rather than homing.",
+      "a technique usable only when absolutely no crosswind whatsoever is present, with homing considered entirely impossible in any wind condition other than a perfectly calm wind at altitude.",
+      "continuously turning the aircraft to keep the ADF needle pointing directly to the nose (zero relative bearing), resulting in a curved flight path over the ground whenever a crosswind is present.",
+      "flying directly away from the station at all times instead, with the ADF needle pointing steadily to the tail rather than to the nose of the aircraft.",
+      "maintaining a specific, constant magnetic bearing to or from the station by applying a computed wind correction angle, a description that actually applies to tracking rather than to homing.",
     ],
     answer: 1,
     explain:
@@ -88,10 +88,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Geometric Dilution of Precision (GDOP), a factor affecting GNSS position accuracy, refers to the effect that",
     options: [
-      "the receiver's own internal clock error alone has on positional accuracy, with satellite geometry having no bearing on GDOP at all.",
-      "the total number of satellites in the entire GNSS constellation, worldwide, has on the accuracy of a fix taken at any single location on any given day.",
-      "the relative geometric arrangement of the satellites being used for a position fix has on accuracy, with a wider, more spread-out satellite geometry generally giving a more accurate fix than a geometry in which the satellites are clustered closely together in the sky.",
-      "atmospheric temperature has on GNSS signal accuracy, a factor unrelated to satellite geometry.",
+      "the receiver's own internal clock error alone has on positional accuracy, with the geometric arrangement of the satellites said to have no bearing on GDOP whatsoever.",
+      "the total number of satellites in the entire worldwide GNSS constellation has on the accuracy of a fix taken at any single location on any given day, regardless of which satellites are actually used.",
+      "the relative geometric arrangement of the satellites used for a position fix has on accuracy, with a wider, spread-out geometry generally giving a more accurate fix than a clustered one.",
+      "atmospheric temperature at the receiver's location has on GNSS signal accuracy, a factor said to be entirely unrelated to the geometry of the satellites used.",
     ],
     answer: 2,
     explain:
@@ -120,10 +120,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Differential GNSS correction, as a general principle (applied in various forms by systems such as SBAS and GBAS), works by",
     options: [
-      "having a ground reference station at a precisely known, surveyed location compare its own GNSS-computed position against its known true position, then broadcasting the resulting correction data to nearby (or regionally distributed) users to improve their own GNSS position accuracy.",
-      "eliminating the need for any satellite signal at all, deriving position purely from the ground reference station's own broadcast signal.",
-      "applying an identical, fixed correction value worldwide, regardless of the user's location relative to any ground reference station.",
-      "having every individual aircraft compute its own correction independently, with no ground reference station or shared correction data involved at any point.",
+      "having a ground reference station at a precisely known, surveyed location compare its own GNSS-computed position against its known true position, then broadcasting the correction to nearby users.",
+      "eliminating the need for any satellite signal at all in this description, deriving position purely and solely from the ground reference station's own broadcast signal instead.",
+      "applying an identical, fixed correction value worldwide in every case, regardless of the user's actual location relative to any particular ground reference station.",
+      "having every individual aircraft compute its own correction data entirely independently on board, with absolutely no ground reference station or any shared correction data involved at any point in the process.",
     ],
     answer: 0,
     explain:
@@ -137,8 +137,8 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     q: "On a Mercator chart, the scale (the relationship between chart distance and actual distance) is",
     options: [
       "constant along meridians but undefined along parallels, a distinction that does not accurately describe how Mercator scale distortion actually behaves.",
-      "not constant across the chart, but instead increases with increasing latitude, since the projection progressively stretches distances (and areas) further from the equator to keep meridians parallel and preserve angles locally.",
-      "perfectly constant everywhere on the chart, regardless of latitude, making a single scale figure valid across the entire chart.",
+      "not constant across the chart, but instead increases with increasing latitude, since the projection progressively stretches distances further from the equator to preserve angles locally.",
+      "perfectly constant everywhere on the entire chart, regardless of latitude or longitude, making a single simple scale figure valid uniformly across the whole chart without exception at any point.",
       "greatest at the equator and decreases toward the poles, the reverse of the actual relationship.",
     ],
     answer: 1,
@@ -154,8 +154,8 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     options: [
       "preserves both angles and area perfectly everywhere on the chart, with no distortion of any kind introduced by either property.",
       "is defined by having no relationship whatsoever to either angular accuracy or areal accuracy, and instead only concerns chart colour scheme.",
-      "preserves angles and local shapes accurately at any given point, generally at the cost of distorting the relative size (area) of regions, particularly ones far apart or at very different latitudes on the chart.",
-      "preserves the relative size (area) of every region on the chart accurately, while distorting angles and local shapes, a description that actually applies to an equal-area projection rather than a conformal one.",
+      "preserves angles and local shapes accurately at any given point, generally at the cost of distorting the relative size of regions, particularly ones far apart or at very different latitudes.",
+      "preserves the relative size (area) of every region on the chart accurately in all cases, while distorting angles and local shapes, a description that actually applies to an equal-area projection rather than to a conformal one.",
     ],
     answer: 2,
     explain:
@@ -168,10 +168,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Along-track error, as distinguished from cross-track error (XTK) on an RNAV/FMS system, represents",
     options: [
-      "the error in the aircraft's indicated altitude, a vertical quantity unrelated to either lateral or along-route positional error.",
-      "the same quantity as cross-track error, the two terms simply being alternate names for an identical lateral displacement measurement.",
-      "an error that exists only for a VOR/DME-based RNAV system, with no equivalent concept for a GNSS-based RNAV system.",
-      "the aircraft's positional error measured along the direction of the route itself (ahead of or behind where it is computed to actually be), rather than the lateral (perpendicular) displacement from the route centreline that cross-track error measures.",
+      "the error in the aircraft's indicated altitude specifically, a vertical quantity said to be entirely unrelated to either lateral or along-route positional error.",
+      "the exact same quantity as cross-track error in every respect, the two terms simply being alternate names applied to what is actually an identical lateral displacement measurement from the centreline.",
+      "an error that is said to exist only for a VOR/DME-based RNAV system specifically, with no equivalent concept applicable to a GNSS-based RNAV system at all.",
+      "the aircraft's positional error measured along the direction of the route itself, ahead of or behind where it is computed to actually be, rather than the lateral displacement that cross-track error measures.",
     ],
     answer: 3,
     explain:
@@ -200,10 +200,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Ephemeris data, broadcast by each GNSS satellite as part of its navigation message, provides a receiver with",
     options: [
-      "weather information relevant to the receiver's current location, a function unrelated to satellite orbital data.",
+      "weather information relevant to the receiver's current geographic location and altitude, a function entirely unrelated to any satellite's own orbital data.",
       "precise information about that specific satellite's own current orbital position, which the receiver uses (together with signal timing) to calculate its own position relative to that satellite.",
-      "the receiver's own current position directly, computed entirely on board the satellite rather than by the receiver.",
-      "the identity and position of every other aircraft currently using the same GNSS constellation, a function unrelated to a satellite's own orbital data.",
+      "the receiver's own current position directly and precisely, computed entirely on board the satellite itself rather than by the receiver on the ground or in the aircraft.",
+      "the identity and precise position of every other aircraft currently using that same GNSS constellation at that moment, a function said to be entirely unrelated to a satellite's own orbital position data.",
     ],
     answer: 1,
     explain:
@@ -216,9 +216,9 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "A VOR station's signal accuracy is generally certified and maintained within a specified tolerance (commonly expressed as a small number of degrees), meaning that",
     options: [
-      "every VOR station provides a mathematically perfect, error-free radial with no tolerance or possible deviation of any kind.",
-      "VOR accuracy tolerance applies only to a VOR used for an instrument approach, with no accuracy standard applicable to VOR use for general en route navigation.",
-      "a given VOR radial displayed to the pilot can be expected to be accurate within that published tolerance under normal conditions, though the actual overall system accuracy experienced also depends on factors such as receiver accuracy, VOR type (conventional or Doppler), and terrain-related siting error.",
+      "every single VOR station in operation is said to provide a mathematically perfect, completely error-free radial with absolutely no tolerance or any possible deviation of any kind whatsoever.",
+      "VOR accuracy tolerance is said to apply only to a VOR being used specifically for an instrument approach procedure, with no accuracy standard whatsoever said to be applicable to VOR use for general en route navigation at all.",
+      "a given VOR radial displayed to the pilot can be expected to be accurate within that published tolerance under normal conditions, though actual accuracy also depends on receiver accuracy, VOR type, and terrain siting error.",
       "the published accuracy tolerance applies only to the ground station's transmitted signal power, with no relationship to the accuracy of the radial itself.",
     ],
     answer: 2,
@@ -232,10 +232,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Isoclinic lines, drawn on a chart connecting points of equal magnetic dip (inclination), are distinguished from isogonic lines (equal magnetic variation) in that isoclinic lines instead depict",
     options: [
-      "lines of equal barometric pressure, a description that applies to isobars rather than either isoclinic or isogonic lines.",
+      "lines of equal barometric pressure measured at a common reference altitude across a wide area, a description that in fact applies to isobars rather than to either isoclinic or isogonic lines on a chart.",
       "the identical quantity as isogonic lines, the two terms simply being alternate names for an identical chart feature.",
       "lines of equal elevation (contour lines), a description that applies to neither isoclinic nor isogonic lines.",
-      "the angle at which the earth's magnetic field lines intersect the horizontal at a given location, rather than the angular difference between true north and magnetic north that isogonic lines depict.",
+      "the angle at which the earth's magnetic field lines intersect the horizontal at a given location, rather than the angular difference between true and magnetic north that isogonic lines depict.",
     ],
     answer: 3,
     explain:
@@ -248,10 +248,10 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "Ionospheric delay, a source of GNSS position error caused by the satellite signal's passage through the earth's ionosphere, occurs because",
     options: [
-      "charged particles in the ionosphere slow the signal's propagation speed somewhat compared to its speed in a vacuum, introducing a timing error that translates into a position error unless corrected (for example, through a dual-frequency receiver or an augmentation system).",
-      "the ionosphere physically blocks the GNSS signal entirely, preventing any signal from a satellite located behind that layer from being received at all.",
-      "ionospheric delay applies only to signals received at night, with no ionospheric effect present on a signal received during daylight hours.",
-      "the ionosphere reflects the GNSS signal back toward the satellite, preventing it from ever reaching the receiver on the ground or in the aircraft.",
+      "charged particles in the ionosphere slow the signal's propagation speed compared to its speed in a vacuum, introducing a timing error that translates into a position error unless corrected.",
+      "the ionosphere is said to physically and completely block the GNSS signal in every case, preventing any signal from a satellite located behind that layer from ever being received at all.",
+      "ionospheric delay is said to apply only to signals received during nighttime hours, with no ionospheric effect whatsoever present on a signal received during daylight.",
+      "the ionosphere is said to reflect the GNSS signal entirely back toward the originating satellite, preventing it from ever reaching the receiver on the ground or in the aircraft at all.",
     ],
     answer: 0,
     explain:

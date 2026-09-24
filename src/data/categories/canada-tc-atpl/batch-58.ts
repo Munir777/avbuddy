@@ -20,7 +20,7 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     q: "Accelerate-stop distance, one of the performance distances underlying balanced field length calculations, is the distance required for an aircraft to",
     options: [
       "accelerate to V1 and then continue the takeoff to a safe screen height, the same distance already represented by accelerate-go distance.",
-      "decelerate from its normal cruise speed to a complete stop after landing, a distance unrelated to any takeoff-phase performance calculation.",
+      "decelerate from its normal cruise speed to a complete stop after landing, a distance unrelated to any takeoff-phase performance calculation, despite superficially resembling the stopping portion of an accelerate-stop calculation.",
       "accelerate to V1, experience a rejected takeoff decision at that point, and come to a complete stop using maximum braking and other available deceleration means.",
       "accelerate from a standing start to its normal takeoff (rotation) speed and lift off, with no stopping distance included in the calculation at all.",
     ],
@@ -37,8 +37,8 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     options: [
       "aggressively chase and correct every altitude and airspeed deviation immediately, since precise altitude and airspeed control is considered the top priority regardless of turbulence severity.",
       "increase airspeed to the maximum operating limit, since flying faster is understood to reduce, rather than increase, structural loading in severe turbulence.",
-      "disconnect the autopilot and hand-fly using large, rapid control inputs to counter every gust individually as it is felt.",
-      "prioritize maintaining a roughly constant pitch attitude over precisely holding altitude or airspeed, accepting some variation in both to avoid over-stressing the airframe with abrupt control inputs.",
+      "disconnect the autopilot and hand-fly using large, rapid control inputs to counter every gust individually as it is felt, an approach that would itself add the abrupt structural loading the recommended technique is meant to avoid.",
+      "prioritize a roughly constant pitch attitude over precisely holding altitude or airspeed, accepting some variation in both to avoid over-stressing the airframe.",
     ],
     answer: 3,
     explain:
@@ -51,10 +51,10 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     system: "Flight Operations",
     q: "A drift-down procedure, applied following an engine failure on a multi-engine aircraft at cruise altitude, involves",
     options: [
-      "a controlled descent, at an appropriate speed, to a lower altitude that the aircraft can sustain on its remaining engine(s), taking into account terrain and obstacle clearance along the route.",
+      "a controlled descent, at an appropriate speed, to a lower altitude the aircraft can sustain on its remaining engine(s), accounting for terrain along the route.",
       "maintaining the original cruise altitude indefinitely, since drift-down procedures are understood to apply only during the takeoff and initial climb phases, not at cruise altitude.",
       "shutting down all remaining operative engines as well, since a drift-down procedure is understood to apply only when the aircraft has no operative engines remaining at all.",
-      "an immediate, uncontrolled descent at maximum rate with no consideration given to terrain or obstacle clearance along the way.",
+      "an immediate, uncontrolled descent at maximum rate with no consideration given to terrain or obstacle clearance along the way, a technique that would needlessly risk controlled flight into terrain during the descent.",
     ],
     answer: 0,
     explain:
@@ -68,8 +68,8 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     q: "Following a rapid decompression, an emergency (rapid) descent is generally initiated primarily to",
     options: [
       "conserve fuel by minimizing engine power during the descent, with occupant physiological safety understood to be a secondary consideration to fuel economy.",
-      "reach a lower altitude with adequate ambient oxygen and cabin pressure as quickly as is safely practical, reducing the physiological risk to occupants from continued exposure to a low cabin pressure.",
-      "reach the aircraft's maximum operating altitude as quickly as possible, the opposite of the actual objective following a rapid decompression.",
+      "reach a lower altitude with adequate ambient oxygen and cabin pressure as quickly as is safely practical, reducing occupants' physiological risk from continued low cabin pressure.",
+      "reach the aircraft's maximum operating altitude as quickly as possible, the opposite of the actual objective following a rapid decompression, a climb that would worsen rather than relieve the hypoxia risk already present.",
       "allow the crew to complete a normal approach and landing without any urgency, since a rapid decompression is understood to require no expedited descent at all.",
     ],
     answer: 1,
@@ -101,7 +101,7 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     options: [
       "replace the need for nose wheel steering entirely on every aircraft type, making nose wheel steering an unnecessary system wherever differential braking is available.",
       "increase the aircraft's overall stopping distance, since differential braking is understood to reduce, rather than assist, the aircraft's ability to decelerate.",
-      "control the aircraft's pitch attitude during the landing flare, a function unrelated to directional (yaw) control on the ground.",
+      "control the aircraft's pitch attitude during the landing flare, a function unrelated to directional (yaw) control on the ground, and one that differential braking, applied at the main gear, does not itself perform.",
       "assist directional control on the ground, such as during a crosswind landing rollout or when other directional control means (like nose wheel steering or rudder) are insufficient.",
     ],
     answer: 3,
@@ -116,7 +116,7 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     q: "Compared to a low-speed rejected takeoff, a high-speed rejected takeoff generally presents",
     options: [
       "greater risk, since less runway remains available to stop and the aircraft's kinetic energy is significantly higher, demanding a more immediate and decisive response.",
-      "no risk at all, since any rejected takeoff above a certain minimum speed is understood to be entirely free of overrun or directional control risk.",
+      "no risk at all, since any rejected takeoff above a certain minimum speed is understood to be entirely free of overrun or directional control risk, a claim inconsistent with the reduced stopping margin present at higher rejection speeds.",
       "identical risk to a low-speed rejected takeoff in every respect, since speed at the point of rejection is understood to have no bearing on the risk involved.",
       "lower risk, since a high-speed rejected takeoff is understood to leave more runway remaining and less kinetic energy to dissipate than a low-speed rejected takeoff.",
     ],
@@ -165,8 +165,8 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     options: [
       "satisfy a purely administrative record-keeping requirement, with no genuine operational value in the event an abnormal situation actually develops during the takeoff.",
       "replace the need for any non-normal checklist, since a verbal pre-takeoff briefing is understood to be a full substitute for the printed or displayed checklist.",
-      "apply only when weather conditions are poor, with no value or expectation of a briefing being conducted on a takeoff in good weather.",
-      "establish a shared understanding between crew members of how key decisions and actions will be handled, supporting a faster and more coordinated response if an abnormal situation actually occurs.",
+      "apply only when weather conditions are poor, with no value or expectation of a briefing being conducted on a takeoff in good weather, despite the briefing being standard practice on every takeoff regardless of the forecast.",
+      "establish a shared understanding between crew members of how key decisions will be handled, supporting a faster, more coordinated response if an abnormal situation occurs.",
     ],
     answer: 3,
     explain:
@@ -228,7 +228,7 @@ export const CANADA_TC_ATPL_BATCH_58_QUESTIONS: Question[] = [
     q: "When more than one runway is available at an aerodrome, runway selection for takeoff or landing generally takes into account factors including",
     options: [
       "the time of day exclusively, with runway length, surface condition, and wind understood to have no bearing on which runway is actually selected.",
-      "a strict, unvarying preference for the lowest-numbered runway at every aerodrome, regardless of wind or any other operational factor.",
+      "a strict, unvarying preference for the lowest-numbered runway at every aerodrome, regardless of wind or any other operational factor, a rule with no basis in how runway selection is actually determined operationally.",
       "only the runway's compass heading number, with wind, length, surface condition, and available approach type understood to be irrelevant to runway selection.",
       "wind direction and speed relative to each runway, runway length and surface condition, and the type of approach available, among other operational considerations.",
     ],
