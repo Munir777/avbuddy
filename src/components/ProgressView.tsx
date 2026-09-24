@@ -37,6 +37,13 @@ export default function ProgressView({
     }
   }
 
+  const subjectsBySystemName = new Map<string, Set<string>>();
+  for (const s of systemStats) {
+    const set = subjectsBySystemName.get(s.system) ?? new Set<string>();
+    set.add(s.subject);
+    subjectsBySystemName.set(s.system, set);
+  }
+
   if (overall.questionsAttempted === 0) {
     return (
       <div className="card">
@@ -84,11 +91,17 @@ export default function ProgressView({
       <div className="progress__systems">
         {systemStats.map((s) => {
           const color = systemColors[s.system] ?? defaultColor;
+          // Several subjects reuse the same system name (e.g. "Human
+          // Factors" in Canada TC ATPL, FAA ATP, and ATPL General
+          // Knowledge), so only prefix the subject when this system name
+          // is actually shared -- keeps the common case clean.
+          const needsSubjectLabel = (subjectsBySystemName.get(s.system)?.size ?? 1) > 1;
+          const label = needsSubjectLabel ? `${s.subject} — ${s.system}` : s.system;
           return (
-            <div key={s.system} className="progress__row">
+            <div key={`${s.subject}::${s.system}`} className="progress__row">
               <div className="progress__row-top">
                 <span className="card__badge" style={{ color: color.fg, background: color.bg }}>
-                  {s.system.toUpperCase()}
+                  {label.toUpperCase()}
                 </span>
                 <span className="progress__row-count">
                   {s.correct}/{s.total} · {s.accuracy}%

@@ -119,31 +119,42 @@ export function getMissedQuestions(all: Question[]): Question[] {
 
 export interface SystemStat {
   system: string;
+  subject: string;
   correct: number;
   total: number;
   accuracy: number; // 0-100, rounded
 }
 
-// One row per system that has at least one attempted question, sorted
-// weakest-first so the things worth drilling show up at the top.
+// One row per subject+system that has at least one attempted question,
+// sorted weakest-first so the things worth drilling show up at the top.
+// Grouped by subject+system (not system alone) because several subjects
+// reuse the same system name -- e.g. "Human Factors" appears in Canada TC
+// ATPL, FAA ATP, and ATPL General Knowledge -- and blending those into one
+// row would produce a misleading combined accuracy number.
 export function getSystemStats(all: Question[]): SystemStat[] {
   const map = readMap();
-  const bySystem = new Map<string, { correct: number; total: number }>();
+  const byKey = new Map<string, { system: string; subject: string; correct: number; total: number }>();
 
   for (const q of all) {
     const stat = map[keyFor(q)];
     if (!stat) continue;
     const attempts = stat.correct + stat.wrong;
     if (attempts === 0) continue;
-    const entry = bySystem.get(q.system) ?? { correct: 0, total: 0 };
+    // subject defaults to "A320 Systems" when absent, matching the
+    // convention used elsewhere (see src/lib/library.ts) for the original
+    // pre-multi-subject question data.
+    const subject = q.subject ?? "A320 Systems";
+    const key = `${subject}::${q.system}`;
+    const entry = byKey.get(key) ?? { system: q.system, subject, correct: 0, total: 0 };
     entry.correct += stat.correct;
     entry.total += attempts;
-    bySystem.set(q.system, entry);
+    byKey.set(key, entry);
   }
 
-  return Array.from(bySystem.entries())
-    .map(([system, { correct, total }]) => ({
+  return Array.from(byKey.values())
+    .map(({ system, subject, correct, total }) => ({
       system,
+      subject,
       correct,
       total,
       accuracy: total === 0 ? 0 : Math.round((correct / total) * 100),
