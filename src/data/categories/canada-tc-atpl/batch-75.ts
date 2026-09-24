@@ -25,12 +25,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under the CARs, an IFR flight is generally required to designate an alternate aerodrome in the flight plan when",
     options: [
+      "the flight's planned cruising altitude is above the transition altitude, regardless of destination weather.",
+      "the destination aerodrome has a published instrument approach procedure, regardless of forecast weather conditions.",
       "the forecast weather for the destination, for the expected time of arrival, does not meet the specified ceiling and visibility criteria that would allow the destination to be used without an alternate.",
       "the flight is conducted entirely within controlled airspace, regardless of the destination's forecast weather.",
-      "the destination aerodrome has a published instrument approach procedure, regardless of forecast weather conditions.",
-      "the flight's planned cruising altitude is above the transition altitude, regardless of destination weather.",
     ],
-    answer: 0,
+    answer: 2,
     explain:
       "An IFR flight plan must generally designate an alternate aerodrome unless the forecast weather for the destination, at the estimated time of arrival, meets specified ceiling and visibility criteria with sufficient margin -- if the destination forecast does not meet these criteria, an alternate meeting its own weather requirements must be designated, ensuring the flight has a viable option if the destination cannot be used on arrival.",
     reference: "TP 690 -- Air Law and Procedures: IFR Flight Planning Requirements",
@@ -41,12 +41,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "IFR takeoff minima, where published or applied by an operator, primarily exist to ensure that",
     options: [
-      "sufficient visibility (or RVR) exists for the crew to maintain control of the aircraft and, if necessary, safely reject the takeoff or return for landing in the event of an emergency shortly after departure.",
-      "the aircraft's weight and balance remain within approved limits for the runway in use.",
-      "the destination aerodrome's weather, rather than the departure aerodrome's, meets the applicable landing minima before departure is permitted.",
       "wake turbulence separation from a preceding departure has been satisfied.",
+      "the destination aerodrome's weather, rather than the departure aerodrome's, meets the applicable landing minima before departure is permitted.",
+      "the aircraft's weight and balance remain within approved limits for the runway in use.",
+      "sufficient visibility (or RVR) exists for the crew to maintain control of the aircraft and, if necessary, safely reject the takeoff or return for landing in the event of an emergency shortly after departure.",
     ],
-    answer: 0,
+    answer: 3,
     explain:
       "IFR takeoff minima specify the minimum visibility (or RVR) required for a departure, primarily so that the crew has adequate visual reference to maintain control of the aircraft and to see and avoid obstacles or safely manage a rejected takeoff or an immediate return, should an emergency such as an engine failure occur shortly after becoming airborne -- these are distinct from, and applied independently of, the destination's landing weather minima.",
     reference: "TP 690 -- Air Law and Procedures: Takeoff and Landing Minima",
@@ -73,12 +73,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Supplemental Type Certificate (STC), as distinguished from the aircraft's original Type Certificate, is issued to approve",
     options: [
-      "a significant modification or addition to an aircraft's original type design -- such as an avionics upgrade or a winglet installation -- that alters the aircraft from its originally certified configuration.",
       "the aircraft's initial airworthiness for entry into service, replacing the need for a Type Certificate entirely.",
-      "an individual pilot's authorization to operate that specific aircraft type, functioning as a type rating.",
+      "a significant modification or addition to an aircraft's original type design -- such as an avionics upgrade or a winglet installation -- that alters the aircraft from its originally certified configuration.",
       "the aircraft's registration mark and nationality, in place of a Certificate of Registration.",
+      "an individual pilot's authorization to operate that specific aircraft type, functioning as a type rating.",
     ],
-    answer: 0,
+    answer: 1,
     explain:
       "A Type Certificate establishes the original approved design of an aircraft type; a Supplemental Type Certificate approves a significant modification to that original type design -- such as installing new avionics, winglets, or other equipment not part of the original certification -- allowing the modification to be applied to individual aircraft of that type while keeping the aircraft's airworthiness properly documented and traceable to an approved design change.",
     reference: "TP 690 -- Air Law and Procedures: Airworthiness",
@@ -89,12 +89,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "The Airworthiness Limitations section of an aircraft's approved maintenance data, listing mandatory life-limited component replacement intervals and certain mandatory inspections, differs from an Airworthiness Directive in that Airworthiness Limitations",
     options: [
-      "are an integral part of the aircraft's original type design approval from entry into service, whereas an Airworthiness Directive is issued later, in response to an identified unsafe condition discovered after the aircraft type has already entered service.",
-      "are entirely optional recommendations that an operator may choose to disregard, unlike an Airworthiness Directive, which is always mandatory.",
       "apply only to engines, whereas Airworthiness Directives apply only to airframes.",
       "are established solely by the operator, with no connection to the aircraft manufacturer's approved data or any regulatory authority.",
+      "are an integral part of the aircraft's original type design approval from entry into service, whereas an Airworthiness Directive is issued later, in response to an identified unsafe condition discovered after the aircraft type has already entered service.",
+      "are entirely optional recommendations that an operator may choose to disregard, unlike an Airworthiness Directive, which is always mandatory.",
     ],
-    answer: 0,
+    answer: 2,
     explain:
       "Airworthiness Limitations are mandatory life limits and inspection requirements built into the aircraft's approved type design from the outset, covering components such as certain structural elements or engine life-limited parts, whereas an Airworthiness Directive is a mandatory corrective action issued by the regulator after the aircraft type has entered service, in response to an unsafe condition identified through in-service experience, investigation, or another type's related finding -- both are mandatory, but they originate at different points and for different reasons.",
     reference: "TP 690 -- Air Law and Procedures: Airworthiness",
@@ -105,12 +105,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "A Canadian pilot licence itself, once issued, generally",
     options: [
-      "does not expire on its own, but the privileges it confers can only be exercised when the holder also meets separate, ongoing requirements such as a valid medical certificate and applicable recency experience.",
-      "expires automatically after a fixed number of years and must be entirely reissued through a new application process.",
       "remains valid to exercise all of its privileges indefinitely, with no need for a medical certificate or recency requirements of any kind.",
       "is automatically suspended the moment the holder's medical certificate lapses, requiring the licence itself to be physically returned to the regulator.",
+      "expires automatically after a fixed number of years and must be entirely reissued through a new application process.",
+      "does not expire on its own, but the privileges it confers can only be exercised when the holder also meets separate, ongoing requirements such as a valid medical certificate and applicable recency experience.",
     ],
-    answer: 0,
+    answer: 3,
     explain:
       "A Canadian pilot licence does not carry its own expiry date and remains a licence the holder continues to possess; however, the ability to actually exercise its privileges -- to act as pilot-in-command or in another required crew position -- depends on separately meeting ongoing requirements such as holding a valid medical certificate and satisfying applicable recency experience, so a lapsed medical certificate suspends the ability to exercise privileges without invalidating the licence document itself.",
     reference: "TP 690 -- Air Law and Procedures: Personnel Licensing",
@@ -122,8 +122,8 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "Runway Visual Range (RVR), where reported, is generally used in place of prevailing visibility to establish takeoff and landing minima because RVR",
     options: [
       "provides a more precise, instrument-derived measurement of the distance a pilot can expect to see down the runway itself, which can differ meaningfully from a more general visibility observation taken elsewhere on the aerodrome.",
-      "measures wind speed and direction along the runway rather than any visibility-related parameter.",
       "is calculated using only the aircraft's own onboard sensors, with no ground-based equipment involved.",
+      "measures wind speed and direction along the runway rather than any visibility-related parameter.",
       "replaces the need for any ceiling (cloud base) information when determining landing minima.",
     ],
     answer: 0,
@@ -137,12 +137,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "An operator conducting Extended Diversion Time Operations (EDTO), flying routes that take a twin-engine aircraft beyond a specified diversion time from an adequate aerodrome, is generally required to",
     options: [
-      "hold specific regulatory approval for EDTO, demonstrating that the aircraft, its systems, maintenance program, and crew procedures meet the additional requirements associated with extended single-engine (or other critical system) diversion capability.",
-      "obtain no special approval beyond the standard Air Operator Certificate already required for any commercial operation.",
       "operate only aircraft with four or more engines, since EDTO approval does not apply to twin-engine aircraft under any circumstances.",
+      "hold specific regulatory approval for EDTO, demonstrating that the aircraft, its systems, maintenance program, and crew procedures meet the additional requirements associated with extended single-engine (or other critical system) diversion capability.",
       "file a separate flight plan for every EDTO sector, distinct in form from a standard ICAO flight plan.",
+      "obtain no special approval beyond the standard Air Operator Certificate already required for any commercial operation.",
     ],
-    answer: 0,
+    answer: 1,
     explain:
       "EDTO (the successor terminology to the more familiar ETOPS) requires specific regulatory approval beyond a standard Air Operator Certificate, since operating a route that takes the aircraft beyond a specified diversion time from an adequate aerodrome demands demonstrated reliability of the aircraft's systems, an approved maintenance program addressing EDTO-critical systems, appropriate crew training, and route-specific planning -- without this approval, an operator may not plan a route that exceeds the applicable non-EDTO diversion time limit.",
     reference: "TP 690 -- Air Law and Procedures: Operational Approvals",
@@ -153,12 +153,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Prohibited, Restricted, and Danger airspace areas, as designated special use airspace in Canada, are distinguished from the general airspace classification system (Class A through G) in that these areas",
     options: [
-      "identify airspace where flight is either entirely forbidden (Prohibited), subject to specific restriction requiring authorization to enter (Restricted), or containing an identified hazard to uninvolved aircraft (Danger), regardless of which airspace class otherwise applies at that location.",
       "simply replace the Class A through G classification system entirely, meaning an area cannot be both, for example, Class E and Restricted airspace at the same time.",
       "apply only to military aircraft, with no restriction or effect on civilian aircraft of any kind.",
+      "identify airspace where flight is either entirely forbidden (Prohibited), subject to specific restriction requiring authorization to enter (Restricted), or containing an identified hazard to uninvolved aircraft (Danger), regardless of which airspace class otherwise applies at that location.",
       "are established solely for noise abatement purposes around aerodromes, with no connection to safety, security, or hazard considerations.",
     ],
-    answer: 0,
+    answer: 2,
     explain:
       "Prohibited, Restricted, and Danger areas are special use airspace designations layered on top of the underlying Class A through G airspace classification -- a Prohibited area forbids flight entirely, a Restricted area requires specific authorization to enter due to an activity such as military exercises, and a Danger area identifies airspace containing an activity hazardous to aircraft not participating in it -- so a given piece of airspace can simultaneously carry both its regular class and one of these special use designations.",
     reference: "TP 690 -- Air Law and Procedures: Airspace Classification",
@@ -169,12 +169,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Elementary work, as a category of aircraft maintenance the CARs permit to be performed by the aircraft's owner or pilot without requiring certification by a licensed Aircraft Maintenance Engineer (AME), generally consists of",
     options: [
-      "simple, low-risk tasks explicitly listed in the applicable regulation -- such as replacing a landing light bulb or servicing a tire -- rather than any maintenance task the owner personally feels competent to perform.",
       "any maintenance task at all, provided the owner documents it afterward in the aircraft's journey log.",
-      "major structural repairs and engine overhauls, provided they are performed under the direct supervision of an AME.",
       "maintenance performed only on aircraft operating under a commercial Air Operator Certificate, with no application to privately owned aircraft.",
+      "major structural repairs and engine overhauls, provided they are performed under the direct supervision of an AME.",
+      "simple, low-risk tasks explicitly listed in the applicable regulation -- such as replacing a landing light bulb or servicing a tire -- rather than any maintenance task the owner personally feels competent to perform.",
     ],
-    answer: 0,
+    answer: 3,
     explain:
       "Elementary work is a defined, limited category of simple, low-risk maintenance tasks -- such as replacing a landing light bulb, servicing a tire, or similar straightforward items -- that are specifically and explicitly listed as permissible for an owner or pilot to perform and record without requiring certification by a licensed AME, rather than being defined by the owner's own subjective sense of competence, and it does not extend to major repairs, overhauls, or other work still requiring proper AME certification.",
     reference: "TP 690 -- Air Law and Procedures: Maintenance Requirements",
@@ -186,9 +186,9 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     q: "For the purposes of the CARs (such as determining when navigation lights or night currency requirements apply), 'night' is generally defined as",
     options: [
       "the period starting one-half hour after sunset and ending one-half hour before sunrise, both times determined for the specific location and date in question, rather than a fixed clock time.",
-      "any time a pilot subjectively judges visibility to be too poor to see clearly, regardless of the actual time of day.",
       "the period from local civil midnight to local sunrise only, excluding the evening hours after sunset.",
       "a fixed period, the same clock hours everywhere in Canada regardless of location, date, or season.",
+      "any time a pilot subjectively judges visibility to be too poor to see clearly, regardless of the actual time of day.",
     ],
     answer: 0,
     explain:
@@ -201,12 +201,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under the CARs, an aircraft operated between the times defining night is generally required to display",
     options: [
+      "position lights only while on the ground, with no lighting requirement once airborne.",
       "an operating anti-collision light system together with position (navigation) lights showing the appropriate colours (red to port, green to starboard, white to the rear) so that the aircraft's presence, and approximate heading, can be recognized by other aircraft and by observers on the ground.",
       "only a single white light mounted on the aircraft's nose, with no requirement for any other external lighting.",
-      "position lights only while on the ground, with no lighting requirement once airborne.",
       "no external lighting at all, provided the aircraft remains in radio contact with ATC throughout the flight.",
     ],
-    answer: 0,
+    answer: 1,
     explain:
       "An aircraft operated at night is generally required to display an operating anti-collision light system along with position lights in the standard colour pattern -- red on the left (port) wingtip, green on the right (starboard) wingtip, and white to the rear -- so that other aircraft and observers can recognize the aircraft's presence at night and infer its approximate heading and direction of travel from the relative position of the coloured lights.",
     reference: "TP 690 -- Air Law and Procedures: Aircraft Lighting Requirements",
@@ -217,12 +217,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Minimum fuel reserve requirements under the CARs generally differ between VFR and IFR flight in that",
     options: [
+      "fuel reserve requirements are identical for VFR and IFR flight in every respect, with no distinction based on flight rules.",
+      "VFR flight requires a larger fuel reserve than IFR flight under every circumstance.",
       "VFR flight requires enough fuel to reach the destination and then fly for a specified additional period (commonly a longer period at night than by day), while IFR flight requires enough fuel to reach the destination, proceed to the filed alternate (where required), and then fly for a specified additional reserve period beyond that.",
       "IFR flight requires no fuel reserve at all beyond the fuel needed to reach the destination directly.",
-      "VFR flight requires a larger fuel reserve than IFR flight under every circumstance.",
-      "fuel reserve requirements are identical for VFR and IFR flight in every respect, with no distinction based on flight rules.",
     ],
-    answer: 0,
+    answer: 2,
     explain:
       "VFR fuel reserve requirements generally call for enough fuel to reach the destination and then continue flying for a specified additional period (typically longer at night than during the day), while IFR fuel reserve requirements are generally more involved, requiring enough fuel to reach the destination, proceed from there to the filed alternate where one is required, and then still have a specified reserve remaining -- reflecting the greater uncertainty and lower en-route visual reference typically associated with IFR operations.",
     reference: "TP 690 -- Air Law and Procedures: Fuel Requirements",
@@ -233,12 +233,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Before conducting a flight, the pilot-in-command generally bears responsibility, under the CARs, for",
     options: [
-      "personally determining that the aircraft is airworthy and fit for the intended flight, which is a distinct responsibility from -- and does not depend solely on -- the AME's maintenance release certifying that scheduled maintenance has been properly performed.",
+      "confirming airworthiness only once per calendar year, rather than before each individual flight.",
       "relying exclusively on the most recent maintenance release, with no independent responsibility to assess the aircraft's condition before flight.",
       "airworthiness determination only for aircraft operated privately, with commercial pilots bearing no such responsibility since it rests entirely with the operator's maintenance department.",
-      "confirming airworthiness only once per calendar year, rather than before each individual flight.",
+      "personally determining that the aircraft is airworthy and fit for the intended flight, which is a distinct responsibility from -- and does not depend solely on -- the AME's maintenance release certifying that scheduled maintenance has been properly performed.",
     ],
-    answer: 0,
+    answer: 3,
     explain:
       "While a maintenance release certifies that required maintenance has been properly performed and signed off by a qualified person, the pilot-in-command retains an independent, ongoing responsibility to personally determine, before each flight, that the aircraft is airworthy and fit for the flight being undertaken -- including matters a pre-flight inspection would reveal that fall outside what the maintenance release itself addresses -- and this responsibility applies to both private and commercial pilots-in-command.",
     reference: "TP 690 -- Air Law and Procedures: Pilot-in-Command Responsibilities",
@@ -251,8 +251,8 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     options: [
       "the flight will operate under IFR, will cross international borders, or will otherwise fall outside limited exemptions (such as certain VFR flights remaining close to the departure aerodrome), reflecting a general expectation that some record of the intended flight exists for search and rescue purposes.",
       "the flight is conducted entirely under VFR in day conditions, in which case no flight plan or itinerary of any kind is ever required.",
-      "the aircraft is a single-engine aircraft, with multi-engine aircraft exempted from any flight plan or itinerary requirement.",
       "the flight will be conducted below 1,000 ft AGL, regardless of flight rules or route.",
+      "the aircraft is a single-engine aircraft, with multi-engine aircraft exempted from any flight plan or itinerary requirement.",
     ],
     answer: 0,
     explain:
@@ -265,12 +265,12 @@ export const CANADA_TC_ATPL_BATCH_75_QUESTIONS: Question[] = [
     system: "Air Law and Procedures",
     q: "Under the CARs, a pilot-in-command who deviates from a regulation, an ATC clearance, or a procedure during an in-flight emergency generally",
     options: [
-      "may do so to the extent necessary to address the emergency, and is expected to report the deviation to the appropriate authority as soon as practicable afterward.",
       "commits an offence with no possible justification, regardless of the nature or severity of the emergency encountered.",
+      "may do so to the extent necessary to address the emergency, and is expected to report the deviation to the appropriate authority as soon as practicable afterward.",
       "must first obtain explicit ATC authorization before any deviation, even when the emergency leaves no time to do so.",
       "may deviate only from ATC clearances, with no corresponding authority to deviate from any other regulation during an emergency.",
     ],
-    answer: 0,
+    answer: 1,
     explain:
       "The CARs recognize the pilot-in-command's authority, during an in-flight emergency, to deviate from a regulation, an ATC clearance, or a published procedure to the extent necessary to address that emergency -- since real-time authorization is not always possible or practical during a genuine emergency -- with the expectation that the deviation and the reasons for it are reported to the appropriate authority as soon as practicable afterward, allowing the circumstances to be reviewed after the fact.",
     reference: "TP 690 -- Air Law and Procedures: Emergency Authority",

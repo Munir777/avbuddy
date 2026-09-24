@@ -10,9 +10,9 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     q: "Some ILS installations provide a 'back course,' usable for an approach to the runway opposite the one served by the front course. When flying a back course approach without back-course-capable avionics, the pilot must be aware that",
     options: [
       "the back course transmits on an entirely different frequency from the front course",
-      "glideslope guidance remains fully usable and behaves identically to a front course approach",
-      "the CDI needle deflection is reversed relative to a normal (front course) approach, requiring the pilot to fly away from a needle that appears to indicate the wrong direction",
       "a back course approach provides greater precision than the front course because of the antenna array's directional pattern",
+      "the CDI needle deflection is reversed relative to a normal (front course) approach, requiring the pilot to fly away from a needle that appears to indicate the wrong direction",
+      "glideslope guidance remains fully usable and behaves identically to a front course approach",
     ],
     answer: 2,
     explain:
@@ -26,11 +26,11 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     q: "In addition to the original L1 C/A civil signal, modern GPS satellites broadcast additional civil signals on the L2C and L5 frequencies. A key benefit of these additional civil frequencies is that they allow a suitably equipped receiver to",
     options: [
       "eliminate the need for RAIM integrity monitoring entirely",
-      "directly estimate and correct for ionospheric delay by comparing measurements made on two different frequencies, improving position accuracy",
       "receive GPS signals during a complete loss of all satellite line-of-sight visibility",
       "operate without any antenna, since L2C and L5 do not require line-of-sight reception",
+      "directly estimate and correct for ionospheric delay by comparing measurements made on two different frequencies, improving position accuracy",
     ],
-    answer: 1,
+    answer: 3,
     explain:
       "Because ionospheric delay affects different GNSS frequencies by different amounts, a dual-frequency receiver can compare measurements on two frequencies to estimate and largely correct for that delay, improving position accuracy compared to a single-frequency receiver relying on a generic ionospheric model.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: GPS civil signals",
@@ -41,12 +41,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "GNSS augmentation systems used to improve accuracy, integrity, availability, or continuity are generally grouped into three broad categories, based on where the augmentation function is performed: ABAS (aircraft-based, such as RAIM), SBAS (satellite-based, such as WAAS), and",
     options: [
-      "CBAS (crew-based augmentation, relying on manual pilot cross-checks)",
-      "MBAS (military-based augmentation, restricted to defence applications)",
-      "TBAS (time-based augmentation, correcting for atomic clock drift only)",
       "GBAS (ground-based, such as a local-area system providing corrections from a single aerodrome)",
+      "TBAS (time-based augmentation, correcting for atomic clock drift only)",
+      "MBAS (military-based augmentation, restricted to defence applications)",
+      "CBAS (crew-based augmentation, relying on manual pilot cross-checks)",
     ],
-    answer: 3,
+    answer: 0,
     explain:
       "GNSS augmentation is typically categorized by where the augmentation is generated: ABAS operates within the aircraft's own receiver (such as RAIM), SBAS broadcasts wide-area corrections from geostationary satellites, and GBAS provides local, high-accuracy corrections from equipment at a specific aerodrome, supporting services such as a GLS approach.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: GNSS augmentation categories",
@@ -58,11 +58,11 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     q: "A traditional ADF (Automatic Direction Finder) receiver resolves the 180-degree ambiguity inherent in a simple loop antenna's bidirectional reception pattern by",
     options: [
       "relying entirely on the pilot's manual rotation of the loop antenna to identify the correct bearing",
-      "measuring the Doppler shift of the received NDB signal as the aircraft moves",
       "combining the loop antenna's signal with that of a separate, non-directional sense antenna to produce a single cardioid reception pattern",
+      "measuring the Doppler shift of the received NDB signal as the aircraft moves",
       "using two identical loop antennas mounted at right angles to each other with no additional antenna required",
     ],
-    answer: 2,
+    answer: 1,
     explain:
       "A loop antenna alone produces a figure-eight pattern that cannot distinguish between two bearings 180 degrees apart. Combining its signal with a separate, non-directional sense antenna produces a single-lobed (cardioid) pattern, resolving the ambiguity and indicating the correct bearing to the station.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: ADF loop and sense antenna",
@@ -75,10 +75,10 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     options: [
       "the CDI needle is centered and the aircraft is precisely on course",
       "the receiver has automatically tuned to a backup frequency and is functioning normally",
-      "the aircraft has flown outside the designated service volume for that VOR station only, and never applies to ILS receivers",
       "the received signal is too weak, absent, or otherwise unreliable for the display to be trusted for navigation",
+      "the aircraft has flown outside the designated service volume for that VOR station only, and never applies to ILS receivers",
     ],
-    answer: 3,
+    answer: 2,
     explain:
       "A NAV or OFF warning flag appears whenever the receiver determines that the signal being received is too weak, absent, or otherwise fails an internal validity check, warning the pilot that the associated course or glideslope indication should not be trusted for navigation until the flag clears.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: NAV warning flag",
@@ -89,12 +89,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A TCAS/ACAS Resolution Advisory (RA) may be classified as either 'preventive' or 'corrective.' The distinguishing difference is that a corrective RA",
     options: [
-      "applies only to intruder aircraft above the TCAS-equipped aircraft's altitude",
-      "is issued only for a Traffic Advisory, never for a Resolution Advisory",
-      "requires the pilot to change the aircraft's current vertical speed to establish or increase separation, whereas a preventive RA restricts a maneuver without requiring an actual vertical speed change",
       "is always weaker in urgency than a preventive RA",
+      "is issued only for a Traffic Advisory, never for a Resolution Advisory",
+      "applies only to intruder aircraft above the TCAS-equipped aircraft's altitude",
+      "requires the pilot to change the aircraft's current vertical speed to establish or increase separation, whereas a preventive RA restricts a maneuver without requiring an actual vertical speed change",
     ],
-    answer: 2,
+    answer: 3,
     explain:
       "A corrective RA requires the pilot to actively change the aircraft's vertical speed (such as climbing or descending) to achieve adequate separation. A preventive RA instead restricts what the pilot may do -- for example, advising against a climb -- without requiring a change from the current vertical speed, since existing separation is already adequate if maintained.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: TCAS preventive and corrective RAs",
@@ -105,12 +105,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Within NAV CANADA's air navigation services, a Flight Information Centre (FIC) is primarily distinguished from a Flight Service Station (FSS) in that an FIC",
     options: [
-      "has been fully replaced by automated ATIS broadcasts and no longer operates in Canada",
-      "exists only to operate remote communications outlets, with no briefing function at all",
-      "is staffed exclusively by air traffic controllers providing IFR separation services",
       "provides pre-flight and in-flight telephone briefing, weather, and NOTAM information over a wide area, while an FSS provides services more directly tied to a specific aerodrome or local area",
+      "is staffed exclusively by air traffic controllers providing IFR separation services",
+      "exists only to operate remote communications outlets, with no briefing function at all",
+      "has been fully replaced by automated ATIS broadcasts and no longer operates in Canada",
     ],
-    answer: 3,
+    answer: 0,
     explain:
       "An FIC provides broad-area services such as pre-flight and in-flight weather and NOTAM briefings by telephone or radio, while an FSS is generally associated with services tied more directly to a specific aerodrome or local area, such as airport advisory service.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: FIC versus FSS",
@@ -123,8 +123,8 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     options: [
       "precipitation always attenuates the signal completely beyond 50 nautical miles",
       "the beam's cross-sectional width at long range covers a much larger volume of atmosphere, so the displayed return represents an average over that wider area rather than a precise point",
-      "the antenna automatically shuts off beyond a fixed maximum range for safety reasons",
       "the radar switches from an active to a passive detection mode at long range",
+      "the antenna automatically shuts off beyond a fixed maximum range for safety reasons",
     ],
     answer: 1,
     explain:
@@ -137,10 +137,10 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Manually reducing an airborne weather radar's gain below its normal (calibrated) setting is a technique sometimes used by pilots primarily to",
     options: [
-      "convert the display from a horizontal (plan) view to a vertical profile view",
       "increase the radar's maximum detection range beyond its rated limit",
-      "help distinguish the most intense precipitation returns from less severe returns, since at reduced gain only the strongest reflections remain clearly displayed",
       "permanently improve the accuracy of the radar's automatic tilt function",
+      "help distinguish the most intense precipitation returns from less severe returns, since at reduced gain only the strongest reflections remain clearly displayed",
+      "convert the display from a horizontal (plan) view to a vertical profile view",
     ],
     answer: 2,
     explain:
@@ -153,9 +153,9 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "If a VOR station's Morse code identifier is missing, garbled, or replaced by a continuous tone during a period of maintenance, a pilot using that station should",
     options: [
-      "report the issue only if requested to do so by ATC, but continue using the station in the meantime",
       "assume the station has automatically switched to a backup frequency",
       "continue to rely on the received bearing information as fully accurate, since the identifier and navigation signal are generated independently",
+      "report the issue only if requested to do so by ATC, but continue using the station in the meantime",
       "treat the navigation information from that station as unreliable and not use it for navigation until a proper identification can be confirmed",
     ],
     answer: 3,
@@ -169,12 +169,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "When a DME receiver is first tuned to a new station, it typically passes through a 'search' mode before settling into a 'track' mode. This search mode is best described as the period during which the receiver is",
     options: [
-      "broadcasting the aircraft's identity to the DME ground station for logging purposes",
       "transmitting interrogation pulses and attempting to identify and lock onto valid reply pulses from the ground station, before it can reliably display distance",
-      "receiving VOR radial information exclusively, with distance information unavailable until the aircraft lands",
       "recalibrating its internal clock against the GNSS time reference",
+      "broadcasting the aircraft's identity to the DME ground station for logging purposes",
+      "receiving VOR radial information exclusively, with distance information unavailable until the aircraft lands",
     ],
-    answer: 1,
+    answer: 0,
     explain:
       "During search mode, the DME interrogator transmits pulse pairs and scans for a matching pattern of reply pulses from the ground transponder; once a valid, consistent reply is identified, the receiver locks on and enters track mode, at which point distance can be reliably displayed.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: DME search and track modes",
@@ -185,10 +185,10 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "Aviation HF voice communication is generally transmitted using single-sideband (SSB) modulation rather than conventional double-sideband AM primarily because SSB",
     options: [
-      "automatically encrypts the voice signal for security purposes",
-      "makes more efficient use of the limited HF spectrum and transmitter power by not transmitting a carrier or the redundant second sideband",
-      "requires no antenna coupler or tuning unit, unlike AM",
       "provides significantly greater range than any VHF communication system regardless of frequency selection",
+      "makes more efficient use of the limited HF spectrum and transmitter power by not transmitting a carrier or the redundant second sideband",
+      "automatically encrypts the voice signal for security purposes",
+      "requires no antenna coupler or tuning unit, unlike AM",
     ],
     answer: 1,
     explain:
@@ -201,12 +201,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "The 'capture effect,' a characteristic of FM and VHF AM receivers, describes the tendency for a receiver, when two stations transmit simultaneously on the same frequency, to",
     options: [
-      "switch to a pre-programmed backup frequency",
-      "automatically mute both transmissions until one station stops transmitting",
       "receive both transmissions with perfect clarity and no interference whatsoever",
+      "automatically mute both transmissions until one station stops transmitting",
       "predominantly reproduce the stronger of the two signals, often with a distinctive heterodyne squeal if the signal strengths are close",
+      "switch to a pre-programmed backup frequency",
     ],
-    answer: 3,
+    answer: 2,
     explain:
       "The capture effect causes a receiver to lock onto and reproduce mainly the stronger of two simultaneous same-frequency transmissions; when the two signals are close in strength, the interference between them can produce a distinctive squeal, making both transmissions difficult to understand.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: VHF receiver capture effect",
@@ -218,8 +218,8 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     q: "An LNAV/VNAV approach minima line, as published on many GNSS/RNAV approach charts, is distinguished from an LPV minima line in that LNAV/VNAV",
     options: [
       "requires ground-based ILS equipment to generate the vertical path",
-      "is only available to aircraft equipped with a radar altimeter",
       "provides no vertical guidance of any kind, functioning identically to a basic LNAV approach",
+      "is only available to aircraft equipped with a radar altimeter",
       "combines GNSS lateral guidance with a computed (typically barometric) vertical path, rather than the SBAS-derived precision vertical guidance used by LPV",
     ],
     answer: 3,
@@ -233,12 +233,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A 'sidetone' feature on an aircraft VHF communication radio allows a pilot to",
     options: [
-      "transmit on two frequencies simultaneously",
       "hear their own transmitted voice fed back into their headset while transmitting, helping confirm the microphone and radio are functioning correctly",
       "hear a continuous background tone confirming the radio is powered on, independent of any transmission",
+      "transmit on two frequencies simultaneously",
       "automatically silence all other radios in the cockpit while transmitting",
     ],
-    answer: 1,
+    answer: 0,
     explain:
       "Sidetone feeds a pilot's own transmitted voice back into their headset while they are keyed up, giving immediate confirmation that the microphone and radio are working and that the transmission is being generated, without needing another station to confirm receipt.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: VHF radio sidetone",
@@ -249,12 +249,12 @@ export const CANADA_TC_ATPL_BATCH_84_QUESTIONS: Question[] = [
     system: "Radio Communications and Aids to Navigation",
     q: "A 'compass locator,' a low-power NDB sometimes collocated with the outer or middle marker of an ILS, is primarily used to",
     options: [
-      "serve only as a backup power source for the ILS transmitter",
-      "transmit ATIS-equivalent weather information exclusively",
-      "provide a bearing reference to help the pilot intercept and track the localizer course during the approach and missed approach, distinct from a high-power en route NDB",
       "replace the need for any ILS glideslope equipment at the aerodrome",
+      "provide a bearing reference to help the pilot intercept and track the localizer course during the approach and missed approach, distinct from a high-power en route NDB",
+      "transmit ATIS-equivalent weather information exclusively",
+      "serve only as a backup power source for the ILS transmitter",
     ],
-    answer: 2,
+    answer: 1,
     explain:
       "A compass locator is a low-power NDB, typically collocated with an ILS outer or middle marker, that provides a bearing reference to assist a pilot in intercepting and tracking the localizer course, including during a missed approach -- a more limited-range application than a high-power en route NDB used for general navigation.",
     reference: "TP 690 -- Radio Communications and Aids to Navigation: Compass locator",
