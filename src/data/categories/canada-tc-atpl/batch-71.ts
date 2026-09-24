@@ -27,7 +27,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
       "the aircraft is above the station's published service volume ceiling only, with terrain and earth curvature having no relevance to VOR reception at any altitude.",
       "the aircraft is flying directly toward the station regardless of altitude or intervening terrain, since VOR signals are defined as unaffected by direction of flight.",
       "intervening terrain (such as a mountain ridge) or the curvature of the earth blocks the direct line-of-sight path between the aircraft and the VOR station, an effect most significant at lower altitudes and greater distances from the station.",
-      "the VOR station's Morse code identifier is temporarily inaudible, a condition unrelated to the physical line-of-sight propagation path.",
+      "the VOR station's Morse code identifier is temporarily inaudible, a condition unrelated to the physical line-of-sight propagation path and to any terrain shadowing or curvature-of-the-earth effect that might otherwise limit the received signal's range or reliability.",
     ],
     answer: 2,
     explain:
@@ -74,7 +74,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     options: [
       "a technique usable only when absolutely no crosswind whatsoever is present, with homing considered entirely impossible in any wind condition other than a perfectly calm wind at altitude.",
       "continuously turning the aircraft to keep the ADF needle pointing directly to the nose (zero relative bearing), resulting in a curved flight path over the ground whenever a crosswind is present.",
-      "flying directly away from the station at all times instead, with the ADF needle pointing steadily to the tail rather than to the nose of the aircraft.",
+      "flying directly away from the station at all times instead, with the ADF needle pointing steadily to the tail rather than to the nose of the aircraft, a description that in fact more closely resembles a form of tracking outbound from the station than the homing technique described in the question.",
       "maintaining a specific, constant magnetic bearing to or from the station by applying a computed wind correction angle, a description that actually applies to tracking rather than to homing.",
     ],
     answer: 1,
@@ -104,7 +104,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     system: "Navigation - General",
     q: "The transition into or out of Daylight Saving Time at a given location is relevant to flight planning primarily because",
     options: [
-      "Daylight Saving Time has no relevance whatsoever to any aspect of flight planning, scheduling, or time conversion.",
+      "Daylight Saving Time has no relevance whatsoever to any aspect of flight planning, scheduling, or time conversion, a claim that overlooks the very real risk of an hour's discrepancy creeping into a schedule referenced in local time around the transition date.",
       "UTC (Zulu) time itself shifts by an hour at the Daylight Saving Time transition, a description that actually applies to local clock time rather than UTC.",
       "Daylight Saving Time changes the actual length of the day in hours, a description that inaccurately describes what the time change actually does.",
       "local clock time shifts by an hour relative to UTC (or relative to Standard Time) at the transition, so a flight or schedule referenced using local time around that transition must be carefully checked against UTC to avoid an hour's error in planning.",
@@ -170,7 +170,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     options: [
       "the error in the aircraft's indicated altitude specifically, a vertical quantity said to be entirely unrelated to either lateral or along-route positional error.",
       "the exact same quantity as cross-track error in every respect, the two terms simply being alternate names applied to what is actually an identical lateral displacement measurement from the centreline.",
-      "an error that is said to exist only for a VOR/DME-based RNAV system specifically, with no equivalent concept applicable to a GNSS-based RNAV system at all.",
+      "an error that is said to exist only for a VOR/DME-based RNAV system specifically, with no equivalent concept applicable to a GNSS-based RNAV system at all, despite along-track positional uncertainty being a property of the navigation solution's geometry and timing rather than of any one particular sensor type.",
       "the aircraft's positional error measured along the direction of the route itself, ahead of or behind where it is computed to actually be, rather than the lateral displacement that cross-track error measures.",
     ],
     answer: 3,
@@ -186,7 +186,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     options: [
       "determining an aircraft's current position by applying its heading, true airspeed (adjusted for known or forecast wind), and elapsed time since departure from a known starting position, without relying on an external fix from a NAVAID, visual landmark, or satellite system.",
       "determining position solely by radio bearings taken from two or more ground stations, with no use of heading, airspeed, or elapsed time.",
-      "a method of navigation used exclusively over water, with no application to over-land flight of any kind.",
+      "a method of navigation used exclusively over water, with no application to over-land flight of any kind, a restriction that does not reflect how the technique is actually applied in practice, since dead reckoning is fundamentally a general method of position computation using heading, speed, and elapsed time that functions identically whether the aircraft is flying over open ocean, over land, or over terrain offering no usable visual or radio reference at all.",
       "determining position exclusively from a satellite-based system such as GNSS, with no reliance on heading, airspeed, or elapsed time of any kind.",
     ],
     answer: 0,
@@ -250,7 +250,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
     options: [
       "charged particles in the ionosphere slow the signal's propagation speed compared to its speed in a vacuum, introducing a timing error that translates into a position error unless corrected.",
       "the ionosphere is said to physically and completely block the GNSS signal in every case, preventing any signal from a satellite located behind that layer from ever being received at all.",
-      "ionospheric delay is said to apply only to signals received during nighttime hours, with no ionospheric effect whatsoever present on a signal received during daylight.",
+      "ionospheric delay is said to apply only to signals received during nighttime hours, with no ionospheric effect whatsoever present on a signal received during daylight, despite the ionosphere remaining ionized, to varying degrees depending on solar activity, throughout the full day-night cycle.",
       "the ionosphere is said to reflect the GNSS signal entirely back toward the originating satellite, preventing it from ever reaching the receiver on the ground or in the aircraft at all.",
     ],
     answer: 0,
@@ -267,7 +267,7 @@ export const CANADA_TC_ATPL_BATCH_71_QUESTIONS: Question[] = [
       "the identical method as a full position fix, the two terms simply being alternate names for an identical calculation using two or more independent lines of position.",
       "a dead-reckoning position that has been refined using a single available line of position (such as one radio bearing), rather than the two or more independent lines of position that a full fix requires.",
       "pure dead reckoning alone, with no additional external information of any kind incorporated, a description that actually applies to a DR position rather than an estimated position.",
-      "a position obtained exclusively from a satellite-based system, with no relationship whatsoever to dead reckoning or any radio bearing.",
+      "a position obtained exclusively from a satellite-based system, with no relationship whatsoever to dead reckoning or any radio bearing, a description that in fact more closely matches an unaugmented GNSS fix than either an estimated position or a classic dead-reckoning computation.",
     ],
     answer: 1,
     explain:

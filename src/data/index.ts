@@ -380,7 +380,7 @@ export const SUBJECT_META: Record<string, SubjectMeta> = {
   },
   "ATPL General Knowledge": {
     label: "ATPL General Knowledge",
-    blurb: "Air law, meteorology, human factors, navigation, operational procedures, instruments, and performance — the exam-wide fundamentals.",
+    blurb: "Air law, meteorology, human factors, navigation, operational procedures, instruments, and performance — the technical knowledge that airline interviews and ATPL written exams draw from.",
     accent: "#a68fd9",
   },
   "737 MAX 8": {
