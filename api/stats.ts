@@ -133,7 +133,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         u.email,
         to_char(u.created_at, 'YYYY-MM-DD HH24:MI') AS joined_at,
         to_char(MAX(p.last_seen_at), 'YYYY-MM-DD') AS last_active,
-        COUNT(p.question_key)::int AS answered
+        COUNT(p.question_key)::int AS answered,
+        EXISTS (SELECT 1 FROM auth_tokens t WHERE t.user_id = u.id AND t.used_at IS NOT NULL) AS signed_in
       FROM users u
       LEFT JOIN user_progress p ON p.user_id = u.id
       GROUP BY u.id, u.email, u.created_at
@@ -247,6 +248,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       FROM ua
     `;
 
+    // Sign-in funnel: every emailed link is a row in auth_tokens. "Never
+    // signed in" = accounts (created the moment a link is requested) with no
+    // link ever used -- people who asked to sign in but never got through.
+    const signinRows = await sql`
+      SELECT
+        COUNT(*)::int AS links_sent,
+        COUNT(*) FILTER (WHERE used_at IS NOT NULL)::int AS links_used,
+        COUNT(*) FILTER (WHERE used_at IS NULL AND expires_at <= now())::int AS links_expired,
+        ROUND(
+          (percentile_cont(0.5) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (used_at - created_at))))::numeric
+        )::int AS median_seconds_to_click,
+        COUNT(*) FILTER (WHERE used_at IS NOT NULL AND used_at - created_at > interval '15 minutes')::int AS used_after_15min
+      FROM auth_tokens
+    `;
+    const neverSignedInRows = await sql`
+      SELECT COUNT(*)::int AS never_signed_in
+      FROM users u
+      WHERE NOT EXISTS (SELECT 1 FROM auth_tokens t WHERE t.user_id = u.id AND t.used_at IS NOT NULL)
+    `;
+    const si = (signinRows[0] ?? {}) as Record<string, number | null>;
+    const signin = {
+      linksSent: si.links_sent ?? 0,
+      linksUsed: si.links_used ?? 0,
+      linksExpired: si.links_expired ?? 0,
+      medianSecondsToClick: si.median_seconds_to_click ?? null,
+      usedAfter15Min: si.used_after_15min ?? 0,
+      neverSignedIn: ((neverSignedInRows[0] ?? {}) as Record<string, number>).never_signed_in ?? 0,
+    };
+
     const pct = (n: number, d: number) => (d > 0 ? Math.round((n / d) * 100) : null);
     const ret = (retentionRows[0] ?? {}) as Record<string, number>;
     const act = (active7dRows[0] ?? {}) as Record<string, number>;
@@ -328,14 +358,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       signupsToday: signupRow.signups_today,
       signups7d: signupRow.signups_7d,
       recentSignups: (
-        recentSignups as { email: string; joined_at: string; last_active: string | null; answered: number }[]
+        recentSignups as {
+          email: string;
+          joined_at: string;
+          last_active: string | null;
+          answered: number;
+          signed_in: boolean;
+        }[]
       ).map((r) => ({
+        signedIn: r.signed_in,
         email: r.email,
         joinedAt: r.joined_at,
         lastActive: r.last_active,
         answered: r.answered,
       })),
       retention,
+      signin,
     });
   } catch (err) {
     console.error("stats error", err);

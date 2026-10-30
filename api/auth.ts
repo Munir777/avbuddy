@@ -3,6 +3,8 @@ import { handleMe } from "./auth/_me.js";
 import { handleLogout } from "./auth/_logout.js";
 import { handleRequestLink } from "./auth/_requestLink.js";
 import { handleVerify } from "./auth/_verify.js";
+import { handleResendLink } from "./auth/_resendLink.js";
+import { handleVerifyCode } from "./auth/_verifyCode.js";
 
 // One Vercel Function for the whole auth surface, instead of the four
 // (logout/me/request-link/verify) it used to be. Not a design choice --
@@ -33,6 +35,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (op === "logout") return handleLogout(req, res);
     if (op === "request-link") return handleRequestLink(req, res);
     if (op === "verify") return handleVerify(req, res);
+    if (op === "resend-link") return handleResendLink(req, res);
+    if (op === "verify-code") return handleVerifyCode(req, res);
     res.status(400).json({ ok: false, error: "invalid_op" });
     return;
   }

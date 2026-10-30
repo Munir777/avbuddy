@@ -56,6 +56,45 @@ export async function verifyMagicLink(token: string): Promise<{ ok: boolean; ema
   }
 }
 
+export async function verifySignInCode(
+  email: string,
+  code: string
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const res = await fetch("/api/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ op: "verify-code", email, code }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) return { ok: false, error: data.error ?? "verify_failed" };
+    return { ok: true };
+  } catch {
+    return { ok: false, error: "network_error" };
+  }
+}
+
+// One-click "send me a new link" from an expired sign-in link -- the token
+// identifies the account, so no email needs to be typed again.
+export async function resendMagicLink(
+  token: string
+): Promise<{ ok: boolean; maskedEmail?: string; error?: string }> {
+  try {
+    const res = await fetch("/api/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ op: "resend-link", token }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) return { ok: false, error: data.error ?? "resend_failed" };
+    return { ok: true, maskedEmail: data.maskedEmail };
+  } catch {
+    return { ok: false, error: "network_error" };
+  }
+}
+
 export async function signOut(): Promise<void> {
   try {
     await fetch("/api/auth", {

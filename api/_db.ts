@@ -90,6 +90,21 @@ export function ensureSchema() {
         `
       )
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_auth_tokens_user ON auth_tokens (user_id)`)
+      // 6-digit sign-in code sent alongside each link (typed into the tab
+      // you're already in, instead of opening the link in whatever browser
+      // the email app picks). Only a hash is stored, salted per token.
+      .then(() => sql`ALTER TABLE auth_tokens ADD COLUMN IF NOT EXISTS code_hash TEXT`)
+      // Wrong-code attempts, per account, for rate limiting -- see
+      // verifySignInCode in api/_auth.ts.
+      .then(
+        () => sql`
+          CREATE TABLE IF NOT EXISTS auth_code_failures (
+            user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+            at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        `
+      )
+      .then(() => sql`CREATE INDEX IF NOT EXISTS idx_auth_code_failures_user ON auth_code_failures (user_id, at)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_user_sessions_user ON user_sessions (user_id)`)
       // --- Cross-device progress sync ---
       // question_key mirrors the client's localStorage key (`system::question

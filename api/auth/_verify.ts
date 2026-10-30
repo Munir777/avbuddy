@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql, ensureSchema } from "../_db.js";
-import { consumeMagicLinkToken, createSession, setSessionCookie } from "../_auth.js";
+import { consumeMagicLinkToken, createSession, getMagicLinkTokenInfo, setSessionCookie } from "../_auth.js";
 
 interface Body {
   token?: unknown;
@@ -25,7 +25,11 @@ export async function handleVerify(req: VercelRequest, res: VercelResponse) {
     await ensureSchema();
     const userId = await consumeMagicLinkToken(token);
     if (!userId) {
-      res.status(401).json({ ok: false, error: "invalid_or_expired" });
+      // Say WHY, so the callback page can offer the right next step (a
+      // one-click fresh link for an expired one).
+      const info = await getMagicLinkTokenInfo(token);
+      const error = !info ? "invalid" : info.used ? "used" : info.expired ? "expired" : "invalid";
+      res.status(401).json({ ok: false, error });
       return;
     }
 

@@ -44,7 +44,21 @@ interface Stats {
   totalUsers: number;
   signupsToday: number;
   signups7d: number;
-  recentSignups: { email: string; joinedAt: string; lastActive: string | null; answered: number }[];
+  recentSignups: {
+    email: string;
+    joinedAt: string;
+    lastActive: string | null;
+    answered: number;
+    signedIn: boolean;
+  }[];
+  signin?: {
+    linksSent: number;
+    linksUsed: number;
+    linksExpired: number;
+    medianSecondsToClick: number | null;
+    usedAfter15Min: number;
+    neverSignedIn: number;
+  };
   retention?: Retention;
 }
 
@@ -338,12 +352,59 @@ export default function AdminPanel() {
                   </>
                 )}
 
+                {stats.signin && (
+                  <>
+                    <div className="admin__trend-label">Sign-in emails</div>
+                    <div className="admin__grid">
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.signin.linksSent}</div>
+                        <div className="admin__tile-label">Sign-in links sent</div>
+                      </div>
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">
+                          {pctText(
+                            stats.signin.linksSent > 0
+                              ? Math.round((stats.signin.linksUsed / stats.signin.linksSent) * 100)
+                              : null
+                          )}
+                        </div>
+                        <div className="admin__tile-label">
+                          Links clicked ({stats.signin.linksUsed}/{stats.signin.linksSent})
+                        </div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.signin.linksExpired}</div>
+                        <div className="admin__tile-label">Expired unused</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">
+                          {stats.signin.medianSecondsToClick === null
+                            ? "—"
+                            : formatDuration(stats.signin.medianSecondsToClick)}
+                        </div>
+                        <div className="admin__tile-label">Median time to click</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.signin.usedAfter15Min}</div>
+                        <div className="admin__tile-label">Clicked after 15 min (old limit)</div>
+                      </div>
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">
+                          {stats.signin.neverSignedIn}/{stats.totalUsers}
+                        </div>
+                        <div className="admin__tile-label">Accounts that never got signed in</div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
                 <div className="admin__trend-label">Recent signups</div>
                 <table className="admin__trend-table">
                   <thead>
                     <tr>
                       <th>Email</th>
                       <th>Joined</th>
+                      <th>Signed in</th>
                       <th>Last active</th>
                       <th>Answered</th>
                     </tr>
@@ -351,7 +412,7 @@ export default function AdminPanel() {
                   <tbody>
                     {stats.recentSignups.length === 0 && (
                       <tr>
-                        <td colSpan={4} className="admin__trend-empty">
+                        <td colSpan={5} className="admin__trend-empty">
                           No sign-ups yet.
                         </td>
                       </tr>
@@ -360,6 +421,7 @@ export default function AdminPanel() {
                       <tr key={row.email}>
                         <td>{row.email}</td>
                         <td>{row.joinedAt}</td>
+                        <td>{row.signedIn ? "yes" : "never"}</td>
                         <td>{row.lastActive ?? "never"}</td>
                         <td>{row.answered}</td>
                       </tr>
