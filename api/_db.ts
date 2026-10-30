@@ -49,6 +49,10 @@ export function ensureSchema() {
         () =>
           sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS study_limit_signin_click BOOLEAN NOT NULL DEFAULT false`
       )
+      // Owner's own browsing, excluded from every usage/retention stat.
+      // Set for a whole visitor_id (past sessions included) once that
+      // browser has unlocked /admin -- see src/lib/analytics.ts.
+      .then(() => sql`ALTER TABLE sessions ADD COLUMN IF NOT EXISTS internal BOOLEAN NOT NULL DEFAULT false`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_visitor ON sessions (visitor_id)`)
       .then(() => sql`CREATE INDEX IF NOT EXISTS idx_sessions_started ON sessions (started_at)`)
       // --- Accounts (magic-link auth) ---

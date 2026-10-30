@@ -6,6 +6,17 @@
 const VISITOR_KEY = "avbuddy_visitor_id";
 const SESSION_KEY = "avbuddy_session_id";
 const HEARTBEAT_MS = 20_000;
+// Set by the admin panel on a successful unlock -- marks this browser as
+// the site owner's, so its visits are excluded from usage stats.
+export const INTERNAL_KEY = "avbuddy_internal";
+
+function isInternal(): boolean {
+  try {
+    return localStorage.getItem(INTERNAL_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 type TrackEvent =
   | "start"
@@ -49,7 +60,7 @@ function getSessionId(): string {
   }
 }
 
-function send(event: TrackEvent, extra?: Record<string, string>) {
+function send(event: TrackEvent, extra?: Record<string, string | boolean>) {
   const visitorId = getVisitorId();
   const sessionId = getSessionId();
   fetch("/api/track", {
@@ -87,7 +98,7 @@ export function initAnalytics(): void {
   if (initialized || typeof window === "undefined") return;
   initialized = true;
 
-  send("start", { referrer: getTrafficSource() });
+  send("start", { referrer: getTrafficSource(), internal: isInternal() });
 
   const timer = window.setInterval(() => {
     if (document.visibilityState === "visible") {

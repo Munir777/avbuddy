@@ -2,6 +2,28 @@ import { useEffect, useState } from "react";
 import "./admin.css";
 import SubmissionsPanel from "./SubmissionsPanel";
 import CommunityPanel from "./CommunityPanel";
+import { INTERNAL_KEY } from "../lib/analytics";
+
+interface Retention {
+  returningVisitors: number;
+  returningPct: number | null;
+  studiedVisitors: number;
+  studiedReturningPct: number | null;
+  regulars: number;
+  d7Eligible: number;
+  d7Returned: number;
+  d7Pct: number | null;
+  d30Eligible: number;
+  d30Returned: number;
+  d30Pct: number | null;
+  active7d: number;
+  returning7d: number;
+  cohorts: { week: string; size: number; weeks: (number | null)[] }[];
+  accountsActive7d: number;
+  accountsActive30d: number;
+  accountsCameBack: number;
+  accountsNeverAnswered: number;
+}
 
 interface Stats {
   totalSessions: number;
@@ -22,7 +44,12 @@ interface Stats {
   totalUsers: number;
   signupsToday: number;
   signups7d: number;
-  recentSignups: { email: string; joinedAt: string }[];
+  recentSignups: { email: string; joinedAt: string; lastActive: string | null; answered: number }[];
+  retention?: Retention;
+}
+
+function pctText(value: number | null | undefined): string {
+  return value === null || value === undefined ? "—" : `${value}%`;
 }
 
 const SECRET_KEY = "avbuddy_admin_secret";
@@ -62,6 +89,13 @@ export default function AdminPanel() {
       .then((data) => {
         setStats(data);
         sessionStorage.setItem(SECRET_KEY, secret);
+        // This browser belongs to the site owner: exclude its visits
+        // (past and future) from the usage stats. See api/track.ts.
+        try {
+          localStorage.setItem(INTERNAL_KEY, "1");
+        } catch {
+          // Best-effort only.
+        }
       })
       .catch((err) => {
         setError(err instanceof Error ? err.message : "Something went wrong.");
@@ -214,18 +248,110 @@ export default function AdminPanel() {
                   </div>
                 </div>
 
+                {stats.retention && (
+                  <>
+                    <div className="admin__trend-label">Return visits</div>
+                    <div className="admin__grid">
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">{pctText(stats.retention.returningPct)}</div>
+                        <div className="admin__tile-label">
+                          Visitors who came back ({stats.retention.returningVisitors})
+                        </div>
+                      </div>
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">{pctText(stats.retention.d7Pct)}</div>
+                        <div className="admin__tile-label">
+                          Back within 7 days ({stats.retention.d7Returned}/{stats.retention.d7Eligible})
+                        </div>
+                      </div>
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">{pctText(stats.retention.d30Pct)}</div>
+                        <div className="admin__tile-label">
+                          Back within 30 days ({stats.retention.d30Returned}/{stats.retention.d30Eligible})
+                        </div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{pctText(stats.retention.studiedReturningPct)}</div>
+                        <div className="admin__tile-label">
+                          Studiers who came back (of {stats.retention.studiedVisitors})
+                        </div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.retention.regulars}</div>
+                        <div className="admin__tile-label">Regulars (5+ different days)</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">
+                          {stats.retention.returning7d}/{stats.retention.active7d}
+                        </div>
+                        <div className="admin__tile-label">Returning / active visitors (7 days)</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.retention.accountsActive7d}</div>
+                        <div className="admin__tile-label">Accounts active (7 days)</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">{stats.retention.accountsActive30d}</div>
+                        <div className="admin__tile-label">Accounts active (30 days)</div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">
+                          {stats.retention.accountsCameBack}/{stats.totalUsers}
+                        </div>
+                        <div className="admin__tile-label">Accounts that studied after signup day</div>
+                      </div>
+                    </div>
+
+                    <div className="admin__trend-label">Weekly cohorts (by first-visit week)</div>
+                    <table className="admin__trend-table">
+                      <thead>
+                        <tr>
+                          <th>Week of</th>
+                          <th>New</th>
+                          <th>Wk 1</th>
+                          <th>Wk 2</th>
+                          <th>Wk 3</th>
+                          <th>Wk 4</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {stats.retention.cohorts.length === 0 && (
+                          <tr>
+                            <td colSpan={6} className="admin__trend-empty">
+                              No visitors yet.
+                            </td>
+                          </tr>
+                        )}
+                        {stats.retention.cohorts.map((c) => (
+                          <tr key={c.week}>
+                            <td>{c.week}</td>
+                            <td>{c.size}</td>
+                            {c.weeks.map((n, i) => (
+                              <td key={i}>
+                                {n === null ? "—" : `${n} (${c.size > 0 ? Math.round((n / c.size) * 100) : 0}%)`}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+
                 <div className="admin__trend-label">Recent signups</div>
                 <table className="admin__trend-table">
                   <thead>
                     <tr>
                       <th>Email</th>
                       <th>Joined</th>
+                      <th>Last active</th>
+                      <th>Answered</th>
                     </tr>
                   </thead>
                   <tbody>
                     {stats.recentSignups.length === 0 && (
                       <tr>
-                        <td colSpan={2} className="admin__trend-empty">
+                        <td colSpan={4} className="admin__trend-empty">
                           No sign-ups yet.
                         </td>
                       </tr>
@@ -234,6 +360,8 @@ export default function AdminPanel() {
                       <tr key={row.email}>
                         <td>{row.email}</td>
                         <td>{row.joinedAt}</td>
+                        <td>{row.lastActive ?? "never"}</td>
+                        <td>{row.answered}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -324,6 +452,12 @@ export default function AdminPanel() {
                   average. Sessions recorded before traffic-source tracking was added show as
                   "Direct / None"; country is detected server-side from IP location at the edge (not
                   stored as a raw IP) and only resolves on the live deployment, not local dev.
+                  "Came back" = a visit on a later calendar day (UTC) than the visitor's first, per
+                  browser -- the same person on a second device or after clearing storage counts as a
+                  new visitor, so return rates are a floor, not a ceiling. Day-7/day-30 rates only
+                  count visitors whose full window has passed. Account "last active" / "answered" come
+                  from synced signed-in progress. This browser is excluded from all visit stats once
+                  it has unlocked this page (including its past visits).
                 </div>
               </>
             )}

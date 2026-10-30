@@ -15,6 +15,7 @@ interface TrackBody {
   sessionId?: unknown;
   event?: unknown;
   referrer?: unknown;
+  internal?: unknown;
 }
 
 const VALID_EVENTS: readonly TrackEvent[] = [
@@ -58,6 +59,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { visitorId, sessionId, event } = body;
   const referrer = normalizeReferrer(body.referrer);
   const country = countryFromHeader(req.headers["x-vercel-ip-country"]);
+  const internal = body.internal === true;
 
   if (!isValidId(visitorId) || !isValidId(sessionId) || !VALID_EVENTS.includes(event as TrackEvent)) {
     res.status(400).json({ ok: false });
@@ -79,6 +81,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         SET referrer = COALESCE(sessions.referrer, EXCLUDED.referrer),
             country = COALESCE(sessions.country, EXCLUDED.country)
       `;
+      // The owner's browser (flagged after unlocking /admin): tag every
+      // session this visitor id ever had, so their own history drops out
+      // of the stats retroactively, not just from now on.
+      if (internal) {
+        await sql`
+          UPDATE sessions SET internal = true WHERE visitor_id = ${visitorId} AND NOT internal
+        `;
+      }
     } else if (event === "heartbeat") {
       await sql`
         UPDATE sessions SET last_ping_at = now() WHERE session_id = ${sessionId}

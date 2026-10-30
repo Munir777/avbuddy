@@ -60,6 +60,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         COUNT(*) FILTER (WHERE hit_study_limit)::int AS study_limit_hits,
         COUNT(*) FILTER (WHERE hit_study_limit AND study_limit_signin_click)::int AS study_limit_signin_clicks
       FROM sessions
+      WHERE NOT internal
     `;
 
     const dailyTrend = await sql`
@@ -68,7 +69,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         COUNT(*)::int AS sessions,
         COUNT(*) FILTER (WHERE studied)::int AS studied
       FROM sessions
-      WHERE started_at >= now() - interval '7 days'
+      WHERE started_at >= now() - interval '7 days' AND NOT internal
       GROUP BY 1
       ORDER BY 1 DESC
     `;
@@ -79,6 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const referrerRows = await sql`
       SELECT referrer, COUNT(*)::int AS sessions
       FROM sessions
+      WHERE NOT internal
       GROUP BY referrer
       ORDER BY sessions DESC
       LIMIT 200
@@ -97,6 +99,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const countryRows = await sql`
       SELECT country, COUNT(*)::int AS sessions
       FROM sessions
+      WHERE NOT internal
       GROUP BY country
       ORDER BY sessions DESC
       LIMIT 200
@@ -123,12 +126,166 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       FROM users
     `;
 
+    // last_active = most recent answer synced to user_progress (only
+    // signed-in study is synced, so this is real account activity).
     const recentSignups = await sql`
-      SELECT email, to_char(created_at, 'YYYY-MM-DD HH24:MI') AS joined_at
-      FROM users
-      ORDER BY created_at DESC
+      SELECT
+        u.email,
+        to_char(u.created_at, 'YYYY-MM-DD HH24:MI') AS joined_at,
+        to_char(MAX(p.last_seen_at), 'YYYY-MM-DD') AS last_active,
+        COUNT(p.question_key)::int AS answered
+      FROM users u
+      LEFT JOIN user_progress p ON p.user_id = u.id
+      GROUP BY u.id, u.email, u.created_at
+      ORDER BY u.created_at DESC
       LIMIT 50
     `;
+
+    // --- Return visits ---
+    // A visitor (anonymous, per-browser id) "returned" if they have a
+    // session on a later calendar day (UTC) than their first. Day-7/day-30
+    // rates only count visitors whose full window has already elapsed, so
+    // brand-new visitors don't drag the rate down just for being new.
+    const retentionRows = await sql`
+      WITH s AS (
+        SELECT visitor_id, started_at, studied FROM sessions WHERE NOT internal
+      ),
+      v AS (
+        SELECT
+          visitor_id,
+          date_trunc('day', MIN(started_at)) AS first_day,
+          COUNT(DISTINCT date_trunc('day', started_at))::int AS active_days,
+          BOOL_OR(studied) AS ever_studied
+        FROM s
+        GROUP BY visitor_id
+      ),
+      r AS (
+        SELECT
+          v.*,
+          EXISTS (
+            SELECT 1 FROM s
+            WHERE s.visitor_id = v.visitor_id
+              AND s.started_at >= v.first_day + interval '1 day'
+              AND s.started_at < v.first_day + interval '8 days'
+          ) AS back_d7,
+          EXISTS (
+            SELECT 1 FROM s
+            WHERE s.visitor_id = v.visitor_id
+              AND s.started_at >= v.first_day + interval '1 day'
+              AND s.started_at < v.first_day + interval '31 days'
+          ) AS back_d30
+        FROM v
+      )
+      SELECT
+        COUNT(*)::int AS visitors,
+        COUNT(*) FILTER (WHERE active_days >= 2)::int AS returning_visitors,
+        COUNT(*) FILTER (WHERE ever_studied)::int AS studied_visitors,
+        COUNT(*) FILTER (WHERE ever_studied AND active_days >= 2)::int AS studied_returning,
+        COUNT(*) FILTER (WHERE active_days >= 5)::int AS regulars,
+        COUNT(*) FILTER (WHERE first_day + interval '8 days' <= now())::int AS d7_eligible,
+        COUNT(*) FILTER (WHERE first_day + interval '8 days' <= now() AND back_d7)::int AS d7_returned,
+        COUNT(*) FILTER (WHERE first_day + interval '31 days' <= now())::int AS d30_eligible,
+        COUNT(*) FILTER (WHERE first_day + interval '31 days' <= now() AND back_d30)::int AS d30_returned
+      FROM r
+    `;
+
+    const active7dRows = await sql`
+      WITH f AS (
+        SELECT visitor_id, MIN(started_at) AS first_at FROM sessions WHERE NOT internal GROUP BY visitor_id
+      )
+      SELECT
+        COUNT(DISTINCT s.visitor_id)::int AS active_7d,
+        COUNT(DISTINCT s.visitor_id) FILTER (WHERE f.first_at < now() - interval '7 days')::int AS returning_7d
+      FROM sessions s
+      JOIN f ON f.visitor_id = s.visitor_id
+      WHERE NOT s.internal AND s.started_at >= now() - interval '7 days'
+    `;
+
+    // Weekly cohorts: visitors grouped by the (Monday-start) week of their
+    // first visit, then how many were back in each following week.
+    const cohortRows = await sql`
+      WITH s AS (
+        SELECT visitor_id, started_at FROM sessions WHERE NOT internal
+      ),
+      f AS (
+        SELECT visitor_id, date_trunc('week', MIN(started_at)) AS cohort FROM s GROUP BY visitor_id
+      ),
+      a AS (
+        SELECT DISTINCT
+          s.visitor_id,
+          f.cohort,
+          ((date_trunc('week', s.started_at)::date - f.cohort::date) / 7)::int AS wk
+        FROM s
+        JOIN f ON f.visitor_id = s.visitor_id
+      )
+      SELECT
+        to_char(cohort, 'YYYY-MM-DD') AS week,
+        ((date_trunc('week', now())::date - cohort::date) / 7)::int AS weeks_elapsed,
+        COUNT(*) FILTER (WHERE wk = 0)::int AS size,
+        COUNT(*) FILTER (WHERE wk = 1)::int AS w1,
+        COUNT(*) FILTER (WHERE wk = 2)::int AS w2,
+        COUNT(*) FILTER (WHERE wk = 3)::int AS w3,
+        COUNT(*) FILTER (WHERE wk = 4)::int AS w4
+      FROM a
+      WHERE cohort >= date_trunc('week', now()) - interval '9 weeks'
+      GROUP BY cohort
+      ORDER BY cohort DESC
+    `;
+
+    const accountActivityRows = await sql`
+      WITH ua AS (
+        SELECT u.id, u.created_at, MAX(p.last_seen_at) AS last_active, COUNT(p.question_key)::int AS answered
+        FROM users u
+        LEFT JOIN user_progress p ON p.user_id = u.id
+        GROUP BY u.id, u.created_at
+      )
+      SELECT
+        COUNT(*) FILTER (WHERE last_active >= now() - interval '7 days')::int AS active_7d,
+        COUNT(*) FILTER (WHERE last_active >= now() - interval '30 days')::int AS active_30d,
+        COUNT(*) FILTER (WHERE last_active >= created_at + interval '1 day')::int AS came_back,
+        COUNT(*) FILTER (WHERE answered = 0)::int AS never_answered
+      FROM ua
+    `;
+
+    const pct = (n: number, d: number) => (d > 0 ? Math.round((n / d) * 100) : null);
+    const ret = (retentionRows[0] ?? {}) as Record<string, number>;
+    const act = (active7dRows[0] ?? {}) as Record<string, number>;
+    const accAct = (accountActivityRows[0] ?? {}) as Record<string, number>;
+    const retention = {
+      returningVisitors: ret.returning_visitors ?? 0,
+      returningPct: pct(ret.returning_visitors ?? 0, ret.visitors ?? 0),
+      studiedVisitors: ret.studied_visitors ?? 0,
+      studiedReturningPct: pct(ret.studied_returning ?? 0, ret.studied_visitors ?? 0),
+      regulars: ret.regulars ?? 0,
+      d7Eligible: ret.d7_eligible ?? 0,
+      d7Returned: ret.d7_returned ?? 0,
+      d7Pct: pct(ret.d7_returned ?? 0, ret.d7_eligible ?? 0),
+      d30Eligible: ret.d30_eligible ?? 0,
+      d30Returned: ret.d30_returned ?? 0,
+      d30Pct: pct(ret.d30_returned ?? 0, ret.d30_eligible ?? 0),
+      active7d: act.active_7d ?? 0,
+      returning7d: act.returning_7d ?? 0,
+      cohorts: (
+        cohortRows as {
+          week: string;
+          weeks_elapsed: number;
+          size: number;
+          w1: number;
+          w2: number;
+          w3: number;
+          w4: number;
+        }[]
+      ).map((c) => ({
+        week: c.week,
+        size: c.size,
+        // null = that week hasn't started yet for this cohort
+        weeks: [c.w1, c.w2, c.w3, c.w4].map((n, i) => (i + 1 <= c.weeks_elapsed ? n : null)),
+      })),
+      accountsActive7d: accAct.active_7d ?? 0,
+      accountsActive30d: accAct.active_30d ?? 0,
+      accountsCameBack: accAct.came_back ?? 0,
+      accountsNeverAnswered: accAct.never_answered ?? 0,
+    };
 
     const row = totals[0] ?? {
       total_sessions: 0,
@@ -170,10 +327,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       totalUsers: signupRow.total_users,
       signupsToday: signupRow.signups_today,
       signups7d: signupRow.signups_7d,
-      recentSignups: (recentSignups as { email: string; joined_at: string }[]).map((r) => ({
+      recentSignups: (
+        recentSignups as { email: string; joined_at: string; last_active: string | null; answered: number }[]
+      ).map((r) => ({
         email: r.email,
         joinedAt: r.joined_at,
+        lastActive: r.last_active,
+        answered: r.answered,
       })),
+      retention,
     });
   } catch (err) {
     console.error("stats error", err);
