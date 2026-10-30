@@ -25,7 +25,8 @@ type TrackEvent =
   | "quiz_limit_hit"
   | "quiz_limit_signin_click"
   | "study_limit_hit"
-  | "study_limit_signin_click";
+  | "study_limit_signin_click"
+  | "subject_pick";
 
 function randomId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -138,6 +139,12 @@ export function trackStudyLimitHit(): void {
   if (studyLimitHitSent) return;
   studyLimitHitSent = true;
   send("study_limit_hit");
+}
+
+// Which exam a brand-new visitor says they're studying for (first-visit
+// welcome picker) -- tells us what content people actually come for.
+export function trackSubjectPick(subject: string): void {
+  send("subject_pick", { subject });
 }
 
 export function trackStudyLimitSigninClick(): void {

@@ -8,7 +8,8 @@ type TrackEvent =
   | "quiz_limit_hit"
   | "quiz_limit_signin_click"
   | "study_limit_hit"
-  | "study_limit_signin_click";
+  | "study_limit_signin_click"
+  | "subject_pick";
 
 interface TrackBody {
   visitorId?: unknown;
@@ -16,6 +17,7 @@ interface TrackBody {
   event?: unknown;
   referrer?: unknown;
   internal?: unknown;
+  subject?: unknown;
 }
 
 const VALID_EVENTS: readonly TrackEvent[] = [
@@ -26,6 +28,7 @@ const VALID_EVENTS: readonly TrackEvent[] = [
   "quiz_limit_signin_click",
   "study_limit_hit",
   "study_limit_signin_click",
+  "subject_pick",
 ];
 
 function isValidId(value: unknown): value is string {
@@ -109,6 +112,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       await sql`
         UPDATE sessions SET hit_study_limit = true WHERE session_id = ${sessionId}
       `;
+    } else if (event === "subject_pick") {
+      const subject = typeof body.subject === "string" ? body.subject.slice(0, 60) : "";
+      if (subject) {
+        await sql`
+          UPDATE sessions SET picked_subject = ${subject} WHERE session_id = ${sessionId}
+        `;
+      }
     } else if (event === "study_limit_signin_click") {
       await sql`
         UPDATE sessions SET study_limit_signin_click = true WHERE session_id = ${sessionId}

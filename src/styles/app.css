@@ -1820,3 +1820,94 @@ body {
     min-width: 140px;
   }
 }
+
+/* First-visit welcome + "what are you studying for?" picker (signed-out
+   visitors who haven't chosen an exam yet) -- see WelcomePicker.tsx. */
+.welcome {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, var(--panel-top), var(--panel-bottom));
+}
+
+.welcome__title {
+  margin: 0 0 10px;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--text-bright);
+}
+
+.welcome__text {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 60ch;
+}
+
+.welcome__ask {
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.welcome__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.welcome__option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-height: 64px;
+  padding: 14px 16px;
+  background: var(--panel-flat);
+  border: 1px solid var(--border-soft);
+  border-left-width: 4px;
+  border-radius: 6px;
+  color: var(--text-bright);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.welcome__option:hover,
+.welcome__option:focus-visible {
+  background: color-mix(in oklch, var(--accent) 8%, var(--panel-flat));
+  border-color: var(--border);
+}
+
+.welcome__option:active {
+  transform: scale(0.99);
+}
+
+.welcome__option-label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.welcome__option-count {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  .welcome {
+    padding: 20px 16px;
+  }
+  .welcome__title {
+    font-size: 22px;
+  }
+  .welcome__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -277,6 +277,59 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       neverSignedIn: ((neverSignedInRows[0] ?? {}) as Record<string, number>).never_signed_in ?? 0,
     };
 
+    // First-visit activation: of each visitor's FIRST session, how many
+    // answered at least one question. The number the welcome picker and
+    // free-tier fixes are meant to move -- daily, so a change is visible.
+    const activationRows = await sql`
+      WITH f AS (
+        SELECT DISTINCT ON (visitor_id) visitor_id, started_at, studied
+        FROM sessions
+        WHERE NOT internal
+        ORDER BY visitor_id, started_at
+      )
+      SELECT
+        COUNT(*)::int AS first_visits,
+        COUNT(*) FILTER (WHERE studied)::int AS answered,
+        COUNT(*) FILTER (WHERE started_at >= now() - interval '7 days')::int AS first_visits_7d,
+        COUNT(*) FILTER (WHERE started_at >= now() - interval '7 days' AND studied)::int AS answered_7d
+      FROM f
+    `;
+    const activationDaily = await sql`
+      WITH f AS (
+        SELECT DISTINCT ON (visitor_id) visitor_id, started_at, studied
+        FROM sessions
+        WHERE NOT internal
+        ORDER BY visitor_id, started_at
+      )
+      SELECT
+        to_char(date_trunc('day', started_at), 'YYYY-MM-DD') AS day,
+        COUNT(*)::int AS new_visitors,
+        COUNT(*) FILTER (WHERE studied)::int AS answered
+      FROM f
+      WHERE started_at >= now() - interval '14 days'
+      GROUP BY 1
+      ORDER BY 1 DESC
+    `;
+    const pickRows = await sql`
+      SELECT
+        picked_subject AS subject,
+        COUNT(*)::int AS picks,
+        COUNT(*) FILTER (WHERE studied)::int AS answered
+      FROM sessions
+      WHERE picked_subject IS NOT NULL AND NOT internal
+      GROUP BY picked_subject
+      ORDER BY picks DESC
+    `;
+    const act0 = (activationRows[0] ?? {}) as Record<string, number>;
+    const activation = {
+      firstVisits: act0.first_visits ?? 0,
+      answered: act0.answered ?? 0,
+      firstVisits7d: act0.first_visits_7d ?? 0,
+      answered7d: act0.answered_7d ?? 0,
+      daily: activationDaily as { day: string; new_visitors: number; answered: number }[],
+      picks: pickRows as { subject: string; picks: number; answered: number }[],
+    };
+
     const pct = (n: number, d: number) => (d > 0 ? Math.round((n / d) * 100) : null);
     const ret = (retentionRows[0] ?? {}) as Record<string, number>;
     const act = (active7dRows[0] ?? {}) as Record<string, number>;
@@ -374,6 +427,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       })),
       retention,
       signin,
+      activation,
     });
   } catch (err) {
     console.error("stats error", err);

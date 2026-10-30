@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
 import { SUBJECTS, SUBJECT_META, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data/meta";
-import { SUBJECT_COUNTS, SYSTEMS_BY_SUBJECT } from "./data/bankMeta.generated";
+import { SUBJECT_COUNTS, SYSTEMS_BY_SUBJECT, TOTAL_QUESTIONS } from "./data/bankMeta.generated";
 import { useQuestionBank, getQuestionById, ALL_QUESTION_IDS } from "./data/bank";
 import { shuffle, shuffleOptions } from "./utils/shuffle";
 import {
@@ -11,6 +11,7 @@ import {
   trackQuizLimitSigninClick,
   trackStudyLimitHit,
   trackStudyLimitSigninClick,
+  trackSubjectPick,
 } from "./lib/analytics";
 import { recordAnswer, getMissedQuestions, getSystemStats, getOverallStats, resetProgress } from "./lib/progress";
 import { syncProgressOnSignIn, pushProgressEntries, clearServerProgress } from "./lib/progressSync";
@@ -48,8 +49,30 @@ import InterviewPrepView from "./components/InterviewPrepView";
 import SharedMaterialView from "./components/SharedMaterialView";
 import LicensingView from "./components/LicensingView";
 import CommunityView from "./components/CommunityView";
+import WelcomePicker from "./components/WelcomePicker";
 import avbuddyLogo from "./assets/avbuddy-logo.png";
 import "./styles/app.css";
+
+// Remembered exam/subject choice (per browser). Brand-new visitors have
+// none, which is what shows them the "what are you studying for?" welcome.
+const SUBJECT_KEY = "avbuddy_subject";
+
+function loadSavedSubject(): string | null {
+  try {
+    const s = localStorage.getItem(SUBJECT_KEY);
+    return s && SUBJECTS.includes(s) ? s : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveSubject(subject: string): void {
+  try {
+    localStorage.setItem(SUBJECT_KEY, subject);
+  } catch {
+    // Best-effort only.
+  }
+}
 
 function poolFor(
   subject: string,
@@ -105,7 +128,12 @@ export default function App() {
 
   // ---- Subject state (top-level grouping above `system`, e.g. A320
   // Systems vs ATPL General Knowledge) ----
-  const [subject, setSubject] = useState<string>(SUBJECTS[0]);
+  const [subject, setSubject] = useState<string>(() => loadSavedSubject() ?? SUBJECTS[0]);
+  // Has this browser ever picked an exam? (Or already has a free quiz in
+  // progress / used, from before the picker existed -- don't interrupt them.)
+  const [examChosen, setExamChosen] = useState<boolean>(
+    () => loadSavedSubject() !== null || hasUsedFreeQuiz() || loadFreeQuizState() !== null
+  );
   // Questions load per subject, on demand -- the selected subject first,
   // the rest in the background (see src/data/bank.ts).
   const bank = useQuestionBank(subject);
@@ -423,6 +451,8 @@ export default function App() {
   // accidental reload shouldn't burn their one free quiz.
   useEffect(() => {
     if (mode !== "quiz" || quizPhase !== "setup" || !authReady || auth.signedIn) return;
+    // Brand-new visitor: wait until they've said which exam they're here for.
+    if (!examChosen) return;
     // Don't draw the free quiz from a subject that hasn't downloaded yet --
     // that would start (and burn) it with zero questions.
     if (!subjectReady) return;
@@ -447,7 +477,7 @@ export default function App() {
       trackQuizLimitHit();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed, subjectReady]);
+  }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed, subjectReady, examChosen]);
 
   // Keep the free quiz's progress persisted after every answer/advance so
   // an accidental refresh resumes it instead of silently losing it.
@@ -635,6 +665,7 @@ export default function App() {
   // streak bleeding over from the subject you just left.
   function changeSubject(s: string) {
     setSubject(s);
+    saveSubject(s);
 
     setStudySystem("All");
     setStudyMissedOnly(false);
@@ -654,6 +685,16 @@ export default function App() {
     setExamSystem("All");
     setExamPhase("setup");
   }
+
+  function handlePickExam(s: string) {
+    trackSubjectPick(s);
+    changeSubject(s);
+    setMode("quiz");
+    setExamChosen(true);
+    window.scrollTo({ top: 0 });
+  }
+
+  const showWelcome = authReady && !auth.signedIn && !examChosen;
 
   // ---- Keyboard shortcuts: 1-4 to pick an answer, Enter to advance ----
   // Ignored while typing in any input/textarea (search box, sign-in email
@@ -740,14 +781,25 @@ export default function App() {
         {section === "licensing" && (
           <LicensingView
             onStudySubject={(subj) => {
-              setSubject(subj);
+              changeSubject(subj);
+              setExamChosen(true);
               setSection("technical");
             }}
           />
         )}
         {section === "community" && <CommunityView />}
 
-        {section === "technical" && (
+        {section === "technical" && showWelcome && (
+          <WelcomePicker
+            subjects={SUBJECTS}
+            subjectMeta={SUBJECT_META}
+            countBySubject={subjectCounts}
+            totalQuestions={TOTAL_QUESTIONS}
+            onPick={handlePickExam}
+          />
+        )}
+
+        {section === "technical" && !showWelcome && (
         <div className="subject-layout">
           <SubjectSidebar
             subjects={SUBJECTS}

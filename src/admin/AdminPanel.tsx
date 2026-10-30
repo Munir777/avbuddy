@@ -51,6 +51,14 @@ interface Stats {
     answered: number;
     signedIn: boolean;
   }[];
+  activation?: {
+    firstVisits: number;
+    answered: number;
+    firstVisits7d: number;
+    answered7d: number;
+    daily: { day: string; new_visitors: number; answered: number }[];
+    picks: { subject: string; picks: number; answered: number }[];
+  };
   signin?: {
     linksSent: number;
     linksUsed: number;
@@ -261,6 +269,92 @@ export default function AdminPanel() {
                     <div className="admin__tile-label">Study limit → sign-in rate</div>
                   </div>
                 </div>
+
+                {stats.activation && (
+                  <>
+                    <div className="admin__trend-label">First visits — did they answer a question?</div>
+                    <div className="admin__grid">
+                      <div className="admin__tile admin__tile--accent">
+                        <div className="admin__tile-value">
+                          {pctText(
+                            stats.activation.firstVisits7d > 0
+                              ? Math.round((stats.activation.answered7d / stats.activation.firstVisits7d) * 100)
+                              : null
+                          )}
+                        </div>
+                        <div className="admin__tile-label">
+                          Last 7 days ({stats.activation.answered7d}/{stats.activation.firstVisits7d})
+                        </div>
+                      </div>
+                      <div className="admin__tile">
+                        <div className="admin__tile-value">
+                          {pctText(
+                            stats.activation.firstVisits > 0
+                              ? Math.round((stats.activation.answered / stats.activation.firstVisits) * 100)
+                              : null
+                          )}
+                        </div>
+                        <div className="admin__tile-label">
+                          All time ({stats.activation.answered}/{stats.activation.firstVisits})
+                        </div>
+                      </div>
+                    </div>
+                    <table className="admin__trend-table">
+                      <thead>
+                        <tr>
+                          <th>Day</th>
+                          <th>New visitors</th>
+                          <th>Answered a question</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {stats.activation.daily.length === 0 && (
+                          <tr>
+                            <td colSpan={3} className="admin__trend-empty">
+                              No new visitors in the last 14 days.
+                            </td>
+                          </tr>
+                        )}
+                        {stats.activation.daily.map((row) => (
+                          <tr key={row.day}>
+                            <td>{row.day}</td>
+                            <td>{row.new_visitors}</td>
+                            <td>
+                              {row.answered} ({row.new_visitors > 0 ? Math.round((row.answered / row.new_visitors) * 100) : 0}%)
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+
+                    <div className="admin__trend-label">What new visitors are studying for</div>
+                    <table className="admin__trend-table">
+                      <thead>
+                        <tr>
+                          <th>Exam picked</th>
+                          <th>Picks</th>
+                          <th>Then answered</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {stats.activation.picks.length === 0 && (
+                          <tr>
+                            <td colSpan={3} className="admin__trend-empty">
+                              No picks yet — this fills in as new visitors use the welcome screen.
+                            </td>
+                          </tr>
+                        )}
+                        {stats.activation.picks.map((row) => (
+                          <tr key={row.subject}>
+                            <td>{row.subject}</td>
+                            <td>{row.picks}</td>
+                            <td>{row.answered}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
 
                 {stats.retention && (
                   <>
