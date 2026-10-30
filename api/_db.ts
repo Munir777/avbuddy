@@ -233,7 +233,17 @@ export function ensureSchema() {
             created_at TIMESTAMPTZ NOT NULL DEFAULT now()
           )
         `
-      );
+      )
+      // A failed attempt must NOT be cached: before this, one transient
+      // error (e.g. two fresh instances racing the same CREATE TABLE right
+      // after a deploy) left schemaReady as a rejected promise, so every
+      // later request on that warm instance failed too -- this took down
+      // sign-in after the 2026-10-30 deploy. Reset it so the next request
+      // simply retries.
+      .catch((err: unknown) => {
+        schemaReady = null;
+        throw err;
+      });
   }
   return schemaReady;
 }
