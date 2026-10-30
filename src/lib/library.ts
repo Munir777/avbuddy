@@ -79,3 +79,66 @@ export function getSampleQuestions(subjectName: string, system: string, sampleSi
   }
   return sample;
 }
+
+// How people actually search for each exam (Bing/Google keyword research:
+// the ranking pages all say "Question Bank" / "Type Rating", exam names like
+// SAMRA/SARON, "ATP written") -- used for page titles, descriptions and
+// headings so each Library page matches those searches. `refs` describes
+// what the explanations cite, accurately per subject.
+interface SubjectSeo {
+  short: string; // prefix for a category, e.g. "A320" -> "A320 Hydraulic System"
+  bankName: string; // e.g. "A320 Question Bank"
+  tagline: string; // what the bank is for
+  shortTagline: string; // compact version for category-page titles
+  refs: string; // what explanations are backed by
+}
+
+const SUBJECT_SEO: Record<string, SubjectSeo> = {
+  "A320 Systems": {
+    short: "A320",
+    bankName: "A320 Question Bank",
+    tagline: "Type Rating & Technical Interview Practice",
+    shortTagline: "Type Rating Prep",
+    refs: "explanations and FCOM-based references",
+  },
+  "737 MAX 8": {
+    short: "737 MAX",
+    bankName: "737 MAX Question Bank",
+    tagline: "Type Rating & Systems Practice",
+    shortTagline: "Type Rating Prep",
+    refs: "explanations",
+  },
+  "ATPL General Knowledge": {
+    short: "ATPL",
+    bankName: "ATPL Question Bank",
+    tagline: "ATPL Theory & Airline Interview Practice",
+    shortTagline: "ATPL Exam Prep",
+    refs: "explanations",
+  },
+  "FAA ATP": {
+    short: "FAA ATP",
+    bankName: "FAA ATP Written Test Questions",
+    tagline: "ATP Knowledge Test Practice",
+    shortTagline: "ATP Written Prep",
+    refs: "explanations and 14 CFR references",
+  },
+  "Canada TC ATPL": {
+    short: "SAMRA/SARON",
+    bankName: "SAMRA & SARON Practice Questions",
+    tagline: "Transport Canada ATPL Exam Prep",
+    shortTagline: "TC ATPL Exam Prep",
+    refs: "explanations and CARs / TC AIM references",
+  },
+};
+
+export function subjectSeo(subjectName: string): SubjectSeo {
+  return (
+    SUBJECT_SEO[subjectName] ?? {
+      short: subjectName,
+      bankName: `${subjectName} Question Bank`,
+      tagline: "Practice Questions",
+      shortTagline: "Practice",
+      refs: "explanations",
+    }
+  );
+}

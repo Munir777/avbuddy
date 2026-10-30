@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useDocMeta } from "../lib/docMeta";
+import { useDocMeta, SITE_ORIGIN } from "../lib/docMeta";
+import type { Question } from "../types";
 import "../styles/app.css";
 import "./library.css";
 import avbuddyLogo from "../assets/avbuddy-logo.png";
@@ -8,6 +9,7 @@ import {
   findLibrarySubject,
   getLibrarySubjects,
   getSampleQuestions,
+  subjectSeo,
 } from "../lib/library";
 
 // Public, crawlable study-library pages: no sign-in, no clicks required to
@@ -46,6 +48,63 @@ function useLibraryPath() {
   return { pathname, navigate };
 }
 
+
+// schema.org structured data, rendered into the page (and the prerendered
+// HTML) so search engines can show breadcrumbs and Q&A study cards.
+// "<" is escaped so question text can never close the <script> tag early.
+// Search results show ~60-70 characters of a title, so the exam + topic go
+// first and the tagline is only added when it still fits.
+function categoryTitle(subjectName: string, system: string): string {
+  const seo = subjectSeo(subjectName);
+  const base = `${seo.short} ${system} Questions`;
+  const withTagline = `${base} — ${seo.shortTagline} | AvBuddy`;
+  return withTagline.length <= 70 ? withTagline : `${base} | AvBuddy`;
+}
+
+function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
+    />
+  );
+}
+
+function breadcrumbLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: SITE_ORIGIN + item.path,
+    })),
+  };
+}
+
+function quizLd(name: string, about: string, questions: Question[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    name,
+    about: { "@type": "Thing", name: about },
+    educationalLevel: "Professional pilot",
+    hasPart: questions.map((q) => ({
+      "@type": "Question",
+      eduQuestionType: "Multiple choice",
+      text: q.q,
+      suggestedAnswer: q.options
+        .filter((_, i) => i !== q.answer)
+        .map((text) => ({ "@type": "Answer", text })),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.options[q.answer],
+        answerExplanation: { "@type": "Comment", text: q.explain },
+      },
+    })),
+  };
+}
 
 function LibraryLink({
   to,
@@ -89,8 +148,8 @@ function SignInCta({ subjectName, questionCount }: { subjectName: string; questi
 function LibraryIndex({ navigate }: { navigate: (to: string) => void }) {
   const subjects = getLibrarySubjects();
   useDocMeta(
-    "Study Library — AvBuddy",
-    "Free sample A320 systems, ATPL general knowledge and 737 MAX 8 questions with explanations and FCOM references. No account needed."
+    "Free Pilot Question Banks: A320, 737, ATPL, FAA ATP & SAMRA/SARON | AvBuddy",
+    "Free practice questions with explanations for A320 and 737 type ratings, ATPL theory, the FAA ATP written and Transport Canada SAMRA/SARON exams. No account needed."
   );
   return (
     <>
@@ -124,9 +183,11 @@ function LibrarySubjectPage({
 }) {
   const subject = findLibrarySubject(subjectSlug);
   useDocMeta(
-    subject ? `${subject.name} — Study Library — AvBuddy` : "Study Library — AvBuddy",
     subject
-      ? `Browse ${subject.categories.length} ${subject.name} categories with free sample questions and explanations.`
+      ? `Free ${subjectSeo(subject.name).bankName} — ${subjectSeo(subject.name).tagline} | AvBuddy`
+      : "Study Library — AvBuddy",
+    subject
+      ? `${subject.questionCount.toLocaleString("en-US")} ${subject.name} practice questions across ${subject.categories.length} categories, with ${subjectSeo(subject.name).refs}. Free sample questions, no account needed.`
       : "AvBuddy study library."
   );
 
@@ -152,7 +213,13 @@ function LibrarySubjectPage({
         </LibraryLink>{" "}
         / {subject.name}
       </div>
-      <h1 className="lib__title">{subject.name}</h1>
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Study Library", path: "/library" },
+          { name: subject.name, path: `/library/${subject.slug}` },
+        ])}
+      />
+      <h1 className="lib__title">{subjectSeo(subject.name).bankName}</h1>
       <p className="lib__subtitle">{subject.blurb}</p>
       <div className="lib__grid">
         {subject.categories.map((c) => (
@@ -184,9 +251,11 @@ function LibraryCategoryPage({
   const subject = category ? findLibrarySubject(category.subjectSlug) : undefined;
   const sample = category ? getSampleQuestions(category.subjectName, category.system) : [];
   useDocMeta(
-    category ? `${category.system} Questions — ${category.subjectName} — AvBuddy` : "Study Library — AvBuddy",
     category
-      ? `Sample ${category.system} questions from the ${category.subjectName} bank with explanations and FCOM-backed references.`
+      ? categoryTitle(category.subjectName, category.system)
+      : "Study Library — AvBuddy",
+    category
+      ? `Free ${subjectSeo(category.subjectName).short} ${category.system} practice questions (${category.questionCount} in the bank) with ${subjectSeo(category.subjectName).refs}. Part of AvBuddy's ${subjectSeo(category.subjectName).bankName}.`
       : "AvBuddy study library."
   );
 
@@ -216,7 +285,23 @@ function LibraryCategoryPage({
         </LibraryLink>{" "}
         / {category.system}
       </div>
-      <h1 className="lib__title">{category.system}</h1>
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Study Library", path: "/library" },
+          { name: category.subjectName, path: `/library/${category.subjectSlug}` },
+          { name: category.system, path: `/library/${category.subjectSlug}/${category.slug}` },
+        ])}
+      />
+      <JsonLd
+        data={quizLd(
+          `${subjectSeo(category.subjectName).short} ${category.system} practice questions`,
+          `${category.subjectName}: ${category.system}`,
+          sample.filter((q) => !q.optionImages && !q.diagram)
+        )}
+      />
+      <h1 className="lib__title">
+        {subjectSeo(category.subjectName).short} {category.system} Questions
+      </h1>
       <p className="lib__subtitle">
         {category.subjectName} · {category.questionCount} questions in this category · sample below
       </p>
