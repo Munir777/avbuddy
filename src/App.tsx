@@ -256,7 +256,9 @@ export default function App() {
   // those already-unlocked ones -- so they can keep revisiting the ones
   // they've earned (via search/missed/bookmarked filters), but reaching a
   // new, never-seen question requires signing in.
+  // Only meaningful while actually in Study mode -- see the effects below.
   const freeStudyLimitReached =
+    mode === "study" &&
     !auth.signedIn &&
     !!studyCurrent &&
     freeStudySeenIds.size >= FREE_STUDY_LIMIT &&
@@ -270,11 +272,16 @@ export default function App() {
   // shown to a signed-out visitor (no-ops once the cap is hit or it's
   // already unlocked).
   useEffect(() => {
-    if (auth.signedIn || !studyCurrent) return;
+    // Study mode only: studyCurrent exists in every mode (it's derived from
+    // the shuffled order), so without this check every page load and subject
+    // switch in Quiz mode silently used up one of the visitor's free study
+    // questions -- and fired the "hit study limit" event while they were
+    // never in Study mode at all.
+    if (mode !== "study" || auth.signedIn || !studyCurrent) return;
     if (freeStudySeenIds.has(studyCurrent.id) || freeStudySeenIds.size >= FREE_STUDY_LIMIT) return;
     recordFreeStudyQuestionSeen(studyCurrent.id);
     setFreeStudySeenTick((t) => t + 1);
-  }, [auth.signedIn, studyCurrent, freeStudySeenIds]);
+  }, [mode, auth.signedIn, studyCurrent, freeStudySeenIds]);
 
   function studyPick(i: number) {
     if (studyRevealed || !studyCurrent || studyWrongIndices.has(i)) return;
@@ -402,8 +409,9 @@ export default function App() {
     setQuizRevealed(false);
     setQuizResults([]);
     setQuizPhase("active");
-    markFreeQuizUsed();
-    setFreeQuizUsedTick((t) => t + 1);
+    // Not marked as used yet -- that happens on the first answer (see
+    // quizPick). Until then a visitor can switch subjects and the free quiz
+    // simply restarts in the subject they actually came for.
   }
 
   // Signed-out visitors who still have their free quiz available shouldn't
@@ -462,6 +470,13 @@ export default function App() {
     if (quizRevealed || !quizCurrent) return;
     trackStudied();
     const correct = i === quizCurrent.answer;
+    // The anonymous free quiz counts as used from the first answer, not from
+    // the moment it auto-started -- otherwise someone who landed on A320 and
+    // tapped "FAA ATP" was stuck with the A320 quiz they never chose.
+    if (!auth.signedIn && !freeQuizUsed) {
+      markFreeQuizUsed();
+      setFreeQuizUsedTick((t) => t + 1);
+    }
     const { key, stat } = recordAnswer(quizCurrent, correct);
     setProgressTick((t) => t + 1);
     // Quiz mode is reachable signed-out (the free quiz), so this only syncs
