@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /auth/callback
 
-Sitemap: https://avbuddy.app/sitemap.xml
+Sitemap: https://www.avbuddy.app/sitemap.xml

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDocMeta } from "../lib/docMeta";
 import "../styles/app.css";
 import "../library/library.css";
 import avbuddyLogo from "../assets/avbuddy-logo.png";
@@ -45,18 +46,6 @@ function useLicensingPath() {
   return { pathname, navigate };
 }
 
-function useDocMeta(title: string, description: string) {
-  useEffect(() => {
-    document.title = title;
-    let tag = document.querySelector('meta[name="description"]');
-    if (!tag) {
-      tag = document.createElement("meta");
-      tag.setAttribute("name", "description");
-      document.head.appendChild(tag);
-    }
-    tag.setAttribute("content", description);
-  }, [title, description]);
-}
 
 function LicensingLink({
   to,

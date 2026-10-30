@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 // Global theme (colour tokens, fonts, body background). Loaded here, not
 // just in App, so every route -- /admin and /auth/callback included -- gets
@@ -27,44 +27,33 @@ window.addEventListener("vite:preloadError", (event) => {
   if (reloadForNewBuild()) event.preventDefault();
 });
 
-// Belt and braces for the route chunks themselves: if the import fails,
-// reload (once) instead of leaving a blank page.
-function lazyRoute<T extends React.ComponentType>(load: () => Promise<{ default: T }>) {
-  return lazy(() =>
-    load().catch((err) => {
-      if (reloadForNewBuild()) return new Promise<{ default: T }>(() => {});
-      throw err;
-    })
-  );
-}
-
 // Each top-level route is its own chunk, so e.g. /admin never downloads the
 // study app, and the study app never downloads the admin panel. The
 // question bank itself is split further, per subject -- see src/data/bank.ts.
-const App = lazyRoute(() => import("./App"));
-const AdminPanel = lazyRoute(() => import("./admin/AdminPanel"));
-const AuthCallback = lazyRoute(() => import("./components/AuthCallback"));
-const LibraryApp = lazyRoute(() => import("./library/LibraryApp"));
-const LicensingApp = lazyRoute(() => import("./licensing/LicensingApp"));
-
+//
+// The route's chunk is loaded BEFORE React renders anything (rather than
+// React.lazy + Suspense), because the public Library/Licensing pages arrive
+// pre-rendered in the HTML (scripts/prerender.mjs) -- a Suspense fallback
+// would wipe that content while the chunk downloads.
 const path = window.location.pathname.replace(/\/+$/, "");
-const isAdminRoute = path === "/admin";
-const isAuthCallbackRoute = path === "/auth/callback";
-const isLibraryRoute = path === "/library" || path.startsWith("/library/");
-const isLicensingRoute = path === "/licensing" || path.startsWith("/licensing/");
-
-function Root() {
-  if (isAdminRoute) return <AdminPanel />;
-  if (isAuthCallbackRoute) return <AuthCallback />;
-  if (isLibraryRoute) return <LibraryApp />;
-  if (isLicensingRoute) return <LicensingApp />;
-  return <App />;
+type RouteModule = Promise<{ default: React.ComponentType }>;
+function loadRoute(): RouteModule {
+  if (path === "/admin") return import("./admin/AdminPanel");
+  if (path === "/auth/callback") return import("./components/AuthCallback");
+  if (path === "/library" || path.startsWith("/library/")) return import("./library/LibraryApp");
+  if (path === "/licensing" || path.startsWith("/licensing/")) return import("./licensing/LicensingApp");
+  return import("./App");
 }
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Suspense fallback={null}>
-      <Root />
-    </Suspense>
-  </React.StrictMode>
-);
+loadRoute()
+  .then(({ default: Page }) => {
+    ReactDOM.createRoot(document.getElementById("root")!).render(
+      <React.StrictMode>
+        <Page />
+      </React.StrictMode>
+    );
+  })
+  .catch((err) => {
+    // Most likely a stale tab after a deploy (see above) -- reload once.
+    if (!reloadForNewBuild()) throw err;
+  });

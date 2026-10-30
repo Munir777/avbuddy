@@ -8,7 +8,8 @@ import { fileURLToPath } from "node:url";
 import { getLibrarySubjects } from "../src/lib/library";
 import { LICENSING_AUTHORITIES, LICENSE_LEVELS } from "../src/data/licensing";
 
-const BASE = "https://avbuddy.app";
+// Must match the real (non-redirecting) host -- see src/lib/docMeta.ts.
+const BASE = "https://www.avbuddy.app";
 const today = new Date().toISOString().slice(0, 10);
 
 interface SitemapUrl {
