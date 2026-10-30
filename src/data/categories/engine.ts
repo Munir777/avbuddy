@@ -259,7 +259,7 @@ export const ENGINE_QUESTIONS: Question[] = [
     id: 29,
     system: "Engine",
     q: "Continuous ignition is automatically provided during the following:",
-    options: ["Flex or TO/GA thrust is selected on the ground.", "ENG ANTI ICE switch is ON", "Engine surge on stall occurs in flight.", "Any of the above *"],
+    options: ["Flex or TO/GA thrust is selected on the ground.", "ENG ANTI ICE switch is ON", "Engine surge on stall occurs in flight.", "Any of the above"],
     answer: 3,
     explain: "Continuous ignition comes on automatically in several situations documented in the FADEC's automatic-selection logic, including flex or TOGA thrust selected on the ground, ENG ANTI ICE switched on, and an in-flight engine surge or stall — all of the listed triggers are genuine.",
     reference: "Engines - Ignition and Starting (Ignition System, Continuous Ignition)",

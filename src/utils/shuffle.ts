@@ -15,10 +15,23 @@ export function shuffle<T>(arr: T[]): T[] {
 // randomly reordered -- the original Question object is never mutated, so
 // it's still safe to read q.answer/q.options straight off the shared
 // QUESTIONS array anywhere else in the app.
+//
+// Options like "All of the above" / "None of the above" only make sense
+// after the options they refer to, so those are kept at the end (in their
+// authored order) and only the rest are shuffled.
+const REFERS_TO_OTHER_OPTIONS = /^\s*(all|none|any|both|neither)\s+(of\s+)?(the\s+)?(above|preceding|previous)\b/i;
+
+export function isPositionalOption(option: string): boolean {
+  return REFERS_TO_OTHER_OPTIONS.test(option);
+}
+
 export function shuffleOptions<Q extends { options: string[]; answer: number; optionImages?: string[] }>(
   question: Q
 ): Q {
-  const order = shuffle(question.options.map((_, i) => i));
+  const indices = question.options.map((_, i) => i);
+  const pinned = indices.filter((i) => isPositionalOption(question.options[i]));
+  const free = indices.filter((i) => !isPositionalOption(question.options[i]));
+  const order = [...shuffle(free), ...pinned];
   return {
     ...question,
     options: order.map((i) => question.options[i]),
