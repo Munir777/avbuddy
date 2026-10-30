@@ -45,8 +45,12 @@ npm run dev
 ## Adding another category
 
 1. Get the category's questions into the shape of an entry in `src/data/categories/<name>.ts` (see any existing file for the pattern — `id`, `system`, `q`, `options`, `answer`, `explain`, optional `needsReview`).
-2. Import it in `src/data/index.ts` and add it to the `QUESTIONS` array and `SYSTEM_COLORS`.
-3. Nothing else needs to change — the filter, quiz, and study mode all read from `QUESTIONS`.
+2. Import it in that subject's file under `src/data/subjects/` and add it to the list there; add a `SYSTEM_COLORS` entry in `src/data/meta.ts` if it's a new system.
+3. Nothing else needs to change. `npm run dev` / `npm run build` regenerate `src/data/bankMeta.generated.ts` (counts, ID offsets, category lists) automatically.
+
+Question IDs are assigned by position across the whole bank (bookmarks and saved quiz state store them), so only ever **append** questions/categories/subjects — never insert in the middle or reorder.
+
+The main app loads questions per subject as separate chunks (`src/data/bank.ts`): the selected subject first, the rest in the background. Only `/library` and the build scripts import the full bank synchronously (`src/data/index.ts`).
 
 ## Usage analytics + admin panel
 

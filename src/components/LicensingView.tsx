@@ -5,7 +5,7 @@ import {
   findLicensingQuestionSubject,
   type LicenseLevelKey,
 } from "../data/licensing";
-import { QUESTIONS } from "../data";
+import { SUBJECT_COUNTS } from "../data/bankMeta.generated";
 
 interface LicensingViewProps {
   onStudySubject: (subject: string) => void;
@@ -19,9 +19,7 @@ export default function LicensingView({ onStudySubject }: LicensingViewProps) {
     LICENSING_AUTHORITIES.find((a) => a.key === authorityKey) ?? LICENSING_AUTHORITIES[0];
   const level = LICENSE_LEVELS.find((l) => l.key === levelKey) ?? LICENSE_LEVELS[0];
   const questionSubject = findLicensingQuestionSubject(authority.key, level.key);
-  const questionCount = questionSubject
-    ? QUESTIONS.filter((q) => q.subject === questionSubject).length
-    : 0;
+  const questionCount = questionSubject ? SUBJECT_COUNTS[questionSubject] ?? 0 : 0;
 
   return (
     <div>

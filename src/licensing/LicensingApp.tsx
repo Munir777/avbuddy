@@ -9,7 +9,7 @@ import {
   findLicenseLevel,
   findLicensingQuestionSubject,
 } from "../data/licensing";
-import { QUESTIONS } from "../data";
+import { SUBJECT_COUNTS } from "../data/bankMeta.generated";
 
 // Public, crawlable Licensing Hub pages: no sign-in, no clicks required to
 // see real content. Mirrors the /library pattern (its own tiny router,
@@ -210,7 +210,7 @@ function LicensingLevelPage({
   const authority = findLicensingAuthority(authoritySlug);
   const level = findLicenseLevel(levelSlug);
   const questionSubject = authority && level ? findLicensingQuestionSubject(authority.key, level.key) : undefined;
-  const questionCount = questionSubject ? QUESTIONS.filter((q) => q.subject === questionSubject).length : 0;
+  const questionCount = questionSubject ? SUBJECT_COUNTS[questionSubject] ?? 0 : 0;
   useDocMeta(
     authority && level
       ? `${authority.authorityAbbr} ${level.label} (${level.fullName}) — AvBuddy`

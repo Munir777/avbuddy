@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run bank-meta && vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "prebuild": "npm run sitemap",
-    "sitemap": "tsx scripts/generate-sitemap.ts"
+    "prebuild": "npm run bank-meta && npm run sitemap",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
+    "bank-meta": "tsx scripts/generate-bank-meta.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

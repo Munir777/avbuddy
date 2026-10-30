@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Question } from "./types";
-import { QUESTIONS, SUBJECTS, SUBJECT_META, SYSTEMS_BY_SUBJECT, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data";
+import { SUBJECTS, SUBJECT_META, SYSTEM_COLORS, DEFAULT_SYSTEM_COLOR } from "./data/meta";
+import { SUBJECT_COUNTS, SYSTEMS_BY_SUBJECT } from "./data/bankMeta.generated";
+import { useQuestionBank, getQuestionById, ALL_QUESTION_IDS } from "./data/bank";
 import { shuffle, shuffleOptions } from "./utils/shuffle";
 import {
   initAnalytics,
@@ -64,15 +66,19 @@ function poolFor(
   // just whichever subject happens to be selected right now. Only when
   // neither filter is active do we scope the pool down to the current
   // subject before applying the system filter.
-  const scopedIds =
-    missedOnly || bookmarkedOnly
-      ? ids
-      : ids.filter((id) => QUESTIONS.find((q) => q.id === id)!.subject === subject);
-  let filtered =
-    system === "All" ? scopedIds : scopedIds.filter((id) => QUESTIONS.find((q) => q.id === id)!.system === system);
-  if (missedOnly) filtered = filtered.filter((id) => missedIds.has(id));
-  if (bookmarkedOnly) filtered = filtered.filter((id) => bookmarkedIds.has(id));
-  let questions = filtered.map((id) => QUESTIONS.find((q) => q.id === id)!);
+  //
+  // `ids` covers the whole bank, but subjects load lazily (src/data/bank.ts),
+  // so any id whose subject hasn't arrived yet is simply skipped for now.
+  let questions: Question[] = [];
+  for (const id of ids) {
+    const q = getQuestionById(id);
+    if (!q) continue;
+    if (!missedOnly && !bookmarkedOnly && q.subject !== subject) continue;
+    if (system !== "All" && q.system !== system) continue;
+    if (missedOnly && !missedIds.has(id)) continue;
+    if (bookmarkedOnly && !bookmarkedIds.has(id)) continue;
+    questions.push(q);
+  }
   const query = searchQuery.trim().toLowerCase();
   if (query) {
     questions = questions.filter(
@@ -100,12 +106,17 @@ export default function App() {
   // ---- Subject state (top-level grouping above `system`, e.g. A320
   // Systems vs ATPL General Knowledge) ----
   const [subject, setSubject] = useState<string>(SUBJECTS[0]);
-  const subjectQuestions = useMemo(() => QUESTIONS.filter((q) => q.subject === subject), [subject]);
-  const subjectCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    for (const s of SUBJECTS) counts[s] = QUESTIONS.filter((q) => q.subject === s).length;
-    return counts;
-  }, []);
+  // Questions load per subject, on demand -- the selected subject first,
+  // the rest in the background (see src/data/bank.ts).
+  const bank = useQuestionBank(subject);
+  const QUESTIONS = bank.questions;
+  const subjectReady = bank.isLoaded(subject);
+  const subjectQuestions = useMemo(
+    () => QUESTIONS.filter((q) => q.subject === subject),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [subject, bank.version]
+  );
+  const subjectCounts = SUBJECT_COUNTS;
 
   // ---- Account state ----
   const [auth, setAuth] = useState<AuthState>({ signedIn: false, email: null });
@@ -165,10 +176,13 @@ export default function App() {
   // set and weak-areas stats (both derived from localStorage) recompute.
   const [progressTick, setProgressTick] = useState(0);
 
-  const missedQuestions = useMemo(() => getMissedQuestions(QUESTIONS), [progressTick]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const missedQuestions = useMemo(() => getMissedQuestions(QUESTIONS), [progressTick, bank.version]);
   const missedIds = useMemo(() => new Set(missedQuestions.map((q) => q.id)), [missedQuestions]);
-  const systemStats = useMemo(() => getSystemStats(QUESTIONS), [progressTick]);
-  const overallStats = useMemo(() => getOverallStats(QUESTIONS), [progressTick]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const systemStats = useMemo(() => getSystemStats(QUESTIONS), [progressTick, bank.version]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const overallStats = useMemo(() => getOverallStats(QUESTIONS), [progressTick, bank.version]);
 
   // Missed/bookmarked counts scoped to the current subject, for the chip
   // labels in SystemFilter/QuizSetup (the underlying missed/bookmarked
@@ -190,7 +204,7 @@ export default function App() {
   const [studyMissedOnly, setStudyMissedOnly] = useState(false);
   const [studyBookmarkedOnly, setStudyBookmarkedOnly] = useState(false);
   const [studySearchQuery, setStudySearchQuery] = useState("");
-  const [studyOrder, setStudyOrder] = useState<number[]>(() => shuffle(QUESTIONS.map((q) => q.id)));
+  const [studyOrder, setStudyOrder] = useState<number[]>(() => shuffle(ALL_QUESTION_IDS));
   const [studyIndex, setStudyIndex] = useState(0);
   // Options tried on the current question and found wrong — study mode lets
   // you keep trying until you pick the right one (revealed only flips true
@@ -211,7 +225,9 @@ export default function App() {
         bookmarkedIds,
         studySearchQuery
       ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [
+      bank.version,
       subject,
       studySystem,
       studyOrder,
@@ -322,7 +338,7 @@ export default function App() {
   }
 
   function studyReshuffle() {
-    setStudyOrder(shuffle(QUESTIONS.map((q) => q.id)));
+    setStudyOrder(shuffle(ALL_QUESTION_IDS));
     setStudyIndex(0);
     setStudyWrongIndices(new Set());
     setStudyRevealed(false);
@@ -347,7 +363,8 @@ export default function App() {
     const base = quizMissedOnly ? QUESTIONS : subjectQuestions;
     const bySystem = quizSystem === "All" ? base : base.filter((q) => q.system === quizSystem);
     return quizMissedOnly ? bySystem.filter((q) => missedIds.has(q.id)) : bySystem;
-  }, [subjectQuestions, quizSystem, quizMissedOnly, missedIds]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [subjectQuestions, quizSystem, quizMissedOnly, missedIds, bank.version]);
 
   const quizAvailableCount = quizCandidatePool.length;
 
@@ -398,6 +415,9 @@ export default function App() {
   // accidental reload shouldn't burn their one free quiz.
   useEffect(() => {
     if (mode !== "quiz" || quizPhase !== "setup" || !authReady || auth.signedIn) return;
+    // Don't draw the free quiz from a subject that hasn't downloaded yet --
+    // that would start (and burn) it with zero questions.
+    if (!subjectReady) return;
     if (!freeQuizUsed) {
       startFreeQuiz();
       return;
@@ -419,7 +439,7 @@ export default function App() {
       trackQuizLimitHit();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed]);
+  }, [mode, quizPhase, authReady, auth.signedIn, freeQuizUsed, subjectReady]);
 
   // Keep the free quiz's progress persisted after every answer/advance so
   // an accidental refresh resumes it instead of silently losing it.
@@ -605,7 +625,7 @@ export default function App() {
     setStudyMissedOnly(false);
     setStudyBookmarkedOnly(false);
     setStudySearchQuery("");
-    setStudyOrder(shuffle(QUESTIONS.map((q) => q.id)));
+    setStudyOrder(shuffle(ALL_QUESTION_IDS));
     setStudyIndex(0);
     setStudyWrongIndices(new Set());
     setStudyRevealed(false);
@@ -740,7 +760,24 @@ export default function App() {
 
         <ModeToggle mode={mode} onChange={setMode} />
 
-        {mode === "study" && authReady && freeStudyLimitReached && (
+        {bank.error && !subjectReady && (
+          <div className="card">
+            <div className="progress__empty">
+              Couldn't load questions — check your connection.{" "}
+              <button type="button" className="btn-secondary" onClick={() => window.location.reload()}>
+                Retry
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!bank.error && (!subjectReady || (mode === "progress" && auth.signedIn && !bank.allLoaded)) && (
+          <div className="card">
+            <div className="progress__empty">Loading questions…</div>
+          </div>
+        )}
+
+        {mode === "study" && authReady && subjectReady && freeStudyLimitReached && (
           <AccountGate
             message={`You've used your ${FREE_STUDY_LIMIT} free study questions. Sign in for unlimited Study mode with spaced repetition and progress tracking that syncs across your devices.`}
             onSignIn={() => {
@@ -750,7 +787,7 @@ export default function App() {
           />
         )}
 
-        {mode === "study" && authReady && !freeStudyLimitReached && (
+        {mode === "study" && authReady && subjectReady && !freeStudyLimitReached && (
           <>
             <SearchBox value={studySearchQuery} onChange={studyChangeSearch} />
             <SystemFilter
@@ -795,7 +832,7 @@ export default function App() {
           </>
         )}
 
-        {mode === "quiz" && quizPhase === "setup" && authReady && auth.signedIn && (
+        {mode === "quiz" && quizPhase === "setup" && authReady && subjectReady && auth.signedIn && (
           <QuizSetup
             systems={SYSTEMS_BY_SUBJECT[subject]}
             system={quizSystem}
@@ -857,7 +894,7 @@ export default function App() {
           />
         )}
 
-        {mode === "exam" && authReady && auth.signedIn && examPhase === "setup" && (
+        {mode === "exam" && authReady && subjectReady && auth.signedIn && examPhase === "setup" && (
           <ExamSetup
             systems={SYSTEMS_BY_SUBJECT[subject]}
             system={examSystem}
@@ -905,7 +942,7 @@ export default function App() {
           />
         )}
 
-        {mode === "progress" && authReady && auth.signedIn && (
+        {mode === "progress" && authReady && auth.signedIn && bank.allLoaded && (
           <ProgressView
             overall={overallStats}
             systemStats={systemStats}
