@@ -1,5 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
+// Global theme (colour tokens, fonts, body background). Loaded here, not
+// just in App, so every route -- /admin and /auth/callback included -- gets
+// it now that routes are separate lazy chunks.
+import "./styles/app.css";
 
 // After a deploy, a tab that was already open still references the OLD
 // chunk filenames, which no longer exist on the server -- the next lazy
