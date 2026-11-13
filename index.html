@@ -12,8 +12,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     />
-    <title>Free A320 &amp; ATPL Question Bank, ATP Written &amp; SAMRA Practice | AvBuddy</title>
-    <meta name="description" content="Free pilot question banks with explanations: A320 and 737 MAX type rating systems, ATPL theory, FAA ATP written and Transport Canada SAMRA/SARON. Quizzes, timed exams, spaced repetition and airline interview prep." />
+    <title>AvBuddy: Free A320 &amp; ATPL Pilot Question Bank, ATP Written &amp; SAMRA Practice</title>
+    <meta name="description" content="AvBuddy is a free pilot study app: question banks with explanations: A320 and 737 MAX type rating systems, ATPL theory, FAA ATP written and Transport Canada SAMRA/SARON. Quizzes, timed exams, spaced repetition and airline interview prep." />
     <link rel="canonical" href="https://www.avbuddy.app/" />
 
     <!-- Open Graph / link previews -->
@@ -35,12 +35,34 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "AvBuddy",
-        "url": "https://www.avbuddy.app/",
-        "description": "Free pilot question banks with explanations: A320 and 737 MAX type rating systems, ATPL theory, FAA ATP written and Transport Canada SAMRA/SARON. Quizzes, timed exams, spaced repetition and airline interview prep.",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "Web"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.avbuddy.app/#organization",
+            "name": "AvBuddy",
+            "alternateName": ["Av Buddy", "AvBuddy Pilot Study", "avbuddy.app"],
+            "url": "https://www.avbuddy.app/",
+            "logo": "https://www.avbuddy.app/icon-512.png",
+            "description": "Free pilot study platform with A320, 737 MAX, ATPL, FAA ATP written and Transport Canada SAMRA/SARON question banks."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.avbuddy.app/#website",
+            "name": "AvBuddy",
+            "alternateName": ["Av Buddy", "AvBuddy Pilot Study"],
+            "url": "https://www.avbuddy.app/",
+            "publisher": { "@id": "https://www.avbuddy.app/#organization" }
+          },
+          {
+            "@type": "WebApplication",
+            "name": "AvBuddy",
+            "url": "https://www.avbuddy.app/",
+            "description": "Free pilot question banks with explanations: A320 and 737 MAX type rating systems, ATPL theory, FAA ATP written and Transport Canada SAMRA/SARON. Quizzes, timed exams, spaced repetition and airline interview prep.",
+            "applicationCategory": "EducationApplication",
+            "operatingSystem": "Web",
+            "publisher": { "@id": "https://www.avbuddy.app/#organization" }
+          }
+        ]
       }
     </script>
   </head>
