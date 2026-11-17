@@ -172,3 +172,18 @@
 .lib__brand img {
   height: 36px;
 }
+
+/* Long-form writeups on /airline-interviews and /interview-prep */
+.lib__summary {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: -6px 0 6px;
+}
+
+.lib__prose {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}

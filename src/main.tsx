@@ -42,6 +42,7 @@ function loadRoute(): RouteModule {
   if (path === "/auth/callback") return import("./components/AuthCallback");
   if (path === "/library" || path.startsWith("/library/")) return import("./library/LibraryApp");
   if (path === "/licensing" || path.startsWith("/licensing/")) return import("./licensing/LicensingApp");
+  if (/^\/(interview-prep|airline-interviews)(\/|$)/.test(path)) return import("./interview/InterviewApp");
   return import("./App");
 }
 

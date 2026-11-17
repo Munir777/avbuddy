@@ -170,6 +170,10 @@ function LibraryIndex({ navigate }: { navigate: (to: string) => void }) {
           </LibraryLink>
         ))}
       </div>
+      <p className="lib__subtitle" style={{ marginTop: 24 }}>
+        Also free on AvBuddy: <a href="/interview-prep">airline pilot interview questions</a> ·{" "}
+        <a href="/airline-interviews">airline interview experiences (Qatar Airways, Etihad, Riyadh Air)</a>
+      </p>
     </>
   );
 }

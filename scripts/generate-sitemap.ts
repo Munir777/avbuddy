@@ -7,6 +7,7 @@ import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { getLibrarySubjects } from "../src/lib/library";
 import { LICENSING_AUTHORITIES, LICENSE_LEVELS } from "../src/data/licensing";
+import { interviewCategories, airlinesWithMaterial } from "../src/interview/routes";
 
 // Must match the real (non-redirecting) host -- see src/lib/docMeta.ts.
 const BASE = "https://www.avbuddy.app";
@@ -22,7 +23,16 @@ const urls: SitemapUrl[] = [
   { loc: `${BASE}/`, priority: "1.0", changefreq: "weekly" },
   { loc: `${BASE}/library`, priority: "0.8", changefreq: "weekly" },
   { loc: `${BASE}/licensing`, priority: "0.7", changefreq: "monthly" },
+  { loc: `${BASE}/interview-prep`, priority: "0.8", changefreq: "weekly" },
+  { loc: `${BASE}/airline-interviews`, priority: "0.8", changefreq: "weekly" },
 ];
+
+for (const c of interviewCategories()) {
+  urls.push({ loc: `${BASE}/interview-prep/${c.slug}`, priority: "0.6", changefreq: "monthly" });
+}
+for (const a of airlinesWithMaterial()) {
+  urls.push({ loc: `${BASE}/airline-interviews/${a.slug}`, priority: "0.7", changefreq: "weekly" });
+}
 
 for (const subject of getLibrarySubjects()) {
   urls.push({ loc: `${BASE}/library/${subject.slug}`, priority: "0.7", changefreq: "monthly" });
