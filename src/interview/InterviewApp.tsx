@@ -310,6 +310,14 @@ function AirlinePage({ slug, navigate, community }: { slug: string; navigate: Na
       {airline.entries.map((e, i) => (
         <Entry key={`${e.id}-${i}`} entry={e} />
       ))}
+      {airline.entries.length === 0 && (
+        <div className="lib__q">
+          <p className="lib__prose">
+            Interview experiences for {airline.name} are shared by pilots in the AvBuddy app.{" "}
+            <a href="/">Open AvBuddy</a> to read them or share your own.
+          </p>
+        </div>
+      )}
       <CrossLinks navigate={navigate} />
       <Cta />
     </>

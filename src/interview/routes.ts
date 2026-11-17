@@ -44,8 +44,8 @@ export function interviewCategories() {
   })).filter((c) => c.questions.length > 0);
 }
 
-// Airlines with no entries yet are left out entirely: an empty page would be
-// thin content that drags on the rest of the site.
+// Every airline always gets a page and sitemap entry: all of them have
+// material, either curated in sharedMaterial.ts or approved community posts.
 export function airlinesWithMaterial(community: CommunityPost[] = COMMUNITY_AT_BUILD) {
   return AIRLINES.map((name) => ({
     name,
@@ -54,5 +54,5 @@ export function airlinesWithMaterial(community: CommunityPost[] = COMMUNITY_AT_B
       ...SHARED_MATERIAL[name as Airline],
       ...community.filter((p) => p.airline === name).map(toEntry),
     ] as SharedEntry[],
-  })).filter((a) => a.entries.length > 0);
+  }));
 }
