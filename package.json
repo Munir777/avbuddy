@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build && vite build --ssr src/prerender.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
-    "prebuild": "npm run bank-meta && npm run sitemap",
+    "prebuild": "npm run bank-meta && npm run community && npm run sitemap",
+    "community": "node scripts/fetch-community-entries.mjs",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "bank-meta": "tsx scripts/generate-bank-meta.ts"
   },

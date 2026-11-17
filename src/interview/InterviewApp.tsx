@@ -5,7 +5,25 @@ import "../library/library.css";
 import avbuddyLogo from "../assets/avbuddy-logo.png";
 import { INTERVIEW_QUESTIONS } from "../data/interviewPrep";
 import type { SharedEntry } from "../data/sharedMaterial";
-import { interviewCategories, airlinesWithMaterial } from "./routes";
+import { interviewCategories, airlinesWithMaterial, COMMUNITY_AT_BUILD, type CommunityPost } from "./routes";
+import { fetchCommunityEntries } from "../lib/submissions";
+
+// Starts from the build-time snapshot (so prerendered HTML and first render
+// match), then swaps in the live list so newly approved posts appear without
+// waiting for a redeploy.
+function useCommunityPosts(): CommunityPost[] {
+  const [posts, setPosts] = useState<CommunityPost[]>(COMMUNITY_AT_BUILD);
+  useEffect(() => {
+    let cancelled = false;
+    fetchCommunityEntries().then((live) => {
+      if (!cancelled && live.length > 0) setPosts(live);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  return posts;
+}
 
 // Public, crawlable Interview Prep + Airline Interview pages. Inside the app
 // these only exist as tabs (React state, no URL), so search engines never saw
@@ -200,8 +218,8 @@ function InterviewCategoryPage({ slug, navigate }: { slug: string; navigate: Nav
 
 /* ---------------- Airline interviews ---------------- */
 
-function AirlineIndex({ navigate }: { navigate: Nav }) {
-  const airlines = airlinesWithMaterial();
+function AirlineIndex({ navigate, community }: { navigate: Nav; community: CommunityPost[] }) {
+  const airlines = airlinesWithMaterial(community);
   const names = airlines.map((a) => a.name).join(", ");
   useDocMeta(
     "Airline Pilot Interview Experiences by Airline | AvBuddy",
@@ -252,8 +270,8 @@ function Entry({ entry }: { entry: SharedEntry }) {
   );
 }
 
-function AirlinePage({ slug, navigate }: { slug: string; navigate: Nav }) {
-  const airline = airlinesWithMaterial().find((a) => a.slug === slug);
+function AirlinePage({ slug, navigate, community }: { slug: string; navigate: Nav; community: CommunityPost[] }) {
+  const airline = airlinesWithMaterial(community).find((a) => a.slug === slug);
   useDocMeta(
     airline ? `${airline.name} Pilot Interview Experience | AvBuddy` : "Airline Interview Experiences | AvBuddy",
     airline
@@ -289,8 +307,8 @@ function AirlinePage({ slug, navigate }: { slug: string; navigate: Nav }) {
         Assessment experiences and questions shared by pilots who went through the {airline.name} selection
         process. Details vary by candidate and session — treat these as what came up, not a fixed script.
       </p>
-      {airline.entries.map((e) => (
-        <Entry key={e.id} entry={e} />
+      {airline.entries.map((e, i) => (
+        <Entry key={`${e.id}-${i}`} entry={e} />
       ))}
       <CrossLinks navigate={navigate} />
       <Cta />
@@ -301,6 +319,7 @@ function AirlinePage({ slug, navigate }: { slug: string; navigate: Nav }) {
 export default function InterviewApp() {
   const { pathname, navigate } = usePath();
   const [section, slug] = pathname.split("/").filter(Boolean);
+  const community = useCommunityPosts();
   return (
     <div className="lib">
       <div className="lib__container">
@@ -310,8 +329,8 @@ export default function InterviewApp() {
         </a>
         {section === "interview-prep" && !slug && <InterviewIndex navigate={navigate} />}
         {section === "interview-prep" && slug && <InterviewCategoryPage slug={slug} navigate={navigate} />}
-        {section === "airline-interviews" && !slug && <AirlineIndex navigate={navigate} />}
-        {section === "airline-interviews" && slug && <AirlinePage slug={slug} navigate={navigate} />}
+        {section === "airline-interviews" && !slug && <AirlineIndex navigate={navigate} community={community} />}
+        {section === "airline-interviews" && slug && <AirlinePage slug={slug} navigate={navigate} community={community} />}
       </div>
     </div>
   );
